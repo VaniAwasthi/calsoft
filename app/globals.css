@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary-font: "Manrope", sans-serif;
+  --primary-font: "Manrope", serif;
   --secondary-font: "Inter", serif;
   --ternary-font: "Poppins", serif;
 }
