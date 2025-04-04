@@ -44,3 +44,32 @@ body {
   border-image-source: linear-gradient(#2e3092 17%, #ed1c242e 73%);
   border-image-slice: 1;
 }
+
+.slider_t .swiper-wrapper {
+  padding-top: 4rem;
+}
+.play_slider .swiper-button-prev {
+  left: 1rem;
+}
+.play_slider .swiper-button-next {
+  right: 1rem;
+}
+.play_slider {
+  padding: 0 2rem !important;
+}
+.play_slider .swiper-button-prev::before,
+.play_slider .swiper-button-next::before {
+  color: transparent;
+  content: "";
+  position: absolute;
+  background: url(./assets/home/play.svg) center center / contain no-repeat;
+  width: 40px;
+  height: 40px;
+}
+.play_slider .swiper-button-prev::after,
+.play_slider .swiper-button-next::after {
+  color: transparent;
+}
+.play_slider .swiper-button-next::before {
+  transform: rotate(180deg);
+}
