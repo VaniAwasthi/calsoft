@@ -1,11 +1,15 @@
 import Image from "next/image";
-import { CalsoftNews } from "./screen/home/CalsoftNews";
-
+import { CalsoftNews, CalsoftPartner } from "./screen/home/CalsoftNewsPartner";
+import { Casestudy, Services } from "./screen/home/ServicesCasestudyBlog";
 
 export default function Home() {
   return (
     <>
-   <CalsoftNews/>
+
+      <CalsoftNews />
+      <CalsoftPartner />
+      <Services/>
+      <Casestudy/>
     </>
   );
 }
