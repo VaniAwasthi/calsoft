@@ -73,3 +73,24 @@ body {
 .play_slider .swiper-button-next::before {
   transform: rotate(180deg);
 }
+
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-hover:hover .card-inner {
+  transform: rotateY(180deg);
+}

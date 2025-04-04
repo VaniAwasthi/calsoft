@@ -141,38 +141,35 @@ const Nextgen = () => {
                   </>
                 )}
 
-                <div className="flex flex-col justify-between mt-[4rem] space-y-6 m">
-                  {/* Cards Section */}
-                  <div className="flex space-x-4">
-                    {activeIndustry?.iconData.map((card) => (
-                      <motion.div
-                        key={card.id}
-                        whileHover={{ scale: 1.2, y: -10 }} // Enlarge & lift on hover
-                        whileTap={{ scale: 0.95 }} // Click effect
-                        className="relative w-24 h-24 cursor-pointer group perspective"
-                      >
-                        <div className="relative w-full h-full transition-transform duration-500 transform-style-3d group-hover:rotate-y-180">
-                          {/* Front Side (Icon) */}
-                          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-300 text-black border border-gray-400 rounded-lg shadow-md backface-hidden">
-                            <Image
-                              src={card.icon}
-                              alt={card.title}
-                              width={50}
-                              height={50}
-                            />
-                          </div>
+<div className="flex flex-col justify-between mt-16 space-y-6">
+      <div className="flex flex-wrap gap-6">
+        {activeIndustry?.iconData.map((card) => (
+          <div
+            key={card.id}
+            className="card-hover w-24 h-24 perspective cursor-pointer"
+          >
+            <div className="card-inner relative w-full h-full">
+              {/* Front Side */}
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-300 text-black border border-gray-400 rounded-lg shadow-md backface-hidden">
+                <Image
+                  src={card.icon}
+                  alt={card.title}
+                  width={40}
+                  height={40}
+                />
+              </div>
 
-                          {/* Back Side (Title Appears on Flip) */}
-                          <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-300 text-black rounded-lg rotate-y-180 backface-hidden">
-                            <p className="text-lg font-semibold">
-                              {card.title}
-                            </p>
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
+              {/* Back Side */}
+              <div className="absolute inset-0 flex items-center justify-center bg-blue-500 text-white rounded-lg rotate-y-180 backface-hidden">
+                <p className="text-sm font-semibold text-center px-2">
+                  {card.title}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
               </div>
             </motion.div>
           </div>

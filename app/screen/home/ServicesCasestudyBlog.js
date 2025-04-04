@@ -282,7 +282,7 @@ export const Casestudy = () => {
 
                         <div className="relative w-full py-10">
                             <Swiper
-                                modules={[Navigation, Pagination]}
+                                modules={[Navigation]}
                                 slidesPerView={1}
                                 spaceBetween={40}
                                 breakpoints={{
@@ -291,7 +291,6 @@ export const Casestudy = () => {
                                     1024: { slidesPerView: 3 },
                                 }}
                                 navigation
-                                pagination={{ clickable: true }}
                                 className="slider_t play_slider"
                             >
                                 {sliderData.map((item) => (
