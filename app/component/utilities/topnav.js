@@ -14,7 +14,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full">
       {/* Top Bar */}
       <div className="text-white px-6 py-3 border-b bg-[#141414] border-gray-700">
-        <div className="flex items-end justify-end text-sm container mx-auto lg:max-w-7xl">
+        <div className="flex items-end justify-end text-sm container mx-auto px-4 md:px-20">
           <Link href="#" className="hover:font-bold">
             Customer Stories<span className="text-white p-3">|</span>
           </Link>
@@ -28,17 +28,17 @@ export default function Navbar() {
       </div>
 
       {/* Navigation */}
-      <Disclosure as="nav" className="bg-black px-6 py-4">
+      <Disclosure as="nav" className="bg-black  py-4 ">
         {({ open }) => (
           <>
-            <div className="container mx-auto lg:max-w-7xl flex items-center justify-between">
+            <div className="container mx-auto px-4 md:px-20 flex items-center justify-between">
               {/* Logo */}
               <Link href="#" className="text-2xl font-bold text-white">
                 <Image src={Logo} alt="Logo" />
               </Link>
 
               {/* Desktop Menu */}
-              <div className="hidden lg:flex space-x-6">
+              <div className="hidden lg:flex space-x-6 ">
                 {[
                   "DATA & AI",
                   "DIGITAL ENGINEERING",

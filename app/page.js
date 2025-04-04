@@ -1,13 +1,16 @@
-import Image from "next/image";
-import ButtonLayout from "./component/utilities/ButtonLayout";
+"use client";
+import Customer from "./component/home/Customer";
+import DigitalJounery from "./component/home/DigitalJourney";
+import HeroSec from "./component/home/HeroSec";
+import Nextgen from "./component/home/Nextgen";
 
 export default function Home() {
   return (
     <>
-      <div>
-        <h1>Hello</h1>
-        <ButtonLayout />
-      </div>
+      <HeroSec />
+      <DigitalJounery />
+      <Customer />
+      <Nextgen />
     </>
   );
 }
