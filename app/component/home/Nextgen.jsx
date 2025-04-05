@@ -40,33 +40,20 @@ const Nextgen = () => {
               animate={{ x: 2, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="h-full w-full bg-[#E5E5E5] py-4 justify-center items-center flex rounded-full">
-                {/* Left Icon */}
-                <div className="flex justify-between items-center">
-                  <motion.div
-                    initial={{ x: 50, opacity: 0 }}
-                    animate={{ x: 2, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+              <div className="w-full bg-[#E5E5E5] px-2 flex justify-between items-center rounded-full">
+                {navItems.map((item, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveTab(item)}
+                    className={`w-1/5 text-center transition-all duration-300 py-4 text-sm lg:text-base rounded-full ${
+                      activeTab === item
+                        ? "bg-white text-black font-semibold"
+                        : "text-[#747474]"
+                    }`}
                   >
-                    {/* Navigation Items */}
-                    <div className="relative z-10 flex justify-center space-x-4 lg:space-x-6 text-sm md:text-base">
-                      {navItems.map((item, index) => (
-                        <div key={index} className="flex items-center">
-                          <div
-                            className={`relative cursor-pointer lg:w-[180px] text-center px-4 py-2 ${
-                              activeTab === item
-                                ? "text-black font-semibold bg-white rounded-full h-full flex items-center justify-center"
-                                : "text-[#747474]"
-                            }`}
-                            onClick={() => setActiveTab(item)}
-                          >
-                            {item}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                </div>
+                    {item}
+                  </button>
+                ))}
               </div>
             </motion.div>
 
@@ -154,7 +141,7 @@ const Nextgen = () => {
                         animate={{ y: 4, opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.9 }}
                         key={card.id}
-                        className="card-hover w-[100px] h-[110px] hover:h-[120px] hover:w-[105px] perspective cursor-pointer"
+                        className="card-hover w-[100px] h-[90px] transition-transform duration-500 hover:scale-150 perspective cursor-pointer"
                       >
                         <div className="card-inner relative w-full h-full">
                           {/* Front Side */}
@@ -168,7 +155,7 @@ const Nextgen = () => {
                           </div>
 
                           {/* Back Side */}
-                          <div className="absolute inset-0 flex items-center justify-center bg-[#FFFFFF] text-[#021553] rounded-lg rotate-y-180 backface-hidden">
+                          <div className="absolute inset-0 flex items-center justify-center bg-[#FFFFFF] text-[#021553] rounded-lg rotate-y-180  transform scale-105 mx-2 backface-hidden">
                             <p className="text-[12px] font-semibold text-center px-2">
                               {card.title}
                             </p>
