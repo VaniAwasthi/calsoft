@@ -24,7 +24,10 @@ const Nextgen = () => {
 
   return (
     <>
-      <div className="w-full bg-[#021553] rounded-b-xl min-h-screen">
+      <div
+        className="w-full bg-[#021553] rounded-b-xl min-h-screen"
+        id="industries"
+      >
         <div className="mx-auto px-4 xl:px-20" id="customers">
           {/* icon-with heading*/}
           <div className="flex gap-6 md:gap-6 items-center mb-6 py-5">
@@ -40,7 +43,7 @@ const Nextgen = () => {
               animate={{ x: 2, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="w-full bg-[#E5E5E5] px-2 flex justify-between items-center rounded-full">
+              <div className="w-full bg-[#E5E5E5]  flex justify-between items-center rounded-full">
                 {navItems.map((item, index) => (
                   <button
                     key={index}
@@ -156,7 +159,7 @@ const Nextgen = () => {
 
                           {/* Back Side */}
                           <div className="absolute inset-0 flex items-center justify-center bg-[#FFFFFF] text-[#021553] rounded-lg rotate-y-180  transform scale-105 mx-2 backface-hidden">
-                            <p className="text-[12px] font-semibold text-center px-2">
+                            <p className="text-[10px] font-semibold text-center px-2">
                               {card.title}
                             </p>
                           </div>

@@ -1,97 +1,102 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import 'swiper/css/scrollbar';
-import { Scrollbar } from 'swiper/modules';
+import "swiper/css/scrollbar";
+import { Scrollbar } from "swiper/modules";
 
-import img01 from "../../assets/home/News4.webp"
-import img02 from "../../assets/home/News3.webp"
-import img03 from "../../assets/home/News2.webp"
-import img04 from "../../assets/home/News1.webp"
-import icon1 from "../../assets/home/icon1.svg"
-import border from "../../assets/home/Branch.svg"
-import arrow from "../../assets/home/arrow.svg"
-import bgimg from "../../assets/home/pattern.svg"
-import bgimg1 from "../../assets/home/pattern1.svg"
-import icon2 from "../../assets/home/icon2.svg"
-import logo1 from "../../assets/home/logo1.png"
-import logo2 from "../../assets/home/logo2.png"
-import logo3 from "../../assets/home/logo3.png"
-import logo4 from "../../assets/home/logo4.png"
-import logo5 from "../../assets/home/logo05.png"
-import logo6 from "../../assets/home/logo6.png"
-import logo7 from "../../assets/home/logo7.png"
-import logo8 from "../../assets/home/logo8.png"
-import logo9 from "../../assets/home/logo9.png"
-import logo10 from "../../assets/home/logo10.png"
-import logo11 from "../../assets/home/logo11.png"
-import logo12 from "../../assets/home/logo12.png"
-import logo13 from "../../assets/home/logo13.png"
-import logo14 from "../../assets/home/logo14.png"
-import logo15 from "../../assets/home/logo15.png"
-import logo16 from "../../assets/home/logo16.png"
-import logo17 from "../../assets/home/logo17.png"
-import logo18 from "../../assets/home/logo18.png"
-import logo19 from "../../assets/home/logo19.png"
-import logo20 from "../../assets/home/logo20.png"
-import logo21 from "../../assets/home/logo21.png"
-
+import img01 from "../../assets/home/News4.webp";
+import img02 from "../../assets/home/News3.webp";
+import img03 from "../../assets/home/News2.webp";
+import img04 from "../../assets/home/News1.webp";
+import icon1 from "../../assets/home/icon1.svg";
+import border from "../../assets/home/Branch.svg";
+import arrow from "../../assets/home/arrow.svg";
+import bgimg from "../../assets/home/pattern.svg";
+import bgimg1 from "../../assets/home/pattern1.svg";
+import icon2 from "../../assets/home/icon2.svg";
+import logo1 from "../../assets/home/logo1.png";
+import logo2 from "../../assets/home/logo2.png";
+import logo3 from "../../assets/home/logo3.png";
+import logo4 from "../../assets/home/logo4.png";
+import logo5 from "../../assets/home/logo05.png";
+import logo6 from "../../assets/home/logo6.png";
+import logo7 from "../../assets/home/logo7.png";
+import logo8 from "../../assets/home/logo8.png";
+import logo9 from "../../assets/home/logo9.png";
+import logo10 from "../../assets/home/logo10.png";
+import logo11 from "../../assets/home/logo11.png";
+import logo12 from "../../assets/home/logo12.png";
+import logo13 from "../../assets/home/logo13.png";
+import logo14 from "../../assets/home/logo14.png";
+import logo15 from "../../assets/home/logo15.png";
+import logo16 from "../../assets/home/logo16.png";
+import logo17 from "../../assets/home/logo17.png";
+import logo18 from "../../assets/home/logo18.png";
+import logo19 from "../../assets/home/logo19.png";
+import logo20 from "../../assets/home/logo20.png";
+import logo21 from "../../assets/home/logo21.png";
 
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import { BsArrowUpRight } from "react-icons/bs";
 import Link from "next/link";
-
-
 
 const data = [
   {
     id: 1,
     img: img01,
     title: "Accelerate high-quality software products.",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: 2,
     img: img02,
     title: "Enhance Your Development Process",
-    description: "Discover innovative solutions for modern software development."
+    description:
+      "Discover innovative solutions for modern software development.",
   },
   {
     id: 3,
     img: img03,
     title: "Next-Gen Technology Solutions",
-    description: "Explore new trends and advancements in technology for the future."
+    description:
+      "Explore new trends and advancements in technology for the future.",
   },
   {
     id: 4,
     img: img04,
     title: "Revolutionizing the IT Industry",
-    description: "Bringing positive changes through digital transformation."
+    description: "Bringing positive changes through digital transformation.",
   },
   {
     id: 5,
     img: img01,
     title: "Accelerate high-quality software products.",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: 6,
     img: img02,
     title: "Enhance Your Development Process",
-    description: "Discover innovative solutions for modern software development."
-  }
+    description:
+      "Discover innovative solutions for modern software development.",
+  },
 ];
 export const CalsoftNews = () => {
   const [selected, setSelected] = useState(data[0]);
   return (
     <>
-      <section className="md:py-14 py-10"
-        style={{ background: `url(${bgimg.src}) center center/ cover no-repeat` }}
+      <section
+        className="md:py-14 py-10"
+        style={{
+          background: `url(${bgimg.src}) center center/ cover no-repeat`,
+        }}
+        id="latest-at-calsoft"
       >
-
         <div className="container mx-auto px-4 md:px-20">
           <div className="flex gap-6 md:gap-6 items-center mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 flex items-center justify-center">
@@ -99,7 +104,7 @@ export const CalsoftNews = () => {
             </div>
             <p className="font-light">Latest at Calsoft</p>
           </div>
-          <div className="flex gap-4" >
+          <div className="flex gap-4">
             {/* <div className="min-w-6 text-center">
           <Image src={border} alt="icon"  width={3} className="h-full mx-auto" />
           </div> */}
@@ -108,7 +113,6 @@ export const CalsoftNews = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
               viewport={{ once: true }}
-
             >
               <div className="pt-8 gradient-border">
                 <motion.h2
@@ -130,18 +134,20 @@ export const CalsoftNews = () => {
                   {selected.description}
                 </motion.p>
 
-                <Link href="#" className="relative flex w-[220px] gap-2 justify-between items-center  px-8 py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
-                  style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25" }}>
+                <Link
+                  href="#"
+                  className="relative flex w-[220px] gap-2 justify-between items-center  px-8 py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
+                  style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25" }}
+                >
                   <span className="relative z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500">
-                    Explore More <IoArrowForwardCircleSharp className="text-3xl tra" />
+                    Explore More{" "}
+                    <IoArrowForwardCircleSharp className="text-3xl tra" />
                   </span>
                   <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
                 </Link>
               </div>
             </motion.div>
           </div>
-
-
 
           <div className="grid  md:grid-cols-12 gap-26 mb-6 mt-20">
             <div className="md:col-span-4 md:pl-6">
@@ -150,13 +156,21 @@ export const CalsoftNews = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
-
               >
                 <h3 className="text-3xl mb-8 flex gap-6 items-center md:text-[36px] font-semibold text-black">
                   Calsoft News Section
-                  <Link href="#"> <Image className="transition-all duration-500 hover:-mt-4" src={arrow} alt="arrow" /></Link></h3>
+                  <Link href="#">
+                    {" "}
+                    <Image
+                      className="transition-all duration-500 hover:-mt-4"
+                      src={arrow}
+                      alt="arrow"
+                    />
+                  </Link>
+                </h3>
                 <p className="mt-2 text-[#959595] text-sm md:text-[15px]">
-                  We focus on bringing positivity to the world and focus on stories that showcase the best of humanity.
+                  We focus on bringing positivity to the world and focus on
+                  stories that showcase the best of humanity.
                 </p>
               </motion.div>
             </div>
@@ -167,7 +181,6 @@ export const CalsoftNews = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
-
               >
                 <Swiper
                   spaceBetween={10}
@@ -195,10 +208,11 @@ export const CalsoftNews = () => {
                   {data.map((item) => (
                     <SwiperSlide key={item.id} className="items-center">
                       <motion.div
-                        className={`cursor-pointer rounded-lg mb-6 overflow-hidden1 transition-all duration-500 ${selected.id === item.id ? "scale-100" : "scale-70"
-                          }`}
+                        className={`cursor-pointer rounded-lg mb-6 overflow-hidden1 transition-all duration-500 ${
+                          selected.id === item.id ? "scale-100" : "scale-70"
+                        }`}
                         onClick={() => setSelected(item)}
-                      // whileHover={{ scale: 1.05 }}
+                        // whileHover={{ scale: 1.05 }}
                       >
                         <Image
                           src={item.img}
@@ -213,19 +227,12 @@ export const CalsoftNews = () => {
                 </Swiper>
               </motion.div>
             </div>
-
           </div>
-
-
         </div>
       </section>
-
     </>
-  )
-}
-
-
-
+  );
+};
 
 export const CalsoftPartner = () => {
   const title = "Partners";
@@ -254,8 +261,15 @@ export const CalsoftPartner = () => {
       colSpan: "md:col-span-9",
       gridCols: 5,
       logos: [
-        logo11, logo12, logo13, logo14, logo15,
-        logo16, logo17, logo18, logo19,
+        logo11,
+        logo12,
+        logo13,
+        logo14,
+        logo15,
+        logo16,
+        logo17,
+        logo18,
+        logo19,
       ],
     },
     {
@@ -269,7 +283,10 @@ export const CalsoftPartner = () => {
   return (
     <section
       className="md:py-14 py-10"
-      style={{ background: `url(${bgimg1.src}) center center / cover no-repeat` }}
+      style={{
+        background: `url(${bgimg1.src}) center center / cover no-repeat`,
+      }}
+      id="partners"
     >
       <div className="container mx-auto px-4 md:px-20">
         {/* Section Title */}
@@ -337,7 +354,11 @@ export const CalsoftPartner = () => {
                         </div>
                       </div>
                     ) : (
-                      <div className={`grid grid-cols-${item.gridCols || 2} items-center gap-4 w-full`}>
+                      <div
+                        className={`grid grid-cols-${
+                          item.gridCols || 2
+                        } items-center gap-4 w-full`}
+                      >
                         {item.logos.map((logo, idx) => (
                           <Image
                             key={idx}
@@ -360,12 +381,3 @@ export const CalsoftPartner = () => {
     </section>
   );
 };
-
-
-
-
-
-
-
-
-
