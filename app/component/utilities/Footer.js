@@ -2,11 +2,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedinIn , FaXTwitter, FaYoutube, FaFacebookF , FaInstagram } from "react-icons/fa6";
 import Logo from "../../assets/logo.png";
+import user from "../../assets/webinar.png";
+
+
 import { GoArrowRight } from "react-icons/go";
 
 
 const Footer = () => {
   return (
+    <>
+    <button className="fixed rounded-full cursor-pointer w-24 h-24 flex p-3 gap-0 flex-wrap items-center z-10 right-6 bottom-8 justify-center bg-[#ED1C24] text-white" style={{boxShadow:"0px 2px 4px rgba(0, 0, 0, 0.53), 0px 7px 7px rgba(0, 0, 0, 0.46), 0px 16px 10px rgba(0, 0, 0, 0.27), 0px 29px 12px rgba(0, 0, 0, 0.08), 0px 46px 13px rgba(0, 0, 0, 0.01)"}}>
+    <Image src={user} alt="Calsoft Logo" width={50} height={50} />
+    <span className="-mt-1 text-sm">Webinar</span>
+
+    </button>
+
     <footer className="bg-black text-white">
 
       <div className="container mx-auto px-4 py-10 md:px-20 ">
@@ -97,6 +107,7 @@ const Footer = () => {
       </div>
       </div>
     </footer>
+    </>
   );
 };
 
