@@ -12,8 +12,10 @@ export default function Home() {
     <>
       <HeroSec />
       <DigitalJounery />
+       <Customer/>
       <Nextgen />
       <CalsoftNews />
+      <CalsoftPartner/>
       <Services />
       <Casestudy />
     </>

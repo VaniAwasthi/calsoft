@@ -24,11 +24,11 @@ const HeroSec = () => {
       modules={[Pagination]}
       pagination={{ clickable: true }}
       loop={true}
-      className="w-full min-h-screen"
+      className="w-full h-full1"
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className="relative w-full h-full">
-          <BannerLayout
+         <BannerLayout
             image={slide.image}
             title={slide.title}
             title2={slide.title2}
@@ -41,6 +41,7 @@ const HeroSec = () => {
             descriptionClass="mt-4 text-lg leading-8 w-[200px] md:w-full"
             BgClassname="object-cover w-full h-full object-center"
           />
+
         </SwiperSlide>
       ))}
     </Swiper>

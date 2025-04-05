@@ -114,28 +114,28 @@ const Nextgen = () => {
                     </motion.p>
                     <div className="flex gap-6 flex-col lg:flex-row mt-6">
                       <button
-                        class="relative flex gap-2 justify-between items-center  px-8 py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
+                        className="relative flex gap-2 justify-between items-center  px-8 py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
                         style={{
                           boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
                         }}
                       >
-                        <span class="relative z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500">
+                        <span className="relative z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500">
                           Explore More
                           <IoArrowForwardCircleSharp className="text-3xl tra" />
                         </span>
-                        <span class="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
+                        <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
                       </button>
                       <button
-                        class="relative flex gap-2 justify-between items-center  px-8 py-4 rounded-full shadow-md bg-white text-[#E8282B] transition-all duration-500 overflow-hidden group"
+                        className="relative flex gap-2 justify-between items-center  px-8 py-4 rounded-full shadow-md bg-white text-[#E8282B] transition-all duration-500 overflow-hidden group"
                         style={{
                           boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
                         }}
                       >
-                        <span class="relative z-10 group-hover:text-white w-full flex gap-4 items-center transition-colors duration-500">
+                        <span className="relative z-10 group-hover:text-white w-full flex gap-4 items-center transition-colors duration-500">
                           know More
                           <IoArrowForwardCircleSharp className="text-3xl tra" />
                         </span>
-                        <span class="absolute inset-0 bg-[#E8282B] w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
+                        <span className="absolute inset-0 bg-[#E8282B] w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
                       </button>
                     </div>
                   </>

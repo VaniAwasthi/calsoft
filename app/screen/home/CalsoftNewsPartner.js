@@ -163,7 +163,7 @@ export const CalsoftNews = () => {
 
             <div className="md:col-span-8">
               <motion.div
-                initial={{ opacity: 0, x: 100 }}
+                initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
@@ -230,35 +230,37 @@ export const CalsoftNews = () => {
 export const CalsoftPartner = () => {
   const title = "Partners";
   const heading = "Powering Ahead, Together.";
-
   const data = [
     {
       title: "Cloud Partnerships",
-      colSpan: 3,
+      colSpan: "md:col-span-3",
       gridCols: 1,
       logos: [logo1, logo2, logo3],
     },
     {
       title: "Data & Analytics Partnerships",
-      colSpan: 3,
+      colSpan: "md:col-span-3",
       gridCols: 1,
       logos: [logo4, logo5],
     },
     {
       title: "Gen AI",
-      colSpan: 6,
+      colSpan: "md:col-span-6",
       gridCols: 3,
       logos: [logo6, logo7, logo8, logo9, logo10],
     },
     {
       title: "Technology Partners",
-      colSpan: 9,
+      colSpan: "md:col-span-9",
       gridCols: 5,
-      logos: [logo11, logo12, logo13, logo14, logo15, logo16, logo17, logo18, logo19],
+      logos: [
+        logo11, logo12, logo13, logo14, logo15,
+        logo16, logo17, logo18, logo19,
+      ],
     },
     {
       title: "Industry Partnerships",
-      colSpan: 3,
+      colSpan: "md:col-span-3",
       gridCols: 1,
       logos: [logo20, logo21],
     },
@@ -270,6 +272,7 @@ export const CalsoftPartner = () => {
       style={{ background: `url(${bgimg1.src}) center center / cover no-repeat` }}
     >
       <div className="container mx-auto px-4 md:px-20">
+        {/* Section Title */}
         <div className="flex gap-6 items-center mb-6">
           <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 flex items-center justify-center">
             <Image src={icon2} alt="icon" width={16} height={16} />
@@ -289,6 +292,7 @@ export const CalsoftPartner = () => {
             </motion.h2>
           </motion.div>
 
+          {/* Grid Container */}
           <div className="grid md:grid-cols-12 gap-8 mb-6 mt-10">
             {data.map((item, index) => (
               <motion.div
@@ -297,16 +301,17 @@ export const CalsoftPartner = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className={`col-span-12 md:col-span-${item.colSpan} flex flex-col h-full`}
+                className={`${item.colSpan} flex flex-col h-full`}
               >
                 <p className="mb-4 font-semibold text-lg">{item.title}</p>
 
+                {/* Card Layout */}
                 <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] h-full">
                   <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.6)] to-[rgba(14,14,44,0.1)]"></div>
 
                   <div className="relative bg-white rounded-[17px] p-4 shadow-md flex flex-col items-center h-full justify-center w-full">
                     {item.title === "Cloud Partnerships" ? (
-                      <div className="flex flex-col w-full gap-2">
+                      <div className="flex flex-col w-full gap-0">
                         <Image
                           src={item.logos[0]}
                           alt="Logo 1"
@@ -314,7 +319,7 @@ export const CalsoftPartner = () => {
                           height={80}
                           className="w-full max-h-20 object-contain"
                         />
-                        <div className="grid grid-cols-2 gap-4 items-center">
+                        <div className="grid grid-cols-2 gap-2 items-center">
                           <Image
                             src={item.logos[1]}
                             alt="Logo 2"
@@ -326,20 +331,13 @@ export const CalsoftPartner = () => {
                             src={item.logos[2]}
                             alt="Logo 3"
                             width={100}
-                            height={100}
-                            className="w-full max-h-12 object-contain"
+                            height={60}
+                            className="w-full max-h-10 object-contain"
                           />
                         </div>
                       </div>
                     ) : (
-                      <div
-                        className={`grid gap-4 w-full items-center ${item.title === "Gen AI"
-                            ? "grid-cols-3"
-                            : item.title === "Technology Partners"
-                              ? "grid-cols-5"
-                              : `grid-cols-${item.gridCols || 2}`
-                          }`}
-                      >
+                      <div className={`grid grid-cols-${item.gridCols || 2} items-center gap-4 w-full`}>
                         {item.logos.map((logo, idx) => (
                           <Image
                             key={idx}
@@ -362,6 +360,8 @@ export const CalsoftPartner = () => {
     </section>
   );
 };
+
+
 
 
 

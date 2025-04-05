@@ -148,7 +148,7 @@ export const Services = () => {
 
 export const Casestudy = () => {
     const title = "Case Studies"
-    const heading = `Real results. <span class="text-black font-normal">Proven success</span>`
+    const heading = `Real results. <span className="text-black font-normal">Proven success</span>`
     const caseStudyData = {
         title: "A leading networking solutions provider",
         description: [
