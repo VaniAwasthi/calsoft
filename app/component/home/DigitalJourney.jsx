@@ -54,6 +54,11 @@ const DigitalJounery = () => {
       icon: Update,
     },
   ];
+  const formatId = (str) =>
+    str
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]/g, "");
   return (
     <div className="flex justify-center bg-[#021553] min-h-screen">
       <div className="container mx-auto px-4 xl:px-20">
@@ -88,7 +93,17 @@ const DigitalJounery = () => {
                             ? "text-white font-semibold"
                             : "text-gray-400"
                         }`}
-                        onClick={() => setActiveTab(item)}
+                        onClick={() => {
+                          setActiveTab(item);
+                          const sectionId = formatId(item);
+                          const section = document.getElementById(sectionId);
+                          if (section) {
+                            section.scrollIntoView({
+                              behavior: "smooth",
+                              block: "start",
+                            });
+                          }
+                        }}
                       >
                         {item}
                       </div>
@@ -105,7 +120,7 @@ const DigitalJounery = () => {
           </div>
         </motion.div>
 
-        <div className="text-white relative">
+        <div className="text-white relative" id="journey">
           <div className="absolute left-0 top-0 bottom-0 traslate-y-[-52px] lg:translate-x-[4px] xl:translate-y-[-57px]">
             {/* Gradient Border */}
             <div className="w-[2px] h-full bg-gradient-to-b from-gray-300 to-red-500"></div>

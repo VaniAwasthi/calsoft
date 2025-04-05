@@ -65,8 +65,9 @@ const Customer = () => {
         style={{
           background: `url(${bgimg.src}) center center/ cover no-repeat`,
         }}
+        id="customers"
       >
-        <div className="mx-auto px-4 xl:px-20" id="customers">
+        <div className="mx-auto px-4 xl:px-20">
           <div className="flex gap-6 md:gap-6 items-center mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 flex items-center justify-center">
               <Image src={icon} alt="icon" width={16} height={16} />
