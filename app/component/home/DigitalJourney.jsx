@@ -64,8 +64,9 @@ const DigitalJounery = () => {
       <div className="container mx-auto px-4 xl:px-20">
         <motion.div
           initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 2, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
         >
           <div className="relative flex items-center justify-center px-4 lg:px-8 py-3  text-white bg-[#0B1633] rounded-full">
             {/* Border Gradient Effect */}
@@ -80,8 +81,9 @@ const DigitalJounery = () => {
               </div>
               <motion.div
                 initial={{ x: 50, opacity: 0 }}
-                animate={{ x: 2, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.3 }}
               >
                 {/* Navigation Items */}
                 <div className="relative z-10 flex space-x-4 lg:space-x-6 text-sm md:text-base">
@@ -128,17 +130,19 @@ const DigitalJounery = () => {
           <div className="xl:ml-[8rem] my-4 ">
             <motion.div
               initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               <h2 className="text-4xl mt-[3rem] ml-[4rem] pt-5 font-semibold leading-11">
                 Innovate at every stage of your digital journey
               </h2>
             </motion.div>
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              initial={{ y: -50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               <h2 className="text-4xl  mb-[4rem] ml-[4rem] font-light leading-11">
                 We make it simple
@@ -152,13 +156,15 @@ const DigitalJounery = () => {
                   className="flex flex-col items-center text-center w-[200px]"
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  viewport={{ once: false, amount: 0.5 }}
                 >
                   <div className="flex h-[80px]">
                     <motion.div
                       initial={{ y: 50, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
                       transition={{ duration: 0.5, delay: index * 0.2 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      viewport={{ once: false, amount: 0.3 }}
                     >
                       <Image src={Icon} alt={feature.title} />
                     </motion.div>
@@ -167,8 +173,9 @@ const DigitalJounery = () => {
                     <motion.div
                       className="text-md font-normal"
                       initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.4 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      viewport={{ once: false, amount: 0.3 }}
                     >
                       <h3 className="text-md font-normal w-[90px]">
                         {feature.title}
@@ -180,8 +187,9 @@ const DigitalJounery = () => {
                   <motion.div
                     className="rounded-full mr-1 mt-2"
                     initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.5 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: false, amount: 0.3 }}
                   >
                     <Image src={feature.icon} alt={feature.title} />
                   </motion.div>
@@ -190,8 +198,9 @@ const DigitalJounery = () => {
                   <motion.p
                     className="mt-2 text-sm text-gray-300"
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.6 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: false, amount: 0.3 }}
                   >
                     {feature.description}
                   </motion.p>

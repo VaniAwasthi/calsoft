@@ -22,6 +22,7 @@ import man1 from "../../assets/home/man1.webp";
 import man2 from "../../assets/home/man2.webp";
 import man3 from "../../assets/home/man3.webp";
 import blogimg1 from "../../assets/home/blog1.webp";
+import { LuArrowUpRight } from "react-icons/lu";
 import { BlogCard } from "../../component/blog/BlogCard";
 
 export const Services = () => {
@@ -87,7 +88,7 @@ export const Services = () => {
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               <motion.h2 className="text-3xl md:text-[36px] font-normal text-white">
                 {heading}
@@ -100,7 +101,7 @@ export const Services = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, amount: 0.3 }}
                   className="bg-[#2E3092] text-white p-6 py-8 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start"
                 >
                   <div className="flex gap-6 flex-wrap md:flex-nowrap">
@@ -142,74 +143,93 @@ export const Services = () => {
 export const Casestudy = () => {
   const title = "Case Studies";
   const heading = `Real results. <span className="text-black font-normal">Proven success</span>`;
-  const caseStudyData = {
-    title: "A leading networking solutions provider",
-    description: [
-      "Modern network environments are highly complex, comprising diverse devices, configurations, and architectures. Ensuring seamless functionality across various conditions requires precise solution-level testing to validate end-to-end system behaviour.",
-      "A leading networking provider partnered with Calsoft to enhance use case validation using an LLM-driven approach.",
-    ],
-    buttonText: "Case Study",
-    stats: [
-      { count: "More 3k+", text: "Accelerated Validation Cycles" },
-      { count: "More 1k+", text: "Reduced Human Errors" },
-      { count: "More 2k+", text: "Optimal Test Coverage" },
-    ],
-  };
-  const sliderData = [
+
+  const caseStudyDataArray = [
     {
       id: 1,
-      image: blogimg1,
-      title: "Lorem Ipsum is simply dummy text of the printing",
-      link: "#",
+      title: " GenAI-Driven Production-Centric Test Generation",
+      description: [
+        "<strong>Abstract:</strong> FModern network environments are highly complex, comprising diverse devices, configurations, and architectures. Ensuring seamless functionality across various conditions requires precise solution-level testing to validate end-to-end system behaviour.",
+        "A leading networking provider partnered with Calsoft to enhance use case validation using an LLM-driven approach. By generating production-centric tests, the solution enabled real-world scenario validation, improving accuracy, reliability, and overall network performance. This approach ensures comprehensive coverage, addressing diverse deployment scenarios and edge cases while optimizing network efficiency.",
+      ],
+      buttonText: "Case Study",
+      pdfLink: "/pdfs/case1.pdf",
+      stats: [
+        { count: "25%", text: "Accelerated Validation Cycles" },
+        { count: "50k+", text: "Reduced Human Errors" },
+        { count: "50k+", text: "Optimal Test Coverage" },
+      ],
     },
     {
       id: 2,
-      image: blogimg1,
-      title: "Lorem Ipsum is simply dummy text of the printing",
-      link: "#",
+      title: "AI-powered test optimization with CalTIA",
+      description: [
+        "<strong>Abstract:</strong> Calsoft integrated CalTIA, an AI-powered Test Intelligence Platform, into a global networking, security, and IT infrastructure provider’s development lifecycle to optimize test execution. With AI-driven test prioritization and automated regression testing, CalTIA streamlined test selection, eliminated redundant tests, and accelerated Pull Request (PR) validation. This approach reduced regression cycle time, minimized resource utilization, and improved software quality, enabling faster and more reliable releases.",
+      ],
+      buttonText: "Case Study",
+      pdfLink:
+        "https://www.calsoftinc.com/blogs/the-impact-of-ai-on-software-testing-from-automation-to-intelligent-qa.html",
+      stats: [
+        { count: "60%", text: "Faster validation cycles" },
+        { count: "80k+", text: "Optimized resource utilization" },
+      ],
     },
     {
       id: 3,
-      image: blogimg1,
-      title: "Lorem Ipsum is simply dummy text of the printing",
-      link: "#",
-    },
-    {
-      id: 4,
-      image: blogimg1,
-      title: "Lorem Ipsum is simply dummy text of the printing",
-      link: "#",
+      title: "AI-Powered Optimization of Data Center Operations",
+      description: [
+        "<strong>Insight:</strong> The digital transformation journey has increased the prominence of Data Centers (DCs) for business success. The futuristic DCs are intricate systems that demand scrupulous monitoring to maintain higher operational efficiency and availability. Calsoft partnered with a technology company that provides a wide range of hardware and software services, including storage, security, and networking solutions, and developed a solution to realize predictive maintenance and management to diagnose and prevent Data Centre failures.",
+      ],
+      buttonText: "Case Study",
+      pdfLink:
+        "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
+      stats: [
+        {
+          count: "40%",
+          text: "Reduction in issues",
+        },
+        { count: "100k+", text: "maximizing ROI" },
+      ],
     },
   ];
+
+  const sliderData = [
+    { id: 1, image: blogimg1, title: "Case Study One" },
+    { id: 2, image: blogimg1, title: "Case Study Two" },
+    { id: 3, image: blogimg1, title: "Case Study Three" },
+  ];
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const caseStudyData = caseStudyDataArray[selectedIndex];
   return (
     <>
       <section className="md:py-14 py-10" id="case-studies">
         <div className="container mx-auto px-4 md:px-20">
+          {/* Top Icon + Title */}
           <div className="flex gap-6 items-center mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 flex items-center justify-center">
               <Image src={icon2} alt="icon" width={16} height={16} />
             </div>
-            <p className="font-light">{title}</p>
+            <p className="font-light">Case Studies</p>
           </div>
 
+          {/* Content Section */}
           <div className="pt-8 gradient-border">
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-            >
-              <motion.h2
-                className="text-3xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
-                dangerouslySetInnerHTML={{ __html: heading }}
-              ></motion.h2>
-            </motion.div>
-            <main className="mt-8 flex flex-col md:flex-row gap-8 md:gap-12 items-stretch ">
+            {/* Heading */}
+            <motion.h2
+              key={caseStudyData.title}
+              className="text-3xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+              dangerouslySetInnerHTML={{ __html: heading }}
+            ></motion.h2>
+
+            {/* Main Content */}
+            <main className="mt-8 flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
+              {/* Logo box */}
               <motion.div
                 className="bg-[#2E3092] text-white p-4 md:p-8 rounded-[20px] w-full md:w-2/3 flex flex-col justify-center"
                 initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
               >
                 <div className="w-32 h-24 mb-6 bg-[#484A97] rounded-2xl flex justify-center items-center p-2">
                   <Image
@@ -225,6 +245,7 @@ export const Casestudy = () => {
                 </h2>
               </motion.div>
 
+              {/* Description & Button */}
               <div className="w-full md:w-2/3 flex flex-col justify-between">
                 <div>
                   {caseStudyData.description.map((desc, index) => (
@@ -233,34 +254,45 @@ export const Casestudy = () => {
                       className="text-[#959595] text-sm md:text-[15px] font-light p-2"
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.2 }}
                       dangerouslySetInnerHTML={{ __html: desc }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      viewport={{ once: false, amount: 0.3 }}
                     />
                   ))}
-                  <motion.button
+                  <motion.a
+                    href={caseStudyData.pdfLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="relative flex mt-6 md:mt-10 w-[220px] gap-2 justify-between items-center px-8 py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
                     style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25)" }}
                     whileHover={{ scale: 1.03 }}
+                    viewport={{ once: false, amount: 0.3 }}
                   >
                     <span className="relative z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500">
                       {caseStudyData.buttonText}{" "}
                       <IoArrowForwardCircleSharp className="text-3xl" />
                     </span>
                     <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
-                  </motion.button>
+                  </motion.a>
                 </div>
               </div>
+
+              {/* Stats Cards */}
               <div className="w-full md:w-2/3">
                 <div className="space-y-4">
                   {caseStudyData.stats.map((stat, index) => (
                     <motion.div
                       key={index}
-                      className="bg-white rounded-2xl p-4 flex items-center justify-between w-full cursor-pointer transition-transform"
+                      className="bg-white rounded-2xl p-4 flex gap-4 items-center justify-between w-full cursor-pointer transition-transform"
                       initial={{ opacity: 0, x: 50 }}
-                      animate={{ opacity: 1, x: 0 }}
                       whileHover={{ x: -30 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.2, delay: 0.2 }}
+                      viewport={{ once: false, amount: 0.3 }}
                       style={{ boxShadow: "0px 2px 9px #D9DBF1" }}
                     >
-                      <div className="flex w-[30%] gap-4 flex-wrap justify-between">
+                      <div className="flex w-[40%] gap-4 flex-wrap justify-between">
                         <p className="text-black text-sm">{stat.count}</p>
                         <div className="flex gap-0 -mt-2">
                           <Image src={man1} alt="man" width={40} height={40} />
@@ -280,10 +312,8 @@ export const Casestudy = () => {
                           />
                         </div>
                       </div>
-                      <div>
-                        <div className="flex gap-4 md:w-[70%] flex-wrap justify-between">
-                          <p className="font-semibold">{stat.text}</p>
-                        </div>
+                      <div className="flex gap-4 md:w-[50%] flex-wrap justify-between">
+                        <p className="font-semibold">{stat.text}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -291,6 +321,7 @@ export const Casestudy = () => {
               </div>
             </main>
 
+            {/* Slider */}
             <div className="relative w-full py-10">
               <Swiper
                 modules={[Navigation]}
@@ -304,9 +335,35 @@ export const Casestudy = () => {
                 navigation
                 className="slider_t play_slider"
               >
-                {sliderData.map((item) => (
+                {sliderData.map((item, index) => (
                   <SwiperSlide key={item.id}>
-                    <BlogCard data={item} />
+                    <motion.div
+                      onClick={() => setSelectedIndex(index)}
+                      className="group relative bg-white cursor-pointer"
+                      initial={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.5 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                    >
+                      <Image
+                        src={item.image}
+                        alt="Slide"
+                        className="w-full h-44 md:h-56 rounded-2xl object-cover"
+                      />
+                      <div className="py-4">
+                        <p className="text-base font-medium text-black">
+                          {item.title}
+                        </p>
+                      </div>
+                      <motion.div
+                        whileHover={{ y: -8 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="absolute -top-4 -right-4 bg-white p-2 border-2 border-[#2E3092] rounded-full shadow-md group-hover:scale-105 transition-transform duration-300"
+                      >
+                        <LuArrowUpRight className="text-3xl text-[#2E3092]" />
+                      </motion.div>
+                    </motion.div>
                   </SwiperSlide>
                 ))}
               </Swiper>

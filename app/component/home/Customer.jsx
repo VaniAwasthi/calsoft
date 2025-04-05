@@ -76,8 +76,9 @@ const Customer = () => {
           </div>
           <motion.div
             initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 4, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            viewport={{ once: false, amount: 0.3 }}
             className="my-4 gradient-border"
           >
             <div className="flex justify-between flex-col lg:flex-row">
@@ -95,17 +96,19 @@ const Customer = () => {
                 </motion.h2>
                 <motion.h2
                   initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  viewport={{ once: false, amount: 0.3 }}
                   className="text-3xl md:text-[38px] font-regular"
                 >
                   by industry leaders.
                 </motion.h2>
 
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
+                  initial={{ y: 10, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  viewport={{ once: false, amount: 0.3 }}
                 >
                   <p className="mt-[3rem] text-sm text-[#7E7E7E] w-[300px]">
                     Powering Fortune 500 companies, fast-growing start-ups, and
@@ -145,8 +148,13 @@ const Customer = () => {
                         <div className="absolute bottom-4 left-4 text-left text-white px-4 hover:cursor-pointer">
                           <motion.p
                             initial={{ y: -100, opacity: 0 }}
-                            animate={{ y: 4, opacity: 1 }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            transition={{
+                              duration: 1,
+                              ease: "easeOut",
+                              delay: 0.2,
+                            }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: false, amount: 0.3 }}
                             className="text-xl lg:text-3xl font-bold hover:scale-105"
                           >
                             {item.value}
@@ -154,8 +162,13 @@ const Customer = () => {
 
                           <motion.p
                             initial={{ y: -100, opacity: 0 }}
-                            animate={{ y: 1, opacity: 1 }}
-                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            transition={{
+                              duration: 0.8,
+                              ease: "easeOut",
+                              delay: 0.2,
+                            }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            viewport={{ once: false, amount: 0.3 }}
                             className="text-xl py-2 font-normal hover:scale-105"
                           >
                             {item.label}
@@ -171,8 +184,8 @@ const Customer = () => {
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }} // Only triggers once when in view
               variants={gridVariants}
+              viewport={{ once: false, amount: 0.3 }}
               className="grid grid-cols-6 gap-4 mt-[5rem]"
             >
               {[...Array(6)].map((_, index) => (
