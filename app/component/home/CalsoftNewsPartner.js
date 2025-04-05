@@ -240,25 +240,29 @@ export const CalsoftPartner = () => {
   const data = [
     {
       title: "Cloud Partnerships",
-      colSpan: "md:col-span-3",
-      gridCols: 1,
-      logos: [logo1, logo2, logo3],
+      colSpan: 3,
+      gridCols: 2,
+      logos: [
+        { src: logo1, colSpan: 2 },
+        { src: logo2, colSpan: 1 },
+        { src: logo3, colSpan: 1 },
+      ],
     },
     {
       title: "Data & Analytics Partnerships",
-      colSpan: "md:col-span-3",
+      colSpan: 3,
       gridCols: 1,
       logos: [logo4, logo5],
     },
     {
       title: "Gen AI",
-      colSpan: "md:col-span-6",
+      colSpan: 6,
       gridCols: 3,
       logos: [logo6, logo7, logo8, logo9, logo10],
     },
     {
       title: "Technology Partners",
-      colSpan: "md:col-span-9",
+      colSpan: 9,
       gridCols: 5,
       logos: [
         logo11,
@@ -274,7 +278,7 @@ export const CalsoftPartner = () => {
     },
     {
       title: "Industry Partnerships",
-      colSpan: "md:col-span-3",
+      colSpan: 3,
       gridCols: 1,
       logos: [logo20, logo21],
     },
@@ -311,70 +315,164 @@ export const CalsoftPartner = () => {
 
           {/* Grid Container */}
           <div className="grid md:grid-cols-12 gap-8 mb-6 mt-10">
-            {data.map((item, index) => (
+            {/* Cloud Partnerships */}
+            <div className="md:col-span-3 flex flex-col h-full">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
                 viewport={{ once: true }}
-                className={`${item.colSpan} flex flex-col h-full`}
+                className="flex flex-col h-full"
               >
-                <p className="mb-4 font-semibold text-lg">{item.title}</p>
-
-                {/* Card Layout */}
-                <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] h-full">
-                  <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.6)] to-[rgba(14,14,44,0.1)]"></div>
-
-                  <div className="relative bg-white rounded-[17px] p-4 shadow-md flex flex-col items-center h-full justify-center w-full">
-                    {item.title === "Cloud Partnerships" ? (
-                      <div className="flex flex-col w-full gap-0">
-                        <Image
-                          src={item.logos[0]}
-                          alt="Logo 1"
-                          width={200}
-                          height={80}
-                          className="w-full max-h-20 object-contain"
-                        />
-                        <div className="grid grid-cols-2 gap-2 items-center">
-                          <Image
-                            src={item.logos[1]}
-                            alt="Logo 2"
-                            width={100}
-                            height={60}
-                            className="w-full max-h-20 object-contain"
-                          />
-                          <Image
-                            src={item.logos[2]}
-                            alt="Logo 3"
-                            width={100}
-                            height={60}
-                            className="w-full max-h-10 object-contain"
-                          />
-                        </div>
-                      </div>
-                    ) : (
-                      <div
-                        className={`grid grid-cols-${
-                          item.gridCols || 2
-                        } items-center gap-4 w-full`}
-                      >
-                        {item.logos.map((logo, idx) => (
-                          <Image
-                            key={idx}
-                            src={logo}
-                            alt={`logo-${idx}`}
-                            width={100}
-                            height={60}
-                            className="max-h-20 w-auto object-contain mx-auto"
-                          />
-                        ))}
-                      </div>
-                    )}
+                <p className="mb-4 font-semibold">Cloud Partnerships</p>
+                <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
+                  <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
+                  <div className="relative bg-white rounded-[17px] p-4 shadow-md flex flex-col h-full">
+                    <Image
+                      src={logo1}
+                      className="max-h-32 w-32 object-contain mx-auto"
+                      alt="logo"
+                    />
+                    <div className="flex gap-4 justify-between items-center">
+                      <Image
+                        src={logo2}
+                        className="max-h-32 w-32 object-contain mx-auto"
+                        alt="logo"
+                      />
+                      <Image
+                        src={logo3}
+                        className="max-h-16 w-16 object-contain mx-auto"
+                        alt="logo"
+                      />
+                    </div>
                   </div>
                 </div>
               </motion.div>
-            ))}
+            </div>
+
+            {/* Data & Analytics Partnerships */}
+            <div className="md:col-span-3 flex flex-col h-full">
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+                className="flex flex-col h-full"
+              >
+                <p className="mb-4 font-semibold">
+                  Data & Analytics Partnerships
+                </p>
+                <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
+                  <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
+                  <div className="relative bg-white grid gap-4 rounded-[17px] p-4 shadow-md h-full">
+                    <Image
+                      src={logo4}
+                      className="max-h-42 w-42 object-contain mx-auto"
+                      alt="logo"
+                    />
+                    <Image
+                      src={logo5}
+                      className="max-h-42 w-42 object-contain mx-auto"
+                      alt="logo"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Gen AI */}
+            <div className="md:col-span-6 flex flex-col h-full">
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+                className="flex flex-col h-full"
+              >
+                <p className="mb-4 font-semibold">Gen AI</p>
+                <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
+                  <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
+                  <div className="relative bg-white rounded-[17px] p-4 shadow-md h-full grid grid-cols-3 gap-4 items-center">
+                    {[logo6, logo7, logo8, logo9, logo10].map((logo, i) => (
+                      <Image
+                        key={i}
+                        src={logo}
+                        className="max-h-32 w-32 object-contain mx-auto"
+                        alt={`logo-${i}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Technology Partners */}
+            <div className="md:col-span-9 flex flex-col h-full">
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+                className="flex flex-col h-full"
+              >
+                <p className="mb-4 font-semibold">Technology Partners</p>
+                <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
+                  <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
+                  <div className="relative bg-white rounded-[17px] p-4 shadow-md h-full flex flex-col gap-4">
+                    <div className="grid grid-cols-5 gap-4 items-center">
+                      {[logo11, logo12, logo13, logo14, logo15].map(
+                        (logo, i) => (
+                          <Image
+                            key={i}
+                            src={logo}
+                            className="max-h-32 w-32 object-contain mx-auto"
+                            alt={`logo-${i}`}
+                          />
+                        )
+                      )}
+                    </div>
+                    <div className="grid grid-cols-5 gap-4 items-center">
+                      {[logo16, logo17, logo18, logo19].map((logo, i) => (
+                        <Image
+                          key={i}
+                          src={logo}
+                          className="max-h-32 w-32 object-contain mx-auto"
+                          alt={`logo-${i + 5}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Industry Partnerships */}
+            <div className="md:col-span-3 flex flex-col h-full">
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+                className="flex flex-col h-full"
+              >
+                <p className="mb-4 font-semibold">Industry Partnerships</p>
+                <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
+                  <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
+                  <div className="relative bg-white grid gap-4 items-center rounded-[17px] p-4 shadow-md h-full">
+                    <Image
+                      src={logo20}
+                      className="max-h-32 w-32 object-contain mx-auto"
+                      alt="logo"
+                    />
+                    <Image
+                      src={logo21}
+                      className="max-h-32 w-32 object-contain mx-auto"
+                      alt="logo"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
