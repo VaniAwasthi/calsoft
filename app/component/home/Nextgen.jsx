@@ -40,8 +40,9 @@ const Nextgen = () => {
             {/* tab */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 2, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.2, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               <div className="w-full bg-[#E5E5E5]  flex justify-between items-center rounded-full">
                 {navItems.map((item, index) => (
@@ -62,16 +63,18 @@ const Nextgen = () => {
 
             <motion.div
               initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 2, opacity: 1 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
               className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-[4rem] mb-[2rem]"
             >
               {/* Image */}
               {activeIndustry && (
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 4, opacity: 1 }}
+                  whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: false, amount: 0.3 }}
                   className="lg:col-span-4"
                 >
                   <Image
@@ -89,16 +92,18 @@ const Nextgen = () => {
                   <>
                     <motion.h2
                       initial={{ y: 50, opacity: 0 }}
-                      animate={{ y: 2, opacity: 1 }}
+                      whileInView={{ y: 0, opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.3 }}
+                      viewport={{ once: false, amount: 0.3 }}
                       className=" text-3xl py-3"
                     >
                       {activeIndustry.title}
                     </motion.h2>
                     <motion.p
                       initial={{ y: 50, opacity: 0 }}
-                      animate={{ y: 2, opacity: 1 }}
+                      whileInView={{ y: 0, opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
+                      viewport={{ once: false, amount: 0.3 }}
                       className="py-3 text-lg"
                     >
                       {activeIndustry.description}
@@ -133,18 +138,20 @@ const Nextgen = () => {
 
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
-                  animate={{ y: 4, opacity: 1 }}
+                  whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.9 }}
+                  viewport={{ once: false, amount: 0.3 }}
                   className="flex flex-col justify-between mt-16 space-y-6"
                 >
                   <div className="flex flex-wrap gap-6">
                     {activeIndustry?.iconData.map((card) => (
                       <motion.div
                         initial={{ y: 50, opacity: 0 }}
-                        animate={{ y: 4, opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.9 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 0.9, delay: 0.9 }}
+                        viewport={{ once: false, amount: 0.3 }}
                         key={card.id}
-                        className="card-hover w-[100px] h-[90px] transition-transform duration-500 hover:scale-150 perspective cursor-pointer"
+                        className="card-hover w-[70px] h-[60px] md:w-[90px] md:h-[80px] xl:w-[100px] xl:h-[90px] transition-transform duration-500 hover:scale-150 perspective cursor-pointer"
                       >
                         <div className="card-inner relative w-full h-full">
                           {/* Front Side */}
@@ -159,7 +166,7 @@ const Nextgen = () => {
 
                           {/* Back Side */}
                           <div className="absolute inset-0 flex items-center justify-center bg-[#FFFFFF] text-[#021553] rounded-lg rotate-y-180  transform scale-105 mx-2 backface-hidden">
-                            <p className="text-[10px] font-semibold text-center px-2">
+                            <p className="text-[6px] md:text-[8px] xl:text-[10px] font-semibold text-center px-2">
                               {card.title}
                             </p>
                           </div>
