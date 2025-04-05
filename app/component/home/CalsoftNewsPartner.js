@@ -110,9 +110,9 @@ export const CalsoftNews = () => {
           </div> */}
             <motion.div
               initial={{ opacity: 0, x: -100 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.2, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               <div className="pt-8 gradient-border">
                 <motion.h2
@@ -153,9 +153,9 @@ export const CalsoftNews = () => {
             <div className="md:col-span-4 md:pl-6">
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.3 }}
               >
                 <h3 className="text-3xl mb-8 flex gap-6 items-center md:text-[36px] font-semibold text-black">
                   Calsoft News Section
@@ -304,9 +304,9 @@ export const CalsoftPartner = () => {
         <div className="pt-8 gradient-border">
           <motion.div
             initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.3 }}
           >
             <motion.h2 className="text-3xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent">
               {heading}
@@ -321,7 +321,7 @@ export const CalsoftPartner = () => {
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-full"
               >
                 <p className="mb-4 font-semibold">Cloud Partnerships</p>
@@ -356,7 +356,7 @@ export const CalsoftPartner = () => {
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-full"
               >
                 <p className="mb-4 font-semibold">
@@ -386,7 +386,7 @@ export const CalsoftPartner = () => {
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-full"
               >
                 <p className="mb-4 font-semibold">Gen AI</p>
@@ -412,7 +412,7 @@ export const CalsoftPartner = () => {
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-full"
               >
                 <p className="mb-4 font-semibold">Technology Partners</p>
@@ -452,7 +452,7 @@ export const CalsoftPartner = () => {
                 initial={{ opacity: 0, x: -100 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-full"
               >
                 <p className="mb-4 font-semibold">Industry Partnerships</p>
