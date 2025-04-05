@@ -1,0 +1,371 @@
+"use client"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import 'swiper/css/scrollbar';
+import { Scrollbar } from 'swiper/modules';
+
+import img01 from "../../assets/home/News4.webp"
+import img02 from "../../assets/home/News3.webp"
+import img03 from "../../assets/home/News2.webp"
+import img04 from "../../assets/home/News1.webp"
+import icon1 from "../../assets/home/icon1.svg"
+import border from "../../assets/home/Branch.svg"
+import arrow from "../../assets/home/arrow.svg"
+import bgimg from "../../assets/home/pattern.svg"
+import bgimg1 from "../../assets/home/pattern1.svg"
+import icon2 from "../../assets/home/icon2.svg"
+import logo1 from "../../assets/home/logo1.png"
+import logo2 from "../../assets/home/logo2.png"
+import logo3 from "../../assets/home/logo3.png"
+import logo4 from "../../assets/home/logo4.png"
+import logo5 from "../../assets/home/logo05.png"
+import logo6 from "../../assets/home/logo6.png"
+import logo7 from "../../assets/home/logo7.png"
+import logo8 from "../../assets/home/logo8.png"
+import logo9 from "../../assets/home/logo9.png"
+import logo10 from "../../assets/home/logo10.png"
+import logo11 from "../../assets/home/logo11.png"
+import logo12 from "../../assets/home/logo12.png"
+import logo13 from "../../assets/home/logo13.png"
+import logo14 from "../../assets/home/logo14.png"
+import logo15 from "../../assets/home/logo15.png"
+import logo16 from "../../assets/home/logo16.png"
+import logo17 from "../../assets/home/logo17.png"
+import logo18 from "../../assets/home/logo18.png"
+import logo19 from "../../assets/home/logo19.png"
+import logo20 from "../../assets/home/logo20.png"
+import logo21 from "../../assets/home/logo21.png"
+
+
+import { IoArrowForwardCircleSharp } from "react-icons/io5";
+import { BsArrowUpRight } from "react-icons/bs";
+import Link from "next/link";
+
+
+
+const data = [
+  {
+    id: 1,
+    img: img01,
+    title: "Accelerate high-quality software products.",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  },
+  {
+    id: 2,
+    img: img02,
+    title: "Enhance Your Development Process",
+    description: "Discover innovative solutions for modern software development."
+  },
+  {
+    id: 3,
+    img: img03,
+    title: "Next-Gen Technology Solutions",
+    description: "Explore new trends and advancements in technology for the future."
+  },
+  {
+    id: 4,
+    img: img04,
+    title: "Revolutionizing the IT Industry",
+    description: "Bringing positive changes through digital transformation."
+  },
+  {
+    id: 5,
+    img: img01,
+    title: "Accelerate high-quality software products.",
+    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+  },
+  {
+    id: 6,
+    img: img02,
+    title: "Enhance Your Development Process",
+    description: "Discover innovative solutions for modern software development."
+  }
+];
+export const CalsoftNews = () => {
+  const [selected, setSelected] = useState(data[0]);
+  return (
+    <>
+      <section className="md:py-14 py-10"
+        style={{ background: `url(${bgimg.src}) center center/ cover no-repeat` }}
+      >
+
+        <div className="container mx-auto px-4 md:px-20">
+          <div className="flex gap-6 md:gap-6 items-center mb-6">
+            <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 flex items-center justify-center">
+              <Image src={icon1} alt="icon" width={16} height={16} />
+            </div>
+            <p className="font-light">Latest at Calsoft</p>
+          </div>
+          <div className="flex gap-4" >
+            {/* <div className="min-w-6 text-center">
+          <Image src={border} alt="icon"  width={3} className="h-full mx-auto" />
+          </div> */}
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+
+            >
+              <div className="pt-8 gradient-border">
+                <motion.h2
+                  key={selected.title}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-3xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent"
+                >
+                  {selected.title}
+                </motion.h2>
+                <motion.p
+                  key={selected.description}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="mt-2 text-xl text-black mb-12"
+                >
+                  {selected.description}
+                </motion.p>
+
+                <Link href="#" className="relative flex w-[220px] gap-2 justify-between items-center  px-8 py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
+                  style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25" }}>
+                  <span className="relative z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500">
+                    Explore More <IoArrowForwardCircleSharp className="text-3xl tra" />
+                  </span>
+                  <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+
+
+
+          <div className="grid  md:grid-cols-12 gap-26 mb-6 mt-20">
+            <div className="md:col-span-4 md:pl-6">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+
+              >
+                <h3 className="text-3xl mb-8 flex gap-6 items-center md:text-[36px] font-semibold text-black">
+                  Calsoft News Section
+                  <Link href="#"> <Image className="transition-all duration-500 hover:-mt-4" src={arrow} alt="arrow" /></Link></h3>
+                <p className="mt-2 text-[#959595] text-sm md:text-[15px]">
+                  We focus on bringing positivity to the world and focus on stories that showcase the best of humanity.
+                </p>
+              </motion.div>
+            </div>
+
+            <div className="md:col-span-8">
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+
+              >
+                <Swiper
+                  spaceBetween={10}
+                  slidesPerView={2}
+                  breakpoints={{
+                    640: {
+                      slidesPerView: 2,
+                      spaceBetween: 10,
+                    },
+                    768: {
+                      slidesPerView: 3,
+                      spaceBetween: 10,
+                    },
+                    1024: {
+                      slidesPerView: 4,
+                      spaceBetween: 10,
+                    },
+                  }}
+                  scrollbar={{
+                    hide: false,
+                  }}
+                  modules={[Scrollbar]}
+                  className="w-full "
+                >
+                  {data.map((item) => (
+                    <SwiperSlide key={item.id} className="items-center">
+                      <motion.div
+                        className={`cursor-pointer rounded-lg mb-6 overflow-hidden1 transition-all duration-500 ${selected.id === item.id ? "scale-100" : "scale-70"
+                          }`}
+                        onClick={() => setSelected(item)}
+                      // whileHover={{ scale: 1.05 }}
+                      >
+                        <Image
+                          src={item.img}
+                          alt={item.title}
+                          width={300}
+                          height={200}
+                          className="object-cover rounded-lg"
+                        />
+                      </motion.div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </motion.div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </section>
+
+    </>
+  )
+}
+
+
+
+
+export const CalsoftPartner = () => {
+  const title = "Partners";
+  const heading = "Powering Ahead, Together.";
+  const data = [
+    {
+      title: "Cloud Partnerships",
+      colSpan: "md:col-span-3",
+      gridCols: 1,
+      logos: [logo1, logo2, logo3],
+    },
+    {
+      title: "Data & Analytics Partnerships",
+      colSpan: "md:col-span-3",
+      gridCols: 1,
+      logos: [logo4, logo5],
+    },
+    {
+      title: "Gen AI",
+      colSpan: "md:col-span-6",
+      gridCols: 3,
+      logos: [logo6, logo7, logo8, logo9, logo10],
+    },
+    {
+      title: "Technology Partners",
+      colSpan: "md:col-span-9",
+      gridCols: 5,
+      logos: [
+        logo11, logo12, logo13, logo14, logo15,
+        logo16, logo17, logo18, logo19,
+      ],
+    },
+    {
+      title: "Industry Partnerships",
+      colSpan: "md:col-span-3",
+      gridCols: 1,
+      logos: [logo20, logo21],
+    },
+  ];
+
+  return (
+    <section
+      className="md:py-14 py-10"
+      style={{ background: `url(${bgimg1.src}) center center / cover no-repeat` }}
+    >
+      <div className="container mx-auto px-4 md:px-20">
+        {/* Section Title */}
+        <div className="flex gap-6 items-center mb-6">
+          <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 flex items-center justify-center">
+            <Image src={icon2} alt="icon" width={16} height={16} />
+          </div>
+          <p className="font-light">{title}</p>
+        </div>
+
+        <div className="pt-8 gradient-border">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <motion.h2 className="text-3xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent">
+              {heading}
+            </motion.h2>
+          </motion.div>
+
+          {/* Grid Container */}
+          <div className="grid md:grid-cols-12 gap-8 mb-6 mt-10">
+            {data.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className={`${item.colSpan} flex flex-col h-full`}
+              >
+                <p className="mb-4 font-semibold text-lg">{item.title}</p>
+
+                {/* Card Layout */}
+                <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] h-full">
+                  <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.6)] to-[rgba(14,14,44,0.1)]"></div>
+
+                  <div className="relative bg-white rounded-[17px] p-4 shadow-md flex flex-col items-center h-full justify-center w-full">
+                    {item.title === "Cloud Partnerships" ? (
+                      <div className="flex flex-col w-full gap-0">
+                        <Image
+                          src={item.logos[0]}
+                          alt="Logo 1"
+                          width={200}
+                          height={80}
+                          className="w-full max-h-20 object-contain"
+                        />
+                        <div className="grid grid-cols-2 gap-2 items-center">
+                          <Image
+                            src={item.logos[1]}
+                            alt="Logo 2"
+                            width={100}
+                            height={60}
+                            className="w-full max-h-20 object-contain"
+                          />
+                          <Image
+                            src={item.logos[2]}
+                            alt="Logo 3"
+                            width={100}
+                            height={60}
+                            className="w-full max-h-10 object-contain"
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className={`grid grid-cols-${item.gridCols || 2} items-center gap-4 w-full`}>
+                        {item.logos.map((logo, idx) => (
+                          <Image
+                            key={idx}
+                            src={logo}
+                            alt={`logo-${idx}`}
+                            width={100}
+                            height={60}
+                            className="max-h-20 w-auto object-contain mx-auto"
+                          />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+
+
+
+
+
+
+
