@@ -94,3 +94,30 @@ body {
 .card-hover:hover .card-inner {
   transform: rotateY(180deg);
 }
+.pagination_white .swiper-pagination {
+  bottom: 0 !important;
+}
+.pagination_white  .swiper-pagination-bullet{
+  background: #6C7699;
+  width: 6px;
+  height: 6px;
+}
+.pagination_white .swiper-pagination-bullet-active{
+  background: #D9D9D9;
+   transform: scale(1.2);
+}
+.pagination_white{
+  padding-bottom: 2.4rem !important;
+}
+
+@media (max-width:767px) {
+  .gradient-border{
+  border: none;
+  padding: 0;
+  margin: 0;
+  }
+  .slider_t .swiper-wrapper{
+    padding-top: 0;
+  }
+
+}

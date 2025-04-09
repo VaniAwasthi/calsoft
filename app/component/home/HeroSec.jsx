@@ -36,9 +36,9 @@ const HeroSec = () => {
             buttonText={slide.buttonText}
             buttonImage={ButtonImage}
             hoverImage={ButtonImage}
-            titleOneClass="font-bold md:text-5xl text-xl mt-2 "
-            titleTwoClass="text-lg md:text-5xl mt-4"
-            descriptionClass="mt-4 text-lg leading-8 w-[200px] md:w-full"
+            titleOneClass="font-bold md:text-5xl text-[28px] mt-2 "
+            titleTwoClass="text-[28px] md:text-5xl md:mt-4"
+            descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[200px] md:w-full"
             BgClassname="object-cover w-full h-full object-center"
           />
 

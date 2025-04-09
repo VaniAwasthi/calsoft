@@ -77,10 +77,10 @@ export const Services = () => {
       <section className="py-10 md:py-14 bg-[#021553]" id="services">
         <div className="container mx-auto px-4 md:px-20">
           <div className="flex gap-6 items-center mb-6">
-            <div className="rounded-full bg-white w-8 h-8 p-2 flex items-center justify-center">
+            <div className="rounded-full bg-white w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon3} alt="icon" width={16} height={16} />
             </div>
-            <p className="font-light text-white">{title}</p>
+            <p className="font-light text-white text-sm md:text-base">{title}</p>
           </div>
 
           <div className="pt-8 gradient-border">
@@ -90,11 +90,11 @@ export const Services = () => {
               transition={{ duration: 1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <motion.h2 className="text-3xl md:text-[36px] font-normal text-white">
+              <motion.h2 className="text-2xl md:text-[36px] font-normal text-white">
                 {heading}
               </motion.h2>
             </motion.div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 mt-10 lg:grid-cols-3 gap-6 md:gap-10">
+            <div className="grid grid-cols-2 sm:grid-cols-2 mt-10 lg:grid-cols-3 gap-6 md:gap-10">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
@@ -102,29 +102,29 @@ export const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="bg-[#2E3092] text-white p-6 py-8 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start"
+                  className="bg-[#2E3092] text-white  p-3 py-6 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start"
                 >
-                  <div className="flex gap-6 flex-wrap md:flex-nowrap">
+                  <div className="flex gap-2 md:gap-6 flex-wrap md:flex-nowrap w-[95%] md:w-full">
                     <div className="w-42">
                       <Image
                         src={service.icon}
                         alt={service.title}
                         width={50}
                         height={50}
-                        className="mb-4 w-full h-full object-contain"
+                        className="mb-4 md:w-full md:h-full h-8 object-contain"
                       />
                     </div>
 
                     <div className="w-full">
-                      <h3 className="text-lg font-semibold mb-2">
+                      <h3 className="text-sm md:text-lg md:w-full w-[90%] font-semibold mb-2">
                         {service.title}
                       </h3>
-                      <p className="text-white text-sm font-light">
+                      <p className="text-white line-clamp-3  text-xs md:text-sm font-[200] md:font-light">
                         {service.description}
                       </p>
                       <Link
                         href={service.link}
-                        className="mt-4 text-sm inline-block text-white font-light"
+                        className="mt-4 text-xs  md:text-sm inline-block text-white font-light"
                       >
                         Know more...
                       </Link>
@@ -204,28 +204,28 @@ export const Casestudy = () => {
     <>
       <section className="md:py-14 py-10" id="case-studies">
         <div className="container mx-auto px-4 md:px-20">
-          {/* Top Icon + Title */}
-          <div className="flex gap-6 items-center mb-6">
-            <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 flex items-center justify-center">
+
+          <div className="flex gap-6 items-center mb-2 md:mb-6">
+            <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon2} alt="icon" width={16} height={16} />
             </div>
-            <p className="font-light">Case Studies</p>
+            <p className="font-light text-sm md:text-base ">Case Studies</p>
           </div>
 
-          {/* Content Section */}
+
           <div className="pt-8 gradient-border">
-            {/* Heading */}
+
             <motion.h2
               key={caseStudyData.title}
-              className="text-3xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+              className="text-2xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
               dangerouslySetInnerHTML={{ __html: heading }}
             ></motion.h2>
 
-            {/* Main Content */}
+
             <main className="mt-8 flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
-              {/* Logo box */}
+
               <motion.div
-                className="bg-[#2E3092] text-white p-4 md:p-8 rounded-[20px] w-full md:w-2/3 flex flex-col justify-center"
+                className="bg-[#2E3092] text-white p-4 md:p-8 rounded-[20px]  md:w-2/3 flex flex-col justify-center"
                 initial={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -240,13 +240,13 @@ export const Casestudy = () => {
                     height={100}
                   />
                 </div>
-                <h2 className="text-2xl font-semibold">
+                <h2 className="text-lg font-medium md:text-2xl md:font-semibold">
                   {caseStudyData.title}
                 </h2>
               </motion.div>
 
-              {/* Description & Button */}
-              <div className="w-full md:w-2/3 flex flex-col justify-between">
+
+              <div className="  md:w-2/3 flex flex-col justify-between">
                 <div>
                   {caseStudyData.description.map((desc, index) => (
                     <motion.p
@@ -264,12 +264,12 @@ export const Casestudy = () => {
                     href={caseStudyData.pdfLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative flex mt-6 md:mt-10 w-[220px] gap-2 justify-between items-center px-8 py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
+                    className="relative flex mt-6 md:mt-10  w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
                     style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25)" }}
                     whileHover={{ scale: 1.03 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
-                    <span className="relative z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500">
+                    <span className="relative justify-center  z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
                       {caseStudyData.buttonText}{" "}
                       <IoArrowForwardCircleSharp className="text-3xl" />
                     </span>
@@ -278,13 +278,13 @@ export const Casestudy = () => {
                 </div>
               </div>
 
-              {/* Stats Cards */}
-              <div className="w-full md:w-2/3">
-                <div className="space-y-4">
+
+              <div className="w-full  md:w-2/3">
+                <div className="space-y-4 md:block flex gap-4">
                   {caseStudyData.stats.map((stat, index) => (
                     <motion.div
                       key={index}
-                      className="bg-white rounded-2xl p-4 flex gap-4 items-center justify-between w-full cursor-pointer transition-transform"
+                      className="bg-white rounded-2xl h-full p-4 flex-wrap flex gap-4 items-center justify-between cursor-pointer transition-transform md:w-full w-2/4"
                       initial={{ opacity: 0, x: 50 }}
                       whileHover={{ x: -30 }}
                       whileInView={{ x: 0, opacity: 1 }}
@@ -313,7 +313,7 @@ export const Casestudy = () => {
                         </div>
                       </div>
                       <div className="flex gap-4 md:w-[50%] flex-wrap justify-between">
-                        <p className="font-semibold">{stat.text}</p>
+                        <p className="md:font-semibold md:text-base text-sm font-medium">{stat.text}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -321,7 +321,7 @@ export const Casestudy = () => {
               </div>
             </main>
 
-            {/* Slider */}
+
             <div className="relative w-full py-10">
               <Swiper
                 modules={[Navigation]}

@@ -67,12 +67,12 @@ const Customer = () => {
         }}
         id="customers"
       >
-        <div className="mx-auto px-4 xl:px-20">
-          <div className="flex gap-6 md:gap-6 items-center mb-6">
-            <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 flex items-center justify-center">
+        <div className="mx-auto py-8 md:py-0 px-4 xl:px-20">
+          <div className="flex gap-6 md:gap-6 items-center mb-2 md:mb-6">
+            <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon} alt="icon" width={16} height={16} />
             </div>
-            <p className="font-light">Customers</p>
+            <p className="font-light text-sm md:text-base">Customers</p>
           </div>
           <motion.div
             initial={{ y: -100, opacity: 0 }}
@@ -82,12 +82,12 @@ const Customer = () => {
             className="my-4 gradient-border"
           >
             <div className="flex justify-between flex-col lg:flex-row">
-              <div className="pt-8 w-1/2">
+              <div className="md:pt-8 w-full md:w-1/2">
                 <motion.h2
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="text-3xl md:text-[38px] font-normal "
+                  className="text-2xl md:text-[38px] font-normal "
                 >
                   <span className="font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">
                     Proven .
@@ -99,7 +99,7 @@ const Customer = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 1, delay: 0.2 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="text-3xl md:text-[38px] font-regular"
+                  className="text-2xl md:text-[38px] font-regular"
                 >
                   by industry leaders.
                 </motion.h2>
@@ -110,7 +110,7 @@ const Customer = () => {
                   transition={{ duration: 1, delay: 0.2 }}
                   viewport={{ once: false, amount: 0.3 }}
                 >
-                  <p className="mt-[3rem] text-sm text-[#7E7E7E] w-[300px]">
+                  <p className="mt-4 w-full md:mt-[3rem] text-[13px] md:text-base mb-8 text-[#7E7E7E] md:w-[300px]">
                     Powering Fortune 500 companies, fast-growing start-ups, and
                     digital innovators in their transformation journey.
                   </p>
@@ -120,6 +120,21 @@ const Customer = () => {
               <Swiper
                 slidesPerView={3}
                 spaceBetween={20}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                  },
+
+                }}
                 modules={[Scrollbar]}
                 scrollbar={{
                   hide: false,
@@ -145,7 +160,7 @@ const Customer = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-lg"></div>
 
                         {/* Text (Left-Aligned) */}
-                        <div className="absolute bottom-4 left-4 text-left text-white px-4 hover:cursor-pointer">
+                        <div className="absolute px-2 bottom-0 md:bottom-4 md:left-4 text-left text-white md:px-4 hover:cursor-pointer">
                           <motion.p
                             initial={{ y: -100, opacity: 0 }}
                             transition={{
@@ -155,7 +170,7 @@ const Customer = () => {
                             }}
                             whileInView={{ y: 0, opacity: 1 }}
                             viewport={{ once: false, amount: 0.3 }}
-                            className="text-xl lg:text-3xl font-bold hover:scale-105"
+                            className="text-[24px] lg:text-3xl !opacity-100 !translate-y-2 font-bold hover:scale-105"
                           >
                             {item.value}
                           </motion.p>
@@ -169,7 +184,7 @@ const Customer = () => {
                             }}
                             whileInView={{ y: 0, opacity: 1 }}
                             viewport={{ once: false, amount: 0.3 }}
-                            className="text-xl py-2 font-normal hover:scale-105"
+                            className="text-sm md:text-xl py-2 font-normal hover:scale-105"
                           >
                             {item.label}
                           </motion.p>
@@ -186,13 +201,13 @@ const Customer = () => {
               whileInView="visible"
               variants={gridVariants}
               viewport={{ once: false, amount: 0.3 }}
-              className="grid grid-cols-6 gap-4 mt-[5rem]"
+              className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 md:gap-8 mt-6 lg:mt-[5rem]"
             >
               {[...Array(6)].map((_, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-gray-300 h-20 rounded-lg"
+                  className="bg-[#EAEAEA] border border-[#CCCBCB] h-18 md:h-28 rounded-lg"
                 ></motion.div>
               ))}
             </motion.div>

@@ -16,7 +16,7 @@ export default function ButtonLayout({
   return (
     <button
       onClick={onClick}
-      className={`relative group w-[220px] h-[48px] rounded-full flex items-center justify-center gap-2 transition-all duration-500 ease-out overflow-hidden transform hover:scale-105 ${className}`}
+      className={`relative group w-[150px] h-[40px] md:w-[220px] md:h-[48px] rounded-full flex items-center justify-center gap-2 transition-all duration-500 ease-out overflow-hidden transform hover:scale-105 ${className}`}
       style={{
         backgroundColor: bgColor,
         color: textColor,

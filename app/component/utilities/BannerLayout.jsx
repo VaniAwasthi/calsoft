@@ -21,7 +21,7 @@ const BannerLayout = ({
   return (
     <div className=" relative">
       {/* Background Image */}
-      <Image src={image} alt="Background Image" className="w-full h-full  r" />
+      <Image src={image} alt="Background Image" className="w-full md:h-full h-[280px] object-cover" />
       {/* Overlay (Optional) */}
       {/* <div
         className="absolute top-0 left-0"
@@ -33,14 +33,14 @@ const BannerLayout = ({
       ></div> */}
 
       {/* Content Section - Centered */}
-      <div className="absolute top-[0%] left-0 z-10 w-full container mx-auto px-4 md:px-20">
-        <div className="flex flex-col items-start justify-center min-h-screen text-white">
+      <div className="absolute top-[10%] md:top-[0%] w-[60%] left-0 z-10 md:w-full container mx-auto px-4 md:px-20">
+        <div className="flex flex-col items-start justify-center md:min-h-screen text-white">
           <motion.h2
             initial={{ y: -30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.2, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className={`font-bold  text-left${titleOneClass}`}
+            className={`font-bold  text-left leading-8 md:leading-14  ${titleOneClass}`}
           >
             {title}
           </motion.h2>
@@ -49,7 +49,7 @@ const BannerLayout = ({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.4 }}
             viewport={{ once: false, amount: 0.3 }}
-            className={`font-normal my-3 ${titleTwoClass}`}
+            className={`lead font-normal md:my-3 leading-8 md:leading-14 ${titleTwoClass}`}
           >
             {title2}
           </motion.h2>

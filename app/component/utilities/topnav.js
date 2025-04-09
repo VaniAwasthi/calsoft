@@ -8,20 +8,22 @@ import { FiMenu } from "react-icons/fi";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/logo.png";
+import barmenu from "../../assets/menu-bar.svg";
+
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Bar */}
       <div className="text-white px-6 py-3 border-b bg-[#141414] border-gray-700">
-        <div className="flex items-end justify-end text-sm container mx-auto px-4 md:px-20">
-          <Link href="#" className="hover:font-bold">
+        <div className="flex items-end justify-end text-sm container mx-auto px-1 md:px-20">
+          <Link href="#" className="text-xs md:text-sm hover:font-bold">
             Customer Stories<span className="text-white p-3">|</span>
           </Link>
-          <Link href="#" className="hover:font-bold">
+          <Link href="#" className="text-xs md:text-sm hover:font-bold">
             Blogs<span className="text-white p-3">|</span>
           </Link>
-          <Link href="#" className="hover:font-bold">
+          <Link href="#" className="text-xs md:text-sm hover:font-bold">
             Careers
           </Link>
         </div>
@@ -34,7 +36,7 @@ export default function Navbar() {
             <div className="container mx-auto px-4 md:px-20 flex items-center justify-between">
               {/* Logo */}
               <Link href="#" className="text-2xl font-bold text-white">
-                <Image src={Logo} alt="Logo" />
+                <Image src={Logo} height={50} alt="Logo" />
               </Link>
 
               {/* Desktop Menu */}
@@ -86,7 +88,8 @@ export default function Navbar() {
 
               {/* Mobile Menu Button */}
               <Disclosure.Button className="lg:hidden p-2 text-white focus:outline-none">
-                <FiMenu className="w-6 h-6" />
+                {/* <FiMenu className="w-6 h-6" /> */}
+                <Image src={barmenu} width={40} height={24} alt="bar menu" />
               </Disclosure.Button>
             </div>
 
