@@ -80,7 +80,9 @@ export const Services = () => {
             <div className="rounded-full bg-white w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon3} alt="icon" width={16} height={16} />
             </div>
-            <p className="font-light text-white text-sm md:text-base">{title}</p>
+            <p className="font-light text-white text-sm md:text-base">
+              {title}
+            </p>
           </div>
 
           <div className="pt-8 gradient-border">
@@ -143,7 +145,7 @@ export const Services = () => {
 export const Casestudy = () => {
   const title = "Case Studies";
   const heading = `Real results. <span className="text-black font-normal">Proven success</span>`;
-
+  // data
   const caseStudyDataArray = [
     {
       id: 1,
@@ -204,7 +206,6 @@ export const Casestudy = () => {
     <>
       <section className="md:py-14 py-10" id="case-studies">
         <div className="container mx-auto px-4 md:px-20">
-
           <div className="flex gap-6 items-center mb-2 md:mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon2} alt="icon" width={16} height={16} />
@@ -212,18 +213,14 @@ export const Casestudy = () => {
             <p className="font-light text-sm md:text-base ">Case Studies</p>
           </div>
 
-
           <div className="pt-8 gradient-border">
-
             <motion.h2
               key={caseStudyData.title}
               className="text-2xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
               dangerouslySetInnerHTML={{ __html: heading }}
             ></motion.h2>
 
-
             <main className="mt-8 flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
-
               <motion.div
                 className="bg-[#2E3092] text-white p-4 md:p-8 rounded-[20px]  md:w-2/3 flex flex-col justify-center"
                 initial={{ opacity: 0, x: -50 }}
@@ -244,7 +241,6 @@ export const Casestudy = () => {
                   {caseStudyData.title}
                 </h2>
               </motion.div>
-
 
               <div className="  md:w-2/3 flex flex-col justify-between">
                 <div>
@@ -277,7 +273,6 @@ export const Casestudy = () => {
                   </motion.a>
                 </div>
               </div>
-
 
               <div className="w-full  md:w-2/3">
                 <div className="space-y-4 md:block flex gap-4">
@@ -313,14 +308,15 @@ export const Casestudy = () => {
                         </div>
                       </div>
                       <div className="flex gap-4 md:w-[50%] flex-wrap justify-between">
-                        <p className="md:font-semibold md:text-base text-sm font-medium">{stat.text}</p>
+                        <p className="md:font-semibold md:text-base text-sm font-medium">
+                          {stat.text}
+                        </p>
                       </div>
                     </motion.div>
                   ))}
                 </div>
               </div>
             </main>
-
 
             <div className="relative w-full py-10">
               <Swiper
