@@ -47,7 +47,7 @@ const Nextgen = () => {
             </div>
             <p className="font-light text-sm md:text-base text-white  my-2">Industry</p>
           </div>
-          <div className="container mx-auto  md:px-4 xl:px-20">
+          <div className="container mx-auto  md:px-4 xl:px-2">
             {/* tab */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
@@ -100,7 +100,7 @@ const Nextgen = () => {
                 </motion.div>
               )}
               {/* content */}
-              <div className=" md:ml-[4rem] text-white md:col-span-7 lg:col-span-8">
+              <div className=" md:ml-[2rem] text-white md:col-span-7 lg:col-span-8">
                 {activeIndustry && (
                   <>
                     <motion.h2
