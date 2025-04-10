@@ -11,10 +11,10 @@ import SecureApp from "../../assets/home/SecureApp.webp";
 import Scale from "../../assets/home/Scale.webp";
 import Update from "../../assets/home/update.webp";
 import Icon from "../../assets/home/lineDot.svg";
-import { Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
 const DigitalJounery = () => {
   const [activeTab, setActiveTab] = useState("Journey");
 
@@ -32,39 +32,35 @@ const DigitalJounery = () => {
       title: "Architect",
       description: "Design future-ready systems for smarter solutions.",
       icon: Architect,
-      line: Icon
+      line: Icon,
     },
     {
       title: "Engineer + Modernize",
       description:
         "Build innovative software, optimize infra for peak performance.",
       icon: Engineer,
-      line: Icon
-
+      line: Icon,
     },
     {
       title: "Secure Apps & Data",
       description:
         "Protect data, ensure compliance, and manage risk with full control.",
       icon: SecureApp,
-      line: Icon
-
+      line: Icon,
     },
     {
       title: "Scale + Deploy",
       description:
         "Easily integrate, manage, launch, and scale across environments.",
       icon: Scale,
-      line: Icon
-
+      line: Icon,
     },
     {
       title: "Updates + Support",
       description:
         "Seamless operations, continuous improvement, and resilient growth.",
       icon: Update,
-      line: Icon
-
+      line: Icon,
     },
   ];
   const formatId = (str) =>
@@ -72,10 +68,6 @@ const DigitalJounery = () => {
       .toLowerCase()
       .replace(/\s+/g, "-")
       .replace(/[^\w-]/g, "");
-
-
-
-
 
   return (
     <>
@@ -87,10 +79,8 @@ const DigitalJounery = () => {
         className="sticky top-0 z-50"
       >
         <div className="flex justify-center bg-[#021553] pb-2 md:pb-0 ">
-
           <div className="container mx-auto px-4 xl:px-20 transition-all duration-300">
             <div className="relative flex items-center justify-center px-4 lg:px-8 py-3  text-white bg-[#0B1633] rounded-full">
-
               {/* Border Gradient Effect */}
               <div className="absolute inset-0 rounded-full p-[1px] md:p-[2px] bg-gradient-to-r from-gray-300 to-red-500">
                 <div className="h-full w-full bg-[#0B1633] rounded-full"></div>
@@ -110,12 +100,16 @@ const DigitalJounery = () => {
                   {/* Navigation Items */}
                   <div className="relative z-10 flex space-x-4 lg:space-x-6 text-sm md:text-base">
                     {navItems.map((item, index) => (
-                      <div key={index} className="flex items-center w-max md:w-auto">
+                      <div
+                        key={index}
+                        className="flex items-center w-max md:w-auto"
+                      >
                         <div
-                          className={`relative cursor-pointer ${activeTab === item
+                          className={`relative cursor-pointer ${
+                            activeTab === item
                               ? "text-white font-semibold"
                               : "text-gray-400"
-                            }`}
+                          }`}
                           onClick={() => {
                             setActiveTab(item);
                             const sectionId = formatId(item);
@@ -145,11 +139,7 @@ const DigitalJounery = () => {
         </div>
       </motion.div>
       <div className="flex justify-center bg-[#021553] pb-10 md:pb-0 md:min-h-screen1">
-
         <div className="container mx-auto px-4 xl:px-20  transition-all duration-300">
-
-
-
           <div className="text-white relative" id="journey">
             <div className="hidden md:block absolute left-0 top-0 bottom-0 traslate-y-[-52px] lg:translate-x-[4px] xl:translate-y-[-57px]">
               {/* Gradient Border */}
@@ -163,7 +153,8 @@ const DigitalJounery = () => {
                 viewport={{ once: false, amount: 0.3 }}
               >
                 <h2 className="text-2xl md:text-4xl md:mt-[3rem] md:ml-[4rem] pt-2 md:pt-5 font-semibold md:leading-11">
-                  Innovate at <br className="md:hidden block" /> every stage of your digital journey
+                  Innovate at <br className="md:hidden block" /> every stage of
+                  your digital journey
                 </h2>
               </motion.div>
               <motion.div
@@ -188,18 +179,18 @@ const DigitalJounery = () => {
                   1024: { slidesPerView: 4, spaceBetween: 30 }, // iPad Pro
                   1280: { slidesPerView: 5, spaceBetween: 20 }, // Desktop
                 }}
-                className="pt-5 pagination_white"
+                className="pt-5 pagination_white "
               >
                 {features.map((feature, index) => (
                   <SwiperSlide key={index}>
                     <motion.div
-
                       initial="hidden"
                       whileInView="visible"
                       transition={{ duration: 1, delay: 0.2 }}
                       viewport={{ once: false, amount: 0.5 }}
+                      className="lg:ml-[3rem]"
                     >
-                      <div className="flex h-[80px] items-center1 gap-2">
+                      <div className="flex h-[80px] items-center1 gap-2 ">
                         {/* Animated Icon (Image above heading) */}
                         <motion.div
                           initial={{ y: 50, opacity: 0 }}
@@ -207,7 +198,11 @@ const DigitalJounery = () => {
                           whileInView={{ y: 0, opacity: 1 }}
                           viewport={{ once: false, amount: 0.3 }}
                         >
-                          <Image className="min-w-[16px] md:w-auto" src={feature.line} alt={feature.title} />
+                          <Image
+                            className="min-w-[16px] md:w-auto"
+                            src={feature.line}
+                            alt={feature.title}
+                          />
                         </motion.div>
 
                         {/* Animated Heading */}
@@ -218,7 +213,9 @@ const DigitalJounery = () => {
                           whileInView={{ y: 0, opacity: 1 }}
                           viewport={{ once: false, amount: 0.3 }}
                         >
-                          <h3 className="text-sm md:text-base text-left md:text-center font-normal w-[90px]">{feature.title}</h3>
+                          <h3 className="text-sm md:text-base text-left md:text-center font-normal w-[90px]">
+                            {feature.title}
+                          </h3>
                         </motion.div>
                       </div>
 
@@ -235,7 +232,7 @@ const DigitalJounery = () => {
 
                       {/* Animated Description */}
                       <motion.p
-                        className="mt-2 text-[10px] md:text-sm text-center text-white md:w-3/4"
+                        className="mt-2 text-[10px] md:text-sm text-center text-white md:w-3/4 "
                         initial={{ opacity: 0, y: 20 }}
                         transition={{ duration: 0.5, delay: index * 0.6 }}
                         whileInView={{ y: 0, opacity: 1 }}
