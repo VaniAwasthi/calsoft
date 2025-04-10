@@ -513,7 +513,7 @@ export const CalsoftPartner = () => {
                     />
                     <Image
                       src={logo21}
-                      className="md:max-h-32 md:w-32 h-6 object-contain mx-auto"
+                      className="md:min-h-20 md:w-32 h-6 object-contain mx-auto"
                       alt="logo"
                     />
                   </div>
