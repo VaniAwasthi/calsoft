@@ -38,7 +38,7 @@ const Nextgen = () => {
         className="w-full bg-[#021553] md:rounded-b-xl py-4 md:py-0 md:min-h-screen"
         id="industries"
       >
-        <div className="mx-auto px-4 xl:px-20" id="customers">
+        <div className="mx-auto px-4 xl:px-20">
           {/* icon-with heading*/}
           <div className="flex gap-6 md:gap-6 items-center mb-4 md:mb-2 md:py-5">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center my-2">
