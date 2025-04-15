@@ -84,7 +84,7 @@ const DigitalJounery = () => {
 
             {/* Left Icon */}
             <div className="flex justify-between items-center overflow-scroll md:overflow-auto xl:overflow-hidden">
-              <div className="relative z-10 lg:mr-[6rem] lg:pr-[2rem]">
+              <div className="relative z-10 lg:mr-[6rem] lg:pr-[4rem]">
                 <Image src={tabImg} alt="icon" />
               </div>
               <motion.div
