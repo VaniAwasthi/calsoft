@@ -1,5 +1,5 @@
 "use client";
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -40,7 +40,6 @@ import logo20 from "../../assets/home/logo20.png";
 import logo21 from "../../assets/home/logo21.png";
 
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
-import { BsArrowUpRight } from "react-icons/bs";
 import Link from "next/link";
 
 const data = [
@@ -99,7 +98,7 @@ export const CalsoftNews = () => {
   return (
     <>
       <section
-        className="md:py-14 py-10 pb-0 "
+        className="md:py-8 py-10 pb-0 "
         style={{
           background: `url(${bgimg.src}) center center/ cover no-repeat`,
         }}
@@ -110,7 +109,9 @@ export const CalsoftNews = () => {
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon1} alt="icon" width={16} height={16} />
             </div>
-            <p className="font-light text-sm md:text-base ">Latest at Calsoft</p>
+            <p className="font-light text-sm md:text-base ">
+              Latest at Calsoft
+            </p>
           </div>
           <div className="flex gap-4">
             {/* <div className="min-w-6 text-center">
@@ -158,124 +159,126 @@ export const CalsoftNews = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-26 mb-6 mt-14 md:mt-20">
-      <div className="md:col-span-4 md:pl-6">
-        {!isMobile ? (
-          <motion.div
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            viewport={{ once: false, amount: 0.3 }}
-          >
-            <h3 className="text-2xl md:text-3xl mb-8   flex gap-6 items-center md:text-[36px] font-semibold text-black">
-              Calsoft News Section
-              <Link href="#">
-                <Image
-                  className="transition-all duration-500 hover:-mt-4"
-                  src={arrow}
-                  alt="arrow"
-                />
-              </Link>
-            </h3>
-            <p className="mt-2 text-[#959595] text-sm md:text-[15px]">
-              We focus on bringing positivity to the world and focus on
-              stories that showcase the best of humanity.
-            </p>
-          </motion.div>
-        ) : (
-          <div>
-            <h3 className="text-2xl md:text-3xl mb-8 w-[80%] md:w-full flex gap-6 items-center md:text-[36px] font-semibold text-black">
-              Calsoft News Section
-              <Link href="#">
-                <Image
-                  className="transition-all w-10 md:w-auto duration-500 hover:-mt-4"
-                  src={arrow}
-                  alt="arrow"
-                />
-              </Link>
-            </h3>
-            <p className="mt-2 text-[#959595] text-sm md:text-[15px]">
-              We focus on bringing positivity to the world and focus on
-              stories that showcase the best of humanity.
-            </p>
-          </div>
-        )}
-      </div>
+            <div className="md:col-span-4 md:pl-6">
+              {!isMobile ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.2 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                >
+                  <h3 className="text-2xl md:text-3xl mb-8   flex gap-6 items-center md:text-[36px] font-semibold text-black">
+                    Calsoft News Section
+                    <Link href="#">
+                      <Image
+                        className="transition-all duration-500 hover:-mt-4"
+                        src={arrow}
+                        alt="arrow"
+                      />
+                    </Link>
+                  </h3>
+                  <p className="mt-2 text-[#959595] text-sm md:text-[15px]">
+                    We focus on bringing positivity to the world and focus on
+                    stories that showcase the best of humanity.
+                  </p>
+                </motion.div>
+              ) : (
+                <div>
+                  <h3 className="text-2xl md:text-3xl mb-8 w-[80%] md:w-full flex gap-6 items-center md:text-[36px] font-semibold text-black">
+                    Calsoft News Section
+                    <Link href="#">
+                      <Image
+                        className="transition-all w-10 md:w-auto duration-500 hover:-mt-4"
+                        src={arrow}
+                        alt="arrow"
+                      />
+                    </Link>
+                  </h3>
+                  <p className="mt-2 text-[#959595] text-sm md:text-[15px]">
+                    We focus on bringing positivity to the world and focus on
+                    stories that showcase the best of humanity.
+                  </p>
+                </div>
+              )}
+            </div>
 
-      <div className="md:col-span-8">
-        {!isMobile ? (
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-          >
-            <Swiper
-              spaceBetween={10}
-              slidesPerView={3}
-              breakpoints={{
-                640: { slidesPerView: 3, spaceBetween: 10 },
-                768: { slidesPerView: 3, spaceBetween: 10 },
-                1024: { slidesPerView: 4, spaceBetween: 10 },
-              }}
-              scrollbar={{ hide: false }}
-              modules={[Scrollbar]}
-              className="w-full"
-            >
-              {data.map((item) => (
-                <SwiperSlide key={item.id} className="items-center">
-                  <motion.div
-                    className={`cursor-pointer rounded-lg mb-6 transition-all duration-500 ${selected.id === item.id ? "scale-100" : "scale-70"
-                      }`}
-                    onClick={() => setSelected(item)}
+            <div className="md:col-span-8">
+              {!isMobile ? (
+                <motion.div
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: true }}
+                >
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={3}
+                    breakpoints={{
+                      640: { slidesPerView: 3, spaceBetween: 10 },
+                      768: { slidesPerView: 3, spaceBetween: 10 },
+                      1024: { slidesPerView: 4, spaceBetween: 10 },
+                    }}
+                    scrollbar={{ hide: false }}
+                    modules={[Scrollbar]}
+                    className="w-full"
                   >
-                    <Image
-                      src={item.img}
-                      alt={item.title}
-                      width={300}
-                      height={200}
-                      className="object-cover rounded-lg"
-                    />
-                  </motion.div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </motion.div>
-        ) : (
-          <div>
-            <Swiper
-              spaceBetween={10}
-              slidesPerView={3}
-              breakpoints={{
-                640: { slidesPerView: 3, spaceBetween: 10 },
-                768: { slidesPerView: 3, spaceBetween: 10 },
-                1024: { slidesPerView: 4, spaceBetween: 10 },
-              }}
-              scrollbar={{ hide: false }}
-              modules={[Scrollbar]}
-              className="w-full"
-            >
-              {data.map((item) => (
-                <SwiperSlide key={item.id} className="items-center">
-                  <div
-                    className={`cursor-pointer rounded-lg mb-6 transition-all duration-500 ${selected.id === item.id ? "scale-100" : "scale-70"
-                      }`}
-                    onClick={() => setSelected(item)}
+                    {data.map((item) => (
+                      <SwiperSlide key={item.id} className="items-center">
+                        <motion.div
+                          className={`cursor-pointer rounded-lg mb-6 transition-all duration-500 ${
+                            selected.id === item.id ? "scale-100" : "scale-70"
+                          }`}
+                          onClick={() => setSelected(item)}
+                        >
+                          <Image
+                            src={item.img}
+                            alt={item.title}
+                            width={300}
+                            height={200}
+                            className="object-cover rounded-lg"
+                          />
+                        </motion.div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </motion.div>
+              ) : (
+                <div>
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={3}
+                    breakpoints={{
+                      640: { slidesPerView: 3, spaceBetween: 10 },
+                      768: { slidesPerView: 3, spaceBetween: 10 },
+                      1024: { slidesPerView: 4, spaceBetween: 10 },
+                    }}
+                    scrollbar={{ hide: false }}
+                    modules={[Scrollbar]}
+                    className="w-full"
                   >
-                    <Image
-                      src={item.img}
-                      alt={item.title}
-                      width={300}
-                      height={200}
-                      className="object-cover rounded-lg"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                    {data.map((item) => (
+                      <SwiperSlide key={item.id} className="items-center">
+                        <div
+                          className={`cursor-pointer rounded-lg mb-6 transition-all duration-500 ${
+                            selected.id === item.id ? "scale-100" : "scale-70"
+                          }`}
+                          onClick={() => setSelected(item)}
+                        >
+                          <Image
+                            src={item.img}
+                            alt={item.title}
+                            width={300}
+                            height={200}
+                            className="object-cover rounded-lg"
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+              )}
+            </div>
           </div>
-        )}
-      </div>
-    </div>
         </div>
       </section>
     </>
@@ -334,7 +337,7 @@ export const CalsoftPartner = () => {
 
   return (
     <section
-      className="md:py-14 py-10"
+      className="md:py-8 py-10"
       style={{
         background: `url(${bgimg1.src}) center center / cover no-repeat`,
       }}
@@ -371,7 +374,9 @@ export const CalsoftPartner = () => {
                 // viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-full !opacity-100"
               >
-                <p className="mb-4 md:font-semibold md:text-base text-xs">Cloud Partnerships</p>
+                <p className="mb-4 md:font-semibold md:text-base text-xs">
+                  Cloud Partnerships
+                </p>
                 <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
                   <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
                   <div className="relative bg-white rounded-[17px] p-2 md:p-4 shadow-md flex flex-col h-full">
@@ -436,7 +441,9 @@ export const CalsoftPartner = () => {
                 viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-full"
               >
-                <p className="mb-4 md:font-semibold md:text-base text-xs">Gen AI</p>
+                <p className="mb-4 md:font-semibold md:text-base text-xs">
+                  Gen AI
+                </p>
                 <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
                   <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
                   <div className="relative bg-white rounded-[17px] p-4 shadow-md h-full grid grid-cols-3 gap-4 items-center">
@@ -462,7 +469,9 @@ export const CalsoftPartner = () => {
                 viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-full"
               >
-                <p className="mb-4 md:font-semibold md:text-base text-xs">Technology Partners</p>
+                <p className="mb-4 md:font-semibold md:text-base text-xs">
+                  Technology Partners
+                </p>
                 <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
                   <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
                   <div className="relative bg-white rounded-[17px] p-4 shadow-md h-full flex flex-col gap-4">
@@ -502,7 +511,9 @@ export const CalsoftPartner = () => {
                 viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-full"
               >
-                <p className="mb-4 md:font-semibold md:text-base text-xs">Industry Partnerships</p>
+                <p className="mb-4 md:font-semibold md:text-base text-xs">
+                  Industry Partnerships
+                </p>
                 <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
                   <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
                   <div className="relative bg-white grid gap-4 items-center rounded-[17px] p-4 shadow-md h-full">

@@ -40,8 +40,8 @@ const Nextgen = () => {
       >
         <div className="mx-auto px-4 xl:px-20" id="customers">
           {/* icon-with heading*/}
-          <div className="flex gap-6 md:gap-6 items-center mb-4 md:mb-6 md:py-5">
-            <div className="rounded-full bg-[#ffff] w-8 h-8 p-2 hidden md:flex items-center justify-center my-2">
+          <div className="flex gap-6 md:gap-6 items-center mb-4 md:mb-2 md:py-5">
+            <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center my-2">
               <Image src={icon} alt="icon" width={16} height={16} />
             </div>
             <p className="font-light text-sm md:text-base text-white  my-2">
@@ -56,16 +56,16 @@ const Nextgen = () => {
               transition={{ duration: 0.2, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <div className="overflow-scroll md:overflow-auto bg-[#E5E5E5] rounded-full">
-                <div className="w-full bg-[#E5E5E5]  flex justify-between items-center rounded-full">
+              <div className="overflow-scroll md:overflow-auto bg-[#FFFFFF] rounded-full">
+                <div className="w-full bg-[#FFFFFF]  flex justify-between items-center rounded-full">
                   {navItems.map((item, index) => (
                     <button
                       key={index}
                       onClick={() => setActiveTab(item)}
                       className={`min-w-24 md:w-1/5 text-center transition-all duration-300 py-3 md:py-4 text-sm lg:text-base rounded-full ${
                         activeTab === item
-                          ? "bg-white text-black font-semibold"
-                          : "text-[#747474]"
+                          ? "bg-[#2E3092] text-white font-semibold"
+                          : "text-[#000000]"
                       }`}
                     >
                       {item}
@@ -80,7 +80,7 @@ const Nextgen = () => {
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-8 mt-8 md:mt-[4rem] mb-[2rem]"
+              className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-8 mt-8 md:mt-[2rem] mb-[2rem]"
             >
               {/* Image */}
               {activeIndustry && (
@@ -94,7 +94,7 @@ const Nextgen = () => {
                   <Image
                     src={activeIndustry.image}
                     alt={activeIndustry.title}
-                    className="rounded-lg"
+                    className="rounded-lg shadow-lg"
                     width={400}
                     height={300}
                   />

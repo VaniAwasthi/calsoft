@@ -14,7 +14,7 @@ import service3 from "../../assets/home/service3.svg";
 import service4 from "../../assets/home/service4.svg";
 import service5 from "../../assets/home/service5.svg";
 import service6 from "../../assets/home/service6.svg";
-import icon2 from "../../assets/home/icon2.svg";
+import icon2 from "../../assets/home/icon4.svg";
 import Link from "next/link";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import logo2 from "../../assets/home/logo2.png";
@@ -22,9 +22,11 @@ import man1 from "../../assets/home/man1.webp";
 import man2 from "../../assets/home/man2.webp";
 import man3 from "../../assets/home/man3.webp";
 import blogimg1 from "../../assets/home/blog1.webp";
+import blogimg2 from "../../assets/home/blog2.webp";
+import blogimg3 from "../../assets/home/blog3.webp";
 import { LuArrowUpRight } from "react-icons/lu";
 import { BlogCard } from "../../component/blog/BlogCard";
-
+import Casestudybg from "../../assets/home/casestudybg.webp";
 export const Services = () => {
   const title = "Services";
   const heading = "Services | Expertise-infused and business-optimized.";
@@ -74,10 +76,10 @@ export const Services = () => {
   ];
   return (
     <>
-      <section className="py-10 md:py-14 bg-[#021553]" id="services">
+      <section className="py-10 md:py-8 bg-[#021553]" id="services">
         <div className="container mx-auto px-4 md:px-20">
           <div className="flex gap-6 items-center mb-6">
-            <div className="rounded-full bg-white w-8 h-8 p-2 hidden md:flex items-center justify-center">
+            <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon3} alt="icon" width={16} height={16} />
             </div>
             <p className="font-light text-white text-sm md:text-base">
@@ -197,14 +199,15 @@ export const Casestudy = () => {
 
   const sliderData = [
     { id: 1, image: blogimg1, title: "Case Study One" },
-    { id: 2, image: blogimg1, title: "Case Study Two" },
-    { id: 3, image: blogimg1, title: "Case Study Three" },
+    { id: 2, image: blogimg2, title: "Case Study Two" },
+    { id: 3, image: blogimg3, title: "Case Study Three" },
+    { id: 4, image: blogimg3, title: "Case Study four" },
   ];
   const [selectedIndex, setSelectedIndex] = useState(0);
   const caseStudyData = caseStudyDataArray[selectedIndex];
   return (
     <>
-      <section className="md:py-14 py-10" id="case-studies">
+      <section className="md:py-8 py-10" id="case-studies">
         <div className="container mx-auto px-4 md:px-20">
           <div className="flex gap-6 items-center mb-2 md:mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
@@ -222,13 +225,16 @@ export const Casestudy = () => {
 
             <main className="mt-8 flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
               <motion.div
-                className="bg-[#2E3092] text-white p-4 md:p-8 rounded-[20px]  md:w-2/3 flex flex-col justify-center"
+                className=" text-white p-4 md:p-8 rounded-[20px]  md:w-2/3 flex flex-col justify-center bg-cover bg-center"
                 initial={{ opacity: 0, x: -50 }}
+                style={{
+                  backgroundImage: `url(${Casestudybg.src})`,
+                }}
                 transition={{ duration: 0.5 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <div className="w-32 h-24 mb-6 bg-[#484A97] rounded-2xl flex justify-center items-center p-2">
+                <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
                   <Image
                     src={logo2}
                     className="w-full brightness-1 invert-100"
@@ -237,7 +243,7 @@ export const Casestudy = () => {
                     height={100}
                   />
                 </div>
-                <h2 className="text-lg font-medium md:text-2xl md:font-semibold">
+                <h2 className="text-lg font-medium md:text-2xl md:font-semibold mt-[4rem]">
                   {caseStudyData.title}
                 </h2>
               </motion.div>
@@ -317,53 +323,55 @@ export const Casestudy = () => {
                 </div>
               </div>
             </main>
-
-            <div className="relative w-full py-10">
-              <Swiper
-                modules={[Navigation]}
-                slidesPerView={1}
-                spaceBetween={40}
-                breakpoints={{
-                  640: { slidesPerView: 1 },
-                  768: { slidesPerView: 2 },
-                  1024: { slidesPerView: 3 },
-                }}
-                navigation
-                className="slider_t play_slider"
-              >
-                {sliderData.map((item, index) => (
-                  <SwiperSlide key={item.id}>
+          </div>
+          <div className="relative w-full py-8">
+            <Swiper
+              modules={[Navigation]}
+              slidesPerView={1}
+              spaceBetween={40}
+              breakpoints={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 4 },
+              }}
+              navigation
+              className="slider_t play_slider"
+            >
+              {sliderData.map((item, index) => (
+                <SwiperSlide key={item.id}>
+                  <motion.div
+                    onClick={() => setSelectedIndex(index)}
+                    className="group relative bg-white cursor-pointer"
+                    initial={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.5 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                  >
+                    <Image
+                      src={item.image}
+                      alt="Slide"
+                      className="w-full h-44 md:h-56 rounded-xl object-cover"
+                    />
+                    <div className="py-4">
+                      <p className="text-base font-medium text-black">
+                        {item.title}
+                      </p>
+                    </div>
                     <motion.div
-                      onClick={() => setSelectedIndex(index)}
-                      className="group relative bg-white cursor-pointer"
-                      initial={{ opacity: 0, y: 20 }}
-                      transition={{ duration: 0.5 }}
-                      whileInView={{ x: 0, opacity: 1 }}
+                      whileHover={{ y: -8 }}
+                      whileInView={{ y: 0, opacity: 1 }}
                       viewport={{ once: false, amount: 0.3 }}
+                      className="absolute -top-4 -right-4 bg-white p-2 border-2 border-[#2E3092] rounded-full shadow-md group-hover:scale-105 transition-transform duration-300"
                     >
-                      <Image
-                        src={item.image}
-                        alt="Slide"
-                        className="w-full h-44 md:h-56 rounded-2xl object-cover"
+                      <LuArrowUpRight
+                        className="text-4xl  text-[#2E3092]"
+                        strokeWidth={4}
                       />
-                      <div className="py-4">
-                        <p className="text-base font-medium text-black">
-                          {item.title}
-                        </p>
-                      </div>
-                      <motion.div
-                        whileHover={{ y: -8 }}
-                        whileInView={{ y: 0, opacity: 1 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                        className="absolute -top-4 -right-4 bg-white p-2 border-2 border-[#2E3092] rounded-full shadow-md group-hover:scale-105 transition-transform duration-300"
-                      >
-                        <LuArrowUpRight className="text-3xl text-[#2E3092]" />
-                      </motion.div>
                     </motion.div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </section>
