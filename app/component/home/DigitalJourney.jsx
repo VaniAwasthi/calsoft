@@ -136,7 +136,7 @@ const DigitalJounery = () => {
       <div className="flex justify-center bg-[#021553] pb-10 md:pb-0 md:min-h-screen1">
         <div className="container max-w-7xl mx-auto px-4   transition-all duration-300">
           <div className="text-white relative" id="journey">
-            <div className="hidden md:block absolute left-0 top-0 bottom-0 traslate-y-[-52px] lg:translate-x-[4px] xl:translate-y-[-57px]">
+            <div className="hidden md:block absolute left-0 top-0 bottom-0 traslate-y-[-52px] lg:translate-x-[-17px] xl:translate-y-[-57px]">
               {/* Gradient Border */}
               <div className="w-[2px] mr-2 mt-6 h-full bg-gradient-to-b from-gray-300 to-red-500"></div>
             </div>
