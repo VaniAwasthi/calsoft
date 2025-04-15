@@ -15,7 +15,7 @@ const Nextgen = () => {
     "Telecom",
     "Retail",
     "Manufacturing",
-    "LegalTech",
+    // "LegalTech",
   ];
 
   const activeIndustry = IndustryData.find(
