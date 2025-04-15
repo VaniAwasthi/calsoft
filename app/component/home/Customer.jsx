@@ -67,7 +67,7 @@ const Customer = () => {
         }}
         id="customers"
       >
-        <div className="mx-auto py-8 md:py-0 px-4 xl:px-20">
+        <div className="max-w-8xl py-8 md:py-0 px-4 xl:px-20 xl:ml-[2rem]  ">
           <div className="flex gap-6 md:gap-6 items-center mb-2 md:mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon} alt="icon" width={16} height={16} />
@@ -133,7 +133,6 @@ const Customer = () => {
                     slidesPerView: 3,
                     spaceBetween: 20,
                   },
-
                 }}
                 modules={[Scrollbar]}
                 scrollbar={{
