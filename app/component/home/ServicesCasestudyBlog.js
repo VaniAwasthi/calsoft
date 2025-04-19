@@ -242,10 +242,35 @@ export const Casestudy = () => {
   ];
 
   const sliderData = [
-    { id: 1, image: blogimg1, title: "Case Study One" },
-    { id: 2, image: blogimg2, title: "Case Study Two" },
-    { id: 3, image: blogimg3, title: "Case Study Three" },
-    { id: 4, image: blogimg3, title: "Case Study four" },
+    {
+      id: 1,
+      image: blogimg1,
+      title:
+        "Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
+    },
+    {
+      id: 2,
+      image: blogimg2,
+      title: "AI-powered test optimization with CalTIA",
+    },
+    {
+      id: 3,
+      image: blogimg3,
+      title:
+        "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool",
+    },
+    {
+      id: 4,
+      image: blogimg3,
+      title:
+        "Accelerating VMware Workload Migration with Calsoft’s Migration Server",
+    },
+    {
+      id: 5,
+      image: blogimg3,
+      title:
+        "Streamlining Legal Case Classification with Calsoft’s GenAI Copilot",
+    },
   ];
   const [selectedIndex, setSelectedIndex] = useState(0);
   const caseStudyData = caseStudyDataArray[selectedIndex];
