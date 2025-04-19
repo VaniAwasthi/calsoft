@@ -82,6 +82,7 @@ const data = [
     title: "Accelerate high-quality software products.",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
   },
   // {
   //   id: 6,
