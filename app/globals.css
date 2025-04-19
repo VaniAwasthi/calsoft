@@ -97,27 +97,67 @@ body {
 .pagination_white .swiper-pagination {
   bottom: 0 !important;
 }
-.pagination_white  .swiper-pagination-bullet{
-  background: #6C7699;
+.pagination_white .swiper-pagination-bullet {
+  background: #6c7699;
   width: 6px;
   height: 6px;
 }
-.pagination_white .swiper-pagination-bullet-active{
-  background: #D9D9D9;
-   transform: scale(1.2);
+.pagination_white .swiper-pagination-bullet-active {
+  background: #d9d9d9;
+  transform: scale(1.2);
 }
-.pagination_white{
+.pagination_white {
   padding-bottom: 2.4rem !important;
 }
 
-@media (max-width:767px) {
-  .gradient-border{
-  border: none;
-  padding: 0;
-  margin: 0;
+@media (max-width: 767px) {
+  .gradient-border {
+    border: none;
+    padding: 0;
+    margin: 0;
   }
-  .slider_t .swiper-wrapper{
+  .slider_t .swiper-wrapper {
     padding-top: 0;
   }
+}
+/* Add this to your CSS file */
+.iphone-icon {
+  animation: wiggle 1s ease-in-out infinite;
+}
 
+@keyframes keyframes1 {
+  0% {
+    transform: rotate(-1deg);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: rotate(1.5deg);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes keyframes2 {
+  0% {
+    transform: rotate(1deg);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: rotate(-1.5deg);
+    animation-timing-function: ease-out;
+  }
+}
+
+.iphone-icon.even {
+  animation-name: keyframes1;
+  animation-iteration-count: infinite;
+  animation-duration: 0.25s; /* You can make this dynamic per item if needed */
+  transform-origin: 50% 10%;
+}
+
+.iphone-icon.odd {
+  animation-name: keyframes2;
+  animation-iteration-count: infinite;
+  animation-duration: 0.25s;
+  animation-direction: alternate;
+  transform-origin: 30% 5%;
 }
