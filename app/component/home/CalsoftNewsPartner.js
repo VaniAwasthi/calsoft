@@ -84,13 +84,14 @@ const data = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
   },
-  // {
-  //   id: 6,
-  //   img: img02,
-  //   title: "Enhance Your Development Process",
-  //   description:
-  //     "Discover innovative solutions for modern software development.",
-  // },
+  {
+    id: 6,
+    img: img02,
+    title: "Enhance Your Development Process",
+    description:
+      "Discover innovative solutions for modern software development.",
+    link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
+  },
 ];
 export const CalsoftNews = () => {
   const [selected, setSelected] = useState(data[0]);
@@ -116,7 +117,7 @@ export const CalsoftNews = () => {
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon1} alt="icon" width={16} height={16} />
             </div>
-            <p className="font-light text-sm md:text-base ">What's New</p>
+            <p className="font-light text-sm md:text-base ">What&rsquo;s New</p>
           </div>
           <div className="flex gap-4">
             {/* <div className="min-w-6 text-center">
