@@ -7,10 +7,10 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper/modules";
 
-import img01 from "../../assets/home/News4.webp";
-import img02 from "../../assets/home/News3.webp";
-import img03 from "../../assets/home/News2.webp";
-import img04 from "../../assets/home/News1.webp";
+import img01 from "../../assets/home/News1.webp";
+import img02 from "../../assets/home/News2.webp";
+import img03 from "../../assets/home/News3.webp";
+import img04 from "../../assets/home/News4.webp";
 import icon1 from "../../assets/home/icon1.svg";
 import border from "../../assets/home/Branch.svg";
 import arrow from "../../assets/home/arrow.svg";
@@ -46,29 +46,35 @@ const data = [
   {
     id: 1,
     img: img01,
-    title: "Accelerate high-quality software products.",
+    title: "Calsoft Partner’s with IBM WatsonX to deliver AI-driven Solutions",
     description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "Maximize enterprise AI investments with IBM WatsonX & Calsoft",
+    link: "https://www.calsoftinc.com/calsoft-partners-with-ibm-watsonx/",
   },
   {
     id: 2,
     img: img02,
-    title: "Enhance Your Development Process",
+    title:
+      "Calsoft & StreamNative Partner to Cut Streaming Costs, Boost Performance",
     description:
-      "Discover innovative solutions for modern software development.",
+      "Discover how enterprises can reduce Kafka costs by up to 50% without compromising on real-time performance",
+    link: "https://www.californiaentertainmentpress.com/article/800036888-calsoft-and-streamnative-join-forces-to-optimize-cost-and-performance-in-real-time-data-streaming",
   },
   {
     id: 3,
     img: img03,
-    title: "Next-Gen Technology Solutions",
+    title: "Calsoft x Segmind: AI-Powered Visuals for Smarter E-Commerce",
     description:
-      "Explore new trends and advancements in technology for the future.",
+      "Transforming product imagery with speed, scale, and creativity.",
+    link: "https://www.americanbusinesstimes.com/article/779940243-calsoft-partners-with-segmind-for-ai-driven-visual-asset-creation-in-e-commerce",
   },
   {
     id: 4,
     img: img04,
-    title: "Revolutionizing the IT Industry",
-    description: "Bringing positive changes through digital transformation.",
+    title: "Calsoft x SmartHub.ai: Advancing AI at the Edge",
+    description:
+      "Delivering intelligent automation and security for next-gen connected infrastructure",
+    link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
   },
   {
     id: 5,
@@ -77,13 +83,13 @@ const data = [
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
-  {
-    id: 6,
-    img: img02,
-    title: "Enhance Your Development Process",
-    description:
-      "Discover innovative solutions for modern software development.",
-  },
+  // {
+  //   id: 6,
+  //   img: img02,
+  //   title: "Enhance Your Development Process",
+  //   description:
+  //     "Discover innovative solutions for modern software development.",
+  // },
 ];
 export const CalsoftNews = () => {
   const [selected, setSelected] = useState(data[0]);
@@ -102,16 +108,14 @@ export const CalsoftNews = () => {
         style={{
           background: `url(${bgimg.src}) center center/ cover no-repeat`,
         }}
-        id="latest-at-calsoft"
+        id="whats-new"
       >
         <div className="container mx-auto px-4 md:px-20">
           <div className="flex gap-6 md:gap-6 items-center mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon1} alt="icon" width={16} height={16} />
             </div>
-            <p className="font-light text-sm md:text-base ">
-              Latest at Calsoft
-            </p>
+            <p className="font-light text-sm md:text-base ">What's New</p>
           </div>
           <div className="flex gap-4">
             {/* <div className="min-w-6 text-center">
@@ -144,7 +148,7 @@ export const CalsoftNews = () => {
                 </motion.p>
 
                 <Link
-                  href="#"
+                  href={selected.link}
                   className="relative flex w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
                   style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25" }}
                 >
@@ -168,7 +172,7 @@ export const CalsoftNews = () => {
                   viewport={{ once: false, amount: 0.3 }}
                 >
                   <h3 className="text-2xl md:text-3xl mb-8   flex gap-6 items-center md:text-[36px] font-semibold text-black">
-                    Calsoft News Section
+                    Calsoft News
                     <Link href="#">
                       <Image
                         className="transition-all duration-500 hover:-mt-4"

@@ -4,7 +4,14 @@ import bgimg from "../../assets/home/pattern.svg";
 import icon from "../../assets/home/customerIcon.svg";
 import Experience from "../../assets/home/experience.webp";
 import Inovators from "../../assets/home/Innovator.webp";
-
+import HappyCustomer from "../../assets/home/happycustomer.webp";
+import Partnership from "../../assets/home/partners.webp";
+import Dell from "../../assets/home/logos/Dell.webp";
+import Cisco from "../../assets/home/logos/Cisco.webp";
+import Hplogo from "../../assets/home/logos/HP.webp";
+import Broadcom from "../../assets/home/logos/Broadcom.webp";
+import Sumologic from "../../assets/home/logos/Sumologic.webp";
+import OlaKrutrim from "../../assets/home/logos/OlaKrutrim.webp";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,18 +19,20 @@ import "swiper/css";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper/modules";
+
 const gridVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { staggerChildren: 0.2, delayChildren: 0.3 }, // Stagger effect
+    transition: {
+      staggerChildren: 0.2,
+    },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
 };
 const Customer = () => {
   const customerData = [
@@ -41,22 +50,24 @@ const Customer = () => {
     },
     {
       id: 3,
-      image: Experience,
-      value: "10+",
+      image: Partnership,
+      value: "20+",
       label: "Partnerships",
     },
     {
       id: 4,
-      image: Experience,
-      value: "25+",
-      label: "Years' Experience",
+      image: HappyCustomer,
+      value: "300+",
+      label: "Happy Customers",
     },
-    {
-      id: 5,
-      image: Experience,
-      value: "25+",
-      label: "Years' Experience",
-    },
+  ];
+  const logos = [
+    { id: 1, name: "Dell", image: Dell },
+    { id: 2, name: "Cisco", image: Cisco },
+    { id: 3, name: "Hp", image: Hplogo },
+    { id: 4, name: "Broadcom", image: Broadcom },
+    { id: 5, name: "Sumologic", image: Sumologic },
+    { id: 6, name: "OlaKrutrim ", image: OlaKrutrim },
   ];
   return (
     <>
@@ -202,12 +213,14 @@ const Customer = () => {
               viewport={{ once: false, amount: 0.3 }}
               className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 md:gap-8 mt-6 lg:mt-[5rem]"
             >
-              {[...Array(6)].map((_, index) => (
+              {logos.map((logos, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-[#EAEAEA] border border-[#CCCBCB] h-18 md:h-28 rounded-lg"
-                ></motion.div>
+                  className="h-18 md:h-28 rounded-lg overflow-hidden flex items-center justify-center"
+                >
+                  <Image src={logos.image} alt={logos.name} />
+                </motion.div>
               ))}
             </motion.div>
           </motion.div>

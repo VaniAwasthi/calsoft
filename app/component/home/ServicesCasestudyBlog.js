@@ -33,37 +33,37 @@ export const Services = () => {
   const services = [
     {
       icon: service1,
-      title: "Product Engineering",
+      title: "AI-Powered Test Automation",
       description:
-        "Build reliable software, improve products, and scale your digital platforms.",
+        "Accelerate releases with intelligent,self-healing automation frameworks.",
       link: "/",
     },
     {
       icon: service2,
-      title: "Digital Engineering",
+      title: "Cloud-Native Product Engineering",
       description:
-        "Design smarter systems with cloud, IoT, and user-friendly interfaces.",
+        "Build and scale modern apps with microservices & agile delivery.",
       link: "/",
     },
     {
       icon: service3,
-      title: "Managed Testing Services",
+      title: "AI & ML Integration",
       description:
-        "Ensure high performance and reliability through comprehensive testing.",
+        "Deploy and operationalize AI/ML models with enterprise-grade readiness.",
       link: "/",
     },
     {
       icon: service4,
-      title: "Sustaining & Support",
+      title: "Edge & IoT Security Automation",
       description:
-        "Maintain your system with expert support and future-ready solutions.",
+        "Automate threat detection & control at the edge with AI-driven tools.",
       link: "/",
     },
     {
       icon: service5,
-      title: "Data",
+      title: "Storage & Data Lifecycle Management",
       description:
-        "Harness the power of your data to uncover insights and drive decisions.",
+        "Modernize storage for performance, cost-efficiency, and compliance.",
       link: "/",
     },
     {
@@ -126,12 +126,12 @@ export const Services = () => {
                       <p className="text-white line-clamp-3  text-xs md:text-sm font-[200] md:font-light">
                         {service.description}
                       </p>
-                      <Link
+                      {/* <Link
                         href={service.link}
                         className="mt-4 text-xs  md:text-sm inline-block text-white font-light"
                       >
                         Know more...
-                      </Link>
+                      </Link> */}
                     </div>
                   </div>
                 </motion.div>
@@ -151,57 +151,126 @@ export const Casestudy = () => {
   const caseStudyDataArray = [
     {
       id: 1,
-      title: " GenAI-Driven Production-Centric Test Generation",
+      title:
+        " Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
       description: [
-        "<strong>Abstract:</strong> FModern network environments are highly complex, comprising diverse devices, configurations, and architectures. Ensuring seamless functionality across various conditions requires precise solution-level testing to validate end-to-end system behaviour.",
-        "A leading networking provider partnered with Calsoft to enhance use case validation using an LLM-driven approach. By generating production-centric tests, the solution enabled real-world scenario validation, improving accuracy, reliability, and overall network performance. This approach ensures comprehensive coverage, addressing diverse deployment scenarios and edge cases while optimizing network efficiency.",
+        "<strong>Abstract:</strong> Faced with long test cycles and high infrastructure costs, a global networking leader turned to Calsoft to bring speed and precision to their software validation process. By implementing CalTIA, Calsoft’s AI-powered test intelligence platform, the company replaced manual test selection with intelligent automation—cutting waste, accelerating releases, and improving engineering efficiency. What once slowed down delivery is now a competitive edge.",
       ],
       buttonText: "Case Study",
       pdfLink: "/pdfs/case1.pdf",
       stats: [
-        { count: "25%", text: "Accelerated Validation Cycles" },
-        { count: "50k+", text: "Reduced Human Errors" },
-        { count: "50k+", text: "Optimal Test Coverage" },
+        { count: "40%", text: " faster validation cycles" },
+        { count: "30% ", text: "lower infrastructure costs" },
+        { count: "20% ", text: "increase in test accuracy" },
       ],
     },
     {
       id: 2,
       title: "AI-powered test optimization with CalTIA",
       description: [
-        "<strong>Abstract:</strong> Calsoft integrated CalTIA, an AI-powered Test Intelligence Platform, into a global networking, security, and IT infrastructure provider’s development lifecycle to optimize test execution. With AI-driven test prioritization and automated regression testing, CalTIA streamlined test selection, eliminated redundant tests, and accelerated Pull Request (PR) validation. This approach reduced regression cycle time, minimized resource utilization, and improved software quality, enabling faster and more reliable releases.",
+        "<strong>Abstract:</strong> To ensure performance across diverse and complex network environments, a global networking solutions leader partnered with Calsoft to modernize its test validation process. By integrating a custom-trained Large Language Model (LLM), the company automated the generation of real-world test scenarios from topology diagrams and device configurations. This shift from manual to AI-led validation enabled the team to cover edge cases with greater accuracy, reduce testing cycles, and scale test coverage effortlessly across unique deployments.",
       ],
       buttonText: "Case Study",
       pdfLink:
         "https://www.calsoftinc.com/blogs/the-impact-of-ai-on-software-testing-from-automation-to-intelligent-qa.html",
       stats: [
-        { count: "60%", text: "Faster validation cycles" },
-        { count: "80k+", text: "Optimized resource utilization" },
+        { count: "60%", text: "reduction in manual effort for test creation" },
+        { count: "3X", text: "faster validation cycles" },
+        { count: "40%", text: " improvement in test coverage accuracy" },
       ],
     },
     {
       id: 3,
-      title: "AI-Powered Optimization of Data Center Operations",
+      title:
+        "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool",
       description: [
-        "<strong>Insight:</strong> The digital transformation journey has increased the prominence of Data Centers (DCs) for business success. The futuristic DCs are intricate systems that demand scrupulous monitoring to maintain higher operational efficiency and availability. Calsoft partnered with a technology company that provides a wide range of hardware and software services, including storage, security, and networking solutions, and developed a solution to realize predictive maintenance and management to diagnose and prevent Data Centre failures.",
+        "<strong>Insight:</strong> A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation—enabling fast, error-free virtual machine (VM) migrations at scale. With platform-neutral packaging, parallel execution, and built-in consistency checks, the solution accelerated onboarding and empowered customers with operational autonomy.",
       ],
       buttonText: "Case Study",
       pdfLink:
         "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
       stats: [
         {
-          count: "40%",
-          text: "Reduction in issues",
+          count: "50%",
+          text: " faster onboarding with automated VM migration",
         },
-        { count: "100k+", text: "maximizing ROI" },
+        { count: "3x ", text: "migration speed via parallel execution" },
+        { count: " Zero GUI dependency  ", text: "with CLI-driven operations" },
+      ],
+    },
+    {
+      id: 4,
+      title:
+        "Accelerating VMware Workload Migration with Calsoft’s Migration Server",
+      description: [
+        "<strong>Insight:</strong> A leading cloud infrastructure provider partnered with Calsoft to simplify and scale its VMware workload migration strategy. With growing licensing costs and the need for platform flexibility, the client needed a secure, self-contained, and repeatable solution to move workloads to Red Hat OpenShift and AWS. Calsoft’s Migration Server-based framework offered full lifecycle support—automating discovery, conversion, cost planning, and validation—while minimizing disruption and improving operational efficiency.",
+      ],
+      buttonText: "Case Study",
+      pdfLink:
+        "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
+      stats: [
+        {
+          count: "60%",
+          text: " less manual effort with automation",
+        },
+        { count: "40%", text: "faster migration to OpenShift and AWS" },
+        { count: "3x", text: "framework reuse across teams and workloads" },
+      ],
+    },
+    {
+      id: 5,
+      title:
+        "Streamlining Legal Case Classification with Calsoft’s GenAI Copilot",
+      description: [
+        "<strong>Insight:</strong> Calsoft partnered with one of the largest personal injury law firms in the United States to streamline legal operations using a GenAI-powered case classification solution. By integrating GPT-based intelligence into the firm’s existing workflow, Calsoft enabled smarter, faster, and more reliable decisions on case viability and team allocation—significantly reducing manual overhead and accelerating legal turnaround times.",
+      ],
+      buttonText: "Case Study",
+      pdfLink:
+        "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
+      stats: [
+        {
+          count: "30%",
+          text: " reduction in dependency on manual legal review",
+        },
+        { count: "24x7 ", text: "availability of legal case evaluation" },
+        {
+          count: " Real-time decisions",
+          text: "powered by integrated AI Copilot",
+        },
       ],
     },
   ];
 
   const sliderData = [
-    { id: 1, image: blogimg1, title: "Case Study One" },
-    { id: 2, image: blogimg2, title: "Case Study Two" },
-    { id: 3, image: blogimg3, title: "Case Study Three" },
-    { id: 4, image: blogimg3, title: "Case Study four" },
+    {
+      id: 1,
+      image: blogimg1,
+      title:
+        "Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
+    },
+    {
+      id: 2,
+      image: blogimg2,
+      title: "AI-powered test optimization with CalTIA",
+    },
+    {
+      id: 3,
+      image: blogimg3,
+      title:
+        "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool",
+    },
+    {
+      id: 4,
+      image: blogimg3,
+      title:
+        "Accelerating VMware Workload Migration with Calsoft’s Migration Server",
+    },
+    {
+      id: 5,
+      image: blogimg3,
+      title:
+        "Streamlining Legal Case Classification with Calsoft’s GenAI Copilot",
+    },
   ];
   const [selectedIndex, setSelectedIndex] = useState(0);
   const caseStudyData = caseStudyDataArray[selectedIndex];

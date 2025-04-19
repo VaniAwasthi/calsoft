@@ -167,7 +167,9 @@ const Nextgen = () => {
                           whileInView={{ y: 0, opacity: 1 }}
                           transition={{ duration: 0.1, delay: index * 0.2 }}
                           viewport={{ once: false, amount: 0.3 }}
-                          className="card-hover flex-shrink-0 min-w-[70px] min-h-[60px] md:w-[90px] md:h-[80px] xl:w-[100px] xl:h-[90px] transition-transform duration-500 hover:scale-150 perspective cursor-pointer"
+                          className={`iphone-icon ${
+                            index % 2 === 0 ? "even" : "odd"
+                          } card-hover flex-shrink-0 min-w-[70px] min-h-[60px] md:w-[90px] md:h-[80px] xl:w-[100px] xl:h-[90px] transition-transform duration-500 hover:scale-150 perspective cursor-pointer`}
                         >
                           <div className="card-inner relative w-full h-full">
                             {/* Front */}
@@ -244,7 +246,7 @@ const Nextgen = () => {
                 }}
               >
                 <span className="relative z-10 group-hover:text-[#E8282B] text-xs w-full flex gap-4 items-center transition-colors duration-500">
-                  know More
+                  Know More
                 </span>
                 <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
               </button>
