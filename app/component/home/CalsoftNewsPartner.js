@@ -165,7 +165,7 @@ export const CalsoftNews = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-26 mb-6 mt-14 md:mt-20">
-            <div className="hidden md:col-span-4 md:pl-6">
+            <div className="hidden md:grid md:col-span-4 md:pl-6">
               {/* {!isMobile ? (
                 <motion.div
                   initial={{ opacity: 0, y: 100 }}
