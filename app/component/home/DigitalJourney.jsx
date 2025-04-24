@@ -76,7 +76,7 @@ const DigitalJounery = () => {
         // whileInView={{ x: 0, opacity: 1 }}
         // transition={{ duration: 1, delay: 0.2 }}
         // viewport={{ once: false, amount: 0.3 }}
-        className="sticky top-30 z-90"
+        className="sticky top-30 z-90 md:block hidden"
       >
         <div className="w-full transition-all duration-300 text-white bg-[#2E3092]  ">
           <div className="relative flex items-center justify-center  px-4 lg:px-5 py-3 container max-w-8xl ">

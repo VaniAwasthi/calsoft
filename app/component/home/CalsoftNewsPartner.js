@@ -155,7 +155,7 @@ export const CalsoftNews = () => {
                   style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25" }}
                 >
                   <span className="relative justify-center z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
-                    Explore More{" "}
+                    Explore More
                     <IoArrowForwardCircleSharp className="text-3xl tra" />
                   </span>
                   <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
@@ -165,8 +165,8 @@ export const CalsoftNews = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-26 mb-6 mt-14 md:mt-20">
-            <div className="md:col-span-4 md:pl-6">
-              {!isMobile ? (
+            <div className="hidden md:grid md:col-span-4 md:pl-6">
+              {/* {!isMobile ? (
                 <motion.div
                   initial={{ opacity: 0, y: 100 }}
                   whileInView={{ y: 0, opacity: 1 }}
@@ -188,24 +188,24 @@ export const CalsoftNews = () => {
                     stories that showcase the best of humanity.
                   </p>
                 </motion.div>
-              ) : (
-                <div>
-                  <h3 className="text-2xl md:text-3xl mb-8 w-[80%] md:w-full flex gap-6 items-center md:text-[36px] font-semibold text-black">
-                    Calsoft News Section
-                    <Link href="#">
-                      <Image
-                        className="transition-all w-10 md:w-auto duration-500 hover:-mt-4"
-                        src={arrow}
-                        alt="arrow"
-                      />
-                    </Link>
-                  </h3>
-                  <p className="mt-2 text-[#959595] text-sm md:text-[15px]">
-                    We focus on bringing positivity to the world and focus on
-                    stories that showcase the best of humanity.
-                  </p>
-                </div>
-              )}
+              ) : ( */}
+              <div>
+                <h3 className="text-2xl md:text-3xl mb-8 w-[80%] md:w-full flex gap-6 items-center md:text-[36px] font-semibold text-black">
+                  Calsoft News Section
+                  <Link href="#">
+                    <Image
+                      className="transition-all w-10 md:w-auto duration-500 hover:-mt-4"
+                      src={arrow}
+                      alt="arrow"
+                    />
+                  </Link>
+                </h3>
+                <p className="mt-2 text-[#959595] text-sm md:text-[15px]">
+                  We focus on bringing positivity to the world and focus on
+                  stories that showcase the best of humanity.
+                </p>
+              </div>
+              {/* )} */}
             </div>
 
             <div className="md:col-span-8">

@@ -18,7 +18,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css";
 import "swiper/css/scrollbar";
-import { Scrollbar } from "swiper/modules";
+import { Autoplay, Scrollbar } from "swiper/modules";
 
 const gridVariants = {
   hidden: { opacity: 0 },
@@ -206,23 +206,43 @@ const Customer = () => {
               </Swiper>
             </div>
             {/* <div className="w-full h-[2px] bg-gray-300 mt-4"></div> */}
+            {/* Grid for large screens */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               variants={gridVariants}
               viewport={{ once: false, amount: 0.3 }}
-              className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 md:gap-8 mt-6 lg:mt-[5rem]"
+              className="hidden md:grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 md:gap-8 mt-6 lg:mt-[5rem]"
             >
-              {logos.map((logos, index) => (
+              {logos.map((logo, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
                   className="h-18 md:h-28 rounded-lg overflow-hidden flex items-center justify-center"
                 >
-                  <Image src={logos.image} alt={logos.name} />
+                  <Image src={logo.image} alt={logo.name} />
                 </motion.div>
               ))}
             </motion.div>
+
+            {/* Swiper for smaller screens */}
+            <div className="block md:hidden mt-6">
+              <Swiper
+                modules={[Autoplay]}
+                autoplay={{ delay: 2000 }}
+                spaceBetween={10}
+                slidesPerView={4}
+                loop
+              >
+                {logos.map((logo, index) => (
+                  <SwiperSlide key={index}>
+                    <div className=" rounded-lg overflow-hidden flex items-center justify-center bg-white shadow">
+                      <Image src={logo.image} alt={logo.name} />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </motion.div>
         </div>
       </section>
