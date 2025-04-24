@@ -62,7 +62,7 @@ const Nextgen = () => {
                     <button
                       key={index}
                       onClick={() => setActiveTab(item)}
-                      className={`min-w-24 md:w-1/5 text-center transition-all duration-300 py-3 md:py-4 text-sm lg:text-base rounded-full ${
+                      className={`min-w-24  md:w-1/5 text-center transition-all duration-300 py-3 px-2 md:py-4 text-sm lg:text-base rounded-full ${
                         activeTab === item
                           ? "bg-[#2E3092] text-white font-semibold"
                           : "text-[#000000]"
@@ -125,7 +125,7 @@ const Nextgen = () => {
 
                     <div className="flex gap-2 md:gap-6 flex-col lg:flex-row mt-6">
                       <button
-                        className="relative flex gap-2 justify-between items-center px-2 md:px-8 py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
+                        className="relative flex gap-2 justify-between items-center px-2 md:px-8 py-2 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
                         style={{
                           boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
                         }}

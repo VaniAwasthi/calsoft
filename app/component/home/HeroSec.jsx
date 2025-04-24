@@ -28,7 +28,7 @@ const HeroSec = () => {
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className="relative w-full h-full">
-         <BannerLayout
+          <BannerLayout
             image={slide.image}
             title={slide.title}
             title2={slide.title2}
@@ -36,12 +36,11 @@ const HeroSec = () => {
             buttonText={slide.buttonText}
             buttonImage={ButtonImage}
             hoverImage={ButtonImage}
-            titleOneClass="font-bold md:text-5xl text-[28px] mt-2 "
+            titleOneClass="font-bold md:text-5xl text-[20px] mt-2 "
             titleTwoClass="text-[28px] md:text-5xl md:mt-4"
             descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[200px] md:w-full"
             BgClassname="object-cover w-full h-full object-center"
           />
-
         </SwiperSlide>
       ))}
     </Swiper>
