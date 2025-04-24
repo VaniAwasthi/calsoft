@@ -67,7 +67,7 @@ const Footer = () => {
             </div>
 
             {/* Group the remaining 3 columns inside a grid for mobile */}
-            <div className="grid grid-cols-3 col-span-1 md:col-span-3 gap-4">
+            <div className="grid grid-cols-3 col-span-2 md:col-span-3 md:gap-4 gap-6">
               {/* Company */}
               <div>
                 <h3 className="md:text-lg text-base font-semibold mb-2 md:mb-8">
