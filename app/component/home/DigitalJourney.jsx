@@ -101,7 +101,7 @@ const DigitalJounery = () => {
                       className="flex items-center w-max md:w-auto"
                     >
                       <div
-                        className={`relative cursor-pointer text-lg ${
+                        className={`relative cursor-pointer text-[16px] ${
                           activeTab === item
                             ? "text-white font-semibold"
                             : "text-gray-400"

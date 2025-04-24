@@ -108,14 +108,14 @@ export const Services = () => {
                   viewport={{ once: false, amount: 0.3 }}
                   className="bg-[#2E3092] text-white  p-3 py-6 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start"
                 >
-                  <div className="flex gap-0 w-full md:gap-6  md:flex-nowrap  md:w-full">
+                  <div className="flex justify-center items-center gap-0 w-full md:gap-6  md:flex-nowrap  md:w-full">
                     <div className="w-42">
                       <Image
                         src={service.icon}
                         alt={service.title}
                         width={50}
                         height={50}
-                        className="mb-4 md:w-full md:h-full h-8 object-contain"
+                        className="mb-4 md:w-full md:h-full h-12 object-contain"
                       />
                     </div>
 
