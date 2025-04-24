@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
@@ -108,7 +108,7 @@ export const Services = () => {
                   viewport={{ once: false, amount: 0.3 }}
                   className="bg-[#2E3092] text-white  p-3 py-6 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start"
                 >
-                  <div className="flex gap-2 md:gap-6 flex-wrap md:flex-nowrap w-[95%] md:w-full">
+                  <div className="flex gap-0 w-full md:gap-6  md:flex-nowrap  md:w-full">
                     <div className="w-42">
                       <Image
                         src={service.icon}
@@ -120,10 +120,10 @@ export const Services = () => {
                     </div>
 
                     <div className="w-full">
-                      <h3 className="text-sm md:text-lg md:w-full w-[90%] font-semibold mb-2">
+                      <h3 className="text-[12px] md:text-lg w-full   font-semibold mb-2">
                         {service.title}
                       </h3>
-                      <p className="text-white line-clamp-3  text-xs md:text-sm font-[200] md:font-light">
+                      <p className="hidden md:block text-white line-clamp-3  text-xs md:text-sm font-[200] md:font-light">
                         {service.description}
                       </p>
                       {/* <Link
@@ -349,12 +349,67 @@ export const Casestudy = () => {
                 </div>
               </div>
 
-              <div className="w-full  md:w-2/3">
-                <div className="space-y-4 md:block flex gap-4">
+              <div className="w-full md:w-2/3">
+                {/* Swiper for mobile */}
+                <div className="block md:hidden">
+                  <Swiper
+                    modules={[Autoplay]}
+                    spaceBetween={16}
+                    slidesPerView={1}
+                    loop
+                    autoplay={{ delay: 3000 }}
+                  >
+                    {caseStudyData.stats.map((stat, index) => (
+                      <SwiperSlide key={index}>
+                        <motion.div
+                          className="bg-white rounded-2xl p-4 flex gap-4 items-center justify-center cursor-pointer transition-transform"
+                          initial={{ opacity: 0, x: 50 }}
+                          whileHover={{ x: -30 }}
+                          whileInView={{ x: 0, opacity: 1 }}
+                          transition={{ duration: 0.2, delay: 0.2 }}
+                          viewport={{ once: false, amount: 0.3 }}
+                          style={{ boxShadow: "0px 2px 9px #D9DBF1" }}
+                        >
+                          <div className="flex w-[40%] gap-4 flex-wrap justify-between">
+                            <p className="text-black text-sm">{stat.count}</p>
+                            <div className="flex gap-0 -mt-2">
+                              <Image
+                                src={man1}
+                                alt="man"
+                                width={40}
+                                height={40}
+                              />
+                              <Image
+                                src={man2}
+                                alt="man"
+                                className="-ml-2"
+                                width={40}
+                                height={40}
+                              />
+                              <Image
+                                src={man3}
+                                alt="man"
+                                className="-ml-2"
+                                width={40}
+                                height={40}
+                              />
+                            </div>
+                          </div>
+                          <div className="flex gap-4 w-[50%] flex-wrap justify-between">
+                            <p className="font-medium text-sm">{stat.text}</p>
+                          </div>
+                        </motion.div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+
+                {/* Original flex layout for md+ */}
+                <div className="hidden md:block space-y-4">
                   {caseStudyData.stats.map((stat, index) => (
                     <motion.div
                       key={index}
-                      className="bg-white rounded-2xl h-full p-4 flex-wrap flex gap-4 items-center justify-between cursor-pointer transition-transform md:w-full w-2/4"
+                      className="bg-white rounded-2xl h-full p-4 flex gap-4 items-center justify-between cursor-pointer transition-transform md:w-full"
                       initial={{ opacity: 0, x: 50 }}
                       whileHover={{ x: -30 }}
                       whileInView={{ x: 0, opacity: 1 }}
@@ -382,10 +437,8 @@ export const Casestudy = () => {
                           />
                         </div>
                       </div>
-                      <div className="flex gap-4 md:w-[50%] flex-wrap justify-between">
-                        <p className="md:font-semibold md:text-base text-sm font-medium">
-                          {stat.text}
-                        </p>
+                      <div className="flex gap-4 w-[50%] flex-wrap justify-between">
+                        <p className="font-semibold text-base">{stat.text}</p>
                       </div>
                     </motion.div>
                   ))}

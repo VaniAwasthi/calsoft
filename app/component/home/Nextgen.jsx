@@ -122,9 +122,10 @@ const Nextgen = () => {
                     >
                       {activeIndustry.description}
                     </motion.p>
-                    <div className="hidden md:flex gap-6 flex-col lg:flex-row mt-6">
+
+                    <div className="flex gap-2 md:gap-6 flex-col lg:flex-row mt-6">
                       <button
-                        className="relative flex gap-2 justify-between items-center  px-8 py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
+                        className="relative flex gap-2 justify-between items-center px-2 md:px-8 py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
                         style={{
                           boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
                         }}
@@ -136,7 +137,7 @@ const Nextgen = () => {
                         <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
                       </button>
                       <button
-                        className="relative flex gap-2 justify-between items-center bg-transparent border-1 border-white  px-8 py-4 rounded-full shadow-md text-white transition-all duration-500 overflow-hidden group"
+                        className="relative hidden md:flex gap-2 justify-between items-center bg-transparent border-1 border-white px-2 md:px-8 py-4 rounded-full shadow-md text-white transition-all duration-500 overflow-hidden group"
                         style={{
                           boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
                         }}
@@ -194,39 +195,40 @@ const Nextgen = () => {
                   </motion.div>
                 ) : (
                   // Mobile View without Animation
-                  <div className="flex flex-col justify-between mt-4 md:mt-16 space-y-6">
-                    <div className="flex overflow-x-auto gap-2 md:gap-6 px-2 pb-2 scroll-smooth">
-                      {activeIndustry.iconData.map((card) => (
-                        <div
-                          key={card.id}
-                          className="card-hover flex-shrink-0 min-w-[50px] min-h-[50px] w-[90px] h-[80px] transition-none perspective cursor-pointer"
-                        >
-                          <div className="card-inner relative w-full h-full">
-                            {/* Front */}
-                            <div className="absolute inset-0 flex items-center justify-center bg-white text-black border border-white rounded-lg shadow-md backface-hidden">
-                              <Image
-                                src={card.icon}
-                                alt={card.title}
-                                width={40}
-                                height={40}
-                              />
-                            </div>
-                            {/* Back */}
-                            <div className="absolute inset-0 flex items-center justify-center bg-white text-[#021553] rounded-lg rotate-y-180 transform scale-105 mx-2 backface-hidden">
-                              <p className="text-[8px] md:text-[8px] xl:text-[10px] font-semibold text-center px-2">
-                                {card.title}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  // <div className="flex flex-col justify-between mt-4 md:mt-16 space-y-6">
+                  //   <div className="flex overflow-x-auto gap-2 md:gap-6 px-2 pb-2 scroll-smooth">
+                  //     {activeIndustry.iconData.map((card) => (
+                  //       <div
+                  //         key={card.id}
+                  //         className="card-hover flex-shrink-0 min-w-[50px] min-h-[50px] w-[90px] h-[80px] transition-none perspective cursor-pointer"
+                  //       >
+                  //         <div className="card-inner relative w-full h-full">
+                  //           {/* Front */}
+                  //           <div className="absolute inset-0 flex items-center justify-center bg-white text-black border border-white rounded-lg shadow-md backface-hidden">
+                  //             <Image
+                  //               src={card.icon}
+                  //               alt={card.title}
+                  //               width={40}
+                  //               height={40}
+                  //             />
+                  //           </div>
+                  //           {/* Back */}
+                  //           <div className="absolute inset-0 flex items-center justify-center bg-white text-[#021553] rounded-lg rotate-y-180 transform scale-105 mx-2 backface-hidden">
+                  //             <p className="text-[8px] md:text-[8px] xl:text-[10px] font-semibold text-center px-2">
+                  //               {card.title}
+                  //             </p>
+                  //           </div>
+                  //         </div>
+                  //       </div>
+                  //     ))}
+                  //   </div>
+                  // </div>
+                  <></>
                 )}
               </div>
             </motion.div>
 
-            <div className="md:hidden flex gap-4 justify-center pb-6 lg:flex-row mt-6">
+            {/* <div className="md:hidden flex gap-4 justify-center pb-6 lg:flex-row mt-6">
               <button
                 className="relative flex gap-2 justify-between items-center  px-4 py-3 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
                 style={{
@@ -250,7 +252,7 @@ const Nextgen = () => {
                 </span>
                 <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
