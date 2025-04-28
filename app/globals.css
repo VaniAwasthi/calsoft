@@ -161,3 +161,6 @@ body {
   animation-direction: alternate;
   transform-origin: 30% 5%;
 }
+.swiper-scrollbar-drag {
+  width: 200px;
+}

@@ -33,40 +33,9 @@ const Footer = () => {
       </button>
 
       <footer className="bg-black text-white">
-        <div className="container mx-auto px-4 py-6 md:px-20 ">
+        <div className="container mx-auto px-4 py-6 xl:px-20 ">
           <div className="flex flex-col md:flex-row md:justify-between items-start pt-4 pb-6">
             <Image src={Logo} alt="Calsoft Logo" width={150} height={50} />
-            <div className=" mt-10 md:mt-0 w-full flex justify-end self-end">
-              <div className="flex items-center justify-between relative w-full md:w-2/4 bg-[#333333] rounded-full">
-                <input
-                  type="email"
-                  placeholder="Add your email*"
-                  className="w-full md:w-[500px]  text-gray-300 px-4 py-3 pr-10  focus:outline-none"
-                />
-                <button className=" bg-[#2E3092] text-white rounded-full px-4 min-w-34 md:min-w-40 -ml-6 flex items-center gap-4 py-3 ">
-                  <GoArrowRight /> Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Second Row: Information Sections */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 mt-8">
-            {/* Information - Full width on mobile, 1/4 on desktop */}
-            <div className="col-span-1 md:col-span-1">
-              <h3 className="text-sm md:text-lg font-semibold md:mb-8">
-                Calsoft Inc.
-              </h3>
-              <p className="text-xs font-light md:font-normal md:text-sm text-white mt-2">
-                Calsoft is a leading technology-first partner, providing digital
-                and product engineering services. For over 25 years, Calsoft has
-                helped its customers solve their business challenges using
-                technologies in Storage, virtualization, networking, security,
-                cloud, AI/ML, IoT, and telecom.
-              </p>
-            </div>
-
-            {/* Group the remaining 3 columns inside a grid for mobile */}
             <div className="grid grid-cols-3 col-span-2 md:col-span-3 md:gap-4 gap-6">
               {/* Company */}
               <div>
@@ -174,6 +143,38 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+
+          {/* Second Row: Information Sections */}
+          {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 mt-8"> */}
+          {/* Information - Full width on mobile, 1/4 on desktop */}
+          {/* <div className="col-span-1 md:col-span-1">
+              <h3 className="text-sm md:text-lg font-semibold md:mb-8">
+                Calsoft Inc.
+              </h3>
+              <p className="text-xs font-light md:font-normal md:text-sm text-white mt-2">
+                Calsoft is a leading technology-first partner, providing digital
+                and product engineering services. For over 25 years, Calsoft has
+                helped its customers solve their business challenges using
+                technologies in Storage, virtualization, networking, security,
+                cloud, AI/ML, IoT, and telecom.
+              </p>
+            </div> */}
+
+          {/* Group the remaining 3 columns inside a grid for mobile */}
+
+          {/* </div> */}
+          <div className=" mt-10 md:-mt-14 w-full flex ">
+            <div className="flex items-center justify-between relative w-full md:w-2/4 bg-[#333333] rounded-full">
+              <input
+                type="email"
+                placeholder="Add your email*"
+                className="w-full md:w-[500px]  text-gray-300 px-4 py-3 pr-10  focus:outline-none"
+              />
+              <button className=" bg-[#2E3092] text-white rounded-full px-4 min-w-34 md:min-w-40 -ml-6 flex items-center gap-4 py-3 ">
+                <GoArrowRight /> Subscribe
+              </button>
             </div>
           </div>
         </div>

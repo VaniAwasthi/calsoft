@@ -15,7 +15,7 @@ import service4 from "../../assets/home/service4.svg";
 import service5 from "../../assets/home/service5.svg";
 import service6 from "../../assets/home/service6.svg";
 import icon2 from "../../assets/home/icon4.svg";
-import Link from "next/link";
+// import Link from "next/link";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import logo2 from "../../assets/home/logo2.png";
 import man1 from "../../assets/home/man1.webp";
@@ -25,7 +25,7 @@ import blogimg1 from "../../assets/home/blog1.webp";
 import blogimg2 from "../../assets/home/blog2.webp";
 import blogimg3 from "../../assets/home/blog3.webp";
 import { LuArrowUpRight } from "react-icons/lu";
-import { BlogCard } from "../../component/blog/BlogCard";
+// import { BlogCard } from "../../component/blog/BlogCard";
 import Casestudybg from "../../assets/home/casestudybg.webp";
 export const Services = () => {
   const title = "Services";
@@ -77,7 +77,7 @@ export const Services = () => {
   return (
     <>
       <section className="py-10 md:py-8 bg-[#021553]" id="services">
-        <div className="container mx-auto px-4 md:px-20">
+        <div className="container mx-auto px-4 xl:px-20">
           <div className="flex gap-6 items-center mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon3} alt="icon" width={16} height={16} />
@@ -146,7 +146,7 @@ export const Services = () => {
 
 export const Casestudy = () => {
   const title = "Case Studies";
-  const heading = `Real results. <span className="text-black font-normal">Proven success</span>`;
+  const heading = `Cloud Provider Accelerates VMware Migration <span className="text-black font-normal"> with Calsoft’s CLI Tool</span>`;
   // data for case studies
   const caseStudyDataArray = [
     {
@@ -277,7 +277,7 @@ export const Casestudy = () => {
   return (
     <>
       <section className="md:py-8 py-10" id="case-studies">
-        <div className="container mx-auto px-4 md:px-20">
+        <div className="container mx-auto px-4 xl:px-20">
           <div className="flex gap-6 items-center mb-2 md:mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon2} alt="icon" width={16} height={16} />
@@ -285,14 +285,30 @@ export const Casestudy = () => {
             <p className="font-light text-sm md:text-base ">Case Studies</p>
           </div>
 
-          <div className="pt-8 gradient-border">
+          <motion.div
+            initial={{ opacity: 0, y: -100 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="pt-8 gradient-border"
+          >
             <motion.h2
               key={caseStudyData.title}
               className="text-2xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
-              dangerouslySetInnerHTML={{ __html: heading }}
-            ></motion.h2>
+            >
+              Cloud Provider Accelerates VMware Migration
+              <span className="text-black font-normal">
+                with Calsoft’s CLI Tool
+              </span>
+            </motion.h2>
 
-            <main className="mt-8 flex flex-col md:flex-row gap-8 md:gap-12 items-stretch">
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="mt-8 flex flex-col md:flex-row gap-8 md:gap-12 items-stretch"
+            >
               <motion.div
                 className=" text-white p-4 md:p-8 rounded-[20px]  md:w-2/3 flex flex-col justify-center bg-cover bg-center"
                 initial={{ opacity: 0, x: -50 }}
@@ -355,7 +371,7 @@ export const Casestudy = () => {
                   <Swiper
                     modules={[Autoplay]}
                     spaceBetween={16}
-                    slidesPerView={1}
+                    slidesPerView={2}
                     loop
                     autoplay={{ delay: 3000 }}
                   >
@@ -370,9 +386,9 @@ export const Casestudy = () => {
                           viewport={{ once: false, amount: 0.3 }}
                           style={{ boxShadow: "0px 2px 9px #D9DBF1" }}
                         >
-                          <div className="flex w-[40%] gap-4 flex-wrap justify-between">
+                          <div className="flex w-[30%] gap-4 flex-wrap justify-between">
                             <p className="text-black text-sm">{stat.count}</p>
-                            <div className="flex gap-0 -mt-2">
+                            {/* <div className="flex gap-0 -mt-2">
                               <Image
                                 src={man1}
                                 alt="man"
@@ -393,9 +409,9 @@ export const Casestudy = () => {
                                 width={40}
                                 height={40}
                               />
-                            </div>
+                            </div> */}
                           </div>
-                          <div className="flex gap-4 w-[50%] flex-wrap justify-between">
+                          <div className="flex gap-4 w-[70%] flex-wrap justify-between">
                             <p className="font-medium text-sm">{stat.text}</p>
                           </div>
                         </motion.div>
@@ -409,7 +425,7 @@ export const Casestudy = () => {
                   {caseStudyData.stats.map((stat, index) => (
                     <motion.div
                       key={index}
-                      className="bg-white rounded-2xl h-full p-4 flex gap-4 items-center justify-between cursor-pointer transition-transform md:w-full"
+                      className="bg-white rounded-2xl h-full p-4 flex gap-4 items-center justify-between cursor-pointer transition-transform md:w-full  "
                       initial={{ opacity: 0, x: 50 }}
                       whileHover={{ x: -30 }}
                       whileInView={{ x: 0, opacity: 1 }}
@@ -417,9 +433,9 @@ export const Casestudy = () => {
                       viewport={{ once: false, amount: 0.3 }}
                       style={{ boxShadow: "0px 2px 9px #D9DBF1" }}
                     >
-                      <div className="flex w-[40%] gap-4 flex-wrap justify-between">
-                        <p className="text-black text-sm">{stat.count}</p>
-                        <div className="flex gap-0 -mt-2">
+                      <div className="flex w-[30%] gap-2 flex-wrap justify-between text-[#616161]">
+                        <p className=" text-2xl">{stat.count}</p>
+                        {/* <div className="flex gap-0 -mt-2">
                           <Image src={man1} alt="man" width={40} height={40} />
                           <Image
                             src={man2}
@@ -435,17 +451,17 @@ export const Casestudy = () => {
                             width={40}
                             height={40}
                           />
-                        </div>
+                        </div> */}
                       </div>
-                      <div className="flex gap-4 w-[50%] flex-wrap justify-between">
+                      <div className="flex gap-2 w-[50%] flex-wrap justify-between text-[#616161]">
                         <p className="font-semibold text-base">{stat.text}</p>
                       </div>
                     </motion.div>
                   ))}
                 </div>
               </div>
-            </main>
-          </div>
+            </motion.div>
+          </motion.div>
           <div className="relative w-full py-8">
             <Swiper
               modules={[Navigation]}
@@ -454,7 +470,7 @@ export const Casestudy = () => {
               breakpoints={{
                 640: { slidesPerView: 1 },
                 768: { slidesPerView: 2 },
-                1024: { slidesPerView: 4 },
+                1024: { slidesPerView: 3 },
               }}
               navigation
               className="slider_t play_slider"
