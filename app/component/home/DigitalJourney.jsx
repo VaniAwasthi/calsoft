@@ -3,7 +3,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { useState } from "react";
-import tabImg from "../../assets/home/tabImg.webp";
 // import FeatureSection from "./FeatureSection";
 import Architect from "../../assets/home/Architect.webp";
 import Engineer from "../../assets/home/Engineer.webp";
@@ -15,6 +14,8 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Submenu from "../utilities/Submenu";
+import ConnectorLine from "../../assets/home/connectorLine.svg";
 const DigitalJounery = () => {
   const [activeTab, setActiveTab] = useState("Journey");
 
@@ -71,76 +72,19 @@ const DigitalJounery = () => {
 
   return (
     <>
-      <motion.div
-        // initial={{ x: 50, opacity: 0 }}
-        // whileInView={{ x: 0, opacity: 1 }}
-        // transition={{ duration: 1, delay: 0.2 }}
-        // viewport={{ once: false, amount: 0.3 }}
-        className="sticky top-30 z-90 md:block hidden"
-      >
-        <div className="w-full transition-all duration-300 text-white bg-[#2E3092]  ">
-          <div className="relative flex items-center justify-center  px-4 lg:px-5 py-3 container max-w-8xl ">
-            {/* Border Gradient Effect */}
-
-            {/* Left Icon */}
-            <div className="flex justify-between items-center overflow-scroll md:overflow-auto xl:overflow-hidden">
-              <div className="relative z-10 lg:mr-[6rem] lg:pr-[4rem]">
-                <Image src={tabImg} alt="icon" />
-              </div>
-              <motion.div
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
-              >
-                {/* Navigation Items */}
-                <div className="relative z-10 flex space-x-4 lg:space-x-9 text-sm md:text-base">
-                  {navItems.map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center w-max md:w-auto"
-                    >
-                      <div
-                        className={`relative cursor-pointer text-[16px] ${
-                          activeTab === item
-                            ? "text-white font-semibold"
-                            : "text-gray-400"
-                        }`}
-                        onClick={() => {
-                          setActiveTab(item);
-                          const sectionId = formatId(item);
-                          const section = document.getElementById(sectionId);
-                          if (section) {
-                            section.scrollIntoView({
-                              behavior: "smooth",
-                              block: "start",
-                            });
-                          }
-                        }}
-                      >
-                        {item}
-                      </div>
-
-                      {/* Add Divider Except for Last Item */}
-                      {index !== navItems.length - 1 && (
-                        <div className="border-r border-white h-4 mx-2 xl:ml-9" />
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-      <div className="flex justify-center bg-[#021553] pb-10 md:pb-0 md:min-h-screen1">
+      <Submenu
+        navItems={navItems}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+      />
+      <div className="hidden md:flex justify-center bg-[#021553] pb-10 md:pb-0 md:min-h-screen1">
         <div className="container max-w-7xl mx-auto px-4   transition-all duration-300">
           <div className="text-white relative" id="journey">
-            <div className="hidden md:block absolute left-0 top-0 bottom-0 traslate-y-[-52px] lg:translate-x-[-17px] xl:translate-y-[-57px]">
+            <div className="hidden md:block absolute left-0 top-0 bottom-0 lg:translate-y-[-52px]  lg:translate-x-[8px] xl:translate-x-[-46px] xl:translate-y-[-52px]">
               {/* Gradient Border */}
-              <div className="w-[2px] mr-2 mt-6 h-full bg-gradient-to-b from-gray-300 to-red-500"></div>
+              <div className="hidden md:block w-[2px] mr-2 mt-6 h-full bg-gradient-to-b from-gray-300 to-red-500"></div>
             </div>
-            <div className="xl:ml-[8rem] my-4 ">
+            <div className="lg:ml-[4rem] xl:ml-[8rem] my-4 ">
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -171,7 +115,7 @@ const DigitalJounery = () => {
                 breakpoints={{
                   320: { slidesPerView: 3, spaceBetween: 20 },
                   768: { slidesPerView: 3, spaceBetween: 30 }, // iPad
-                  1024: { slidesPerView: 4, spaceBetween: 30 }, // iPad Pro
+                  1024: { slidesPerView: 3, spaceBetween: 20 }, // iPad Pro
                   1280: { slidesPerView: 5, spaceBetween: 20 }, // Desktop
                 }}
                 className="pt-5 pagination_white "

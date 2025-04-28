@@ -50,6 +50,7 @@ const data = [
     description:
       "Maximize enterprise AI investments with IBM WatsonX & Calsoft",
     link: "https://www.calsoftinc.com/calsoft-partners-with-ibm-watsonx/",
+    imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
   },
   {
     id: 2,
@@ -59,6 +60,7 @@ const data = [
     description:
       "Discover how enterprises can reduce Kafka costs by up to 50% without compromising on real-time performance",
     link: "https://www.californiaentertainmentpress.com/article/800036888-calsoft-and-streamnative-join-forces-to-optimize-cost-and-performance-in-real-time-data-streaming",
+    imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
   },
   {
     id: 3,
@@ -67,6 +69,7 @@ const data = [
     description:
       "Transforming product imagery with speed, scale, and creativity.",
     link: "https://www.americanbusinesstimes.com/article/779940243-calsoft-partners-with-segmind-for-ai-driven-visual-asset-creation-in-e-commerce",
+    imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
   },
   {
     id: 4,
@@ -83,6 +86,7 @@ const data = [
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
+    imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
   },
   {
     id: 6,
@@ -91,6 +95,7 @@ const data = [
     description:
       "Discover innovative solutions for modern software development.",
     link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
+    imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
   },
 ];
 export const CalsoftNews = () => {
@@ -110,9 +115,9 @@ export const CalsoftNews = () => {
         style={{
           background: `url(${bgimg.src}) center center/ cover no-repeat`,
         }}
-        id="whats-new"
+        id="what's-new"
       >
-        <div className="container mx-auto px-4 md:px-20">
+        <div className="container mx-auto px-4 xl:px-20">
           <div className="flex gap-6 md:gap-6 items-center mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
               <Image src={icon1} alt="icon" width={16} height={16} />
@@ -124,10 +129,14 @@ export const CalsoftNews = () => {
           <Image src={border} alt="icon"  width={3} className="h-full mx-auto" />
           </div> */}
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              initial={{ opacity: 0, y: -100 }}
+              whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.2, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
+              //   initial={{ y: -100, opacity: 0 }}
+              // whileInView={{ y: 0, opacity: 1 }}
+              // transition={{ duration: 1, delay: 0.5 }}
+              // viewport={{ once: false, amount: 0.3 }}
             >
               <div className="pt-8 gradient-border">
                 <motion.h2
@@ -191,7 +200,7 @@ export const CalsoftNews = () => {
               ) : ( */}
               <div>
                 <h3 className="text-2xl md:text-3xl mb-8 w-[80%] md:w-full flex gap-6 items-center md:text-[36px] font-semibold text-black">
-                  Calsoft News Section
+                  Calsoft News
                   <Link href="#">
                     <Image
                       className="transition-all w-10 md:w-auto duration-500 hover:-mt-4"
@@ -222,7 +231,7 @@ export const CalsoftNews = () => {
                     breakpoints={{
                       640: { slidesPerView: 3, spaceBetween: 10 },
                       768: { slidesPerView: 3, spaceBetween: 10 },
-                      1024: { slidesPerView: 4, spaceBetween: 10 },
+                      1024: { slidesPerView: 3, spaceBetween: 10 },
                     }}
                     scrollbar={{ hide: false }}
                     modules={[Scrollbar]}
@@ -256,7 +265,7 @@ export const CalsoftNews = () => {
                     breakpoints={{
                       640: { slidesPerView: 3, spaceBetween: 10 },
                       768: { slidesPerView: 3, spaceBetween: 10 },
-                      1024: { slidesPerView: 4, spaceBetween: 10 },
+                      1024: { slidesPerView: 3, spaceBetween: 10 },
                     }}
                     scrollbar={{ hide: false }}
                     modules={[Scrollbar]}
@@ -277,6 +286,15 @@ export const CalsoftNews = () => {
                             height={200}
                             className="object-cover rounded-lg"
                           />
+                          <p
+                            className={`${
+                              selected.id === item.id
+                                ? "font-semibold"
+                                : "font-normal"
+                            } text-[12px] py-6`}
+                          >
+                            {item.imageTitle}
+                          </p>
                         </div>
                       </SwiperSlide>
                     ))}
@@ -296,7 +314,7 @@ export const CalsoftPartner = () => {
   const heading = "Powering Ahead, Together.";
   const data = [
     {
-      title: "Cloud Partnerships",
+      title: "Cloud",
       colSpan: 3,
       gridCols: 2,
       logos: [
@@ -306,7 +324,7 @@ export const CalsoftPartner = () => {
       ],
     },
     {
-      title: "Data & Analytics Partnerships",
+      title: "Data & Analytics",
       colSpan: 3,
       gridCols: 1,
       logos: [logo4, logo5],
@@ -334,7 +352,7 @@ export const CalsoftPartner = () => {
       ],
     },
     {
-      title: "Industry Partnerships",
+      title: "Industry",
       colSpan: 3,
       gridCols: 1,
       logos: [logo20, logo21],
@@ -349,7 +367,7 @@ export const CalsoftPartner = () => {
       }}
       id="partners"
     >
-      <div className="container mx-auto px-4 md:px-20">
+      <div className="container mx-auto px-4 xl:px-20">
         <div className="flex gap-6 items-center mb-2 md:mb-6">
           <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
             <Image src={icon2} alt="icon" width={16} height={16} />
@@ -357,7 +375,13 @@ export const CalsoftPartner = () => {
           <p className="font-light">{title}</p>
         </div>
 
-        <div className="pt-8 gradient-border">
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="pt-8 gradient-border"
+        >
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -381,7 +405,7 @@ export const CalsoftPartner = () => {
                 className="flex flex-col h-full !opacity-100"
               >
                 <p className="mb-4 md:font-semibold md:text-base text-xs">
-                  Cloud Partnerships
+                  Cloud
                 </p>
                 <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
                   <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
@@ -418,7 +442,7 @@ export const CalsoftPartner = () => {
                 className="flex flex-col h-full"
               >
                 <p className="mb-4 md:font-semibold md:text-base text-xs">
-                  Data & Analytics Partnerships
+                  Data & Analytics
                 </p>
                 <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
                   <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
@@ -518,7 +542,7 @@ export const CalsoftPartner = () => {
                 className="flex flex-col h-full"
               >
                 <p className="mb-4 md:font-semibold md:text-base text-xs">
-                  Industry Partnerships
+                  Industry
                 </p>
                 <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
                   <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
@@ -538,7 +562,7 @@ export const CalsoftPartner = () => {
               </motion.div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

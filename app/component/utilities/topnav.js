@@ -11,6 +11,51 @@ import Logo from "../../assets/logo.png";
 import barmenu from "../../assets/menu-bar.svg";
 
 export default function Navbar() {
+  const navItems = [
+    {
+      title: "DATA & AI",
+      href: "/data-ai",
+      submenu: [
+        { title: "Submenu Item 1", href: "/data-ai/submenu1" },
+        { title: "Submenu Item 2", href: "/data-ai/submenu2" },
+      ],
+    },
+    {
+      title: "DIGITAL ENGINEERING",
+      href: "/digital-engineering",
+      submenu: [
+        { title: "Submenu Item 1", href: "/digital-engineering/submenu1" },
+        { title: "Submenu Item 2", href: "/digital-engineering/submenu2" },
+      ],
+    },
+    {
+      title: "INDUSTRIES",
+      href: "/industries",
+      submenu: [
+        { title: "Submenu Item 1", href: "#" },
+        { title: "Submenu Item 2", href: "#" },
+      ],
+    },
+    {
+      title: "INSIGHTS",
+      href: "/insights",
+      submenu: [
+        { title: "Blogs", href: "#" },
+        { title: "Resources", href: "#" },
+        { title: "Press Releases", href: "#" },
+        { title: "Events & Webinars", href: "#" },
+        { title: "Videos & Podcasts", href: "#" },
+      ],
+    },
+    {
+      title: "ABOUT",
+      href: "/about",
+      submenu: [
+        { title: "Submenu Item 1", href: "#" },
+        { title: "Submenu Item 2", href: "#" },
+      ],
+    },
+  ];
   return (
     <header className=" w-full sticky top-0 z-60">
       {/* Top Bar */}
@@ -29,47 +74,42 @@ export default function Navbar() {
       </div>
 
       {/* Navigation */}
-      <Disclosure as="nav" className="bg-black  py-4 ">
+      <Disclosure as="nav" className="bg-black py-4">
         {({ open }) => (
           <>
-            <div className="container mx-auto px-4 md:px-20 flex items-center justify-between">
+            <div className="container mx-auto px-4 md:px-10 xl:px-20 flex items-center justify-between">
               {/* Logo */}
-              <Link href="#" className="text-2xl font-bold text-white">
+              <Link href="/" className="text-2xl font-bold text-white">
                 <Image src={Logo} height={50} alt="Logo" />
               </Link>
 
               {/* Desktop Menu */}
-              <div className="hidden lg:flex space-x-6 ">
-                {[
-                  "DATA & AI",
-                  "DIGITAL ENGINEERING",
-                  "INDUSTRIES",
-                  "INSIGHTS ",
-                  "ABOUT ",
-                ].map((item) => (
-                  <div key={item} className="relative group">
-                    <button className="flex items-center space-x-1 text-white hover:text-white">
-                      <span className="text-sm leading-12  font-normal hover:font-bold">
-                        {item}
+              <div className="hidden lg:flex xl:space-x-6">
+                {navItems.map(({ title, href, submenu }) => (
+                  <div key={title} className="relative group">
+                    <Link
+                      href={href}
+                      className="flex items-center space-x-1 text-white hover:text-white"
+                    >
+                      <span className="text-sm leading-12 font-normal hover:font-bold">
+                        {title}
                       </span>
                       <IoIosArrowDown />
-                    </button>
-                    <div className="absolute left-0 hidden p-2 mt-2 bg-white text-black rounded shadow-md group-hover:block">
-                      <Link
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-200"
-                      >
-                        Submenu Item
-                      </Link>
-                      <Link
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-200"
-                      >
-                        Submenu Item
-                      </Link>
+                    </Link>
+                    <div className="absolute mb-5 top-full left-0 mt-2 min-w-[200px] bg-white text-black rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                      {submenu.map(({ title, href }, index) => (
+                        <Link
+                          key={index}
+                          href={href}
+                          className="block px-4 py-2 hover:bg-gray-200"
+                        >
+                          {title}
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 ))}
+
                 {/* Search Bar */}
                 <div className="hidden lg:flex items-center space-x-4">
                   <div className="relative">
@@ -87,23 +127,29 @@ export default function Navbar() {
 
               {/* Mobile Menu Button */}
               <Disclosure.Button className="lg:hidden p-2 text-white focus:outline-none">
-                {/* <FiMenu className="w-6 h-6" /> */}
                 <Image src={barmenu} width={40} height={24} alt="bar menu" />
               </Disclosure.Button>
             </div>
 
             {/* Mobile Menu */}
             <Disclosure.Panel className="lg:hidden flex flex-col space-y-2 p-4 bg-black text-white">
-              {[
-                "Data & AI",
-                "Digital Engineering",
-                "Industries",
-                "Insights",
-                "About",
-              ].map((item) => (
-                <Link key={item} href="#" className="block py-4">
-                  {item}
-                </Link>
+              {navItems.map(({ title, href, submenu }) => (
+                <div key={title} className="relative">
+                  <Link href={href} className="block py-4">
+                    {title}
+                  </Link>
+                  <Disclosure.Panel className="pl-4">
+                    {submenu.map(({ title, href }, index) => (
+                      <Link
+                        key={index}
+                        href={href}
+                        className="block py-2 hover:bg-gray-200"
+                      >
+                        {title}
+                      </Link>
+                    ))}
+                  </Disclosure.Panel>
+                </div>
               ))}
             </Disclosure.Panel>
           </>

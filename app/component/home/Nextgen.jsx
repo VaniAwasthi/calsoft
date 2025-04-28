@@ -35,10 +35,10 @@ const Nextgen = () => {
   return (
     <>
       <div
-        className="w-full bg-[#021553] md:rounded-b-xl py-4 md:py-0 md:min-h-screen"
+        className="w-full bg-[#021553] md:rounded-b-xl py-4 md:py-0 xl:min-h-screen hidden md:block"
         id="industries"
       >
-        <div className="mx-auto px-4 xl:px-20">
+        <div className="container mx-auto px-4 xl:px-20">
           {/* icon-with heading*/}
           <div className="flex gap-6 md:gap-6 items-center mb-4 md:mb-2 md:py-5">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center my-2">
@@ -80,7 +80,7 @@ const Nextgen = () => {
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-8 mt-8 md:mt-[2rem] mb-[2rem]"
+              className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-8 mt-8 md:mt-[2rem] mb-[3rem]"
             >
               {/* Image */}
               {activeIndustry && (
@@ -158,7 +158,7 @@ const Nextgen = () => {
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
                     viewport={{ once: false, amount: 0.3 }}
-                    className="flex flex-col justify-between mt-4 md:mt-16 space-y-6"
+                    className="flex flex-col justify-between mt-4 md:mt-16 space-y-6  mb-[2rem]"
                   >
                     <div className="flex overflow-x-auto md:overflow-visible gap-6 px-2 pb-2 scroll-smooth">
                       {activeIndustry.iconData.map((card, index) => (
