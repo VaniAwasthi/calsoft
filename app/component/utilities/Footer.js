@@ -34,8 +34,20 @@ const Footer = () => {
 
       <footer className="bg-black text-white">
         <div className="container mx-auto px-4 py-6 xl:px-20 ">
-          <div className="flex flex-col md:flex-row md:justify-between items-start pt-4 pb-6">
+          <div className="flex flex-col md:flex-row md:justify-between items-start pt-4 pb-6 ">
             <Image src={Logo} alt="Calsoft Logo" width={150} height={50} />
+            <div className=" md:hidden mt-10 mb-10 md:-mt-14 w-full flex ">
+              <div className="flex items-center justify-between relative w-full md:w-2/4 bg-[#333333] rounded-full">
+                <input
+                  type="email"
+                  placeholder="Add your email*"
+                  className="w-full md:w-[500px]  text-gray-300 px-4 py-3 pr-10  focus:outline-none"
+                />
+                <button className=" bg-[#2E3092] text-white rounded-full px-4 min-w-34 md:min-w-40 -ml-6 flex items-center gap-4 py-3 ">
+                  <GoArrowRight /> Subscribe
+                </button>
+              </div>
+            </div>
             <div className="grid grid-cols-3 col-span-2 md:col-span-3 md:gap-4 gap-6">
               {/* Company */}
               <div>
@@ -165,7 +177,7 @@ const Footer = () => {
           {/* Group the remaining 3 columns inside a grid for mobile */}
 
           {/* </div> */}
-          <div className=" mt-10 md:-mt-14 w-full flex ">
+          <div className="hidden  mt-10 md:-mt-14 w-full md:flex ">
             <div className="flex items-center justify-between relative w-full md:w-2/4 bg-[#333333] rounded-full">
               <input
                 type="email"
