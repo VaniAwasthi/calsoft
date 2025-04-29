@@ -6,11 +6,12 @@ export default function ButtonLayout({
   buttonImage,
   hoverImage,
   className = "",
-  bgColor = "#E8282B", // Default background color (Green)
-  textColor = "#FFFFFF", // Default text color (White)
-  hoverBgColor = "#FFFFFF", // Default hover background color (White)
-  hoverTextColor = "#E8282B",
-  border = ` 2px solid ${bgColor}`, // Default hover text color (Green)
+  bgColor = "#BA0007",
+  textColor = "#FFFFFF",
+  hoverBgColor = "#FFFFFF",
+  // hoverTextColor = "#E8282B",
+  hoverTextColor = "#BA0007",
+  border = ` 2px solid ${bgColor}`,
   //   filter = "brightness(0) invert(1)",
 }) {
   return (

@@ -77,48 +77,51 @@ const DigitalJounery = () => {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
-      <div className="hidden md:flex justify-center bg-[#021553] pb-10 md:pb-0 md:min-h-screen1">
-        <div className="container max-w-7xl mx-auto px-4   transition-all duration-300">
-          <div className="text-white relative" id="journey">
-            <div className="hidden md:block absolute left-0 top-0 bottom-0 lg:translate-y-[-52px]  lg:translate-x-[8px] xl:translate-x-[-46px] xl:translate-y-[-52px]">
-              {/* Gradient Border */}
-              <div className="hidden md:block w-[2px] mr-2 mt-6 h-full bg-gradient-to-b from-gray-300 to-red-500"></div>
-            </div>
-            <div className="lg:ml-[4rem] xl:ml-[8rem] my-4 ">
+      <div className="hidden md:flex justify-center bg-[#021553]" id="journey">
+        <div className="container mx-auto px-4 xl:px-20 transition-all duration-300">
+          <div className="text-white relative">
+            {/* Vertical Gradient Line */}
+            {/* <div className="hidden md:block absolute left-0 top-0 bottom-0 xl:translate-x-[-46px] xl:translate-y-[-52px]">
+              <div className="w-[2px] h-full bg-gradient-to-b from-gray-300 to-red-500"></div>
+            </div> */}
+
+            <div className="lg:ml-[4rem] xl:ml-[8rem] my-4 pt-8 gradient-bright">
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
+                className="ml-[2rem]"
               >
-                <h2 className="text-2xl md:text-4xl md:mt-[3rem]  pt-2 md:pt-5 font-semibold md:leading-11">
-                  Innovate at <br className="md:hidden block" /> every stage of
-                  your digital journey
+                <h2 className="text-2xl md:text-4xl pt-2 md:pt-5 font-semibold md:leading-11">
+                  Innovate at <br className="md:hidden block" />
+                  every stage of your digital journey
                 </h2>
               </motion.div>
+
               <motion.div
                 initial={{ y: -50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
+                className="ml-[2rem]"
               >
-                <h2 className="text-2xl md:text-4xl  mb-[4rem]  font-light leading-11">
+                <h2 className="text-2xl md:text-4xl mb-8 font-light leading-11">
                   We make it simple
                 </h2>
               </motion.div>
-              {/* cards */}
 
+              {/* Swiper Section */}
               <Swiper
                 spaceBetween={30}
                 pagination={{ clickable: true }}
                 modules={[Pagination]}
                 breakpoints={{
-                  320: { slidesPerView: 3, spaceBetween: 20 },
-                  768: { slidesPerView: 3, spaceBetween: 30 }, // iPad
-                  1024: { slidesPerView: 3, spaceBetween: 20 }, // iPad Pro
-                  1280: { slidesPerView: 5, spaceBetween: 20 }, // Desktop
+                  320: { slidesPerView: 2 },
+                  768: { slidesPerView: 3 },
+                  1280: { slidesPerView: 5 },
                 }}
-                className="pt-5 pagination_white "
+                className="pt-5 pagination_white ml-[2rem]"
               >
                 {features.map((feature, index) => (
                   <SwiperSlide key={index}>
@@ -127,6 +130,7 @@ const DigitalJounery = () => {
                       whileInView="visible"
                       transition={{ duration: 1, delay: 0.2 }}
                       viewport={{ once: false, amount: 0.5 }}
+                      className="ml-[2rem]"
                     >
                       <div className="flex h-[80px] items-center1 gap-2 ">
                         {/* Animated Icon (Image above heading) */}
@@ -151,7 +155,7 @@ const DigitalJounery = () => {
                           whileInView={{ y: 0, opacity: 1 }}
                           viewport={{ once: false, amount: 0.3 }}
                         >
-                          <h3 className="text-sm md:text-base text-left md:text-center font-normal w-[90px]">
+                          <h3 className="text-sm md:text-base text-left md:text-left font-normal w-[90px]">
                             {feature.title}
                           </h3>
                         </motion.div>

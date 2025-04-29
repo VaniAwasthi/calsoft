@@ -56,15 +56,15 @@ const Nextgen = () => {
               transition={{ duration: 0.2, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <div className="overflow-scroll md:overflow-auto bg-[#FFFFFF] rounded-full">
+              <div className="overflow-scroll md:overflow-auto ">
                 <div className="w-full bg-[#FFFFFF]  flex justify-between items-center rounded-full">
                   {navItems.map((item, index) => (
                     <button
                       key={index}
                       onClick={() => setActiveTab(item)}
-                      className={`min-w-24  md:w-1/5 text-center transition-all duration-300 py-3 px-2 md:py-4 text-sm lg:text-base rounded-full ${
+                      className={`min-w-24 md:w-1/5 text-center transition-all duration-300 py-3 md:py-4 px-0 m-0 text-sm lg:text-base rounded-full leading-none ${
                         activeTab === item
-                          ? "bg-[#2E3092] text-white font-semibold"
+                          ? "bg-[#2E3092] text-white font-semibold rounded-full"
                           : "text-[#000000]"
                       }`}
                     >
@@ -125,12 +125,12 @@ const Nextgen = () => {
 
                     <div className="flex gap-2 md:gap-6 flex-col lg:flex-row mt-6">
                       <button
-                        className="relative flex gap-2 justify-between items-center px-2 md:px-8 py-2 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
+                        className="relative flex gap-2 justify-between items-center px-2 md:px-8 py-2 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group"
                         style={{
                           boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
                         }}
                       >
-                        <span className="relative z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500">
+                        <span className="relative z-10 group-hover:text-[#BA0007] w-full flex gap-4 items-center transition-colors duration-500">
                           Case Studies
                           <IoArrowForwardCircleSharp className="text-3xl tra" />
                         </span>
@@ -142,7 +142,7 @@ const Nextgen = () => {
                           boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
                         }}
                       >
-                        <span className="relative z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500">
+                        <span className="relative z-10 group-hover:text-[#BA0007] w-full flex gap-4 items-center transition-colors duration-500">
                           know More
                         </span>
                         <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
@@ -184,7 +184,7 @@ const Nextgen = () => {
                             </div>
                             {/* Back */}
                             <div className="absolute inset-0 flex items-center justify-center bg-white text-[#021553] rounded-lg rotate-y-180 transform scale-105 mx-2 backface-hidden">
-                              <p className="text-[6px] md:text-[8px] xl:text-[10px] font-semibold text-center px-2">
+                              <p className="text-[6px] md:text-[8px] xl:text-[10px] font-semibold text-center px-1">
                                 {card.title}
                               </p>
                             </div>

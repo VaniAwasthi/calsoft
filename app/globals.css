@@ -34,15 +34,36 @@ body {
 }
 
 .gradient-border {
-  border-left: 3.5px solid #0000;
-  /* border-image: linear-gradient(#2e3092 17%, #ed1c242e 73%) 1; */
+  border-left: 3.5px solid transparent;
   margin-left: 1rem;
   padding-left: 2.4rem;
   border-style: solid;
   border-radius: 6px;
   position: relative;
-  border-image-source: linear-gradient(#2e3092 17%, #ed1c242e 73%);
+
+  /* Gradient: solid at top (#2e3092), fades to transparent red at bottom */
+  border-image-source: linear-gradient(
+    to bottom,
+    #2e3092 17%,
+    /* Solid blue at 17% */ rgba(237, 28, 36, 0.18) 73%,
+    /* Faded red */ rgba(237, 28, 36, 0) 100% /* Fully transparent red */
+  );
   border-image-slice: 1;
+}
+.gradient-bright {
+  border-left: 3.5px solid transparent;
+  border-image: linear-gradient(
+    to bottom,
+    #2e3092 0%,
+    #ed1c24 60%,
+    rgba(46, 48, 146, 0.5) 90%,
+    rgba(46, 48, 146, 0) 100%
+  );
+  border-image-slice: 1;
+  margin-left: 1rem;
+  padding-left: 2.4rem;
+  border-radius: 6px;
+  position: relative;
 }
 
 .slider_t .swiper-wrapper {

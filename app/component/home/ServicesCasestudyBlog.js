@@ -7,6 +7,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import icon3 from "../../assets/home/icon3.svg";
 import service1 from "../../assets/home/service1.svg";
 import service2 from "../../assets/home/service2.svg";
@@ -94,7 +95,7 @@ export const Services = () => {
               transition={{ duration: 1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <motion.h2 className="text-2xl md:text-[36px] font-normal text-white">
+              <motion.h2 className="text-xl md:text-[36px] font-normal text-white">
                 {heading}
               </motion.h2>
             </motion.div>
@@ -106,10 +107,10 @@ export const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="bg-[#2E3092] text-white  p-3 py-6 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start"
+                  className="bg-[#2E3092] text-white  py-6 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start"
                 >
                   <div className="flex justify-center items-center gap-0 w-full md:gap-6  md:flex-nowrap  md:w-full">
-                    <div className="w-42">
+                    <div className="md:w-42 w-20">
                       <Image
                         src={service.icon}
                         alt={service.title}
@@ -120,7 +121,7 @@ export const Services = () => {
                     </div>
 
                     <div className="w-full">
-                      <h3 className="text-[12px] md:text-lg w-full   font-semibold mb-2">
+                      <h3 className="text-[10px] md:text-lg w-full font-semibold mb-2">
                         {service.title}
                       </h3>
                       <p className="hidden md:block text-white line-clamp-3  text-xs md:text-sm font-[200] md:font-light">
@@ -294,10 +295,10 @@ export const Casestudy = () => {
           >
             <motion.h2
               key={caseStudyData.title}
-              className="text-2xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+              className="text-xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
             >
               Cloud Provider Accelerates VMware Migration
-              <span className="text-black font-normal">
+              <span className="text-black font-normal px-3">
                 with Calsoft’s CLI Tool
               </span>
             </motion.h2>
@@ -328,7 +329,7 @@ export const Casestudy = () => {
                     height={100}
                   />
                 </div>
-                <h2 className="text-lg font-medium md:text-2xl md:font-semibold mt-[4rem]">
+                <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem]">
                   {caseStudyData.title}
                 </h2>
               </motion.div>
@@ -351,12 +352,12 @@ export const Casestudy = () => {
                     href={caseStudyData.pdfLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative flex mt-6 md:mt-10  w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
+                    className="relative flex mt-6 md:mt-10  w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group"
                     style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25)" }}
                     whileHover={{ scale: 1.03 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
-                    <span className="relative justify-center  z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
+                    <span className="relative justify-center  z-10 group-hover:text-[#BA0007] w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
                       {caseStudyData.buttonText}{" "}
                       <IoArrowForwardCircleSharp className="text-3xl" />
                     </span>
@@ -365,58 +366,39 @@ export const Casestudy = () => {
                 </div>
               </div>
 
-              <div className="w-full md:w-2/3">
+              <div className="w-full md:w-1/3">
                 {/* Swiper for mobile */}
-                <div className="block md:hidden">
+                <div className="block md:hidden ">
                   <Swiper
-                    modules={[Autoplay]}
+                    modules={[Autoplay, Pagination]}
+                    pagination={{ clickable: true }}
                     spaceBetween={16}
                     slidesPerView={2}
                     loop
-                    autoplay={{ delay: 3000 }}
+                    autoplay={{ delay: 6000 }}
                   >
-                    {caseStudyData.stats.map((stat, index) => (
-                      <SwiperSlide key={index}>
-                        <motion.div
-                          className="bg-white rounded-2xl p-4 flex gap-4 items-center justify-center cursor-pointer transition-transform"
-                          initial={{ opacity: 0, x: 50 }}
-                          whileHover={{ x: -30 }}
-                          whileInView={{ x: 0, opacity: 1 }}
-                          transition={{ duration: 0.2, delay: 0.2 }}
-                          viewport={{ once: false, amount: 0.3 }}
-                          style={{ boxShadow: "0px 2px 9px #D9DBF1" }}
-                        >
-                          <div className="flex w-[30%] gap-4 flex-wrap justify-between">
-                            <p className="text-black text-sm">{stat.count}</p>
-                            {/* <div className="flex gap-0 -mt-2">
-                              <Image
-                                src={man1}
-                                alt="man"
-                                width={40}
-                                height={40}
-                              />
-                              <Image
-                                src={man2}
-                                alt="man"
-                                className="-ml-2"
-                                width={40}
-                                height={40}
-                              />
-                              <Image
-                                src={man3}
-                                alt="man"
-                                className="-ml-2"
-                                width={40}
-                                height={40}
-                              />
-                            </div> */}
-                          </div>
-                          <div className="flex gap-4 w-[70%] flex-wrap justify-between">
-                            <p className="font-medium text-sm">{stat.text}</p>
-                          </div>
-                        </motion.div>
-                      </SwiperSlide>
-                    ))}
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 ">
+                      {caseStudyData.stats.map((stat, index) => (
+                        <SwiperSlide key={index}>
+                          <motion.div
+                            className="p-4 bg-white rounded-xl shadow-lg flex items-center space-x-2 my-2"
+                            initial={{ opacity: 0, x: 50 }}
+                            whileHover={{ x: -30 }}
+                            whileInView={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 0.2, delay: 0.2 }}
+                            viewport={{ once: false, amount: 0.3 }}
+                            style={{ boxShadow: "0px 1px 9px 0px #D9DBF1" }}
+                          >
+                            <p className="text-lg font-semibold text-gray-700">
+                              {stat.count}
+                            </p>
+                            <div className="text-sm text-gray-500 leading-tight px-2">
+                              {stat.text}
+                            </div>
+                          </motion.div>
+                        </SwiperSlide>
+                      ))}
+                    </div>
                   </Swiper>
                 </div>
 
@@ -425,7 +407,7 @@ export const Casestudy = () => {
                   {caseStudyData.stats.map((stat, index) => (
                     <motion.div
                       key={index}
-                      className="bg-white rounded-2xl h-full p-4 flex gap-4 items-center justify-between cursor-pointer transition-transform md:w-full  "
+                      className="p-4 bg-white rounded-xl shadow-lg flex items-center space-x-4 space-y-2 my-[2rem]"
                       initial={{ opacity: 0, x: 50 }}
                       whileHover={{ x: -30 }}
                       whileInView={{ x: 0, opacity: 1 }}
@@ -433,28 +415,11 @@ export const Casestudy = () => {
                       viewport={{ once: false, amount: 0.3 }}
                       style={{ boxShadow: "0px 2px 9px #D9DBF1" }}
                     >
-                      <div className="flex w-[30%] gap-2 flex-wrap justify-between text-[#616161]">
-                        <p className=" text-2xl">{stat.count}</p>
-                        {/* <div className="flex gap-0 -mt-2">
-                          <Image src={man1} alt="man" width={40} height={40} />
-                          <Image
-                            src={man2}
-                            alt="man"
-                            className="-ml-2"
-                            width={40}
-                            height={40}
-                          />
-                          <Image
-                            src={man3}
-                            alt="man"
-                            className="-ml-2"
-                            width={40}
-                            height={40}
-                          />
-                        </div> */}
-                      </div>
-                      <div className="flex gap-2 w-[50%] flex-wrap justify-between text-[#616161]">
-                        <p className="font-semibold text-base">{stat.text}</p>
+                      <p className="text-2xl font-semibold text-gray-700">
+                        {stat.count}
+                      </p>
+                      <div className="text-sm text-gray-500 leading-tight">
+                        {stat.text}
                       </div>
                     </motion.div>
                   ))}

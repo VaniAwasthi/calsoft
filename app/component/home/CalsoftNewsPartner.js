@@ -38,6 +38,7 @@ import logo18 from "../../assets/home/logo18.png";
 import logo19 from "../../assets/home/logo19.png";
 import logo20 from "../../assets/home/logo20.png";
 import logo21 from "../../assets/home/logo21.png";
+import logo22 from "../../assets/home/IBMlogo.webp";
 
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import Link from "next/link";
@@ -160,10 +161,10 @@ export const CalsoftNews = () => {
 
                 <Link
                   href={selected.link}
-                  className="relative flex w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
+                  className="relative flex w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group"
                   style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25" }}
                 >
-                  <span className="relative justify-center z-10 group-hover:text-[#E8282B] w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
+                  <span className="relative justify-center z-10 group-hover:text-[#BA0007] w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
                     Explore More
                     <IoArrowForwardCircleSharp className="text-3xl tra" />
                   </span>
@@ -333,7 +334,7 @@ export const CalsoftPartner = () => {
       title: "Gen AI",
       colSpan: 6,
       gridCols: 3,
-      logos: [logo6, logo7, logo8, logo9, logo10],
+      logos: [logo6, logo7, logo8, logo9, logo10, logo22],
     },
     {
       title: "Technology Partners",
@@ -477,14 +478,16 @@ export const CalsoftPartner = () => {
                 <div className="relative p-[2px] backdrop-blur-[4px] rounded-[20px] flex-grow flex flex-col">
                   <div className="absolute inset-0 rounded-[20px] p-[3px] bg-gradient-to-b from-[rgba(46,48,146,0.4)] to-[rgba(14,14,44,0.0)]"></div>
                   <div className="relative bg-white rounded-[17px] p-4 shadow-md h-full grid grid-cols-3 gap-4 items-center">
-                    {[logo6, logo7, logo8, logo9, logo10].map((logo, i) => (
-                      <Image
-                        key={i}
-                        src={logo}
-                        className="max-h-32 w-32 object-contain mx-auto"
-                        alt={`logo-${i}`}
-                      />
-                    ))}
+                    {[logo6, logo7, logo8, logo9, logo10, logo22].map(
+                      (logo, i) => (
+                        <Image
+                          key={i}
+                          src={logo}
+                          className="max-h-32 w-32 object-contain mx-auto"
+                          alt={`logo-${i}`}
+                        />
+                      )
+                    )}
                   </div>
                 </div>
               </motion.div>

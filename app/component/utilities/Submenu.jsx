@@ -27,14 +27,14 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="  flex xl:ml-[8rem] space-x-4 lg:space-x-10 text-sm md:text-base"
+              className="  flex xl:ml-[2rem] space-x-4 lg:space-x-10 text-sm md:text-base"
             >
               {navItems.map((item, index) => (
                 <div key={index} className="flex  items-center w-max md:w-auto">
                   <div
-                    className={`relative cursor-pointer text-[16px] ${
+                    className={`relative cursor-pointer text-[14px]  ${
                       activeTab === item
-                        ? "text-white font-semibold"
+                        ? "text-white font-bold"
                         : "text-gray-400"
                     }`}
                     onClick={() => {
