@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import ZigzagImage from "../../assets/home/zigzag.png"; // Your zigzag background
 import { motion } from "framer-motion";

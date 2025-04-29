@@ -54,7 +54,7 @@ export const IndustrySection = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="relative flex justify-between flex-col space-y-8 border-l-8 border-[#2F35B5] "
+            className="relative flex justify-between flex-col space-y-8 border-l-8 border-[#2E3092] "
           >
             {tabs.map((tab, index) => (
               <button
