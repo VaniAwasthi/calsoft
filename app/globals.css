@@ -28,6 +28,8 @@ body {
 
 html,
 body {
+  margin: 0;
+  padding: 0;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -184,4 +186,21 @@ body {
 }
 .swiper-scrollbar-drag {
   width: 200px;
+}
+.custom-blog-swiper .swiper-scrollbar-drag {
+  width: 400px !important;
+}
+
+/* Hide scrollbar on small screens */
+@media (max-width: 767px) {
+  .custom-blog-swiper .swiper-scrollbar {
+    display: none !important;
+  }
+}
+
+/* Hide pagination on medium and larger screens */
+@media (min-width: 768px) {
+  .custom-blog-swiper .swiper-pagination {
+    display: none !important;
+  }
 }
