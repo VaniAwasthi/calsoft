@@ -31,8 +31,10 @@ export default function Navbar() {
       title: "INDUSTRIES",
       href: "/industries",
       submenu: [
-        { title: "Submenu Item 1", href: "#" },
-        { title: "Submenu Item 2", href: "#" },
+        { title: "Hitech", href: "/industries/hitech" },
+        { title: "Telecom", href: "#" },
+        { title: "Retail", href: "#" },
+        { title: "Manufacturing", href: "#" },
       ],
     },
     {
@@ -56,7 +58,7 @@ export default function Navbar() {
     },
   ];
   return (
-    <header className=" w-full sticky top-0 z-60">
+    <header className=" w-full">
       {/* Top Bar */}
       <div className="text-white px-6 py-3 border-b bg-[#141414] border-gray-700">
         <div className="flex items-end justify-end text-sm container mx-auto px-1 md:px-20">

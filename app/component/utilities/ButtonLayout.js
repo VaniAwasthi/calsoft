@@ -9,7 +9,7 @@ export default function ButtonLayout({
   bgColor = "#BA0007",
   textColor = "#FFFFFF",
   hoverBgColor = "#FFFFFF",
-  // hoverTextColor = "#E8282B",
+  // hoverTextColor = "##BA0007",
   hoverTextColor = "#BA0007",
   border = ` 2px solid ${bgColor}`,
   //   filter = "brightness(0) invert(1)",
