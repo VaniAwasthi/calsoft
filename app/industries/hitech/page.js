@@ -23,7 +23,7 @@ import {
   TopPartners,
 } from "@/app/component/industries/hitech/BlogSection";
 
-const page = () => {
+const Page = () => {
   const slide = {
     title: "Hi-Tech | Software & Product",
     title2: "Innovation in quick time",
@@ -205,4 +205,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

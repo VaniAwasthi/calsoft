@@ -22,7 +22,7 @@ import Incon4 from "../../assets/industries/retail/retailIcon4.svg";
 import Incon5 from "../../assets/industries/retail/retailIcon5.svg";
 import Intellegence from "../../assets/industries/retail/RetailMobile.webp";
 
-const Page = () => {
+const page = () => {
   const slide = {
     title: "Grow in retail with",
     title2: "AI-driven experiences at lower costs",
@@ -163,7 +163,7 @@ const Page = () => {
 
   return (
     <>
-      <Herosection
+      {/* <Herosection
         slide={slide}
         navItems={navItems}
         setActiveTab={setActiveTab}
@@ -191,7 +191,7 @@ const Page = () => {
       <InfoImageSection
         {...SectionThree}
         ImageClass="h-[300px] md:h-full  xl:h-[640px]"
-      />
+      /> */}
       <TopPartners />
       <ServicesSec />
       <ContactSec
@@ -202,4 +202,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default page;

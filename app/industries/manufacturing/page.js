@@ -19,7 +19,7 @@ import Incon2 from "../../assets/industries/manufacturing/manufacturIcon4.svg";
 import Incon1 from "../../assets/industries/manufacturing/manufacturIcon5.svg";
 import Intellegence from "../../assets/industries/manufacturing/ManufacturingMobile.webp";
 
-const page = () => {
+const Page = () => {
   const slide = {
     title: "Manufacturing | AI-driven",
     title2: "future proofing",
@@ -201,4 +201,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
