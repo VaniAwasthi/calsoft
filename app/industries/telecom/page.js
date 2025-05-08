@@ -6,7 +6,7 @@ import {
 } from "@/app/component/industries/hitech/BlogSection";
 import InfoImageSection from "@/app/component/utilities/InfoSection";
 import React, { useState } from "react";
-import Banner from "../../assets/industries/retail/RetailBannner.webp";
+import Banner from "../../assets/industries/telecom/TelecomBanner.webp";
 import Retailinfo1 from "../../assets/industries/retail/retailinfo1.webp";
 import Retailinfo2 from "../../assets/industries/retail/retailinfo2.webp";
 import Retailinfo3 from "../../assets/industries/retail/retailinfo3.webp";
@@ -163,7 +163,7 @@ const page = () => {
 
   return (
     <>
-      {/* <Herosection
+      <Herosection
         slide={slide}
         navItems={navItems}
         setActiveTab={setActiveTab}
@@ -171,16 +171,16 @@ const page = () => {
         isCaseStudyButton={false}
         titleTwoClass="lg:w-2/4"
       />
-      <IndustryIntelligence
+      {/* <IndustryIntelligence
         Gradientheading={Gradientheading}
         BlackHeading={BlackHeading}
         icons={icons}
         MobileImg={Intellegence}
         headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-10 line-clamp-4"
         contentClass=" md:h-60 lg:h-64 "
-      />
+      /> */}
       <TopClients />
-      <InfoImageSection
+      {/* <InfoImageSection
         {...SectionOne}
         ImageClass="h-[300px] md:h-full  xl:h-[700px]"
       />
