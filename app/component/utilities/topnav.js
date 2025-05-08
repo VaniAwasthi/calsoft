@@ -32,9 +32,9 @@ export default function Navbar() {
       href: "/industries",
       submenu: [
         { title: "Hitech", href: "/industries/hitech" },
-        { title: "Telecom", href: "#" },
-        { title: "Retail", href: "#" },
-        { title: "Manufacturing", href: "#" },
+        { title: "Telecom", href: "/industries/retail" },
+        { title: "Retail", href: "/industries/retail" },
+        { title: "Manufacturing", href: "/industries/manufacturing" },
       ],
     },
     {

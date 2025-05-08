@@ -193,11 +193,11 @@ export const TopPartners = () => {
     </>
   );
 };
-export const ContactSec = () => {
+export const ContactSec = ({ lightContent, link }) => {
   return (
     <>
       <section>
-        <div className="relative">
+        <div className="relative mt-4 md:mt-2">
           {/* Background Image */}
           <Image
             src={ContactImg}
@@ -208,8 +208,8 @@ export const ContactSec = () => {
           {/* Right Side: Overlay Content */}
           <div className="absolute top-1/2 right-0 transform -translate-y-1/2 md:p-16 p-6 w-1/2 md:w-1/2 text-white">
             <div className="space-y-6 text-left md:text-left">
-              <h2 className="text-lg md:text-4xl font-normal leading-snug">
-                Get the edge in Hi-tech with Calsoft <br />
+              <h2 className="text-md md:text-3xl font-normal leading-snug">
+                {lightContent} <br />
                 <span className="font-bold">let’s talk!</span>
               </h2>
 
@@ -227,6 +227,7 @@ export const ContactSec = () => {
                   className="flex flex-col md:flex-row gap-4"
                 >
                   <ButtonLayout
+                    link={link}
                     text="Learn More"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
