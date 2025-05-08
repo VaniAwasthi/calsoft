@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../../assets/industries/hitech/hitechBannner.webp";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import IndustriesBanner from "../../utilities/IndustriesBanner";
 import Submenu from "../../utilities/Submenu";
@@ -31,33 +30,14 @@ const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
-export const Herosection = () => {
-  const slide = {
-    title: "Hi-Tech | Software & Product",
-    title2: "Innovation in quick time",
-    description: ` Innovation is the highway for success in hi-tech. Create better
-        software, improve processes, and gain competitive edge with your tech –
-        here’s how.
-        <br />
-        <br />
-        Calsoft helps you build your ‘ideal’ products/ software from planning to
-        deployment at lower costs, higher quality, and faster go-to-market.`,
-    buttonText: "What we do",
-    image: BackgroundImage,
-  };
-
-  const [activeTab, setActiveTab] = useState("Journey");
-
-  const navItems = [
-    "Journey",
-    "Customers",
-    "Industries",
-    "What's New",
-    "Partners",
-    "Services",
-    "Case Studies",
-  ];
-
+export const Herosection = ({
+  activeTab,
+  setActiveTab,
+  slide,
+  navItems,
+  isCaseStudyButton,
+  titleTwoClass,
+}) => {
   return (
     <>
       <IndustriesBanner
@@ -69,10 +49,10 @@ export const Herosection = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         titleOneClass="font-normal lg:text-[52px] md:text-[40px] text-[25px] mt-2"
-        titleTwoClass="font-normal lg:text-[52px] md:text-[40px] text-[25px] md:mt-4"
+        titleTwoClass={`font-normal lg:text-[52px] md:text-[40px] text-[25px] md:mt-4 ${titleTwoClass}`}
         descriptionClass="hidden md:block mt-4 text-[18px] leading-6 w-[200px] md:w-full"
         BgClassname="object-cover w-full h-full object-center"
-        isCaseStudyButton={true}
+        isCaseStudyButton={isCaseStudyButton}
       />
       <Submenu
         navItems={navItems}
