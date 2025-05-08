@@ -20,13 +20,14 @@ import Incon2 from "../../assets/industries/retail/retailIcon2.svg";
 import Incon3 from "../../assets/industries/retail/retailIcon3.svg";
 import Incon4 from "../../assets/industries/retail/retailIcon4.svg";
 import Incon5 from "../../assets/industries/retail/retailIcon5.svg";
-import Intellegence from "../../assets/industries/retail/RetailMobile.webp";
+import Intellegence from "../../assets/industries/telecom/telecomMobile.webp";
 
-const page = () => {
+const Page = () => {
   const slide = {
-    title: "Grow in retail with",
-    title2: "AI-driven experiences at lower costs",
-    description: ` Ensure the best customer experiences and higher margins by leveraging industry-specific AI, smart automation, cloud-driven intelligence, and optimized supply chains – across online and stationary stores.`,
+    title: "Boost Telecom networks",
+    title2: "with intelligent automation",
+    description: ` Network modernization and optimization are the bedrock of our innovative future. Telecom companies are at the center of it.
+We help telecoms with streamlining operations, automating networks, and enhancing service assurance with advanced cloud-native, AI-driven, and software-defined solutions.`,
     buttonText: "Case Study",
     image: Banner,
   };
@@ -202,4 +203,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
