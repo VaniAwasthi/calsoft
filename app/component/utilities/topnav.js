@@ -31,7 +31,7 @@ export default function Navbar() {
       title: "INDUSTRIES",
       href: "/industries",
       submenu: [
-        { title: "Hitech", href: "/industries/hitech" },
+        { title: "Hi-tech", href: "/industries/hitech" },
         { title: "Telecom", href: "/industries/telecom" },
         { title: "Retail", href: "/industries/retail" },
         { title: "Manufacturing", href: "/industries/manufacturing" },

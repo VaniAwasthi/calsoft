@@ -106,6 +106,7 @@ const InfoImageSection = ({
               text={buttonText}
               image={ButtonImage}
               hoverImage={ButtonImage}
+              className="!w-[150px] !h-[55px]"
             />
           </div>
         </motion.div>

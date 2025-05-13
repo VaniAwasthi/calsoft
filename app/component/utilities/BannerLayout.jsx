@@ -26,15 +26,6 @@ const BannerLayout = ({
         alt="Background Image"
         className="w-full md:h-full h-[280px] object-cover"
       />
-      {/* Overlay (Optional) */}
-      {/* <div
-        className="absolute top-0 left-0"
-        style={{
-          backgroundColor: bgColor,
-          opacity: overlayOpacity,
-          zIndex: zIndex,
-        }}
-      ></div> */}
 
       {/* Content Section - Centered */}
       <div className="absolute top-[10%] md:top-[0%] w-[60%] left-0 z-10 md:w-full container mx-auto px-4 md:px-20">
