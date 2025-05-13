@@ -151,7 +151,7 @@ export default function IndustryIntelligence() {
                 key={index}
                 initial={{ x: -30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.2 }}
+                transition={{ duration: 0.2, delay: 0.3 + index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
                 variants={fadeIn(0.6 + index * 0.2)}
                 className="flex items-center gap-4 bg-[#2E3092] text-white px-4 py-4 rounded-full w-56 h-16 z-10"
@@ -223,7 +223,7 @@ export default function IndustryIntelligence() {
                 key={index}
                 initial={{ x: 30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.2 }}
+                transition={{ duration: 0.2, delay: 0.1 + index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
                 variants={fadeIn(0.6 + index * 0.2)}
                 className="flex items-center gap-4 bg-[#2E3092] text-white px-4 py-4 rounded-full w-56 h-16 z-10"
@@ -245,9 +245,10 @@ export default function IndustryIntelligence() {
           {/* Left SVGs */}
           {leftLines.map((line, idx) => (
             <motion.div
+              key={idx}
               initial={{ x: -30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.2, delay: 0.6 }}
+              transition={{ duration: 0.2, delay: 0.2 + idx * 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
               variants={fadeIn(0.6 + idx * 0.2)}
             >
@@ -265,9 +266,10 @@ export default function IndustryIntelligence() {
           {/* Right SVGs */}
           {rightLines.map((line, idx) => (
             <motion.div
+              key={idx}
               initial={{ x: 30, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.2, delay: 0.2 }}
+              transition={{ duration: 0.2, delay: idx * 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
               variants={fadeIn(0.6 + idx * 0.2)}
             >

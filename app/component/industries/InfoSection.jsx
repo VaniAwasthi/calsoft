@@ -33,31 +33,66 @@ const InfoSection = ({
             isImageLeft ? "order-2 md:order-2" : "order-2 md:order-1"
           }`}
         >
-          <div className="max-w-xl space-y-4">
-            <h2 className="text-2xl md:text-4xl font-normal text-black">
+          <motion.div
+            className="max-w-xl space-y-4"
+            initial={{ x: -30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <motion.h2
+              className="text-2xl md:text-4xl font-normal text-black"
+              initial={{ x: -30, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
               <span className="font-bold bg-gradient-to-r from-[#2E3092] to-[#ED1C24] bg-clip-text text-transparent">
                 {heading}
               </span>{" "}
               {title}
-            </h2>
+            </motion.h2>
 
-            <p
+            <motion.p
+              initial={{ x: -30, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
               className="text-md md:text-lg text-black leading-relaxed py-6"
               dangerouslySetInnerHTML={{ __html: description }}
             />
 
             {points.map((point, index) => (
-              <div key={index} className="space-y-1 my-[2rem]">
-                <h4 className="text-md md:text-lg  font-semibold text-[#2E3092]  cursor-pointer hover:text-[#1E1E8F]">
+              <motion.div
+                key={index}
+                className="space-y-1 my-[2rem]"
+                initial={{ x: -30, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                <motion.h4
+                  initial={{ x: -30, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="text-md md:text-lg  font-semibold text-[#2E3092]  cursor-pointer hover:text-[#1E1E8F]"
+                >
                   {point.pointsTitle}
-                </h4>
+                </motion.h4>
                 <p className="text-md md:text-lg   text-black">
                   {point.pointsdescription}
                 </p>
-              </div>
+              </motion.div>
             ))}
 
-            <div className="pt-4">
+            <motion.div
+              className="pt-4"
+              initial={{ x: -30, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
               <ButtonLayout
                 link={link}
                 text={buttonText}
@@ -65,8 +100,8 @@ const InfoSection = ({
                 hoverImage={ButtonImage}
                 className="!w-[150px] !h-[55px]"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </motion.div>
 
         {/* Image Content */}
