@@ -14,7 +14,7 @@ import InfoSec3 from "../assets/industries/IndustriesInfo3.webp";
 import InfoSec4 from "../assets/industries/IndustriesInfo4.webp";
 import InfoSection from "../component/industries/InfoSection";
 import AnimatedSection from "../component/industries/IndusSecondSec";
-const page = () => {
+const Page = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
     title: "We got you covered with ",
@@ -174,4 +174,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
