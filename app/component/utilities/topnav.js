@@ -58,7 +58,7 @@ export default function Navbar() {
     },
   ];
   return (
-    <header className=" w-full sticky top-0 z-90 ">
+    <header className=" w-full sticky top-0 z-100 ">
       {/* Top Bar */}
       <div className="text-white px-6 py-3 border-b bg-[#141414] border-gray-700">
         <div className="flex items-end justify-end text-sm container mx-auto px-1 md:px-20">
