@@ -48,7 +48,7 @@ export default function IndustryIntelligence({
           />
 
           {/* Icon*/}
-          <div className="absolute top-0 left-10 w-full h-full z-100">
+          <div className="absolute top-0 left-10 w-full h-full z-0">
             {icons.map((item, index) => (
               <motion.div
                 key={index}
