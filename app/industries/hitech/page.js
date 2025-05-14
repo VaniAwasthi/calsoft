@@ -56,7 +56,7 @@ const Page = () => {
       title: "Build high-performance applications",
       desc: "Cloud-first, API-driven architectures",
       positionClass:
-        "md:translate-x-[-13px] md:translate-y-[-39px] xl:translate-y-[-12px]",
+        "md:translate-x-[-6px] md:translate-y-[-39px] xl:translate-y-[-7px]",
       translateprop: "translate-x-[33px] translate-y-[10px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",
@@ -86,7 +86,7 @@ const Page = () => {
       title: "Enable seamless integrations",
       desc: "Unified platform connectivity with full interoperability",
       positionClass:
-        "translate-x-[-13px] xl:translate-y-[-6px] md:translate-y-[-39px]",
+        "translate-x-[-21px] xl:translate-y-[-6px] md:translate-y-[-39px]",
       translateprop: "translate-x-[-80px] translate-y-[-5px]",
       position: "right",
       transformProps: "translate-x-[52px] translate-y-[22px]",
@@ -96,7 +96,7 @@ const Page = () => {
       title: "Optimize software lifecycles",
       desc: "Streamlined development, testing, & deployment",
       positionClass:
-        "translate-x-[-25px] xl:translate-y-[-12px] md:translate-y-[-39px]",
+        "translate-x-[-32px] xl:translate-y-[-5px] md:translate-y-[-39px]",
       translateprop: "translate-x-[48px] translate-y-[-3px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",
