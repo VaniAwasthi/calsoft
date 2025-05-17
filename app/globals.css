@@ -21,7 +21,12 @@
     --foreground: #ededed;
   }
 }
-
+.manrope {
+  font-family: var(--primary-font);
+}
+.Inter {
+  font-family: var(--secondary-font);
+}
 body {
   font-family: var(--primary-font);
 }

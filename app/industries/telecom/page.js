@@ -47,6 +47,7 @@ We help telecoms with streamlining operations, automating networks, and enhancin
   const icons = [
     {
       icon: Incon1,
+      iconSize: "",
       title: "Optimized network operations",
       desc: "Deploy SDN/NFV solutions for intelligent automation.",
       positionClass:
@@ -57,6 +58,7 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     },
     {
       icon: Incon2,
+      iconSize: "",
       title: "Ensuring seamless cloud transformation",
       desc: "Leverage cloud-native architectures for flexibility.",
       positionClass:
@@ -67,6 +69,7 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     },
     {
       icon: Incon3,
+      iconSize: "",
       title: "Enhanced service assurance & security",
       desc: "Strengthen monitoring and threat detection.",
       positionClass:
@@ -77,6 +80,7 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     },
     {
       icon: Incon4,
+      iconSize: "",
       title: "Scaled 5G & edge computing capabilities",
       desc: "Enable real-time data processing at the edge.",
       positionClass:
@@ -87,6 +91,7 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     },
     {
       icon: Incon5,
+      iconSize: "",
       title: "Reduced OPEX & CAPEX with AI-insights",
       desc: "Improve efficiency with predictive analytics.",
       positionClass:

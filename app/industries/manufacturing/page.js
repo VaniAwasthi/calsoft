@@ -46,6 +46,7 @@ const Page = () => {
   const icons = [
     {
       icon: Incon1,
+      iconSize: "",
       title: "Plan and implement",
       desc: "Develop and implement a structured roadmap with a scalable system architecture ideal forsmart supply chains.",
       positionClass:
@@ -56,6 +57,7 @@ const Page = () => {
     },
     {
       icon: Incon2,
+      iconSize: "",
       title: "Automate",
       desc: "Deploy AI-driven automation to optimize workflows, minimize errors, and enhance production speed.",
       positionClass:
@@ -66,6 +68,7 @@ const Page = () => {
     },
     {
       icon: Incon3,
+      iconSize: "",
       title: "Secure",
       desc: "Implement zero-trust security with real-time threat detection and compliance-driven safeguards.",
       positionClass:
@@ -76,6 +79,7 @@ const Page = () => {
     },
     {
       icon: Incon4,
+      iconSize: "",
       title: "Monitor",
       desc: "Leverage IoT-powered real-time analytics for predictive insights and proactive issue resolution.",
       positionClass:
@@ -86,6 +90,7 @@ const Page = () => {
     },
     {
       icon: Incon5,
+      iconSize: "",
       title: "Scale",
       desc: "Enable cloud-native, scalable production with AI-driven monitoring and adaptive resource management.",
       positionClass:

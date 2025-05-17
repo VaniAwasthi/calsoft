@@ -41,7 +41,7 @@ export default function Navbar() {
       title: "INSIGHTS",
       href: "/insights",
       submenu: [
-        { title: "Blogs", href: "#" },
+        { title: "Blogs", href: "/insights/blogs" },
         { title: "Resources", href: "#" },
         { title: "Press Releases", href: "#" },
         { title: "Events & Webinars", href: "#" },
