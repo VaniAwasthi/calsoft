@@ -45,6 +45,7 @@ const Page = () => {
   const icons = [
     {
       icon: Incon1,
+      iconSize: "",
       title: "Optimize inventory and supply chains",
       desc: "Predict demand and reduce operational inefficiencies.",
       positionClass:
@@ -55,6 +56,7 @@ const Page = () => {
     },
     {
       icon: Incon2,
+      iconSize: "",
       title: "Seamless omnichannel experiences",
       desc: "Unify online and in-store shopping journeys.",
       positionClass:
@@ -65,6 +67,7 @@ const Page = () => {
     },
     {
       icon: Incon3,
+      iconSize: "",
       title: "Create customer personalization",
       desc: "Use AI-driven insights for hyper-personalization.",
       positionClass:
@@ -75,6 +78,7 @@ const Page = () => {
     },
     {
       icon: Incon4,
+      iconSize: "",
       title: "Increase automation and efficiency",
       desc: "Deploy AI-driven tools for better decision-making.",
       positionClass:
@@ -85,6 +89,7 @@ const Page = () => {
     },
     {
       icon: Incon5,
+      iconSize: "",
       title: "Prevent fraud and security risks",
       desc: "Strengthen transaction security with smart detection system.",
       positionClass:
