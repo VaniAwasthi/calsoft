@@ -4,102 +4,12 @@ import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiShare2 } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-
-import sampleImage1 from "../../assets/blog/blogImage.webp";
-import sampleImage2 from "../../assets/blog/blog-2.webp";
-import sampleImage3 from "../../assets/blog/blog-3.webp";
 import FilterIcon from "../../assets/blog/cleanIcon.svg";
 import SearchIcon from "../../assets/blog/filterSeach.svg";
 import ArrowIcon from "../../assets/blog/rightArrow.svg";
 import Loadmore from "../../assets/blog/loadmoreicon.svg";
-
-const data = [
-  {
-    tag: "Webinar",
-    title: "Deep Dive on Unmasking Security Gaps",
-    author: "Anton Frank",
-    date: "20 APR 2025",
-    img: sampleImage1,
-  },
-  {
-    tag: "Analyst Report",
-    title: "Radicati Group Secure Email Market Quadrant, 2025",
-    author: "Anton Frank",
-    date: "20 APR 2025",
-    img: sampleImage2,
-  },
-  {
-    tag: "Research Report",
-    title: "A Deep Dive into the Leaked Black Basta Chat Logs",
-    author: "Anton Frank",
-    date: "20 APR 2025",
-    img: sampleImage3,
-  },
-  // Duplicate to simulate 12 items
-  {
-    tag: "Webinar",
-    title: "The Future of AI-Driven Security",
-    author: "John Doe",
-    date: "21 APR 2025",
-    img: sampleImage1,
-  },
-  {
-    tag: "Analyst Report",
-    title: "Cloud Security Trends 2025",
-    author: "John Doe",
-    date: "22 APR 2025",
-    img: sampleImage2,
-  },
-  {
-    tag: "Research Report",
-    title: "Insider Threat Detection in Hybrid Work Environments",
-    author: "John Doe",
-    date: "23 APR 2025",
-    img: sampleImage3,
-  },
-  {
-    tag: "Webinar",
-    title: "Next-Gen Endpoint Protection",
-    author: "Anton Frank",
-    date: "24 APR 2025",
-    img: sampleImage1,
-  },
-  {
-    tag: "Analyst Report",
-    title: "Cybersecurity for Healthcare 2025",
-    author: "John Doe",
-    date: "25 APR 2025",
-    img: sampleImage2,
-  },
-  {
-    tag: "Research Report",
-    title: "Threat Intelligence Integration Best Practices",
-    author: "Anton Frank",
-    date: "26 APR 2025",
-    img: sampleImage3,
-  },
-  {
-    tag: "Webinar",
-    title: "Building Resilience in Cyber Infrastructure",
-    author: "Anton Frank",
-    date: "27 APR 2025",
-    img: sampleImage1,
-  },
-  {
-    tag: "Analyst Report",
-    title: "State of Email Security: Market Insights",
-    author: "John Doe",
-    date: "28 APR 2025",
-    img: sampleImage2,
-  },
-  {
-    tag: "Research Report",
-    title: "Advanced Malware Campaigns in 2025",
-    author: "Anton Frank",
-    date: "29 APR 2025",
-    img: sampleImage3,
-  },
-];
+import { blogData } from "../utilities/data/BlogData";
+import { useRouter } from "next/navigation";
 
 const filters = {
   Industry: ["All", "Tech", "Healthcare"],
@@ -108,7 +18,7 @@ const filters = {
 };
 
 export default function ResourceGrid() {
-  const [resources] = useState([...data]);
+  const [resources] = useState([...blogData]);
   const [visibleCount, setVisibleCount] = useState(6);
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
@@ -116,7 +26,11 @@ export default function ResourceGrid() {
     Author: "All",
   });
   const [openDropdown, setOpenDropdown] = useState("");
+  const router = useRouter();
 
+  const handleBlogClick = (id) => {
+    router.push(`/blog-expand/${id}`);
+  };
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
   };
@@ -255,6 +169,7 @@ export default function ResourceGrid() {
               transition={{ duration: 0.5, delay: idx * 0.2 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
+              onClick={() => handleBlogClick(item.id)} // assuming each item has a unique id
               className="bg-[#F8F9FA] border border-[#181C8E] text-black rounded-lg shadow-xl overflow-hidden relative"
             >
               <button
