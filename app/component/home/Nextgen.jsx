@@ -143,7 +143,7 @@ const Nextgen = () => {
                         }}
                       >
                         <span className="relative z-10 group-hover:text-[#BA0007] w-full flex gap-4 items-center transition-colors duration-500">
-                          know More
+                          Know More
                         </span>
                         <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
                       </button>
@@ -168,7 +168,7 @@ const Nextgen = () => {
                           whileInView={{ y: 0, opacity: 1 }}
                           transition={{ duration: 0.1, delay: index * 0.2 }}
                           viewport={{ once: false, amount: 0.3 }}
-                          className={`iphone-icon ${
+                          className={` ${
                             index % 2 === 0 ? "even" : "odd"
                           } card-hover flex-shrink-0 min-w-[70px] min-h-[60px] md:w-[90px] md:h-[80px] xl:w-[100px] xl:h-[90px] transition-transform duration-500 hover:scale-150 perspective cursor-pointer`}
                         >
@@ -183,7 +183,7 @@ const Nextgen = () => {
                               />
                             </div>
                             {/* Back */}
-                            <div className="absolute inset-0 flex items-center justify-center bg-white text-[#021553] rounded-lg rotate-y-180 transform scale-105 mx-2 backface-hidden">
+                            <div className="absolute inset-0 flex items-center justify-center bg-[#BA0007]  text-white rounded-lg rotate-y-180 transform scale-105 mx-2 backface-hidden">
                               <p className="text-[6px] md:text-[8px] xl:text-[10px] font-semibold text-center px-1">
                                 {card.title}
                               </p>
@@ -227,32 +227,6 @@ const Nextgen = () => {
                 )}
               </div>
             </motion.div>
-
-            {/* <div className="md:hidden flex gap-4 justify-center pb-6 lg:flex-row mt-6">
-              <button
-                className="relative flex gap-2 justify-between items-center  px-4 py-3 rounded-full shadow-md bg-[#E8282B] text-white transition-all duration-500 overflow-hidden group"
-                style={{
-                  boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
-                }}
-              >
-                <span className="relative z-10 group-hover:text-[#E8282B] text-xs w-full flex gap-4 items-center transition-colors duration-500">
-                  Case Studies
-                  <IoArrowForwardCircleSharp className="text-2xl tra" />
-                </span>
-                <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
-              </button>
-              <button
-                className="relative flex gap-2 justify-between items-center bg-transparent border-1 border-white  px-8 py-3 rounded-full shadow-md text-white transition-all duration-500 overflow-hidden group"
-                style={{
-                  boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
-                }}
-              >
-                <span className="relative z-10 group-hover:text-[#E8282B] text-xs w-full flex gap-4 items-center transition-colors duration-500">
-                  Know More
-                </span>
-                <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
-              </button>
-            </div> */}
           </div>
         </div>
       </div>
