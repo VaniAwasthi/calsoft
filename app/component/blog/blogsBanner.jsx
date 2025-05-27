@@ -34,13 +34,13 @@ export const BlogsBanner = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.2, delay: 0.2 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="Inter text-5xl font-light inline-block py-5 mb-8"
+          className="Inter text-3xl md:text-5xl font-light inline-block py-5 mb-8"
         >
           Resource Library
         </motion.h2>
 
         {/* Cards */}
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
           {cards.map((card, index) => (
             <div key={index} className="border-t border-white pt-4">
               <motion.p
@@ -61,7 +61,7 @@ export const BlogsBanner = () => {
               >
                 {card.title}
               </motion.h3>
-              <div className="flex items-center justify-between gap-6">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 {/* Text Content */}
                 <div className="flex-1">
                   <motion.p

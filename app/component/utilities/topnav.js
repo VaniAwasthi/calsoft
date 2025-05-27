@@ -42,7 +42,7 @@ export default function Navbar() {
       href: "/insights",
       submenu: [
         { title: "Blogs", href: "/insights/blogs" },
-        { title: "Resources", href: "#" },
+        { title: "Resources", href: "/insights/infographic" },
         { title: "Press Releases", href: "#" },
         { title: "Events & Webinars", href: "#" },
         { title: "Videos & Podcasts", href: "#" },
@@ -133,7 +133,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu */}
-            <Disclosure.Panel className="lg:hidden flex flex-col space-y-2 p-4 bg-black text-white">
+            <Disclosure.Panel className="lg:hidden flex flex-col space-y-2 p-4 bg-black text-white overflow-y-auto max-h-screen">
               {navItems.map(({ title, href, submenu }) => (
                 <div key={title} className="relative">
                   <Link href={href} className="block py-4">

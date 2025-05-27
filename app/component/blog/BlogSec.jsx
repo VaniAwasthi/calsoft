@@ -29,8 +29,9 @@ export default function ResourceGrid() {
   const router = useRouter();
 
   const handleBlogClick = (id) => {
-    router.push(`/blog-expand/${id}`);
+    router.push(`/insights/blogs/blog-expand/${id}`);
   };
+
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
   };
@@ -62,33 +63,23 @@ export default function ResourceGrid() {
       activeFilters.Author === "All" || item.author === activeFilters.Author;
     const tagMatch =
       activeFilters.Topics === "All" || item.tag === activeFilters.Topics;
-    const industryMatch = activeFilters.Industry === "All"; // Adjust logic if needed
+    const industryMatch =
+      activeFilters.Industry === "All" ||
+      item.industry === activeFilters.Industry;
     return authorMatch && tagMatch && industryMatch;
   });
 
   return (
-    <motion.section
-      className="text-black px-4 py-10 bg-white"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.3 }}
-    >
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: false, amount: 0.3 }}
-        className="container mx-auto px-4 md:px-20 w-full"
-      >
+    <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
+      <div className="max-w-screen-xl mx-auto w-full px-4 sm:px-6 lg:px-8">
         {/* Filters */}
-        <div className="manrope grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6 relative z-10">
           {Object.keys(filters).map((filterType) => (
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
+              initial={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.3 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: false, amount: 0.2 }}
               key={filterType}
               className="relative"
             >
@@ -106,7 +97,6 @@ export default function ResourceGrid() {
                 />
               </button>
 
-              {/* Dropdown */}
               <AnimatePresence>
                 {openDropdown === filterType && (
                   <motion.div
@@ -114,7 +104,7 @@ export default function ResourceGrid() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="absolute mt-1 w-full bg-white border shadow-lg rounded z-20"
+                    className="absolute mt-1 w-full bg-white border shadow-lg rounded z-50"
                   >
                     {filters[filterType].map((option) => (
                       <div
@@ -131,13 +121,13 @@ export default function ResourceGrid() {
             </motion.div>
           ))}
 
-          {/* Search and Reset */}
-          <div className="flex items-center gap-2 justify-end">
-            <button className="w-12 h-11 p-2 rounded bg-[#EFEFEF] hover:bg-[#ddd] border-[#2E3092] border-1">
-              <Image src={SearchIcon} alt="search" className="w-full h-full" />
+          {/* Search & Reset */}
+          <div className="flex gap-2">
+            <button className="w-full h-12 p-2 rounded bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex justify-center items-center">
+              <Image src={SearchIcon} alt="search" width={20} height={20} />
             </button>
             <button
-              className="w-12 h-11 p-2 rounded bg-[#EFEFEF] hover:bg-[#ddd] border-[#2E3092] border-1"
+              className="w-full h-12 p-2 rounded bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex justify-center items-center"
               onClick={() =>
                 setActiveFilters({
                   Industry: "All",
@@ -146,53 +136,46 @@ export default function ResourceGrid() {
                 })
               }
             >
-              <Image
-                src={FilterIcon}
-                alt="reset"
-                className="w-full h-full translate-x-[3px] translate-y-[-17px]"
-              />
+              <Image src={FilterIcon} alt="reset" width={20} height={20} />
             </button>
           </div>
         </div>
 
         {/* Results Count */}
-        <p className="manrope mb-4 text-sm">
-          {filteredResources.length} Results
-        </p>
+        <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
         {/* Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredResources.slice(0, visibleCount).map((item, idx) => (
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.5 }}
-              transition={{ duration: 0.5, delay: idx * 0.2 }}
-              whileInView={{ scale: 1, opacity: 1 }}
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
-              onClick={() => handleBlogClick(item.id)} // assuming each item has a unique id
-              className="bg-[#F8F9FA] border border-[#181C8E] text-black rounded-lg shadow-xl overflow-hidden relative"
+              onClick={() => handleBlogClick(item.id)}
+              className="bg-[#F8F9FA] border border-[#181C8E] rounded-lg shadow-md overflow-hidden relative cursor-pointer"
             >
               <button
                 className="absolute top-2 right-2 text-xl text-[#181C8E] z-10"
-                onClick={() => handleShare(item)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleShare(item);
+                }}
               >
                 <FiShare2 />
               </button>
 
               <div className="p-4">
-                <p className="Inter text-[12px] font-light text-black uppercase">
+                <p className="text-[12px] font-light text-black uppercase">
                   {item.tag}
                 </p>
-                <h3 className="manrope font-semibold mt-4 mb-6  pb-[1rem] text-[22px] h-[40px] text-[#B10C2A]">
+                <h3 className="font-semibold mt-4 mb-4 text-[18px] text-[#B10C2A] h-[48px] overflow-hidden">
                   {item.title}
                 </h3>
-                <div className="my-2 flex justify-between ">
-                  <span className="text-[#E36C0A] text-[13px] font-semibold">
-                    {item.author}
-                  </span>
-                  <span className="text-[#939393] text-[13px] font-semibold">
-                    {item.date}
-                  </span>
+                <div className="flex justify-between text-[13px] font-medium">
+                  <span className="text-[#E36C0A]">{item.author}</span>
+                  <span className="text-[#939393]">{item.date}</span>
                 </div>
               </div>
 
@@ -211,7 +194,7 @@ export default function ResourceGrid() {
           ))}
         </div>
 
-        {/* Load More / Show Less */}
+        {/* Load More */}
         {filteredResources.length > 6 && (
           <div className="flex justify-center mt-10">
             <button
@@ -243,7 +226,7 @@ export default function ResourceGrid() {
             </button>
           </div>
         )}
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   );
 }
