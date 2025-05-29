@@ -93,7 +93,7 @@ const Page = () => {
       title: "Prevent fraud and security risks",
       desc: "Strengthen transaction security with smart detection system.",
       positionClass:
-        "md:translate-x-[-28px] md:translate-y-[-39px] xl:translate-y-[-3px]",
+        "md:translate-x-[-30px] md:translate-y-[-39px] xl:translate-y-[4px]",
       translateprop: "translate-x-[48px] translate-y-[-3px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",
@@ -182,7 +182,7 @@ const Page = () => {
         icons={icons}
         MobileImg={Intellegence}
         headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-10 line-clamp-4"
-        contentClass=" md:h-60 lg:h-64 "
+        contentClass=" md:h-64 lg:h-64 "
       />
       <TopClients />
       <InfoImageSection

@@ -182,7 +182,7 @@ const Page = () => {
         icons={icons}
         MobileImg={Intellegence}
         headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-10 line-clamp-4"
-        contentClass=" md:h-60 lg:h-64 "
+        contentClass=" md:h-62 lg:h-72 "
       />
       <InfoImageSection
         {...ScaleSection}

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiShare2 } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
@@ -26,6 +26,7 @@ export default function ResourceGrid() {
     Author: "All",
   });
   const [openDropdown, setOpenDropdown] = useState("");
+  const loadMoreRef = useRef(null);
   const router = useRouter();
 
   const handleBlogClick = (id) => {
@@ -39,7 +40,7 @@ export default function ResourceGrid() {
   const selectFilter = (type, value) => {
     setActiveFilters({ ...activeFilters, [type]: value });
     setOpenDropdown("");
-    setVisibleCount(6);
+    setVisibleCount(6); // Reset visible count on filter change
   };
 
   const handleShare = async (item) => {
@@ -58,20 +59,47 @@ export default function ResourceGrid() {
     }
   };
 
-  const filteredResources = resources.filter((item) => {
-    const authorMatch =
-      activeFilters.Author === "All" || item.author === activeFilters.Author;
-    const tagMatch =
-      activeFilters.Topics === "All" || item.tag === activeFilters.Topics;
-    const industryMatch =
-      activeFilters.Industry === "All" ||
-      item.industry === activeFilters.Industry;
-    return authorMatch && tagMatch && industryMatch;
-  });
+  const filteredResources = useMemo(() => {
+    return resources.filter((item) => {
+      const authorMatch =
+        activeFilters.Author === "All" || item.author === activeFilters.Author;
+      const tagMatch =
+        activeFilters.Topics === "All" || item.tag === activeFilters.Topics;
+      const industryMatch =
+        activeFilters.Industry === "All" ||
+        item.industry === activeFilters.Industry;
+      return authorMatch && tagMatch && industryMatch;
+    });
+  }, [resources, activeFilters]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => {
+            const next = prev + 6;
+            return next <= filteredResources.length
+              ? next
+              : filteredResources.length;
+          });
+        }
+      },
+      { threshold: 1.0 }
+    );
+
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current);
+    }
+
+    return () => {
+      if (loadMoreRef.current) {
+        observer.unobserve(loadMoreRef.current);
+      }
+    };
+  }, [filteredResources.length]);
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
-      <div className="max-w-screen-xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto  px-4 sm:px-6 lg:px-8">
         {/* Filters */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6 relative z-10">
           {Object.keys(filters).map((filterType) => (
@@ -209,6 +237,7 @@ export default function ResourceGrid() {
             >
               {visibleCount >= filteredResources.length ? null : (
                 <motion.div
+                  ref={loadMoreRef}
                   whileHover={{ scale: 1.2, rotate: 10 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
