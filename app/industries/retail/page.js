@@ -45,55 +45,55 @@ const Page = () => {
   const icons = [
     {
       icon: Incon1,
-      iconSize: "",
+
       title: "Optimize inventory and supply chains",
       desc: "Predict demand and reduce operational inefficiencies.",
       positionClass:
-        "md:translate-x-[-13px] md:translate-y-[-39px] xl:translate-y-[-12px]",
+        "md:translate-x-[-5px] md:translate-y-[-39px] xl:translate-y-[-3px]",
       translateprop: "translate-x-[33px] translate-y-[10px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",
     },
     {
       icon: Incon2,
-      iconSize: "",
+
       title: "Seamless omnichannel experiences",
       desc: "Unify online and in-store shopping journeys.",
       positionClass:
-        "translate-x-[-10px] xl:translate-y-[-18px] md:translate-y-[-39px]",
+        "md:translate-x-[-13px] md:translate-y-[-39px] xl:translate-y-[-9px]",
       translateprop: "translate-x-[-70px] translate-y-[10px]",
       position: "right",
       transformProps: "translate-x-[52px] translate-y-[22px]",
     },
     {
       icon: Incon3,
-      iconSize: "",
+
       title: "Create customer personalization",
       desc: "Use AI-driven insights for hyper-personalization.",
       positionClass:
-        "translate-x-[-10px] xl:translate-y-[-5px] md:translate-y-[-39px]",
+        "md:translate-x-[-15px] md:translate-y-[-39px] xl:translate-y-[-3px]",
       translateprop: "translate-x-[70px] translate-y-[10px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",
     },
     {
       icon: Incon4,
-      iconSize: "",
+
       title: "Increase automation and efficiency",
       desc: "Deploy AI-driven tools for better decision-making.",
       positionClass:
-        "translate-x-[-13px] xl:translate-y-[-6px] md:translate-y-[-39px]",
+        "md:translate-x-[-20px] md:translate-y-[-39px] xl:translate-y-[-3px]",
       translateprop: "translate-x-[-80px] translate-y-[-5px]",
       position: "right",
       transformProps: "translate-x-[52px] translate-y-[22px]",
     },
     {
       icon: Incon5,
-      iconSize: "",
+
       title: "Prevent fraud and security risks",
       desc: "Strengthen transaction security with smart detection system.",
       positionClass:
-        "translate-x-[-25px] xl:translate-y-[-12px] md:translate-y-[-39px]",
+        "md:translate-x-[-28px] md:translate-y-[-39px] xl:translate-y-[-3px]",
       translateprop: "translate-x-[48px] translate-y-[-3px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",
