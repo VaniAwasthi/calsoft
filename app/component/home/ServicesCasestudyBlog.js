@@ -105,7 +105,7 @@ export const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="bg-[#2E3092] text-white  py-6 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start"
+                  className="bg-[#2E3092] text-white  py-6 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start justify-center"
                 >
                   <div className="flex justify-center items-center gap-0 w-full md:gap-6  md:flex-nowrap  md:w-full">
                     <div className="md:w-40 w-20">

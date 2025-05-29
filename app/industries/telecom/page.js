@@ -47,55 +47,54 @@ We help telecoms with streamlining operations, automating networks, and enhancin
   const icons = [
     {
       icon: Incon1,
-      iconSize: "",
+
       title: "Optimized network operations",
       desc: "Deploy SDN/NFV solutions for intelligent automation.",
       positionClass:
-        "md:translate-x-[-13px] md:translate-y-[-39px] xl:translate-y-[-12px]",
+        "translate-x-[-7px] xl:translate-y-[4px] md:translate-y-[-39px]",
       translateprop: "translate-x-[33px] translate-y-[10px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",
     },
     {
       icon: Incon2,
-      iconSize: "",
+
       title: "Ensuring seamless cloud transformation",
       desc: "Leverage cloud-native architectures for flexibility.",
       positionClass:
-        "translate-x-[-10px] xl:translate-y-[-18px] md:translate-y-[-39px]",
+        "translate-x-[-14px] xl:translate-y-[-10px] md:translate-y-[-39px]",
       translateprop: "translate-x-[-70px] translate-y-[10px]",
       position: "right",
       transformProps: "translate-x-[52px] translate-y-[22px]",
     },
     {
       icon: Incon3,
-      iconSize: "",
+
       title: "Enhanced service assurance & security",
       desc: "Strengthen monitoring and threat detection.",
       positionClass:
-        "translate-x-[-10px] xl:translate-y-[-5px] md:translate-y-[-39px]",
+        "translate-x-[-17px] xl:translate-y-[4px] md:translate-y-[-39px]",
       translateprop: "translate-x-[70px] translate-y-[10px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",
     },
     {
       icon: Incon4,
-      iconSize: "",
+
       title: "Scaled 5G & edge computing capabilities",
       desc: "Enable real-time data processing at the edge.",
       positionClass:
-        "translate-x-[-13px] xl:translate-y-[-6px] md:translate-y-[-39px]",
+        "translate-x-[-23px] xl:translate-y-[7px] md:translate-y-[-39px]",
       translateprop: "translate-x-[-80px] translate-y-[-5px]",
       position: "right",
       transformProps: "translate-x-[52px] translate-y-[22px]",
     },
     {
       icon: Incon5,
-      iconSize: "",
       title: "Reduced OPEX & CAPEX with AI-insights",
       desc: "Improve efficiency with predictive analytics.",
       positionClass:
-        "translate-x-[-25px] xl:translate-y-[-12px] md:translate-y-[-39px]",
+        "translate-x-[-32px] xl:translate-y-[7px] md:translate-y-[-39px]",
       translateprop: "translate-x-[48px] translate-y-[-3px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",

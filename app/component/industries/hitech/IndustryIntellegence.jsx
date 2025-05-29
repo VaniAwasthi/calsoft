@@ -102,10 +102,9 @@ export default function IndustryIntelligence({
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className={`px-2 text-base md:text-sm lg:text-[15px] font-semibold text-[#2e2c91] md:mt-4 lg:mt-16  ${headingClass}`}
-              >
-                {item.title}
-              </motion.h3>
+                className={`px-2 text-base md:text-sm lg:text-[16px] font-semibold text-[#2e2c91] md:mt-4 lg:mt-16  ${headingClass}`}
+                dangerouslySetInnerHTML={{ __html: item.title }}
+              ></motion.h3>
 
               <div className="grid grid-cols-[auto_2px] items-center gap-4 xl:mb-[2rem] md:px-2">
                 <motion.p
@@ -113,10 +112,9 @@ export default function IndustryIntelligence({
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="text-xs sm:text-[13px]"
-                >
-                  {item.desc}
-                </motion.p>
+                  className="text-xs sm:text-[15px]"
+                  dangerouslySetInnerHTML={{ __html: item.desc }}
+                ></motion.p>
 
                 {/* Vertical Divider - only if not last item */}
                 {index !== icons.length - 1 && (
