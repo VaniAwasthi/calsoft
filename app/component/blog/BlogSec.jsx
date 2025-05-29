@@ -249,9 +249,6 @@ export default function ResourceGrid() {
                   />
                 </motion.div>
               )}
-              {visibleCount >= filteredResources.length
-                ? "Show Less"
-                : "Load More"}
             </button>
           </div>
         )}
