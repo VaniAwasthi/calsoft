@@ -80,7 +80,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50">
+    <header className="w-full sticky top-0 z-90">
       {/* Top Bar */}
       <div className="text-white px-6 py-3 border-b bg-[#141414] border-gray-700">
         <div className="flex items-end justify-end text-sm container mx-auto px-1 md:px-20">
@@ -121,7 +121,7 @@ export default function Navbar() {
 
                     {/* Desktop Submenu */}
                     {submenu && (
-                      <div className="absolute top-full left-0 mt-2 min-w-[200px] bg-white text-black rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                      <div className="absolute top-full left-0 mt-2 min-w-[200px] bg-white text-black rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-90">
                         {submenu.map(({ title, href, inersubmenu }) => (
                           <div key={title}>
                             <Link

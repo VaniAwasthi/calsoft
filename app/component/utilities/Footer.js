@@ -9,12 +9,12 @@ import {
 } from "react-icons/fa6";
 import Logo from "../../assets/logo.png";
 import user from "../../assets/webinar.png";
-
 import { GoArrowRight } from "react-icons/go";
 
 const Footer = () => {
   return (
     <>
+      {/* Webinar Floating Button */}
       <button
         className="fixed rounded-full cursor-pointer w-18 h-18 md:w-20 md:h-20 flex p-3 gap-0 flex-wrap items-center z-10 right-10 md:right-6 bottom-8 justify-center bg-[#ED1C24] text-white"
         style={{
@@ -24,186 +24,159 @@ const Footer = () => {
       >
         <Image
           src={user}
-          alt="Calsoft Logo"
+          alt="Webinar Icon"
           width={40}
           height={40}
-          className="md:h-auto h-8 object-contain"
+          className="h-8 object-contain"
         />
-        <span className=" text-[10px] md:text-xs">Webinar</span>
+        <span className="text-[10px] md:text-xs">Webinar</span>
       </button>
 
+      {/* Main Footer */}
       <footer className="bg-black text-white">
-        <div className="container mx-auto px-4 py-6 xl:px-15 ">
-          <div className="flex flex-col md:flex-row justify-between items-start pt-4 pb-6 ">
+        <div className="container mx-auto px-4 py-6 xl:px-15">
+          <div className="flex flex-col md:flex-row justify-between items-start pt-4 pb-6">
             <div>
               <Image src={Logo} alt="Calsoft Logo" width={150} height={50} />
-              <div className=" mt-10 md:mb-[2rem] mb-[4rem] w-full flex ">
-                <div className="flex items-center justify-between relative w-full md:w-3/4 bg-[#333333] rounded-full">
-                  <input
-                    type="email"
-                    placeholder="Add your email*"
-                    className="w-full md:w-[500px]  text-gray-300 px-4 py-3 pr-10  focus:outline-none"
-                  />
-                  <button className=" bg-[#2E3092] text-white rounded-full px-4 min-w-34 md:min-w-40 -ml-6 flex items-center gap-4 py-3 ">
-                    <GoArrowRight /> Subscribe
-                  </button>
-                </div>
-              </div>
             </div>
-            <div className="grid grid-cols-2 col-span-2 md:grid-cols-3 md:col-span-4 md:gap-10 gap-6">
-              {/* Company */}
-              <div>
-                <h3 className="md:text-lg text-base font-semibold mb-2 md:mb-8">
-                  Company
-                </h3>
-                <ul className="mt-4 space-y-2 text-white">
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      About Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Leadership
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Careers
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Press
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Contact Us
-                    </Link>
-                  </li>
-                </ul>
-              </div>
 
-              {/* Industries */}
-              <div>
-                <h3 className="md:text-lg text-base font-semibold mb-2 md:mb-8">
-                  Industries
-                </h3>
-                <ul className="mt-4 space-y-2 text-white">
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Product Engineering
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Digital Engineering
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Managed Testing Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Sustaining & Support
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Data
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Artificial Intelligence
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Resources */}
-              <div>
-                <h3 className="md:text-lg text-base font-semibold mb-2 md:mb-8">
-                  Resources
-                </h3>
-                <ul className="mt-4 space-y-2 text-white">
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Help Center
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Blog
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Community
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Terms
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#" className="text-xs md:text-base font-light">
-                      Privacy Policy
-                    </Link>
-                  </li>
-                </ul>
+            {/* Email Subscription */}
+            <div className="mt-10 md:mt-0 w-full md:w-[400px]">
+              <div className="flex items-center relative bg-[#333333] rounded-full">
+                <input
+                  type="email"
+                  placeholder="Add your email*"
+                  className="w-full text-gray-300 px-4 py-3 pr-10 bg-transparent rounded-full focus:outline-none"
+                />
+                <button className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-1">
+                  <GoArrowRight /> Subscribe
+                </button>
               </div>
             </div>
           </div>
-        </div>
-        <div className="bg-[#2E3092] mt-8  ">
-          <div className="container mx-auto px-4 py-4 md:px-20 ">
-            <div className="flex flex-wrap gap-4  md:flex-row flex-col-reverse items-center justify-between">
-              <p className="text-sm md:text-[15px] text-white block text-left w-full md:w-auto">
-                © 2024 Calsoft | Designed by Crux
-              </p>
 
-              {/* Social Media Links */}
-              <div className="flex flex-wrap items-center gap-4 mt-4 md:mt-0">
-                <span className="text-white w-full md:w-auto">
-                  Social Presence:
-                </span>
+          {/* Main Footer Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm md:text-base">
+            {/* Company */}
+            <div>
+              <h3 className="text-[20px] font-semibold mb-4">Company</h3>
+              <ul className="space-y-2 text-[14px]">
+                <li>
+                  <Link href="#">Leadership</Link>
+                </li>
+                <li>
+                  <Link href="#">Careers</Link>
+                </li>
+                <li>
+                  <Link href="#">Press</Link>
+                </li>
+                <li>
+                  <Link href="#">Contact us</Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Industries */}
+            <div>
+              <h3 className="text-[20px] font-semibold mb-4">Industries</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="#">Product engineering</Link>
+                </li>
+                <li>
+                  <Link href="#">Digital engineering</Link>
+                </li>
+                <li>
+                  <Link href="#">Managed testing services</Link>
+                </li>
+                <li>
+                  <Link href="#">Sustaining & Support</Link>
+                </li>
+                <li>
+                  <Link href="#">Data</Link>
+                </li>
+                <li>
+                  <Link href="#">Artificial Intelligence</Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <h3 className="text-[20px] font-semibold mb-4">Resources</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="#">Help center</Link>
+                </li>
+                <li>
+                  <Link href="#">Blog</Link>
+                </li>
+                <li>
+                  <Link href="#">Community</Link>
+                </li>
+                <li>
+                  <Link href="#">Terms</Link>
+                </li>
+                <li>
+                  <Link href="#">Privacy policy</Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Headquarters */}
+            <div>
+              <h3 className="text-[20px] font-semibold mb-4">Headquarters</h3>
+              <ul className="space-y-2 text-sm">
+                <li>USA - San Jose</li>
+                <li>INDIA - Pune</li>
+              </ul>
+            </div>
+
+            {/* Social Presence */}
+            <div>
+              <h3 className="text-[20px] font-semibold mb-4">
+                Social Presence
+              </h3>
+              <div className="flex flex-wrap gap-3 ">
                 <Link
                   href="#"
-                  className="rounded-full md:w-12 md:h-12 w-10 h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full w-8 h-8 md:w-10 md:h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaLinkedinIn size={20} />
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full md:w-12 md:h-12 w-10 h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full ww-8 h-8 md:w-10 md:h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaXTwitter size={20} />
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full md:w-12 md:h-12 w-10 h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full ww-8 h-8 md:w-10 md:h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaYoutube size={20} />
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full md:w-12 md:h-12 w-10 h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full ww-8 h-8 md:w-10 md:h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaFacebookF size={20} />
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full md:w-12 md:h-12 w-10 h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full ww-8 h-8 md:w-10 md:h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaInstagram size={20} />
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Bottom Strip */}
+        <div className="bg-[#2E3092] mt-8">
+          <div className="container mx-auto px-4 py-4 md:px-20 text-sm text-white text-center ">
+            © 2024 Calsoft | Designed by Crux
           </div>
         </div>
       </footer>

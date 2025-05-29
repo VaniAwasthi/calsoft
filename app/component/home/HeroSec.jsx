@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import BackgroundImage from "../../assets/home/Hero-sec.webp";
+import BackgroundImage from "../../assets/home/Hero-sec2.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import BannerLayout from "../utilities/BannerLayout";
 

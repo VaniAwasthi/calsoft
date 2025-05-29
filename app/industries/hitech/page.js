@@ -53,7 +53,7 @@ const Page = () => {
   const icons = [
     {
       icon: HitechIcon1,
-      iconSize: "",
+
       title: "Build high-performance applications",
       desc: "Cloud-first, API-driven architectures",
       positionClass:
@@ -64,7 +64,7 @@ const Page = () => {
     },
     {
       icon: HitechIcon2,
-      iconSize: "",
+
       title: "Modernize products",
       desc: "Upgrade legacy applications for agility & security",
       positionClass:
@@ -75,7 +75,7 @@ const Page = () => {
     },
     {
       icon: HitechIcon3,
-      iconSize: "",
+
       title: "Enhance automation & intelligence",
       desc: "Smarter decision making with AI and analytics",
       positionClass:
@@ -86,7 +86,7 @@ const Page = () => {
     },
     {
       icon: HitechIcon4,
-      iconSize: "",
+
       title: "Enable seamless integrations",
       desc: "Unified platform connectivity with full interoperability",
       positionClass:
@@ -97,7 +97,7 @@ const Page = () => {
     },
     {
       icon: HitechIcon5,
-      iconSize: "",
+
       title: "Optimize software lifecycles",
       desc: "Streamlined development, testing, & deployment",
       positionClass:
