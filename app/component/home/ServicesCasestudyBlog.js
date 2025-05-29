@@ -19,9 +19,7 @@ import icon2 from "../../assets/home/icon4.svg";
 // import Link from "next/link";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import logo2 from "../../assets/home/logo2.png";
-import man1 from "../../assets/home/man1.webp";
-import man2 from "../../assets/home/man2.webp";
-import man3 from "../../assets/home/man3.webp";
+
 import blogimg1 from "../../assets/home/blog1.webp";
 import blogimg2 from "../../assets/home/blog2.webp";
 import blogimg3 from "../../assets/home/blog3.webp";
@@ -110,12 +108,12 @@ export const Services = () => {
                   className="bg-[#2E3092] text-white  py-6 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start"
                 >
                   <div className="flex justify-center items-center gap-0 w-full md:gap-6  md:flex-nowrap  md:w-full">
-                    <div className="md:w-42 w-20">
+                    <div className="md:w-40 w-20">
                       <Image
                         src={service.icon}
                         alt={service.title}
-                        width={50}
-                        height={50}
+                        width={40}
+                        height={40}
                         className="mb-4 md:w-full md:h-full h-12 object-contain"
                       />
                     </div>
