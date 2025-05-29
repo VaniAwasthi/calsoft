@@ -27,7 +27,7 @@ export const BlogsBanner = () => {
 
   return (
     <section className="bg-[#2b2eae] text-white py-15 px-4 sm:px-6 lg:px-16">
-      <div className="container mx-auto px-4 md:px-20 w-full">
+      <div className="container mx-auto px-4 md:px-6 w-full">
         {/* Heading */}
         <motion.h2
           initial={{ y: -30, opacity: 0 }}
