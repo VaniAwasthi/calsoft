@@ -65,7 +65,7 @@ const Page = () => {
     {
       icon: HitechIcon2,
 
-      title: "Modernize products",
+      title: `Modernize <br/> Products`,
       desc: "Upgrade legacy applications for agility & security",
       positionClass:
         "translate-x-[-10px] xl:translate-y-[-18px] md:translate-y-[-39px]",
@@ -79,7 +79,7 @@ const Page = () => {
       title: "Enhance automation & intelligence",
       desc: "Smarter decision making with AI and analytics",
       positionClass:
-        "translate-x-[-10px] xl:translate-y-[-5px] md:translate-y-[-39px]",
+        "translate-x-[-16px] xl:translate-y-[-5px] md:translate-y-[-39px]",
       translateprop: "translate-x-[70px] translate-y-[10px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",
@@ -91,7 +91,7 @@ const Page = () => {
       desc: "Unified platform connectivity with full interoperability",
       positionClass:
         "translate-x-[-21px] xl:translate-y-[-6px] md:translate-y-[-39px]",
-      translateprop: "translate-x-[-80px] translate-y-[-5px]",
+      translateprop: "translate-x-[-80px] translate-y-[-1px]",
       position: "right",
       transformProps: "translate-x-[52px] translate-y-[22px]",
     },
