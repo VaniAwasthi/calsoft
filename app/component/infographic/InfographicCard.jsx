@@ -147,50 +147,55 @@ export const InfographicCard = () => {
         </div>
 
         {/* Custom Pagination with animation */}
-        <div className="mt-8 flex justify-center items-center gap-2 select-none">
-          <motion.button
-            onClick={() => goToPage(currentPage - 1)}
-            disabled={currentPage === 0}
-            whileHover={{ scale: currentPage === 0 ? 1 : 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className={`px-3 py-1 border border-[#2E3092] rounded ${
-              currentPage === 0
-                ? "text-gray-400 border-[#2E3092] cursor-not-allowed"
-                : "hover:bg-gray-200"
-            }`}
-          >
-            <FaLessThan color="#2E3092" className="w-5 h-5" />
-          </motion.button>
-
-          {Array.from({ length: totalPages }, (_, i) => (
+        <div className="flex justify-center items-center">
+          <div className="mt-8 w-[300px]  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
+            {/* Previous Button */}
             <motion.button
-              key={i}
-              onClick={() => goToPage(i)}
-              whileHover={{ scale: 1.1 }}
+              onClick={() => goToPage(currentPage - 1)}
+              disabled={currentPage === 0}
+              whileHover={{ scale: currentPage === 0 ? 1 : 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-3 py-1 border border-[#2E3092] rounded ${
-                currentPage === i
-                  ? "bg-[#2E3092] text-white"
-                  : "hover:bg-gray-100 text-[#2E3092]"
+              className={`px-4 py-3 bg-white border-r border-gray-300 ${
+                currentPage === 0
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-[#2E3092]"
               }`}
             >
-              {i + 1}
+              <FaLessThan className="w-3 h-3" />
             </motion.button>
-          ))}
 
-          <motion.button
-            onClick={() => goToPage(currentPage + 1)}
-            disabled={currentPage === totalPages - 1}
-            whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className={`px-3 py-1 border border-[#2E3092] rounded ${
-              currentPage === totalPages - 1
-                ? "text-gray-400 border-[#2E3092] cursor-not-allowed"
-                : "hover:bg-gray-200"
-            }`}
-          >
-            <FaGreaterThan color="#2E3092" className="w-5 h-5" />
-          </motion.button>
+            {/* Page Numbers */}
+            {Array.from({ length: totalPages }, (_, i) => (
+              <motion.button
+                key={i}
+                onClick={() => goToPage(i)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-4 py-2 border-r border-gray-300 ${
+                  currentPage === i
+                    ? "text-[#2E3092] font-medium"
+                    : "text-gray-500 hover:bg-gray-100"
+                } bg-white`}
+              >
+                {i + 1}
+              </motion.button>
+            ))}
+
+            {/* Next Button */}
+            <motion.button
+              onClick={() => goToPage(currentPage + 1)}
+              disabled={currentPage === totalPages - 1}
+              whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-4 py-2 bg-white ${
+                currentPage === totalPages - 1
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-[#2E3092]"
+              }`}
+            >
+              <FaGreaterThan className="w-3 h-3" />
+            </motion.button>
+          </div>
         </div>
       </div>
     </section>
