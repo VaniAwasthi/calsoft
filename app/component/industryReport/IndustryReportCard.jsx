@@ -27,7 +27,7 @@ export const IndustryReportCard = () => {
 
   const images = [Industry1];
 
-  const cardData = new Array(30).fill(0).map((_, i) => ({
+  const cardData = new Array(18).fill(0).map((_, i) => ({
     id: i + 1,
     title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer ${
       i + 1
@@ -157,7 +157,7 @@ export const IndustryReportCard = () => {
 
         {/* Custom Pagination with animation */}
         <div className="flex justify-center items-center">
-          <div className="mt-8 w-[300px]  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
+          <div className="mt-8  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
             {/* Previous Button */}
             <motion.button
               onClick={() => goToPage(currentPage - 1)}
