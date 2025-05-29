@@ -172,16 +172,18 @@ export const CaseStudies = () => {
                 className={`rounded-xl overflow-hidden text-center transition-all duration-300
             ${
               index === activeTab
-                ? "hidden md:block md:scale-110 md:col-span-2"
+                ? "hidden md:block md:scale-100 md:col-span-2 "
                 : "scale-90"
             }`}
               >
                 <Image
                   src={item.image}
                   alt="Card"
-                  width={300}
+                  width={350}
                   height={400}
-                  className="object-cover rounded-xl w-full h-52"
+                  className={`object-cover rounded-xl w-full h-52 ${
+                    index === activeTab ? "h-72 w-[250px]" : "h-52 w-[300px]"
+                  }`}
                 />
                 {activeTab === index ? (
                   <p className="text-sm mt-2 font-medium px-2">

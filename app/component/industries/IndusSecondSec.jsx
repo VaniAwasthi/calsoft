@@ -220,12 +220,11 @@ export default function IndustryIntelligence() {
           <div className="space-y-8 flex flex-col items-center relative">
             {rightItems.map((item, index) => (
               <motion.div
-                key={index}
-                initial={{ x: 30, opacity: 0 }}
+                initial={{ x: -30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.1 + index * 0.2 }}
+                transition={{ duration: 0.2, delay: 0.2 + index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
-                variants={fadeIn(0.6 + index * 0.2)}
+                variants={fadeIn(0.6 + index * 0.4)}
                 className="flex items-center gap-4 bg-[#2E3092] text-white px-4 py-4 rounded-full w-56 h-16 z-10"
               >
                 <Image
@@ -256,7 +255,7 @@ export default function IndustryIntelligence() {
                 key={`left-${idx}`}
                 src={line.line}
                 alt={`left-line-${idx}`}
-                width={120}
+                width={110}
                 height={30}
                 className={`absolute left-[29%] top-[10%] ${line.translateProps}`}
               />
