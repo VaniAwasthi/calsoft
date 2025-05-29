@@ -8,7 +8,7 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
   const formatId = (str) => str.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <motion.div className="sticky top-30 z-90 md:block hidden">
+    <motion.div className="sticky top-30 z-70 md:block hidden">
       <div className="w-full transition-all duration-300 text-white bg-[#2E3092]">
         <div className="relative flex items-center px-4 py-2 container mx-auto xl:px-20">
           {/* Left Icon */}
