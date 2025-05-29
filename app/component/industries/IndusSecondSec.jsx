@@ -5,13 +5,13 @@ import Image from "next/image";
 import React from "react";
 
 import left1 from "../../assets/industries/left1.svg";
-import left2 from "../../assets/industries/left2.svg";
-import left3 from "../../assets/industries/left2.svg";
+import left2 from "../../assets/industries/linenew.svg";
+import left3 from "../../assets/industries/linenew.svg";
 import left4 from "../../assets/industries/left4.svg";
 
 import right1 from "../../assets/industries/right1.svg";
-import right2 from "../../assets/industries/right2.svg";
-import right3 from "../../assets/industries/right3.svg";
+import right2 from "../../assets/industries/linenew.svg";
+import right3 from "../../assets/industries/linenew.svg";
 import right4 from "../../assets/industries/right4.svg";
 
 import DataProduct from "../../assets/industries/DataProduct.webp";
