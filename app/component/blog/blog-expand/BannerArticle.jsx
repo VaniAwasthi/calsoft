@@ -5,22 +5,24 @@ import { FaFacebookF, FaLink, FaLinkedin } from "react-icons/fa";
 
 import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
+import blogexpanImage from "../../../assets/blog/blogexpanImage.webp";
 export const Banner = ({ blog }) => {
   return (
     <section className="md:py-7 px-7 md:px-20">
       <div className="container mx-auto   w-full border-b-[2px] border-[#F05A39] pb-4 ">
+        <Image src={blogexpanImage} alt="Vlog-expan-image" />
         <div className="grid  grid-cols-12 items-center gap-6">
-          <h1 className="col-span-12 md:col-span-9  text-3xl md:text-5xl font-bold leading-tight">
+          <h1 className="col-span-12 md:col-span-9  text-3xl md:text-5xl font-bold leading-tight my-4">
             {blog.title}
           </h1>
-          <div className="relative col-span-12 md:col-span-3 w-full h-48 md:h-64">
+          {/* <div className="relative col-span-12 md:col-span-3 w-full h-48 md:h-64">
             <Image
               src={BlogImage}
               alt="Blog banner"
               fill
               className="object-contain"
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
@@ -144,11 +146,11 @@ export const ArticleContent = ({ blog }) => {
 
             {/* Tags */}
             <div>
-              <div className="flex flex-col gap-5">
-                {blog.tag.map((tag, i) => (
+              <div className="flex flex-col flex-wrap gap-2 my-2">
+                {blog.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="bg-black text-white w-[200px] xl:w-2/3 rounded-3xl text-sm px-4 py-4"
+                    className="bg-black text-white w-[40%]  text-center rounded-3xl text-sm px-4 py-4"
                   >
                     {tag}
                   </span>

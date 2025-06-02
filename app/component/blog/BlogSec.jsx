@@ -151,11 +151,12 @@ export default function ResourceGrid() {
 
           {/* Search & Reset */}
           <div className="flex gap-2">
-            <button className="w-full h-12 p-2 rounded bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex justify-center items-center">
+            <button className="w-14 h-14 p-2 rounded-lg bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex flex-col justify-center items-center">
               <Image src={SearchIcon} alt="search" width={20} height={20} />
+              <span className="text-[10px] text-[#2E3092] ">Search</span>
             </button>
             <button
-              className="w-full h-12 p-2 rounded bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex justify-center items-center"
+              className="w-14 h-14 p-2 rounded-lg bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex flex-col justify-center items-center"
               onClick={() =>
                 setActiveFilters({
                   Industry: "All",
@@ -164,7 +165,8 @@ export default function ResourceGrid() {
                 })
               }
             >
-              <Image src={FilterIcon} alt="reset" width={20} height={20} />
+              <Image src={FilterIcon} alt="reset" width={25} height={25} />
+              <span className="text-[10px] text-[#2E3092] ">Clear</span>
             </button>
           </div>
         </div>
@@ -182,32 +184,45 @@ export default function ResourceGrid() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
               onClick={() => handleBlogClick(item.id)}
-              className="bg-[#F8F9FA] border border-[#181C8E] rounded-lg shadow-md overflow-hidden relative cursor-pointer"
+              className="bg-[#F8F9FA] border border-[#181C8E] rounded-lg shadow-md overflow-hidden relative cursor-pointer h-[400px] "
             >
-              <button
-                className="absolute top-2 right-2 text-xl text-[#181C8E] z-10"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleShare(item);
-                }}
-              >
-                <FiShare2 />
-              </button>
-
-              <div className="p-4">
-                <p className="text-[12px] font-light text-black uppercase">
-                  {item.tag}
-                </p>
-                <h3 className="font-semibold mt-4 mb-4 text-[18px] text-[#B10C2A] h-[48px] overflow-hidden">
+              <div className="p-4 h-1/2">
+                <div className="">
+                  <p className="text-[12px] font-light text-black uppercase">
+                    {item.subheading}
+                  </p>
+                  <button
+                    className="absolute top-2 right-2 text-xl text-[#181C8E] z-10"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleShare(item);
+                    }}
+                  >
+                    <FiShare2 />
+                  </button>
+                </div>
+                <h3 className="font-semibold mt-4 mb-4 text-[24px] text-[#B10C2A]  overflow-hidden">
                   {item.title}
                 </h3>
+
+                <div className="flex flex-wrap gap-2 my-2">
+                  {/* Container to hold tags */}
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
                 <div className="flex justify-between text-[13px] font-medium">
                   <span className="text-[#E36C0A]">{item.author}</span>
                   <span className="text-[#939393]">{item.date}</span>
                 </div>
               </div>
 
-              <div className="relative w-full h-48 overflow-hidden rounded-b-lg">
+              <div className="relative w-full  overflow-hidden rounded-b-lg h-1/2">
                 <Image
                   src={item.img}
                   alt={item.title}

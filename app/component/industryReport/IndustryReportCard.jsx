@@ -35,7 +35,7 @@ export const IndustryReportCard = () => {
     image: images[i % images.length],
     link: `https://yourdomain.com/card/${i + 1}`,
     author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    tag: i % 2 === 0 ? "AI" : "Security",
+    tags: ["AI", "Security"],
     industry: i % 2 === 0 ? "Tech" : "Healthcare",
   }));
 
@@ -127,6 +127,17 @@ export const IndustryReportCard = () => {
                     <h3 className="text-sm md:text-[18px] font-semibold  break-words whitespace-normal text-[#28272D]">
                       {item.title}
                     </h3>
+                    <div className="flex flex-wrap gap-2 my-2">
+                      {/* Container to hold tags */}
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                     <div className="flex justify-between w-full items-center py-5 mt-2 lg-10 lg:py-10">
                       <Link
                         href="#"

@@ -34,7 +34,7 @@ export const InfographicCard = () => {
     image: images[i % images.length],
     link: `https://yourdomain.com/card/${i + 1}`,
     author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    tag: i % 2 === 0 ? "AI" : "Security",
+    tags: ["AI", "Security"],
     industry: i % 2 === 0 ? "Tech" : "Healthcare",
   }));
 
@@ -110,18 +110,29 @@ export const InfographicCard = () => {
                 className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 {/* Image */}
-                <div className="w-full h-3/4">
+                <div className="w-full h-3/5">
                   <Image
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover"
                     width={400}
-                    height={200}
+                    height={400}
                   />
                 </div>
 
                 {/* Content */}
-                <div className="w-full h-1/4 p-4 flex flex-col justify-between">
+                <div className="w-full h-2/5 p-4 flex flex-col justify-between">
+                  <div className="flex flex-wrap gap-2 my-2">
+                    {/* Container to hold tags */}
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                   <div className="flex justify-between items-start">
                     <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
                       {item.title}

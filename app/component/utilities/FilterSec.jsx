@@ -74,11 +74,12 @@ export const FilterSec = ({
 
           {/* Search and Reset buttons (span 3 cols) */}
           <div className="col-span-12 md:col-span-3 flex gap-2">
-            <button className="w-full h-12 p-2 rounded bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex justify-center items-center">
+            <button className="w-14 h-14 p-2 rounded-lg bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex flex-col justify-center items-center">
               <Image src={SearchIcon} alt="search" width={20} height={20} />
+              <span className="text-[10px] text-[#2E3092] ">Search</span>
             </button>
             <button
-              className="w-full h-12 p-2 rounded bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex justify-center items-center"
+              className="w-14 h-14 p-2 rounded-lg bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex flex-col justify-center items-center"
               onClick={() =>
                 setActiveFilters({
                   Industry: "All",
@@ -87,7 +88,8 @@ export const FilterSec = ({
                 })
               }
             >
-              <Image src={FilterIcon} alt="reset" width={20} height={20} />
+              <Image src={FilterIcon} alt="reset" width={25} height={25} />
+              <span className="text-[10px] text-[#2E3092] ">Clear</span>
             </button>
           </div>
         </div>
