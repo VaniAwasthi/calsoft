@@ -5,7 +5,8 @@ import sampleImage3 from "../../../assets/blog/blog-3.webp";
 export const blogData = [
   {
     id: 1,
-    tag: ["Webinar"],
+    subheading: ["Webinar"],
+    tags: ["AI", "Security", "Gaps"],
     title: "Deep Dive on Unmasking Security Gaps",
     author: "Anton Frank",
     date: "20 APR 2025",
@@ -19,7 +20,8 @@ export const blogData = [
   },
   {
     id: 2,
-    tag: ["Analyst Report"],
+    subheading: ["Analyst Report"],
+    tags: ["AI", "Security", "Gaps"],
     title: "Radicati Group Secure Email Market Quadrant, 2025",
     author: "Anton Frank",
     date: "20 APR 2025",
@@ -33,7 +35,8 @@ export const blogData = [
   },
   {
     id: 3,
-    tag: ["Research Report"],
+    subheading: ["Research Report"],
+    tags: ["AI", "Security", "Gaps"],
     title: "A Deep Dive into the Leaked Black Basta Chat Logs",
     author: "Anton Frank",
     date: "20 APR 2025",
@@ -47,7 +50,8 @@ export const blogData = [
   },
   {
     id: 4,
-    tag: ["Webinar"],
+    subheading: ["Webinar"],
+    tags: ["AI", "Security", "Gaps"],
     title: "The Future of AI-Driven Security",
     author: "John Doe",
     date: "21 APR 2025",
@@ -61,7 +65,8 @@ export const blogData = [
   },
   {
     id: 5,
-    tag: ["Analyst Report"],
+    subheading: ["Analyst Report"],
+    tags: ["AI", "Security", "Gaps"],
     title: "Cloud Security Trends 2025",
     author: "John Doe",
     date: "22 APR 2025",
@@ -75,7 +80,8 @@ export const blogData = [
   },
   {
     id: 6,
-    tag: ["Research Report"],
+    subheading: ["Research Report"],
+    tags: ["AI", "Security", "Gaps"],
     title: "Insider Threat Detection in Hybrid Work Environments",
     author: "John Doe",
     date: "23 APR 2025",
@@ -89,7 +95,8 @@ export const blogData = [
   },
   {
     id: 7,
-    tag: ["Webinar"],
+    subheading: ["Webinar"],
+    tags: ["AI", "Security", "Gaps"],
     title: "Next-Gen Endpoint Protection",
     author: "Anton Frank",
     date: "24 APR 2025",
@@ -103,7 +110,8 @@ export const blogData = [
   },
   {
     id: 8,
-    tag: ["Analyst Report"],
+    subheading: ["Analyst Report"],
+    tags: ["AI", "Security", "Gaps"],
     title: "Cybersecurity for Healthcare 2025",
     author: "John Doe",
     date: "25 APR 2025",
@@ -117,7 +125,8 @@ export const blogData = [
   },
   {
     id: 9,
-    tag: ["Research Report"],
+    subheading: ["Research Report"],
+    tags: ["AI", "Security", "Gaps"],
     title: "Threat Intelligence Integration Best Practices",
     author: "Anton Frank",
     date: "26 APR 2025",
@@ -131,7 +140,9 @@ export const blogData = [
   },
   {
     id: 10,
-    tag: ["Webinar"],
+    subheading: ["Webinar"],
+    tags: ["AI", "Security", "Gaps"],
+    tags: ["AI", "Security", "Gaps"],
     title: "Building Resilience in Cyber Infrastructure",
     author: "Anton Frank",
     date: "27 APR 2025",
@@ -145,7 +156,8 @@ export const blogData = [
   },
   {
     id: 11,
-    tag: ["Analyst Report"],
+    subheading: ["Analyst Report"],
+    tags: ["AI", "Security", "Gaps"],
     title: "State of Email Security: Market Insights",
     author: "John Doe",
     date: "28 APR 2025",
@@ -159,7 +171,8 @@ export const blogData = [
   },
   {
     id: 12,
-    tag: ["Research Report"],
+    subheading: ["Research Report"],
+    tags: ["AI", "Security", "Gaps"],
     title: "Advanced Malware Campaigns in 2025",
     author: "Anton Frank",
     date: "29 APR 2025",
