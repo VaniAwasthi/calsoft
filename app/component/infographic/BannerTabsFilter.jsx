@@ -11,6 +11,7 @@ import VideosIcon from "../../assets/Infographic/videos.svg";
 import { InfographicCard } from "./InfographicCard";
 import { IndustryReportCard } from "../industryReport/IndustryReportCard";
 import BannerTags from "../../assets/Infographic/BannerTags.webp";
+import { WhitepaperCards } from "../whitepaper/WhitepaperCard";
 const tabs = [
   {
     id: "case-study",
@@ -23,8 +24,7 @@ const tabs = [
     id: "whitepapers",
     name: "Whitepapers",
     icon: WhitepaperIcon,
-    // component: <WhitepapersContent />,
-    component: <h1 className="my-6 text-center"> Whitepapers Content</h1>,
+    component: <WhitepaperCards />,
   },
   {
     id: "datasheets",
