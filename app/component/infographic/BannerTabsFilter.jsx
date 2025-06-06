@@ -12,6 +12,8 @@ import { InfographicCard } from "./InfographicCard";
 import { IndustryReportCard } from "../industryReport/IndustryReportCard";
 import BannerTags from "../../assets/Infographic/BannerTags.webp";
 import { WhitepaperCards } from "../whitepaper/WhitepaperCard";
+import { DataSheetCards } from "../dataSheet/DatasheetCards";
+import { VideoCards } from "../video/VideoCards";
 const tabs = [
   {
     id: "case-study",
@@ -31,7 +33,7 @@ const tabs = [
     name: "Datasheets",
     icon: DatesheetIcon,
     // component: <DatasheetsContent />,
-    component: <h1 className="my-6 text-center">Datasheets Content</h1>,
+    component: <DataSheetCards />,
   },
   {
     id: "infographics",
@@ -49,8 +51,7 @@ const tabs = [
     id: "videos",
     name: "Videos",
     icon: VideosIcon,
-    // component: <VideosContent />
-    component: <h1 className="my-6 text-center">Videos Content</h1>,
+    component: <VideoCards />,
   },
 ];
 
