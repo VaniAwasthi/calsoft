@@ -8,10 +8,10 @@ import {
   ContactSec,
   TopPartners,
 } from "../component/industries/hitech/BlogSection";
-import InfoSec1 from "../assets/industries/IndustriesInfo1.webp";
-import InfoSec2 from "../assets/industries/IndustriesInfo2.webp";
-import InfoSec3 from "../assets/industries/IndustriesInfo3.webp";
-import InfoSec4 from "../assets/industries/IndustriesInfo4.webp";
+import InfoSec1 from "../assets/home/hitech.webp";
+import InfoSec2 from "../assets/home/Industryimg.webp";
+import InfoSec3 from "../assets/home/Retail.webp";
+import InfoSec4 from "../assets/home/Manufacturing.webp";
 import InfoSection from "../component/industries/InfoSection";
 import AnimatedSection from "../component/industries/IndusSecondSec";
 const Page = () => {

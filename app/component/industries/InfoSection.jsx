@@ -14,7 +14,7 @@ const InfoSection = ({
   imagePosition = "right",
   bgColor = "bg-[#FAFAF6]",
   link = "",
-  ImageClass = "h-[350px] md:h-full xl:h-[700px] object-cover rounded-l-[30px]",
+  ImageClass = "h-[350px] md:h-full xl:h-[600px] object-cover rounded-l-[30px]",
 }) => {
   const isImageLeft = imagePosition === "left";
 
@@ -58,14 +58,14 @@ const InfoSection = ({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-md md:text-lg text-black leading-relaxed py-6"
+              className="text-md md:text-md text-black leading-relaxed py-3"
               dangerouslySetInnerHTML={{ __html: description }}
             />
 
             {points.map((point, index) => (
               <motion.div
                 key={index}
-                className="space-y-1 my-[2rem]"
+                className="space-y-1 my-[1rem]"
                 initial={{ x: -30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
@@ -80,7 +80,7 @@ const InfoSection = ({
                 >
                   {point.pointsTitle}
                 </motion.h4>
-                <p className="text-md md:text-lg   text-black">
+                <p className="text-md md:text-md   text-black">
                   {point.pointsdescription}
                 </p>
               </motion.div>
@@ -114,12 +114,16 @@ const InfoSection = ({
             isImageLeft ? "order-1 md:order-1" : "order-1 md:order-2"
           }`}
         >
-          <Image
-            src={image}
-            alt="Section Image"
-            className={`w-full ${ImageClass}`}
-            priority
-          />
+          <div className="relative w-full overflow-hidden group">
+            <Image
+              src={image}
+              alt="Section Image"
+              className={`w-full ${ImageClass} transition duration-300 ease-in-out`}
+              priority
+            />
+            {/* Overlay for light blue shade on hover */}
+            <div className="absolute inset-0 bg-[#2E3092]/70 opacity-50 group-hover:opacity-0 transition duration-300 rounded-l-[30px] mx-[6px]"></div>
+          </div>
         </motion.div>
       </div>
     </section>

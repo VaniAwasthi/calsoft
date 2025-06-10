@@ -14,13 +14,13 @@ import BannerTags from "../../assets/Infographic/BannerTags.webp";
 import { WhitepaperCards } from "../whitepaper/WhitepaperCard";
 import { DataSheetCards } from "../dataSheet/DatasheetCards";
 import { VideoCards } from "../video/VideoCards";
+import { CaseStudiesCard } from "../caseStudies/CaseStudiesCard";
 const tabs = [
   {
     id: "case-study",
     name: "Case Study",
     icon: CaseStudiesIcon,
-    // component: <CaseStudyContent />,
-    component: <h1 className="my-6 text-center"> Case Study</h1>,
+    component: <CaseStudiesCard />,
   },
   {
     id: "whitepapers",

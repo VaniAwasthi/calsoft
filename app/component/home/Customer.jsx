@@ -6,12 +6,12 @@ import Experience from "../../assets/home/experience.webp";
 import Inovators from "../../assets/home/Innovator.webp";
 import HappyCustomer from "../../assets/home/happycustomer.webp";
 import Partnership from "../../assets/home/partners.webp";
-import Dell from "../../assets/home/logos/Dell.webp";
-import Cisco from "../../assets/home/logos/Cisco.webp";
-import Hplogo from "../../assets/home/logos/HP.webp";
-import Broadcom from "../../assets/home/logos/Broadcom.webp";
-import Sumologic from "../../assets/home/logos/Sumologic.webp";
-import OlaKrutrim from "../../assets/home/logos/OlaKrutrim.webp";
+// import Dell from "../../assets/home/logos/Dell.webp";
+// import Cisco from "../../assets/home/logos/Cisco.webp";
+// import Hplogo from "../../assets/home/logos/HP.webp";
+// import Broadcom from "../../assets/home/logos/Broadcom.webp";
+// import Sumologic from "../../assets/home/logos/Sumologic.webp";
+// import OlaKrutrim from "../../assets/home/logos/OlaKrutrim.webp";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -61,14 +61,14 @@ const Customer = () => {
       label: "Happy Customers",
     },
   ];
-  const logos = [
-    { id: 1, name: "Dell", image: Dell },
-    { id: 2, name: "Cisco", image: Cisco },
-    { id: 3, name: "Hp", image: Hplogo },
-    { id: 4, name: "Broadcom", image: Broadcom },
-    { id: 5, name: "Sumologic", image: Sumologic },
-    { id: 6, name: "OlaKrutrim ", image: OlaKrutrim },
-  ];
+  // const logos = [
+  //   { id: 1, name: "Dell", image: Dell },
+  //   { id: 2, name: "Cisco", image: Cisco },
+  //   { id: 3, name: "Hp", image: Hplogo },
+  //   { id: 4, name: "Broadcom", image: Broadcom },
+  //   { id: 5, name: "Sumologic", image: Sumologic },
+  //   { id: 6, name: "OlaKrutrim ", image: OlaKrutrim },
+  // ];
   return (
     <>
       <section
@@ -207,7 +207,7 @@ const Customer = () => {
             </div>
             {/* <div className="w-full h-[2px] bg-gray-300 mt-4"></div> */}
             {/* Grid for large screens */}
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               whileInView="visible"
               variants={gridVariants}
@@ -223,10 +223,10 @@ const Customer = () => {
                   <Image src={logo.image} alt={logo.name} />
                 </motion.div>
               ))}
-            </motion.div>
+            </motion.div> */}
 
             {/* Swiper for smaller screens */}
-            <div className="block md:hidden mt-6">
+            {/* <div className="block md:hidden mt-6">
               <Swiper
                 modules={[Autoplay]}
                 autoplay={{ delay: 2000 }}
@@ -242,7 +242,7 @@ const Customer = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </section>

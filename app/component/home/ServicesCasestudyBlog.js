@@ -39,37 +39,37 @@ export const Services = () => {
     },
     {
       icon: service2,
+      title: "VMware Migration Services",
+      description:
+        "Seamlessly shift from VMware to OpenStack, Nutanix, Azure, or AWS.",
+      link: "/",
+    },
+    {
+      icon: service3,
       title: "Cloud-Native Product Engineering",
       description:
         "Build and scale modern apps with microservices & agile delivery.",
       link: "/",
     },
     {
-      icon: service3,
+      icon: service4,
       title: "AI & ML Integration",
       description:
         "Deploy and operationalize AI/ML models with enterprise-grade readiness.",
       link: "/",
     },
     {
-      icon: service4,
+      icon: service5,
       title: "Edge & IoT Security Automation",
       description:
         "Automate threat detection & control at the edge with AI-driven tools.",
       link: "/",
     },
     {
-      icon: service5,
+      icon: service6,
       title: "Storage & Data Lifecycle Management",
       description:
         "Modernize storage for performance, cost-efficiency, and compliance.",
-      link: "/",
-    },
-    {
-      icon: service6,
-      title: "Artificial Intelligence",
-      description:
-        "Add intelligence to your business with AI-powered tools and analytics.",
       link: "/",
     },
   ];
