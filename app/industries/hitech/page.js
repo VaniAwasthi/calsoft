@@ -196,9 +196,12 @@ const Page = () => {
         contentClass=" md:h-40 lg:h-64 "
       />
       <TopClients />
-      <InfoImageSection {...softwareEngineeringSection} />
-      <InfoImageSection {...CloudEngineeringSec} />
-      <InfoImageSection {...AIPoweredSection} />
+      <InfoImageSection
+        {...softwareEngineeringSection}
+        rounded="rounded-l-[30px]"
+      />
+      <InfoImageSection {...CloudEngineeringSec} rounded="rounded-r-[30px]" />
+      <InfoImageSection {...AIPoweredSection} rounded="rounded-l-[30px]" />
       <BlogSection />
       <TopPartners />
       <ServicesSec />

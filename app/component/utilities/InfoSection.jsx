@@ -16,7 +16,8 @@ const InfoImageSection = ({
   imagePosition = "right",
   bgColor = "bg-[#FDF7F5]",
   link = "",
-  ImageClass = "h-[300px] md:h-full  xl:h-[600px]",
+  ImageClass = "h-[300px] md:h-full  xl:h-[650px]",
+  rounded = "",
 }) => {
   const isImageLeft = imagePosition === "left";
 
@@ -111,22 +112,28 @@ const InfoImageSection = ({
           </div>
         </motion.div>
 
-        {/* Image Section */}
+        {/* Image Content */}
         <motion.div
-          initial={{ x: -30, opacity: 0 }}
+          initial={{ x: 30, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: false, amount: 0.3 }}
-          className={`w-full h-auto ${
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
+          className={`w-full ${
             isImageLeft ? "order-1 md:order-1" : "order-1 md:order-2"
           }`}
         >
-          <Image
-            src={image}
-            alt="Section Image"
-            className={`object-cover w-full  rounded-l-4xl md:rounded-l-2xl ${ImageClass}`}
-            priority
-          />
+          <div className="relative w-full overflow-hidden group">
+            <Image
+              src={image}
+              alt="Section Image"
+              className={`w-full ${ImageClass} transition duration-300 ease-in-out`}
+              priority
+            />
+            {/* Overlay for light blue shade on hover */}
+            <div
+              className={`absolute inset-0 bg-[#2E3092]/70 opacity-50 group-hover:opacity-0 transition duration-300 ${rounded} `}
+            ></div>
+          </div>
         </motion.div>
       </div>
     </section>
