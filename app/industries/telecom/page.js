@@ -191,14 +191,20 @@ We help you get ahead of such threats with real-time risk mitigation, powered by
       <InfoImageSection
         {...SectionOne}
         ImageClass="h-[300px] md:h-full  xl:h-[700px]"
+        rounded="rounded-l-[30px]"
+        bgColor="grid grid-cols-1  lg:grid-cols-[60%_40%] bg-[#FBFBF2]"
       />
       <InfoImageSection
         {...SectionTwo}
-        ImageClass="h-[300px] md:h-full  xl:h-[600px]"
+        ImageClass="h-[300px] md:h-full  xl:h-[680px]"
+        rounded="rounded-r-[30px]"
+        bgColor="grid grid-cols-1  lg:grid-cols-[40%_60%] bg-[#F8F9FA] "
       />
       <InfoImageSection
         {...SectionThree}
-        ImageClass="h-[300px] md:h-full  xl:h-[640px]"
+        ImageClass="h-[300px] md:h-full  xl:h-[680px]"
+        rounded="rounded-l-[30px]"
+        bgColor="grid grid-cols-1  lg:grid-cols-[60%_40%] bg-[#FBFBF2] "
       />
       <BlogSection />
       <TopPartners />

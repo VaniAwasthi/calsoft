@@ -16,14 +16,14 @@ const InfoImageSection = ({
   imagePosition = "right",
   bgColor = "bg-[#FDF7F5]",
   link = "",
-  ImageClass = "h-[300px] md:h-full  xl:h-[650px]",
+  ImageClass = "h-[300px] md:h-full  xl:h-[550px]",
   rounded = "",
 }) => {
   const isImageLeft = imagePosition === "left";
 
   return (
     <section className="container mx-auto px-10  md:px-20 py-3">
-      <div className={`${bgColor} grid grid-cols-1 md:grid-cols-2 px-0`}>
+      <div className={`${bgColor}  px-0`}>
         {/* Text Section with BG */}
         <motion.div
           initial={{ x: -30, opacity: 0 }}
@@ -32,15 +32,15 @@ const InfoImageSection = ({
           viewport={{ once: false, amount: 0.3 }}
           className={`flex ${
             isImageLeft ? "order-2 lg:order-2" : "order-2 lg:order-1"
-          }  py-6 px-6 md:py-8 `}
+          }  py-6  md:py-8 `}
         >
-          <div className="space-y-1 max-w-xl mx-auto">
+          <div className="space-y-2 max-w-2xl mx-auto">
             <motion.h2
               initial={{ x: -40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-lgs md:text-3xl font-semibold text-black"
+              className="text-xl md:text-4xl font-semibold text-black"
             >
               {title}
             </motion.h2>
@@ -50,7 +50,7 @@ const InfoImageSection = ({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-black text-[15px] md:py-2 py-1 "
+              className="text-black text-[16px] md:py-2 py-1 "
               dangerouslySetInnerHTML={{ __html: description }}
             ></motion.p>
 
@@ -66,11 +66,11 @@ const InfoImageSection = ({
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="text-lg font-semibold mb-1 md:mt-2 mt-1 text-black"
+                  className="text-xl font-semibold mb-1 md:mt-2 mt-1 text-black"
                 >
                   {pointsTitle}
                 </motion.h4>
-                <ul className="list-disc pl-5 text-md py-4 text-gray-800 space-y-1">
+                <ul className="list-disc pl-5 text-lg py-4 text-gray-800 space-y-1">
                   {points.map((point, index) => (
                     <li key={index}>{point}</li>
                   ))}
