@@ -7,7 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/logo.png";
 import barmenu from "../../assets/menu-bar.svg";
-
+import MegaMenuImg1 from "../../assets/home/megamenu1.webp";
+import MegaMenuImg2 from "../../assets/home/megamenu2.webp";
 export default function Navbar() {
   const [openMenus, setOpenMenus] = useState({});
 
@@ -23,16 +24,20 @@ export default function Navbar() {
       title: "DATA & AI",
       href: "/data-ai",
       submenu: [
-        { title: "Submenu Item 1", href: "/data-ai/submenu1" },
-        { title: "Submenu Item 2", href: "/data-ai/submenu2" },
+        { title: "Custom Solution Development", href: "#" },
+        { title: "OSS Model Implementation", href: "#" },
+        { title: "Model Fine-tuning and Training", href: "#" },
+        { title: "RAG Production Apps", href: "#" },
+        { title: "Model Fine-tuning and Training", href: "#" },
+        { title: "RAG Production Apps", href: "#" },
       ],
     },
     {
       title: "DIGITAL ENGINEERING",
       href: "/digital-engineering",
       submenu: [
-        { title: "Submenu Item 1", href: "/digital-engineering/submenu1" },
-        { title: "Submenu Item 2", href: "/digital-engineering/submenu2" },
+        { title: "Submenu Item 1", href: "#" },
+        { title: "Submenu Item 2", href: "#" },
       ],
     },
     {
@@ -55,18 +60,17 @@ export default function Navbar() {
           href: "/insights/resource",
           inersubmenu: [
             { title: "Whitepapers", href: "/insights/resource/whitepaper" },
-            { title: "Datesheets", href: "/insights/resource/datesheets" },
-            { title: "Infographics", href: "/insights/resource/infographic" },
+            { title: "Datasheets", href: "/insights/resource/datesheets" },
+            { title: "Infographics", href: "/insights/resources/infographic" },
             {
               title: "Industry Reports",
-              href: "/insights/resource/industry-report",
+              href: "/insights/resources/industry-report",
             },
-            { title: "Videos", href: "/insights/resource/videos" },
+            { title: "Videos", href: "/insights/resources/videos" },
           ],
         },
         { title: "Press Releases", href: "#" },
         { title: "Events & Webinars", href: "#" },
-        { title: "Videos & Podcasts", href: "#" },
       ],
     },
     {
@@ -78,7 +82,20 @@ export default function Navbar() {
       ],
     },
   ];
-
+  const fetaureInsights = [
+    {
+      index: 1,
+      image: MegaMenuImg1,
+      detail:
+        " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    },
+    {
+      index: 2,
+      image: MegaMenuImg2,
+      detail:
+        " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    },
+  ];
   return (
     <header className="w-full sticky top-0 z-90">
       {/* Top Bar */}
@@ -96,7 +113,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Navigation */}
+      {/* Main Nav */}
       <Disclosure as="nav" className="bg-black py-4">
         {({ open }) => (
           <>
@@ -119,8 +136,79 @@ export default function Navbar() {
                       <IoIosArrowDown />
                     </Link>
 
-                    {/* Desktop Submenu */}
-                    {submenu && (
+                    {/* Mega Menu for DATA & AI */}
+                    {submenu && title === "DATA & AI" && (
+                      <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 absolute left-1/2 -translate-x-1/2 top-full  w-[1100px] bg-white text-black rounded-xl shadow-xl z-[999] flex justify-center ">
+                        {/* Left Side Menu */}
+                        <div className="w-1/4 p-6 text-sm font-medium text-[#1A1A1A]">
+                          <div className="space-y-3">
+                            <div className="text-[#2E3092] font-bold flex items-center justify-between">
+                              GEN AI <span>▸</span>
+                            </div>
+                            <div className="text-[#1A1A1A] hover:text-[#2E3092] cursor-pointer">
+                              Analytics & ML
+                            </div>
+                            <div className="text-[#1A1A1A] hover:text-[#2E3092] cursor-pointer">
+                              Data Engineering
+                            </div>
+                            <div className="text-[#1A1A1A] hover:text-[#2E3092] cursor-pointer">
+                              AI-Driven Solutions
+                            </div>
+                            <div className="text-[#1A1A1A] hover:text-[#2E3092] cursor-pointer">
+                              Use Cases & Solutions
+                            </div>
+                            <div className="text-[#1A1A1A] hover:text-[#2E3092] cursor-pointer">
+                              Use Cases & Solutions
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Divider */}
+                        <div className="w-px h-[250px] bg-[#D9D9D9] mx-2 my-10"></div>
+
+                        {/* Center Submenu */}
+                        <div className="w-1/2 p-6 grid grid-cols-1 gap-3 text-sm">
+                          {submenu.map(({ title, href }, i) => (
+                            <Link
+                              key={i}
+                              href={href}
+                              className="text-[#2E3092] hover:underline font-medium"
+                            >
+                              {title}
+                            </Link>
+                          ))}
+                        </div>
+
+                        {/* Right Side: Featured Insights */}
+                        <div className="w-2/4 my-0 p-6 bg-[#F5F5F5]  flex-col flex justify-center items-center">
+                          <h3 className="text-[#454545] text-2xl font-regular mb-4 manrope text-center">
+                            Featured Insights
+                          </h3>
+                          <div className="space-y-4 space-x-4 flex ">
+                            {fetaureInsights.map((fetaureInsight, idx) => (
+                              <div key={idx} className=" space-x-3 space-y-6">
+                                <div className="w-35 h-35 rounded-md overflow-hidden">
+                                  {/* Replace below with <Image /> if dynamic images available */}
+                                  <Image
+                                    src={fetaureInsight.image}
+                                    alt="Insight"
+                                    width={50}
+                                    height={50}
+                                    className="object-cover w-full h-full"
+                                  />
+                                </div>
+                                <p className="text-sm text-[#454545] leading-tight manrope">
+                                  {fetaureInsight.detail}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Simple Dropdown for Others */}
+                    {submenu && title !== "DATA & AI" && (
                       <div className="absolute top-full left-0 mt-2 min-w-[200px] bg-white text-black rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-90">
                         {submenu.map(({ title, href, inersubmenu }) => (
                           <div key={title}>
@@ -162,7 +250,7 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Mobile Menu Button */}
+              {/* Mobile Menu Toggle */}
               <Disclosure.Button className="lg:hidden p-2 text-white focus:outline-none">
                 <Image src={barmenu} width={40} height={24} alt="bar menu" />
               </Disclosure.Button>
@@ -193,7 +281,6 @@ export default function Navbar() {
                           {subItem.title}
                         </Link>
 
-                        {/* Inner Submenu */}
                         {subItem.inersubmenu &&
                           subItem.inersubmenu.map((inner, innerIdx) => (
                             <Link

@@ -161,10 +161,26 @@ const Page = () => {
       <AnimatedSection />
       <TopClients />
       <CaseStudies />
-      <InfoSection {...SectionOne} />
-      <InfoSection {...SectionTwo} />
-      <InfoSection {...SectionThree} />
-      <InfoSection {...SectionFour} />
+      <InfoSection
+        {...SectionOne}
+        ImageClass="h-[350px] md:h-full xl:h-[600px] object-cover rounded-l-[30px]"
+        bgColor="grid grid-cols-1  lg:grid-cols-[60%_40%] bg-[#FBFBF2]"
+      />
+      <InfoSection
+        {...SectionTwo}
+        bgColor="grid grid-cols-1  lg:grid-cols-[40%_60%] bg-[#F8F9FA]"
+        ImageClass="h-[350px] md:h-full xl:h-[620px] object-cover rounded-l-[30px]"
+      />
+      <InfoSection
+        {...SectionThree}
+        ImageClass="h-[350px] md:h-full xl:h-[600px] object-cover rounded-l-[30px]"
+        bgColor="grid grid-cols-1  lg:grid-cols-[60%_40%] bg-[#FBFBF2]"
+      />
+      <InfoSection
+        {...SectionFour}
+        ImageClass="h-[350px] md:h-full xl:h-[630px] object-cover rounded-l-[30px]"
+        bgColor="grid grid-cols-1  lg:grid-cols-[40%_60%] bg-[#F8F9FA]"
+      />
       <TopPartners />
       <ContactSec
         lightContent="We are industry-hardened engineers with future-ready solutions"

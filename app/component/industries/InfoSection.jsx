@@ -14,7 +14,7 @@ const InfoSection = ({
   imagePosition = "right",
   bgColor = "bg-[#FAFAF6]",
   link = "",
-  ImageClass = "h-[350px] md:h-full xl:h-[600px] object-cover rounded-l-[30px]",
+  ImageClass = "",
 }) => {
   const isImageLeft = imagePosition === "left";
 
@@ -34,7 +34,7 @@ const InfoSection = ({
           }`}
         >
           <motion.div
-            className="max-w-xl space-y-4"
+            className="max-w-2xl space-y-6"
             initial={{ x: -30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -58,7 +58,7 @@ const InfoSection = ({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-md md:text-md text-black leading-relaxed py-3"
+              className="text-md md:text-lg text-black leading-relaxed py-3"
               dangerouslySetInnerHTML={{ __html: description }}
             />
 
@@ -76,11 +76,11 @@ const InfoSection = ({
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="text-md md:text-lg  font-semibold text-[#2E3092]  cursor-pointer hover:text-[#1E1E8F]"
+                  className="text-md md:text-xl  font-semibold text-[#2E3092]  cursor-pointer hover:text-[#1E1E8F]"
                 >
                   {point.pointsTitle}
                 </motion.h4>
-                <p className="text-md md:text-md   text-black">
+                <p className="text-md md:text-lg   text-black">
                   {point.pointsdescription}
                 </p>
               </motion.div>
@@ -122,7 +122,7 @@ const InfoSection = ({
               priority
             />
             {/* Overlay for light blue shade on hover */}
-            <div className="absolute inset-0 bg-[#2E3092]/70 opacity-50 group-hover:opacity-0 transition duration-300 rounded-l-[30px] mx-[6px]"></div>
+            <div className="absolute inset-0 bg-[#2E3092]/70 opacity-50 group-hover:opacity-0 transition duration-300 rounded-l-[30px] mx-[4px] my-[2px]"></div>
           </div>
         </motion.div>
       </div>
