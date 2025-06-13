@@ -27,8 +27,8 @@ const IndustriesBanner = ({
       />
 
       {/* Content Section - Centered */}
-      <div className="absolute top-[5%] md:top-[10%] w-[65%] left-0 z-10 md:w-full container mx-auto px-4 md:px-20">
-        <div className="flex flex-col items-start justify-center py-8 md:py-12 text-white">
+      <div className="absolute top-[5%] md:top-[10%] w-[65%] left-0 z-10 md:w-full container mx-auto ">
+        <div className="flex flex-col items-start justify-center md:px-20 px-4 py-8 md:py-12 text-white">
           <motion.h2
             initial={{ y: -30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}

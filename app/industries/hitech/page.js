@@ -198,21 +198,18 @@ const Page = () => {
       <TopClients />
       <InfoImageSection
         {...softwareEngineeringSection}
-        ImageClass="h-[300px] md:h-full  xl:h-[650px]"
         rounded="rounded-l-[30px]"
-        bgColor="grid grid-cols-1  lg:grid-cols-[60%_40%] bg-[#FBFBF2]"
+        bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
       />
       <InfoImageSection
         {...CloudEngineeringSec}
-        ImageClass="h-[300px] md:h-full  xl:h-[650px]"
         rounded="rounded-r-[30px]"
-        bgColor="grid grid-cols-1  lg:grid-cols-[40%_60%] bg-[#F8F9FA] "
+        bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%] bg-[#F8F9FA] "
       />
       <InfoImageSection
         {...AIPoweredSection}
-        ImageClass="h-[300px] md:h-full  xl:h-[650px]"
         rounded="rounded-l-[30px]"
-        bgColor="grid grid-cols-1  lg:grid-cols-[60%_40%] bg-[#FBFBF2] "
+        bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2] "
       />
       <BlogSection />
       <TopPartners />

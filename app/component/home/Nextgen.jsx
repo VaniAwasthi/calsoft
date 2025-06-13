@@ -31,7 +31,10 @@ const Nextgen = () => {
   }, []);
 
   if (!activeIndustry?.iconData) return null;
-
+  const [flippedCards, setFlippedCards] = useState({});
+  const handleFlip = (id, isFlipped) => {
+    setFlippedCards((prev) => ({ ...prev, [id]: isFlipped }));
+  };
   return (
     <>
       <div
@@ -168,6 +171,8 @@ const Nextgen = () => {
                           whileInView={{ y: 0, opacity: 1 }}
                           transition={{ duration: 0.1, delay: index * 0.2 }}
                           viewport={{ once: false, amount: 0.3 }}
+                          onMouseEnter={() => handleFlip(card.id, true)}
+                          onMouseLeave={() => handleFlip(card.id, false)}
                           className={` ${
                             index % 2 === 0 ? "even" : "odd"
                           } card-hover flex-shrink-0 min-w-[70px] min-h-[60px] md:w-[90px] md:h-[80px] xl:w-[100px] xl:h-[90px] transition-transform duration-500 hover:scale-150 perspective cursor-pointer`}
@@ -184,9 +189,17 @@ const Nextgen = () => {
                             </div>
                             {/* Back */}
                             <div className="absolute inset-0 flex items-center justify-center bg-[#BA0007]  text-white rounded-lg rotate-y-180 transform scale-105 mx-2 backface-hidden">
-                              <p className="text-[6px] md:text-[8px] xl:text-[10px] font-semibold text-center px-1">
-                                {card.title}
-                              </p>
+                              {flippedCards[card.id] && (
+                                <motion.p
+                                  initial={{ y: 50, opacity: 0 }}
+                                  whileInView={{ y: 0, opacity: 1 }}
+                                  transition={{ duration: 0.5, delay: 0.2 }}
+                                  viewport={{ once: false, amount: 0.3 }}
+                                  className="text-[6px] md:text-[8px] xl:text-[10px] font-semibold text-center px-1"
+                                >
+                                  {card.title}
+                                </motion.p>
+                              )}
                             </div>
                           </div>
                         </motion.div>

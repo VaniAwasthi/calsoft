@@ -114,16 +114,19 @@ export default function Navbar() {
       </div>
 
       {/* Main Nav */}
-      <Disclosure as="nav" className="bg-black py-4">
+      <Disclosure as="nav" className="bg-black py-2">
         {({ open }) => (
           <>
             <div className="container mx-auto px-4 md:px-10 xl:px-20 flex items-center justify-between">
-              <Link href="/" className="text-2xl font-bold text-white">
-                <Image src={Logo} height={50} alt="Logo" />
+              <Link
+                href="/"
+                className="flex items-center text-2xl font-bold text-white"
+              >
+                <Image src={Logo} height={50} alt="Logo" className="block" />
               </Link>
 
               {/* Desktop Menu */}
-              <div className="hidden lg:flex xl:space-x-6">
+              <div className="hidden lg:flex xl:space-x-6 items-center">
                 {navItems.map(({ title, href, submenu }, idx) => (
                   <div key={title} className="relative group">
                     <Link
@@ -138,7 +141,7 @@ export default function Navbar() {
 
                     {/* Mega Menu for DATA & AI */}
                     {submenu && title === "DATA & AI" && (
-                      <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 absolute left-1/2 -translate-x-1/2 top-full  w-[1100px] bg-white text-black rounded-xl shadow-xl z-[999] flex justify-center ">
+                      <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300  absolute  left-[9rem] translate-y-5 -translate-x-1/2 top-full  min-w-7xl bg-white text-black rounded-xl shadow-xl z-[999] flex justify-center ">
                         {/* Left Side Menu */}
                         <div className="w-1/4 p-6 text-sm font-medium text-[#1A1A1A]">
                           <div className="space-y-3">
@@ -164,15 +167,15 @@ export default function Navbar() {
                         </div>
 
                         {/* Divider */}
-                        <div className="w-px h-[250px] bg-[#D9D9D9] mx-2 my-10"></div>
+                        <div className="w-px h-[200px] bg-[#D9D9D9] mx-2 my-10"></div>
 
                         {/* Center Submenu */}
-                        <div className="w-1/2 p-6 grid grid-cols-1 gap-3 text-sm">
+                        <div className="w-1/2 px-6 mt-7 flex flex-col  text-sm">
                           {submenu.map(({ title, href }, i) => (
                             <Link
                               key={i}
                               href={href}
-                              className="text-[#2E3092] hover:underline font-medium"
+                              className="text-[#2E3092] hover:underline font-medium my-2 py-0"
                             >
                               {title}
                             </Link>

@@ -122,8 +122,8 @@ const Page = () => {
     isgradientheading: false,
   };
   const SectionFour = {
-    heading: "Manufacturing",
-    title: "|Smarter operations with AI and automation",
+    heading: "Manufacturing ",
+    title: "| Smarter operations with AI and automation",
     description:
       "Industrial transformation requires automation and real-time monitoring. We help manufacturers enhance productivity, reduce downtime, and optimize production workflows.",
     points: [
@@ -163,23 +163,23 @@ const Page = () => {
       <CaseStudies />
       <InfoSection
         {...SectionOne}
-        ImageClass="h-[350px] md:h-full xl:h-[600px] object-cover rounded-l-[30px]"
-        bgColor="grid grid-cols-1  lg:grid-cols-[60%_40%] bg-[#FBFBF2]"
+        rounded="rounded-l-[30px]"
+        bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
       />
       <InfoSection
         {...SectionTwo}
-        bgColor="grid grid-cols-1  lg:grid-cols-[40%_60%] bg-[#F8F9FA]"
-        ImageClass="h-[350px] md:h-full xl:h-[620px] object-cover rounded-l-[30px]"
+        rounded="rounded-r-[30px]"
+        bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]  bg-[#F8F9FA]"
       />
       <InfoSection
         {...SectionThree}
-        ImageClass="h-[350px] md:h-full xl:h-[600px] object-cover rounded-l-[30px]"
-        bgColor="grid grid-cols-1  lg:grid-cols-[60%_40%] bg-[#FBFBF2]"
+        rounded="rounded-l-[30px]"
+        bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
       />
       <InfoSection
         {...SectionFour}
-        ImageClass="h-[350px] md:h-full xl:h-[630px] object-cover rounded-l-[30px]"
-        bgColor="grid grid-cols-1  lg:grid-cols-[40%_60%] bg-[#F8F9FA]"
+        rounded="rounded-r-[30px]"
+        bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]  bg-[#F8F9FA]"
       />
       <TopPartners />
       <ContactSec

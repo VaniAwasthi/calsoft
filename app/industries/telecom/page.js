@@ -190,21 +190,18 @@ We help you get ahead of such threats with real-time risk mitigation, powered by
       <TopClients />
       <InfoImageSection
         {...SectionOne}
-        ImageClass="h-[300px] md:h-full  xl:h-[700px]"
         rounded="rounded-l-[30px]"
-        bgColor="grid grid-cols-1  lg:grid-cols-[60%_40%] bg-[#FBFBF2]"
+        bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
       />
       <InfoImageSection
         {...SectionTwo}
-        ImageClass="h-[300px] md:h-full  xl:h-[680px]"
         rounded="rounded-r-[30px]"
-        bgColor="grid grid-cols-1  lg:grid-cols-[40%_60%] bg-[#F8F9FA] "
+        bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%] bg-[#F8F9FA] "
       />
       <InfoImageSection
         {...SectionThree}
-        ImageClass="h-[300px] md:h-full  xl:h-[680px]"
         rounded="rounded-l-[30px]"
-        bgColor="grid grid-cols-1  lg:grid-cols-[60%_40%] bg-[#FBFBF2] "
+        bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2] "
       />
       <BlogSection />
       <TopPartners />

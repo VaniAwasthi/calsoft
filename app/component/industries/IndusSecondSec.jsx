@@ -129,13 +129,13 @@ const fadeIn = (delay = 0) => ({
 export default function IndustryIntelligence() {
   return (
     <div className="bg-[#F8F9FA]">
-      <section className="container mx-auto px-4 xl:px-20 relative py-16 overflow-hidden ">
+      <section className="container mx-auto px-4 xl:px-20 relative py-16 overflow-hidden  ">
         {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-2xl md:text-3xl text-black font-semibold mb-16"
+          className="text-center text-2xl md:text-3xl text-black font-semibold mb-16 mt-10"
         >
           <span className="font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">
             All our industry intelligence
@@ -145,7 +145,7 @@ export default function IndustryIntelligence() {
 
         <div className="relative hidden md:grid grid-cols-1 md:grid-cols-3  gap-4 z-10">
           {/* Left Points */}
-          <div className="space-y-8 flex flex-col items-center relative">
+          <div className="space-y-8 flex flex-col items-center relative mb-8">
             {leftItems.map((item, index) => (
               <motion.div
                 key={index}

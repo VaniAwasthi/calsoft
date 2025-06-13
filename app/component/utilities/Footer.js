@@ -34,8 +34,8 @@ const Footer = () => {
 
       {/* Main Footer */}
       <footer className="bg-black text-white">
-        <div className="container mx-auto px-4 py-6 xl:px-15">
-          <div className="flex flex-col md:flex-row justify-between items-start pt-4 pb-6">
+        <div className="container mx-auto px-4 py-6  xl:px-15">
+          <div className="flex flex-col md:flex-row justify-between items-start pt-8 pb-8">
             <div>
               <Image src={Logo} alt="Calsoft Logo" width={150} height={50} />
             </div>
@@ -140,31 +140,31 @@ const Footer = () => {
               <div className="flex flex-wrap gap-3 ">
                 <Link
                   href="#"
-                  className="rounded-full w-8 h-8 md:w-10 md:h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full w-8 h-8 md:w-8 md:h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaLinkedinIn size={20} />
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full ww-8 h-8 md:w-10 md:h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full ww-8 h-8 md:w-8 md:h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaXTwitter size={20} />
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full ww-8 h-8 md:w-10 md:h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full ww-8 h-8 md:w-8 md:h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaYoutube size={20} />
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full ww-8 h-8 md:w-10 md:h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full ww-8 h-8 md:w-8 md:h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaFacebookF size={20} />
                 </Link>
                 <Link
                   href="#"
-                  className="rounded-full ww-8 h-8 md:w-10 md:h-10 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full ww-8 h-8 md:w-8 md:h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaInstagram size={20} />
                 </Link>

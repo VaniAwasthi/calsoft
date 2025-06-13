@@ -108,7 +108,7 @@ export const Services = () => {
                   className="bg-[#2E3092] text-white  py-6 md:p-8 md:py-10 rounded-[20px] flex flex-col items-start justify-center"
                 >
                   <div className="flex justify-center items-center gap-0 w-full md:gap-6  md:flex-nowrap  md:w-full">
-                    <div className="md:w-40 w-20">
+                    <div className="md:w-30 w-20">
                       <Image
                         src={service.icon}
                         alt={service.title}
@@ -350,12 +350,12 @@ export const Casestudy = () => {
                     href={caseStudyData.pdfLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative flex mt-6 md:mt-10  w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group"
+                    className="relative flex mt-6 md:mt-10  w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group hover-border-[#BA0007] hover-border-1"
                     style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25)" }}
                     whileHover={{ scale: 1.03 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
-                    <span className="relative justify-center  z-10 group-hover:text-[#BA0007] w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
+                    <span className="relative justify-center  z-10 group-hover:text-[#BA0007]  w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
                       {caseStudyData.buttonText}{" "}
                       <IoArrowForwardCircleSharp className="text-3xl" />
                     </span>

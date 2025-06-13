@@ -14,14 +14,14 @@ const InfoSection = ({
   imagePosition = "right",
   bgColor = "bg-[#FAFAF6]",
   link = "",
-  ImageClass = "",
+  rounded = "",
 }) => {
   const isImageLeft = imagePosition === "left";
 
   return (
-    <section className="container mx-auto px-4 md:px-16 py-10">
+    <section className="container mx-auto  px-4 md:px-16 py-10">
       <div
-        className={`grid grid-cols-1 md:grid-cols-2  overflow-hidden ${bgColor}`}
+        className={`grid grid-cols-1 md:grid-cols-2  overflow-hidden ${bgColor} my-4 md:my-[3rem]`}
       >
         {/* Text Content */}
         <motion.div
@@ -34,7 +34,7 @@ const InfoSection = ({
           }`}
         >
           <motion.div
-            className="max-w-2xl space-y-6"
+            className="max-w-3xl space-y-6"
             initial={{ x: -30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -49,7 +49,7 @@ const InfoSection = ({
             >
               <span className="font-bold bg-gradient-to-r from-[#2E3092] to-[#ED1C24] bg-clip-text text-transparent">
                 {heading}
-              </span>{" "}
+              </span>
               {title}
             </motion.h2>
 
@@ -110,19 +110,21 @@ const InfoSection = ({
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true, amount: 0.3 }}
-          className={`w-full ${
-            isImageLeft ? "order-1 md:order-1" : "order-1 md:order-2"
+          className={`w-full md:h-[100%] xl-h-auto ${
+            isImageLeft ? "order-1 md:order-1" : "order-1 md:order-2 "
           }`}
         >
-          <div className="relative w-full overflow-hidden group">
+          <div className="relative w-full  overflow-hidden group md:h-[100%] xl-h-auto">
             <Image
               src={image}
               alt="Section Image"
-              className={`w-full ${ImageClass} transition duration-300 ease-in-out`}
+              className={`w-full transition duration-300 ease-in-out object-cover md:h-[100%] xl-h-auto ${rounded}`}
               priority
             />
             {/* Overlay for light blue shade on hover */}
-            <div className="absolute inset-0 bg-[#2E3092]/70 opacity-50 group-hover:opacity-0 transition duration-300 rounded-l-[30px] mx-[4px] my-[2px]"></div>
+            <div
+              className={`absolute inset-0 bg-[#2E3092]/70 opacity-50 group-hover:opacity-0 transition duration-300 ${rounded} `}
+            ></div>
           </div>
         </motion.div>
       </div>
