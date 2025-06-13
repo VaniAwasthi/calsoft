@@ -157,17 +157,17 @@ const Customer = () => {
                       initial={{ x: 50, opacity: 0 }}
                       animate={{ x: 4, opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
+                      className="hover:rounded-lg hover:scale-105 transition-transform duration-300 my-2"
                     >
-                      <div className="relative w-full mb-8 ">
+                      <div className="relative w-full mb-8  ">
                         {/* Image */}
                         <Image
                           src={item.image}
                           alt={item.label}
-                          className="w-full rounded-lg hover:scale-105 transition-transform duration-300"
+                          className="w-full "
                         />
 
                         {/* Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent rounded-lg"></div>
 
                         {/* Text (Left-Aligned) */}
                         <div className="absolute px-2 bottom-0 md:bottom-4 md:left-4 text-left text-white md:px-4 hover:cursor-pointer">

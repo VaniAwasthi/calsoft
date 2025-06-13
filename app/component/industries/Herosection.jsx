@@ -107,7 +107,7 @@ export const CaseStudies = () => {
               >
                 <button
                   onClick={() => setActiveTab(index)}
-                  className={`w-[80px] md:w-full  px-4 py-2 rounded-md font-medium text-[8px] md:text-base h-10 md:h-16 transition-all  bg-[#2E3092] text-white ${
+                  className={`w-[70px] md:w-full  px-4 py-2 rounded-md font-medium text-[8px] md:text-base h-10 md:h-16 transition-all  bg-[#2E3092] text-white ${
                     activeTab === index ? "scale:100 md:scale-100" : "scale-90"
                   }`}
                 >
@@ -121,7 +121,7 @@ export const CaseStudies = () => {
                     animate={{ opacity: 1, y: -5 }}
                     transition={{ type: "spring", stiffness: 120 }}
                   >
-                    <FaCaretDown className="text-[#2E3092]" size={20} />
+                    <FaCaretDown className="text-[#2E3092]" size={30} />
                   </motion.div>
                 )}
               </motion.div>
@@ -186,7 +186,7 @@ export const CaseStudies = () => {
                   }`}
                 />
                 {activeTab === index ? (
-                  <p className="text-sm mt-2 font-medium px-2">
+                  <p className="text-lg mt-2 font-medium px-2">
                     <span className="font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">
                       {tabData[activeTab].titlePart1}
                     </span>{" "}

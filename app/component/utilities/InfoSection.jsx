@@ -14,16 +14,15 @@ const InfoImageSection = ({
   buttonText,
   image,
   imagePosition = "right",
-  bgColor = "bg-[#FDF7F5]",
+  bgColor = "",
   link = "",
-  ImageClass = "h-[300px] md:h-full  xl:h-[550px]",
   rounded = "",
 }) => {
   const isImageLeft = imagePosition === "left";
 
   return (
-    <section className="container mx-auto px-10  md:px-20 py-3">
-      <div className={`${bgColor}  px-0`}>
+    <section className="container mx-auto px-6 my-5 xl:px-20 py-3">
+      <div className={`${bgColor}  px-0 mt-[3rem]`}>
         {/* Text Section with BG */}
         <motion.div
           initial={{ x: -30, opacity: 0 }}
@@ -32,9 +31,9 @@ const InfoImageSection = ({
           viewport={{ once: false, amount: 0.3 }}
           className={`flex ${
             isImageLeft ? "order-2 lg:order-2" : "order-2 lg:order-1"
-          }  py-6  md:py-8 `}
+          }  py-6  md:py-8  px-5`}
         >
-          <div className="space-y-2 max-w-2xl mx-auto">
+          <div className="space-y-2 max-w-3xl md:mx-auto px-8">
             <motion.h2
               initial={{ x: -40, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -118,15 +117,15 @@ const InfoImageSection = ({
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true, amount: 0.3 }}
-          className={`w-full ${
-            isImageLeft ? "order-1 md:order-1" : "order-1 md:order-2"
+          className={`w-full md:h-[100%] xl-h-auto ${
+            isImageLeft ? "order-1 md:order-1" : "order-1 md:order-2 "
           }`}
         >
-          <div className="relative w-full overflow-hidden group">
+          <div className="relative w-full  overflow-hidden group md:h-[100%] xl-h-auto">
             <Image
               src={image}
               alt="Section Image"
-              className={`w-full ${ImageClass} transition duration-300 ease-in-out`}
+              className={`w-full transition duration-300 ease-in-out object-cover md:h-[100%] xl-h-auto ${rounded}`}
               priority
             />
             {/* Overlay for light blue shade on hover */}
