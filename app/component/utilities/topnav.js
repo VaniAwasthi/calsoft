@@ -48,9 +48,12 @@ export default function Navbar() {
               title: "CX Engineering",
               href: "/digital-engineering/productEngineering/cx-engineering",
             },
+            {
+              title: "Modernization & Ecosystem",
+              href: "/digital-engineering/productEngineering/modernizationandecosystem",
+            },
           ],
         },
-        { title: "Submenu Item 2", href: "#" },
       ],
     },
     {
