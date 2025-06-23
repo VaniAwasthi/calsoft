@@ -225,7 +225,7 @@ export const MobileEngineeringSec = () => {
         ]}
         imageSrc={cloudInfrIt}
         imageAlt="Infrastructure globe"
-        imageLeft={false}
+        imageLeft={true}
         isDivider={false}
       />
     </>
