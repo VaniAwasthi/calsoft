@@ -36,7 +36,16 @@ export default function Navbar() {
       title: "DIGITAL ENGINEERING",
       href: "/digital-engineering",
       submenu: [
-        { title: "Submenu Item 1", href: "#" },
+        {
+          title: "Digital Product Engineering",
+          href: "#",
+          inersubmenu: [
+            {
+              title: "Cloud Services",
+              href: "/digital-engineering/productEngineering/cloud-services",
+            },
+          ],
+        },
         { title: "Submenu Item 2", href: "#" },
       ],
     },
