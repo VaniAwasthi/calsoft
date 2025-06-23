@@ -52,6 +52,10 @@ export default function Navbar() {
               title: "Modernization & Ecosystem",
               href: "/digital-engineering/productEngineering/modernizationandecosystem",
             },
+            {
+              title: "Product and application development ",
+              href: "/digital-engineering/productEngineering/product-and-application-development ",
+            },
           ],
         },
       ],
