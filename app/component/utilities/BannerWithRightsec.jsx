@@ -21,16 +21,18 @@ const BannerWithRightSec = ({
   leftSecClass = "",
   rightSecClass = "",
   ImageClass = "",
+  ImageClassname,
+  backgroundMain,
 }) => {
   return (
-    <div className="relative w-full h-[500px] md:h-[650px]">
+    <div className={`relative w-full h-[400px] md:h-[650px] ${backgroundMain}`}>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src={heroBg}
           alt="Background"
           fill
-          className="object-cover w-full h-full [object-position:100%_25%] md:object-center"
+          className={`object-cover w-full h-full [object-position:100%_25%] md:object-center ${ImageClassname}`}
           priority
         />
       </div>
