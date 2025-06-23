@@ -43,7 +43,7 @@ export const InfraSection = ({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="manrope mt-2 text-2xl md:text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_40%,#ED1C24_60%)] bg-clip-text text-transparent"
+            className="text-xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
           >
             {title}
           </motion.h2>
@@ -299,10 +299,10 @@ export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="text-xl md:text-[35px] font-normal bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+          className="text-xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
         >
           {title}
-          <span className="text-black font-normal px-3">{blackTitle}</span>
+          <span className="text-black font-semibold px-3">{blackTitle}</span>
         </motion.h2>
       </motion.div>
 

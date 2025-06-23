@@ -44,9 +44,16 @@ export default function Navbar() {
               title: "Cloud Services",
               href: "/digital-engineering/productEngineering/cloud-services",
             },
+            {
+              title: "CX Engineering",
+              href: "/digital-engineering/productEngineering/cx-engineering",
+            },
+            {
+              title: "Modernization & Ecosystem",
+              href: "/digital-engineering/productEngineering/modernizationandecosystem",
+            },
           ],
         },
-        { title: "Submenu Item 2", href: "#" },
       ],
     },
     {

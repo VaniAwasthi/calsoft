@@ -35,7 +35,7 @@ const Page = () => {
           </>
         }
         buttonText="Know More"
-        buttonLink="/devops"
+        buttonLink="#"
       />
       <CloudMigrationInfraSec />
       <CostInfraSec />
