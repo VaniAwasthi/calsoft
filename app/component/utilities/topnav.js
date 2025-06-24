@@ -84,6 +84,7 @@ export default function Navbar() {
         },
       ],
     },
+    // data
     {
       title: "INDUSTRIES",
       href: "/industries",
