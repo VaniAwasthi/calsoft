@@ -24,6 +24,10 @@ export default function Navbar() {
       title: "DATA & AI",
       href: "/data-ai",
       submenu: [
+        {
+          title: "Data Pipeline Engineering",
+          href: "/data-and-ai/data-pipeline-engineering",
+        },
         { title: "Custom Solution Development", href: "#" },
         { title: "OSS Model Implementation", href: "#" },
         { title: "Model Fine-tuning and Training", href: "#" },
@@ -34,7 +38,7 @@ export default function Navbar() {
     },
     {
       title: "DIGITAL ENGINEERING",
-      href: "/digital-engineering",
+      href: "#",
       submenu: [
         {
           title: "Digital Product Engineering",
@@ -56,10 +60,31 @@ export default function Navbar() {
               title: "Product and application development ",
               href: "/digital-engineering/productEngineering/product-and-application-development ",
             },
+            {
+              title: "Security Services",
+              href: "/digital-engineering/productEngineering/security-services",
+            },
+            {
+              title: "Storage Networking",
+              href: "/digital-engineering/productEngineering/storage-networking",
+            },
+            {
+              title: "Sustenance Support",
+              href: "/digital-engineering/productEngineering/sustenance-support",
+            },
+            {
+              title: "Testing as a Service",
+              href: "/digital-engineering/productEngineering/testing-as-a-service",
+            },
+            {
+              title: "Virtualization Solutions",
+              href: "/digital-engineering/productEngineering/virtualization-solutions",
+            },
           ],
         },
       ],
     },
+    // data
     {
       title: "INDUSTRIES",
       href: "/industries",

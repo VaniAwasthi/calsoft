@@ -14,7 +14,7 @@ export const HeroSectionProduct = () => {
     title2: "induced efficiency",
     description: `Engineer scalable, secure, and cost-efficient<br/>
 cloud solutions aligned to your business goals.`,
-    buttonText: "What we do",
+    buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [

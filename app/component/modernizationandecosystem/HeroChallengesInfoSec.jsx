@@ -13,7 +13,7 @@ export const HeroSectionModernization = () => {
     title2: "ecosystem management",
     description: `Reengineer systems, integrate ecosystems, and
 future-proof operations with agility and precision.`,
-    buttonText: "What we do",
+    buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [
