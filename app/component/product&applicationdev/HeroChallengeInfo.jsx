@@ -13,7 +13,7 @@ export const HeroSectionProductandApplicationDev = () => {
     title2: "development",
     description: `Engineer ideas into robust, scalable solutions
 with speed and precision.`,
-    buttonText: "What we do",
+    buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [

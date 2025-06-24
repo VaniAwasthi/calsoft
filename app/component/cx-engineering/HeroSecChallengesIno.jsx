@@ -13,7 +13,7 @@ export const HeroSectionCXEngineering = () => {
     title2: "Elevate user experiences",
     description: `Intuitive, scalable, and intelligent interfaces
 that drive adoption and engagement.`,
-    buttonText: "What we do",
+    buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [

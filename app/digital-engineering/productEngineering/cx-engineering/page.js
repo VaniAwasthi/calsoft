@@ -34,8 +34,9 @@ const Page = () => {
           </>
         }
         buttonText="Know More"
-        buttonLink="/devops"
+        buttonLink="#"
       />
+
       <RapidprototypingSec />
       <MobileEngineeringSec />
 
