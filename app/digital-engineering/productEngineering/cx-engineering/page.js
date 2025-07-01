@@ -3,7 +3,7 @@
 import {
   BannerSection,
   ContactSecData,
-} from "@/app/component/utilities/InfraSectorSec";
+} from "../../../app/component/utilities/InfraSectorSec";
 import React from "react";
 import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 import {
@@ -14,7 +14,7 @@ import {
   MobileEngineeringSec,
   RapidprototypingSec,
   UXModernizationSec,
-} from "@/app/component/cx-engineering/HeroSecChallengesIno";
+} from "../../../app/component/cx-engineering/HeroSecChallengesIno";
 
 const Page = () => {
   return (

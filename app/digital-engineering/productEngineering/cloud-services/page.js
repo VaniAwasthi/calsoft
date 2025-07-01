@@ -9,11 +9,11 @@ import {
   CloudMigrationInfraSec,
   SREInfraSec,
   ChallengeToSolutionSec,
-} from "@/app/component/cloud-service/HeroSection";
+} from "../../../app/component/cloud-service/HeroSection";
 import {
   BannerSection,
   ContactSecData,
-} from "@/app/component/utilities/InfraSectorSec";
+} from "../../../app/component/utilities/InfraSectorSec";
 import React from "react";
 import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 

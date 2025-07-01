@@ -4,7 +4,7 @@ import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/Banne
 import {
   BannerSection,
   ContactSecData,
-} from "@/app/component/utilities/InfraSectorSec";
+} from "../../../app/component/utilities/InfraSectorSec";
 import {
   EcosystemManagementSec,
   FutureReadinessSec,
@@ -13,7 +13,7 @@ import {
   MaturityAssessmentSec,
   ModernizationChallengeSec,
   PlugindevelopmentSec,
-} from "@/app/component/modernizationandecosystem/HeroChallengesInfoSec";
+} from "../../../app/component/modernizationandecosystem/HeroChallengesInfoSec";
 const page = () => {
   return (
     <>
