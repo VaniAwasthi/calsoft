@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/Banner-Pipe.webp";
+import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
@@ -13,13 +13,13 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
-export const HeroSectionDatapipelineengineering = () => {
+export const AgenticBanner = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "End-to-end data",
-    title2: "pipeline implementation",
-    description: `Engineer and accelerate data flow, integration,
-and trust across hybrid environments.`,
+    title: "Agentic AI planning & development",
+    title2: "",
+    description: `Design, deploy, and manage AI agents with
+    precision and accountability.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
@@ -58,66 +58,66 @@ and trust across hybrid environments.`,
   );
 };
 
-export const ChallengeSolutionSec = () => {
+export const AgenticChallengeSec = () => {
   const data = [
     {
-      tag: "Fragmented systems",
+      tag: "AIOps Design",
       challenge:
-        "Are fragmented systems slowing your data consolidation efforts?",
+        "How to architect intelligent agents for IT operations and autonomy?",
       solution:
-        "Architect unified, scalable pipelines that streamline multi-source ingestion and integration.",
+        "Collaborate to scope, model, and test agent roles aligned with specific enterprise goals",
     },
     {
-      tag: "Resilience assessment",
+      tag: "Purpose built Agents",
       challenge:
-        "Facing risks of inconsistent or incomplete data during migration?",
+        "Finding it difficult to define agent boundaries and business outcomes?",
       solution:
-        "Enable governed, validated migration frameworks for seamless data transitions.",
+        "Modular, purpose-driven AI agents with embedded learning and monitoring logic",
     },
     {
-      tag: "Migration and scaling",
+      tag: "Oversight and Safety",
       challenge:
-        "Struggling to maintain transparency across complex data flows?",
+        "Concerned about lack of visibility into autonomous agent behavior?",
       solution:
-        "Implement real-time data lineage tracking and impact analysis mechanisms.",
+        "Supervision layers for real-time observation, intervention, and behaviour correction",
     },
     {
-      tag: "Lack of transparency",
-      challenge: "Worried about slow onboarding of new data sources?",
+      tag: "Lifecycle Management",
+      challenge:
+        "Struggling to maintain, evolve, or retire AI agents effectively and consistently?",
       solution:
-        "Design modular, cloud-ready ingestion pipelines to accelerate source integration.",
+        "Frameworks for continuous learning, feedback integration, and version governance",
     },
   ];
   return (
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Architect, implement, and scale data pipelines"
+        BlackHeading="AI Agents that work at scale"
         GradientHeading=" Challenge to solutions :"
       />
     </>
   );
 };
 
-export const DataArchitectureSec = () => {
+export const AiOopsSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data architecture enhancement"
-        description="Design resilient and
-high-velocity pipelines
-for evolving data needs."
+        title="AIOps Planning"
+        description="Enable intelligent operations through autonomous,
+        purpose-built agents."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Map pipelines for hybrid data flows",
-          "Support varied formats and scales",
-          "Build resilient, parallel systems",
+          "Agents monitor systems, logs, and events",
+          "Link with ITSM workflows for automation",
+          "Agents learn from ongoing system feedback",
         ]}
         businessImpact={[
-          "Speed up trusted data delivery",
-          "Scale easily with new sources",
-          "Reduce failures and fixes over time",
+          "Reduced manual diagnostic workload",
+          "Faster detection and issue response",
+          "Standardized resolution processes",
         ]}
         imageSrc={cloudInfrIt}
         imageAlt="Infrastructure globe"
@@ -128,25 +128,23 @@ for evolving data needs."
   );
 };
 
-export const DataPlatformSec = () => {
+export const UseSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data platform
-and ecosystem integration"
-        description="Unify distributed data
-sources for seamless, intelligent operations."
+        title="Use-case specific AI agents"
+        description="Deploy configured agents that fulfill focused business and operational roles."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Link lakes, warehouses, and stores",
-          "Connect process and storage layers",
-          "Build APIs to unify data movement",
+          "Build agents for domain-specific tasks",
+          "Define boundaries for safe autonomy",
+          "Test agents using business-set metrics",
         ]}
         businessImpact={[
-          "Faster access to connected data",
-          "Lower integration effort at scale",
-          "Better policy control across flows",
+          "Automation outcomes match objectives",
+          "Agents reduce system-wide error risks",
+          "Faster validation and deployment cycle",
         ]}
         imageSrc={RiskImage}
         imageAlt="Image"
@@ -157,23 +155,23 @@ sources for seamless, intelligent operations."
   );
 };
 
-export const EffortlessSec = () => {
+export const MonitorSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Effortless and faultless data migration"
-        description="Move critical data assets with integrity, speed, and zero disruption."
+        title="Monitor and control"
+        description="Ensure transparency and oversight across autonomous agent behavior."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Create migration maps by system type",
-          "Add rollback and audit routines",
-          "Manage transitions with low risk",
+          "Track agent behavior with telemetry",
+          "Real-time dashboards enable oversight",
+          "Logs ensure traceability and audits",
         ]}
         businessImpact={[
-          "Migration is quicker and cleaner",
-          "Cloud moves become smoother",
-          "Data quality stays intact end-to-end",
+          "Complete visibility into agent actions",
+          "Audit support with tracked decisions",
+          "Minimized risk of agent misbehavior",
         ]}
         imageSrc={PlatformImage}
         imageAlt="Infrastructure globe"
@@ -183,23 +181,23 @@ export const EffortlessSec = () => {
     </>
   );
 };
-export const DataSanitySec = () => {
+export const LifecycleSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data sanity and lineage handling"
-        description="Ensure transparency, trust, and traceability across your data pipelines."
+        title="Lifecycle and adaptability"
+        description="Manage agent evolution from deployment through continuous improvement."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Add checks across each pipeline step",
-          "Map full data journeys visually",
-          "Use tags and metadata for audits",
+          "Define update and rollback protocols",
+          "Use telemetry and feedback to adapt",
+          "Automate retraining and threshold checks",
         ]}
         businessImpact={[
-          "Trust rises with full traceability",
-          "Audits take less time to execute",
-          "Root causes are faster to uncover",
+          "No version drift across deployments",
+          "Quicker updates to agent behavior",
+          "Maintained link to business outcomes",
         ]}
         imageSrc={CostImage}
         imageAlt="Infrastructure globe"

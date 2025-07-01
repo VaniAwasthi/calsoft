@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/Banner-Pipe.webp";
+import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
@@ -13,13 +13,13 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
-export const HeroSectionDatapipelineengineering = () => {
+export const CustomBanner = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "End-to-end data",
-    title2: "pipeline implementation",
-    description: `Engineer and accelerate data flow, integration,
-and trust across hybrid environments.`,
+    title: "Custom LLM for GenAI and RAG",
+    title2: "",
+    description: `Build domain-specific GenAI systems that
+    deliver grounded, trusted responses.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
@@ -58,66 +58,66 @@ and trust across hybrid environments.`,
   );
 };
 
-export const ChallengeSolutionSec = () => {
+export const AnalyticsSec = () => {
   const data = [
     {
-      tag: "Fragmented systems",
+      tag: "Domain alignment",
       challenge:
-        "Are fragmented systems slowing your data consolidation efforts?",
+        "Struggling to get accurate results from general purpose LLMs?",
       solution:
-        "Architect unified, scalable pipelines that streamline multi-source ingestion and integration.",
+        "Fine-tune models using organization specific data, workflows, and language",
     },
     {
-      tag: "Resilience assessment",
+      tag: "Context grounding",
       challenge:
-        "Facing risks of inconsistent or incomplete data during migration?",
+        "Concerned about hallucinations and unverified answers from GenAI tools?",
       solution:
-        "Enable governed, validated migration frameworks for seamless data transitions.",
+        "Retrieval- Augmented Generation (RAG) pipelines with trusted, internal content sources",
     },
     {
-      tag: "Migration and scaling",
+      tag: "Deployment control",
       challenge:
-        "Struggling to maintain transparency across complex data flows?",
+        "How to manage infrastructure, security, and performance at scale?",
       solution:
-        "Implement real-time data lineage tracking and impact analysis mechanisms.",
+        "Customizable deployment options, onprem, hybrid, or cloud with full governance",
     },
     {
-      tag: "Lack of transparency",
-      challenge: "Worried about slow onboarding of new data sources?",
+      tag: "System interoperability",
+      challenge:
+        "Want to simplify LLM integrations with existing business systems?",
       solution:
-        "Design modular, cloud-ready ingestion pipelines to accelerate source integration.",
+        "Build connectors and orchestration layers that embed LLMs into enterprise processes",
     },
   ];
   return (
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Architect, implement, and scale data pipelines"
+        BlackHeading="Make LLMs work for your business"
         GradientHeading=" Challenge to solutions :"
       />
     </>
   );
 };
 
-export const DataArchitectureSec = () => {
+export const LlmSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data architecture enhancement"
-        description="Design resilient and
-high-velocity pipelines
-for evolving data needs."
+        title="LLM fine-tuning"
+        description="Adapt language models to your data, tone,
+        and business logic."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Map pipelines for hybrid data flows",
-          "Support varied formats and scales",
-          "Build resilient, parallel systems",
+          "Analyze test logs to spot redundancies",
+          "Recommend test sets by risk and scope",
+          "Auto-run tests via CI/CD workflows",
         ]}
         businessImpact={[
-          "Speed up trusted data delivery",
-          "Scale easily with new sources",
-          "Reduce failures and fixes over time",
+          "Focus shifts to high-impact testing",
+          "Shorter QA time, faster delivery",
+          "Smarter tests with ongoing learning",
         ]}
         imageSrc={cloudInfrIt}
         imageAlt="Infrastructure globe"
@@ -128,25 +128,23 @@ for evolving data needs."
   );
 };
 
-export const DataPlatformSec = () => {
+export const RagSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data platform
-and ecosystem integration"
-        description="Unify distributed data
-sources for seamless, intelligent operations."
+        title="RAG pipeline design"
+        description="Ground your GenAI responses in real-time, trusted enterprise knowledge."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Link lakes, warehouses, and stores",
-          "Connect process and storage layers",
-          "Build APIs to unify data movement",
+          "Analyze test logs to spot redundancies",
+          "Recommend test sets by risk and scope",
+          "Auto-run tests via CI/CD workflows",
         ]}
         businessImpact={[
-          "Faster access to connected data",
-          "Lower integration effort at scale",
-          "Better policy control across flows",
+          "Focus shifts to high-impact testing",
+          "Shorter QA time, faster delivery",
+          "Smarter tests with ongoing learning",
         ]}
         imageSrc={RiskImage}
         imageAlt="Image"
@@ -157,23 +155,23 @@ sources for seamless, intelligent operations."
   );
 };
 
-export const EffortlessSec = () => {
+export const EnterpriseSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Effortless and faultless data migration"
-        description="Move critical data assets with integrity, speed, and zero disruption."
+        title="Enterprise deployment models"
+        description="Run custom LLMs where they best fit without tradeoffs."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Create migration maps by system type",
-          "Add rollback and audit routines",
-          "Manage transitions with low risk",
+          "Analyze test logs to spot redundancies",
+          "Recommend test sets by risk and scope",
+          "Auto-run tests via CI/CD workflows",
         ]}
         businessImpact={[
-          "Migration is quicker and cleaner",
-          "Cloud moves become smoother",
-          "Data quality stays intact end-to-end",
+          "Focus shifts to high-impact testing",
+          "Shorter QA time, faster delivery",
+          "Smarter tests with ongoing learning",
         ]}
         imageSrc={PlatformImage}
         imageAlt="Infrastructure globe"
@@ -183,23 +181,23 @@ export const EffortlessSec = () => {
     </>
   );
 };
-export const DataSanitySec = () => {
+export const SystemSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data sanity and lineage handling"
-        description="Ensure transparency, trust, and traceability across your data pipelines."
+        title="System integration and orchestration"
+        description="Connect LLMs into real workflows, not just chat windows."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Add checks across each pipeline step",
-          "Map full data journeys visually",
-          "Use tags and metadata for audits",
+          "Analyze test logs to spot redundancies",
+          "Recommend test sets by risk and scope",
+          "Auto-run tests via CI/CD workflows",
         ]}
         businessImpact={[
-          "Trust rises with full traceability",
-          "Audits take less time to execute",
-          "Root causes are faster to uncover",
+          "Focus shifts to high-impact testing",
+          "Shorter QA time, faster delivery",
+          "Smarter tests with ongoing learning",
         ]}
         imageSrc={CostImage}
         imageAlt="Infrastructure globe"

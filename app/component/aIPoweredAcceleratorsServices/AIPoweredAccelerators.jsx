@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/Banner-Pipe.webp";
+import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
@@ -13,13 +13,13 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
-export const HeroSectionDatapipelineengineering = () => {
+export const AiBanner = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "End-to-end data",
-    title2: "pipeline implementation",
-    description: `Engineer and accelerate data flow, integration,
-and trust across hybrid environments.`,
+    title: "AI-powered accelerators",
+    title2: "",
+    description: `Deploy pre-built accelerators to solve
+    targeted engineering and operational challenges.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
@@ -58,66 +58,68 @@ and trust across hybrid environments.`,
   );
 };
 
-export const ChallengeSolutionSec = () => {
+export const AiChallengeSec = () => {
   const data = [
     {
-      tag: "Fragmented systems",
+      tag: "Test acceleration",
       challenge:
-        "Are fragmented systems slowing your data consolidation efforts?",
+        "Is manual QA slowing down release cycles for modern apps?",
       solution:
-        "Architect unified, scalable pipelines that streamline multi-source ingestion and integration.",
+        "Use CalTIA to automate test coverage analysis and reduce redundant test execution",
     },
     {
-      tag: "Resilience assessment",
+      tag: "Production reliability",
       challenge:
-        "Facing risks of inconsistent or incomplete data during migration?",
+        "Want to trace and resolve  recurring incidents post deployment?",
       solution:
-        "Enable governed, validated migration frameworks for seamless data transitions.",
+        "Deploy CalPSR to capture issue fingerprints and proactively surface incident patterns",
     },
     {
-      tag: "Migration and scaling",
+      tag: "Production reliability",
       challenge:
-        "Struggling to maintain transparency across complex data flows?",
+        "Facing delays and risks during infrastructure or workload migrations?",
       solution:
-        "Implement real-time data lineage tracking and impact analysis mechanisms.",
+        "Apply our migration utility to autodiscover dependencies and sequence moves efficiently",
     },
     {
-      tag: "Lack of transparency",
-      challenge: "Worried about slow onboarding of new data sources?",
+      tag: "Engineering velocity",
+      challenge:
+        "Can’t scale delivery without overloading internal teams?",
       solution:
-        "Design modular, cloud-ready ingestion pipelines to accelerate source integration.",
+        "Plug in accelerators across the lifecycle to reduce engineering effort on repeatable tasks",
     },
   ];
   return (
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Architect, implement, and scale data pipelines"
+        BlackHeading="Accelerate outcomes with AI-powered tools"
         GradientHeading=" Challenge to solutions :"
       />
     </>
   );
 };
 
-export const DataArchitectureSec = () => {
+export const CalTiaSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data architecture enhancement"
-        description="Design resilient and
-high-velocity pipelines
-for evolving data needs."
+        title="CalTIA – Faster, better, and
+        consistent testing"
+        description="Streamline test planning
+        and reduce QA fatigue with
+        AI-driven prioritization."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Map pipelines for hybrid data flows",
-          "Support varied formats and scales",
-          "Build resilient, parallel systems",
+          "Analyze test logs to spot redundancies",
+          "Recommend test sets by risk and scope",
+          "Auto-run tests via CI/CD workflows",
         ]}
         businessImpact={[
-          "Speed up trusted data delivery",
-          "Scale easily with new sources",
-          "Reduce failures and fixes over time",
+          "Focus shifts to high-impact testing",
+          "Shorter QA time, faster delivery",
+          "Smarter tests with ongoing learning",
         ]}
         imageSrc={cloudInfrIt}
         imageAlt="Infrastructure globe"
@@ -128,25 +130,23 @@ for evolving data needs."
   );
 };
 
-export const DataPlatformSec = () => {
+export const CalPsrSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data platform
-and ecosystem integration"
-        description="Unify distributed data
-sources for seamless, intelligent operations."
+        title="CalPSR – Calsoft Performance, Scalability, and Resilience"
+        description="Validate release readiness with real-world fault simulation and pre-GA testing."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Link lakes, warehouses, and stores",
-          "Connect process and storage layers",
-          "Build APIs to unify data movement",
+          "Simulate faults and latency delays",
+          "Benchmark releases on failure data",
+          "Validate resilience through CI tools",
         ]}
         businessImpact={[
-          "Faster access to connected data",
-          "Lower integration effort at scale",
-          "Better policy control across flows",
+          "Build trust with pre-release signals",
+          "Fix issues before production hit",
+          "Fewer manual tests for resilience",
         ]}
         imageSrc={RiskImage}
         imageAlt="Image"
@@ -157,23 +157,23 @@ sources for seamless, intelligent operations."
   );
 };
 
-export const EffortlessSec = () => {
+export const ECalsoftSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Effortless and faultless data migration"
-        description="Move critical data assets with integrity, speed, and zero disruption."
+        title="Calsoft’s migration accelerator"
+        description="Simplify workload transitions with guided, dependency-aware migration flows."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Create migration maps by system type",
-          "Add rollback and audit routines",
-          "Manage transitions with low risk",
+          "Discover app and infra dependencies",
+          "Recommend migration flows by logic",
+          "Automate checks and post-move tests",
         ]}
         businessImpact={[
-          "Migration is quicker and cleaner",
-          "Cloud moves become smoother",
-          "Data quality stays intact end-to-end",
+          "Map cutovers without manual errors",
+          "Speed up transitions via scripting",
+          "Avoid service gaps with dry runs",
         ]}
         imageSrc={PlatformImage}
         imageAlt="Infrastructure globe"
@@ -183,23 +183,23 @@ export const EffortlessSec = () => {
     </>
   );
 };
-export const DataSanitySec = () => {
+export const CalsoftSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data sanity and lineage handling"
-        description="Ensure transparency, trust, and traceability across your data pipelines."
+        title="Calsoft Mozaic | Engineering intelligence framework"
+        description="Accelerate solution delivery with reusable AI, platform, and process components."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Add checks across each pipeline step",
-          "Map full data journeys visually",
-          "Use tags and metadata for audits",
+          "Provide AI-ready modular toolkits",
+          "Reuse blueprints for core functions",
+          "Govern builds through shared rules",
         ]}
         businessImpact={[
-          "Trust rises with full traceability",
-          "Audits take less time to execute",
-          "Root causes are faster to uncover",
+          "Launch solutions with less dev time",
+          "Fewer bugs via aligned modules",
+          "Consistent builds across projects",
         ]}
         imageSrc={CostImage}
         imageAlt="Infrastructure globe"

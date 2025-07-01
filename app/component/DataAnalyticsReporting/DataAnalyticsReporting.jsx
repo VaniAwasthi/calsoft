@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/Banner-Pipe.webp";
+import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
@@ -13,13 +13,13 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
-export const HeroSectionDatapipelineengineering = () => {
+export const AnalyticsBanner = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "End-to-end data",
-    title2: "pipeline implementation",
-    description: `Engineer and accelerate data flow, integration,
-and trust across hybrid environments.`,
+    title: "Data analytics and reporting",
+    title2: "",
+    description: `Enable smarter decisions with real-time
+    analytics and intuitive visualizations.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
@@ -58,66 +58,66 @@ and trust across hybrid environments.`,
   );
 };
 
-export const ChallengeSolutionSec = () => {
+export const AnalyticsSec = () => {
   const data = [
     {
-      tag: "Fragmented systems",
+      tag: "Unified dashboards",
       challenge:
-        "Are fragmented systems slowing your data consolidation efforts?",
+        "Struggling to consolidate KPIs across disparate data systems?",
       solution:
-        "Architect unified, scalable pipelines that streamline multi-source ingestion and integration.",
+        "Centralized, real-time dashboards connecting operational and analytical data sources",
     },
     {
-      tag: "Resilience assessment",
+      tag: "Real-time visibility",
       challenge:
-        "Facing risks of inconsistent or incomplete data during migration?",
+        "Facing delays in identifying performance trends and anomalies?",
       solution:
-        "Enable governed, validated migration frameworks for seamless data transitions.",
+        "Plan and deploy live analytics pipelines to surface insights at the speed of business",
     },
     {
-      tag: "Migration and scaling",
+      tag: "BI integration",
       challenge:
-        "Struggling to maintain transparency across complex data flows?",
+        "Finding it hard to align analytics tools with your evolving data architecture?",
       solution:
-        "Implement real-time data lineage tracking and impact analysis mechanisms.",
+        "Modern BI platforms with hybrid and multi-cloud data environments seamlessly",
     },
     {
-      tag: "Lack of transparency",
-      challenge: "Worried about slow onboarding of new data sources?",
+      tag: "Custom eporting",
+      challenge:
+        "Unable to tailor reports to business specific needs and roles?",
       solution:
-        "Design modular, cloud-ready ingestion pipelines to accelerate source integration.",
+        "Custom reporting frameworks that adapt to user roles, KPIs, and regulatory demands",
     },
   ];
   return (
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Architect, implement, and scale data pipelines"
+        BlackHeading="Govern enterprise data flows"
         GradientHeading=" Challenge to solutions :"
       />
     </>
   );
 };
 
-export const DataArchitectureSec = () => {
+export const DashboardSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data architecture enhancement"
-        description="Design resilient and
-high-velocity pipelines
-for evolving data needs."
+        title="Dashboard and KPI visualization"
+        description="Deliver operational and strategic clarity through
+        real-time visual insights."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Map pipelines for hybrid data flows",
-          "Support varied formats and scales",
-          "Build resilient, parallel systems",
+          "Build dashboards with custom KPIs",
+          "Feed real-time data to visual layers",
+          "Add drilldowns for role-based views",
         ]}
         businessImpact={[
-          "Speed up trusted data delivery",
-          "Scale easily with new sources",
-          "Reduce failures and fixes over time",
+          "Faster insight for daily decisions",
+          "Shared views improve transparency",
+          "Teams use data more consistently",
         ]}
         imageSrc={cloudInfrIt}
         imageAlt="Infrastructure globe"
@@ -128,25 +128,23 @@ for evolving data needs."
   );
 };
 
-export const DataPlatformSec = () => {
+export const BusinessSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data platform
-and ecosystem integration"
-        description="Unify distributed data
-sources for seamless, intelligent operations."
+        title="Business Intelligence (BI) integration"
+        description="Empower analytics through unified business intelligence ecosystems."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Link lakes, warehouses, and stores",
-          "Connect process and storage layers",
-          "Build APIs to unify data movement",
+          "Connect BI to cloud data platforms",
+          "Tune queries for speed and scale",
+          "Standardize access with models",
         ]}
         businessImpact={[
-          "Faster access to connected data",
-          "Lower integration effort at scale",
-          "Better policy control across flows",
+          "BI use grows across all teams",
+          "Data stays unified, not siloed",
+          "On-hands, timely, and clear insights",
         ]}
         imageSrc={RiskImage}
         imageAlt="Image"
@@ -157,23 +155,24 @@ sources for seamless, intelligent operations."
   );
 };
 
-export const EffortlessSec = () => {
+export const CustomSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Effortless and faultless data migration"
-        description="Move critical data assets with integrity, speed, and zero disruption."
+        title="Custom
+        reporting"
+        description="On-hand and real-time insights aligned to dynamic business priorities."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Create migration maps by system type",
-          "Add rollback and audit routines",
-          "Manage transitions with low risk",
+          "Configure reports by role or KPI",
+          "Schedule, trigger, or run on demand",
+          "Add checks for data compliance",
         ]}
         businessImpact={[
-          "Migration is quicker and cleaner",
-          "Cloud moves become smoother",
-          "Data quality stays intact end-to-end",
+          "Reports reflect real business need",
+          "Faster response to new priorities",
+          "Stay aligned with policy rules",
         ]}
         imageSrc={PlatformImage}
         imageAlt="Infrastructure globe"
@@ -183,23 +182,23 @@ export const EffortlessSec = () => {
     </>
   );
 };
-export const DataSanitySec = () => {
+export const RealSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data sanity and lineage handling"
-        description="Ensure transparency, trust, and traceability across your data pipelines."
+        title="Real-time business insights streaming"
+        description="Harness live data flows to drive instant operational intelligence."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Add checks across each pipeline step",
-          "Map full data journeys visually",
-          "Use tags and metadata for audits",
+          "Set up streams for live KPIs",
+          "Link dashboards to active data",
+          "Alert based on set thresholds",
         ]}
         businessImpact={[
-          "Trust rises with full traceability",
-          "Audits take less time to execute",
-          "Root causes are faster to uncover",
+          "Teams act on events instantly",
+          "Smarter/faster moves give market edge",
+          "Lower incident response times",
         ]}
         imageSrc={CostImage}
         imageAlt="Infrastructure globe"
