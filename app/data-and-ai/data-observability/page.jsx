@@ -5,7 +5,7 @@ import {
   ProactiveSec,
   Real2Sec,
   RealSec,
-} from "@/app/component/dataObservability/DataObservability";
+} from "../../../app/component/dataObservability/DataObservability.jsx";
 import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";

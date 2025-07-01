@@ -1,21 +1,21 @@
 "use client";
+
+import React from "react";
+import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 import {
-  HeroSectionProduct,
-  // ChallengeToSolution,
-  ItInfraSec,
-  MultiCloudInfraSec,
+  ChallengeToSolutionSec,
+  CloudMigrationInfraSec,
   CloudNativetInfraSec,
   CostInfraSec,
-  CloudMigrationInfraSec,
+  HeroSectionProduct,
+  ItInfraSec,
+  MultiCloudInfraSec,
   SREInfraSec,
-  ChallengeToSolutionSec,
-} from "@/app/component/cloud-service/HeroSection";
+} from "../../../component/cloud-service/HeroSection.jsx";
 import {
   BannerSection,
   ContactSecData,
-} from "@/app/component/utilities/InfraSectorSec";
-import React from "react";
-import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+} from "../../../component/utilities/InfraSectorSec";
 
 const Page = () => {
   return (
@@ -31,7 +31,7 @@ const Page = () => {
           <>
             Become cloud-native for faster and{" "}
             <br className="hidden md:block" />
-            collaborative DevOps + SRE – It’s time to adopt
+            collaborative DevOps + SRE – Its time to adopt
           </>
         }
         buttonText="Know More"

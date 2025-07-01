@@ -12,7 +12,7 @@ import {
   DataSanitySec,
   EffortlessSec,
   HeroSectionDatapipelineengineering,
-} from "../../../app/component/data-pipeline-engineering/HeroSecChallengesInfo";
+} from "../../../app/component/data-pipeline-engineering/HeroSecChallengesInfo.jsx";
 
 const page = () => {
   return (

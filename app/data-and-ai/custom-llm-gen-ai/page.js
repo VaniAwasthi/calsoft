@@ -4,7 +4,7 @@ import {
   EnterpriseSec,
   LlmSec,
   SystemSec,
-} from "@/app/component/customLlmGenAi/CustomLlmGgenAi";
+} from "../../../app/component/customLlmGenAi/CustomLlmGgenAi.jsx";
 import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
