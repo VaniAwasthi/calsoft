@@ -4,7 +4,7 @@ import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/Banne
 import {
   BannerSection,
   ContactSecData,
-} from "../../../app/component/utilities/InfraSectorSec.jsx";
+} from "../../../component/utilities/InfraSectorSec.jsx";
 
 import {
   AccelerateSec,
@@ -15,7 +15,7 @@ import {
   IdeationSec,
   ProdandAppChallengeSec,
   QualityengineeringSec,
-} from "../../../app/component/product&applicationdev/HeroChallengeInfo.jsx";
+} from "../../../component/product&applicationdev/HeroChallengeInfo.jsx";
 const page = () => {
   return (
     <>

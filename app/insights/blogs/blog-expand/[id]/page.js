@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { blogData } from "../../../../component/utilities/data/BlogData.jsx";
+import { blogData } from "../../../component/utilities/data/BlogData.jsx";
 import {
   ArticleContent,
   Banner,

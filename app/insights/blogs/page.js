@@ -1,6 +1,7 @@
 "use client";
-import { BlogsBanner } from "../../../component/blog/blogsBanner.jsx";
-import ResourceGrid from "../../../component/blog/BlogSec.jsx";
+import ResourceGrid from "../../component/blog/BlogSec.jsx";
+import { BlogsBanner } from "../../component/blog/blogsBanner.jsx";
+
 import React from "react";
 
 const Page = () => {
