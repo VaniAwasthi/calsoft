@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { FaSearch } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
@@ -9,8 +9,11 @@ import Logo from "../../assets/logo.png";
 import barmenu from "../../assets/menu-bar.svg";
 import MegaMenuImg1 from "../../assets/home/megamenu1.webp";
 import MegaMenuImg2 from "../../assets/home/megamenu2.webp";
+
 export default function Navbar() {
   const [openMenus, setOpenMenus] = useState({});
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [selectedSubmenu, setSelectedSubmenu] = useState(null);
 
   const toggleMenu = (index) => {
     setOpenMenus((prev) => ({
@@ -22,82 +25,254 @@ export default function Navbar() {
   const navItems = [
     {
       title: "DATA & AI",
-      href: "/data-ai",
+      href: "/data-and-ai/data-pipeline-engineering",
       submenu: [
         {
-          title: "Data Pipeline Engineering",
+          title: "End-to-end data pipeline implementation",
           href: "/data-and-ai/data-pipeline-engineering",
+          section: [
+            "Data architecture enhancement",
+            "Data platform and ecosystem integration",
+            "Effortless and faultless data migration",
+            "Data sanity and lineage handling",
+          ],
         },
-        { title: "Custom Solution Development", href: "#" },
-        { title: "OSS Model Implementation", href: "#" },
-        { title: "Model Fine-tuning and Training", href: "#" },
-        { title: "RAG Production Apps", href: "#" },
-        { title: "Model Fine-tuning and Training", href: "#" },
-        { title: "RAG Production Apps", href: "#" },
-      ],
-    },
-    {
-      title: "DIGITAL ENGINEERING",
-      href: "#",
-      submenu: [
         {
-          title: "Digital Product Engineering",
-          href: "#",
-          inersubmenu: [
-            {
-              title: "Cloud Services",
-              href: "/digital-engineering/productEngineering/cloud-services",
-            },
-            {
-              title: "CX Engineering",
-              href: "/digital-engineering/productEngineering/cx-engineering",
-            },
-            {
-              title: "Modernization & Ecosystem",
-              href: "/digital-engineering/productEngineering/modernizationandecosystem",
-            },
-            {
-              title: "Product and application development ",
-              href: "/digital-engineering/productEngineering/product-and-application-development ",
-            },
-            {
-              title: "Security Services",
-              href: "/digital-engineering/productEngineering/security-services",
-            },
-            {
-              title: "Storage Networking",
-              href: "/digital-engineering/productEngineering/storage-networking",
-            },
-            {
-              title: "Sustenance Support",
-              href: "/digital-engineering/productEngineering/sustenance-support",
-            },
-            {
-              title: "Testing as a Service",
-              href: "/digital-engineering/productEngineering/testing-as-a-service",
-            },
-            {
-              title: "Virtualization Solutions",
-              href: "/digital-engineering/productEngineering/virtualization-solutions",
-            },
+          title: "Technical consulting",
+          href: "/data-and-ai/technical-consulting",
+          section: [
+            "Strategic architecture advisory",
+            "Risk mitigation and recovery planning",
+            "Platform interoperability consulting",
+            "Cost-optimized orchestration planning",
+          ],
+        },
+        {
+          title: "Data observability",
+          href: "/data-and-ai/data-observability",
+          section: [
+            "Real-time data streaming analytics",
+            "Compliance tracking",
+            "Real-time data workflow synchronization",
+            "Proactive risk alerts",
+          ],
+        },
+        {
+          title: "Data governance and quality",
+          href: "/data-and-ai/data-governance-quality",
+          section: [
+            "Data profiling and cataloging",
+            "Data cleansing and deduplication",
+            "Policy governance",
+            "Data collaboration & orchestration",
+          ],
+        },
+        {
+          title: "Data analytics and reporting",
+          href: "/data-and-ai/data-analytics-reporting",
+          section: [
+            "Dashboard and KPI visualization",
+            "Business Intelligence (BI) integration",
+            "Custom reporting",
+            "Real-time business insights streaming",
+          ],
+        },
+        {
+          title: "AI-driven prediction and inferences",
+          href: "/data-and-ai/aI-driven-prediction-and-inferences",
+          section: [
+            "Predictive modeling",
+            "Pattern detection",
+            "Inferential analytics",
+            "Model adaptability",
+          ],
+        },
+        {
+          title: "Agentic AI planning & development",
+          href: "/data-and-ai/agentic-aI-planning",
+          section: [
+            "AIOps planning",
+            "Use-case specific AI agents",
+            "Monitor and control",
+            "Lifecycle and adaptability",
+          ],
+        },
+        {
+          title: "Custom-LLM for Gen AI and RAG",
+          href: "/data-and-ai/custom-llm-gen-ai",
+          section: [
+            "LLM fine-tuning",
+            "RAG pipeline design",
+            "Enterprise deployment models",
+            "System integration and orchestration",
+          ],
+        },
+        {
+          title: "AI-powered accelerators",
+          href: "/data-and-ai/aI-powered-accelerators-services",
+          section: [
+            "CalTIA – Faster, better, and consistent testing",
+            "CalPSR – Calsoft Performance, Scalability, and Resilience",
+            "Calsoft’s migration accelerator",
+            "Calsoft Mozaic | Engineering intelligence framework",
           ],
         },
       ],
     },
-    // data
+    {
+      title: "DIGITAL Product ENGINEERING",
+      href: "#",
+      submenu: [
+        {
+          title: "Product and application development ",
+          href: "/digital-engineering/productEngineering/product-and-application-development ",
+          section: [
+            "Ideation & architecture orchestration",
+            "Development lifecycle services",
+            "Quality engineering",
+            "DevOps + SRE with AI-driven enhancements",
+            "Deployment and upgrades",
+            "Accelerate with Calsoft’s Mozaic",
+          ],
+        },
+        {
+          title: "Modernization & Ecosystem",
+          href: "/digital-engineering/productEngineering/modernizationandecosystem",
+          section: [
+            "Maturity assessment and planning",
+            "Future readiness with application modernization",
+            "Ecosystem management",
+            "Plugin development: Improve extendibility",
+            "IoT engineering",
+          ],
+        },
+        {
+          title: "CX Engineering",
+          href: "/digital-engineering/productEngineering/cx-engineering",
+          section: [
+            "Front-end development",
+            "UX modernization : Better user journeys",
+            "Intelligent UI: Make interfaces adaptive",
+            "Rapid prototyping",
+            "Mobile engineering & development",
+          ],
+        },
+        {
+          title: "Cloud Services",
+          href: "/digital-engineering/productEngineering/cloud-services",
+          section: [
+            "IT infrastructure assessment and road mapping",
+            "Multi-cloud infrastructure provisioning",
+            "Cloud-native development enablement",
+            "Cloud migration and scaling",
+            "Cost and usage optimization",
+            "SRE (Site Reliability Engineering)",
+          ],
+        },
+        {
+          title: "Testing as a Service",
+          href: "/digital-engineering/productEngineering/testing-as-a-service",
+          section: [
+            "Functional and non-functional testing",
+            "CalTIA | Automated regression testing",
+            "Load and stress testing for scalability",
+            "Test impact analysis using ML models",
+            "QAOps with CI/CD pipeline integration",
+            "Product and ecosystem benchmarking",
+          ],
+        },
+        {
+          title: "Sustenance Support",
+          href: "/digital-engineering/productEngineering/sustenance-support",
+          section: [
+            "Release management",
+            "Streamline technical documentation",
+            "Multi-tier support",
+            "Uptime continuity",
+          ],
+        },
+        {
+          title: "Virtualization Solutions",
+          href: "/digital-engineering/productEngineering/virtualization-solutions",
+          section: [
+            "Virtualization lifecycle management (Day 0–N)",
+            "Containerization and orchestration",
+            "Hypervisor: Optimizing foundations",
+            "Migrate seamlessly across platforms",
+            "OpenStack environment configuration",
+          ],
+        },
+        {
+          title: "Security Services",
+          href: "/digital-engineering/productEngineering/security-services",
+          section: [
+            "Endpoint and perimeter security enablement",
+            "Identity and access management (IAM)",
+            "DevSecOps - Embed security into DevOps",
+            "Zero Trust architecture enablement",
+            "Service continuity and backup automation",
+          ],
+        },
+        {
+          title: "Storage Networking",
+          href: "/digital-engineering/productEngineering/storage-networking",
+          section: [
+            "Software-defined storage (SDS) development",
+            "Software Defined Networking (SDN) controller & engineering",
+            "Hyperconverged infrastructure (HCI) integration",
+            "Storage gateway engineering",
+            "AI-driven network automation",
+            "Network function virtualization (NFV) services",
+            "Edge computing",
+          ],
+        },
+      ],
+    },
     {
       title: "INDUSTRIES",
       href: "/industries",
       submenu: [
-        { title: "Hi-tech", href: "/industries/hitech" },
-        { title: "Telecom", href: "/industries/telecom" },
-        { title: "Retail", href: "/industries/retail" },
-        { title: "Manufacturing", href: "/industries/manufacturing" },
+        {
+          title: "Hi-tech",
+          href: "/industries/hitech",
+          section: [
+            "Software and product engineering",
+            "Cloud and platform engineering",
+            "AI-powered modernization",
+          ],
+        },
+        {
+          title: "Retail",
+          href: "/industries/retail",
+          section: [
+            "Enhance shopping experiences with AI",
+            "Improve efficiency and boost product availability",
+            "Prevent fraud and secure transactions",
+          ],
+        },
+        {
+          title: "Telecom",
+          href: "/industries/telecom",
+          section: [
+            "Automate network operations and orchestration",
+            "Build agile and low-latency telecom networks",
+            "Enhance service assurance and cybersecurity",
+          ],
+        },
+        {
+          title: "Manufacturing",
+          href: "/industries/manufacturing",
+          section: [
+            "Scale with real-time monitoring and automation",
+            "Strengthen predictive maintenance strategies",
+            "Enhance visibility, agility, and demand forecasting",
+          ],
+        },
       ],
     },
     {
       title: "INSIGHTS",
-      href: "/insights",
+      href: "#",
       submenu: [
         { title: "Blogs", href: "/insights/blogs" },
         {
@@ -127,22 +302,30 @@ export default function Navbar() {
       ],
     },
   ];
+
   const fetaureInsights = [
     {
-      index: 1,
       image: MegaMenuImg1,
       detail:
-        " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
     {
-      index: 2,
       image: MegaMenuImg2,
       detail:
-        " Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     },
   ];
+  // Handle submenu default selection
+  useEffect(() => {
+    const current = navItems.find((i) => i.title === activeMenu);
+    if (current && current.submenu?.length) {
+      setSelectedSubmenu(current.submenu[0]);
+    } else {
+      setSelectedSubmenu(null);
+    }
+  }, [activeMenu]);
   return (
-    <header className="w-full sticky top-0 z-90">
+    <header className="w-full sticky top-0 z-[90]">
       {/* Top Bar */}
       <div className="text-white px-6 py-3 border-b bg-[#141414] border-gray-700">
         <div className="flex items-end justify-end text-sm container mx-auto px-1 md:px-20">
@@ -159,7 +342,7 @@ export default function Navbar() {
       </div>
 
       {/* Main Nav */}
-      <Disclosure as="nav" className="bg-black py-2">
+      <Disclosure as="nav" className="bg-black py-2 relative">
         {({ open }) => (
           <>
             <div className="container mx-auto px-4 md:px-10 xl:px-20 flex items-center justify-between">
@@ -167,123 +350,32 @@ export default function Navbar() {
                 href="/"
                 className="flex items-center text-2xl font-bold text-white"
               >
-                <Image src={Logo} height={50} alt="Logo" className="block" />
+                <Image src={Logo} height={50} alt="Logo" />
               </Link>
 
               {/* Desktop Menu */}
-              <div className="hidden lg:flex xl:space-x-6 items-center">
-                {navItems.map(({ title, href, submenu }, idx) => (
-                  <div key={title} className="relative group">
-                    <Link
-                      href={href}
-                      className="flex items-center space-x-1 text-white hover:text-white"
+
+              <div className="hidden lg:flex xl:space-x-6 items-center relative group">
+                <div className="flex xl:space-x-6 items-center">
+                  {navItems.map(({ title, href, submenu }) => (
+                    <div
+                      key={title}
+                      className="relative px-2"
+                      onMouseEnter={() => submenu && setActiveMenu(title)}
                     >
-                      <span className="text-sm font-normal hover:font-bold">
-                        {title}
-                      </span>
-                      <IoIosArrowDown />
-                    </Link>
-
-                    {/* Mega Menu for DATA & AI */}
-                    {submenu && title === "DATA & AI" && (
-                      <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300  absolute  left-[9rem] translate-y-5 -translate-x-1/2 top-full  min-w-7xl bg-white text-black rounded-xl shadow-xl z-[999] flex justify-center ">
-                        {/* Left Side Menu */}
-                        <div className="w-1/4 p-6 text-sm font-medium text-[#1A1A1A]">
-                          <div className="space-y-3">
-                            <div className="text-[#2E3092] font-bold flex items-center justify-between">
-                              GEN AI <span>▸</span>
-                            </div>
-                            <div className="text-[#1A1A1A] hover:text-[#2E3092] cursor-pointer">
-                              Analytics & ML
-                            </div>
-                            <div className="text-[#1A1A1A] hover:text-[#2E3092] cursor-pointer">
-                              Data Engineering
-                            </div>
-                            <div className="text-[#1A1A1A] hover:text-[#2E3092] cursor-pointer">
-                              AI-Driven Solutions
-                            </div>
-                            <div className="text-[#1A1A1A] hover:text-[#2E3092] cursor-pointer">
-                              Use Cases & Solutions
-                            </div>
-                            <div className="text-[#1A1A1A] hover:text-[#2E3092] cursor-pointer">
-                              Use Cases & Solutions
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Divider */}
-                        <div className="w-px h-[200px] bg-[#D9D9D9] mx-2 my-10"></div>
-
-                        {/* Center Submenu */}
-                        <div className="w-1/2 px-6 mt-7 flex flex-col  text-sm">
-                          {submenu.map(({ title, href }, i) => (
-                            <Link
-                              key={i}
-                              href={href}
-                              className="text-[#2E3092] hover:underline font-medium my-2 py-0"
-                            >
-                              {title}
-                            </Link>
-                          ))}
-                        </div>
-
-                        {/* Right Side: Featured Insights */}
-                        <div className="w-2/4 my-0 p-6 bg-[#F5F5F5]  flex-col flex justify-center items-center">
-                          <h3 className="text-[#454545] text-2xl font-regular mb-4 manrope text-center">
-                            Featured Insights
-                          </h3>
-                          <div className="space-y-4 space-x-4 flex ">
-                            {fetaureInsights.map((fetaureInsight, idx) => (
-                              <div key={idx} className=" space-x-3 space-y-6">
-                                <div className="w-35 h-35 rounded-md overflow-hidden">
-                                  {/* Replace below with <Image /> if dynamic images available */}
-                                  <Image
-                                    src={fetaureInsight.image}
-                                    alt="Insight"
-                                    width={50}
-                                    height={50}
-                                    className="object-cover w-full h-full"
-                                  />
-                                </div>
-                                <p className="text-sm text-[#454545] leading-tight manrope">
-                                  {fetaureInsight.detail}
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Simple Dropdown for Others */}
-                    {submenu && title !== "DATA & AI" && (
-                      <div className="absolute top-full left-0 mt-2 min-w-[200px] bg-white text-black rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-90">
-                        {submenu.map(({ title, href, inersubmenu }) => (
-                          <div key={title}>
-                            <Link
-                              href={href}
-                              className="block px-4 py-2 hover:bg-gray-200"
-                            >
-                              {title}
-                            </Link>
-                            {inersubmenu &&
-                              inersubmenu.map((item) => (
-                                <Link
-                                  key={item.title}
-                                  href={item.href}
-                                  className="block px-6 py-1 text-sm hover:bg-gray-100"
-                                >
-                                  {item.title}
-                                </Link>
-                              ))}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-
-                {/* Search Bar */}
+                      <Link
+                        href={href}
+                        className="flex items-center space-x-1 text-white"
+                      >
+                        <span className="text-sm font-normal hover:font-bold">
+                          {title}
+                        </span>
+                        {submenu && <IoIosArrowDown />}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+                {/* Search */}
                 <div className="hidden lg:flex items-center space-x-4">
                   <div className="relative">
                     <input
@@ -298,13 +390,116 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Mobile Menu Toggle */}
+              {/* Mobile Toggle */}
               <Disclosure.Button className="lg:hidden p-2 text-white focus:outline-none">
-                <Image src={barmenu} width={40} height={24} alt="bar menu" />
+                <Image src={barmenu} width={40} height={24} alt="menu bar" />
               </Disclosure.Button>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mega Menu */}
+            {activeMenu && (
+              <div
+                className="absolute top-full left-0 w-full z-[999]"
+                onMouseEnter={() => setActiveMenu(activeMenu)}
+                onMouseLeave={() => setActiveMenu(null)}
+              >
+                <div className="max-w-[1440px] mx-auto bg-white text-black rounded-xl shadow-xl flex ">
+                  {/* Left Column */}
+                  <div className="w-[30%]  p-6">
+                    {navItems
+                      .find((item) => item.title === activeMenu)
+                      ?.submenu?.map((sub, idx) => (
+                        <Link
+                          href={sub.href}
+                          key={idx}
+                          className={`block text-sm py-1 w-full text-left ${
+                            selectedSubmenu?.title === sub.title
+                              ? "text-[#2E3092] font-semibold"
+                              : "text-[#1A1A1A]"
+                          }`}
+                          onMouseEnter={() => setSelectedSubmenu(sub)}
+                        >
+                          {sub.title}
+                        </Link>
+                      ))}
+                  </div>
+                  <div className="w-px h-64 bg-[#CECECE] mx-6 mt-6"></div>
+                  {/* Center Column */}
+                  <div className="w-[30%] p-6">
+                    {selectedSubmenu?.section ? (
+                      selectedSubmenu.section.map((s, idx) => {
+                        // Convert section title to ID-friendly format
+                        const sectionId = s
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")
+                          .replace(/[^a-z0-9-]/g, "");
+
+                        return (
+                          <div
+                            key={idx}
+                            className="text-sm py-1 cursor-pointer hover:text-[#2E3092]"
+                            onClick={() => {
+                              const el = document.getElementById(sectionId);
+                              if (el) {
+                                el.scrollIntoView({ behavior: "smooth" });
+                                setActiveMenu(null); // Close the mega menu after click
+                              }
+                            }}
+                          >
+                            {s}
+                          </div>
+                        );
+                      })
+                    ) : selectedSubmenu?.inersubmenu ? (
+                      selectedSubmenu.inersubmenu.map((item, idx) => (
+                        <Link
+                          key={idx}
+                          href={item.href}
+                          className="block text-sm py-1 hover:text-[#2E3092]"
+                        >
+                          {item.title}
+                        </Link>
+                      ))
+                    ) : (
+                      <div className="text-sm italic text-gray-500">
+                        No details available.
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Right Column */}
+
+                  <div className="w-[40%] bg-[#F5F5F5]  ">
+                    <h3 className="text-[#454545] text-lg font-semibold my-3 text-center">
+                      Featured Insights
+                    </h3>
+                    <div className="space-y-3 flex items-start">
+                      {fetaureInsights.map((f, idx) => (
+                        <>
+                          <div
+                            key={idx}
+                            className="flex flex-col items-center space-x-2 p-6"
+                          >
+                            <Image
+                              src={f.image}
+                              alt="Insight"
+                              width={250}
+                              height={50}
+                              className="w-[200px] h-44"
+                            />
+                            <p className="text-sm text-[#454545] leading-tight p-4">
+                              {f.detail}
+                            </p>
+                          </div>
+                        </>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Mobile Panel — unchanged */}
             <Disclosure.Panel className="lg:hidden p-4 bg-black text-white space-y-2 max-h-[80vh] overflow-y-auto">
               {navItems.map((item, index) => (
                 <div key={index}>
@@ -328,7 +523,6 @@ export default function Navbar() {
                         >
                           {subItem.title}
                         </Link>
-
                         {subItem.inersubmenu &&
                           subItem.inersubmenu.map((inner, innerIdx) => (
                             <Link

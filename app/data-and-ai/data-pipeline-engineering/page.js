@@ -1,41 +1,44 @@
-import {
-  ChallengeSolutionSec,
-  CostOptimizedSec,
-  HeroSectionDatapipelineengineering,
-  PlatformSec,
-  RiskMitigationSec,
-  StrategicSec,
-} from "@/app/component/data-pipeline-engineering/HeroSecChallengesInfo";
-import { BannerSection } from "@/app/component/utilities/InfraSectorSec";
+"use client";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 
 import React from "react";
-import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
+
+import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
+import { ContactSecDataAi } from "../../../app/component/utilities/ChallengeSolutionDataAi";
+import {
+  ChallengeSolutionSec,
+  DataArchitectureSec,
+  DataPlatformSec,
+  DataSanitySec,
+  EffortlessSec,
+  HeroSectionDatapipelineengineering,
+} from "../../../app/component/data-pipeline-engineering/HeroSecChallengesInfo";
 
 const page = () => {
   return (
     <>
       <HeroSectionDatapipelineengineering />
       <ChallengeSolutionSec />
-      <StrategicSec />
-      <RiskMitigationSec />
+      <DataArchitectureSec />
+      <DataPlatformSec />
       <BannerSection
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Strategize, stabilize, and scale
+            Design intelligent data pipelines that
             <br className="hidden md:block" />
-            with expert engineering insight
+            drive faster insights and integration
           </>
         }
         buttonText="Know More"
         buttonLink="#"
       />
-      <PlatformSec />
-      <CostOptimizedSec />
+      <EffortlessSec />
+      <DataSanitySec />
       <ContactSecDataAi
-        BoldContent="Let Calsoft guide your technology transformation"
-        lightContent="Bridge strategy and execution"
+        BoldContent="Innovate and grow with
+future-ready data pipelines"
+        lightContent="Calsoft can show you how"
         link="#"
       />
     </>

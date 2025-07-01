@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/Banner-Pipe.webp";
+import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
@@ -13,13 +13,13 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
-export const HeroSectionDatapipelineengineering = () => {
+export const HeroSectionTechnicalConsulting = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "End-to-end data",
-    title2: "pipeline implementation",
-    description: `Engineer and accelerate data flow, integration,
-and trust across hybrid environments.`,
+    title: "Technical-consulting",
+    title2: "",
+    description: `Bridge strategy and execution through datadriven
+technical advisory.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
@@ -58,66 +58,66 @@ and trust across hybrid environments.`,
   );
 };
 
-export const ChallengeSolutionSec = () => {
+export const ChallengeSolutionSecTechnicalConsulting = () => {
   const data = [
     {
-      tag: "Fragmented systems",
+      tag: "ARCHITECTURE ALIGNMENT",
       challenge:
-        "Are fragmented systems slowing your data consolidation efforts?",
+        "Is your current infrastructure misaligned with evolving business demands?",
       solution:
-        "Architect unified, scalable pipelines that streamline multi-source ingestion and integration.",
+        "Evaluate and refine data and system architectures to match strategic objectives and scale",
     },
     {
-      tag: "Resilience assessment",
+      tag: "OPERATIONAL GAPS",
       challenge:
-        "Facing risks of inconsistent or incomplete data during migration?",
+        "Are inefficiencies and bottlenecks slowing down delivery and responsiveness?",
       solution:
-        "Enable governed, validated migration frameworks for seamless data transitions.",
+        "Identify systemlevel friction points and redesign workflows for improved throughput and agility",
     },
     {
-      tag: "Migration and scaling",
+      tag: "TECH ROI",
       challenge:
-        "Struggling to maintain transparency across complex data flows?",
+        "Uncertain whether current tools and platforms are delivering ROI?",
       solution:
-        "Implement real-time data lineage tracking and impact analysis mechanisms.",
+        "Assess utilization patterns, recommend right-sizing, and guide platform rationalization",
     },
     {
-      tag: "Lack of transparency",
-      challenge: "Worried about slow onboarding of new data sources?",
+      tag: "CHANGE READINESS",
+      challenge:
+        "Struggling to plan and execute tech shifts (change) without disruption?",
       solution:
-        "Design modular, cloud-ready ingestion pipelines to accelerate source integration.",
+        "Structured roadmaps for adoption, migration, or modernization initiatives with built-in risk safeguards",
     },
   ];
   return (
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Architect, implement, and scale data pipelines"
+        BlackHeading="AI Agents that work at scale"
         GradientHeading=" Challenge to solutions :"
       />
     </>
   );
 };
 
-export const DataArchitectureSec = () => {
+export const StrategicSecTechnicalConsulting = () => {
   return (
     <>
       <DataInfoSection
-        title="Data architecture enhancement"
-        description="Design resilient and
-high-velocity pipelines
-for evolving data needs."
+        title="Strategic architecture advisory"
+        description="Blueprint scalable systems aligned to long-term
+business objectives."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Map pipelines for hybrid data flows",
-          "Support varied formats and scales",
-          "Build resilient, parallel systems",
+          "Assess system fit for future scale",
+          "Propose modular, flexible design",
+          "Add security and governance layers",
         ]}
         businessImpact={[
-          "Speed up trusted data delivery",
-          "Scale easily with new sources",
-          "Reduce failures and fixes over time",
+          "Systems scale with business goals",
+          "Architecture supports key strategy",
+          "Modular design cuts future rework",
         ]}
         imageSrc={cloudInfrIt}
         imageAlt="Infrastructure globe"
@@ -128,25 +128,23 @@ for evolving data needs."
   );
 };
 
-export const DataPlatformSec = () => {
+export const RiskMitigationSecTechnicalConsulting = () => {
   return (
     <>
       <DataInfoSection
-        title="Data platform
-and ecosystem integration"
-        description="Unify distributed data
-sources for seamless, intelligent operations."
+        title="Risk mitigation and recovery planning"
+        description="Anticipate disruptions and build resilience into your technology landscape."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Link lakes, warehouses, and stores",
-          "Connect process and storage layers",
-          "Build APIs to unify data movement",
+          "Find weak points across platforms",
+          "Plan for fallbacks and recovery",
+          "Align with SLAs and compliance",
         ]}
         businessImpact={[
-          "Faster access to connected data",
-          "Lower integration effort at scale",
-          "Better policy control across flows",
+          "Fewer breakdowns during stress",
+          "Fast recovery from disruptions",
+          "Greater trust in tech planning",
         ]}
         imageSrc={RiskImage}
         imageAlt="Image"
@@ -157,23 +155,23 @@ sources for seamless, intelligent operations."
   );
 };
 
-export const EffortlessSec = () => {
+export const PlatformSecTechnicalConsulting = () => {
   return (
     <>
       <DataInfoSection
-        title="Effortless and faultless data migration"
-        description="Move critical data assets with integrity, speed, and zero disruption."
+        title="Platform interoperability consulting"
+        description="Create cohesive systems through guided integration and alignment strategies."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Create migration maps by system type",
-          "Add rollback and audit routines",
-          "Manage transitions with low risk",
+          "Map cross-platform connection gaps",
+          "Align integration with governance",
+          "Guide phased API and data setup",
         ]}
         businessImpact={[
-          "Migration is quicker and cleaner",
-          "Cloud moves become smoother",
-          "Data quality stays intact end-to-end",
+          "Simpler system-to-system flow",
+          "Fewer issues from data drift",
+          "Quicker integration launches",
         ]}
         imageSrc={PlatformImage}
         imageAlt="Infrastructure globe"
@@ -183,23 +181,23 @@ export const EffortlessSec = () => {
     </>
   );
 };
-export const DataSanitySec = () => {
+export const CostOptimizedSecTechnicalConsulting = () => {
   return (
     <>
       <DataInfoSection
-        title="Data sanity and lineage handling"
-        description="Ensure transparency, trust, and traceability across your data pipelines."
+        title="Balance performance and spend through expert system-wide planning."
+        description="Bring ideas to life early and streamline decision-making with interactive prototypes."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Add checks across each pipeline step",
-          "Map full data journeys visually",
-          "Use tags and metadata for audits",
+          "Analyze workloads for imbalance",
+          "Plan orchestration to match use",
+          "Map cost to real business value",
         ]}
         businessImpact={[
-          "Trust rises with full traceability",
-          "Audits take less time to execute",
-          "Root causes are faster to uncover",
+          "Waste cut from unused capacity",
+          "Systems use fewer idle cycles",
+          "Spend matches performance goals",
         ]}
         imageSrc={CostImage}
         imageAlt="Infrastructure globe"

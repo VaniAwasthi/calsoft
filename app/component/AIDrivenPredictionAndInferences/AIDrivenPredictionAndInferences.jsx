@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/Banner-Pipe.webp";
+import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
@@ -13,13 +13,13 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
-export const HeroSectionDatapipelineengineering = () => {
+export const DrivenBanner = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "End-to-end data",
-    title2: "pipeline implementation",
-    description: `Engineer and accelerate data flow, integration,
-and trust across hybrid environments.`,
+    title: "AI-driven prediction and inferences",
+    title2: "",
+    description: `Predict trends and infer actionable insights at
+    enterprise speed.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
@@ -58,66 +58,66 @@ and trust across hybrid environments.`,
   );
 };
 
-export const ChallengeSolutionSec = () => {
+export const DrivenChallengeSec = () => {
   const data = [
     {
-      tag: "Fragmented systems",
+      tag: "Predictive modeling",
       challenge:
-        "Are fragmented systems slowing your data consolidation efforts?",
+        "Want to anticipate business risks, failures, or opportunities early?",
       solution:
-        "Architect unified, scalable pipelines that streamline multi-source ingestion and integration.",
+        "Develop AI models trained to forecast critical business events and outcomes",
     },
     {
-      tag: "Resilience assessment",
+      tag: "Pattern detection",
       challenge:
-        "Facing risks of inconsistent or incomplete data during migration?",
+        "Missing subtle trends and anomalies hidden within complex datasets?",
       solution:
-        "Enable governed, validated migration frameworks for seamless data transitions.",
+        "Build intelligent systems that surface hidden correlations and emerging signals",
     },
     {
-      tag: "Migration and scaling",
+      tag: "Inferential analytics",
       challenge:
-        "Struggling to maintain transparency across complex data flows?",
+        "How to move beyond descriptive reporting to actionable guidance?",
       solution:
-        "Implement real-time data lineage tracking and impact analysis mechanisms.",
+        "Inferential models that recommend next best actions and optimizations",
     },
     {
-      tag: "Lack of transparency",
-      challenge: "Worried about slow onboarding of new data sources?",
+      tag: "Model adaptability",
+      challenge:
+        "Concerned about AI models degrading as environments change?",
       solution:
-        "Design modular, cloud-ready ingestion pipelines to accelerate source integration.",
+        "Self-improving AI systems that retrain dynamically with evolving data streams",
     },
   ];
   return (
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Architect, implement, and scale data pipelines"
+        BlackHeading="Proactive action with predictive insights"
         GradientHeading=" Challenge to solutions :"
       />
     </>
   );
 };
 
-export const DataArchitectureSec = () => {
+export const PredictiveSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data architecture enhancement"
-        description="Design resilient and
-high-velocity pipelines
-for evolving data needs."
+        title="Predictive modeling"
+        description="Anticipate events, mitigate risks, and unlock
+        data-driven foresight."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Map pipelines for hybrid data flows",
-          "Support varied formats and scales",
-          "Build resilient, parallel systems",
+          "Train models to forecast key outcomes",
+          "Predict events across data sources",
+          "Embed triggers in operational flows",
         ]}
         businessImpact={[
-          "Speed up trusted data delivery",
-          "Scale easily with new sources",
-          "Reduce failures and fixes over time",
+          "Spot risks early, act before impact",
+          "Improve resource and planning ops",
+          "Capture shifts for faster GTM action",
         ]}
         imageSrc={cloudInfrIt}
         imageAlt="Infrastructure globe"
@@ -128,25 +128,25 @@ for evolving data needs."
   );
 };
 
-export const DataPlatformSec = () => {
+export const PatternSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data platform
-and ecosystem integration"
-        description="Unify distributed data
-sources for seamless, intelligent operations."
+        title="Pattern detection"
+        description="Reveal hidden signals
+        and uncover emerging
+        opportunities with intelligent models."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Link lakes, warehouses, and stores",
-          "Connect process and storage layers",
-          "Build APIs to unify data movement",
+          "Use ML to reveal hidden patterns",
+          "Track shifts across all data formats",
+          "Detect outliers and key anomalies",
         ]}
         businessImpact={[
-          "Faster access to connected data",
-          "Lower integration effort at scale",
-          "Better policy control across flows",
+          "Better prep through early signals",
+          "Adapt to market changes quickly",
+          "Reduce losses with early response",
         ]}
         imageSrc={RiskImage}
         imageAlt="Image"
@@ -157,23 +157,24 @@ sources for seamless, intelligent operations."
   );
 };
 
-export const EffortlessSec = () => {
+export const InferentialSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Effortless and faultless data migration"
-        description="Move critical data assets with integrity, speed, and zero disruption."
+        title="Inferential analytics"
+        description="Move beyond observation to confident, data backed
+        decision pathways."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Create migration maps by system type",
-          "Add rollback and audit routines",
-          "Manage transitions with low risk",
+          "Recommend actions based on data",
+          "Simulate impact for smarter choices",
+          "Guide ops through live inference",
         ]}
         businessImpact={[
-          "Migration is quicker and cleaner",
-          "Cloud moves become smoother",
-          "Data quality stays intact end-to-end",
+          "Gain confidence in each decision",
+          "Plan better with simulations",
+          "Optimize with real-time inputs",
         ]}
         imageSrc={PlatformImage}
         imageAlt="Infrastructure globe"
@@ -183,23 +184,25 @@ export const EffortlessSec = () => {
     </>
   );
 };
-export const DataSanitySec = () => {
+export const ModelSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Data sanity and lineage handling"
-        description="Ensure transparency, trust, and traceability across your data pipelines."
+        title="Model
+        adaptability"
+        description="Ensure AI models evolve alongside your business
+        and data landscapes."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
-          "Add checks across each pipeline step",
-          "Map full data journeys visually",
-          "Use tags and metadata for audits",
+          "Retrain models as new data flows in",
+          "Detect drift and auto-tune models",
+          "Use feedback to improve accuracy",
         ]}
         businessImpact={[
-          "Trust rises with full traceability",
-          "Audits take less time to execute",
-          "Root causes are faster to uncover",
+          "Retain relevance as context shifts",
+          "Avoid frequent rebuild costs",
+          "React fast to market changes",
         ]}
         imageSrc={CostImage}
         imageAlt="Infrastructure globe"
