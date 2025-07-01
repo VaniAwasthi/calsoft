@@ -2,13 +2,13 @@
 import {
   Herosection,
   TopClients,
-} from "@/app/component/industries/hitech/Herosection";
+} from "../../../app/component/industries/hitech/Herosection.jsx";
 import React, { useState } from "react";
 import SoftwareImg from "../../assets/industries/hitech/hitechinfo1.webp";
 import CloudImage from "../../assets/industries/hitech/hitechinfo2.webp";
 import AIImage from "../../assets/industries/hitech/hitechinfo3.webp";
-import InfoImageSection from "@/app/component/utilities/InfoSection";
-import IndustryIntelligence from "@/app/component/industries/hitech/IndustryIntellegence";
+import InfoImageSection from "../../../app/component/utilities/InfoSection.jsx";
+import IndustryIntelligence from "../../../app/component/industries/hitech/IndustryIntellegence.jsx";
 import BackgroundImage from "../../assets/industries/hitech/hitechBannner.webp";
 import HitechIcon1 from "../../assets/industries/hitech/HitechIcon1.svg";
 import HitechIcon2 from "../../assets/industries/hitech/HitechIcon2.svg";
@@ -21,7 +21,7 @@ import {
   ContactSec,
   ServicesSec,
   TopPartners,
-} from "@/app/component/industries/hitech/BlogSection";
+} from "../../../app/component/industries/hitech/BlogSection.jsx";
 
 const Page = () => {
   const slide = {

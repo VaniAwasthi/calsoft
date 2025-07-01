@@ -1,9 +1,9 @@
 "use client";
-import { ContactSec } from "@/app/component/industries/hitech/BlogSection";
+import { ContactSec } from "../../component/industries/hitech/BlogSection.jsx";
 import {
   BannerInfo,
   TabsInfo,
-} from "@/app/component/infographic/BannerTabsFilter";
+} from "../../component/infographic/BannerTabsFilter.jsx";
 import React from "react";
 
 const Page = () => {

@@ -3,15 +3,15 @@ import {
   ContactSec,
   ServicesSec,
   TopPartners,
-} from "@/app/component/industries/hitech/BlogSection";
-import InfoImageSection from "@/app/component/utilities/InfoSection";
+} from "../../../app/component/industries/hitech/BlogSection.jsx";
+import InfoImageSection from "../../../app/component/utilities/InfoSection.jsx";
 import React, { useState } from "react";
 import Banner from "../../assets/industries/manufacturing/manufactureBanner.webp";
 import StrengthenImg from "../../assets/industries/manufacturing/manufacInfo2.webp";
 import EnhanceImage from "../../assets/industries/manufacturing/manufacInfo3.webp";
 import ScaleImage from "../../assets/industries/manufacturing/manufacInfo1.webp";
-import { Herosection } from "@/app/component/industries/hitech/Herosection";
-import IndustryIntelligence from "@/app/component/industries/hitech/IndustryIntellegence";
+import { Herosection } from "../../../app/component/industries/hitech/Herosection.jsx";
+import IndustryIntelligence from "../../../app/component/industries/hitech/IndustryIntellegence.jsx";
 import Incon5 from "../../assets/industries/manufacturing/manufacturIcon1.svg";
 import Incon4 from "../../assets/industries/manufacturing/manufacturIcon2.svg";
 import Incon3 from "../../assets/industries/manufacturing/manufacturIcon3.svg";

@@ -5,11 +5,11 @@ import {
   CleansingSec,
   PolicySec,
   CollaborationSec,
-} from "../../../app/component/DataGovernanceQuality/Datagovernance.jsx";
-import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
+} from "../../component/DataGovernanceQuality/Datagovernance.jsx";
+import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { ContactSecDataAi } from "../../../app/component/utilities/ChallengeSolutionDataAi";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 function page() {
   return (

@@ -10,9 +10,9 @@ import {
   PlatformSecTechnicalConsulting,
   RiskMitigationSecTechnicalConsulting,
   StrategicSecTechnicalConsulting,
-} from "../../../app/component/technical-consultant/HeroSecChallenge.jsx";
-import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
-import { ContactSecDataAi } from "../../../app/component/utilities/ChallengeSolutionDataAi";
+} from "../../component/technical-consultant/HeroSecChallenge.jsx";
+import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 const page = () => {
   return (

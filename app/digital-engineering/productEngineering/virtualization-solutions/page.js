@@ -6,14 +6,14 @@ import {
   VirtualizationChallenge,
   VirtualizationSec,
   VirtualizationTab,
-} from "../../../app/component/VirtualizationSolutions/Virtualization.jsx";
+} from "../../../component/VirtualizationSolutions/Virtualization.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 // data
 import {
   BannerSection,
   ContactSecData,
-} from "../../../app/component/utilities/InfraSectorSec.jsx";
+} from "../../../component/utilities/InfraSectorSec.jsx";
 
 function page() {
   return (

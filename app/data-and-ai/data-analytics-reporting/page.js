@@ -5,11 +5,11 @@ import {
   CustomSec,
   DashboardSec,
   RealSec,
-} from "../../../app/component/DataAnalyticsReporting/DataAnalyticsReporting.jsx";
+} from "../../component/DataAnalyticsReporting/DataAnalyticsReporting.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
-import { ContactSecDataAi } from "../../../app/component/utilities/ChallengeSolutionDataAi";
+import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 function page() {
   return (
