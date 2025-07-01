@@ -3,7 +3,7 @@ import { ContactSec } from "../../component/industries/hitech/BlogSection.jsx";
 import {
   BannerInfo,
   TabsInfo,
-} from "../../component/infographic/BannerTabsFilter.jsx";
+} from "../../../component/infographic/BannerTabsFilter.jsx";
 import React from "react";
 
 const Page = () => {
