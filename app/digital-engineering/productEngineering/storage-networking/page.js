@@ -8,11 +8,11 @@ import {
   SoftwareSec,
   StorageChallenge,
   StorageTab,
-} from "../../../app/component/storage-networking/StorageNetworking";
+} from "../../../app/component/storage-networking/StorageNetworking.jsx";
 import {
   BannerSection,
   ContactSecData,
-} from "../../../app/component/utilities/InfraSectorSec";
+} from "../../../app/component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 

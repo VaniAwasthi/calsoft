@@ -5,7 +5,7 @@ import {
   CustomSec,
   DashboardSec,
   RealSec,
-} from "@/app/component/DataAnalyticsReporting/DataAnalyticsReporting";
+} from "../../../app/component/DataAnalyticsReporting/DataAnalyticsReporting.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";

@@ -6,11 +6,11 @@ import {
   SustenanceTab,
   Technical,
   UptimeSec,
-} from "../../../app/component/sustenanceSupport/Sustenance";
+} from "../../../app/component/sustenanceSupport/Sustenance.jsx";
 import {
   BannerSection,
   ContactSecData,
-} from "../../../app/component/utilities/InfraSectorSec";
+} from "../../../app/component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 function page() {

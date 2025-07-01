@@ -5,7 +5,7 @@ import {
   CleansingSec,
   PolicySec,
   CollaborationSec,
-} from "@/app/component/DataGovernanceQuality/Datagovernance";
+} from "../../../app/component/DataGovernanceQuality/Datagovernance.jsx";
 import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";

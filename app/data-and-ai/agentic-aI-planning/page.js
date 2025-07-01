@@ -6,7 +6,7 @@ import {
   LifecycleSec,
   MonitorSec,
   UseSec,
-} from "@/app/component/AgenticAIPlanning/AgenticAIPlanning";
+} from "../../../app/component/AgenticAIPlanning/AgenticAIPlanning.jsx";
 import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 import { ContactSecDataAi } from "../../../app/component/utilities/ChallengeSolutionDataAi";

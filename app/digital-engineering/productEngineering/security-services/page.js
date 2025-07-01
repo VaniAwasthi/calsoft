@@ -7,11 +7,11 @@ import {
   ServiceSec,
   SreSec,
   ZeroSec,
-} from "../../../app/component/security-services/SecurityChllengeInfo";
+} from "../../../app/component/security-services/SecurityChllengeInfo.jsx";
 import {
   BannerSection,
   ContactSecData,
-} from "../../../app/component/utilities/InfraSectorSec";
+} from "../../../app/component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 function page() {
