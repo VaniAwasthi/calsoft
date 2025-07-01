@@ -1,15 +1,15 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { blogData } from "@/app/component/utilities/data/BlogData";
+import { blogData } from "../../../../component/utilities/data/BlogData.jsx";
 import {
   ArticleContent,
   Banner,
-} from "@/app/component/blog/blog-expand/BannerArticle";
+} from "../../../../component/blog/blog-expand/BannerArticle.jsx";
 import {
   BlogSection,
   ContactSec,
-} from "@/app/component/industries/hitech/BlogSection";
+} from "../../../../component/industries/hitech/BlogSection.jsx";
 
 const Page = () => {
   const params = useParams();
