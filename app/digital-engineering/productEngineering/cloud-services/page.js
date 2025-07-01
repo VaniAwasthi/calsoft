@@ -11,11 +11,11 @@ import {
   ItInfraSec,
   MultiCloudInfraSec,
   SREInfraSec,
-} from "@/app/component/cloud-service/HeroSection";
+} from "@/app/component/cloud-service/HeroSection.jsx";
 import {
   BannerSection,
   ContactSecData,
-} from "@/app/component/utilities/InfraSectorSec";
+} from "@/app/component/utilities/InfraSectorSec.jsx";
 
 const Page = () => {
   return (
