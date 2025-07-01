@@ -1,21 +1,28 @@
-import { GovernJounery, GovernSolutionSec,ProfilingSec, CleansingSec, PolicySec, CollaborationSec } from '@/app/component/DataGovernanceQuality/Datagovernance'
-import { BannerSection } from '@/app/component/utilities/InfraSectorSec'
-import React from 'react'
+import {
+  GovernJounery,
+  GovernSolutionSec,
+  ProfilingSec,
+  CleansingSec,
+  PolicySec,
+  CollaborationSec,
+} from "@/app/component/DataGovernanceQuality/Datagovernance";
+import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
+import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { ContactSecDataAi } from '@/app/component/utilities/ChallengeSolutionDataAi';
+import { ContactSecDataAi } from "../../../app/component/utilities/ChallengeSolutionDataAi";
 
 function page() {
   return (
     <>
-     <GovernJounery/>
-     <GovernSolutionSec/>
-     <ProfilingSec/>
-     <CleansingSec/>
-     <BannerSection
+      <GovernJounery />
+      <GovernSolutionSec />
+      <ProfilingSec />
+      <CleansingSec />
+      <BannerSection
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-           Turn compliance into a
+            Turn compliance into a
             <br className="hidden md:block" />
             competitive advantage
             <br className="hidden md:block" />
@@ -25,16 +32,15 @@ function page() {
         buttonText="Know More"
         buttonLink="#"
       />
-    <PolicySec/>
-    <CollaborationSec/>
-    <ContactSecDataAi
+      <PolicySec />
+      <CollaborationSec />
+      <ContactSecDataAi
         BoldContent="Let’s talk!"
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
         link="#"
       />
-
     </>
-  )
+  );
 }
 
-export default page
+export default page;
