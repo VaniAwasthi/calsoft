@@ -8,12 +8,13 @@ import {
   TestingChallenge,
   TestingTab,
 } from "../../../app/component/testingAs/TestingAs";
+
+import React from "react";
+import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 import {
   BannerSection,
   ContactSecData,
-} from "../../../app/component/utilities/InfraSectorSec";
-import React from "react";
-import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+} from "@/app/component/utilities/InfraSectorSec";
 function page() {
   return (
     <>
