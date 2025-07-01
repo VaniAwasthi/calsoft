@@ -1,21 +1,21 @@
 "use client";
+
+import React from "react";
+import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 import {
-  HeroSectionProduct,
-  // ChallengeToSolution,
-  ItInfraSec,
-  MultiCloudInfraSec,
+  ChallengeToSolutionSec,
+  CloudMigrationInfraSec,
   CloudNativetInfraSec,
   CostInfraSec,
-  CloudMigrationInfraSec,
+  HeroSectionProduct,
+  ItInfraSec,
+  MultiCloudInfraSec,
   SREInfraSec,
-  ChallengeToSolutionSec,
-} from "../../../app/component/cloud-service/HeroSection";
+} from "@/app/component/cloud-service/HeroSection";
 import {
   BannerSection,
   ContactSecData,
-} from "../../../app/component/utilities/InfraSectorSec";
-import React from "react";
-import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+} from "@/app/component/utilities/InfraSectorSec";
 
 const Page = () => {
   return (
