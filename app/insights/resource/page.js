@@ -1,5 +1,5 @@
 "use client";
-import { ContactSec } from "../../../component/industries/hitech/BlogSection.jsx";
+import { ContactSec } from "../../component/industries/hitech/BlogSection.jsx";
 import {
   BannerInfo,
   TabsInfo,
