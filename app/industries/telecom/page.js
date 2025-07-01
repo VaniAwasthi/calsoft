@@ -4,8 +4,8 @@ import {
   ContactSec,
   ServicesSec,
   TopPartners,
-} from "@/app/component/industries/hitech/BlogSection";
-import InfoImageSection from "@/app/component/utilities/InfoSection";
+} from "../../../app/component/industries/hitech/BlogSection.jsx";
+import InfoImageSection from "../../../app/component/utilities/InfoSection.jsx";
 import React, { useState } from "react";
 import Banner from "../../assets/industries/telecom/TelecomBanner.webp";
 import TelecomInfo1 from "../../assets/industries/telecom/TelecomInfo1.webp";
@@ -14,8 +14,8 @@ import TelecomInfo3 from "../../assets/industries/telecom/TelecomInfo3.webp";
 import {
   Herosection,
   TopClients,
-} from "@/app/component/industries/hitech/Herosection";
-import IndustryIntelligence from "@/app/component/industries/hitech/IndustryIntellegence";
+} from "../../../app/component/industries/hitech/Herosection.jsx";
+import IndustryIntelligence from "../../../app/component/industries/hitech/IndustryIntellegence.jsx";
 import Incon1 from "../../assets/industries/telecom/TelecomIcon1.svg";
 import Incon2 from "../../assets/industries/telecom/TelecomIcon2.svg";
 import Incon3 from "../../assets/industries/telecom/TelecomIcon3.svg";

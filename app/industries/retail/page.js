@@ -3,8 +3,8 @@ import {
   ContactSec,
   ServicesSec,
   TopPartners,
-} from "@/app/component/industries/hitech/BlogSection";
-import InfoImageSection from "@/app/component/utilities/InfoSection";
+} from "../../../app/component/industries/hitech/BlogSection.jsx";
+import InfoImageSection from "../../../app/component/utilities/InfoSection.jsx";
 import React, { useState } from "react";
 import Banner from "../../assets/industries/retail/RetailBannner.webp";
 import Retailinfo1 from "../../assets/industries/retail/retailinfo1.webp";
@@ -13,8 +13,8 @@ import Retailinfo3 from "../../assets/industries/retail/retailinfo3.webp";
 import {
   Herosection,
   TopClients,
-} from "@/app/component/industries/hitech/Herosection";
-import IndustryIntelligence from "@/app/component/industries/hitech/IndustryIntellegence";
+} from "../../../app/component/industries/hitech/Herosection.jsx";
+import IndustryIntelligence from "../../../app/component/industries/hitech/IndustryIntellegence.jsx";
 import Incon1 from "../../assets/industries/retail/retailIcon1.svg";
 import Incon2 from "../../assets/industries/retail/retailIcon2.svg";
 import Incon3 from "../../assets/industries/retail/retailIcon3.svg";
