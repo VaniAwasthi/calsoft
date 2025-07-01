@@ -6,10 +6,10 @@ import {
   LifecycleSec,
   MonitorSec,
   UseSec,
-} from "../../../component/AgenticAIPlanning/AgenticAIPlanning.jsx";
-import { BannerSection } from "../../../component/utilities/InfraSectorSec";
+} from "../../component/AgenticAIPlanning/AgenticAIPlanning.jsx";
+import { BannerSection } from "../../component/utilities/InfraSectorSec";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi";
 
 function page() {
   return (

@@ -4,11 +4,11 @@ import {
   EnterpriseSec,
   LlmSec,
   SystemSec,
-} from "../../../component/customLlmGenAi/CustomLlmGgenAi.jsx";
-import { BannerSection } from "../../../component/utilities/InfraSectorSec";
+} from "../../component/customLlmGenAi/CustomLlmGgenAi.jsx";
+import { BannerSection } from "../../component/utilities/InfraSectorSec";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi";
 
 function page() {
   return (

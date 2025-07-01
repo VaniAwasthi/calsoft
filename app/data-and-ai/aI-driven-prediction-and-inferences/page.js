@@ -6,10 +6,10 @@ import {
   PatternSec,
   InferentialSec,
   ModelSec,
-} from "../../../component/AIDrivenPredictionAndInferences/AIDrivenPredictionAndInferences.jsx";
-import { BannerSection } from "../../../component/utilities/InfraSectorSec";
+} from "../../component/AIDrivenPredictionAndInferences/AIDrivenPredictionAndInferences.jsx";
+import { BannerSection } from "../../component/utilities/InfraSectorSec";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi";
 
 function page() {
   return (

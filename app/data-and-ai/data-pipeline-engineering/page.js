@@ -3,8 +3,8 @@ import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/Bannerwi
 
 import React from "react";
 
-import { BannerSection } from "../../../component/utilities/InfraSectorSec";
-import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import { BannerSection } from "../../component/utilities/InfraSectorSec";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi";
 import {
   ChallengeSolutionSec,
   DataArchitectureSec,
@@ -12,7 +12,7 @@ import {
   DataSanitySec,
   EffortlessSec,
   HeroSectionDatapipelineengineering,
-} from "../../../component/data-pipeline-engineering/HeroSecChallengesInfo.jsx";
+} from "../../component/data-pipeline-engineering/HeroSecChallengesInfo.jsx";
 
 const page = () => {
   return (
