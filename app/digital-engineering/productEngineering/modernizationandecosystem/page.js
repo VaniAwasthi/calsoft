@@ -4,7 +4,7 @@ import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/Banne
 import {
   BannerSection,
   ContactSecData,
-} from "../../../app/component/utilities/InfraSectorSec";
+} from "@/component/utilities/InfraSectorSec";
 import {
   EcosystemManagementSec,
   FutureReadinessSec,

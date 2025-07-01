@@ -11,11 +11,11 @@ import {
   ItInfraSec,
   MultiCloudInfraSec,
   SREInfraSec,
-} from "@/app/component/cloud-service/HeroSection";
+} from "@/component/cloud-service/HeroSection";
 import {
   BannerSection,
   ContactSecData,
-} from "@/app/component/utilities/InfraSectorSec";
+} from "@/component/utilities/InfraSectorSec";
 
 const Page = () => {
   return (
@@ -31,7 +31,7 @@ const Page = () => {
           <>
             Become cloud-native for faster and{" "}
             <br className="hidden md:block" />
-            collaborative DevOps + SRE – It’s time to adopt
+            collaborative DevOps + SRE – Its time to adopt
           </>
         }
         buttonText="Know More"
