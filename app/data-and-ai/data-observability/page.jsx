@@ -6,10 +6,10 @@ import {
   Real2Sec,
   RealSec,
 } from "../../../app/component/dataObservability/DataObservability.jsx";
-import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
+import { BannerSection } from "../../../component/utilities/InfraSectorSec";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { ContactSecDataAi } from "../../../app/component/utilities/ChallengeSolutionDataAi";
+import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 function page() {
   return (

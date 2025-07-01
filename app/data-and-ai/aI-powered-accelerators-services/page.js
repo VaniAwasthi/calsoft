@@ -5,11 +5,11 @@ import {
   CalTiaSec,
   CalsoftSec,
   ECalsoftSec,
-} from "../../../app/component/aIPoweredAcceleratorsServices/AIPoweredAccelerators.jsx";
-import { BannerSection } from "../../../app/component/utilities/InfraSectorSec";
+} from "../../../component/aIPoweredAcceleratorsServices/AIPoweredAccelerators.jsx";
+import { BannerSection } from "../../../component/utilities/InfraSectorSec";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { ContactSecDataAi } from "../../../app/component/utilities/ChallengeSolutionDataAi";
+import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 function page() {
   return (

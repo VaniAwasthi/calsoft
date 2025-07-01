@@ -7,14 +7,14 @@ import {
   TestSec,
   TestingChallenge,
   TestingTab,
-} from "../../../app/component/testingAs/TestingAs.jsx";
+} from "../../../component/testingAs/TestingAs.jsx";
 
 import React from "react";
 import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 import {
   BannerSection,
   ContactSecData,
-} from "../../../app/component/utilities/InfraSectorSec.jsx";
+} from "../../../component/utilities/InfraSectorSec.jsx";
 function page() {
   return (
     <>
