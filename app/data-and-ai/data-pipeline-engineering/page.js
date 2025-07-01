@@ -3,8 +3,8 @@ import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/Bannerwi
 
 import React from "react";
 
-import { BannerSection } from "../../component/utilities/InfraSectorSec";
-import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi";
+import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 import {
   ChallengeSolutionSec,
   DataArchitectureSec,

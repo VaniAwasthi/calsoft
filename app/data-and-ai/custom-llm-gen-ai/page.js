@@ -5,10 +5,10 @@ import {
   LlmSec,
   SystemSec,
 } from "../../component/customLlmGenAi/CustomLlmGgenAi.jsx";
-import { BannerSection } from "../../component/utilities/InfraSectorSec";
+import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 function page() {
   return (

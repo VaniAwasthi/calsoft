@@ -7,9 +7,9 @@ import {
   MonitorSec,
   UseSec,
 } from "../../component/AgenticAIPlanning/AgenticAIPlanning.jsx";
-import { BannerSection } from "../../component/utilities/InfraSectorSec";
+import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 function page() {
   return (

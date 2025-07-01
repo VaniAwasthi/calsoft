@@ -11,8 +11,8 @@ import {
   RiskMitigationSecTechnicalConsulting,
   StrategicSecTechnicalConsulting,
 } from "../../component/technical-consultant/HeroSecChallenge.jsx";
-import { BannerSection } from "../../component/utilities/InfraSectorSec";
-import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi";
+import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 const page = () => {
   return (
