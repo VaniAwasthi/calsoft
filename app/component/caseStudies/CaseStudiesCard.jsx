@@ -20,6 +20,7 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Link from "next/link";
 export const CaseStudiesCard = () => {
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
@@ -38,17 +39,27 @@ export const CaseStudiesCard = () => {
 
   const images = [Info1, Info2];
 
-  const cardData = new Array(18).fill(0).map((_, i) => ({
-    id: i + 1,
-    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry number ${
+  const cardData = new Array(18).fill(0).map((_, i) => {
+    const title = `Lorem Ipsum is simply dummy text of the printing and typesetting industry number ${
       i + 1
-    }`,
-    image: images[i % images.length],
-    link: `https://yourdomain.com/card/${i + 1}`,
-    author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    tags: ["AI", "Security"],
-    industry: i % 2 === 0 ? "Tech" : "Healthcare",
-  }));
+    }`;
+
+    return {
+      id: i + 1,
+      title, // dynamic title
+      image: images[i % images.length],
+      link: `https://yourdomain.com/card/${i + 1}`,
+      author: i % 2 === 0 ? "Anton Frank" : "John Doe",
+      tags: ["AI", "Security"],
+      industry: i % 2 === 0 ? "Tech" : "Healthcare",
+
+      // generate slug dynamically from title
+      slug: title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, ""),
+    };
+  });
 
   const [resources] = useState([...cardData]);
 
@@ -245,60 +256,62 @@ export const CaseStudiesCard = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 30 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
-              >
-                {/* Image */}
-                <div className="w-full h-3/5">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                    width={400}
-                    height={400}
-                  />
-                </div>
+              <Link href={`/insights/caseStudies/${item.slug}`} key={idx}>
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  transition={{ duration: 0.4, delay: idx * 0.1 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+                >
+                  {/* Image */}
+                  <div className="w-full h-3/5">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                      width={400}
+                      height={400}
+                    />
+                  </div>
 
-                {/* Content */}
-                <div className="w-full h-2/5 p-4 flex flex-col justify-between">
-                  <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
-                    {item.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2 my-2">
-                    {/* Container to hold tags */}
+                  {/* Content */}
+                  <div className="w-full h-2/5 p-4 flex flex-col justify-between">
+                    <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
+                      {item.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-2 my-2">
+                      {/* Container to hold tags */}
 
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex justify-between items-start">
+                      <FaArrowRight color="#2E3092" className="w-6 h-6" />
+                      <button
+                        onClick={() => handleCopy(item.link, item.id)}
+                        className="text-gray-500 hover:text-black"
+                        title="Copy link"
                       >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex justify-between items-start">
-                    <FaArrowRight color="#2E3092" className="w-6 h-6" />
-                    <button
-                      onClick={() => handleCopy(item.link, item.id)}
-                      className="text-gray-500 hover:text-black"
-                      title="Copy link"
-                    >
-                      <FaShareAlt color="#2E3092" className="w-6 h-6" />
-                    </button>
-                  </div>
+                        <FaShareAlt color="#2E3092" className="w-6 h-6" />
+                      </button>
+                    </div>
 
-                  {copiedId === item.id && (
-                    <span className="text-green-500 text-xs mt-2">
-                      Link copied!
-                    </span>
-                  )}
-                </div>
-              </motion.div>
+                    {copiedId === item.id && (
+                      <span className="text-green-500 text-xs mt-2">
+                        Link copied!
+                      </span>
+                    )}
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </AnimatePresence>
         </div>
