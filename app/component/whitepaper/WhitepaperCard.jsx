@@ -67,7 +67,7 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
     const authorMatch =
       activeFilters.Author === "All" || item.author === activeFilters.Author;
     const tagMatch =
-      activeFilters.Topics === "All" || item.tag === activeFilters.Topics;
+      activeFilters.Topics === "All" || item.tags === activeFilters.Topics;
     const industryMatch =
       activeFilters.Industry === "All" ||
       item.industry === activeFilters.Industry;
