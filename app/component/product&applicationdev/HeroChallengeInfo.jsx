@@ -98,7 +98,7 @@ export const IdeationSec = () => {
         title="Ideation & architecture orchestration"
         description="Translate ideas into actionable blueprints with
 clarity and precision."
-        buttonText="Case Study"
+        buttonText="Free Assessment"
         link="#"
         whatWeDo={[
           "Shape product ideas with stakeholders",
@@ -125,7 +125,7 @@ export const DevelopmentSec = () => {
       <InfraSection
         title="Development lifecycle services"
         description="Deliver scalable, secure products through agile development practices."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Use agile and CI/CD workflows",
@@ -152,7 +152,7 @@ export const QualityengineeringSec = () => {
       <InfraSection
         title="Quality engineering"
         description="Embed testing and validation throughout the product lifecycle for consistency."
-        buttonText="Case Study"
+        buttonText="Datasheet"
         link="#"
         whatWeDo={[
           "Test UX, speed, and data safety",
@@ -178,7 +178,7 @@ export const DevOpsSec = () => {
       <InfraSection
         title="DevOps + SRE with AI-driven enhancements"
         description="Automate, optimize, and proactively manage systems through intelligent DevOps."
-        buttonText="Case Study"
+        buttonText="Datasheet"
         link="#"
         whatWeDo={[
           "Automate build, test, deploy tasks",
@@ -204,7 +204,7 @@ export const DeploymentSec = () => {
       <InfraSection
         title="Deployment and upgrades"
         description="Execute smooth deployments and controlled upgrades without disrupting operations."
-        buttonText="Case Study"
+        buttonText="Datasheet"
         link="#"
         whatWeDo={[
           "Automate updates and rollbacks",
@@ -230,7 +230,7 @@ export const AccelerateSec = () => {
       <InfraSection
         title="Accelerate with Calsoft’s Mozaic"
         description="Fast-track product engineering using proven frameworks and ready assets."
-        buttonText="Case Study"
+        buttonText="Flyer"
         link="#"
         whatWeDo={[
           "Use starter kits and templates",
