@@ -16,9 +16,23 @@ import {
   ToKnowMoreSection,
 } from "../../../component/caseStudies/HeroSecLanding.jsx";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchCaseStudies } from "../../../store/actions/caseStudyActions.js";
 
 const Page = () => {
-  const data = [
+  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+  const dispatch = useDispatch();
+  const { data, isLoading, error } = useSelector((state) => state.caseStudies);
+  useEffect(() => {
+    dispatch(fetchCaseStudies());
+  }, [dispatch]);
+  const CaseStudiesCardData = data?.data;
+  console.log(CaseStudiesCardData, "data");
+  const businessValueData2 = data?.data?.business_cards;
+  const Heroimage1 = `${baseUrl}${CaseStudiesCardData?.card_one}`;
+  console.log(Heroimage1, "image");
+  const businessValueData = [
     {
       icon: BusinessIcon1,
       title: "Increased",
@@ -43,14 +57,12 @@ const Page = () => {
   return (
     <div>
       <HeroSectionLanding
-        image1={HeroRight1}
-        image2={HeroRight2}
-        title="VMware Migration"
-        title2="for Cloud & Edge Providers"
-        subtitle="Smart Legacy "
-        subtitle2="Infrastructure Modernization"
-        description="Simplifying VMware migration to the cloud – minimal downtime and engineering effort"
-        buttonLabel="Download Case Study"
+        image1={`${baseUrl}${CaseStudiesCardData?.card_one}`}
+        image2={`${baseUrl}${CaseStudiesCardData?.card_two}`}
+        title={CaseStudiesCardData?.hero_title1}
+        subtitle={CaseStudiesCardData?.hero_title2}
+        description={CaseStudiesCardData?.hero_content}
+        buttonLabel={CaseStudiesCardData?.herobtn_text}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         backgroundImage={BgImage}
@@ -58,17 +70,17 @@ const Page = () => {
       <InfoWithFormSection
         heading="Calsoft In focus:"
         headingHighlight="Proven Approach"
-        description1="Calsoft built a lightweight, Command-Line Interface (CLI)-based migration tool to simplify and standardize the entire VM migration process. This solution approach enabled customers to manage migrations independently without needing deep platform expertise or support, while ensuring a consistent, reliable migration experience."
-        description2="The solution seamlessly fits into existing infrastructure workflows and automation pipelines, supporting both manual and programmatic execution."
-        checkboxLabel="Download VMware Workload Migration Solution Report"
+        description1={CaseStudiesCardData?.calsoftinfocus_text}
         buttonLabel="Submit"
         onSubmit={() => {
           console.log("submit");
         }}
+        isforLayout={true}
+        isforLayoutData={CaseStudiesCardData?.hubspot_form}
       />
       <BusinessValueSection
         backgroundImage={BusinessValueBg}
-        values={data}
+        values={businessValueData}
         title="Business Value"
       />
       <ToKnowMoreSection

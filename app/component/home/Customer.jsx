@@ -39,7 +39,7 @@ const Customer = () => {
     {
       id: 1,
       image: Experience,
-      value: "25+",
+      value: "26+",
       label: "Years' Experience",
     },
     {
@@ -122,8 +122,8 @@ const Customer = () => {
                   viewport={{ once: false, amount: 0.3 }}
                 >
                   <p className="mt-4 w-full md:mt-[3rem] text-[13px] md:text-base mb-8 text-[#7E7E7E] md:w-[300px]">
-                    Powering Fortune 500 companies, fast-growing start-ups, and
-                    digital innovators in their transformation journey.
+                    Powering 21+ Fortune 500 customers, fast-growing start-ups,
+                    and digital innovators in their transformation journey.
                   </p>
                 </motion.div>
               </div>

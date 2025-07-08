@@ -7,9 +7,7 @@ export const HeroSectionLanding = ({
   image1,
   image2,
   title,
-  title2,
   subtitle,
-  subtitle2,
   description,
   buttonLabel,
   buttonImage,
@@ -48,12 +46,16 @@ export const HeroSectionLanding = ({
               <Image
                 src={image2}
                 alt="Card 1"
-                className="w-20 mb-0 md:mt-8 md:h-[400px] md:w-[200px] -translate-y-10"
+                width={200}
+                height={200}
+                className="w-20 mb-0 md:mt-8 md:h-[400px] md:w-[200px] -translate-y-10 rounded-lg"
               />
               <Image
                 src={image1}
+                width={200}
+                height={200}
                 alt="Card 2"
-                className="w-40 md:w-[220px] md:mb-0  h-40 md:h-[300px]"
+                className="w-40 md:w-[220px] md:mb-0  h-40 md:h-[300px] rounded-lg"
               />
             </motion.div>
 
@@ -70,10 +72,9 @@ export const HeroSectionLanding = ({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.3 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="text-3xl xl:text-[40px] font-bold leading-tight"
+                className="text-3xl xl:text-[40px]  w-full font-bold leading-tight"
               >
                 {title}
-                <br className="md:block hidden" />s{title2}
               </motion.h2>
 
               {subtitle && (
@@ -82,11 +83,9 @@ export const HeroSectionLanding = ({
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.2, delay: 0.3 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="text-sm md:text-[24px] font-light mt-6"
+                  className="text-sm md:text-[24px] w-full font-light mt-6"
                 >
                   {subtitle}
-                  <br className="md:block hidden" />
-                  {subtitle2}
                 </motion.p>
               )}
               <motion.p
@@ -129,6 +128,8 @@ export const InfoWithFormSection = ({
   description2,
   checkboxLabel,
   buttonLabel,
+  isforLayoutData,
+  isforLayout,
   onSubmit = () => {},
 }) => {
   return (
@@ -140,68 +141,75 @@ export const InfoWithFormSection = ({
           <br className="md:block hidden" />
           {headingHighlight}
         </h2>
-        <p className="text[#4C4C4C] text-base md:text-lg mb-4">
-          {description1}
-        </p>
-        <p className="text[#4C4C4C] text-base md:text-lg">{description2}</p>
+        <div
+          className="text[#4C4C4C] text-base md:text-lg mb-4"
+          dangerouslySetInnerHTML={{ __html: description1 }}
+        ></div>
       </div>
       {/* Right: Form */}
-      <form
-        className="flex-1  rounded-lg  p-4 md:p-8 max-w-2xl w-full"
-        onSubmit={(e) => {
-          e.preventDefault();
-          onSubmit();
-        }}
-      >
-        <div className="flex flex-col md:flex-row gap-7 mb-3">
-          <input
-            type="text"
-            placeholder="First Name*"
-            className="flex-1 bg-[#F5F5F5] border border-gray-300 rounded px-4 py-4 my-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#2B3990]"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Last name*"
-            className="flex-1 bg-[#F5F5F5] border border-gray-300 rounded px-3 py-4 my-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#2B3990]"
-            required
-          />
-        </div>
-        <input
-          type="email"
-          placeholder="Work Email*"
-          className="w-full bg-[#F5F5F5] border border-gray-300 rounded px-3 py-4 my-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-[#2B3990]"
-          required
-        />
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          className="w-full bg-[#F5F5F5] border border-gray-300 rounded px-3 py-4 my-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-[#2B3990]"
-        />
-        <div className="flex items-center mb-4">
-          <input
-            type="checkbox"
-            id="download-report"
-            className="mr-2 accent-[#2B3990]"
-          />
-          <label htmlFor="download-report" className="text-xs text-gray-700">
-            {checkboxLabel}
-          </label>
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-[#C00] hover:bg-[#a00] text-white font-semibold rounded-md py-4 my-3 text-base flex items-center justify-center gap-2 transition"
+
+      {isforLayout ? (
+        <div dangerouslySetInnerHTML={{ __html: isforLayoutData }}></div>
+      ) : (
+        <form
+          className="flex-1  rounded-lg  p-4 md:p-8 max-w-2xl w-full"
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSubmit();
+          }}
         >
-          {buttonLabel}
-          <span className="ml-1">➔</span>
-        </button>
-      </form>
+          <div className="flex flex-col md:flex-row gap-7 mb-3">
+            <input
+              type="text"
+              placeholder="First Name*"
+              className="flex-1 bg-[#F5F5F5] border border-gray-300 rounded px-4 py-4 my-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#2B3990]"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Last name*"
+              className="flex-1 bg-[#F5F5F5] border border-gray-300 rounded px-3 py-4 my-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#2B3990]"
+              required
+            />
+          </div>
+          <input
+            type="email"
+            placeholder="Work Email*"
+            className="w-full bg-[#F5F5F5] border border-gray-300 rounded px-3 py-4 my-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-[#2B3990]"
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            className="w-full bg-[#F5F5F5] border border-gray-300 rounded px-3 py-4 my-3 text-sm mb-3 focus:outline-none focus:ring-2 focus:ring-[#2B3990]"
+          />
+          <div className="flex items-center mb-4">
+            <input
+              type="checkbox"
+              id="download-report"
+              className="mr-2 accent-[#2B3990]"
+            />
+            <label htmlFor="download-report" className="text-xs text-gray-700">
+              {checkboxLabel}
+            </label>
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-[#C00] hover:bg-[#a00] text-white font-semibold rounded-md py-4 my-3 text-base flex items-center justify-center gap-2 transition"
+          >
+            {buttonLabel}
+            <span className="ml-1">➔</span>
+          </button>
+        </form>
+      )}
     </div>
   );
 };
 
 //  responsive BusinessValueSection component
 export const BusinessValueSection = ({ title, values, backgroundImage }) => {
+  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+
   return (
     <section className="w-full max-w-7xl mx-auto px-2 md:px-8 md:my-[3rem] my-10">
       <div className="bg-[#1E1E1E] w-full h-[1px] my-6" />
@@ -243,7 +251,7 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
                 className="flex flex-col items-center justify-center"
               >
                 <Image
-                  src={item.icon}
+                  src={`${baseUrl}${item.image}`}
                   alt={item.title}
                   width={40}
                   height={40}
@@ -256,7 +264,7 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
                   viewport={{ once: false, amount: 0.3 }}
                   className="text-lg md:text-2xl font-bold mb-1 px-2 mt-2"
                 >
-                  {item.title}
+                  {item.number}
                 </motion.div>
                 <motion.div
                   initial={{ y: 50, opacity: 0 }}
@@ -265,7 +273,7 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
                   viewport={{ once: false, amount: 0.3 }}
                   className="text-xs md:text-sm font-light opacity-90 mb-2"
                 >
-                  {item.subtitle}
+                  {item.content}
                 </motion.div>
               </motion.div>
               {/* Divider: only show on desktop and not for last item */}

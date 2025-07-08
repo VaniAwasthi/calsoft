@@ -241,7 +241,7 @@ export const DataInfoSection = ({
                 viewport={{ once: false, amount: 0.3 }}
                 className=" text-[#2E3092] font-semibold mb-2 text-[20px]"
               >
-                Business Impact:
+                Business impact:
               </motion.h3>
               <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24]">
                 {businessImpact.map((item, index) => (

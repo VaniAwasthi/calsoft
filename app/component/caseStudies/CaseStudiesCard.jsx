@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 import {
-  FaArrowLeft,
   FaArrowRight,
   FaGreaterThan,
   FaLessThan,
   FaShareAlt,
 } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Info1 from "../../assets/Infographic/Info1.webp";
 import Info2 from "../../assets/Infographic/Info2.webp";
@@ -21,7 +20,9 @@ import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+
 export const CaseStudiesCard = () => {
+  // ✅ All hooks must be declared before any early returns
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
   const [activeFilters, setActiveFilters] = useState({
@@ -43,17 +44,14 @@ export const CaseStudiesCard = () => {
     const title = `Lorem Ipsum is simply dummy text of the printing and typesetting industry number ${
       i + 1
     }`;
-
     return {
       id: i + 1,
-      title, // dynamic title
+      title,
       image: images[i % images.length],
       link: `https://yourdomain.com/card/${i + 1}`,
       author: i % 2 === 0 ? "Anton Frank" : "John Doe",
       tags: ["AI", "Security"],
       industry: i % 2 === 0 ? "Tech" : "Healthcare",
-
-      // generate slug dynamically from title
       slug: title
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, "-")
@@ -105,19 +103,17 @@ export const CaseStudiesCard = () => {
     if (index < 0 || index >= totalPages) return;
     setCurrentPage(index);
   };
+
   const caseStudyData = {
     title:
-      " Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
+      "Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
     description: [
-      "A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....",
-      "A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....",
+      "A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud...",
     ],
-
     stats: [
-      { count: "40%", text: " faster validation cycles" },
-      { count: "30% ", text: "lower infrastructure costs" },
-      { count: "20% ", text: "increase in test accuracy" },
-      { count: "20% ", text: "increase in test accuracy" },
+      { count: "40%", text: "faster validation cycles" },
+      { count: "30%", text: "lower infrastructure costs" },
+      { count: "20%", text: "increase in test accuracy" },
     ],
   };
   return (
