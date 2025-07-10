@@ -1,26 +1,41 @@
-import {
-  FETCH_CASESTUDIES_FAILURE,
-  FETCH_CASESTUDIES_REQUEST,
-  FETCH_CASESTUDIES_SUCCESS,
-} from "../actions/type";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  data: [],
+  list: [],
+  data: null,
+  selectedId: null,
   isLoading: false,
   error: null,
 };
 
-export const caseStudyReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case FETCH_CASESTUDIES_REQUEST:
-      return { ...state, isLoading: true, error: null };
-    case FETCH_CASESTUDIES_SUCCESS:
-      return { ...state, isLoading: false, data: action.payload };
-    case FETCH_CASESTUDIES_FAILURE:
-      return { ...state, isLoading: false, error: action.payload };
-    default:
-      return state;
-  }
-};
+const caseStudySlice = createSlice({
+  name: "caseStudy",
+  initialState,
+  reducers: {
+    setCaseStudyList: (state, action) => {
+      state.list = action.payload.data;
+    },
+    setCaseStudyData: (state, action) => {
+      state.data = action.payload;
+    },
+    setSelectedCaseStudyId: (state, action) => {
+      state.selectedId = action.payload;
+    },
+    setLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
+    setError: (state, action) => {
+      state.error = action.payload;
+    },
+  },
+});
 
-export default caseStudyReducer;
+export const {
+  setCaseStudyList,
+  setCaseStudyData,
+  setSelectedCaseStudyId,
+  setLoading,
+  setError,
+} = caseStudySlice.actions;
+
+export default caseStudySlice.reducer;

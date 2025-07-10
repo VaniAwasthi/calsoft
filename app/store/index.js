@@ -1,15 +1,11 @@
+// store/index.js
 import { configureStore } from "@reduxjs/toolkit";
-import { combineReducers } from "redux";
-import { caseStudyReducer } from "./reducers/caseStudyReducer";
-import { loadingReducer } from "./reducers/loadingReducer";
+import caseStudyReducer from "./reducers/caseStudyReducer.js";
+import loadingReducer from "./reducers/loadingReducer.js";
 
-const rootReducer = combineReducers({
-  caseStudies: caseStudyReducer,
-  loading: loadingReducer,
+export const store = configureStore({
+  reducer: {
+    loading: loadingReducer,
+    caseStudy: caseStudyReducer,
+  },
 });
-
-const store = configureStore({
-  reducer: rootReducer,
-});
-
-export default store;

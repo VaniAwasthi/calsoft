@@ -1,5 +1,5 @@
 "use client";
-import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../assets/Data-Ai/technical-consultant/TechnicalBanner.webp";
 
 import React from "react";
 
@@ -26,11 +26,11 @@ const page = () => {
         title={
           <>
             Strategize, stabilize, and scale
-            <br className="hidden md:block" />
-            with expert engineering insight
+            <br className="hidden md:block px-1" /> with expert engineering
+            insight
           </>
         }
-        buttonText="Know More"
+        buttonText="Explore Our Approach"
         buttonLink="#"
       />
       <PlatformSecTechnicalConsulting />

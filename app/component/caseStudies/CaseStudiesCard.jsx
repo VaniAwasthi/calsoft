@@ -20,9 +20,17 @@ import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import { fetchCaseStudiesList } from "../../store/actions/caseStudyActions.js";
+import { setSelectedCaseStudyId } from "../../store/reducers/caseStudyReducer.js";
+import { title } from "process";
 
 export const CaseStudiesCard = () => {
-  // ✅ All hooks must be declared before any early returns
+  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+  const dispatch = useDispatch();
+  const listData = useSelector((state) => state.caseStudy.list);
+
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
   const [activeFilters, setActiveFilters] = useState({
@@ -37,29 +45,34 @@ export const CaseStudiesCard = () => {
     Topics: ["All", "Security", "AI"],
     Author: ["All", "Anton Frank", "John Doe"],
   };
+  const router = useRouter();
+
+  useEffect(() => {
+    dispatch(fetchCaseStudiesList());
+  }, [dispatch]);
+
+  const handleClick = (id, slug) => {
+    console.log(id, "id");
+    dispatch(setSelectedCaseStudyId(id));
+    // this should be correct
+    router.push(`/insights/caseStudies/${slug}`);
+  };
 
   const images = [Info1, Info2];
 
-  const cardData = new Array(18).fill(0).map((_, i) => {
-    const title = `Lorem Ipsum is simply dummy text of the printing and typesetting industry number ${
-      i + 1
-    }`;
-    return {
-      id: i + 1,
-      title,
-      image: images[i % images.length],
-      link: `https://yourdomain.com/card/${i + 1}`,
-      author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-      tags: ["AI", "Security"],
-      industry: i % 2 === 0 ? "Tech" : "Healthcare",
-      slug: title
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/(^-|-$)/g, ""),
-    };
-  });
-
-  const [resources] = useState([...cardData]);
+  const resources = listData.map((item) => ({
+    ...item,
+    id: item._id,
+    title: item.hero_title1,
+    image: item.card_one ? `${baseUrl}/${item.card_one}` : Info1, // fallback image
+    slug: item.hero_title1
+      ? item.hero_title1
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "")
+      : "untitled",
+    link: `https://yourdomain.com/card/${item._id}`,
+  })); // fallback if not yet loaded
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -80,12 +93,12 @@ export const CaseStudiesCard = () => {
       console.error("Copy failed:", error);
     }
   };
-
   const filteredResources = resources.filter((item) => {
     const authorMatch =
       activeFilters.Author === "All" || item.author === activeFilters.Author;
     const tagMatch =
-      activeFilters.Topics === "All" || item.tag === activeFilters.Topics;
+      activeFilters.Topics === "All" ||
+      item.tags.includes(activeFilters.Topics);
     const industryMatch =
       activeFilters.Industry === "All" ||
       item.industry === activeFilters.Industry;
@@ -252,7 +265,11 @@ export const CaseStudiesCard = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
-              <Link href={`/insights/caseStudies/${item.slug}`} key={idx}>
+              <div
+                onClick={() => handleClick(item.id, item.slug)}
+                key={idx}
+                className="cursor-pointer"
+              >
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
@@ -280,14 +297,14 @@ export const CaseStudiesCard = () => {
                     <div className="flex flex-wrap gap-2 my-2">
                       {/* Container to hold tags */}
 
-                      {item.tags.map((tag) => (
+                      {/* {item.tags.map((tag) => (
                         <span
                           key={tag}
                           className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
                         >
                           {tag}
                         </span>
-                      ))}
+                      ))} */}
                     </div>
                     <div className="flex justify-between items-start">
                       <FaArrowRight color="#2E3092" className="w-6 h-6" />
@@ -307,7 +324,7 @@ export const CaseStudiesCard = () => {
                     )}
                   </div>
                 </motion.div>
-              </Link>
+              </div>
             ))}
           </AnimatePresence>
         </div>

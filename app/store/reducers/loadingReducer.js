@@ -1,14 +1,20 @@
-import { START_LOADING, STOP_LOADING } from "../actions/type";
+// store/slices/loadingSlice.js
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { isLoading: false };
+const loadingSlice = createSlice({
+  name: "loading",
+  initialState: {
+    isLoading: false,
+  },
+  reducers: {
+    startLoading: (state) => {
+      state.isLoading = true;
+    },
+    stopLoading: (state) => {
+      state.isLoading = false;
+    },
+  },
+});
 
-export const loadingReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case START_LOADING:
-      return { isLoading: true };
-    case STOP_LOADING:
-      return { isLoading: false };
-    default:
-      return state;
-  }
-};
+export const { startLoading, stopLoading } = loadingSlice.actions;
+export default loadingSlice.reducer;

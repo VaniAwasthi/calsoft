@@ -212,7 +212,7 @@ export const BannerSection = ({
           {buttonText && (
             <Link
               href={buttonLink}
-              className="bg-[#C00404] hover:bg-red-800 text-white w-[150px] px-6  md:px-8 py-2 rounded-lg text-sm font-medium transition mt-4 md:mt-0"
+              className="bg-[#C00404] hover:bg-red-800 text-white w-[200px] px-6  md:px-8 py-2 rounded-lg text-sm font-medium transition mt-4 md:mt-0"
             >
               {buttonText}
             </Link>

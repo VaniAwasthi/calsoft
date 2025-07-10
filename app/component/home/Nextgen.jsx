@@ -191,9 +191,9 @@ const Nextgen = () => {
                             <div className="absolute inset-0 flex items-center justify-center bg-[#BA0007]  text-white rounded-lg rotate-y-180 transform scale-105 mx-2 backface-hidden">
                               {flippedCards[card.id] && (
                                 <motion.p
-                                  initial={{ y: 50, opacity: 0 }}
-                                  whileInView={{ y: 0, opacity: 1 }}
-                                  transition={{ duration: 0.5, delay: 0.2 }}
+                                  initial={{ x: 50, opacity: 0 }}
+                                  whileInView={{ x: 0, opacity: 1 }}
+                                  transition={{ duration: 0.1, delay: 0 }}
                                   viewport={{ once: false, amount: 0.3 }}
                                   className="text-[6px] md:text-[8px] xl:text-[10px] font-semibold text-center px-1"
                                 >

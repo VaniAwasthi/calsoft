@@ -131,6 +131,7 @@ const Customer = () => {
               <Swiper
                 slidesPerView={3}
                 spaceBetween={20}
+                loop={true}
                 breakpoints={{
                   320: {
                     slidesPerView: 2,
@@ -145,7 +146,8 @@ const Customer = () => {
                     spaceBetween: 20,
                   },
                 }}
-                modules={[Scrollbar]}
+                modules={[Scrollbar, Autoplay]}
+                autoplay={{ delay: 6000 }}
                 scrollbar={{
                   hide: false,
                 }}

@@ -1,6 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
@@ -8,7 +8,7 @@ import Image from "next/image";
 import Arrow from "../../assets/Data-Ai/arrowupward.svg";
 import ButtonLayout from "./ButtonLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import ContactImg from "../../assets/industries/hitech/contactbg.webp";
+import ContactImg from "../../assets/Data-Ai/PipeLine/ConnectBg.webp";
 
 export const ChallengeSolutionComp = ({
   data,
@@ -32,7 +32,7 @@ export const ChallengeSolutionComp = ({
         >
           {GradientHeading}
 
-          <span className="text-black font-semibold px-3">{BlackHeading}</span>
+          <span className="text-black font-semibold px-1">{BlackHeading}</span>
         </motion.h2>
       </motion.div>
 
@@ -78,7 +78,8 @@ export const ChallengeSolutionComp = ({
 
       <div className="block md:hidden mt-2">
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
+          autoplay={{ delay: 2000 }}
           pagination={{ clickable: true }}
           spaceBetween={20}
           slidesPerView={1}
@@ -166,7 +167,7 @@ export const DataInfoSection = ({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              className={`text-2xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent w-full ${
+              className={`text-2xl md:text-[30px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent w-full ${
                 imageLeft ? "md:w-[95%]" : "md:w-[65%]"
               }`}
             >
@@ -180,7 +181,7 @@ export const DataInfoSection = ({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-sm md:text-[18px] font-semibold mt-3 md:mt-6 mb-6 md:mb-0 w-full md:w-[65%]"
+              className="text-sm md:text-[16px] font-semibold mt-3 md:mt-6 mb-6 md:mb-0 w-full md:w-[65%]"
             >
               {description}
             </motion.p>
@@ -199,13 +200,13 @@ export const DataInfoSection = ({
                   image={ButtonImage}
                   hoverImage={ButtonImage}
                   link={link}
-                  className="!w-[150px] !h-[60px]"
+                  className="!w-[200px] !h-[50px]"
                 />
               </motion.div>
             )}
           </motion.div>
 
-          <div className="grid grid-cols-1 w-full md:w-2/4 mt-3 md:mt-8 items-start">
+          <div className="grid grid-cols-1 w-full md:w-2/4 mt-3 md:mt-8 items-start px-2">
             {/* What We Do */}
             <div className="md:pr-4">
               <motion.h3

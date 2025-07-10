@@ -1,31 +1,27 @@
-import axiosInstance from "../api-config/axiosInstance";
+// store/actions/caseStudyActions.js
 import {
-  FETCH_CASESTUDIES_REQUEST,
-  FETCH_CASESTUDIES_SUCCESS,
-  FETCH_CASESTUDIES_FAILURE,
-  START_LOADING,
-  STOP_LOADING,
-} from "./type";
+  setCaseStudyData,
+  setCaseStudyList,
+  setError,
+} from "../reducers/caseStudyReducer";
+import axiosInstance from "../api-config/axiosInstance.js";
 
-export const fetchCaseStudies = () => async (dispatch) => {
-  dispatch({ type: START_LOADING }); // global loader
-  dispatch({ type: FETCH_CASESTUDIES_REQUEST });
-
+// Fetch all case studies list
+export const fetchCaseStudiesList = () => async (dispatch) => {
   try {
-    const response = await axiosInstance.get(
-      "/casestudy/68691234f16d0ff3e8f15e5d"
-    );
-
-    dispatch({
-      type: FETCH_CASESTUDIES_SUCCESS,
-      payload: response.data,
-    });
+    const response = await axiosInstance.get("/casestudy"); // ✅ No base URL needed here
+    dispatch(setCaseStudyList(response.data));
   } catch (error) {
-    dispatch({
-      type: FETCH_CASESTUDIES_FAILURE,
-      payload: error.message,
-    });
-  } finally {
-    dispatch({ type: STOP_LOADING }); // stop global loader
+    dispatch(setError(error.message));
+  }
+};
+
+// Fetch one case study by ID
+export const fetchCaseStudyById = (id) => async (dispatch) => {
+  try {
+    const response = await axiosInstance.get(`/casestudy/${id}`);
+    dispatch(setCaseStudyData(response.data));
+  } catch (error) {
+    dispatch(setError(error.message));
   }
 };

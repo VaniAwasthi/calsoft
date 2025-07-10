@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientProvider from "./ClientProvider";
 import ClientLayoutWrapper from "./ClientLayoutWrapper";
-
+import Script from "next/script";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,6 +33,11 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
+      <Script
+        id="hubspot-script"
+        strategy="afterInteractive"
+        src="https://js.hs-scripts.com/9496305.js"
+      />
       <body className="overflow-x-hidden min-h-screen flex flex-col">
         <ClientProvider>
           <ClientLayoutWrapper>{children}</ClientLayoutWrapper>

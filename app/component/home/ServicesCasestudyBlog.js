@@ -34,14 +34,14 @@ export const Services = () => {
       icon: service1,
       title: "AI-Powered Test Automation",
       description:
-        "Accelerate releases with intelligent,self-healing automation frameworks.",
+        "Accelerate releases with intelligent, self-healing automation frameworks.",
       link: "/",
     },
     {
       icon: service2,
       title: "VMware Migration Services",
       description:
-        "Seamlessly shift from VMware to OpenStack, Nutanix, Azure, or AWS.",
+        "Seamlessly shift from VMware to OpenStack, Nutanix, Azure or AWS.",
       link: "/",
     },
     {
@@ -69,7 +69,7 @@ export const Services = () => {
       icon: service6,
       title: "Storage & Data Lifecycle Management",
       description:
-        "Modernize storage for performance, cost-efficiency, and compliance.",
+        "Modernize storage for performance, cost-efficiency and compliance.",
       link: "/",
     },
   ];
@@ -321,7 +321,7 @@ export const Casestudy = () => {
                 <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
                   <Image
                     src={logo2}
-                    className="w-full brightness-1 invert-100"
+                    className="w-full"
                     alt="logo"
                     width={100}
                     height={100}
@@ -350,13 +350,13 @@ export const Casestudy = () => {
                     href={caseStudyData.pdfLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative flex mt-6 md:mt-10  w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group hover-border-[#BA0007] hover-border-1"
+                    className="relative flex mt-6 md:mt-10  w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-2 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group hover-border-[#BA0007] hover-border-1"
                     style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25)" }}
                     whileHover={{ scale: 1.03 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
                     <span className="relative justify-center  z-10 group-hover:text-[#BA0007]  w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
-                      {caseStudyData.buttonText}{" "}
+                      {caseStudyData.buttonText}
                       <IoArrowForwardCircleSharp className="text-3xl" />
                     </span>
                     <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>

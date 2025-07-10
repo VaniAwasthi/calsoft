@@ -62,8 +62,7 @@ export const AiChallengeSec = () => {
   const data = [
     {
       tag: "Test acceleration",
-      challenge:
-        "Is manual QA slowing down release cycles for modern apps?",
+      challenge: "Is manual QA slowing down release cycles for modern apps?",
       solution:
         "Use CalTIA to automate test coverage analysis and reduce redundant test execution",
     },
@@ -83,8 +82,7 @@ export const AiChallengeSec = () => {
     },
     {
       tag: "Engineering velocity",
-      challenge:
-        "Can’t scale delivery without overloading internal teams?",
+      challenge: "Can’t scale delivery without overloading internal teams?",
       solution:
         "Plug in accelerators across the lifecycle to reduce engineering effort on repeatable tasks",
     },
@@ -94,7 +92,7 @@ export const AiChallengeSec = () => {
       <ChallengeSolutionComp
         data={data}
         BlackHeading="Accelerate outcomes with AI-powered tools"
-        GradientHeading=" Challenge to solutions :"
+        GradientHeading=" Challenge to solutions:"
       />
     </>
   );
