@@ -296,11 +296,8 @@ export default function Navbar() {
     },
     {
       title: "ABOUT",
-      href: "/about",
-      submenu: [
-        { title: "Submenu Item 1", href: "#" },
-        { title: "Submenu Item 2", href: "#" },
-      ],
+      href: "/about-us",
+      submenu: [{ title: "Career", href: "#" }],
     },
   ];
 
