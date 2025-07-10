@@ -228,8 +228,8 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
                 <Image
                   src={item.image ? `${baseUrl}/${item.image}` : Icon}
                   alt={item.number}
-                  width={40}
-                  height={40}
+                  width={35}
+                  height={35}
                   className="mx-auto"
                 />
                 <motion.div
@@ -237,7 +237,7 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="text-lg md:text-2xl font-bold mb-1 px-2 mt-2"
+                  className="text-lg md:text-xl font-bold mb-1 px-2 mt-2"
                 >
                   {item.number}
                 </motion.div>
@@ -246,7 +246,7 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="text-xs md:text-sm font-light opacity-90 mb-2"
+                  className="text-[13px] font-light opacity-90 mb-2"
                 >
                   {item.content}
                 </motion.div>
@@ -254,7 +254,7 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
               {/* Divider: only show on desktop and not for last item */}
               {idx !== values.length - 1 && (
                 <div
-                  className="hidden md:block absolute mt-[6rem] right-0 transform -translate-y-1/2 h-3/5 border-r border-white/30"
+                  className="hidden md:block absolute mt-[8rem] right-0 transform -translate-y-1/2 h-3/5 border-r border-white/30"
                   style={{ height: "60%", minHeight: 60 }}
                 />
               )}
