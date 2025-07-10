@@ -7,10 +7,18 @@ import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import blogexpanImage from "../../../assets/blog/blogexpanImage.webp";
 export const Banner = ({ blog }) => {
+  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+
   return (
     <section className="md:py-7 px-7 md:px-20">
       <div className="container mx-auto   w-full border-b-[2px] border-[#F05A39] pb-4 ">
-        <Image src={blogexpanImage} alt="Vlog-expan-image" />
+        <Image
+          width={500}
+          height={100}
+          src={blog.image ? `${baseUrl}${blog.image}` : blogexpanImage}
+          alt="Vlog-expan-image"
+          className="w-full"
+        />
         <div className="grid  grid-cols-12 items-center gap-6">
           <h1 className="col-span-12 md:col-span-9  text-3xl md:text-5xl font-bold leading-tight my-4">
             {blog.title}
@@ -65,24 +73,41 @@ export const ArticleContent = ({ blog }) => {
           <div className="col-span-12 md:col-span-8  space-y-6">
             {/* Date, Read Time, Author */}
             <div className="text-sm text-gray-500 flex gap-3">
-              <span>{blog.date}</span>
+              <span className="text-[#939393]">
+                {new Date(blog.date).toLocaleString("en-IN", {
+                  timeZone: "Asia/Kolkata",
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                })}
+              </span>
               <span>|</span>
-              <span>{blog.readTime} min read</span>
+              <span>{blog.read_time} min read</span>
               <span>|</span>
-              <span className="font-medium">by {blog.author}</span>
+              {blog.authorData ? (
+                <>
+                  <span className="text-[#E36C0A]">{blog.authorData.name}</span>
+                  <span className="text-[#939393]">
+                    {new Date(blog.authorData.createdAt).toLocaleString(
+                      "en-IN",
+                      {
+                        timeZone: "Asia/Kolkata",
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      }
+                    )}
+                  </span>
+                </>
+              ) : (
+                <span className="text-gray-400">Unknown Author</span>
+              )}
             </div>
-
             {/* Blog Paragraphs */}
-            {blog.content.map((para, i) => (
-              <p
-                key={i}
-                className={` text-xs md:text-base ${
-                  i === 0 ? "text-black font-medium" : "text-gray-700"
-                }`}
-              >
-                {para}
-              </p>
-            ))}
+            <p
+              dangerouslySetInnerHTML={{ __html: blog.content }}
+              className={` text-xs md:text-base text-[black] `}
+            ></p>
           </div>
 
           {/* Right Side: Sidebar */}
@@ -147,14 +172,15 @@ export const ArticleContent = ({ blog }) => {
             {/* Tags */}
             <div>
               <div className="flex flex-col flex-wrap gap-2 my-2">
-                {blog.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="bg-black text-white w-[40%]  text-center rounded-3xl text-sm px-4 py-4"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                {Array.isArray(blog?.tagData) &&
+                  blog.tagData.map((tag) => (
+                    <span
+                      key={tag._id}
+                      className="bg-black text-white w-[40%] text-center rounded-3xl text-sm px-4 py-4"
+                    >
+                      {tag.name}
+                    </span>
+                  ))}
               </div>
             </div>
           </section>

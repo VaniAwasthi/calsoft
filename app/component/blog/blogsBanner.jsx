@@ -4,27 +4,7 @@ import cardImg1 from "../../assets/blog/idcBanner1.webp";
 import cardImg2 from "../../assets/blog/banner2.webp";
 import { motion } from "framer-motion";
 
-export const BlogsBanner = () => {
-  const cards = [
-    {
-      label: "Analyst Report",
-      title: "IDC MarketScape: Worldwide Cloud Security Services in the AI Era",
-      description:
-        "In a fiercely competitive landscape, Trustwave has been named a Major Player.",
-      image: cardImg1,
-      link: "#",
-    },
-    {
-      label: "Webinar",
-      title:
-        "2025 Healthcare Risk Radar: Latest Trends in Healthcare Cyber Threats",
-      description:
-        "An in-depth analysis of the most significant cybersecurity threats facing healthcare.",
-      image: cardImg2,
-      link: "#",
-    },
-  ];
-
+export const BlogsBanner = ({ cards }) => {
   return (
     <section className="bg-[#2b2eae] text-white py-15 px-4 sm:px-6 lg:px-16">
       <div className="container mx-auto px-4 md:px-6 w-full">
