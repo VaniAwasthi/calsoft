@@ -3,8 +3,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/api/casestudy/:path*",
-        destination: "http://35.162.115.74/api/casestudy/:path*",
+        source: "/api/:path*",
+        destination: "http://35.162.115.74/api/:path*",
       },
     ];
   },

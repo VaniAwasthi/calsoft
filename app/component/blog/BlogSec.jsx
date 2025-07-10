@@ -10,6 +10,10 @@ import ArrowIcon from "../../assets/blog/rightArrow.svg";
 import Loadmore from "../../assets/blog/loadmoreicon.svg";
 import { blogData } from "../utilities/data/BlogData";
 import { useRouter } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogList } from "../../store/actions/blogAction.js";
+import { setSelectedBlogId } from "../../store/reducers/blogReducer.js";
+import blogexpanImage from "../../assets/blog/blog-2.webp";
 
 const filters = {
   Industry: ["All", "Tech", "Healthcare"],
@@ -18,7 +22,20 @@ const filters = {
 };
 
 export default function ResourceGrid() {
-  const [resources] = useState([...blogData]);
+  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBlogList());
+  }, []);
+  const BlogsList = useSelector((state) => state.blogs.list);
+  const resources = BlogsList;
+  const slugify = (text) => {
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-") // replace spaces & symbols
+      .replace(/^-+|-+$/g, ""); // trim hyphens
+  };
   const [visibleCount, setVisibleCount] = useState(6);
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
@@ -28,9 +45,11 @@ export default function ResourceGrid() {
   const [openDropdown, setOpenDropdown] = useState("");
   const loadMoreRef = useRef(null);
   const router = useRouter();
-
-  const handleBlogClick = (id) => {
-    router.push(`/insights/blogs/blog-expand/${id}`);
+  const handleBlogClick = (item) => {
+    const slug = item.slug ? item.slug : slugify(item.title); // fallback
+    dispatch(setSelectedBlogId(item._id));
+    console.log(item._id, "id");
+    router.push(`/insights/blogs/blog-expand/${slug}`);
   };
 
   const toggleDropdown = (filter) => {
@@ -178,18 +197,18 @@ export default function ResourceGrid() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredResources.slice(0, visibleCount).map((item, idx) => (
             <motion.div
-              key={item.id}
+              key={item._id}
               initial={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
-              onClick={() => handleBlogClick(item.id)}
+              onClick={() => handleBlogClick(item)}
               className="bg-[#F8F9FA] border border-[#181C8E] rounded-lg shadow-md overflow-hidden relative cursor-pointer h-[400px] "
             >
               <div className="p-4 h-1/2">
                 <div className="">
                   <p className="text-[12px] font-light text-black uppercase">
-                    {item.subheading}
+                    {item?.categoryData.name}
                   </p>
                   <button
                     className="absolute top-2 right-2 text-xl text-[#181C8E] z-10"
@@ -207,24 +226,42 @@ export default function ResourceGrid() {
 
                 <div className="flex flex-wrap gap-2 my-2">
                   {/* Container to hold tags */}
-                  {item.tags.map((tag) => (
+                  {item?.tagData.map((tag) => (
                     <span
-                      key={tag}
+                      key={tag._id}
                       className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
                     >
-                      {tag}
+                      {tag.name}
                     </span>
                   ))}
                 </div>
                 <div className="flex justify-between text-[13px] font-medium">
-                  <span className="text-[#E36C0A]">{item.author}</span>
-                  <span className="text-[#939393]">{item.date}</span>
+                  {item.authorData ? (
+                    <>
+                      <span className="text-[#E36C0A]">
+                        {item.authorData.name}
+                      </span>
+                      <span className="text-[#939393]">
+                        {new Date(item.authorData.createdAt).toLocaleString(
+                          "en-IN",
+                          {
+                            timeZone: "Asia/Kolkata",
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          }
+                        )}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-gray-400">Unknown Author</span>
+                  )}
                 </div>
               </div>
 
               <div className="relative w-full  overflow-hidden rounded-b-lg h-1/2">
                 <Image
-                  src={item.img}
+                  src={item.image ? `${baseUrl}/${item.image}` : blogexpanImage} // fallback optional
                   alt={item.title}
                   fill
                   className="object-cover"

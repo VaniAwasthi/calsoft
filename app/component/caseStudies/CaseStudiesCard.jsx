@@ -52,7 +52,6 @@ export const CaseStudiesCard = () => {
   }, [dispatch]);
 
   const handleClick = (id, slug) => {
-    console.log(id, "id");
     dispatch(setSelectedCaseStudyId(id));
     // this should be correct
     router.push(`/insights/caseStudies/${slug}`);
