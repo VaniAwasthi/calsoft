@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import ButtonLayout from "../utilities/ButtonLayout";
 import { useEffect } from "react";
+import Icon from "../../assets/caseStudies/BusinessValueIcon1.svg";
 
 export const HeroSectionLanding = ({
   image1,
@@ -121,9 +122,6 @@ export const HeroSectionLanding = ({
   );
 };
 
-//  responsive InfoWithFormSection component
-//info with form section part***********
-
 export const InfoWithFormSection = ({
   heading,
   headingHighlight,
@@ -184,7 +182,6 @@ export const InfoWithFormSection = ({
   );
 };
 
-//  responsive BusinessValueSection component
 export const BusinessValueSection = ({ title, values, backgroundImage }) => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
 
@@ -229,7 +226,7 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
                 className="flex flex-col items-center justify-center"
               >
                 <Image
-                  src={`${baseUrl}${item.image}`}
+                  src={item.image ? `${baseUrl}/${item.image}` : Icon}
                   alt={item.number}
                   width={40}
                   height={40}
@@ -269,7 +266,6 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
   );
 };
 
-// Reusable, responsive ToKnowMoreSection component
 export const ToKnowMoreSection = ({
   title = "To Know More",
   description = "About how we can align our expertise to your requirements, reach out to us.",

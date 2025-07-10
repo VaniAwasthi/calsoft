@@ -1,13 +1,7 @@
 "use client";
 
 import BgImage from "../../../assets/caseStudies/caseStudyLanding.webp";
-import HeroRight1 from "../../../assets/caseStudies/hero1.webp";
-import HeroRight2 from "../../../assets/caseStudies/hero2.webp";
 import BusinessValueBg from "../../../assets/caseStudies/BusinessValueBg.webp";
-import BusinessIcon1 from "../../../assets/caseStudies/BusinessValueIcon1.svg";
-import BusinessIcon2 from "../../../assets/caseStudies/BusinessValueIcon2.svg";
-import BusinessIcon3 from "../../../assets/caseStudies/BusinessValueIcon3.svg";
-import BusinessIcon4 from "../../../assets/caseStudies/BusinessValueIcon4.svg";
 import ToKnowMoreBg from "../../../assets/caseStudies/knowmorebg.webp";
 import {
   BusinessValueSection,
