@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 import {
-  FaArrowLeft,
   FaArrowRight,
   FaGreaterThan,
   FaLessThan,
   FaShareAlt,
 } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Info1 from "../../assets/Infographic/Info1.webp";
 import Info2 from "../../assets/Infographic/Info2.webp";
@@ -21,7 +20,17 @@ import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import { fetchCaseStudiesList } from "../../store/actions/caseStudyActions.js";
+import { setSelectedCaseStudyId } from "../../store/reducers/caseStudyReducer.js";
+import { title } from "process";
+
 export const CaseStudiesCard = () => {
+  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+  const dispatch = useDispatch();
+  const listData = useSelector((state) => state.caseStudy.list);
+
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
   const [activeFilters, setActiveFilters] = useState({
@@ -36,32 +45,34 @@ export const CaseStudiesCard = () => {
     Topics: ["All", "Security", "AI"],
     Author: ["All", "Anton Frank", "John Doe"],
   };
+  const router = useRouter();
+
+  useEffect(() => {
+    dispatch(fetchCaseStudiesList());
+  }, [dispatch]);
+
+  const handleClick = (id, slug) => {
+    console.log(id, "id");
+    dispatch(setSelectedCaseStudyId(id));
+    // this should be correct
+    router.push(`/insights/caseStudies/${slug}`);
+  };
 
   const images = [Info1, Info2];
 
-  const cardData = new Array(18).fill(0).map((_, i) => {
-    const title = `Lorem Ipsum is simply dummy text of the printing and typesetting industry number ${
-      i + 1
-    }`;
-
-    return {
-      id: i + 1,
-      title, // dynamic title
-      image: images[i % images.length],
-      link: `https://yourdomain.com/card/${i + 1}`,
-      author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-      tags: ["AI", "Security"],
-      industry: i % 2 === 0 ? "Tech" : "Healthcare",
-
-      // generate slug dynamically from title
-      slug: title
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/(^-|-$)/g, ""),
-    };
-  });
-
-  const [resources] = useState([...cardData]);
+  const resources = listData.map((item) => ({
+    ...item,
+    id: item._id,
+    title: item.hero_title1,
+    image: item.card_one ? `${baseUrl}/${item.card_one}` : Info1, // fallback image
+    slug: item.hero_title1
+      ? item.hero_title1
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "")
+      : "untitled",
+    link: `https://yourdomain.com/card/${item._id}`,
+  })); // fallback if not yet loaded
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -82,12 +93,12 @@ export const CaseStudiesCard = () => {
       console.error("Copy failed:", error);
     }
   };
-
   const filteredResources = resources.filter((item) => {
     const authorMatch =
       activeFilters.Author === "All" || item.author === activeFilters.Author;
     const tagMatch =
-      activeFilters.Topics === "All" || item.tag === activeFilters.Topics;
+      activeFilters.Topics === "All" ||
+      item.tags.includes(activeFilters.Topics);
     const industryMatch =
       activeFilters.Industry === "All" ||
       item.industry === activeFilters.Industry;
@@ -105,19 +116,17 @@ export const CaseStudiesCard = () => {
     if (index < 0 || index >= totalPages) return;
     setCurrentPage(index);
   };
+
   const caseStudyData = {
     title:
-      " Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
+      "Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
     description: [
-      "A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....",
-      "A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....",
+      "A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud...",
     ],
-
     stats: [
-      { count: "40%", text: " faster validation cycles" },
-      { count: "30% ", text: "lower infrastructure costs" },
-      { count: "20% ", text: "increase in test accuracy" },
-      { count: "20% ", text: "increase in test accuracy" },
+      { count: "40%", text: "faster validation cycles" },
+      { count: "30%", text: "lower infrastructure costs" },
+      { count: "20%", text: "increase in test accuracy" },
     ],
   };
   return (
@@ -256,7 +265,11 @@ export const CaseStudiesCard = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
-              <Link href={`/insights/caseStudies/${item.slug}`} key={idx}>
+              <div
+                onClick={() => handleClick(item.id, item.slug)}
+                key={idx}
+                className="cursor-pointer"
+              >
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
@@ -284,14 +297,14 @@ export const CaseStudiesCard = () => {
                     <div className="flex flex-wrap gap-2 my-2">
                       {/* Container to hold tags */}
 
-                      {item.tags.map((tag) => (
+                      {/* {item.tags.map((tag) => (
                         <span
                           key={tag}
                           className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
                         >
                           {tag}
                         </span>
-                      ))}
+                      ))} */}
                     </div>
                     <div className="flex justify-between items-start">
                       <FaArrowRight color="#2E3092" className="w-6 h-6" />
@@ -311,7 +324,7 @@ export const CaseStudiesCard = () => {
                     )}
                   </div>
                 </motion.div>
-              </Link>
+              </div>
             ))}
           </AnimatePresence>
         </div>

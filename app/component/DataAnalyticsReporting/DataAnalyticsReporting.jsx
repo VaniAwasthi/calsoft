@@ -94,7 +94,7 @@ export const AnalyticsSec = () => {
       <ChallengeSolutionComp
         data={data}
         BlackHeading="Govern enterprise data flows"
-        GradientHeading=" Challenge to solutions :"
+        GradientHeading=" Challenge to solutions:"
       />
     </>
   );

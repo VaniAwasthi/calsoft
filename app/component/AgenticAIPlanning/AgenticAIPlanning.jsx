@@ -94,7 +94,7 @@ export const AgenticChallengeSec = () => {
       <ChallengeSolutionComp
         data={data}
         BlackHeading="AI Agents that work at scale"
-        GradientHeading=" Challenge to solutions :"
+        GradientHeading="Challenge to solutions:"
       />
     </>
   );

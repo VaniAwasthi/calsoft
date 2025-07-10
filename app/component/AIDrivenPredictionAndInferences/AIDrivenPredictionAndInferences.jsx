@@ -83,8 +83,7 @@ export const DrivenChallengeSec = () => {
     },
     {
       tag: "Model adaptability",
-      challenge:
-        "Concerned about AI models degrading as environments change?",
+      challenge: "Concerned about AI models degrading as environments change?",
       solution:
         "Self-improving AI systems that retrain dynamically with evolving data streams",
     },
@@ -94,7 +93,7 @@ export const DrivenChallengeSec = () => {
       <ChallengeSolutionComp
         data={data}
         BlackHeading="Proactive action with predictive insights"
-        GradientHeading=" Challenge to solutions :"
+        GradientHeading=" Challenge to solutions:"
       />
     </>
   );

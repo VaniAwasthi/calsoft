@@ -8,7 +8,7 @@ import {
 } from "../../component/dataObservability/DataObservability.jsx";
 import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
-import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../assets/Data-Ai/data-observibility/KnowMoreBg.webp";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 function page() {
@@ -21,11 +21,10 @@ function page() {
       <BannerSection
         backgroundImage={BannerwithButtonBg}
         title={
-          <>
-            Protect your data integrity
-            <br className="hidden md:block" />
+          <p className="px-1">
+            Protect your data integrity <br className="hidden md:block px-2" />{" "}
             and build operational resilience
-          </>
+          </p>
         }
         buttonText="Know More"
         buttonLink="#"

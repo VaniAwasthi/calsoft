@@ -47,7 +47,7 @@ const data = [
   {
     id: 1,
     img: img01,
-    title: "Calsoft Partner’s with IBM WatsonX to deliver AI-driven Solutions",
+    title: "Calsoft Partners with IBM WatsonX to deliver AI-driven Solutions",
     description:
       "Maximize enterprise AI investments with IBM WatsonX & Calsoft",
     link: "https://www.calsoftinc.com/calsoft-partners-with-ibm-watsonx/",
@@ -165,7 +165,7 @@ export const CalsoftNews = () => {
                   style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25" }}
                 >
                   <span className="relative justify-center z-10 group-hover:text-[#BA0007] w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
-                    Explore More
+                    Read Story
                     <IoArrowForwardCircleSharp className="text-3xl tra" />
                   </span>
                   <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>

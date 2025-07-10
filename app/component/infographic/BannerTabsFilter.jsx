@@ -20,38 +20,38 @@ const tabs = [
     id: "case-study",
     name: "Case Study",
     icon: CaseStudiesIcon,
-    component: <CaseStudiesCard />,
+    component: CaseStudiesCard,
   },
   {
     id: "whitepapers",
     name: "Whitepapers",
     icon: WhitepaperIcon,
-    component: <WhitepaperCards />,
+    component: WhitepaperCards,
   },
   {
     id: "datasheets",
     name: "Datasheets",
     icon: DatesheetIcon,
     // component: <DatasheetsContent />,
-    component: <DataSheetCards />,
+    component: DataSheetCards,
   },
   {
     id: "infographics",
     name: "Infographics",
     icon: InfoIcon,
-    component: <InfographicCard />,
+    component: InfographicCard,
   },
   {
     id: "industry-reports",
     name: "Industry Reports",
     icon: IndustryIcon,
-    component: <IndustryReportCard />,
+    component: IndustryReportCard,
   },
   {
     id: "videos",
     name: "Videos",
     icon: VideosIcon,
-    component: <VideoCards />,
+    component: VideoCards,
   },
 ];
 
@@ -98,7 +98,9 @@ export const TabsInfo = ({ defaultTab }) => {
   // Function to render the content based on the active tab
   const renderContent = () => {
     const currentTab = tabs.find((tab) => tab.id === activeTab);
-    return currentTab ? currentTab.component : null;
+    if (!currentTab) return null;
+    const Component = currentTab.component;
+    return <Component />;
   };
   useEffect(() => {
     if (defaultTab && defaultTab !== activeTab) {

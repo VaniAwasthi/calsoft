@@ -11,30 +11,30 @@ import { motion } from "framer-motion";
 const tabs = [
   {
     label: "High-tech",
-    title: "Next-gen telecom & networking",
+    title: "Hi-Tech & digital innovation",
     description:
-      "Enable future-ready networks with 5G, SDN/NFV, and AI-driven orchestration for seamless connectivity and service delivery.",
+      "Build smarter products, platforms, and experiences with AI-driven engineering and cloud-native solutions.",
     image: Hitech,
   },
   {
     label: "Telecom",
-    title: "Advanced Telecom Solutions",
+    title: "Next-gen telecom & networking",
     description:
-      "Revolutionize telecom with cutting-edge technologies and AI-driven infrastructure modernization.",
+      "Enable future-ready networks with 5G, SDN/NFV, and AI-driven orchestration for seamless connectivity and service delivery.",
     image: industry,
   },
   {
     label: "Retail",
-    title: "Smart Retail Transformations",
+    title: "Retail | Smart Retail",
     description:
-      "Empower retail with AI, IoT, and personalized experiences for next-level customer engagement.",
+      "Enhance customer experiences and streamline operations with AI-driven personalization, predictive analytics, and intelligent automation.",
     image: Retail,
   },
   {
     label: "Manufacturing",
-    title: "Industry 4.0 Manufacturing",
+    title: "Manufacturing",
     description:
-      "Boost efficiency with automation, digital twins, and smart factory innovations.",
+      "Drive operational efficiency, reduce downtime, and improve product quality with smart manufacturing solutions powered by AI, IoT, and automation.",
     image: Manufacturing,
   },
 ];
@@ -124,7 +124,7 @@ export const IndustrySection = () => {
             {/* Button */}
             <div>
               <button className="mt-5 flex items-center gap-2 bg-[#FF3D3D] text-white px-5 py-1 rounded-full text-sm">
-                Case Study
+                Case Studies
                 <span className="text-lg">➔</span>
               </button>
             </div>

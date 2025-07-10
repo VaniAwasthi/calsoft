@@ -1,14 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/Banner-Pipe.webp";
+import BackgroundImage from "../../assets/Data-Ai/PipeLine/BannerPipe.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
 import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
-import RiskImage from "../../assets/Data-Ai/Risk.webp";
-import PlatformImage from "../../assets/Data-Ai/4sec.webp";
-import CostImage from "../../assets/Data-Ai/5sec.webp";
+import InfoSec1 from "../../assets/Data-Ai/PipeLine/InfoSec1.webp";
+import InfoSec2 from "../../assets/Data-Ai/PipeLine/InfoSec2.webp";
+import InfoSec3 from "../../assets/Data-Ai/PipeLine/InfoSec3.webp";
+import InfoSec4 from "../../assets/Data-Ai/PipeLine/InfoSec4.webp";
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -62,8 +63,7 @@ export const ChallengeSolutionSec = () => {
   const data = [
     {
       tag: "Fragmented systems",
-      challenge:
-        "Are fragmented systems slowing your data consolidation efforts?",
+      challenge: "Is system fragmentation delaying your data consolidation?",
       solution:
         "Architect unified, scalable pipelines that streamline multi-source ingestion and integration.",
     },
@@ -72,20 +72,20 @@ export const ChallengeSolutionSec = () => {
       challenge:
         "Facing risks of inconsistent or incomplete data during migration?",
       solution:
-        "Enable governed, validated migration frameworks for seamless data transitions.",
+        "Use validated, governed frameworks to ensure seamless data migration",
     },
     {
       tag: "Migration and scaling",
       challenge:
         "Struggling to maintain transparency across complex data flows?",
       solution:
-        "Implement real-time data lineage tracking and impact analysis mechanisms.",
+        "Track data lineage and analyze impact in real time with intelligent mechanisms",
     },
     {
       tag: "Lack of transparency",
       challenge: "Worried about slow onboarding of new data sources?",
       solution:
-        "Design modular, cloud-ready ingestion pipelines to accelerate source integration.",
+        "Accelerate source integration with modular, cloud-ready ingestion pipelines.",
     },
   ];
   return (
@@ -93,7 +93,7 @@ export const ChallengeSolutionSec = () => {
       <ChallengeSolutionComp
         data={data}
         BlackHeading="Architect, implement, and scale data pipelines"
-        GradientHeading=" Challenge to solutions :"
+        GradientHeading=" Challenge to solutions:"
       />
     </>
   );
@@ -119,7 +119,7 @@ for evolving data needs."
           "Scale easily with new sources",
           "Reduce failures and fixes over time",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={InfoSec1}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -148,7 +148,7 @@ sources for seamless, intelligent operations."
           "Lower integration effort at scale",
           "Better policy control across flows",
         ]}
-        imageSrc={RiskImage}
+        imageSrc={InfoSec2}
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
@@ -161,8 +161,8 @@ export const EffortlessSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Effortless and faultless data migration"
-        description="Move critical data assets with integrity, speed, and zero disruption."
+        title="Smooth and secure data migration"
+        description="Move critical data assets with speed & integrity. Zero disruption guaranteed."
         buttonText="Case Study"
         link="#"
         whatWeDo={[
@@ -175,7 +175,7 @@ export const EffortlessSec = () => {
           "Cloud moves become smoother",
           "Data quality stays intact end-to-end",
         ]}
-        imageSrc={PlatformImage}
+        imageSrc={InfoSec3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
@@ -201,7 +201,7 @@ export const DataSanitySec = () => {
           "Audits take less time to execute",
           "Root causes are faster to uncover",
         ]}
-        imageSrc={CostImage}
+        imageSrc={InfoSec4}
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}

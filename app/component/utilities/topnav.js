@@ -120,12 +120,12 @@ export default function Navbar() {
       ],
     },
     {
-      title: "DIGITAL Product ENGINEERING",
-      href: "#",
+      title: "DIGITAL PRODUCT ENGINEERING",
+      href: "/digital-engineering/productEngineering/product-and-application-development",
       submenu: [
         {
           title: "Product and application development ",
-          href: "/digital-engineering/productEngineering/product-and-application-development ",
+          href: "/digital-engineering/productEngineering/product-and-application-development",
           section: [
             "Ideation & architecture orchestration",
             "Development lifecycle services",
@@ -272,7 +272,7 @@ export default function Navbar() {
     },
     {
       title: "INSIGHTS",
-      href: "#",
+      href: "/insights/resource",
       submenu: [
         { title: "Blogs", href: "/insights/blogs" },
         {

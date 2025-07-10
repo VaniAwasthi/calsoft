@@ -1,5 +1,5 @@
 "use client";
-import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../assets/Data-Ai/PipeLine/KnowMoreBg.webp";
 
 import React from "react";
 
@@ -25,12 +25,12 @@ const page = () => {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Design intelligent data pipelines that
-            <br className="hidden md:block" />
+            Design intelligent data pipelines that {""}
+            <br className="hidden md:block px-1" />
             drive faster insights and integration
           </>
         }
-        buttonText="Know More"
+        buttonText="Explore More"
         buttonLink="#"
       />
       <EffortlessSec />
