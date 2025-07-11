@@ -6,6 +6,11 @@ import { FaFacebookF, FaLink, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import blogexpanImage from "../../../assets/blog/blogexpanImage.webp";
+import sanitizeHtml from 'sanitize-html';
+
+
+
+
 export const Banner = ({ blog }) => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
 
@@ -40,6 +45,16 @@ export const Banner = ({ blog }) => {
 export const ArticleContent = ({ blog }) => {
   const currentUrl = typeof window !== "undefined" ? window.location.href : "";
   const [copied, setCopied] = useState(false);
+
+  const cleanHtml = sanitizeHtml(blog.content, {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+    "h1", "h2", "h3", "h4", "table", "thead", "tbody", "tr", "td", "th", "img", "ul", "li", "em", "strong", "a"
+  ]),
+  allowedAttributes: {
+    "*": ["style", "href", "src", "alt", "target", "rel", "colspan", "rowspan", "class"],
+  },
+  allowedSchemes: ["http", "https", "mailto"],
+});
 
   const handleCopy = async () => {
     try {
@@ -104,10 +119,15 @@ export const ArticleContent = ({ blog }) => {
               )}
             </div>
             {/* Blog Paragraphs */}
-            <p
+            {/* <p
               dangerouslySetInnerHTML={{ __html: blog.content }}
               className={` text-xs md:text-base text-[black] `}
-            ></p>
+            ></p> */}
+
+   <div
+  dangerouslySetInnerHTML={{ __html: cleanHtml }}
+  className="blog-content text-xs md:text-base text-black"
+></div>
           </div>
 
           {/* Right Side: Sidebar */}
