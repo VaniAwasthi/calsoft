@@ -8,7 +8,7 @@ import {
 } from "../../component/DataGovernanceQuality/Datagovernance.jsx";
 import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
-import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../assets/Data-Ai/dataGovernance/KnowMore.webp";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 function page() {
@@ -21,13 +21,13 @@ function page() {
       <BannerSection
         backgroundImage={BannerwithButtonBg}
         title={
-          <>
-            Turn compliance into a
-            <br className="hidden md:block" />
-            competitive advantage
-            <br className="hidden md:block" />
-            <b>let’s talk</b>
-          </>
+          <p className="px-1">
+            Turn compliance into a {""}
+            <br className="hidden md:block px-2" />
+            competitive advantage.
+            <br className="hidden md:block " />
+            <b> Let’s Talk!</b>
+          </p>
         }
         buttonText="Know More"
         buttonLink="#"

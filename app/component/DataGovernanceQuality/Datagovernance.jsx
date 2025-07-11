@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
+import BackgroundImage from "../../assets/Data-Ai/dataGovernance/HeroBanner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
-import RiskImage from "../../assets/Data-Ai/Risk.webp";
-import PlatformImage from "../../assets/Data-Ai/4sec.webp";
-import CostImage from "../../assets/Data-Ai/5sec.webp";
+import Info1 from "../../assets/Data-Ai/dataGovernance/InfoSec-1.webp";
+import Info2 from "../../assets/Data-Ai/dataGovernance/InfoSec-2.webp";
+import Info3 from "../../assets/Data-Ai/dataGovernance/InfoSec-3.webp";
+import Info4 from "../../assets/Data-Ai/dataGovernance/InfoSec-4.webp";
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -45,7 +45,7 @@ export const GovernJounery = () => {
         rightSec={false}
         backgroundMain="!h-[250px] md:!h-[650px]"
         ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
+        titleOneClass="font-semibold lg:text-[42px] md:text-[40px] text-[21px] mt-2"
         titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
         descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
@@ -118,7 +118,7 @@ export const ProfilingSec = () => {
           "Faster rollout of governance rules",
           "Quicker access to trusted datasets",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info1}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -146,7 +146,7 @@ export const CleansingSec = () => {
           "Reduced storage and process waste",
           "Better data flow for applications",
         ]}
-        imageSrc={RiskImage}
+        imageSrc={Info2}
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
@@ -173,7 +173,7 @@ export const PolicySec = () => {
           "Protected data at every stage",
           "Less effort spent on manual checks",
         ]}
-        imageSrc={PlatformImage}
+        imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
@@ -199,7 +199,7 @@ export const CollaborationSec = () => {
           "Faster response to policy gaps",
           "Culture of shared data ownership",
         ]}
-        imageSrc={CostImage}
+        imageSrc={Info4}
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
