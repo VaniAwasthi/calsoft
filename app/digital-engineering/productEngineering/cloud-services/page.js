@@ -31,7 +31,7 @@ const Page = () => {
           <>
             Become cloud-native for faster and{" "}
             <br className="hidden md:block" />
-            collaborative DevOps + SRE – It's time to adopt
+            collaborative DevOps + SRE – It &apos;s time to adopt
           </>
         }
         buttonText="Know More"
