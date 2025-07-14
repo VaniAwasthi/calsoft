@@ -7,7 +7,7 @@ import {
 } from "../../component/customLlmGenAi/CustomLlmGgenAi.jsx";
 import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
-import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../assets/Data-Ai/customllm/Knowmore.webp";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 function page() {
@@ -20,8 +20,8 @@ function page() {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Customize, ground, and scale
-            <br className="hidden md:block" />
+            Customize, ground, and scale {""}
+            <br className="hidden md:block px-1" />
             enterprise-ready language models
           </>
         }

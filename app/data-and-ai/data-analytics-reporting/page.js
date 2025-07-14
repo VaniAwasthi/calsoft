@@ -7,7 +7,7 @@ import {
   RealSec,
 } from "../../component/DataAnalyticsReporting/DataAnalyticsReporting.jsx";
 import React from "react";
-import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../assets/Data-Ai/analytics/KnowMore.webp";
 import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
@@ -22,7 +22,7 @@ function page() {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Transform data into decisive
+            Transform data into decisive {""}
             <br className="hidden md:block" />
             action – with us
           </>

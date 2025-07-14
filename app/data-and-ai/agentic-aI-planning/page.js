@@ -8,7 +8,7 @@ import {
   UseSec,
 } from "../../component/AgenticAIPlanning/AgenticAIPlanning.jsx";
 import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
-import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../assets/Data-Ai/agenetic/knowMore.webp";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 function page() {

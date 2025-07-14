@@ -8,7 +8,7 @@ import {
   ModelSec,
 } from "../../component/AIDrivenPredictionAndInferences/AIDrivenPredictionAndInferences.jsx";
 import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
-import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../assets/Data-Ai/dataDriven/KnowMore.webp";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
 function page() {
@@ -22,7 +22,7 @@ function page() {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Harness artificial intelligence to
+            Harness artificial intelligence to {""}
             <br className="hidden md:block" />
             anticipate, adapt, and boost business
           </>

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../../assets/DigitalEngineering/product-app/KnowMore.webp";
 import {
   BannerSection,
   ContactSecData,
@@ -28,9 +28,9 @@ const page = () => {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Let’s build great products and
+            Let’s build great products and {""}
             <br className="hidden md:block" />
-            rapplications-<b>Talk to us</b>
+            applications - <b>Talk to us</b>
           </>
         }
         buttonText="Know More"

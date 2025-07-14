@@ -1,11 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
+import BackgroundImage from "../../assets/DigitalEngineering/mordernization/Banner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
+import Info1 from "../../assets/DigitalEngineering/mordernization/Info-1.webp";
+import Info2 from "../../assets/DigitalEngineering/mordernization/Info-2.webp";
+import Info3 from "../../assets/DigitalEngineering/mordernization/Info-3.webp";
+import Info4 from "../../assets/DigitalEngineering/mordernization/Info-4.webp";
+
 export const HeroSectionModernization = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
@@ -38,9 +42,9 @@ future-proof operations with agility and precision.`,
         rightSec={false}
         backgroundMain="!h-[250px] md:!h-[650px]"
         ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
+        titleOneClass="font-semibold lg:text-[46px] md:text-[40px] text-[21px] mt-[1rem]"
+        titleTwoClass={`font-semibold lg:text-[46px] md:text-[40px] text-[21px] md:mt-1 md:mb-[2rem]`}
+        descriptionClass="hidden md:block mt-1 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -86,7 +90,7 @@ export const ModernizationChallengeSec = () => {
   return (
     <ChallengeToSolution
       title="Challenge to solution:"
-      blackTitle=" Create rewarding user experiences"
+      blackTitle="Create rewarding user experiences"
       challenges={challengesData}
     />
   );
@@ -110,7 +114,7 @@ export const MaturityAssessmentSec = () => {
           "Assessments reduce upgrade risk",
           "Tech plans tied to business goals",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info1}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -137,7 +141,7 @@ export const FutureReadinessSec = () => {
           "Resilient systems with uptime",
           "Flexible UI and better CX fit",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info2}
         imageAlt="Image"
         imageLeft={true}
         isDivider={true}
@@ -164,7 +168,7 @@ export const EcosystemManagementSec = () => {
           "Safer partner and platform ops",
           "Add tools without disruption",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
@@ -190,7 +194,7 @@ export const PlugindevelopmentSec = () => {
           "Easy upgrades with fewer breaks",
           "Future-ready plugin structure",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info4}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -217,7 +221,7 @@ real-time data analytics and op-led automation."
           "IoT scaling is simple and safe",
           "Better data, better decisions",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info4}
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}

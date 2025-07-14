@@ -1,11 +1,16 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
+import BackgroundImage from "../../assets/DigitalEngineering/product-app/Banner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
+import Info1 from "../../assets/DigitalEngineering/product-app/Info-1.webp";
+import Info2 from "../../assets/DigitalEngineering/product-app/Info-2.webp";
+import Info3 from "../../assets/DigitalEngineering/product-app/Info-3.webp";
+import Info4 from "../../assets/DigitalEngineering/product-app/Info-4.webp";
+import Info5 from "../../assets/DigitalEngineering/product-app/Info-5.webp";
+import Info6 from "../../assets/DigitalEngineering/product-app/Info-6.webp";
 export const HeroSectionProductandApplicationDev = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
@@ -38,9 +43,9 @@ with speed and precision.`,
         rightSec={false}
         backgroundMain="!h-[250px] md:!h-[650px]"
         ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
+        titleOneClass="font-semibold lg:text-[46px] md:text-[40px] text-[21px] mt-[3rem]"
+        titleTwoClass={`font-semibold lg:text-[46px] md:text-[40px] text-[21px] md:mt-1 md:mb-[5rem]`}
+        descriptionClass="hidden md:block mt-1 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -110,7 +115,7 @@ clarity and precision."
           "Less waste from late tech changes",
           "Tech scope matches real needs",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info1}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -137,7 +142,7 @@ export const DevelopmentSec = () => {
           "Early bug fixes save dev time",
           "Easier compliance with audit logs",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info2}
         imageAlt="Image"
         imageLeft={true}
         isDivider={true}
@@ -164,7 +169,7 @@ export const QualityengineeringSec = () => {
           "More stable releases each time",
           "Good UX across all devices",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
@@ -190,7 +195,7 @@ export const DevOpsSec = () => {
           "Faster recovery when things break",
           "Meet SLAs without pressure",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info4}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -202,7 +207,7 @@ export const DeploymentSec = () => {
   return (
     <>
       <InfraSection
-        title="Deployment and upgrades"
+        title="Deployment and Upgrades"
         description="Execute smooth deployments and controlled upgrades without disrupting operations."
         buttonText="Case Study"
         link="#"
@@ -214,9 +219,9 @@ export const DeploymentSec = () => {
         businessImpact={[
           "Upgrades run with less effort",
           "Users get new features faster",
-          "Less downtime during updatess",
+          "Less downtime during updates",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info5}
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={true}
@@ -242,7 +247,7 @@ export const AccelerateSec = () => {
           "Less dev time on basic features",
           "Systems scale without redesign",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info6}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}

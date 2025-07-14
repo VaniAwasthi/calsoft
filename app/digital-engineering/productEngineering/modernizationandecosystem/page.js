@@ -26,9 +26,9 @@ const page = () => {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            All future-readiness advantages are
+            All future-readiness advantages are {""}
             <br className="hidden md:block" />
-            ready to unlock–<b>Let’s connect</b>
+            ready to be unlocked - <b>Let’s connect</b>
           </>
         }
         buttonText="Know More"
@@ -37,8 +37,8 @@ const page = () => {
       <PlugindevelopmentSec />
       <IoTEngineeringSec />
       <ContactSecData
-        BoldContent="Modernize and build ecosystems ready for tomorrow’s growth"
-        lightContent="take the next step"
+        BoldContent="Modernize and build ecosystems ready for tomorrow’s growth "
+        lightContent="- take the next step"
         link="#"
       />
     </>

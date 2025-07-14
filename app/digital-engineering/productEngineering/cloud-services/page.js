@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../../assets/DigitalEngineering/cloud-service/KnowMore.svg";
 import {
   ChallengeToSolutionSec,
   CloudMigrationInfraSec,
@@ -31,7 +31,7 @@ const Page = () => {
           <>
             Become cloud-native for faster and{" "}
             <br className="hidden md:block" />
-            collaborative DevOps + SRE – Its time to adopt
+            collaborative DevOps + SRE – It &apos;s time to adopt
           </>
         }
         buttonText="Know More"
