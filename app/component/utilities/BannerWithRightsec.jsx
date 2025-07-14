@@ -61,7 +61,7 @@ const BannerWithRightSec = ({
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.4, delay: 0.4 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className={`font-normal md:my-3 leading-8 md:leading-14 ${titleTwoClass}`}
+                  className={`font-normal md:my-1 leading-8 md:leading-14 ${titleTwoClass}`}
                 >
                   {title2}
                 </motion.h2>
@@ -72,7 +72,7 @@ const BannerWithRightSec = ({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className={`mt-2 text-sm md:text-lg leading-6 font-light max-w-[90%] md:max-w-[600px] ${descriptionClass}`}
+                className={`mt-1 text-sm md:text-lg leading-6 font-light max-w-[90%] md:max-w-[600px] ${descriptionClass}`}
                 dangerouslySetInnerHTML={{ __html: description }}
               />
 

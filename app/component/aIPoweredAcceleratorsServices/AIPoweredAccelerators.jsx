@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
+import BackgroundImage from "../../assets/Data-Ai/ai-accelerate/Banner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
-import RiskImage from "../../assets/Data-Ai/Risk.webp";
-import PlatformImage from "../../assets/Data-Ai/4sec.webp";
-import CostImage from "../../assets/Data-Ai/5sec.webp";
+import Info1 from "../../assets/Data-Ai/ai-accelerate/Info-1.webp";
+import Info2 from "../../assets/Data-Ai/ai-accelerate/Info-2.webp";
+import Info3 from "../../assets/Data-Ai/ai-accelerate/Info-3.webp";
+import Info4 from "../../assets/Data-Ai/ai-accelerate/Info-4.webp";
+
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -119,7 +119,7 @@ export const CalTiaSec = () => {
           "Shorter QA time, faster delivery",
           "Smarter tests with ongoing learning",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info1}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -146,7 +146,7 @@ export const CalPsrSec = () => {
           "Fix issues before production hit",
           "Fewer manual tests for resilience",
         ]}
-        imageSrc={RiskImage}
+        imageSrc={Info2}
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
@@ -173,7 +173,7 @@ export const ECalsoftSec = () => {
           "Speed up transitions via scripting",
           "Avoid service gaps with dry runs",
         ]}
-        imageSrc={PlatformImage}
+        imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
@@ -199,7 +199,7 @@ export const CalsoftSec = () => {
           "Fewer bugs via aligned modules",
           "Consistent builds across projects",
         ]}
-        imageSrc={CostImage}
+        imageSrc={Info4}
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}

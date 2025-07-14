@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
+import BackgroundImage from "../../assets/Data-Ai/agenetic/Banner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
-import RiskImage from "../../assets/Data-Ai/Risk.webp";
-import PlatformImage from "../../assets/Data-Ai/4sec.webp";
-import CostImage from "../../assets/Data-Ai/5sec.webp";
+import Info1 from "../../assets/Data-Ai/agenetic/Info-1.webp";
+import Info2 from "../../assets/Data-Ai/agenetic/Info-2.webp";
+import Info3 from "../../assets/Data-Ai/agenetic/Info-3.webp";
+import Info4 from "../../assets/Data-Ai/agenetic/Info-4.webp";
+
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -93,7 +93,7 @@ export const AgenticChallengeSec = () => {
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="AI Agents that work at scale"
+        BlackHeading="Proactive action with predictive insights"
         GradientHeading="Challenge to solutions:"
       />
     </>
@@ -119,7 +119,7 @@ export const AiOopsSec = () => {
           "Faster detection and issue response",
           "Standardized resolution processes",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info1}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -146,7 +146,7 @@ export const UseSec = () => {
           "Agents reduce system-wide error risks",
           "Faster validation and deployment cycle",
         ]}
-        imageSrc={RiskImage}
+        imageSrc={Info2}
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
@@ -173,7 +173,7 @@ export const MonitorSec = () => {
           "Audit support with tracked decisions",
           "Minimized risk of agent misbehavior",
         ]}
-        imageSrc={PlatformImage}
+        imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
@@ -199,7 +199,7 @@ export const LifecycleSec = () => {
           "Quicker updates to agent behavior",
           "Maintained link to business outcomes",
         ]}
-        imageSrc={CostImage}
+        imageSrc={Info4}
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}

@@ -5,7 +5,7 @@ import {
   ContactSecData,
 } from "../../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
-import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../../assets/DigitalEngineering/CX/BannerKnow.svg";
 import {
   ChallengeToSolutionSec,
   FrontEndSec,
@@ -28,7 +28,7 @@ const Page = () => {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Great user experiences lead to higher
+            Great user experiences lead to higher{" "}
             <br className="hidden md:block" />
             market share – <b>Let’s do it</b>
           </>

@@ -1,17 +1,22 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
+import BackgroundImage from "../../assets/DigitalEngineering/cloud-service/Banner.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import CircleArrow from "../../assets/DigitalEngineering/Product/circleArrow.svg";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
+import Info1 from "../../assets/DigitalEngineering/cloud-service/Info1.svg";
+import Info2 from "../../assets/DigitalEngineering/cloud-service/Info2.svg";
+import Info3 from "../../assets/DigitalEngineering/cloud-service/Info3.svg";
+import Info4 from "../../assets/DigitalEngineering/cloud-service/Info4.svg";
+import Info5 from "../../assets/DigitalEngineering/cloud-service/Info5.svg";
+import Info6 from "../../assets/DigitalEngineering/cloud-service/Info6.svg";
+import Info7 from "../../assets/DigitalEngineering/cloud-service/Info7.svg";
 export const HeroSectionProduct = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "Cloud | Grow with cloud",
-    title2: "induced efficiency",
+    title: "Cloud | Grow with ",
+    title2: "cloud-induced efficiency",
     description: `Engineer scalable, secure, and cost-efficient<br/>
 cloud solutions aligned to your business goals.`,
     buttonText: "Get in touch",
@@ -39,8 +44,8 @@ cloud solutions aligned to your business goals.`,
         rightSec={false}
         backgroundMain="!h-[250px] md:!h-[650px]"
         ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
+        titleOneClass="font-semibold lg:text-[46px] md:text-[40px] text-[21px] mt-2"
+        titleTwoClass={`font-semibold lg:text-[46px] md:text-[40px] text-[21px] md:mt-4 md:mb-[2rem]`}
         descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
@@ -118,7 +123,7 @@ export const ItInfraSec = () => {
           "Reduced implementation friction",
           "Better long-term decision-making",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info1}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -145,7 +150,7 @@ export const MultiCloudInfraSec = () => {
           "Unified resource visibility",
           "Faster provisioning cycles",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info2}
         imageAlt="MultiCloud"
         imageLeft={true}
         isDivider={true}
@@ -172,7 +177,7 @@ export const CloudNativetInfraSec = () => {
           "Faster release cycles",
           "Easier feature experimentation",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
@@ -198,7 +203,7 @@ export const CloudMigrationInfraSec = () => {
           "Improved workload performance",
           "Simplified resource management",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info4}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -224,7 +229,7 @@ export const CostInfraSec = () => {
           "Budget adherence",
           "Performance without overspend",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info5}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -250,7 +255,7 @@ export const SREInfraSec = () => {
           "Reduced incident response time",
           "Balanced speed and stability",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info6}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}

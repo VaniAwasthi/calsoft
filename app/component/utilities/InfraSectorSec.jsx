@@ -4,7 +4,7 @@ import ButtonLayout from "./ButtonLayout";
 import { motion } from "framer-motion";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import Link from "next/link";
-import ContactImg from "../../assets/industries/hitech/contactbg.webp";
+import ContactImg from "../../assets/Data-Ai/PipeLine/ConnectBg.webp";
 import { useState } from "react";
 
 import CircleArrow from "../../assets/DigitalEngineering/Product/circleArrow.svg";
@@ -212,7 +212,7 @@ export const BannerSection = ({
           {buttonText && (
             <Link
               href={buttonLink}
-              className="bg-[#C00404] hover:bg-red-800 text-white w-[200px] px-6  md:px-8 py-2 rounded-lg text-sm font-medium transition mt-4 md:mt-0"
+              className="bg-[#C00404] hover:bg-red-800 text-white w-[150px] px-6  md:px-8 py-2 rounded-lg text-sm font-medium transition mt-4 md:mt-0"
             >
               {buttonText}
             </Link>
@@ -232,13 +232,13 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
           <Image
             src={ContactImg}
             alt="Background Image"
-            className="w-full h-[300px] md:h-full md:object-cover object-center"
+            className="w-full h-[250px] md:h-full md:object-cover object-center"
           />
 
           {/* Right Side: Overlay Content */}
-          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 md:p-16 p-6 w-1/2 md:w-1/2 text-white">
+          <div className="absolute top-1/2 right-0 transform -translate-y-1/2 md:p-16 p-1 w-1/2 md:w-1/2 text-white">
             <div className="space-y-6 text-left md:text-left">
-              <h2 className="text-md md:text-3xl font-normal leading-snug">
+              <h2 className="text-sm md:text-3xl font-normal leading-snug">
                 <span className="font-bold">{BoldContent}</span>
                 <br />
                 {lightContent}
@@ -248,7 +248,7 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
                 <input
                   type="email"
                   placeholder="Enter your work email"
-                  className="w-full sm:w-[300px] h-10 px-6 text-sm text-black bg-white placeholder-gray-500 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
+                  className="w-[150px] sm:w-[200px] h-8 md:h-10 px-6 text-sm text-black bg-white placeholder-gray-500 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
                 />{" "}
                 <motion.div
                   initial={{ x: -50, opacity: 0 }}
@@ -262,6 +262,7 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
                     text="Learn More"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    className="!w-[170px] sm:w-[200px] h-8 md:h-10 px-6"
                   />
                 </motion.div>
               </form>
@@ -287,7 +288,7 @@ export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-10">
+    <div className="max-w-5xl mx-auto px-4 md:py-10">
       <motion.div
         className="w-full my-5 manrope"
         initial={{ opacity: 0, y: 10 }}
@@ -313,7 +314,7 @@ export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
               {/* Left Title */}
               <div
                 onClick={() => toggleMobile(index)}
-                className="bg-[#2D2A86] text-white font-semibold text-sm px-6 py-4 flex items-center justify-center min-w-full md:min-w-[280px] rounded-l-full cursor-pointer"
+                className="bg-[#2D2A86] uppercase text-white font-semibold text-sm px-6 py-4 flex items-center justify-center min-w-full md:min-w-[280px] rounded-l-full cursor-pointer"
               >
                 {item.title}
               </div>
@@ -333,7 +334,7 @@ export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
                       //   onClick={handleFlip}
                       className="flex items-center bg-[#F4F4F4] text-[#2D2A86] text-sm font-medium h-full rounded-full hover:bg-[#e5e5e5] transition whitespace-nowrap"
                     >
-                      <span className="mr-2 px-4 py-4">Hover To Solve</span>
+                      <span className="mr-2 px-4 py-4">Hover to Solve</span>
                       <div className="w-20 h-20 relative">
                         <Image
                           src={CircleArrow}
