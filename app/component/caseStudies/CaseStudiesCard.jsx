@@ -54,7 +54,7 @@ export const CaseStudiesCard = () => {
   const handleClick = (id, slug) => {
     dispatch(setSelectedCaseStudyId(id));
     // this should be correct
-    router.push(`/insights/caseStudies/${slug}`);
+    router.push(`/insights/case-studies/${slug}`);
   };
 
   const images = [Info1, Info2];
