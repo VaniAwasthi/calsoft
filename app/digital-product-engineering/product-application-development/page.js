@@ -4,7 +4,7 @@ import BannerwithButtonBg from "../../assets/DigitalEngineering/product-app/Know
 import {
   BannerSection,
   ContactSecData,
-} from "../../../component/utilities/InfraSectorSec.jsx";
+} from "../../component/utilities/InfraSectorSec.jsx";
 
 import {
   AccelerateSec,
