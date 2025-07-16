@@ -15,7 +15,7 @@ import {
   IdeationSec,
   ProdandAppChallengeSec,
   QualityengineeringSec,
-} from "../../../component/product&applicationdev/HeroChallengeInfo.jsx";
+} from "../../component/product&applicationdev/HeroChallengeInfo.jsx";
 const page = () => {
   return (
     <>
