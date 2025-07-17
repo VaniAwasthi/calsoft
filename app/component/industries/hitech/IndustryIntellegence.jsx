@@ -102,7 +102,7 @@ export default function IndustryIntelligence({
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className={`px-2 text-base md:text-sm lg:text-[16px] font-semibold text-[#2e2c91] md:mt-4 lg:mt-16  ${headingClass}`}
+                className={`px-2 text-base md:text-sm lg:text-[15px] py-10 font-semibold text-[#2e2c91] md:mt-2 lg:mt-13  ${headingClass}`}
                 dangerouslySetInnerHTML={{ __html: item.title }}
               ></motion.h3>
 
@@ -112,7 +112,7 @@ export default function IndustryIntelligence({
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="text-xs sm:text-[15px]"
+                  className="text-xs sm:text-[14px]"
                   dangerouslySetInnerHTML={{ __html: item.desc }}
                 ></motion.p>
 
@@ -156,9 +156,8 @@ export default function IndustryIntelligence({
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.6 }}
                   className={`text-[#2E3092] text-sm font-medium w-[120px] text-center ${item.transformProps}`}
-                >
-                  {item.title}
-                </motion.p>
+                  dangerouslySetInnerHTML={{ __html: item.title }}
+                ></motion.p>
               </div>
             ))}
           </div>

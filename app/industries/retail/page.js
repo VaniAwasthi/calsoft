@@ -49,7 +49,7 @@ const Page = () => {
       title: "Optimize inventory and supply chains",
       desc: "Predict demand and reduce operational inefficiencies.",
       positionClass:
-        "md:translate-x-[-5px] md:translate-y-[-39px] xl:translate-y-[-3px]",
+        "md:translate-x-[-5px] md:translate-y-[-30px] lg-translate-y-[-10px] xl:translate-y-[-3px]",
       translateprop: "translate-x-[33px] translate-y-[10px]",
       position: "left",
       transformProps: "translate-x-[-55px] translate-y-[22px]",
@@ -101,9 +101,9 @@ const Page = () => {
   ];
   const SectionOne = {
     title: "Understand, predict, and enhance shopping experiences with AI",
-    description: `Are you facing higher cart abandons or in-store sales drops? This must be a call to improve shopper experiences and relevance across catalogs, design, layout, and more.
+    description: `Are you facing higher cart abandonment rates or in-store sales drops? This must be a call to improve shopper experiences and relevance across catalogs, design, layout, and more.
     <br/> Our industry-learned AI can help you anticipate customer needs, offer tailored recommendations, and create more intuitive (personal) experiences.`,
-    pointsTitle: "What we do:",
+    pointsTitle: "What We Do:",
     points: [
       "Implement AI-driven customer insights for better engagement",
       "Develop real-time recommendation engines to personalize shopping  experiences",
@@ -124,8 +124,8 @@ const Page = () => {
   const SectionTwo = {
     title: "Improve efficiency, reduce waste, and ensure product availability",
     description:
-      "Retailers need real-time visibility into their inventory to avoid overstocking, stockouts, and logistical inefficiencies.Our data-driven supply chain automation helps ensure the right products are available at the right time – so you don’t worry.",
-    pointsTitle: "What we do:",
+      "Retailers need real-time visibility into their inventory to avoid overstocking, stockouts, and logistical inefficiencies. Our data-driven supply chain automation helps ensure the right products are available at the right time – so you don’t worry.",
+    pointsTitle: "What We Do:",
     points: [
       "Develop AI-powered demand forecasting models to predict sales trends",
       "Automate warehouse and logistics management for operational efficiency",
@@ -147,7 +147,7 @@ const Page = () => {
     title: "Protect customers, prevent fraud, and secure transactions",
     description: `As retail transactions shift online, security concerns grow. One must have real-time fraud detection and secure digital payments to protect customer trust.
 <br/>We have this covered with intelligent security solutions to prevent all such fraud and mitigate risks.`,
-    pointsTitle: "What we do:",
+    pointsTitle: "What We Do:",
     points: [
       "Implement AI-powered fraud detection to identify suspicious activities",
       "Strengthen payment security systems with real-time monitoring",

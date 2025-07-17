@@ -9,11 +9,13 @@ import Logo from "../../assets/logo.png";
 import barmenu from "../../assets/menu-bar.svg";
 import MegaMenuImg1 from "../../assets/home/megamenu1.webp";
 import MegaMenuImg2 from "../../assets/home/megamenu2.webp";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [openMenus, setOpenMenus] = useState({});
   const [activeMenu, setActiveMenu] = useState(null);
   const [selectedSubmenu, setSelectedSubmenu] = useState(null);
+  const pathname = usePathname();
 
   const toggleMenu = (index) => {
     setOpenMenus((prev) => ({
@@ -316,14 +318,31 @@ export default function Navbar() {
     },
   ];
   // Handle submenu default selection
+  // useEffect(() => {
+  //   const current = navItems.find((i) => i.title === activeMenu);
+  //   if (current && current.submenu?.length) {
+  //     setSelectedSubmenu(current.submenu[0]);
+  //   } else {
+  //     setSelectedSubmenu(null);
+  //   }
+  // }, [activeMenu]);
   useEffect(() => {
     const current = navItems.find((i) => i.title === activeMenu);
+
     if (current && current.submenu?.length) {
-      setSelectedSubmenu(current.submenu[0]);
+      const matchedSubmenu = current.submenu.find((sub) =>
+        pathname.includes(sub.href)
+      );
+      if (matchedSubmenu) {
+        setSelectedSubmenu(matchedSubmenu);
+      } else {
+        setSelectedSubmenu(current.submenu[0]);
+      }
     } else {
       setSelectedSubmenu(null);
     }
-  }, [activeMenu]);
+  }, [activeMenu, pathname]);
+
   return (
     <header className="w-full sticky top-0 z-[90]">
       {/* Top Bar */}
@@ -403,25 +422,32 @@ export default function Navbar() {
                 onMouseEnter={() => setActiveMenu(activeMenu)}
                 onMouseLeave={() => setActiveMenu(null)}
               >
-                <div className="max-w-[1440px] mx-auto bg-white text-black rounded-xl shadow-xl flex ">
+                <div className="max-w-[1340px] mx-auto bg-white text-black rounded-xl shadow-xl flex ">
                   {/* Left Column */}
                   <div className="w-[30%]  p-6">
                     {navItems
                       .find((item) => item.title === activeMenu)
-                      ?.submenu?.map((sub, idx) => (
-                        <Link
-                          href={sub.href}
-                          key={idx}
-                          className={`block text-sm py-1 w-full text-left ${
-                            selectedSubmenu?.title === sub.title
-                              ? "text-[#2E3092] font-semibold"
-                              : "text-[#1A1A1A]"
-                          }`}
-                          onMouseEnter={() => setSelectedSubmenu(sub)}
-                        >
-                          {sub.title}
-                        </Link>
-                      ))}
+                      ?.submenu?.map((sub, idx) => {
+                        const isActive = pathname === sub.href;
+
+                        return (
+                          <Link
+                            href={sub.href}
+                            key={idx}
+                            className={`group flex items-center justify-between text-sm py-1 w-full text-left ${
+                              isActive
+                                ? "text-[#2E3092] font-semibold"
+                                : "text-[#1A1A1A]"
+                            }`}
+                            onMouseEnter={() => setSelectedSubmenu(sub)}
+                          >
+                            <span>{sub.title}</span>
+                            {isActive && (
+                              <span className="text-[#2E3092]">→</span>
+                            )}
+                          </Link>
+                        );
+                      })}
                   </div>
                   <div className="w-px h-64 bg-[#CECECE] mx-6 mt-6"></div>
                   {/* Center Column */}

@@ -184,7 +184,7 @@ We help you get ahead of such threats with real-time risk mitigation, powered by
         BlackHeading={BlackHeading}
         icons={icons}
         MobileImg={Intellegence}
-        headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-10 line-clamp-4"
+        headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-14 line-clamp-4"
         contentClass=" md:h-60 lg:h-64 "
       />
       <TopClients />
