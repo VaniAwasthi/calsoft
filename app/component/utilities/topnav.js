@@ -20,6 +20,7 @@ export default function Navbar() {
   const toggleMenu = (index) => {
     setOpenMenus((prev) => ({
       ...prev,
+
       [index]: !prev[index],
     }));
   };
