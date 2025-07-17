@@ -1,5 +1,5 @@
 "use client";
-import BannerwithButtonBg from "../../assets/Data-Ai/technical-consultant/TechnicalBanner.webp";
+import BannerwithButtonBg from "../../assets/Data-Ai/technical-consultant/KnowMoreBanner.webp";
 
 import React from "react";
 

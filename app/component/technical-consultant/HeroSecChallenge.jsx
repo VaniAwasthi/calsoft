@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/technical-consultant/TechnicalBanner.webp";
+import BackgroundImage from "../../assets/Data-Ai/technical-consultant/TechnicalBanner.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
@@ -8,11 +8,6 @@ import InfoSec1 from "../../assets/Data-Ai/technical-consultant/InfoSec1.webp";
 import InfoSec2 from "../../assets/Data-Ai/technical-consultant/InfoSec2.webp";
 import InfoSec3 from "../../assets/Data-Ai/technical-consultant/InfoSec3.webp";
 import InfoSec4 from "../../assets/Data-Ai/technical-consultant/InfoSec4.webp";
-
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
-import RiskImage from "../../assets/Data-Ai/Risk.webp";
-import PlatformImage from "../../assets/Data-Ai/4sec.webp";
-import CostImage from "../../assets/Data-Ai/5sec.webp";
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -180,7 +175,7 @@ export const PlatformSecTechnicalConsulting = () => {
         imageSrc={InfoSec3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
-        isDivider={false}
+        isDivider={true}
       />
     </>
   );

@@ -140,9 +140,9 @@ export const DataInfoSection = ({
   isDivider,
 }) => {
   return (
-    <section className="bg-white container mx-auto  py-10 px-4 md:px-16 ">
+    <section className="bg-white container mx-auto  py-10 px-4 md:px-16 my-[3rem] ">
       <div
-        className={`flex my-2  ${
+        className={`flex my-[3rem]  ${
           imageLeft
             ? "flex-col-reverse md:flex-row-reverse"
             : "flex-col-reverse md:flex-row"
@@ -150,7 +150,7 @@ export const DataInfoSection = ({
       >
         {/* Text Content */}
         <motion.div
-          className="w-full md:w-3/5 manrope flex md:flex-row flex-col md:px-0 px-6"
+          className="w-full md:w-3/6 manrope flex md:flex-row flex-col md:px-0 px-6"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -262,13 +262,13 @@ export const DataInfoSection = ({
         </motion.div>
 
         {/* Image Content */}
-        <div className="w-full md:w-2/5">
+        <div className="w-full md:w-3/6">
           <Image
             src={imageSrc}
             alt={imageAlt}
             width={500}
-            height={350}
-            className="rounded-lg shadow-lg w-full h-60 md:h-[450px]"
+            height={250}
+            className="rounded-lg shadow-lg w-full h-60 md:h-[400px]"
           />
         </div>
       </div>
