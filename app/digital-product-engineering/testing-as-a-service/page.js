@@ -10,7 +10,7 @@ import {
 } from "../../component/testingAs/TestingAs.jsx";
 
 import React from "react";
-import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
+import BannerwithButtonBg from "../../assets/DigitalEngineering/testing/KnowMore.svg";
 import {
   BannerSection,
   ContactSecData,

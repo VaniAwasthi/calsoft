@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { FaSearch } from "react-icons/fa";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoMdArrowDropright } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/logo.png";
@@ -93,7 +93,7 @@ export default function Navbar() {
         },
         {
           title: "Agentic AI planning & development",
-          href: "/data-ai/agentic-ai-planning-development/",
+          href: "/data-ai/agentic-ai-planning-development",
           section: [
             "AIOps planning",
             "Use-case specific AI agents",
@@ -387,10 +387,32 @@ export default function Navbar() {
                         href={href}
                         className="flex items-center space-x-1 text-white"
                       >
-                        <span className="text-sm font-normal hover:font-bold">
+                        <span
+                          className={`text-sm ${
+                            navItems
+                              .find((item) => item.title === title)
+                              ?.submenu?.some((sub) =>
+                                pathname.startsWith(sub.href)
+                              )
+                              ? "font-bold text-[#fffff]"
+                              : "font-normal"
+                          } hover:font-bold`}
+                        >
                           {title}
                         </span>
-                        {submenu && <IoIosArrowDown />}
+                        {submenu && (
+                          <IoIosArrowDown
+                            className={`transition-transform ${
+                              navItems
+                                .find((item) => item.title === title)
+                                ?.submenu?.some((sub) =>
+                                  pathname.startsWith(sub.href)
+                                )
+                                ? "text-[#fffff] font-bold"
+                                : "text-white"
+                            }`}
+                          />
+                        )}
                       </Link>
                     </div>
                   ))}
@@ -444,7 +466,10 @@ export default function Navbar() {
                           >
                             <span>{sub.title}</span>
                             {isActive && (
-                              <span className="text-[#2E3092]">→</span>
+                              <IoMdArrowDropright
+                                size={25}
+                                className="text-[#2E3092]"
+                              />
                             )}
                           </Link>
                         );

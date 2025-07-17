@@ -303,7 +303,7 @@ export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
           className="text-xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
         >
           {title}
-          <span className="text-black font-semibold px-3">{blackTitle}</span>
+          <span className="text-black font-semibold px-1">{blackTitle}</span>
         </motion.h2>
       </motion.div>
 
@@ -314,7 +314,7 @@ export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
               {/* Left Title */}
               <div
                 onClick={() => toggleMobile(index)}
-                className="bg-[#2D2A86] uppercase text-white font-semibold text-sm px-6 py-4 flex items-center justify-center min-w-full md:min-w-[280px] rounded-l-full cursor-pointer"
+                className="bg-[#2D2A86] uppercase text-white font-semibold text-sm px-6 py-4 flex items-center justify-center w-full md:w-[260px] rounded-l-full cursor-pointer text-center break-words"
               >
                 {item.title}
               </div>
@@ -329,7 +329,7 @@ export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
                 <div className="challenge-inner">
                   {/* Front Side */}
                   <div className="challenge-face bg-[#E6E6E6] text-sm text-gray-800">
-                    <div className="py-4">{item.description}</div>
+                    <div className="py-4 break-words">{item.description}</div>
                     <button
                       //   onClick={handleFlip}
                       className="flex items-center bg-[#F4F4F4] text-[#2D2A86] text-sm font-medium h-full rounded-full hover:bg-[#e5e5e5] transition whitespace-nowrap"
