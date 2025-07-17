@@ -203,13 +203,33 @@ export default function ResourceGrid() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
               onClick={() => handleBlogClick(item)}
-              className="bg-[#F8F9FA] border border-[#181C8E] rounded-lg shadow-md overflow-hidden relative cursor-pointer h-[400px] "
+              className="bg-[#F8F9FA] border border-[#BABABA] rounded-lg hover:shadow-2xl overflow-hidden relative cursor-pointer h-[400px] "
             >
-              <div className="p-4 h-1/2">
+              <div className="p-4 h-[55%]">
                 <div className="">
-                  <p className="text-[12px] font-light text-black uppercase">
-                    {item?.categoryData.name}
-                  </p>
+                  <div className="flex">
+                    <p className="text-[12px] font-medium text-[#2E3092]  px-1">
+                      {item?.categoryData.name}
+                    </p>
+                    <span className="text-[12px] font-medium text-black uppercase px-1">
+                      |
+                    </span>
+                    {item.authorData ? (
+                      <>
+                        <span className="text-[12px] font-medium text-[#939393]  px-1">
+                          {new Date(item.authorData.createdAt).toLocaleString(
+                            "en-IN",
+                            {
+                              timeZone: "Asia/Kolkata",
+                              day: "numeric",
+                              month: "short",
+                              year: "numeric",
+                            }
+                          )}
+                        </span>
+                      </>
+                    ) : null}
+                  </div>
                   <button
                     className="absolute top-2 right-2 text-xl text-[#181C8E] z-10"
                     onClick={(e) => {
@@ -220,37 +240,31 @@ export default function ResourceGrid() {
                     <FiShare2 />
                   </button>
                 </div>
-                <h3 className="font-semibold mt-4 mb-4 text-[24px] text-[#B10C2A]  overflow-hidden">
-                  {item.title}
+                <h3 className="font-semibold mt-4 mb-4 text-[18px] text-[#000000]  overflow-hidden">
+                  {item.title.length > 50
+                    ? item.title.slice(0, 45) + "..."
+                    : item.title}
                 </h3>
 
-                <div className="flex flex-wrap gap-2 my-2">
-                  {/* Container to hold tags */}
-                  {item?.tagData.map((tag) => (
+                <div className="flex flex-wrap gap-1 my-2">
+                  {item?.tagData.map((tag, index) => (
                     <span
                       key={tag._id}
-                      className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+                      className="text-[#2E3092] font-semibold text-[12px] py-1 rounded flex items-center"
                     >
                       {tag.name}
+                      {index !== item.tagData.length - 1 && (
+                        <span className="mx-1 text-[#2E3092]">|</span>
+                      )}
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-between text-[13px] font-medium">
+
+                <div className="flex justify-between text-[14px] font-semibold">
                   {item.authorData ? (
                     <>
-                      <span className="text-[#E36C0A]">
+                      <span className="text-[#BA0007]">
                         {item.authorData.name}
-                      </span>
-                      <span className="text-[#939393]">
-                        {new Date(item.authorData.createdAt).toLocaleString(
-                          "en-IN",
-                          {
-                            timeZone: "Asia/Kolkata",
-                            day: "numeric",
-                            month: "short",
-                            year: "numeric",
-                          }
-                        )}
                       </span>
                     </>
                   ) : (
@@ -259,7 +273,7 @@ export default function ResourceGrid() {
                 </div>
               </div>
 
-              <div className="relative w-full  overflow-hidden rounded-b-lg h-1/2">
+              <div className="relative w-full  overflow-hidden rounded-b-lg h-[45%]">
                 <Image
                   src={item.image ? `${baseUrl}/${item.image}` : blogexpanImage} // fallback optional
                   alt={item.title}
