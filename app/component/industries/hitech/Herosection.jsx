@@ -50,7 +50,7 @@ export const Herosection = ({
         hoverImage={ButtonImage}
         titleOneClass="font-normal lg:text-[52px] md:text-[40px] text-[25px] mt-2"
         titleTwoClass={`font-normal lg:text-[52px] md:text-[40px] text-[25px] md:mt-4 ${titleTwoClass}`}
-        descriptionClass="hidden md:block mt-4 text-[18px] leading-6 w-[200px] md:w-full"
+        descriptionClass="hidden md:block mt-4 text-[18px] leading-8 w-[200px] md:w-full"
         BgClassname="object-cover w-full h-full object-center"
         isCaseStudyButton={isCaseStudyButton}
       />

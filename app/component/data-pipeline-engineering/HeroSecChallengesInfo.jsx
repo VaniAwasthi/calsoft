@@ -1,11 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/PipeLine/BannerPipe.webp";
+import BackgroundImage from "../../assets/Data-Ai/PipeLine/BannerPipe.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
 import InfoSec1 from "../../assets/Data-Ai/PipeLine/InfoSec1.webp";
 import InfoSec2 from "../../assets/Data-Ai/PipeLine/InfoSec2.webp";
 import InfoSec3 from "../../assets/Data-Ai/PipeLine/InfoSec3.webp";
@@ -178,7 +176,7 @@ export const EffortlessSec = () => {
         imageSrc={InfoSec3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
-        isDivider={false}
+        isDivider={true}
       />
     </>
   );

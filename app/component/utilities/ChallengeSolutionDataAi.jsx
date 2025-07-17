@@ -56,12 +56,12 @@ export const ChallengeSolutionComp = ({
             >
               {/* Challenge Pill */}
               <div className="bg-[#F3F3F3]  text-[#333] px-6 py-6 h-[70px] flex items-center justify-start rounded-l-full shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-                <span className="text-[14px] px-3">{item.challenge}</span>
+                <span className="text-[14px] px-6">{item.challenge}</span>
               </div>
 
               {/* Tag Pill (Center - Overlapping) */}
               <div className="bg-gradient-to-r from-[#2D2DA3] to-[#4E51C6] text-white  px-4 py-6 h-[70px] flex items-center justify-center rounded-full shadow-[0_8px_16px_rgba(0,0,0,0.1)] -mx-10 z-10">
-                <span className="text-[16px] px-6 font-medium text-center">
+                <span className="uppercase text-[16px] px-6 font-medium text-center">
                   {item.tag}
                 </span>
               </div>
@@ -140,9 +140,9 @@ export const DataInfoSection = ({
   isDivider,
 }) => {
   return (
-    <section className="bg-white container mx-auto  py-10 px-4 md:px-16 ">
+    <section className="bg-white container mx-auto  py-10 px-4 md:px-16 my-[3rem] ">
       <div
-        className={`flex my-2  ${
+        className={`flex my-[3rem]  ${
           imageLeft
             ? "flex-col-reverse md:flex-row-reverse"
             : "flex-col-reverse md:flex-row"
@@ -150,7 +150,7 @@ export const DataInfoSection = ({
       >
         {/* Text Content */}
         <motion.div
-          className="w-full md:w-3/5 manrope flex md:flex-row flex-col md:px-0 px-6"
+          className="w-full md:w-3/6 manrope flex md:flex-row flex-col md:px-0 px-6"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -218,7 +218,7 @@ export const DataInfoSection = ({
               >
                 What we do:
               </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24]">
+              <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24] ">
                 {whatWeDo.map((item, index) => (
                   <motion.li
                     initial={{ x: -50, opacity: 0 }}
@@ -262,13 +262,13 @@ export const DataInfoSection = ({
         </motion.div>
 
         {/* Image Content */}
-        <div className="w-full md:w-2/5">
+        <div className="w-full md:w-3/6">
           <Image
             src={imageSrc}
             alt={imageAlt}
             width={500}
-            height={350}
-            className="rounded-lg shadow-lg w-full h-60 md:h-[450px]"
+            height={250}
+            className="rounded-lg shadow-lg w-full h-60 md:h-[400px]"
           />
         </div>
       </div>

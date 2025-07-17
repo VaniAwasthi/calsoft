@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/data-observibility/oberservabilityBanner.png";
+import BackgroundImage from "../../assets/Data-Ai/data-observibility/oberservabilityBanner.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
+
 import InfoSec1 from "../../assets/Data-Ai/data-observibility/InfoSec-1.webp";
 import InfoSec2 from "../../assets/Data-Ai/data-observibility/InfoSec-2.webp";
 import InfoSec3 from "../../assets/Data-Ai/data-observibility/InfoSec-3.webp";
@@ -175,7 +174,7 @@ export const Real2Sec = () => {
         imageSrc={InfoSec3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
-        isDivider={false}
+        isDivider={true}
       />
     </>
   );

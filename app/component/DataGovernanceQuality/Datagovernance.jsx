@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/dataGovernance/HeroBanner.webp";
+import BackgroundImage from "../../assets/Data-Ai/dataGovernance/HeroBanner.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
 import Info1 from "../../assets/Data-Ai/dataGovernance/InfoSec-1.webp";
 import Info2 from "../../assets/Data-Ai/dataGovernance/InfoSec-2.webp";
 import Info3 from "../../assets/Data-Ai/dataGovernance/InfoSec-3.webp";
