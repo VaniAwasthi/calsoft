@@ -129,7 +129,7 @@ export default function Navbar() {
       submenu: [
         {
           title: "Product and application development ",
-          href: "digital-product-engineering/product-application-development",
+          href: "/digital-product-engineering/product-application-development",
           section: [
             "Ideation & architecture orchestration",
             "Development lifecycle services",
