@@ -205,13 +205,13 @@ export default function ResourceGrid() {
               onClick={() => handleBlogClick(item)}
               className="bg-[#F8F9FA] border border-[#BABABA] rounded-lg hover:shadow-2xl overflow-hidden relative cursor-pointer h-[400px] "
             >
-              <div className="p-4 h-[55%]">
+              <div className="p-4 h-[50%]">
                 <div className="">
                   <div className="flex">
                     <p className="text-[12px] font-medium text-[#2E3092]  px-1">
                       {item?.categoryData.name}
                     </p>
-                    <span className="text-[12px] font-medium text-black uppercase px-1">
+                    <span className="text-[12px] font-medium text-[#939393] uppercase px-1">
                       |
                     </span>
                     {item.authorData ? (
@@ -250,7 +250,7 @@ export default function ResourceGrid() {
                   {item?.tagData.map((tag, index) => (
                     <span
                       key={tag._id}
-                      className="text-[#2E3092] font-semibold text-[12px] py-1 rounded flex items-center"
+                      className="text-[#2E3092] font-semibold text-[12px]  rounded flex items-center"
                     >
                       {tag.name}
                       {index !== item.tagData.length - 1 && (
@@ -273,7 +273,7 @@ export default function ResourceGrid() {
                 </div>
               </div>
 
-              <div className="relative w-full  overflow-hidden rounded-b-lg h-[45%]">
+              <div className="relative w-full  overflow-hidden rounded-b-lg h-[50%]">
                 <Image
                   src={item.image ? `${baseUrl}/${item.image}` : blogexpanImage} // fallback optional
                   alt={item.title}
