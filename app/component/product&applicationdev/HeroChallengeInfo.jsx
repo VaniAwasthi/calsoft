@@ -14,8 +14,8 @@ import Info6 from "../../assets/DigitalEngineering/product-app/Info-6.webp";
 export const HeroSectionProductandApplicationDev = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "Product and application",
-    title2: "development",
+    title: "Product and application development",
+
     description: `Engineer ideas into robust, scalable solutions
 with speed and precision.`,
     buttonText: "Get in touch",
@@ -34,18 +34,12 @@ with speed and precision.`,
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[46px] md:text-[40px] text-[21px] mt-[3rem]"
-        titleTwoClass={`font-semibold lg:text-[46px] md:text-[40px] text-[21px] md:mt-1 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-1 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}

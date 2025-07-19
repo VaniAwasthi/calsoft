@@ -32,7 +32,7 @@ export const InfraSection = ({
       >
         {/* Text Content */}
         <motion.div
-          className="w-full md:w-3/4 manrope"
+          className="w-full md:w-[55%] manrope"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -43,7 +43,7 @@ export const InfraSection = ({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+            className="text-xl md:text-[30px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
           >
             {title}
           </motion.h2>
@@ -93,11 +93,11 @@ export const InfraSection = ({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="text-[#2E3092] font-semibold mb-2 text-[20px]"
+                className="text-[#2E3092] font-semibold mb-2 text-[18px]"
               >
-                What we do:
+                What We Do:
               </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24]">
+              <ul className="list-disc list-inside text-[#545353] text-[16px] space-y-1 marker:text-[#ED1C24]">
                 {whatWeDo.map((item, index) => (
                   <motion.li
                     initial={{ x: -50, opacity: 0 }}
@@ -122,11 +122,11 @@ export const InfraSection = ({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="hidden md:block text-[#2E3092] font-semibold mb-2 text-[20px]"
+                className="hidden md:block text-[#2E3092] font-semibold mb-2 text-[18px]"
               >
                 Business Impact:
               </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24]">
+              <ul className="list-disc list-inside text-[#545353] text-[14px] space-y-1 marker:text-[#ED1C24]">
                 {businessImpact.map((item, index) => (
                   <motion.li
                     initial={{ x: -50, opacity: 0 }}
@@ -161,13 +161,12 @@ export const InfraSection = ({
         </motion.div>
 
         {/* Image Content */}
-        <div className="w-full md:w-1/4">
+        <div className="relative w-full md:w-[40%] aspect-[13/10]">
           <Image
             src={imageSrc}
             alt={imageAlt}
-            width={500}
-            height={400}
-            className="rounded-lg shadow-lg w-full h-60 md:h-full"
+            fill
+            className="rounded-lg shadow-lg object-cover"
           />
         </div>
       </div>
@@ -184,7 +183,7 @@ export const BannerSection = ({
   title,
   buttonText = "Know More",
   buttonLink = "#",
-  height = "h-[200px] md:h-[250px]",
+  height = "h-[200px] md:h-[150px]",
 }) => {
   return (
     <div className="container mx-auto py-15 px-4 md:px-16">
@@ -212,7 +211,7 @@ export const BannerSection = ({
           {buttonText && (
             <Link
               href={buttonLink}
-              className="bg-[#C00404] hover:bg-red-800 text-white w-[150px] px-6  md:px-8 py-2 rounded-lg text-sm font-medium transition mt-4 md:mt-0"
+              className="bg-[#C00404] hover:bg-red-800 text-white w-[220px] px-6  md:px-8 py-4 rounded-4xl text-sm font-medium transition mt-4 md:mt-0"
             >
               {buttonText}
             </Link>
@@ -232,7 +231,7 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
           <Image
             src={ContactImg}
             alt="Background Image"
-            className="w-full h-[250px] md:h-full md:object-cover object-center"
+            className="w-full h-[250px] md:h-[300px] md:object-cover object-center"
           />
 
           {/* Right Side: Overlay Content */}
@@ -288,7 +287,7 @@ export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 md:py-10">
+    <div className="max-w-5xl mx-auto px-4 md:py-4">
       <motion.div
         className="w-full my-5 manrope"
         initial={{ opacity: 0, y: 10 }}
@@ -300,7 +299,7 @@ export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="text-xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+          className="text-xl md:text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-center text-transparent"
         >
           {title}
           <span className="text-black font-semibold px-1">{blackTitle}</span>

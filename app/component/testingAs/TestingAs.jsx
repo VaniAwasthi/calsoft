@@ -32,18 +32,12 @@ export const TestingTab = () => {
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}

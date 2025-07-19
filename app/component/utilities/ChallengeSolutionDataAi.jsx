@@ -16,9 +16,9 @@ export const ChallengeSolutionComp = ({
   GradientHeading,
 }) => {
   return (
-    <div className=" max-w-7xl mx-auto px-6 py-3 md:py-12">
+    <div className=" max-w-7xl mx-auto px-6 py-3 md:py-10">
       <motion.div
-        className="w-full my-1 md:my-5 manrope"
+        className="w-full my-1 md:mb-2 manrope"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -28,47 +28,47 @@ export const ChallengeSolutionComp = ({
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="md:w-full w-[300px] text-xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent text-center"
+          className="md:w-full w-[300px] text-xl mb-5 md:text-[38px] font-mixed bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent text-center"
         >
           {GradientHeading}
 
-          <span className="text-black font-semibold px-1">{BlackHeading}</span>
+          <span className="text-black font-mixed px-1">{BlackHeading}</span>
         </motion.h2>
       </motion.div>
 
       <div className="hidden md:block">
         <div className="grid grid-cols-3 gap-6 mb-6">
-          <h2 className="text-2xl font-bold text-[#2D2DA3] text-center">
+          <h2 className="text-2xl md:text-[29px] font-bold text-[#2E3092] text-center">
             Challenge
           </h2>
           <div></div>
-          <h2 className="text-2xl font-bold text-[#2D2DA3] text-center">
+          <h2 className="text-2xl md:text-[29px] font-bold text-[#2E3092] text-center">
             Solution
           </h2>
         </div>
 
         {/* Rows */}
-        <div className="space-y-6">
+        <div className="space-y-8">
           {data.map((item, index) => (
             <div
               key={index}
-              className="grid grid-cols-[2.6fr_0.8fr_2.6fr] items-center w-full max-w-7xl mx-auto"
+              className="grid grid-cols-[2.4fr_1fr_2.4fr] items-center w-full max-w-7xl mx-auto"
             >
               {/* Challenge Pill */}
-              <div className="bg-[#F3F3F3]  text-[#333] px-6 py-6 h-[70px] flex items-center justify-start rounded-l-full shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-                <span className="text-[14px] px-6">{item.challenge}</span>
+              <div className="bg-[#EEEEEE]  text-[#575757] px-6 py-6 h-[80px] flex items-center justify-start rounded-l-full shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
+                <span className="text-[16px] px-6">{item.challenge}</span>
               </div>
 
               {/* Tag Pill (Center - Overlapping) */}
-              <div className="bg-gradient-to-r from-[#2D2DA3] to-[#4E51C6] text-white  px-4 py-6 h-[70px] flex items-center justify-center rounded-full shadow-[0_8px_16px_rgba(0,0,0,0.1)] -mx-10 z-10">
+              <div className="bg-[#2E3092]  text-white  px-4 py-6 h-[80px] flex items-center justify-center rounded-full shadow-[0_8px_16px_rgba(0,0,0,0.1)] -mx-10 z-10">
                 <span className="uppercase text-[16px] px-6 font-medium text-center">
                   {item.tag}
                 </span>
               </div>
 
               {/* Solution Pill */}
-              <div className="bg-[#B3CFFF]  text-[#333] px-6 py-6 h-[70px] flex items-center justify-start rounded-r-full shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-                <span className="text-[14px] px-6">{item.solution}</span>
+              <div className="bg-[#B3CFFF]  text-[#1E1E1E] px-6 py-6 h-[80px] flex items-center justify-start rounded-r-full shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
+                <span className="text-[16px] px-6">{item.solution}</span>
               </div>
             </div>
           ))}
@@ -140,7 +140,7 @@ export const DataInfoSection = ({
   isDivider,
 }) => {
   return (
-    <section className="bg-white container mx-auto  py-10 px-4 md:px-16 my-[3rem] ">
+    <section className="bg-white container mx-auto  py-10 px-4 md:px-16 my-[1rem] ">
       <div
         className={`flex my-[3rem]  ${
           imageLeft
@@ -150,7 +150,7 @@ export const DataInfoSection = ({
       >
         {/* Text Content */}
         <motion.div
-          className="w-full md:w-3/6 manrope flex md:flex-row flex-col md:px-0 px-6"
+          className="w-full md:w-[65%] manrope flex md:flex-row flex-col md:px-0 px-6"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -159,7 +159,7 @@ export const DataInfoSection = ({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full md:w-2/4 mt-8"
+            className="w-full md:w-[53%] mt-8"
           >
             <motion.h2
               key={title}
@@ -167,8 +167,8 @@ export const DataInfoSection = ({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              className={`text-2xl md:text-[30px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent w-full ${
-                imageLeft ? "md:w-[95%]" : "md:w-[65%]"
+              className={`text-2xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent w-full ${
+                imageLeft ? "md:w-[95%]" : "md:w-[80%]"
               }`}
             >
               {title}
@@ -181,7 +181,7 @@ export const DataInfoSection = ({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-sm md:text-[16px] font-semibold mt-3 md:mt-6 mb-6 md:mb-0 w-full md:w-[65%]"
+              className="text-sm md:text-[20px] font-semibold mt-3 md:mt-6 mb-6 md:mb-0 w-full md:w-[80%]"
             >
               {description}
             </motion.p>
@@ -206,7 +206,7 @@ export const DataInfoSection = ({
             )}
           </motion.div>
 
-          <div className="grid grid-cols-1 w-full md:w-2/4 mt-3 md:mt-8 items-start px-2">
+          <div className="grid grid-cols-1 w-full md:w-[47%] mt-3 md:mt-8 items-start px-2">
             {/* What We Do */}
             <div className="md:pr-4">
               <motion.h3
@@ -214,11 +214,11 @@ export const DataInfoSection = ({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="text-[#2E3092] font-semibold mb-2 text-[20px]"
+                className="text-[#2E3092] font-bold mb-2 text-[25px]"
               >
-                What we do:
+                What We Do:
               </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24] ">
+              <ul className="list-disc list-inside text-[#545353] text-[17px] space-y-1 marker:text-[#ED1C24] ">
                 {whatWeDo.map((item, index) => (
                   <motion.li
                     initial={{ x: -50, opacity: 0 }}
@@ -240,11 +240,11 @@ export const DataInfoSection = ({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className=" text-[#2E3092] font-semibold mb-2 text-[20px]"
+                className=" text-[#2E3092] font-bold mb-2 text-[25px]"
               >
-                Business impact:
+                Business Impact:
               </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24]">
+              <ul className="list-disc list-inside text-[#545353] text-[16px] space-y-1 marker:text-[#ED1C24]">
                 {businessImpact.map((item, index) => (
                   <motion.li
                     initial={{ x: -50, opacity: 0 }}
@@ -262,13 +262,12 @@ export const DataInfoSection = ({
         </motion.div>
 
         {/* Image Content */}
-        <div className="w-full md:w-3/6">
+        <div className="relative w-full md:w-[40%] aspect-[14/10]">
           <Image
             src={imageSrc}
             alt={imageAlt}
-            width={500}
-            height={250}
-            className="rounded-lg shadow-lg w-full h-60 md:h-[400px]"
+            fill
+            className="rounded-lg shadow-lg object-cover"
           />
         </div>
       </div>
@@ -289,7 +288,7 @@ export const ContactSecDataAi = ({ BoldContent, lightContent, link }) => {
           <Image
             src={ContactImg}
             alt="Background Image"
-            className="w-full h-[300px] md:h-full md:object-cover object-center"
+            className="w-full h-[300px] md:h-[350px] md:object-cover object-center"
           />
 
           {/* Right Side: Overlay Content */}

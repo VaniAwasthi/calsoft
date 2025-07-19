@@ -21,18 +21,20 @@ const BannerWithRightSec = ({
   leftSecClass = "",
   rightSecClass = "",
   ImageClass = "",
-  ImageClassname,
-  backgroundMain,
+  ImageClassname = "",
+  backgroundMain = "",
 }) => {
   return (
-    <div className={`relative w-full h-[400px] md:h-[650px] ${backgroundMain}`}>
+    <div
+      className={`relative w-full h-[300px] md:h-[450px] lg:h-[550px] ${backgroundMain}`}
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src={heroBg}
           alt="Background"
           fill
-          className={`object-cover w-full h-full [object-position:100%_25%] md:object-center ${ImageClassname}`}
+          className={`object-cover object-[100%_25%] md:object-[100%_100%] md:object-center ${ImageClassname}`}
           priority
         />
       </div>
@@ -44,35 +46,23 @@ const BannerWithRightSec = ({
         >
           <div className="flex flex-col md:flex-row items-start justify-between w-full">
             {/* Left Section */}
-            <div className={`text-white w-[250px] md:w-1/2 ${leftSecClass}`}>
+            <div className={`text-white w-full md:w-1/2 ${leftSecClass}`}>
               <motion.h2
                 initial={{ y: -30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className={`font-bold text-left leading-8 md:leading-14 ${titleOneClass}`}
+                viewport={{ once: true, amount: 0.3 }}
+                className={`font-semibold text-left leading-tight text-[24px] md:text-[40px] lg:text-[55px] `}
               >
                 {title}
               </motion.h2>
-
-              {title2 && (
-                <motion.h2
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.4 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className={`font-normal md:my-1 leading-8 md:leading-14 ${titleTwoClass}`}
-                >
-                  {title2}
-                </motion.h2>
-              )}
 
               <motion.p
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className={`mt-1 text-sm md:text-lg leading-6 font-light max-w-[90%] md:max-w-[600px] ${descriptionClass}`}
+                viewport={{ once: true, amount: 0.3 }}
+                className={`mt-4 text-[13px] md:text-[16px] leading-relaxed max-w-[90%] md:max-w-[350px] `}
                 dangerouslySetInnerHTML={{ __html: description }}
               />
 
@@ -80,13 +70,14 @@ const BannerWithRightSec = ({
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="md:mt-9 my-6"
+                viewport={{ once: true, amount: 0.3 }}
+                className="mt-6 md:mt-8"
               >
                 <ButtonLayout
                   text={buttonText}
                   image={buttonImage}
                   hoverImage={hoverImage}
+                  className="!w-[200px]"
                 />
               </motion.div>
             </div>
@@ -97,15 +88,15 @@ const BannerWithRightSec = ({
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className={` hidden md:flex justify-start w-full md:w-1/2 ${rightSecClass}`}
+                viewport={{ once: true, amount: 0.3 }}
+                className={`hidden md:flex justify-start w-full md:w-1/2 ${rightSecClass}`}
               >
                 <Image
                   src={rightImage}
                   alt="Right Illustration"
                   width={500}
                   height={500}
-                  className={`${ImageClass}`}
+                  className={`object-contain ${ImageClass}`}
                 />
               </motion.div>
             )}

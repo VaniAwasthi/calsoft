@@ -48,7 +48,7 @@ const Footer = () => {
                   placeholder="Add your email*"
                   className="w-full text-gray-300 px-4 py-3 pr-10 bg-transparent rounded-full focus:outline-none"
                 />
-                <button className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-1">
+                <button className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0">
                   <GoArrowRight /> Subscribe
                 </button>
               </div>

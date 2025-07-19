@@ -4,10 +4,10 @@ import BackgroundImage from "../../assets/Data-Ai/PipeLine/BannerPipe.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import InfoSec1 from "../../assets/Data-Ai/PipeLine/InfoSec1.webp";
-import InfoSec2 from "../../assets/Data-Ai/PipeLine/InfoSec2.webp";
-import InfoSec3 from "../../assets/Data-Ai/PipeLine/InfoSec3.webp";
-import InfoSec4 from "../../assets/Data-Ai/PipeLine/InfoSec4.webp";
+import InfoSec1 from "../../assets/Data-Ai/PipeLine/Info1.svg";
+import InfoSec2 from "../../assets/Data-Ai/PipeLine/Info2.svg";
+import InfoSec3 from "../../assets/Data-Ai/PipeLine/Info3.svg";
+import InfoSec4 from "../../assets/Data-Ai/PipeLine/Info4.svg";
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -15,8 +15,8 @@ import {
 export const HeroSectionDatapipelineengineering = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "End-to-end data",
-    title2: "pipeline implementation",
+    title: "End-to-end data pipeline implementation",
+
     description: `Engineer and accelerate data flow, integration,
 and trust across hybrid environments.`,
     buttonText: "Get in touch",
@@ -42,11 +42,11 @@ and trust across hybrid environments.`,
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
+        // backgroundMain="!h-[250px] md:!h-[650px]"
+        // ImageClassname="![object-position:37%_43%]"
+        // titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
+        // titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
+        // descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}

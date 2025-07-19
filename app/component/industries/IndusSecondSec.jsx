@@ -220,6 +220,7 @@ export default function IndustryIntelligence() {
           <div className="space-y-8 flex flex-col items-center relative">
             {rightItems.map((item, index) => (
               <motion.div
+                key={index}
                 initial={{ x: -30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.2 + index * 0.2 }}
@@ -305,7 +306,7 @@ export default function IndustryIntelligence() {
           <div className="relative  h-[200px] flex justify-center items-center">
             {leftItems.map((item, index) => (
               <>
-                <div className={`absolute ${item.linePosition}`}>
+                <div className={`absolute ${item.linePosition}`} key={index}>
                   <Image src={item.line} alt="Line" width={100} height={100} />
                 </div>
 
@@ -343,7 +344,7 @@ export default function IndustryIntelligence() {
           <div className="relative  h-[200px] flex justify-center items-center">
             {rightItems.map((item, index) => (
               <>
-                <div className={`absolute ${item.linePosition}`}>
+                <div className={`absolute ${item.linePosition}`} key={index}>
                   <Image src={item.line} alt="Line" width={100} height={100} />
                 </div>
 

@@ -4,11 +4,10 @@ import BackgroundImage from "../../assets/Data-Ai/analytics/Banner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import Info1 from "../../assets/Data-Ai/analytics/Info-1.webp";
-import Info2 from "../../assets/Data-Ai/analytics/Info-2.webp";
-import Info3 from "../../assets/Data-Ai/analytics/Info-3.webp";
-import Info4 from "../../assets/Data-Ai/analytics/Info-4.webp";
+import Info1 from "../../assets/Data-Ai/analytics/Info-1.svg";
+import Info2 from "../../assets/Data-Ai/analytics/Info-2.svg";
+import Info3 from "../../assets/Data-Ai/analytics/Info-3.svg";
+import Info4 from "../../assets/Data-Ai/analytics/Info-4.svg";
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -17,7 +16,6 @@ export const AnalyticsBanner = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
     title: "Data analytics and reporting",
-    title2: "",
     description: `Enable smarter decisions with real-time
     analytics and intuitive visualizations.`,
     buttonText: "Get in touch",
@@ -36,18 +34,12 @@ export const AnalyticsBanner = () => {
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -177,7 +169,7 @@ export const CustomSec = () => {
         imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
-        isDivider={false}
+        isDivider={true}
       />
     </>
   );

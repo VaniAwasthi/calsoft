@@ -47,6 +47,7 @@ export const CaseStudies = () => {
     titlePart1: "Cloud Provider Accelerates VMware Migration",
     titlePart2: "with Calsoft’s CLI Tool",
     image: sampleImage,
+    key: tab,
   }));
 
   const [activeTab, setActiveTab] = useState(1);

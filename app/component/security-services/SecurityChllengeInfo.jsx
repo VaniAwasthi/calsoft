@@ -14,8 +14,8 @@ import Info6 from "../../assets/DigitalEngineering/security/Info6.svg";
 export const SecurityTab = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "Security for your ",
-    title2: "digital landscape",
+    title: "Security for your digital landscape ",
+
     description: `Strengthen endpoint, identity, and infrastructure
         security for operational resilience and continuity.`,
     buttonText: "Get in touch",
@@ -41,11 +41,6 @@ export const SecurityTab = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
