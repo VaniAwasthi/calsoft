@@ -14,7 +14,7 @@ import {
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const AgenticBanner = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Agentic AI planning & development",
 
@@ -24,12 +24,11 @@ export const AgenticBanner = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "AIOps",
+    "AI Agents",
+    "Monitoring",
+    "Agent lifecycle",
   ];
   return (
     <>
@@ -89,6 +88,7 @@ export const AgenticChallengeSec = () => {
         data={data}
         BlackHeading="Proactive action with predictive insights"
         GradientHeading="Challenge to solutions:"
+        secId="benefits"
       />
     </>
   );
@@ -117,6 +117,7 @@ export const AiOopsSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="aiops"
       />
     </>
   );
@@ -144,6 +145,7 @@ export const UseSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="ai-agents"
       />
     </>
   );
@@ -171,6 +173,7 @@ export const MonitorSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="monitoring"
       />
     </>
   );
@@ -197,6 +200,7 @@ export const LifecycleSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="agent-lifecycle"
       />
     </>
   );

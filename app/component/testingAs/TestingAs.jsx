@@ -12,7 +12,7 @@ import Info4 from "../../assets/DigitalEngineering/testing/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/testing/Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/testing/Info6.svg";
 export const TestingTab = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Testing as a Service",
     description: `Deliver reliable, scalable products with comprehensive testing across the development lifecycle.`,
@@ -20,12 +20,13 @@ export const TestingTab = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Testing",
+    "CalTIA",
+    "Load + Stress",
+    "Test impact",
+    "QAOps",
+    "Benchmarking",
   ];
   return (
     <>
@@ -91,6 +92,7 @@ export const TestingChallenge = () => {
       title="Challenge to solution:"
       blackTitle="End-to-end testing for high quality deliveries"
       challenges={challengesData}
+      secId="Benefits"
     />
   );
 };
@@ -118,6 +120,7 @@ export const FunctionalSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="testing"
       />
     </>
   );
@@ -145,6 +148,7 @@ export const CalTIASec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={true}
+        secId="caltia"
       />
     </>
   );
@@ -172,6 +176,7 @@ export const LoadSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="load-+-stress"
       />
     </>
   );
@@ -198,6 +203,7 @@ export const TestSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="test-impact"
       />
     </>
   );
@@ -224,6 +230,7 @@ export const QaoSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={true}
+        secId="qaops"
       />
     </>
   );
@@ -250,7 +257,8 @@ export const ProductSec = () => {
         imageSrc={Info6}
         imageAlt="Infrastructure globe"
         imageLeft={false}
-        isDivider={true}
+        isDivider={false}
+        secId="benchmarking"
       />
     </>
   );

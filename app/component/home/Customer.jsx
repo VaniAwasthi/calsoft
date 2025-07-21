@@ -1,10 +1,11 @@
 "use-client";
-import React from "react";
+import React, { useRef } from "react";
 import bgimg from "../../assets/home/pattern.svg";
 import icon from "../../assets/home/customerIcon.svg";
 import Experience from "../../assets/home/experience.webp";
 import Inovators from "../../assets/home/Innovator.webp";
 import HappyCustomer from "../../assets/home/happycustomer.webp";
+import Fortunecustomers from "../../assets/home/Fortunecustomers.svg";
 import Partnership from "../../assets/home/partners.webp";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -12,7 +13,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css";
 import "swiper/css/scrollbar";
-import { Autoplay, Scrollbar } from "swiper/modules";
+import { Autoplay, Navigation, Scrollbar } from "swiper/modules";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const gridVariants = {
   hidden: { opacity: 0 },
@@ -29,12 +31,15 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 const Customer = () => {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const swiperRef = useRef(null);
   const customerData = [
     {
       id: 1,
       image: Experience,
       value: "26+",
-      label: "Years' Experience",
+      label: "Years of Experience",
     },
     {
       id: 2,
@@ -54,6 +59,12 @@ const Customer = () => {
       value: "300+",
       label: "Happy Customers",
     },
+    {
+      id: 5,
+      image: Fortunecustomers,
+      value: "21+ 500 ",
+      label: "Fortune customers",
+    },
   ];
   // const logos = [
   //   { id: 1, name: "Dell", image: Dell },
@@ -66,18 +77,35 @@ const Customer = () => {
   return (
     <>
       <section
-        className="md:py-14"
+        className="md:py-14 py-6"
         style={{
           background: `url(${bgimg.src}) center center/ cover no-repeat`,
         }}
         id="customers"
       >
         <div className="container mx-auto px-4 xl:px-20">
-          <div className="flex gap-6 md:gap-6 items-center mb-2 md:mb-6">
-            <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
-              <Image src={icon} alt="icon" width={16} height={16} />
+          <div className="flex justify-between items-center mb-2 md:mb-6">
+            {/* Left: Icon + Customers */}
+            <div className="flex gap-3 items-center">
+              <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
+                <Image src={icon} alt="icon" width={16} height={16} />
+              </div>
+              <p className="font-light text-sm md:text-base">Customers</p>
             </div>
-            <p className="font-light text-sm md:text-base">Customers</p>
+
+            {/* Right: Arrows */}
+            <div className="flex gap-2 items-center flex justify-center">
+              <div ref={prevRef} className="items-center flex justify-center">
+                <button className="bg-gray-200 p-2 rounded-full hover:bg-gray-300 w-8 h-8 text-center items-center flex justify-center">
+                  <FaChevronLeft size={12} className="text-center" />
+                </button>
+              </div>
+              <div ref={nextRef} className="items-center flex justify-center">
+                <button className="bg-gray-200 p-2 rounded-full hover:bg-gray-300 w-8 h-8 items-center flex justify-center">
+                  <FaChevronRight size={12} className="text-center" />
+                </button>
+              </div>
+            </div>
           </div>
           <motion.div
             initial={{ y: -100, opacity: 0 }}
@@ -116,7 +144,7 @@ const Customer = () => {
                   viewport={{ once: false, amount: 0.3 }}
                 >
                   <p className="mt-4 w-full md:mt-[3rem] text-[13px] md:text-base mb-8 text-[#7E7E7E] md:w-[300px]">
-                    Powering 21+ Fortune 500 customers, fast-growing start-ups,
+                    Powering 21+500 Fortune customers, fast-growing start-ups,
                     and digital innovators in their transformation journey.
                   </p>
                 </motion.div>
@@ -126,6 +154,14 @@ const Customer = () => {
                 slidesPerView={3}
                 spaceBetween={20}
                 loop={true}
+                onBeforeInit={(swiper) => {
+                  swiper.params.navigation.prevEl = prevRef.current;
+                  swiper.params.navigation.nextEl = nextRef.current;
+                }}
+                navigation={{
+                  prevEl: prevRef.current,
+                  nextEl: nextRef.current,
+                }}
                 breakpoints={{
                   320: {
                     slidesPerView: 2,
@@ -140,11 +176,8 @@ const Customer = () => {
                     spaceBetween: 20,
                   },
                 }}
-                modules={[Scrollbar, Autoplay]}
+                modules={[Navigation, Autoplay]}
                 autoplay={{ delay: 6000 }}
-                scrollbar={{
-                  hide: false,
-                }}
                 className="w-full"
               >
                 {customerData.map((item) => (
@@ -153,7 +186,7 @@ const Customer = () => {
                       initial={{ x: 50, opacity: 0 }}
                       animate={{ x: 4, opacity: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
-                      className="hover:rounded-lg hover:scale-105 transition-transform duration-300 my-2"
+                      className="hover:rounded-lg hover:scale-105 transition-transform duration-300 my-2 px-1"
                     >
                       <div className="relative w-full mb-8  ">
                         {/* Image */}
@@ -201,6 +234,7 @@ const Customer = () => {
                 ))}
               </Swiper>
             </div>
+
             {/* <div className="w-full h-[2px] bg-gray-300 mt-4"></div> */}
             {/* Grid for large screens */}
             {/* <motion.div

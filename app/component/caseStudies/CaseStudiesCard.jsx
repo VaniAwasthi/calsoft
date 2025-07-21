@@ -63,7 +63,7 @@ export const CaseStudiesCard = () => {
     ...item,
     id: item._id,
     title: item.hero_title1,
-    image: item.card_one ? `${baseUrl}/${item.card_one}` : Info1, // fallback image
+    image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
     slug: item.hero_title1
       ? item.hero_title1
           .toLowerCase()
@@ -72,7 +72,6 @@ export const CaseStudiesCard = () => {
       : "untitled",
     link: `https://yourdomain.com/card/${item._id}`,
   })); // fallback if not yet loaded
-
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
   };

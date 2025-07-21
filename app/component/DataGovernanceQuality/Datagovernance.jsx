@@ -13,7 +13,7 @@ import {
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const GovernJounery = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Data governance and quality",
 
@@ -23,19 +23,17 @@ export const GovernJounery = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Cataloging",
+    "Deduplication",
+    "Governance",
+    "Collaboration",
   ];
   return (
     <>
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
@@ -89,6 +87,7 @@ export const GovernSolutionSec = () => {
         data={data}
         BlackHeading="Govern enterprise data flows"
         GradientHeading=" Challenge to solutions:"
+        secId="benefits"
       />
     </>
   );
@@ -116,6 +115,7 @@ export const ProfilingSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="cataloging"
       />
     </>
   );
@@ -144,6 +144,7 @@ export const CleansingSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="deduplication"
       />
     </>
   );
@@ -171,6 +172,7 @@ export const PolicySec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secid="governance"
       />
     </>
   );
@@ -197,6 +199,7 @@ export const CollaborationSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="collaboration"
       />
     </>
   );

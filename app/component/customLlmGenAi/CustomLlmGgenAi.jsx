@@ -14,7 +14,7 @@ import {
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const CustomBanner = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Custom LLM for GenAI and RAG",
     description: `Build domain-specific GenAI systems that
@@ -23,12 +23,11 @@ export const CustomBanner = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "benefits",
+    "LLM tuning",
+    "RAG design",
+    "Deployment",
+    "Orchestration",
   ];
   return (
     <>
@@ -88,6 +87,7 @@ export const AnalyticsSec = () => {
         data={data}
         BlackHeading="Make LLMs work for your business"
         GradientHeading=" Challenge to solutions:"
+        secId="benefits"
       />
     </>
   );
@@ -116,6 +116,7 @@ export const LlmSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="llm-tuning"
       />
     </>
   );
@@ -143,6 +144,7 @@ export const RagSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="rag-design"
       />
     </>
   );
@@ -170,6 +172,7 @@ export const EnterpriseSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secid="deployment"
       />
     </>
   );
@@ -196,6 +199,7 @@ export const SystemSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="orchestration"
       />
     </>
   );

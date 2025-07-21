@@ -14,7 +14,7 @@ import {
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const AiBanner = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "AI-powered accelerators",
     description: `Deploy pre-built accelerators to solve
@@ -22,14 +22,7 @@ export const AiBanner = () => {
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
-  const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
-  ];
+  const navItems = ["Benefits", "CalTIA", "CalPSR", "Migration", "Mozaic"];
   return (
     <>
       <BannerWithRightSec
@@ -86,6 +79,7 @@ export const AiChallengeSec = () => {
         data={data}
         BlackHeading="Accelerate outcomes with AI-powered tools"
         GradientHeading=" Challenge to solutions:"
+        secId="benefits"
       />
     </>
   );
@@ -116,6 +110,7 @@ export const CalTiaSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="caltia"
       />
     </>
   );
@@ -143,6 +138,7 @@ export const CalPsrSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="calpsr"
       />
     </>
   );
@@ -170,6 +166,7 @@ export const ECalsoftSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secid="migration"
       />
     </>
   );
@@ -196,6 +193,7 @@ export const CalsoftSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="mozaic"
       />
     </>
   );

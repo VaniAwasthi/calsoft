@@ -14,11 +14,12 @@ export const ChallengeSolutionComp = ({
   data,
   BlackHeading,
   GradientHeading,
+  secId,
 }) => {
   return (
-    <div className=" max-w-7xl mx-auto px-6 py-3 md:py-10">
+    <div className="container mx-auto px-6 py-3 md:py-10" id={secId}>
       <motion.div
-        className="w-full my-1 md:mb-2 manrope"
+        className="max-w-7xl mx-auto my-1 md:mb-2 manrope"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -28,7 +29,7 @@ export const ChallengeSolutionComp = ({
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="md:w-full w-[300px] text-xl mb-5 md:text-[38px] font-mixed bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent text-center"
+          className="md:w-full text-center w-[300px] text-xl mb-5 md:text-[38px] font-mixed bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
         >
           {GradientHeading}
 
@@ -138,144 +139,147 @@ export const DataInfoSection = ({
   link = "#",
   title,
   isDivider,
+  secid,
 }) => {
   return (
-    <section className="bg-white container mx-auto  py-10 px-4 md:px-16 my-[1rem] ">
-      <div
-        className={`flex my-[3rem]  ${
-          imageLeft
-            ? "flex-col-reverse md:flex-row-reverse"
-            : "flex-col-reverse md:flex-row"
-        } items-center gap-10`}
-      >
-        {/* Text Content */}
-        <motion.div
-          className="w-full md:w-[65%] manrope flex md:flex-row flex-col md:px-0 px-6"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+    <div id={secid} className="">
+      <section className="bg-white container mx-auto  px-4 md:px-16 ">
+        <div
+          className={`flex my-[3rem]  ${
+            imageLeft
+              ? "flex-col-reverse md:flex-row-reverse"
+              : "flex-col-reverse md:flex-row"
+          } items-center gap-10`}
         >
+          {/* Text Content */}
           <motion.div
+            className="w-full md:w-[65%] manrope flex md:flex-row flex-col md:px-0 px-6"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-full md:w-[53%] mt-8"
           >
-            <motion.h2
-              key={title}
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className={`text-2xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent w-full ${
-                imageLeft ? "md:w-[95%]" : "md:w-[80%]"
-              }`}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="w-full md:w-[53%] mt-8"
             >
-              {title}
-            </motion.h2>
-
-            {/* Description */}
-            <motion.p
-              key={description}
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="text-sm md:text-[20px] font-semibold mt-3 md:mt-6 mb-6 md:mb-0 w-full md:w-[80%]"
-            >
-              {description}
-            </motion.p>
-
-            {/* Button */}
-            {buttonText && (
-              <motion.div
+              <motion.h2
+                key={title}
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className=" justify-start flex md:mt-8 my-6 "
+                className={`text-2xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent w-full ${
+                  imageLeft ? "md:w-[95%]" : "md:w-[80%]"
+                }`}
               >
-                <ButtonLayout
-                  text={buttonText}
-                  image={ButtonImage}
-                  hoverImage={ButtonImage}
-                  link={link}
-                  className="!w-[200px] !h-[50px]"
-                />
-              </motion.div>
-            )}
-          </motion.div>
+                {title}
+              </motion.h2>
 
-          <div className="grid grid-cols-1 w-full md:w-[47%] mt-3 md:mt-8 items-start px-2">
-            {/* What We Do */}
-            <div className="md:pr-4">
-              <motion.h3
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="text-[#2E3092] font-bold mb-2 text-[25px]"
-              >
-                What We Do:
-              </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[17px] space-y-1 marker:text-[#ED1C24] ">
-                {whatWeDo.map((item, index) => (
-                  <motion.li
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    key={index}
-                  >
-                    {item}
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Business Impact */}
-            <div className="mt-2 ">
-              <motion.h3
+              {/* Description */}
+              <motion.p
+                key={description}
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className=" text-[#2E3092] font-bold mb-2 text-[25px]"
+                className="text-sm md:text-[20px] font-semibold mt-3 md:mt-6 mb-6 md:mb-0 w-full md:w-[80%]"
               >
-                Business Impact:
-              </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[16px] space-y-1 marker:text-[#ED1C24]">
-                {businessImpact.map((item, index) => (
-                  <motion.li
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    key={index}
-                  >
-                    {item}
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </motion.div>
+                {description}
+              </motion.p>
 
-        {/* Image Content */}
-        <div className="relative w-full md:w-[40%] aspect-[14/10]">
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            className="rounded-lg shadow-lg object-cover"
-          />
+              {/* Button */}
+              {buttonText && (
+                <motion.div
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className=" justify-start flex md:mt-8 my-6 "
+                >
+                  <ButtonLayout
+                    text={buttonText}
+                    image={ButtonImage}
+                    hoverImage={ButtonImage}
+                    link={link}
+                    className="!w-[200px] !h-[50px]"
+                  />
+                </motion.div>
+              )}
+            </motion.div>
+
+            <div className="grid grid-cols-1 w-full md:w-[47%] mt-3 md:mt-8 items-start px-2">
+              {/* What We Do */}
+              <div className="md:pr-4">
+                <motion.h3
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="text-[#2E3092] font-bold mb-2 text-[25px]"
+                >
+                  What We Do:
+                </motion.h3>
+                <ul className="list-disc list-inside text-[#545353] text-[17px] space-y-1 marker:text-[#ED1C24] ">
+                  {whatWeDo.map((item, index) => (
+                    <motion.li
+                      initial={{ x: -50, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      key={index}
+                    >
+                      {item}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Business Impact */}
+              <div className="mt-2 ">
+                <motion.h3
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className=" text-[#2E3092] font-bold mb-2 text-[25px]"
+                >
+                  Business Impact:
+                </motion.h3>
+                <ul className="list-disc list-inside text-[#545353] text-[16px] space-y-1 marker:text-[#ED1C24]">
+                  {businessImpact.map((item, index) => (
+                    <motion.li
+                      initial={{ x: -50, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      key={index}
+                    >
+                      {item}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Image Content */}
+          <div className="relative w-full md:w-[40%] aspect-[14/10]">
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              className="rounded-lg shadow-lg object-cover"
+            />
+          </div>
         </div>
-      </div>
-      {/* Divider */}
-      {isDivider ? (
-        <div className="my-[3rem] w-full h-px bg-gray-300 mx-auto"></div>
-      ) : null}
-    </section>
+        {/* Divider */}
+        {isDivider ? (
+          <div className="my-[3rem] w-full h-px bg-gray-300 mx-auto"></div>
+        ) : null}
+      </section>
+    </div>
   );
 };
 

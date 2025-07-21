@@ -14,7 +14,7 @@ import {
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const DataJounery = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Data observability",
 
@@ -24,12 +24,11 @@ export const DataJounery = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Streaming",
+    "Compliance",
+    "Orchestration",
+    "Resilience",
   ];
   return (
     <>
@@ -87,6 +86,7 @@ export const DataSolutionSec = () => {
         data={data}
         BlackHeading="Monitor, Predict, and Fortify Data Ecosystems"
         GradientHeading=" Challenge to solutions:"
+        secId="benefits"
       />
     </>
   );
@@ -115,6 +115,7 @@ export const RealSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="streaming"
       />
     </>
   );
@@ -142,6 +143,7 @@ export const ComplianceSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="compliance"
       />
     </>
   );
@@ -169,6 +171,7 @@ export const Real2Sec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="orchestration"
       />
     </>
   );
@@ -195,6 +198,7 @@ export const ProactiveSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="resilience"
       />
     </>
   );

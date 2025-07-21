@@ -13,7 +13,7 @@ import {
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const HeroSectionTechnicalConsulting = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Technical Consulting",
 
@@ -23,12 +23,11 @@ technical advisory.`,
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Architecture",
+    "Mitigation",
+    "Connectivity",
+    "Cost-optimized",
   ];
   return (
     <>
@@ -85,6 +84,7 @@ export const ChallengeSolutionSecTechnicalConsulting = () => {
   return (
     <>
       <ChallengeSolutionComp
+        secId="benefits"
         data={data}
         BlackHeading="Scalable AI Agents"
         GradientHeading="Challenge to solutions:"
@@ -116,6 +116,7 @@ business objectives."
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="architecture"
       />
     </>
   );
@@ -143,6 +144,7 @@ export const RiskMitigationSecTechnicalConsulting = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="mitigation"
       />
     </>
   );
@@ -170,6 +172,7 @@ export const PlatformSecTechnicalConsulting = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="connectivity"
       />
     </>
   );
@@ -196,6 +199,7 @@ export const CostOptimizedSecTechnicalConsulting = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="cost-optimized"
       />
     </>
   );

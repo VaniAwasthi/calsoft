@@ -13,7 +13,7 @@ import {
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const HeroSectionDatapipelineengineering = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "End-to-end data pipeline implementation",
 
@@ -23,30 +23,23 @@ and trust across hybrid environments.`,
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Architecture",
+    "Integration",
+    "Migration",
+    "Data sanity",
   ];
   return (
     <>
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        // backgroundMain="!h-[250px] md:!h-[650px]"
-        // ImageClassname="![object-position:37%_43%]"
-        // titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        // titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        // descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -92,6 +85,7 @@ export const ChallengeSolutionSec = () => {
         data={data}
         BlackHeading="Architect, implement, and scale data pipelines"
         GradientHeading=" Challenge to solutions:"
+        secId="benefits"
       />
     </>
   );
@@ -121,6 +115,7 @@ for evolving data needs."
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="architecture"
       />
     </>
   );
@@ -150,6 +145,7 @@ sources for seamless, intelligent operations."
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="integration"
       />
     </>
   );
@@ -177,6 +173,7 @@ export const EffortlessSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="migration"
       />
     </>
   );
@@ -203,6 +200,7 @@ export const DataSanitySec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="data-sanity"
       />
     </>
   );

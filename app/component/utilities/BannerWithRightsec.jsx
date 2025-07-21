@@ -7,15 +7,12 @@ import { motion } from "framer-motion";
 const BannerWithRightSec = ({
   heroBg,
   title,
-  title2,
+
   description,
   rightImage,
   buttonText,
   buttonImage,
   hoverImage,
-  titleOneClass = "",
-  titleTwoClass = "",
-  descriptionClass = "",
   rightSec = true,
   mainDivClass = "",
   leftSecClass = "",
@@ -46,7 +43,7 @@ const BannerWithRightSec = ({
         >
           <div className="flex flex-col md:flex-row items-start justify-between w-full">
             {/* Left Section */}
-            <div className={`text-white w-full md:w-1/2 ${leftSecClass}`}>
+            <div className={`text-white w-full md:w-[55%] ${leftSecClass}`}>
               <motion.h2
                 initial={{ y: -30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}

@@ -13,7 +13,7 @@ import {
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const DrivenBanner = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "AI-driven predictions and inferences",
 
@@ -23,12 +23,11 @@ export const DrivenBanner = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Predictive",
+    "Analysis",
+    "Analytics",
+    "AI Models",
   ];
   return (
     <>
@@ -87,6 +86,7 @@ export const DrivenChallengeSec = () => {
         data={data}
         BlackHeading="Proactive action with predictive insights"
         GradientHeading=" Challenge to solutions:"
+        secId="benefits"
       />
     </>
   );
@@ -115,6 +115,7 @@ export const PredictiveSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="predictive"
       />
     </>
   );
@@ -144,6 +145,7 @@ export const PatternSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="analysis"
       />
     </>
   );
@@ -172,6 +174,7 @@ export const InferentialSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secid="analytics"
       />
     </>
   );
@@ -200,6 +203,7 @@ export const ModelSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="ai-Models"
       />
     </>
   );

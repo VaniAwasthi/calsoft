@@ -13,7 +13,7 @@ import Info5 from "../../assets/DigitalEngineering/cloud-service/Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/cloud-service/Info6.svg";
 import Info7 from "../../assets/DigitalEngineering/cloud-service/Info7.svg";
 export const HeroSectionProduct = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Cloud | Grow with cloud-induced efficiency",
     description: `Engineer scalable, secure, and cost-efficient<br/>
@@ -22,12 +22,13 @@ cloud solutions aligned to your business goals.`,
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Assessment",
+    "Multi-Cloud",
+    "Cloud-Native",
+    "Migration",
+    "Cost",
+    "SRE",
   ];
   return (
     <>
@@ -94,6 +95,7 @@ export const ChallengeToSolutionSec = () => {
       title="Challenge to solution:"
       blackTitle="Go from legacy to cloud-native"
       challenges={challengesData}
+      secId="benefits"
     />
   );
 };
@@ -120,6 +122,7 @@ export const ItInfraSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="assessment"
       />
     </>
   );
@@ -147,6 +150,7 @@ export const MultiCloudInfraSec = () => {
         imageAlt="MultiCloud"
         imageLeft={true}
         isDivider={true}
+        secId="multi-cloud"
       />
     </>
   );
@@ -174,6 +178,7 @@ export const CloudNativetInfraSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="cloud-native"
       />
     </>
   );
@@ -200,6 +205,7 @@ export const CloudMigrationInfraSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="migration"
       />
     </>
   );
@@ -226,6 +232,7 @@ export const CostInfraSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={true}
+        secId="cost"
       />
     </>
   );
@@ -252,6 +259,7 @@ export const SREInfraSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="sre"
       />
     </>
   );

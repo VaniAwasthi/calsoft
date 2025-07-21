@@ -41,13 +41,13 @@ const HeroSec = () => {
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className="relative w-full">
           {slide.type === "video" ? (
-            <div className="relative w-full h-full">
+            <div className="relative w-full h-[600px]">
               {/* Video Background */}
               <video
                 autoPlay
                 muted
                 loop
-                className="absolute top-0 left-0 w-full h-screen object-cover -z-10"
+                className="absolute top-0 left-0 w-full h-[600px] object-cover -z-10"
               >
                 <source src={backgroundVideo} type="video/mp4" />
                 Your browser does not support the video tag.

@@ -13,7 +13,7 @@ import {
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const AnalyticsBanner = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Data analytics and reporting",
     description: `Enable smarter decisions with real-time
@@ -22,12 +22,11 @@ export const AnalyticsBanner = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Dashboard",
+    "Intelligence",
+    "Reporting",
+    "Real-time",
   ];
   return (
     <>
@@ -87,6 +86,7 @@ export const AnalyticsSec = () => {
         data={data}
         BlackHeading="Govern enterprise dataflows"
         GradientHeading=" Challenge to solutions:"
+        secId="benefits"
       />
     </>
   );
@@ -115,6 +115,7 @@ export const DashboardSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="dashboard"
       />
     </>
   );
@@ -142,6 +143,7 @@ export const BusinessSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="intelligence"
       />
     </>
   );
@@ -170,6 +172,7 @@ export const CustomSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="reporting"
       />
     </>
   );
@@ -196,6 +199,7 @@ export const RealSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="real-time"
       />
     </>
   );

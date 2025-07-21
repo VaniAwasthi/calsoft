@@ -11,7 +11,7 @@ import Info3 from "../../assets/DigitalEngineering/virtualisation/Info3.svg";
 import Info4 from "../../assets/DigitalEngineering/virtualisation/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/virtualisation/Info5.svg";
 export const VirtualizationTab = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Virtualization solutions",
     description: `Simplify operations, accelerate deployments, and scale infrastructure with modern virtualization strategies.`,
@@ -19,12 +19,12 @@ export const VirtualizationTab = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Lifecycle",
+    "Containerization",
+    "Hypervisor",
+    "Migration",
+    "OpenStack",
   ];
   return (
     <>
@@ -92,6 +92,7 @@ export const VirtualizationChallenge = () => {
       blackTitle="Offer best solutions powered by
             effective virtualization"
       challenges={challengesData}
+      secId="benefits"
     />
   );
 };
@@ -118,6 +119,7 @@ export const VirtualizationSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="lifecycle"
       />
     </>
   );
@@ -145,6 +147,7 @@ export const Containerization = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={true}
+        secId="containerization"
       />
     </>
   );
@@ -172,6 +175,7 @@ export const HypervisorSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="hypervisor"
       />
     </>
   );
@@ -198,6 +202,7 @@ export const MigrateSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="migration"
       />
     </>
   );
@@ -224,6 +229,7 @@ export const OpenSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secId="openstack"
       />
     </>
   );
