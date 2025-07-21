@@ -1,6 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { motion } from "framer-motion";
@@ -8,7 +8,7 @@ import Image from "next/image";
 import Arrow from "../../assets/Data-Ai/arrowupward.svg";
 import ButtonLayout from "./ButtonLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import ContactImg from "../../assets/industries/hitech/contactbg.webp";
+import ContactImg from "../../assets/Data-Ai/PipeLine/ConnectBg.webp";
 
 export const ChallengeSolutionComp = ({
   data,
@@ -32,7 +32,7 @@ export const ChallengeSolutionComp = ({
         >
           {GradientHeading}
 
-          <span className="text-black font-semibold px-3">{BlackHeading}</span>
+          <span className="text-black font-semibold px-1">{BlackHeading}</span>
         </motion.h2>
       </motion.div>
 
@@ -56,12 +56,12 @@ export const ChallengeSolutionComp = ({
             >
               {/* Challenge Pill */}
               <div className="bg-[#F3F3F3]  text-[#333] px-6 py-6 h-[70px] flex items-center justify-start rounded-l-full shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-                <span className="text-[14px] px-3">{item.challenge}</span>
+                <span className="text-[14px] px-6">{item.challenge}</span>
               </div>
 
               {/* Tag Pill (Center - Overlapping) */}
               <div className="bg-gradient-to-r from-[#2D2DA3] to-[#4E51C6] text-white  px-4 py-6 h-[70px] flex items-center justify-center rounded-full shadow-[0_8px_16px_rgba(0,0,0,0.1)] -mx-10 z-10">
-                <span className="text-[16px] px-6 font-medium text-center">
+                <span className="uppercase text-[16px] px-6 font-medium text-center">
                   {item.tag}
                 </span>
               </div>
@@ -78,7 +78,8 @@ export const ChallengeSolutionComp = ({
 
       <div className="block md:hidden mt-2">
         <Swiper
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
+          autoplay={{ delay: 2000 }}
           pagination={{ clickable: true }}
           spaceBetween={20}
           slidesPerView={1}
@@ -139,9 +140,9 @@ export const DataInfoSection = ({
   isDivider,
 }) => {
   return (
-    <section className="bg-white container mx-auto  py-10 px-4 md:px-16 ">
+    <section className="bg-white container mx-auto  py-10 px-4 md:px-16 my-[3rem] ">
       <div
-        className={`flex my-2  ${
+        className={`flex my-[3rem]  ${
           imageLeft
             ? "flex-col-reverse md:flex-row-reverse"
             : "flex-col-reverse md:flex-row"
@@ -149,7 +150,7 @@ export const DataInfoSection = ({
       >
         {/* Text Content */}
         <motion.div
-          className="w-full md:w-3/5 manrope flex md:flex-row flex-col md:px-0 px-6"
+          className="w-full md:w-3/6 manrope flex md:flex-row flex-col md:px-0 px-6"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -166,7 +167,7 @@ export const DataInfoSection = ({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              className={`text-2xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent w-full ${
+              className={`text-2xl md:text-[30px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent w-full ${
                 imageLeft ? "md:w-[95%]" : "md:w-[65%]"
               }`}
             >
@@ -180,7 +181,7 @@ export const DataInfoSection = ({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-sm md:text-[18px] font-semibold mt-3 md:mt-6 mb-6 md:mb-0 w-full md:w-[65%]"
+              className="text-sm md:text-[16px] font-semibold mt-3 md:mt-6 mb-6 md:mb-0 w-full md:w-[65%]"
             >
               {description}
             </motion.p>
@@ -199,13 +200,13 @@ export const DataInfoSection = ({
                   image={ButtonImage}
                   hoverImage={ButtonImage}
                   link={link}
-                  className="!w-[150px] !h-[60px]"
+                  className="!w-[200px] !h-[50px]"
                 />
               </motion.div>
             )}
           </motion.div>
 
-          <div className="grid grid-cols-1 w-full md:w-2/4 mt-3 md:mt-8 items-start">
+          <div className="grid grid-cols-1 w-full md:w-2/4 mt-3 md:mt-8 items-start px-2">
             {/* What We Do */}
             <div className="md:pr-4">
               <motion.h3
@@ -217,7 +218,7 @@ export const DataInfoSection = ({
               >
                 What we do:
               </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24]">
+              <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24] ">
                 {whatWeDo.map((item, index) => (
                   <motion.li
                     initial={{ x: -50, opacity: 0 }}
@@ -241,7 +242,7 @@ export const DataInfoSection = ({
                 viewport={{ once: false, amount: 0.3 }}
                 className=" text-[#2E3092] font-semibold mb-2 text-[20px]"
               >
-                Business Impact:
+                Business impact:
               </motion.h3>
               <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24]">
                 {businessImpact.map((item, index) => (
@@ -261,13 +262,13 @@ export const DataInfoSection = ({
         </motion.div>
 
         {/* Image Content */}
-        <div className="w-full md:w-2/5">
+        <div className="w-full md:w-3/6">
           <Image
             src={imageSrc}
             alt={imageAlt}
             width={500}
-            height={350}
-            className="rounded-lg shadow-lg w-full h-60 md:h-[450px]"
+            height={250}
+            className="rounded-lg shadow-lg w-full h-60 md:h-[400px]"
           />
         </div>
       </div>

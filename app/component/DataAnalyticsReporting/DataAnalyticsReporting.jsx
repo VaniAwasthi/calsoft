@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
+import BackgroundImage from "../../assets/Data-Ai/analytics/Banner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
-import RiskImage from "../../assets/Data-Ai/Risk.webp";
-import PlatformImage from "../../assets/Data-Ai/4sec.webp";
-import CostImage from "../../assets/Data-Ai/5sec.webp";
+import Info1 from "../../assets/Data-Ai/analytics/Info-1.webp";
+import Info2 from "../../assets/Data-Ai/analytics/Info-2.webp";
+import Info3 from "../../assets/Data-Ai/analytics/Info-3.webp";
+import Info4 from "../../assets/Data-Ai/analytics/Info-4.webp";
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -82,7 +82,7 @@ export const AnalyticsSec = () => {
         "Modern BI platforms with hybrid and multi-cloud data environments seamlessly",
     },
     {
-      tag: "Custom eporting",
+      tag: "Custom reporting",
       challenge:
         "Unable to tailor reports to business specific needs and roles?",
       solution:
@@ -93,8 +93,8 @@ export const AnalyticsSec = () => {
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Govern enterprise data flows"
-        GradientHeading=" Challenge to solutions :"
+        BlackHeading="Govern enterprise dataflows"
+        GradientHeading=" Challenge to solutions:"
       />
     </>
   );
@@ -119,7 +119,7 @@ export const DashboardSec = () => {
           "Shared views improve transparency",
           "Teams use data more consistently",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info1}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -144,9 +144,9 @@ export const BusinessSec = () => {
         businessImpact={[
           "BI use grows across all teams",
           "Data stays unified, not siloed",
-          "On-hands, timely, and clear insights",
+          "Hands-on, timely, and clear insights",
         ]}
-        imageSrc={RiskImage}
+        imageSrc={Info2}
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
@@ -174,7 +174,7 @@ export const CustomSec = () => {
           "Faster response to new priorities",
           "Stay aligned with policy rules",
         ]}
-        imageSrc={PlatformImage}
+        imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
@@ -200,7 +200,7 @@ export const RealSec = () => {
           "Smarter/faster moves give market edge",
           "Lower incident response times",
         ]}
-        imageSrc={CostImage}
+        imageSrc={Info4}
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}

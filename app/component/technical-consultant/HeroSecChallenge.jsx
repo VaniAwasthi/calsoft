@@ -1,14 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
+import BackgroundImage from "../../assets/Data-Ai/technical-consultant/TechnicalBanner.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
-import RiskImage from "../../assets/Data-Ai/Risk.webp";
-import PlatformImage from "../../assets/Data-Ai/4sec.webp";
-import CostImage from "../../assets/Data-Ai/5sec.webp";
+import InfoSec1 from "../../assets/Data-Ai/technical-consultant/InfoSec1.webp";
+import InfoSec2 from "../../assets/Data-Ai/technical-consultant/InfoSec2.webp";
+import InfoSec3 from "../../assets/Data-Ai/technical-consultant/InfoSec3.webp";
+import InfoSec4 from "../../assets/Data-Ai/technical-consultant/InfoSec4.webp";
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -16,11 +15,11 @@ import {
 export const HeroSectionTechnicalConsulting = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "Technical-consulting",
+    title: "Technical Consulting",
     title2: "",
-    description: `Bridge strategy and execution through datadriven
+    description: `Bridge strategy and execution through data-driven
 technical advisory.`,
-    buttonText: "Get in touch",
+    buttonText: "Talk to an Expert",
     image: BackgroundImage,
   };
   const navItems = [
@@ -72,7 +71,7 @@ export const ChallengeSolutionSecTechnicalConsulting = () => {
       challenge:
         "Are inefficiencies and bottlenecks slowing down delivery and responsiveness?",
       solution:
-        "Identify systemlevel friction points and redesign workflows for improved throughput and agility",
+        "Identify system-level friction points and redesign workflows for improved throughput and agility",
     },
     {
       tag: "TECH ROI",
@@ -93,8 +92,8 @@ export const ChallengeSolutionSecTechnicalConsulting = () => {
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="AI Agents that work at scale"
-        GradientHeading=" Challenge to solutions :"
+        BlackHeading="Scalable AI Agents"
+        GradientHeading="Challenge to solutions:"
       />
     </>
   );
@@ -107,7 +106,7 @@ export const StrategicSecTechnicalConsulting = () => {
         title="Strategic architecture advisory"
         description="Blueprint scalable systems aligned to long-term
 business objectives."
-        buttonText="Case Study"
+        buttonText="View Case Studies"
         link="#"
         whatWeDo={[
           "Assess system fit for future scale",
@@ -119,7 +118,7 @@ business objectives."
           "Architecture supports key strategy",
           "Modular design cuts future rework",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={InfoSec1}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -133,8 +132,8 @@ export const RiskMitigationSecTechnicalConsulting = () => {
     <>
       <DataInfoSection
         title="Risk mitigation and recovery planning"
-        description="Anticipate disruptions and build resilience into your technology landscape."
-        buttonText="Case Study"
+        description="Anticipate disruptions and strengthen resilience across your tech environment."
+        buttonText="View Case Studies"
         link="#"
         whatWeDo={[
           "Find weak points across platforms",
@@ -146,7 +145,7 @@ export const RiskMitigationSecTechnicalConsulting = () => {
           "Fast recovery from disruptions",
           "Greater trust in tech planning",
         ]}
-        imageSrc={RiskImage}
+        imageSrc={InfoSec2}
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
@@ -161,7 +160,7 @@ export const PlatformSecTechnicalConsulting = () => {
       <DataInfoSection
         title="Platform interoperability consulting"
         description="Create cohesive systems through guided integration and alignment strategies."
-        buttonText="Case Study"
+        buttonText="View Case Studies"
         link="#"
         whatWeDo={[
           "Map cross-platform connection gaps",
@@ -173,10 +172,10 @@ export const PlatformSecTechnicalConsulting = () => {
           "Fewer issues from data drift",
           "Quicker integration launches",
         ]}
-        imageSrc={PlatformImage}
+        imageSrc={InfoSec3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
-        isDivider={false}
+        isDivider={true}
       />
     </>
   );
@@ -185,9 +184,9 @@ export const CostOptimizedSecTechnicalConsulting = () => {
   return (
     <>
       <DataInfoSection
-        title="Balance performance and spend through expert system-wide planning."
+        title="Balance performance and spend through expert system-wide planning"
         description="Bring ideas to life early and streamline decision-making with interactive prototypes."
-        buttonText="Case Study"
+        buttonText="View Case Studies"
         link="#"
         whatWeDo={[
           "Analyze workloads for imbalance",
@@ -199,7 +198,7 @@ export const CostOptimizedSecTechnicalConsulting = () => {
           "Systems use fewer idle cycles",
           "Spend matches performance goals",
         ]}
-        imageSrc={CostImage}
+        imageSrc={InfoSec4}
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}

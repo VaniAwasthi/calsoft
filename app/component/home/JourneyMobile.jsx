@@ -36,7 +36,7 @@ export default function JourneySectionMobile() {
       >
         <p className="text-white text-sm mb-2">Journey</p>
         <h2 className="text-white text-3xl font-semibold">
-          Innovate <span className="font-bold">At</span>
+          Innovate <span className="font-bold">at</span>
         </h2>
         <p className="text-white text-lg mt-2">
           every stage of your digital journey

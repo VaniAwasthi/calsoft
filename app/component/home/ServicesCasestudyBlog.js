@@ -34,14 +34,14 @@ export const Services = () => {
       icon: service1,
       title: "AI-Powered Test Automation",
       description:
-        "Accelerate releases with intelligent,self-healing automation frameworks.",
+        "Accelerate releases with intelligent, self-healing automation frameworks.",
       link: "/",
     },
     {
       icon: service2,
       title: "VMware Migration Services",
       description:
-        "Seamlessly shift from VMware to OpenStack, Nutanix, Azure, or AWS.",
+        "Seamlessly shift from VMware to OpenStack, Nutanix, Azure or AWS.",
       link: "/",
     },
     {
@@ -69,7 +69,7 @@ export const Services = () => {
       icon: service6,
       title: "Storage & Data Lifecycle Management",
       description:
-        "Modernize storage for performance, cost-efficiency, and compliance.",
+        "Modernize storage for performance, cost-efficiency and compliance.",
       link: "/",
     },
   ];
@@ -155,7 +155,7 @@ export const Casestudy = () => {
       description: [
         "<strong>Abstract:</strong> Faced with long test cycles and high infrastructure costs, a global networking leader turned to Calsoft to bring speed and precision to their software validation process. By implementing CalTIA, Calsoft’s AI-powered test intelligence platform, the company replaced manual test selection with intelligent automation—cutting waste, accelerating releases, and improving engineering efficiency. What once slowed down delivery is now a competitive edge.",
       ],
-      buttonText: "Case Study",
+      buttonText: "View Case Studies",
       pdfLink: "/pdfs/case1.pdf",
       stats: [
         { count: "40%", text: " faster validation cycles" },
@@ -169,7 +169,7 @@ export const Casestudy = () => {
       description: [
         "<strong>Abstract:</strong> To ensure performance across diverse and complex network environments, a global networking solutions leader partnered with Calsoft to modernize its test validation process. By integrating a custom-trained Large Language Model (LLM), the company automated the generation of real-world test scenarios from topology diagrams and device configurations. This shift from manual to AI-led validation enabled the team to cover edge cases with greater accuracy, reduce testing cycles, and scale test coverage effortlessly across unique deployments.",
       ],
-      buttonText: "Case Study",
+      buttonText: "View Case Studies",
       pdfLink:
         "https://www.calsoftinc.com/blogs/the-impact-of-ai-on-software-testing-from-automation-to-intelligent-qa.html",
       stats: [
@@ -185,7 +185,7 @@ export const Casestudy = () => {
       description: [
         "<strong>Insight:</strong> A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation—enabling fast, error-free virtual machine (VM) migrations at scale. With platform-neutral packaging, parallel execution, and built-in consistency checks, the solution accelerated onboarding and empowered customers with operational autonomy.",
       ],
-      buttonText: "Case Study",
+      buttonText: "View Case Studies",
       pdfLink:
         "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
       stats: [
@@ -204,7 +204,7 @@ export const Casestudy = () => {
       description: [
         "<strong>Insight:</strong> A leading cloud infrastructure provider partnered with Calsoft to simplify and scale its VMware workload migration strategy. With growing licensing costs and the need for platform flexibility, the client needed a secure, self-contained, and repeatable solution to move workloads to Red Hat OpenShift and AWS. Calsoft’s Migration Server-based framework offered full lifecycle support—automating discovery, conversion, cost planning, and validation—while minimizing disruption and improving operational efficiency.",
       ],
-      buttonText: "Case Study",
+      buttonText: "View Case Studies",
       pdfLink:
         "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
       stats: [
@@ -223,7 +223,7 @@ export const Casestudy = () => {
       description: [
         "<strong>Insight:</strong> Calsoft partnered with one of the largest personal injury law firms in the United States to streamline legal operations using a GenAI-powered case classification solution. By integrating GPT-based intelligence into the firm’s existing workflow, Calsoft enabled smarter, faster, and more reliable decisions on case viability and team allocation—significantly reducing manual overhead and accelerating legal turnaround times.",
       ],
-      buttonText: "Case Study",
+      buttonText: "View Case Studies",
       pdfLink:
         "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
       stats: [
@@ -321,7 +321,7 @@ export const Casestudy = () => {
                 <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
                   <Image
                     src={logo2}
-                    className="w-full brightness-1 invert-100"
+                    className="w-full"
                     alt="logo"
                     width={100}
                     height={100}
@@ -350,13 +350,13 @@ export const Casestudy = () => {
                     href={caseStudyData.pdfLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="relative flex mt-6 md:mt-10  w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group hover-border-[#BA0007] hover-border-1"
+                    className="relative flex mt-6 md:mt-10  w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-2 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group hover-border-[#BA0007] hover-border-1"
                     style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25)" }}
                     whileHover={{ scale: 1.03 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
                     <span className="relative justify-center  z-10 group-hover:text-[#BA0007]  w-full flex gap-4 items-center transition-colors duration-500 text-sm md:text-base">
-                      {caseStudyData.buttonText}{" "}
+                      {caseStudyData.buttonText}
                       <IoArrowForwardCircleSharp className="text-3xl" />
                     </span>
                     <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>

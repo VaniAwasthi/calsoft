@@ -2,22 +2,25 @@
 import { useEffect, useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { FaSearch } from "react-icons/fa";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoMdArrowDropright } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/logo.png";
 import barmenu from "../../assets/menu-bar.svg";
 import MegaMenuImg1 from "../../assets/home/megamenu1.webp";
 import MegaMenuImg2 from "../../assets/home/megamenu2.webp";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [openMenus, setOpenMenus] = useState({});
   const [activeMenu, setActiveMenu] = useState(null);
   const [selectedSubmenu, setSelectedSubmenu] = useState(null);
+  const pathname = usePathname();
 
   const toggleMenu = (index) => {
     setOpenMenus((prev) => ({
       ...prev,
+
       [index]: !prev[index],
     }));
   };
@@ -25,11 +28,12 @@ export default function Navbar() {
   const navItems = [
     {
       title: "DATA & AI",
-      href: "/data-and-ai/data-pipeline-engineering",
+      // href: "/data-ai",
+      href: "",
       submenu: [
         {
           title: "End-to-end data pipeline implementation",
-          href: "/data-and-ai/data-pipeline-engineering",
+          href: "/data-ai/end-to-end-data-pipeline-implementation",
           section: [
             "Data architecture enhancement",
             "Data platform and ecosystem integration",
@@ -39,7 +43,7 @@ export default function Navbar() {
         },
         {
           title: "Technical consulting",
-          href: "/data-and-ai/technical-consulting",
+          href: "/data-ai/technical-consulting",
           section: [
             "Strategic architecture advisory",
             "Risk mitigation and recovery planning",
@@ -49,7 +53,7 @@ export default function Navbar() {
         },
         {
           title: "Data observability",
-          href: "/data-and-ai/data-observability",
+          href: "/data-ai/data-observability",
           section: [
             "Real-time data streaming analytics",
             "Compliance tracking",
@@ -59,7 +63,7 @@ export default function Navbar() {
         },
         {
           title: "Data governance and quality",
-          href: "/data-and-ai/data-governance-quality",
+          href: "/data-ai/data-governance-quality",
           section: [
             "Data profiling and cataloging",
             "Data cleansing and deduplication",
@@ -69,7 +73,7 @@ export default function Navbar() {
         },
         {
           title: "Data analytics and reporting",
-          href: "/data-and-ai/data-analytics-reporting",
+          href: "/data-ai/data-analytics-reporting",
           section: [
             "Dashboard and KPI visualization",
             "Business Intelligence (BI) integration",
@@ -79,7 +83,7 @@ export default function Navbar() {
         },
         {
           title: "AI-driven prediction and inferences",
-          href: "/data-and-ai/aI-driven-prediction-and-inferences",
+          href: "/data-ai/ai-driven-prediction-inferences",
           section: [
             "Predictive modeling",
             "Pattern detection",
@@ -89,7 +93,7 @@ export default function Navbar() {
         },
         {
           title: "Agentic AI planning & development",
-          href: "/data-and-ai/agentic-aI-planning",
+          href: "/data-ai/agentic-ai-planning-development",
           section: [
             "AIOps planning",
             "Use-case specific AI agents",
@@ -99,7 +103,7 @@ export default function Navbar() {
         },
         {
           title: "Custom-LLM for Gen AI and RAG",
-          href: "/data-and-ai/custom-llm-gen-ai",
+          href: "/data-ai/custom-llm-for-gen-ai-rag",
           section: [
             "LLM fine-tuning",
             "RAG pipeline design",
@@ -109,7 +113,7 @@ export default function Navbar() {
         },
         {
           title: "AI-powered accelerators",
-          href: "/data-and-ai/aI-powered-accelerators-services",
+          href: "/data-ai/ai-powered-accelerators",
           section: [
             "CalTIA – Faster, better, and consistent testing",
             "CalPSR – Calsoft Performance, Scalability, and Resilience",
@@ -120,12 +124,13 @@ export default function Navbar() {
       ],
     },
     {
-      title: "DIGITAL Product ENGINEERING",
-      href: "#",
+      title: "DIGITAL PRODUCT ENGINEERING",
+      // href: "/digital-product-engineering",
+      href: "",
       submenu: [
         {
           title: "Product and application development ",
-          href: "/digital-engineering/productEngineering/product-and-application-development ",
+          href: "/digital-product-engineering/product-application-development",
           section: [
             "Ideation & architecture orchestration",
             "Development lifecycle services",
@@ -137,7 +142,7 @@ export default function Navbar() {
         },
         {
           title: "Modernization & Ecosystem",
-          href: "/digital-engineering/productEngineering/modernizationandecosystem",
+          href: "/digital-product-engineering/modernization-ecosystem",
           section: [
             "Maturity assessment and planning",
             "Future readiness with application modernization",
@@ -148,7 +153,7 @@ export default function Navbar() {
         },
         {
           title: "CX Engineering",
-          href: "/digital-engineering/productEngineering/cx-engineering",
+          href: "/digital-product-engineering/cx-engineering",
           section: [
             "Front-end development",
             "UX modernization : Better user journeys",
@@ -159,7 +164,7 @@ export default function Navbar() {
         },
         {
           title: "Cloud Services",
-          href: "/digital-engineering/productEngineering/cloud-services",
+          href: "/digital-product-engineering/cloud",
           section: [
             "IT infrastructure assessment and road mapping",
             "Multi-cloud infrastructure provisioning",
@@ -171,7 +176,7 @@ export default function Navbar() {
         },
         {
           title: "Testing as a Service",
-          href: "/digital-engineering/productEngineering/testing-as-a-service",
+          href: "/digital-product-engineering/testing-as-a-service",
           section: [
             "Functional and non-functional testing",
             "CalTIA | Automated regression testing",
@@ -183,7 +188,7 @@ export default function Navbar() {
         },
         {
           title: "Sustenance Support",
-          href: "/digital-engineering/productEngineering/sustenance-support",
+          href: "/digital-product-engineering/sustenance-support",
           section: [
             "Release management",
             "Streamline technical documentation",
@@ -193,7 +198,7 @@ export default function Navbar() {
         },
         {
           title: "Virtualization Solutions",
-          href: "/digital-engineering/productEngineering/virtualization-solutions",
+          href: "/digital-product-engineering/virtualization",
           section: [
             "Virtualization lifecycle management (Day 0–N)",
             "Containerization and orchestration",
@@ -204,7 +209,7 @@ export default function Navbar() {
         },
         {
           title: "Security Services",
-          href: "/digital-engineering/productEngineering/security-services",
+          href: "/digital-product-engineering/security",
           section: [
             "Endpoint and perimeter security enablement",
             "Identity and access management (IAM)",
@@ -215,7 +220,7 @@ export default function Navbar() {
         },
         {
           title: "Storage Networking",
-          href: "/digital-engineering/productEngineering/storage-networking",
+          href: "/digital-product-engineering/storage-networking",
           section: [
             "Software-defined storage (SDS) development",
             "Software Defined Networking (SDN) controller & engineering",
@@ -272,17 +277,17 @@ export default function Navbar() {
     },
     {
       title: "INSIGHTS",
-      href: "#",
+      href: "/insights",
       submenu: [
         { title: "Blogs", href: "/insights/blogs" },
         {
           title: "Resources",
-          href: "/insights/resource",
+          href: "/insights",
           inersubmenu: [
             { title: "Whitepapers", href: "/insights/whitepaper" },
             { title: "Datasheets", href: "/insights/datesheets" },
             { title: "Infographics", href: "/insights/infographic" },
-            { title: "Case Studies", href: "/insights/caseStudies" },
+            { title: "Case Studies", href: "/insights/case-studies" },
             {
               title: "Industry Reports",
               href: "/insights/industry-report",
@@ -296,11 +301,8 @@ export default function Navbar() {
     },
     {
       title: "ABOUT",
-      href: "/about",
-      submenu: [
-        { title: "Submenu Item 1", href: "#" },
-        { title: "Submenu Item 2", href: "#" },
-      ],
+      href: "/about-us",
+      submenu: [{ title: "Career", href: "#" }],
     },
   ];
 
@@ -317,14 +319,31 @@ export default function Navbar() {
     },
   ];
   // Handle submenu default selection
+  // useEffect(() => {
+  //   const current = navItems.find((i) => i.title === activeMenu);
+  //   if (current && current.submenu?.length) {
+  //     setSelectedSubmenu(current.submenu[0]);
+  //   } else {
+  //     setSelectedSubmenu(null);
+  //   }
+  // }, [activeMenu]);
   useEffect(() => {
     const current = navItems.find((i) => i.title === activeMenu);
+
     if (current && current.submenu?.length) {
-      setSelectedSubmenu(current.submenu[0]);
+      const matchedSubmenu = current.submenu.find((sub) =>
+        pathname.includes(sub.href)
+      );
+      if (matchedSubmenu) {
+        setSelectedSubmenu(matchedSubmenu);
+      } else {
+        setSelectedSubmenu(current.submenu[0]);
+      }
     } else {
       setSelectedSubmenu(null);
     }
-  }, [activeMenu]);
+  }, [activeMenu, pathname]);
+
   return (
     <header className="w-full sticky top-0 z-[90]">
       {/* Top Bar */}
@@ -368,10 +387,32 @@ export default function Navbar() {
                         href={href}
                         className="flex items-center space-x-1 text-white"
                       >
-                        <span className="text-sm font-normal hover:font-bold">
+                        <span
+                          className={`text-sm ${
+                            navItems
+                              .find((item) => item.title === title)
+                              ?.submenu?.some((sub) =>
+                                pathname.startsWith(sub.href)
+                              )
+                              ? "font-bold text-[#fffff]"
+                              : "font-normal"
+                          } hover:font-bold`}
+                        >
                           {title}
                         </span>
-                        {submenu && <IoIosArrowDown />}
+                        {submenu && (
+                          <IoIosArrowDown
+                            className={`transition-transform ${
+                              navItems
+                                .find((item) => item.title === title)
+                                ?.submenu?.some((sub) =>
+                                  pathname.startsWith(sub.href)
+                                )
+                                ? "text-[#fffff] font-bold"
+                                : "text-white"
+                            }`}
+                          />
+                        )}
                       </Link>
                     </div>
                   ))}
@@ -404,25 +445,35 @@ export default function Navbar() {
                 onMouseEnter={() => setActiveMenu(activeMenu)}
                 onMouseLeave={() => setActiveMenu(null)}
               >
-                <div className="max-w-[1440px] mx-auto bg-white text-black rounded-xl shadow-xl flex ">
+                <div className="max-w-[1340px] mx-auto bg-white text-black rounded-xl shadow-xl flex ">
                   {/* Left Column */}
                   <div className="w-[30%]  p-6">
                     {navItems
                       .find((item) => item.title === activeMenu)
-                      ?.submenu?.map((sub, idx) => (
-                        <Link
-                          href={sub.href}
-                          key={idx}
-                          className={`block text-sm py-1 w-full text-left ${
-                            selectedSubmenu?.title === sub.title
-                              ? "text-[#2E3092] font-semibold"
-                              : "text-[#1A1A1A]"
-                          }`}
-                          onMouseEnter={() => setSelectedSubmenu(sub)}
-                        >
-                          {sub.title}
-                        </Link>
-                      ))}
+                      ?.submenu?.map((sub, idx) => {
+                        const isActive = pathname === sub.href;
+
+                        return (
+                          <Link
+                            href={sub.href}
+                            key={idx}
+                            className={`group flex items-center justify-between text-sm py-1 w-full text-left ${
+                              isActive
+                                ? "text-[#2E3092] font-semibold"
+                                : "text-[#1A1A1A]"
+                            }`}
+                            onMouseEnter={() => setSelectedSubmenu(sub)}
+                          >
+                            <span>{sub.title}</span>
+                            {isActive && (
+                              <IoMdArrowDropright
+                                size={25}
+                                className="text-[#2E3092]"
+                              />
+                            )}
+                          </Link>
+                        );
+                      })}
                   </div>
                   <div className="w-px h-64 bg-[#CECECE] mx-6 mt-6"></div>
                   {/* Center Column */}

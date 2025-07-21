@@ -48,7 +48,7 @@ const Page = () => {
       icon: Incon1,
       iconSize: "",
       title: "Plan and implement",
-      desc: "Develop and implement a structured roadmap with a scalable system architecture ideal forsmart supply chains.",
+      desc: "Develop and implement a structured roadmap with a scalable system architecture ideal for smart supply chains.",
       positionClass:
         "translate-x-[2px] xl:translate-y-[4px] md:translate-y-[-39px]",
       translateprop: "translate-x-[33px] translate-y-[10px]",
@@ -100,7 +100,7 @@ const Page = () => {
     title: "Scale with real-time monitoring and automation",
     description:
       "Factories rely on real-time data to minimize errors and enhance efficiency.We help manufacturers deploy IoT sensors, integrate AI-driven automation, and build centralized analytics platforms to create intelligent, connected manufacturing environments.",
-    pointsTitle: "What we do:",
+    pointsTitle: "What We Do:",
     points: [
       "Deploy industrial IoT solutions for real-time machine  performance tracking",
       "Implement AI-powered automation to streamline production workflows",
@@ -119,13 +119,13 @@ const Page = () => {
     bgColor: "bg-[#FBFBF2]",
   };
   const StrengthenSec = {
-    title: "Strengthen predictive maintenance strategies.",
+    title: "Strengthen predictive maintenance strategies",
     description:
       "Equipment failures cause costly disruptions. AI-driven predictive maintenance prevents breakdowns before they happen, improving uptime and efficiency.",
-    pointsTitle: "What we do:",
+    pointsTitle: "What We Do:",
     points: [
       "Develop AI/ML models for predicting machinery failures",
-      "Integrate sensor-based monitoring to analyse equipment health",
+      "Integrate sensor-based monitoring to analyze equipment health",
       "Provide data-driven insights to optimize maintenance schedules",
     ],
     impactTitle: "Business Impact:",
@@ -143,8 +143,8 @@ const Page = () => {
   const EnhanceSection = {
     title: "Enhance visibility, agility, and demand forecasting",
     description:
-      "Manufacturing needs resilient, responsive supply chains. Data-driven insights help reduce excess inventory, improve logistics efficiency, and ensure demand-driven production.Calsoft ensures total inventory visualization with actionable insights at the fingertips.",
-    pointsTitle: "What we do:",
+      "Manufacturing needs resilient, responsive supply chains. Data-driven insights help reduce excess inventory, improve logistics efficiency, and ensure demand-driven production. Calsoft ensures total inventory visualization with actionable insights at the fingertips.",
+    pointsTitle: "What We Do:",
     points: [
       "Implement AI-driven demand forecasting to align inventory with market  needs",
       "Automate warehouse and logistics management for real-time tracking",

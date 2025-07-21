@@ -1,14 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/DigitalEngineering/Product/CloudServiceBanner.webp";
+import BackgroundImage from "../../assets/Data-Ai/dataDriven/Banner.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import cloudInfrIt from "../../assets/DigitalEngineering/Product/cloudInfrIt.webp";
-import RiskImage from "../../assets/Data-Ai/Risk.webp";
-import PlatformImage from "../../assets/Data-Ai/4sec.webp";
-import CostImage from "../../assets/Data-Ai/5sec.webp";
+import Info1 from "../../assets/Data-Ai/dataDriven/Info1.webp";
+import Info2 from "../../assets/Data-Ai/dataDriven/Info2.webp";
+import Info3 from "../../assets/Data-Ai/dataDriven/Info3.webp";
+import Info4 from "../../assets/Data-Ai/dataDriven/Info4.webp";
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -16,7 +15,7 @@ import {
 export const DrivenBanner = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
-    title: "AI-driven prediction and inferences",
+    title: "AI-driven predictions and inferences",
     title2: "",
     description: `Predict trends and infer actionable insights at
     enterprise speed.`,
@@ -83,8 +82,7 @@ export const DrivenChallengeSec = () => {
     },
     {
       tag: "Model adaptability",
-      challenge:
-        "Concerned about AI models degrading as environments change?",
+      challenge: "Concerned about AI models degrading as environments change?",
       solution:
         "Self-improving AI systems that retrain dynamically with evolving data streams",
     },
@@ -94,7 +92,7 @@ export const DrivenChallengeSec = () => {
       <ChallengeSolutionComp
         data={data}
         BlackHeading="Proactive action with predictive insights"
-        GradientHeading=" Challenge to solutions :"
+        GradientHeading=" Challenge to solutions:"
       />
     </>
   );
@@ -119,7 +117,7 @@ export const PredictiveSec = () => {
           "Improve resource and planning ops",
           "Capture shifts for faster GTM action",
         ]}
-        imageSrc={cloudInfrIt}
+        imageSrc={Info1}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
@@ -148,7 +146,7 @@ export const PatternSec = () => {
           "Adapt to market changes quickly",
           "Reduce losses with early response",
         ]}
-        imageSrc={RiskImage}
+        imageSrc={Info2}
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
@@ -162,7 +160,7 @@ export const InferentialSec = () => {
     <>
       <DataInfoSection
         title="Inferential analytics"
-        description="Move beyond observation to confident, data backed
+        description="Move beyond observation to confident, data-backed
         decision pathways."
         buttonText="Case Study"
         link="#"
@@ -176,7 +174,7 @@ export const InferentialSec = () => {
           "Plan better with simulations",
           "Optimize with real-time inputs",
         ]}
-        imageSrc={PlatformImage}
+        imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
@@ -204,7 +202,7 @@ export const ModelSec = () => {
           "Avoid frequent rebuild costs",
           "React fast to market changes",
         ]}
-        imageSrc={CostImage}
+        imageSrc={Info4}
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}

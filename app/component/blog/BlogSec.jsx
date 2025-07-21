@@ -10,6 +10,10 @@ import ArrowIcon from "../../assets/blog/rightArrow.svg";
 import Loadmore from "../../assets/blog/loadmoreicon.svg";
 import { blogData } from "../utilities/data/BlogData";
 import { useRouter } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogList } from "../../store/actions/blogAction.js";
+import { setSelectedBlogId } from "../../store/reducers/blogReducer.js";
+import blogexpanImage from "../../assets/blog/blog-2.webp";
 
 const filters = {
   Industry: ["All", "Tech", "Healthcare"],
@@ -18,7 +22,20 @@ const filters = {
 };
 
 export default function ResourceGrid() {
-  const [resources] = useState([...blogData]);
+  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBlogList());
+  }, []);
+  const BlogsList = useSelector((state) => state.blogs.list);
+  const resources = BlogsList;
+  const slugify = (text) => {
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-") // replace spaces & symbols
+      .replace(/^-+|-+$/g, ""); // trim hyphens
+  };
   const [visibleCount, setVisibleCount] = useState(6);
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
@@ -28,9 +45,11 @@ export default function ResourceGrid() {
   const [openDropdown, setOpenDropdown] = useState("");
   const loadMoreRef = useRef(null);
   const router = useRouter();
-
-  const handleBlogClick = (id) => {
-    router.push(`/insights/blogs/blog-expand/${id}`);
+  const handleBlogClick = (item) => {
+    const slug = item.slug ? item.slug : slugify(item.title); // fallback
+    dispatch(setSelectedBlogId(item._id));
+    console.log(item._id, "id");
+    router.push(`/insights/blogs/blog-expand/${slug}`);
   };
 
   const toggleDropdown = (filter) => {
@@ -178,19 +197,39 @@ export default function ResourceGrid() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredResources.slice(0, visibleCount).map((item, idx) => (
             <motion.div
-              key={item.id}
+              key={item._id}
               initial={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
-              onClick={() => handleBlogClick(item.id)}
-              className="bg-[#F8F9FA] border border-[#181C8E] rounded-lg shadow-md overflow-hidden relative cursor-pointer h-[400px] "
+              onClick={() => handleBlogClick(item)}
+              className="bg-[#F8F9FA] border border-[#BABABA] rounded-lg hover:shadow-2xl overflow-hidden relative cursor-pointer h-[400px] "
             >
-              <div className="p-4 h-1/2">
+              <div className="p-4 h-[50%]">
                 <div className="">
-                  <p className="text-[12px] font-light text-black uppercase">
-                    {item.subheading}
-                  </p>
+                  <div className="flex">
+                    <p className="text-[12px] font-medium text-[#2E3092]  px-1">
+                      {item?.categoryData.name}
+                    </p>
+                    <span className="text-[12px] font-medium text-[#939393] uppercase px-1">
+                      |
+                    </span>
+                    {item.authorData ? (
+                      <>
+                        <span className="text-[12px] font-medium text-[#939393]  px-1">
+                          {new Date(item.authorData.createdAt).toLocaleString(
+                            "en-IN",
+                            {
+                              timeZone: "Asia/Kolkata",
+                              day: "numeric",
+                              month: "short",
+                              year: "numeric",
+                            }
+                          )}
+                        </span>
+                      </>
+                    ) : null}
+                  </div>
                   <button
                     className="absolute top-2 right-2 text-xl text-[#181C8E] z-10"
                     onClick={(e) => {
@@ -201,30 +240,42 @@ export default function ResourceGrid() {
                     <FiShare2 />
                   </button>
                 </div>
-                <h3 className="font-semibold mt-4 mb-4 text-[24px] text-[#B10C2A]  overflow-hidden">
-                  {item.title}
+                <h3 className="font-semibold mt-4 mb-4 text-[18px] text-[#000000]  overflow-hidden">
+                  {item.title.length > 50
+                    ? item.title.slice(0, 45) + "..."
+                    : item.title}
                 </h3>
 
-                <div className="flex flex-wrap gap-2 my-2">
-                  {/* Container to hold tags */}
-                  {item.tags.map((tag) => (
+                <div className="flex flex-wrap gap-1 my-2">
+                  {item?.tagData.map((tag, index) => (
                     <span
-                      key={tag}
-                      className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+                      key={tag._id}
+                      className="text-[#2E3092] font-semibold text-[12px]  rounded flex items-center"
                     >
-                      {tag}
+                      {tag.name}
+                      {index !== item.tagData.length - 1 && (
+                        <span className="mx-1 text-[#2E3092]">|</span>
+                      )}
                     </span>
                   ))}
                 </div>
-                <div className="flex justify-between text-[13px] font-medium">
-                  <span className="text-[#E36C0A]">{item.author}</span>
-                  <span className="text-[#939393]">{item.date}</span>
+
+                <div className="flex justify-between text-[14px] font-semibold">
+                  {item.authorData ? (
+                    <>
+                      <span className="text-[#BA0007]">
+                        {item.authorData.name}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-gray-400">Unknown Author</span>
+                  )}
                 </div>
               </div>
 
-              <div className="relative w-full  overflow-hidden rounded-b-lg h-1/2">
+              <div className="relative w-full  overflow-hidden rounded-b-lg h-[50%]">
                 <Image
-                  src={item.img}
+                  src={item.image ? `${baseUrl}/${item.image}` : blogexpanImage} // fallback optional
                   alt={item.title}
                   fill
                   className="object-cover"
