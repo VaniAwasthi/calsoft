@@ -4,49 +4,42 @@ import BackgroundImage from "../../assets/Data-Ai/dataDriven/Banner.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import Info1 from "../../assets/Data-Ai/dataDriven/Info1.webp";
-import Info2 from "../../assets/Data-Ai/dataDriven/Info2.webp";
-import Info3 from "../../assets/Data-Ai/dataDriven/Info3.webp";
-import Info4 from "../../assets/Data-Ai/dataDriven/Info4.webp";
+import Info1 from "../../assets/Data-Ai/dataDriven/Info1.svg";
+import Info2 from "../../assets/Data-Ai/dataDriven/Info2.svg";
+import Info3 from "../../assets/Data-Ai/dataDriven/Info3.svg";
+import Info4 from "../../assets/Data-Ai/dataDriven/Info4.svg";
 import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const DrivenBanner = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "AI-driven predictions and inferences",
-    title2: "",
+
     description: `Predict trends and infer actionable insights at
     enterprise speed.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Predictive",
+    "Analysis",
+    "Analytics",
+    "AI Models",
   ];
   return (
     <>
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -93,6 +86,7 @@ export const DrivenChallengeSec = () => {
         data={data}
         BlackHeading="Proactive action with predictive insights"
         GradientHeading=" Challenge to solutions:"
+        secId="benefits"
       />
     </>
   );
@@ -121,6 +115,7 @@ export const PredictiveSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="predictive"
       />
     </>
   );
@@ -150,6 +145,7 @@ export const PatternSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="analysis"
       />
     </>
   );
@@ -178,6 +174,7 @@ export const InferentialSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secid="analytics"
       />
     </>
   );
@@ -206,6 +203,7 @@ export const ModelSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="ai-Models"
       />
     </>
   );

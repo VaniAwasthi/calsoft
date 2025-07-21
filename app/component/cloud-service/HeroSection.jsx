@@ -13,40 +13,34 @@ import Info5 from "../../assets/DigitalEngineering/cloud-service/Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/cloud-service/Info6.svg";
 import Info7 from "../../assets/DigitalEngineering/cloud-service/Info7.svg";
 export const HeroSectionProduct = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
-    title: "Cloud | Grow with ",
-    title2: "cloud-induced efficiency",
+    title: "Cloud | Grow with cloud-induced efficiency",
     description: `Engineer scalable, secure, and cost-efficient<br/>
 cloud solutions aligned to your business goals.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Assessment",
+    "Multi-Cloud",
+    "Cloud-Native",
+    "Migration",
+    "Cost",
+    "SRE",
   ];
   return (
     <>
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[46px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[46px] md:text-[40px] text-[21px] md:mt-4 md:mb-[2rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -101,6 +95,7 @@ export const ChallengeToSolutionSec = () => {
       title="Challenge to solution:"
       blackTitle="Go from legacy to cloud-native"
       challenges={challengesData}
+      secId="benefits"
     />
   );
 };
@@ -127,6 +122,7 @@ export const ItInfraSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="assessment"
       />
     </>
   );
@@ -154,6 +150,7 @@ export const MultiCloudInfraSec = () => {
         imageAlt="MultiCloud"
         imageLeft={true}
         isDivider={true}
+        secId="multi-cloud"
       />
     </>
   );
@@ -181,6 +178,7 @@ export const CloudNativetInfraSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="cloud-native"
       />
     </>
   );
@@ -207,6 +205,7 @@ export const CloudMigrationInfraSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="migration"
       />
     </>
   );
@@ -229,10 +228,11 @@ export const CostInfraSec = () => {
           "Budget adherence",
           "Performance without overspend",
         ]}
-        imageSrc={Info5}
+        imageSrc={Info6}
         imageAlt="Infrastructure globe"
-        imageLeft={false}
+        imageLeft={true}
         isDivider={true}
+        secId="cost"
       />
     </>
   );
@@ -255,10 +255,11 @@ export const SREInfraSec = () => {
           "Reduced incident response time",
           "Balanced speed and stability",
         ]}
-        imageSrc={Info6}
+        imageSrc={Info7}
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="sre"
       />
     </>
   );

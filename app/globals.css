@@ -58,7 +58,7 @@ body {
 
 .challenge-card:hover .challenge-inner,
 .challenge-card.flipped .challenge-inner {
-  transform: rotateX(180deg);
+  backface-visibility: hidden;
 }
 
 .challenge-face {
@@ -301,7 +301,6 @@ body {
   }
 }
 
-
 .blog-content h2 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -336,4 +335,3 @@ body {
   color: #0070f3;
   text-decoration: underline;
 }
-

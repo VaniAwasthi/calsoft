@@ -3,7 +3,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { useState } from "react";
-// import FeatureSection from "./FeatureSection";
 import Architect from "../../assets/home/Architect.webp";
 import Engineer from "../../assets/home/Engineer.webp";
 import SecureApp from "../../assets/home/SecureApp.webp";

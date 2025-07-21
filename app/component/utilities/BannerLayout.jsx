@@ -24,7 +24,7 @@ const BannerLayout = ({
       <Image
         src={image}
         alt="Background Image"
-        className="w-full md:h-full h-[280px] object-cover"
+        className="w-full md:h-[600px] h-[280px] object-cover"
       />
 
       {/* Content Section - Centered */}

@@ -5,46 +5,39 @@ import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import Info1 from "../../assets/DigitalEngineering/mordernization/Info-1.webp";
-import Info2 from "../../assets/DigitalEngineering/mordernization/Info-2.webp";
-import Info3 from "../../assets/DigitalEngineering/mordernization/Info-3.webp";
-import Info4 from "../../assets/DigitalEngineering/mordernization/Info-4.webp";
+import Info1 from "../../assets/DigitalEngineering/mordernization/Info-1.svg";
+import Info2 from "../../assets/DigitalEngineering/mordernization/Info-2.svg";
+import Info3 from "../../assets/DigitalEngineering/mordernization/Info-3.svg";
+import Info4 from "../../assets/DigitalEngineering/mordernization/Info-4.svg";
 
 export const HeroSectionModernization = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
-    title: "Modernization and",
-    title2: "ecosystem management",
+    title: "Modernization and ecosystem management",
+
     description: `Reengineer systems, integrate ecosystems, and
 future-proof operations with agility and precision.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Assessment",
+    "Modernization",
+    "Ecosystem",
+    "Plugin",
   ];
   return (
     <>
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[46px] md:text-[40px] text-[21px] mt-[1rem]"
-        titleTwoClass={`font-semibold lg:text-[46px] md:text-[40px] text-[21px] md:mt-1 md:mb-[2rem]`}
-        descriptionClass="hidden md:block mt-1 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -92,6 +85,7 @@ export const ModernizationChallengeSec = () => {
       title="Challenge to solution:"
       blackTitle="Create rewarding user experiences"
       challenges={challengesData}
+      secId="benefits"
     />
   );
 };
@@ -118,6 +112,7 @@ export const MaturityAssessmentSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="assessment"
       />
     </>
   );
@@ -145,6 +140,7 @@ export const FutureReadinessSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={true}
+        secId="modernization"
       />
     </>
   );
@@ -172,6 +168,7 @@ export const EcosystemManagementSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="ecosystem"
       />
     </>
   );
@@ -196,35 +193,9 @@ export const PlugindevelopmentSec = () => {
         ]}
         imageSrc={Info4}
         imageAlt="Infrastructure globe"
-        imageLeft={false}
-        isDivider={true}
-      />
-    </>
-  );
-};
-export const IoTEngineeringSec = () => {
-  return (
-    <>
-      <InfraSection
-        title="IoT Engineering"
-        description="Build intelligent, scalable IoT solutions for
-real-time data analytics and op-led automation."
-        buttonText="Case Study"
-        link="#"
-        whatWeDo={[
-          "Use sensors for faster insights",
-          "Transmit data with full security",
-          "Link IoT to data and analytics",
-        ]}
-        businessImpact={[
-          "Real-time ops visibility improves",
-          "IoT scaling is simple and safe",
-          "Better data, better decisions",
-        ]}
-        imageSrc={Info4}
-        imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secId="plugin"
       />
     </>
   );

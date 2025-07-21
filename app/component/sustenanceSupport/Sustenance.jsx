@@ -11,7 +11,7 @@ import Info3 from "../../assets/DigitalEngineering/Sustaine/Info-3.svg";
 import Info4 from "../../assets/DigitalEngineering/Sustaine/Info-4.svg";
 
 export const SustenanceTab = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Sustenance & Support",
     description: `Deliver reliable, scalable products with comprehensive
@@ -19,31 +19,18 @@ export const SustenanceTab = () => {
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
-  const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
-  ];
+  const navItems = ["Benefits", "Release", "Document", "Multi-tier", "Up-time"];
   return (
     <>
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -91,6 +78,7 @@ export const SustenanceChallenge = () => {
       title="Challenge to solution:"
       blackTitle="Ensure value-inducing support while
             sustaining high qualities"
+      secId="benefits"
       challenges={challengesData}
     />
   );
@@ -119,6 +107,7 @@ export const ReleaseSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="release "
       />
     </>
   );
@@ -146,6 +135,7 @@ export const StreamlineSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={true}
+        secId="document"
       />
     </>
   );
@@ -172,7 +162,8 @@ export const MultiSec = () => {
         imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
-        isDivider={true}
+        isDivider={false}
+        secId="multi-tier"
       />
     </>
   );
@@ -198,7 +189,8 @@ export const UptimeSec = () => {
         imageSrc={Info4}
         imageAlt="Infrastructure globe"
         imageLeft={true}
-        isDivider={true}
+        isDivider={false}
+        secId="up-time"
       />
     </>
   );

@@ -18,6 +18,7 @@ import Incon3 from "../../assets/industries/manufacturing/manufacturIcon3.svg";
 import Incon2 from "../../assets/industries/manufacturing/manufacturIcon4.svg";
 import Incon1 from "../../assets/industries/manufacturing/manufacturIcon5.svg";
 import Intellegence from "../../assets/industries/manufacturing/ManufacturingMobile.webp";
+import Info4 from "../../assets/DigitalEngineering/mordernization/Info-4.svg";
 
 const Page = () => {
   const slide = {
@@ -162,7 +163,28 @@ const Page = () => {
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
   };
-
+  const IotEnSection = {
+    title: "IoT Engineering",
+    description:
+      "Build intelligent, scalable IoT solutions for real-time data analytics and op-led automation.",
+    pointsTitle: "What We Do:",
+    points: [
+      "Use sensors for faster insights",
+      "Transmit data with full security",
+      "Link IoT to data and analytics",
+    ],
+    impactTitle: "Business Impact:",
+    impactPoints: [
+      "Real-time ops visibility improves",
+      "IoT scaling is simple and safe",
+      "Better data, better decisions",
+    ],
+    buttonText: "Learn More",
+    buttonLink: "#",
+    image: Info4,
+    imagePosition: "left",
+    bgColor: "bg-[#F8F9FA]",
+  };
   return (
     <>
       <Herosection
@@ -194,6 +216,11 @@ const Page = () => {
         {...EnhanceSection}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2] "
+      />
+      <InfoImageSection
+        {...IotEnSection}
+        rounded="rounded-r-[30px]"
+        bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%] bg-[#F8F9FA] "
       />
       <TopPartners />
       <ServicesSec />

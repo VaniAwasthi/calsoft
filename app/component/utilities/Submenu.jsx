@@ -10,7 +10,7 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-50% 0px -50% 0px", // section triggers when it's near the middle of the screen
+      rootMargin: "-35% 0px -35% 0px", // section triggers when it's near the middle of the screen
       threshold: 0,
     };
 
@@ -70,11 +70,12 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
                     onClick={() => {
                       setActiveTab(item);
                       const sectionId = formatId(item);
+                      console.log(sectionId, "id");
                       const section = document.getElementById(sectionId);
                       if (section) {
                         section.scrollIntoView({
                           behavior: "smooth",
-                          block: "start",
+                          block: "center",
                         });
                       }
                     }}

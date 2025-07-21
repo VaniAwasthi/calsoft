@@ -5,47 +5,42 @@ import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import Info1 from "../../assets/DigitalEngineering/product-app/Info-1.webp";
-import Info2 from "../../assets/DigitalEngineering/product-app/Info-2.webp";
-import Info3 from "../../assets/DigitalEngineering/product-app/Info-3.webp";
-import Info4 from "../../assets/DigitalEngineering/product-app/Info-4.webp";
-import Info5 from "../../assets/DigitalEngineering/product-app/Info-5.webp";
-import Info6 from "../../assets/DigitalEngineering/product-app/Info-6.webp";
+import Info1 from "../../assets/DigitalEngineering/product-app/Info-1.svg";
+import Info2 from "../../assets/DigitalEngineering/product-app/Info-2.svg";
+import Info3 from "../../assets/DigitalEngineering/product-app/Info-3.svg";
+import Info4 from "../../assets/DigitalEngineering/product-app/Info-4.svg";
+import Info5 from "../../assets/DigitalEngineering/product-app/Info-5.svg";
+import Info6 from "../../assets/DigitalEngineering/product-app/Info-6.svg";
 export const HeroSectionProductandApplicationDev = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
-    title: "Product and application",
-    title2: "development",
+    title: "Product and application development",
+
     description: `Engineer ideas into robust, scalable solutions
 with speed and precision.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Architecture",
+    "Lifecycle",
+    "Quality",
+    "DevOps",
+    "Deployment",
+    "Mozaic",
   ];
   return (
     <>
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[46px] md:text-[40px] text-[21px] mt-[3rem]"
-        titleTwoClass={`font-semibold lg:text-[46px] md:text-[40px] text-[21px] md:mt-1 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-1 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -92,6 +87,7 @@ export const ProdandAppChallengeSec = () => {
       title="Challenge to solution:"
       blackTitle="Quickly, effortlessly, and with cost-efficiency"
       challenges={challengesData}
+      secId="benefits"
     />
   );
 };
@@ -119,6 +115,7 @@ clarity and precision."
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="architecture"
       />
     </>
   );
@@ -146,6 +143,7 @@ export const DevelopmentSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={true}
+        secId="lifecycle"
       />
     </>
   );
@@ -173,6 +171,7 @@ export const QualityengineeringSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="quality"
       />
     </>
   );
@@ -199,6 +198,7 @@ export const DevOpsSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="devops"
       />
     </>
   );
@@ -225,6 +225,7 @@ export const DeploymentSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={true}
+        secId="deployment"
       />
     </>
   );
@@ -251,6 +252,7 @@ export const AccelerateSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="mozaic"
       />
     </>
   );

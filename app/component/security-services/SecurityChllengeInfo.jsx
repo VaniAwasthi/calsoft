@@ -12,22 +12,22 @@ import Info4 from "../../assets/DigitalEngineering/security/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/security/Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/security/Info6.svg";
 export const SecurityTab = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
-    title: "Security for your ",
-    title2: "digital landscape",
+    title: "Security for your digital landscape ",
+
     description: `Strengthen endpoint, identity, and infrastructure
         security for operational resilience and continuity.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "Endpoint",
+    "IAM",
+    "DevSecOps",
+    "Zero Trust",
+    "Continuity",
   ];
   return (
     <>
@@ -41,11 +41,6 @@ export const SecurityTab = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -100,6 +95,7 @@ export const SecurityChallenge = () => {
       title="Challenge to solution:"
       blackTitle="Make your security robust and responsive"
       challenges={challengesData}
+      secId="benefits"
     />
   );
 };
@@ -126,6 +122,7 @@ export const Endpoint = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="endpoint"
       />
     </>
   );
@@ -153,6 +150,7 @@ export const IdentitySec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={true}
+        secId="iam"
       />
     </>
   );
@@ -181,6 +179,7 @@ export const DevSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="devsecops"
       />
     </>
   );
@@ -207,6 +206,7 @@ export const ZeroSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="zero-trust"
       />
     </>
   );
@@ -233,6 +233,7 @@ export const ServiceSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={true}
+        secId="continuity"
       />
     </>
   );

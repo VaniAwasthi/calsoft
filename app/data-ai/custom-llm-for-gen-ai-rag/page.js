@@ -3,6 +3,7 @@ import {
   CustomBanner,
   EnterpriseSec,
   LlmSec,
+  RagSec,
   SystemSec,
 } from "../../component/customLlmGenAi/CustomLlmGgenAi.jsx";
 import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
@@ -16,6 +17,7 @@ function page() {
       <CustomBanner />
       <AnalyticsSec />
       <LlmSec />
+      <RagSec />
       <BannerSection
         backgroundImage={BannerwithButtonBg}
         title={

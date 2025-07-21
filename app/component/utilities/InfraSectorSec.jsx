@@ -20,11 +20,15 @@ export const InfraSection = ({
   link = "#",
   title,
   isDivider,
+  secId,
 }) => {
   return (
-    <section className="bg-white container mx-auto  py-10 px-4 md:px-16 ">
+    <section
+      className="bg-white container mx-auto py-[3rem] px-4 md:px-16 "
+      id={secId}
+    >
       <div
-        className={`flex my-2  ${
+        className={`flex my-[4rem]   ${
           imageLeft
             ? "flex-col-reverse md:flex-row-reverse"
             : "flex-col-reverse md:flex-row"
@@ -32,7 +36,7 @@ export const InfraSection = ({
       >
         {/* Text Content */}
         <motion.div
-          className="w-full md:w-3/4 manrope"
+          className="w-full md:w-[55%] manrope"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -43,7 +47,7 @@ export const InfraSection = ({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+            className="text-xl md:text-[30px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
           >
             {title}
           </motion.h2>
@@ -79,7 +83,7 @@ export const InfraSection = ({
                   image={ButtonImage}
                   hoverImage={ButtonImage}
                   link={link}
-                  className="!w-[150px] !h-[60px]"
+                  className="!w-[150px] !h-[50px]"
                 />
               </motion.div>
             )}
@@ -93,11 +97,11 @@ export const InfraSection = ({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="text-[#2E3092] font-semibold mb-2 text-[20px]"
+                className="text-[#2E3092] font-semibold mb-2 text-[18px]"
               >
-                What we do:
+                What We Do:
               </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24]">
+              <ul className="list-disc list-inside text-[#545353] text-[16px] space-y-1 marker:text-[#ED1C24]">
                 {whatWeDo.map((item, index) => (
                   <motion.li
                     initial={{ x: -50, opacity: 0 }}
@@ -122,11 +126,11 @@ export const InfraSection = ({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="hidden md:block text-[#2E3092] font-semibold mb-2 text-[20px]"
+                className="hidden md:block text-[#2E3092] font-semibold mb-2 text-[18px]"
               >
                 Business Impact:
               </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[15px] space-y-1 marker:text-[#ED1C24]">
+              <ul className="list-disc list-inside text-[#545353] text-[14px] space-y-1 marker:text-[#ED1C24]">
                 {businessImpact.map((item, index) => (
                   <motion.li
                     initial={{ x: -50, opacity: 0 }}
@@ -161,13 +165,12 @@ export const InfraSection = ({
         </motion.div>
 
         {/* Image Content */}
-        <div className="w-full md:w-1/4">
+        <div className="relative w-full md:w-[40%] aspect-[13/10]">
           <Image
             src={imageSrc}
             alt={imageAlt}
-            width={500}
-            height={400}
-            className="rounded-lg shadow-lg w-full h-60 md:h-full"
+            fill
+            className="rounded-lg shadow-lg object-cover"
           />
         </div>
       </div>
@@ -184,7 +187,8 @@ export const BannerSection = ({
   title,
   buttonText = "Know More",
   buttonLink = "#",
-  height = "h-[200px] md:h-[250px]",
+  height = "h-[200px] md:h-[150px]",
+  link,
 }) => {
   return (
     <div className="container mx-auto py-15 px-4 md:px-16">
@@ -204,18 +208,26 @@ export const BannerSection = ({
         {/* Overlay */}
         <div className="absolute inset-0  flex flex-col md:flex-row md:items-center md:justify-between px-6 md:px-12 text-white">
           {/* Title */}
-          <h2 className="text-base md:text-2xl font-medium max-w-2xl text-left md:text-left py-4 md:py-0">
+          <h2 className="text-base md:text-3xl font-medium max-w-2xl text-left md:text-left py-4 md:py-0">
             {title}
           </h2>
 
           {/* Button */}
           {buttonText && (
-            <Link
-              href={buttonLink}
-              className="bg-[#C00404] hover:bg-red-800 text-white w-[150px] px-6  md:px-8 py-2 rounded-lg text-sm font-medium transition mt-4 md:mt-0"
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex flex-col md:flex-row gap-4"
             >
-              {buttonText}
-            </Link>
+              <ButtonLayout
+                link={link}
+                text={buttonText}
+                image={ButtonImage}
+                hoverImage={ButtonImage}
+              />
+            </motion.div>
           )}
         </div>
       </div>
@@ -232,7 +244,7 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
           <Image
             src={ContactImg}
             alt="Background Image"
-            className="w-full h-[250px] md:h-full md:object-cover object-center"
+            className="w-full h-[250px] md:h-[300px] md:object-cover object-center"
           />
 
           {/* Right Side: Overlay Content */}
@@ -274,7 +286,12 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
   );
 };
 
-export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
+export const ChallengeToSolution = ({
+  title,
+  blackTitle,
+  challenges = [],
+  secId,
+}) => {
   const [flippedIndex, setFlippedIndex] = useState(null);
   const [openIndex, setOpenIndex] = useState(null);
   const [mobileFlipIndex, setMobileFlipIndex] = useState(null);
@@ -288,94 +305,119 @@ export const ChallengeToSolution = ({ title, blackTitle, challenges = [] }) => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 md:py-10">
-      <motion.div
-        className="w-full my-5 manrope"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <motion.h2
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
-          className="text-xl md:text-[35px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+    <section id={secId}>
+      <div className="container mx-auto px-4 md:py-8 my-[2rem]">
+        <motion.div
+          className="w-full my-5 manrope flex justify-center items-center max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          {title}
-          <span className="text-black font-semibold px-1">{blackTitle}</span>
-        </motion.h2>
-      </motion.div>
+          <motion.h2
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-xl text-center md:text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text  text-transparent"
+          >
+            {title}
+            <span className="text-black font-semibold px-1">{blackTitle}</span>
+          </motion.h2>
+        </motion.div>
 
-      <div className="space-y-4 w-full">
-        {challenges.map((item, index) => (
-          <div key={index}>
-            <div className="flex w-full overflow-hidden rounded-full shadow-md">
-              {/* Left Title */}
-              <div
-                onClick={() => toggleMobile(index)}
-                className="bg-[#2D2A86] uppercase text-white font-semibold text-sm px-6 py-4 flex items-center justify-center w-full md:w-[260px] rounded-l-full cursor-pointer text-center break-words"
-              >
-                {item.title}
-              </div>
+        <div className="space-y-8 w-full">
+          {challenges.map((item, index) => (
+            <div key={index}>
+              <div className="flex w-full overflow-hidden rounded-full shadow-md">
+                {/* Left Title */}
+                <div
+                  onClick={() => toggleMobile(index)}
+                  className="bg-[#2D2A86] uppercase text-white font-semibold text-sm md:text-[18px] px-6 py-4 flex items-center justify-center w-full md:w-[300px] rounded-l-full cursor-pointer text-center break-words"
+                >
+                  {item.title}
+                </div>
 
-              {/* Desktop Flip Card */}
-              <div
-                className={`hidden md:flex flex-1 pr-0 rounded-r-full challenge-card relative ${
-                  flippedIndex === index ? "flipped" : ""
-                }`}
-                style={{ minHeight: "80px" }}
-              >
-                <div className="challenge-inner">
-                  {/* Front Side */}
-                  <div className="challenge-face bg-[#E6E6E6] text-sm text-gray-800">
-                    <div className="py-4 break-words">{item.description}</div>
-                    <button
-                      //   onClick={handleFlip}
-                      className="flex items-center bg-[#F4F4F4] text-[#2D2A86] text-sm font-medium h-full rounded-full hover:bg-[#e5e5e5] transition whitespace-nowrap"
+                {/* Desktop slide Card */}
+                <div
+                  className={`hidden md:flex flex-1 pr-0 rounded-r-full challenge-card relative`}
+                  style={{ minHeight: "80px" }}
+                >
+                  <motion.div
+                    className="challenge-inner relative w-full h-full overflow-hidden"
+                    whileHover="hover"
+                    initial="initial"
+                    variants={{
+                      initial: {},
+                      hover: {},
+                    }}
+                  >
+                    {/* Front Side */}
+                    <motion.div
+                      className="challenge-face bg-[#E6E6E6] text-sm text-gray-800 absolute w-full h-full top-0 left-0 z-20"
+                      variants={{
+                        initial: { x: 0, opacity: 1 },
+                        hover: { x: -300, opacity: 0 },
+                      }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
                     >
-                      <span className="mr-2 px-4 py-4">Hover to Solve</span>
-                      <div className="w-20 h-20 relative">
-                        <Image
-                          src={CircleArrow}
-                          alt="arrow"
-                          fill
-                          className="object-contain"
-                        />
+                      <div className="py-4 text-[18px] break-words">
+                        {item.description}
                       </div>
-                    </button>
-                  </div>
+                      <button className="flex items-center bg-[#F4F4F4] text-[#2D2A86] text-md font-medium h-full rounded-full hover:bg-[#e5e5e5] transition whitespace-nowrap">
+                        <span className="mr-2 px-4 py-4">Hover to Solve</span>
+                        <div className="w-20 h-20 relative">
+                          <Image
+                            src={CircleArrow}
+                            alt="arrow"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      </button>
+                    </motion.div>
 
-                  {/* Back Side */}
-                  <div className="challenge-face challenge-back bg-[#D1D5DB] text-sm text-gray-800">
-                    <div className="py-4">{item.solution}</div>
-                  </div>
+                    {/* Back Side */}
+                    <motion.div
+                      className="challenge-face challenge-back bg-[#D1D5DB] text-[18px] text-gray-800 absolute w-full h-full top-0 left-0 z-10"
+                      variants={{
+                        initial: { x: 300, opacity: 0 },
+                        hover: { x: 0, opacity: 1 },
+                      }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                    >
+                      <div className="py-4">{item.solution}</div>
+                    </motion.div>
+                  </motion.div>
                 </div>
               </div>
+
+              {/* Mobile View: Expandable Description */}
+              {openIndex === index && (
+                <div
+                  onClick={() =>
+                    setMobileFlipIndex((prev) =>
+                      prev === index ? null : index
+                    )
+                  }
+                  className={`block md:hidden bg-[#E6E6E6] text-sm text-gray-800 px-4 py-3 rounded-md mt-2 mobile-flip-wrapper ${
+                    mobileFlipIndex === index ? "flipped" : ""
+                  }`}
+                >
+                  <div className="mobile-flip-inner">
+                    {/* front face – description */}
+                    <div className="mobile-face">{item.description}</div>
+
+                    {/* back face – solution */}
+                    <div className="mobile-face mobile-back">
+                      {item.solution}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
-
-            {/* Mobile View: Expandable Description */}
-            {openIndex === index && (
-              <div
-                onClick={() =>
-                  setMobileFlipIndex((prev) => (prev === index ? null : index))
-                }
-                className={`block md:hidden bg-[#E6E6E6] text-sm text-gray-800 px-4 py-3 rounded-md mt-2 mobile-flip-wrapper ${
-                  mobileFlipIndex === index ? "flipped" : ""
-                }`}
-              >
-                <div className="mobile-flip-inner">
-                  {/* front face – description */}
-                  <div className="mobile-face">{item.description}</div>
-
-                  {/* back face – solution */}
-                  <div className="mobile-face mobile-back">{item.solution}</div>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

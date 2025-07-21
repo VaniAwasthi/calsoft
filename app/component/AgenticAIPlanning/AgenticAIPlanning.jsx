@@ -1,53 +1,46 @@
 "use client";
 import React, { useState } from "react";
-import BackgroundImage from "../../assets/Data-Ai/agenetic/Banner.webp";
+import BackgroundImage from "../../assets/Data-Ai/agenetic/Banner.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import Info1 from "../../assets/Data-Ai/agenetic/Info-1.webp";
-import Info2 from "../../assets/Data-Ai/agenetic/Info-2.webp";
-import Info3 from "../../assets/Data-Ai/agenetic/Info-3.webp";
-import Info4 from "../../assets/Data-Ai/agenetic/Info-4.webp";
+import Info1 from "../../assets/Data-Ai/agenetic/Info-1.svg";
+import Info2 from "../../assets/Data-Ai/agenetic/Info-2.svg";
+import Info3 from "../../assets/Data-Ai/agenetic/Info-3.svg";
+import Info4 from "../../assets/Data-Ai/agenetic/Info-4.svg";
 
 import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
 export const AgenticBanner = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Agentic AI planning & development",
-    title2: "",
+
     description: `Design, deploy, and manage AI agents with
     precision and accountability.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "AIOps",
+    "AI Agents",
+    "Monitoring",
+    "Agent lifecycle",
   ];
   return (
     <>
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -95,6 +88,7 @@ export const AgenticChallengeSec = () => {
         data={data}
         BlackHeading="Proactive action with predictive insights"
         GradientHeading="Challenge to solutions:"
+        secId="benefits"
       />
     </>
   );
@@ -123,6 +117,7 @@ export const AiOopsSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secid="aiops"
       />
     </>
   );
@@ -150,6 +145,7 @@ export const UseSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
+        secid="ai-agents"
       />
     </>
   );
@@ -176,7 +172,8 @@ export const MonitorSec = () => {
         imageSrc={Info3}
         imageAlt="Infrastructure globe"
         imageLeft={false}
-        isDivider={false}
+        isDivider={true}
+        secid="monitoring"
       />
     </>
   );
@@ -203,6 +200,7 @@ export const LifecycleSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secid="agent-lifecycle"
       />
     </>
   );

@@ -13,40 +13,35 @@ import Info5 from "../../assets/DigitalEngineering/storage-net/i=Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/storage-net/Info6.svg";
 import Info7 from "../../assets/DigitalEngineering/storage-net/Info7.svg";
 export const StorageTab = () => {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Storage & Networking ",
-
     description: `Build agile, scalable and resilient data and
         connectivity infrastructures for evolving business needs.`,
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Personalization",
-    "Forecasting",
-    "Security",
-    " Case studies",
-    "Services",
+    "Benefits",
+    "SDS",
+    "SDN",
+    "HCI",
+    "Gateway",
+    "AI Automation",
+    "NFV",
+    "Edge",
   ];
   return (
     <>
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
-        title2={slide.title2}
         description={slide.description}
         rightImage={slide.rightImage}
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
-        backgroundMain="!h-[250px] md:!h-[650px]"
-        ImageClassname="![object-position:37%_43%]"
-        titleOneClass="font-semibold lg:text-[52px] md:text-[40px] text-[21px] mt-2"
-        titleTwoClass={`font-semibold lg:text-[52px] md:text-[40px] text-[21px] md:mt-4 md:mb-[5rem]`}
-        descriptionClass="hidden md:block mt-4 text-[12px] leading-6 w-[200px] md:w-full"
       />
       <Submenu
         navItems={navItems}
@@ -101,6 +96,7 @@ export const StorageChallenge = () => {
       title="Challenge to solution:"
       blackTitle="Boost efficiency and consistency at lower costs"
       challenges={challengesData}
+      secId="benefits"
     />
   );
 };
@@ -127,6 +123,7 @@ export const SoftwareSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="sds"
       />
     </>
   );
@@ -155,6 +152,7 @@ export const DefinedSec = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={true}
+        secId="sdn"
       />
     </>
   );
@@ -182,6 +180,7 @@ export const Hyperconverged = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={false}
+        secId="hci"
       />
     </>
   );
@@ -208,6 +207,7 @@ export const Gateway = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="gateway"
       />
     </>
   );
@@ -234,6 +234,7 @@ export const AiSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={true}
+        secId="ai-automation"
       />
     </>
   );
@@ -261,6 +262,7 @@ export const NetworkSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
+        secId="nfv"
       />
     </>
   );
@@ -287,6 +289,7 @@ export const EdgeSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
+        secId="edge"
       />
     </>
   );

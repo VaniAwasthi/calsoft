@@ -53,23 +53,19 @@ export const IndustryData = [
         title: "Digital product engineering & UX innovation",
         icon: HitechIcon2,
       },
+
       {
         id: 3,
-        title: "Blockchain & Web3 integration",
-        icon: HitechIcon3,
-      },
-      {
-        id: 4,
         title: "Cloud-native & microservices architectures",
         icon: HitechIcon4,
       },
       {
-        id: 5,
+        id: 4,
         title: "Data science & AI-powered decision making",
         icon: HitechIcon5,
       },
       {
-        id: 6,
+        id: 5,
         title: "IoT & edge intelligence for smart environments",
         icon: HitechIcon6,
       },
