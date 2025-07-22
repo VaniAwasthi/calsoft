@@ -34,7 +34,7 @@ const Page = () => {
         <br />
         Calsoft helps you build your ‘ideal’ products/ software from planning to
         deployment at lower costs, higher quality and faster go-to-market.`,
-    buttonText: "What we do",
+    buttonText: "What We Do",
     image: BackgroundImage,
   };
   const Gradientheading = " All our intelligence";
@@ -111,7 +111,7 @@ const Page = () => {
     title: "Software & product engineering",
     description:
       "Create market-leading and high-performance products, built within agile frameworks and secure environments, with go-to-market capabilities and scalability and at scale.",
-    pointsTitle: "What we do:",
+    pointsTitle: "What We Do:",
     points: [
       "Build cloud-native applications for agility and speed",
       "Implement modular architectures for better scalability",
@@ -135,7 +135,7 @@ const Page = () => {
     title: "Cloud & platform engineering",
     description:
       "Enabling cloud-first agility is key for high-tech businesses. We design, implement, and maintain cloud ecosystems - delivering resilient performance and cost efficiency.",
-    pointsTitle: "What we do:",
+    pointsTitle: "What We Do:",
     points: [
       "Optimize workloads for better cost efficiency and security",
       "Automate cloud operations for real-time performance monitoring",
@@ -158,7 +158,7 @@ const Page = () => {
     title: "AI-powered modernization",
     description:
       "Gain AI-powered automation, predictive analytics, and intelligent architecture to enhance software functionality, efficiency, and adaptability.",
-    pointsTitle: "What we do:",
+    pointsTitle: "What We Do:",
     points: [
       "Re-architect legacy products with AI-driven automation",
       "Improve efficiency with predictive analytics and smart  workflows",
