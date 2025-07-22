@@ -105,7 +105,7 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     description: `Legacy networks may struggle with agility and cost-efficiency.
 <br/><br/>
 Here, companies must deploy SDN, NFV, and AI-driven automation to simplify network provisioning, monitoring, and performance management.`,
-    pointsTitle: "What we do:",
+    pointsTitle: "What We Do:",
     points: [
       "Implement software-defined networking (SDN) for dynamic traffic management",
       "Deploy network function virtualization (NFV) for scalable network services",
@@ -128,7 +128,7 @@ Here, companies must deploy SDN, NFV, and AI-driven automation to simplify netwo
     description: `Thinking 5G? 5G requires real-time processing and low-latency infrastructure.
 <br/><br/>
 Companies must integrate multi-access edge computing (MEC), AI-driven insights, and private 5G networks for superior network performance.`,
-    pointsTitle: "What we do:",
+    pointsTitle: "What We Do:",
     points: [
       "Develop 5G network function virtualization (NFV) solutions for carrier-grade reliability",
       "Optimize edge computing infrastructure for real-time processing",
@@ -150,7 +150,7 @@ Companies must integrate multi-access edge computing (MEC), AI-driven insights, 
     title: "Enhance service assurance and cybersecurity",
     description: `With growing cyber threats, telecom networks need enhanced security and real-time monitoring.<br/><br/>
 We help you get ahead of such threats with real-time risk mitigation, powered by AI-driven automation.`,
-    pointsTitle: "What we do:",
+    pointsTitle: "What We Do:",
     points: [
       "Deploy automated threat detection for proactive network security",
       "Enable real-time network monitoring for improved service assurance",

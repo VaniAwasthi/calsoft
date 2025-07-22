@@ -155,7 +155,7 @@ export const Casestudy = () => {
       description: [
         "<strong>Abstract:</strong> Faced with long test cycles and high infrastructure costs, a global networking leader turned to Calsoft to bring speed and precision to their software validation process. By implementing CalTIA, Calsoft’s AI-powered test intelligence platform, the company replaced manual test selection with intelligent automation—cutting waste, accelerating releases, and improving engineering efficiency. What once slowed down delivery is now a competitive edge.",
       ],
-      buttonText: "View Case Studies",
+      buttonText: "Case Studies",
       pdfLink: "/pdfs/case1.pdf",
       stats: [
         { count: "40%", text: " faster validation cycles" },
@@ -169,7 +169,7 @@ export const Casestudy = () => {
       description: [
         "<strong>Abstract:</strong> To ensure performance across diverse and complex network environments, a global networking solutions leader partnered with Calsoft to modernize its test validation process. By integrating a custom-trained Large Language Model (LLM), the company automated the generation of real-world test scenarios from topology diagrams and device configurations. This shift from manual to AI-led validation enabled the team to cover edge cases with greater accuracy, reduce testing cycles, and scale test coverage effortlessly across unique deployments.",
       ],
-      buttonText: "View Case Studies",
+      buttonText: "Case Studies",
       pdfLink:
         "https://www.calsoftinc.com/blogs/the-impact-of-ai-on-software-testing-from-automation-to-intelligent-qa.html",
       stats: [
@@ -185,7 +185,7 @@ export const Casestudy = () => {
       description: [
         "<strong>Insight:</strong> A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation—enabling fast, error-free virtual machine (VM) migrations at scale. With platform-neutral packaging, parallel execution, and built-in consistency checks, the solution accelerated onboarding and empowered customers with operational autonomy.",
       ],
-      buttonText: "View Case Studies",
+      buttonText: "Case Studies",
       pdfLink:
         "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
       stats: [
@@ -204,7 +204,7 @@ export const Casestudy = () => {
       description: [
         "<strong>Insight:</strong> A leading cloud infrastructure provider partnered with Calsoft to simplify and scale its VMware workload migration strategy. With growing licensing costs and the need for platform flexibility, the client needed a secure, self-contained, and repeatable solution to move workloads to Red Hat OpenShift and AWS. Calsoft’s Migration Server-based framework offered full lifecycle support—automating discovery, conversion, cost planning, and validation—while minimizing disruption and improving operational efficiency.",
       ],
-      buttonText: "View Case Studies",
+      buttonText: "Case Studies",
       pdfLink:
         "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
       stats: [
@@ -223,7 +223,7 @@ export const Casestudy = () => {
       description: [
         "<strong>Insight:</strong> Calsoft partnered with one of the largest personal injury law firms in the United States to streamline legal operations using a GenAI-powered case classification solution. By integrating GPT-based intelligence into the firm’s existing workflow, Calsoft enabled smarter, faster, and more reliable decisions on case viability and team allocation—significantly reducing manual overhead and accelerating legal turnaround times.",
       ],
-      buttonText: "View Case Studies",
+      buttonText: "Case Studies",
       pdfLink:
         "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
       stats: [
