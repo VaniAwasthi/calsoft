@@ -17,7 +17,7 @@ const slides = [
     title2: "on your mind?",
     description:
       "Architect, engineer, modernize, secure, and scale with Calsoft - for AI-powered innovation, faster go-to-market, and higher efficiency.",
-    buttonText: "What we do",
+    buttonText: "What We Do",
   },
   {
     type: "banner",
@@ -26,7 +26,7 @@ const slides = [
     title2: "on your mind?",
     description:
       "Architect, engineer, modernize, secure, and scale with Calsoft - for AI-powered innovation, faster go-to-market, and higher efficiency.",
-    buttonText: "What we do",
+    buttonText: "What We Do",
   },
 ];
 
