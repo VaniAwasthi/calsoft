@@ -287,7 +287,7 @@ export default function Navbar() {
             { title: "Whitepapers", href: "/insights/whitepaper" },
             { title: "Datasheets", href: "/insights/datesheets" },
             { title: "Infographics", href: "/insights/infographic" },
-            { title: "Case Studies", href: "/insights/case-studies" },
+            { title: "Case Study", href: "/insights/case-studies" },
             {
               title: "Industry Reports",
               href: "/insights/industry-report",

@@ -38,7 +38,7 @@ const Customer = () => {
     {
       id: 1,
       image: Experience,
-      value: "26+",
+      value: "27+",
       label: "Years of Experience",
     },
     {

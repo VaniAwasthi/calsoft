@@ -124,7 +124,7 @@ export const IndustrySection = () => {
             {/* Button */}
             <div>
               <button className="mt-5 flex items-center gap-2 bg-[#FF3D3D] text-white px-5 py-1 rounded-full text-sm">
-                Case Studies
+                Case Study
                 <span className="text-lg">➔</span>
               </button>
             </div>

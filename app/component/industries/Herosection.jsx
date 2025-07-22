@@ -84,7 +84,7 @@ export const CaseStudies = () => {
           className="text-2xl md:text-[38px] font-normal my-8"
         >
           <span className="font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">
-            Client Case Studies:
+            Client Case Study:
           </span>{" "}
           Client stories from your industry
         </motion.h2>

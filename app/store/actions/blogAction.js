@@ -1,7 +1,7 @@
 import axiosInstance from "../api-config/axiosInstance.js";
 import { setBlogData, setBlogList, setError } from "../reducers/blogReducer.js";
 
-// Fetch all case studies list
+// Fetch all Case Study list
 export const fetchBlogList = () => async (dispatch) => {
   try {
     const response = await axiosInstance.get("/blogs");

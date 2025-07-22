@@ -134,7 +134,7 @@ const Nextgen = () => {
                         }}
                       >
                         <span className="relative z-10 group-hover:text-[#BA0007] w-full flex gap-4 items-center transition-colors duration-500">
-                          Case Studies
+                          Case Study
                           <IoArrowForwardCircleSharp className="text-3xl tra" />
                         </span>
                         <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
