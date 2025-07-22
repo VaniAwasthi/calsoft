@@ -90,7 +90,7 @@ export const ChallengeSolutionComp = ({
             <SwiperSlide key={index}>
               <div className="border border-[#2E3092] rounded-xl shadow-md bg-white text-center max-w-sm mx-auto">
                 {/* Title */}
-                <div className="bg-[#2D2DA3] text-white text-sm font-medium py-3 rounded-t-xl">
+                <div className="bg-[#2D2DA3] text-white text-sm font-medium py-3 rounded-t-xl uppercase">
                   {item.tag}
                 </div>
 
