@@ -6,7 +6,7 @@ import {
 } from "../reducers/caseStudyReducer";
 import axiosInstance from "../api-config/axiosInstance.js";
 
-// Fetch all case studies list
+// Fetch all Case Study list
 export const fetchCaseStudiesList = () => async (dispatch) => {
   try {
     const response = await axiosInstance.get("/casestudy"); // ✅ No base URL needed here

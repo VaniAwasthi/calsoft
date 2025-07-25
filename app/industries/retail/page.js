@@ -38,7 +38,7 @@ const Page = () => {
     "What's New",
     "Partners",
     "Services",
-    "Case Studies",
+    "Case Study",
   ];
   const Gradientheading = "";
   const BlackHeading = "Acquire and retain customers while increasing margins";

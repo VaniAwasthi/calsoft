@@ -155,7 +155,7 @@ export const EffortlessSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Smooth and secure data migration"
+        title="Effortless and faultless data migration"
         description="Move critical data assets with speed & integrity. Zero disruption guaranteed."
         buttonText="Case Study"
         link="#"

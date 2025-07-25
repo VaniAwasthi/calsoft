@@ -332,7 +332,7 @@ export const ChallengeToSolution = ({
                 {/* Left Title */}
                 <div
                   onClick={() => toggleMobile(index)}
-                  className="bg-[#2D2A86] uppercase text-white font-semibold text-sm md:text-[18px] px-6 py-4 flex items-center justify-center w-full md:w-[300px] rounded-l-full cursor-pointer text-center break-words"
+                  className="bg-[#2D2A86]  text-white font-semibold text-sm md:text-[18px] px-6 py-4 flex items-center justify-center w-full md:w-[300px] rounded-l-full cursor-pointer text-center break-words"
                 >
                   {item.title}
                 </div>
@@ -364,7 +364,6 @@ export const ChallengeToSolution = ({
                         {item.description}
                       </div>
                       <button className="flex items-center bg-[#F4F4F4] text-[#2D2A86] text-md font-medium h-full rounded-full hover:bg-[#e5e5e5] transition whitespace-nowrap">
-                        <span className="mr-2 px-4 py-4">Hover to Solve</span>
                         <div className="w-20 h-20 relative">
                           <Image
                             src={CircleArrow}

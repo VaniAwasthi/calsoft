@@ -48,7 +48,7 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
       <div className="w-full transition-all duration-300 py-3 text-white bg-[#2E3092]">
         <div className="relative flex items-center px-4 py-4 container mx-auto xl:px-20">
           <div className="flex items-center w-full overflow-x-scroll md:overflow-x-auto">
-            <div className="flex-shrink-0 mr-[3rem] ml-2">
+            <div className="flex-shrink-0 mr-[1rem] xl:mr-[3rem] xl:ml-2">
               <Image src={tabImg} alt="icon" className="w-5 h-5 object-cover" />
             </div>
 
@@ -57,12 +57,12 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="flex xl:ml-[2rem] space-x-4 lg:space-x-10 text-sm md:text-base"
+              className="flex justify-between w-full text-sm md:text-base xl:ml-[2rem]"
             >
               {navItems.map((item, index) => (
-                <div key={index} className="flex items-center w-max md:w-auto">
+                <div key={index} className="flex items-center justify-center">
                   <div
-                    className={`relative cursor-pointer text-[14px] ${
+                    className={`relative cursor-pointer text-[16px] ${
                       activeTab === item
                         ? "text-white font-bold"
                         : "text-gray-400"
@@ -70,7 +70,6 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
                     onClick={() => {
                       setActiveTab(item);
                       const sectionId = formatId(item);
-                      console.log(sectionId, "id");
                       const section = document.getElementById(sectionId);
                       if (section) {
                         section.scrollIntoView({
@@ -82,9 +81,8 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
                   >
                     {item}
                   </div>
-
                   {index !== navItems.length - 1 && (
-                    <div className="border-r border-white h-4 mx-2 xl:ml-9" />
+                    <div className="border-r border-white h-4 px-4  xl:px-10" />
                   )}
                 </div>
               ))}

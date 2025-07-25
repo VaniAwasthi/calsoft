@@ -40,7 +40,7 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     "What's New",
     "Partners",
     "Services",
-    "Case Studies",
+    "Case Study",
   ];
   const Gradientheading = "";
   const BlackHeading = "Achieving next-gen success";

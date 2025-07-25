@@ -29,7 +29,7 @@ export const ChallengeSolutionComp = ({
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="md:w-full text-center w-[300px] text-xl mb-5 md:text-[38px] font-mixed bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+          className="sm:w-full text-center w-full text-xl mb-5 sm:text-3xl md:text-[38px] font-mixed bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
         >
           {GradientHeading}
 
@@ -37,7 +37,7 @@ export const ChallengeSolutionComp = ({
         </motion.h2>
       </motion.div>
 
-      <div className="hidden md:block">
+      <div className="hidden sm:block">
         <div className="grid grid-cols-3 gap-6 mb-6">
           <h2 className="text-2xl md:text-[29px] font-bold text-[#2E3092] text-center">
             Challenge
@@ -53,23 +53,27 @@ export const ChallengeSolutionComp = ({
           {data.map((item, index) => (
             <div
               key={index}
-              className="grid grid-cols-[2.4fr_1fr_2.4fr] items-center w-full max-w-7xl mx-auto"
+              className="grid grid-cols-[2.6fr_0.8fr_2.6fr] lg:grid-cols-[2.4fr_1fr_2.4fr] items-center w-full max-w-7xl mx-auto"
             >
               {/* Challenge Pill */}
-              <div className="bg-[#EEEEEE]  text-[#575757] px-6 py-6 h-[80px] flex items-center justify-start rounded-l-full shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-                <span className="text-[16px] px-6">{item.challenge}</span>
+              <div className="bg-[#EEEEEE]  text-[#575757] px-4 lg:px-6 py-6 h-[80px] flex items-center justify-start rounded-l-full shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
+                <span className="text-[12px] lg:text-[16px] px-8 lg:px-6">
+                  {item.challenge}
+                </span>
               </div>
 
               {/* Tag Pill (Center - Overlapping) */}
               <div className="bg-[#2E3092]  text-white  px-4 py-6 h-[80px] flex items-center justify-center rounded-full shadow-[0_8px_16px_rgba(0,0,0,0.1)] -mx-10 z-10">
-                <span className="uppercase text-[16px] px-6 font-medium text-center">
+                <span className="text-[14px] lg:text-[16px] px-6 font-medium text-center">
                   {item.tag}
                 </span>
               </div>
 
               {/* Solution Pill */}
-              <div className="bg-[#B3CFFF]  text-[#1E1E1E] px-6 py-6 h-[80px] flex items-center justify-start rounded-r-full shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
-                <span className="text-[16px] px-6">{item.solution}</span>
+              <div className="bg-[#B3CFFF]  text-[#1E1E1E] px-4 lg:px-6 py-6 h-[80px] flex items-center justify-start rounded-r-full shadow-[0_8px_16px_rgba(0,0,0,0.08)]">
+                <span className="text-[12px] lg:text-[16px] px-8 lg:px-6">
+                  {item.solution}
+                </span>
               </div>
             </div>
           ))}
@@ -77,7 +81,7 @@ export const ChallengeSolutionComp = ({
       </div>
       {/* Column Titles */}
 
-      <div className="block md:hidden mt-2">
+      <div className="block sm:hidden mt-2">
         <Swiper
           modules={[Pagination, Autoplay]}
           autoplay={{ delay: 2000 }}

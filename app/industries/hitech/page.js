@@ -48,7 +48,7 @@ const Page = () => {
     "What's New",
     "Partners",
     "Services",
-    "Case Studies",
+    "Case Study",
   ];
   const icons = [
     {

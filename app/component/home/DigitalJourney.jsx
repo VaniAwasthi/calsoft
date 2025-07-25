@@ -25,7 +25,7 @@ const DigitalJounery = () => {
     "What's New",
     "Partners",
     "Services",
-    "Case Studies",
+    "Case Study",
   ];
   const features = [
     {
