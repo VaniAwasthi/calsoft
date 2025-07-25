@@ -32,16 +32,6 @@ export default function Navbar() {
       href: "",
       submenu: [
         {
-          title: "End-to-end data pipeline implementation",
-          href: "/data-ai/end-to-end-data-pipeline-implementation",
-          section: [
-            "Data architecture enhancement",
-            "Data platform and ecosystem integration",
-            "Effortless and faultless data migration",
-            "Data sanity and lineage handling",
-          ],
-        },
-        {
           title: "Technical consulting",
           href: "/data-ai/technical-consulting",
           section: [
@@ -51,6 +41,17 @@ export default function Navbar() {
             "Cost-optimized orchestration planning",
           ],
         },
+        {
+          title: "End-to-end data pipeline implementation",
+          href: "/data-ai/end-to-end-data-pipeline-implementation",
+          section: [
+            "Data architecture enhancement",
+            "Data platform and ecosystem integration",
+            "Effortless and faultless data migration",
+            "Data sanity and lineage handling",
+          ],
+        },
+
         {
           title: "Data observability",
           href: "/data-ai/data-observability",
@@ -207,17 +208,7 @@ export default function Navbar() {
             "OpenStack environment configuration",
           ],
         },
-        {
-          title: "Security Services",
-          href: "/digital-product-engineering/security",
-          section: [
-            "Endpoint and perimeter security enablement",
-            "Identity and access management (IAM)",
-            "DevSecOps - Embed security into DevOps",
-            "Zero Trust architecture enablement",
-            "Service continuity and backup automation",
-          ],
-        },
+
         {
           title: "Storage Networking",
           href: "/digital-product-engineering/storage-networking",
@@ -229,6 +220,17 @@ export default function Navbar() {
             "AI-driven network automation",
             "Network function virtualization (NFV) services",
             "Edge computing",
+          ],
+        },
+        {
+          title: "Security Services",
+          href: "/digital-product-engineering/security",
+          section: [
+            "Endpoint and perimeter security enablement",
+            "Identity and access management (IAM)",
+            "DevSecOps - Embed security into DevOps",
+            "Zero Trust architecture enablement",
+            "Service continuity and backup automation",
           ],
         },
       ],
