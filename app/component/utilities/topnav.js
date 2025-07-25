@@ -388,14 +388,14 @@ export default function Navbar() {
                         className="flex items-center space-x-1 text-white"
                       >
                         <span
-                          className={`text-sm ${
+                          className={`${
                             navItems
                               .find((item) => item.title === title)
                               ?.submenu?.some((sub) =>
                                 pathname.startsWith(sub.href)
                               )
-                              ? "font-bold text-[#fffff]"
-                              : "font-normal"
+                              ? "font-bold text-[#fffff] text-[16px]"
+                              : "font-normal text-sm"
                           } hover:font-bold`}
                         >
                           {title}
@@ -408,7 +408,7 @@ export default function Navbar() {
                                 ?.submenu?.some((sub) =>
                                   pathname.startsWith(sub.href)
                                 )
-                                ? "text-[#fffff] font-bold"
+                                ? "text-[#fffff] font-bold "
                                 : "text-white"
                             }`}
                           />
@@ -457,12 +457,13 @@ export default function Navbar() {
                           <Link
                             href={sub.href}
                             key={idx}
-                            className={`group flex items-center justify-between text-sm py-1 w-full text-left ${
+                            className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${
                               isActive
                                 ? "text-[#2E3092] font-semibold"
                                 : "text-[#1A1A1A]"
                             }`}
                             onMouseEnter={() => setSelectedSubmenu(sub)}
+                            onClick={() => setActiveMenu(null)}
                           >
                             <span>{sub.title}</span>
                             {isActive && (

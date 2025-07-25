@@ -6,11 +6,8 @@ import { FaFacebookF, FaLink, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useState } from "react";
 import blogexpanImage from "../../../assets/blog/blogexpanImage.webp";
-import sanitizeHtml from 'sanitize-html';
-
-
-
-
+import sanitizeHtml from "sanitize-html";
+import ProfileDummy from "../../../assets/caseStudies/Profile.webp";
 export const Banner = ({ blog }) => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
 
@@ -47,14 +44,39 @@ export const ArticleContent = ({ blog }) => {
   const [copied, setCopied] = useState(false);
 
   const cleanHtml = sanitizeHtml(blog.content, {
-  allowedTags: sanitizeHtml.defaults.allowedTags.concat([
-    "h1", "h2", "h3", "h4", "table", "thead", "tbody", "tr", "td", "th", "img", "ul", "li", "em", "strong", "a"
-  ]),
-  allowedAttributes: {
-    "*": ["style", "href", "src", "alt", "target", "rel", "colspan", "rowspan", "class"],
-  },
-  allowedSchemes: ["http", "https", "mailto"],
-});
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "table",
+      "thead",
+      "tbody",
+      "tr",
+      "td",
+      "th",
+      "img",
+      "ul",
+      "li",
+      "em",
+      "strong",
+      "a",
+    ]),
+    allowedAttributes: {
+      "*": [
+        "style",
+        "href",
+        "src",
+        "alt",
+        "target",
+        "rel",
+        "colspan",
+        "rowspan",
+        "class",
+      ],
+    },
+    allowedSchemes: ["http", "https", "mailto"],
+  });
 
   const handleCopy = async () => {
     try {
@@ -102,17 +124,6 @@ export const ArticleContent = ({ blog }) => {
               {blog.authorData ? (
                 <>
                   <span className="text-[#E36C0A]">{blog.authorData.name}</span>
-                  <span className="text-[#939393]">
-                    {new Date(blog.authorData.createdAt).toLocaleString(
-                      "en-IN",
-                      {
-                        timeZone: "Asia/Kolkata",
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                      }
-                    )}
-                  </span>
                 </>
               ) : (
                 <span className="text-gray-400">Unknown Author</span>
@@ -124,10 +135,10 @@ export const ArticleContent = ({ blog }) => {
               className={` text-xs md:text-base text-[black] `}
             ></p> */}
 
-   <div
-  dangerouslySetInnerHTML={{ __html: cleanHtml }}
-  className="blog-content text-xs md:text-base text-black"
-></div>
+            <div
+              dangerouslySetInnerHTML={{ __html: cleanHtml }}
+              className="blog-content text-xs md:text-base text-black"
+            ></div>
           </div>
 
           {/* Right Side: Sidebar */}
@@ -188,15 +199,34 @@ export const ArticleContent = ({ blog }) => {
                 Subscribe
               </button>
             </div>
+            {/* Profile Section */}
 
+            <div className="w-[320px] h-[350px] bg-[#2E3092] manrope text-white rounded-2xl p-4 shadow-lg text-left">
+              <div className="flex justify-start  mb-4">
+                <div className="rounded-xl overflow-hidden">
+                  <Image
+                    src={ProfileDummy}
+                    alt="Profile Image"
+                    width={150}
+                    height={200}
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <h3 className="text-2xl font-semibold mb-2">Tom Neaves</h3>
+              <p className="text-lg  leading-relaxed">
+                Lorem ipsum is a dummy or placeholder text commonly used in
+                graphic design, publishing, and web development.
+              </p>
+            </div>
             {/* Tags */}
             <div>
-              <div className="flex flex-col flex-wrap gap-2 my-2">
+              <div className="flex  flex-wrap gap-2 my-2">
                 {Array.isArray(blog?.tagData) &&
                   blog.tagData.map((tag) => (
                     <span
                       key={tag._id}
-                      className="bg-black text-white w-[40%] text-center rounded-3xl text-sm px-4 py-4"
+                      className="bg-[#2E3092] text-white w-[40%] text-center rounded-3xl text-sm px-4 py-4"
                     >
                       {tag.name}
                     </span>

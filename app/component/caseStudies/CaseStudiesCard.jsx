@@ -277,7 +277,7 @@ export const CaseStudiesCard = () => {
                   className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
                 >
                   {/* Image */}
-                  <div className="w-full h-3/5">
+                  <div className="w-full h-[65%] overflow-hidden">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -288,7 +288,7 @@ export const CaseStudiesCard = () => {
                   </div>
 
                   {/* Content */}
-                  <div className="w-full h-2/5 p-4 flex flex-col justify-between">
+                  <div className="w-full h-[35%] p-4 flex flex-col justify-between">
                     <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
                       {item.title}
                     </h3>
