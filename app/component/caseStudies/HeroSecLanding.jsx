@@ -36,14 +36,14 @@ export const HeroSectionLanding = ({
       {/* Overlay Content Section */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto px-4 md:px-20 w-full">
-          <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-10">
+          <div className="flex flex-col md:flex-row items-center justify-between w-full gap-10">
             {/* Left Section: Two Images */}
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.2, delay: 0.3 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="flex  gap-4 md:gap-8 flex-row md:items-end"
+              className="flex  gap-4 md:gap-5 lg:w-[40%] md:w-[50%] flex-row md:items-end"
             >
               <Image
                 src={image2}
@@ -67,7 +67,7 @@ export const HeroSectionLanding = ({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-white max-w-xl mb-3 ml-3 px-5"
+              className="text-white lg:w-[50%] md:w-[45%]  max-w-2xl mb-3 ml-3 px-5"
             >
               <motion.h2
                 initial={{ x: 30, opacity: 0 }}
@@ -152,7 +152,7 @@ export const InfoWithFormSection = ({
   }, [portalId, formId, region, isforLayout]);
 
   return (
-    <div className="container mx-auto px-6 py-3 md:py-12">
+    <div className="container mx-auto px-6 py-3 md:py-12" id="DownloadSection">
       <div className="w-full flex flex-col md:flex-row justify-center items-start gap-8 md:gap-16">
         {/* Left: Text */}
         <div className="w-full md:w-1/2 my-3">
