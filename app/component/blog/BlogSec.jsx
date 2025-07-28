@@ -49,7 +49,7 @@ export default function ResourceGrid() {
     const slug = item.slug ? item.slug : slugify(item.title); // fallback
     dispatch(setSelectedBlogId(item._id));
     console.log(item._id, "id");
-    router.push(`/insights/blogs/blog-expand/${slug}`);
+    router.push(`/insights/blogs/${slug}`);
   };
 
   const toggleDropdown = (filter) => {

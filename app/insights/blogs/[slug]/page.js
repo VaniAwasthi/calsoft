@@ -1,21 +1,22 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import {
-  ArticleContent,
-  Banner,
-} from "../../../../component/blog/blog-expand/BannerArticle.jsx";
+
 import {
   BlogSection,
   ContactSec,
-} from "../../../../component/industries/hitech/BlogSection.jsx";
+} from "../../../component/industries/hitech/BlogSection.jsx";
 import { useEffect } from "react";
 import {
   fetchBlogById,
   fetchBlogList,
-} from "../../../../store/actions/blogAction.js";
-import { setSelectedBlogId } from "../../../../store/reducers/blogReducer.js";
+} from "../../../store/actions/blogAction.js";
+import { setSelectedBlogId } from "../../../store/reducers/blogReducer.js";
 import { useDispatch, useSelector } from "react-redux";
+import {
+  ArticleContent,
+  Banner,
+} from "../../../component/blog/blog-expand/BannerArticle.jsx";
 
 const Page = () => {
   const dispatch = useDispatch();
