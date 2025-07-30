@@ -11,7 +11,7 @@ export const fetchBlogList = () => async (dispatch) => {
   }
 };
 
-// Fetch one case study by ID
+// Fetch one blog by ID
 export const fetchBlogById = (id) => async (dispatch) => {
   try {
     const response = await axiosInstance.get(`/blogs/${id}`);

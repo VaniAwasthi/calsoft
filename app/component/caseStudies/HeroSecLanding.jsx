@@ -276,17 +276,14 @@ export const ToKnowMoreSection = ({
   hoverImage,
 }) => {
   return (
-    <section className="w-full  mx-auto  relative flex items-center justify-center overflow-hidden min-h-[500px]">
-      {/* Background Image for entire section */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src={backgroundImage}
-          alt="Background"
-          fill
-          className={`object-cover w-full h-full object-[top_left] md:object-center`}
-          priority
-        />
-      </div>
+    <div className="relative w-full h-[300px] sm:h-[400px] ">
+      <Image
+        src={backgroundImage}
+        alt="Banner"
+        fill
+        className="object-cover"
+        priority
+      />
 
       {/* Content */}
       <div className="max-w-7xl mx-auto relative z-20 flex flex-col md:flex-row items-center md:items-center justify-start md:justify-start min-h-[220px] w-full h-full p-6 md:p-12">
@@ -313,6 +310,6 @@ export const ToKnowMoreSection = ({
           </motion.div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

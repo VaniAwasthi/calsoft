@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 import caseStudyReducer from "./reducers/caseStudyReducer";
 import loadingReducer from "./reducers/loadingReducer";
 import blogsReducer from "./reducers/blogReducer";
+import whitepaperReducer from "./reducers/whitepaperReducer";
 
 // Persist only `selectedId` inside `blogs`
 const blogsPersistConfig = {
@@ -16,12 +17,18 @@ const caseStudyPersistConfig = {
   storage,
   whitelist: ["selectedId"], // ✅ Only this will persist
 };
+const WhitepaperPersistConfig = {
+  key: "whitepaper",
+  storage,
+  whitelist: ["selectedId"], // ✅ Only this will persist
+};
 
 // Combine all reducers
 const rootReducer = combineReducers({
   loading: loadingReducer,
   caseStudy: persistReducer(caseStudyPersistConfig, caseStudyReducer),
   blogs: persistReducer(blogsPersistConfig, blogsReducer),
+  whitepaper: persistReducer(WhitepaperPersistConfig, whitepaperReducer),
 });
 
 // Configure store

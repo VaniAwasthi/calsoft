@@ -298,7 +298,8 @@ export default function Navbar() {
           ],
         },
         { title: "Press Releases", href: "#" },
-        { title: "Events & Webinars", href: "#" },
+        { title: "Events & Webinars", href: "/insights/webinars" },
+        { title: "Workshop", href: "/insights/workshops" },
       ],
     },
     {
@@ -321,30 +322,26 @@ export default function Navbar() {
     },
   ];
   // Handle submenu default selection
-  // useEffect(() => {
-  //   const current = navItems.find((i) => i.title === activeMenu);
-  //   if (current && current.submenu?.length) {
-  //     setSelectedSubmenu(current.submenu[0]);
-  //   } else {
-  //     setSelectedSubmenu(null);
-  //   }
-  // }, [activeMenu]);
-  useEffect(() => {
-    const current = navItems.find((i) => i.title === activeMenu);
 
-    if (current && current.submenu?.length) {
-      const matchedSubmenu = current.submenu.find((sub) =>
-        pathname.includes(sub.href)
-      );
-      if (matchedSubmenu) {
-        setSelectedSubmenu(matchedSubmenu);
-      } else {
-        setSelectedSubmenu(current.submenu[0]);
-      }
-    } else {
-      setSelectedSubmenu(null);
-    }
-  }, [activeMenu, pathname]);
+  useEffect(() => {
+    let matchedSubmenu = null;
+
+    navItems.forEach((menu) => {
+      menu.submenu?.forEach((sub) => {
+        if (pathname.startsWith(sub.href)) {
+          matchedSubmenu = sub;
+        } else if (sub.inersubmenu) {
+          sub.inersubmenu.forEach((inner) => {
+            if (pathname.startsWith(inner.href)) {
+              matchedSubmenu = sub;
+            }
+          });
+        }
+      });
+    });
+
+    setSelectedSubmenu(matchedSubmenu);
+  }, [pathname]);
 
   return (
     <header className="w-full sticky top-0 z-[90]">
@@ -392,15 +389,22 @@ export default function Navbar() {
                         <span
                           className={`${navItems
                               .find((item) => item.title === title)
-                              ?.submenu?.some((sub) =>
-                                pathname.startsWith(sub.href)
-                              )
+                              ?.submenu?.some((sub) => {
+                                if (pathname.startsWith(sub.href)) return true;
+                                if (sub.inersubmenu) {
+                                  return sub.inersubmenu.some((inner) =>
+                                    pathname.startsWith(inner.href)
+                                  );
+                                }
+                                return false;
+                              })
                               ? "font-bold text-[#fffff] text-[16px]"
                               : "font-normal text-sm"
                             } hover:font-bold`}
                         >
                           {title}
                         </span>
+
                         {submenu && (
                           <IoIosArrowDown
                             className={`transition-transform ${navItems
@@ -451,7 +455,11 @@ export default function Navbar() {
                     {navItems
                       .find((item) => item.title === activeMenu)
                       ?.submenu?.map((sub, idx) => {
-                        const isActive = pathname === sub.href;
+                        const isActive =
+                          pathname === sub.href ||
+                          sub.inersubmenu?.some(
+                            (inner) => pathname === inner.href
+                          );
 
                         return (
                           <Link
@@ -478,40 +486,25 @@ export default function Navbar() {
                   <div className="w-px h-64 bg-[#CECECE] mx-6 mt-6"></div>
                   {/* Center Column */}
                   <div className="w-[30%] p-6">
-                    {selectedSubmenu?.section ? (
-                      selectedSubmenu.section.map((s, idx) => {
-                        // Convert section title to ID-friendly format
-                        const sectionId = s
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")
-                          .replace(/[^a-z0-9-]/g, "");
+                    {selectedSubmenu?.inersubmenu &&
+                    selectedSubmenu.inersubmenu.length > 0 ? (
+                      selectedSubmenu.inersubmenu.map((item, idx) => {
+                        const isActive = pathname.startsWith(item.href);
 
                         return (
-                          <div
+                          <Link
                             key={idx}
-                            className="text-sm py-1 cursor-pointer hover:text-[#2E3092]"
-                            onClick={() => {
-                              const el = document.getElementById(sectionId);
-                              if (el) {
-                                el.scrollIntoView({ behavior: "smooth" });
-                                setActiveMenu(null); // Close the mega menu after click
-                              }
-                            }}
+                            href={item.href}
+                            className={`block text-sm py-1 hover:text-[#2E3092] ${
+                              isActive
+                                ? "text-[#2E3092] font-bold "
+                                : "text-gray-800"
+                            }`}
                           >
-                            {s}
-                          </div>
+                            {item.title}
+                          </Link>
                         );
                       })
-                    ) : selectedSubmenu?.inersubmenu ? (
-                      selectedSubmenu.inersubmenu.map((item, idx) => (
-                        <Link
-                          key={idx}
-                          href={item.href}
-                          className="block text-sm py-1 hover:text-[#2E3092]"
-                        >
-                          {item.title}
-                        </Link>
-                      ))
                     ) : (
                       <div className="text-sm italic text-gray-500">
                         No details available.

@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCaseStudyById } from "../../../store/actions/caseStudyActions.js";
 import { useSearchParams } from "next/navigation";
+import { ShareSection } from "../../../component/whitepaper/expanPage/WhitepaperReadMore";
 
 const Page = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -75,6 +76,7 @@ const Page = () => {
         hoverImage={ButtonImage}
         backgroundImage={BgImage}
       />
+      <ShareSection />
 
       <InfoWithFormSection
         heading="Calsoft In focus:"
