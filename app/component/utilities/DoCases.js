@@ -137,7 +137,7 @@ export const Do = ({ offerings, timeline, highlights, heading, subtitle, desc, B
 export const Cases = ({ image, heading, subheading, description, buttonText, link, cards, ButtonImage }) => {
     return (
         <>
-            <section className="py-10 md:py-16 pb-8 px-4 max-w-7xl mx-auto use_Sec">
+            <section className="!py-10 md:!py-16 !pb-8 px-4 container mx-auto  md:px-16 use_Sec">
                 <div className='flex md:flex-nowrap flex-nowrap md:gap-12 gap-6'>
                     <div className='w-1/2 md:w-[40%]'>
                         <Image

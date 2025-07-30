@@ -447,6 +447,17 @@ body {
   background-color: #2E3092;
 }
 
+@media (max-width:1400px) {
+  .shape_group .single_shape {
+    min-width: 52%;
+    width: 48%;
+  }
+
+  .alter_space .arrow_main:nth-child(odd) .arrow_img {
+    right: -45%;
+  }
+}
+
 @media (min-width:1240) {
   .big_btn .leading-relaxed {
     max-width: 80%;
