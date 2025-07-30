@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 const WhyItMatters = ({ title, description, highlight, buttonText, link, cards, heading, ButtonImage }) => {
     return (
-        <section className={`md:pb-12 pb-0 md:pt-12 pt-6  md:px-10 lg:px-20 bg-white`}>
-            <div className=" px-4 container mx-auto">
+        <section className={`md:pb-12 pb-0 md:pt-12 pt-6   bg-white`}>
+            <div className=" container mx-auto  px-4 md:px-16">
                 <div className="flex flex-col lg:flex-row gap-10 items-center">
 
                     <div className="flex-1   md:w-2/4">
