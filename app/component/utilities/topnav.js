@@ -390,29 +390,27 @@ export default function Navbar() {
                         className="flex items-center space-x-1 text-white"
                       >
                         <span
-                          className={`${
-                            navItems
+                          className={`${navItems
                               .find((item) => item.title === title)
                               ?.submenu?.some((sub) =>
                                 pathname.startsWith(sub.href)
                               )
                               ? "font-bold text-[#fffff] text-[16px]"
                               : "font-normal text-sm"
-                          } hover:font-bold`}
+                            } hover:font-bold`}
                         >
                           {title}
                         </span>
                         {submenu && (
                           <IoIosArrowDown
-                            className={`transition-transform ${
-                              navItems
+                            className={`transition-transform ${navItems
                                 .find((item) => item.title === title)
                                 ?.submenu?.some((sub) =>
                                   pathname.startsWith(sub.href)
                                 )
                                 ? "text-[#fffff] font-bold "
                                 : "text-white"
-                            }`}
+                              }`}
                           />
                         )}
                       </Link>
@@ -459,11 +457,10 @@ export default function Navbar() {
                           <Link
                             href={sub.href}
                             key={idx}
-                            className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${
-                              isActive
+                            className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${isActive
                                 ? "text-[#2E3092] font-semibold"
                                 : "text-[#1A1A1A]"
-                            }`}
+                              }`}
                             onMouseEnter={() => setSelectedSubmenu(sub)}
                             onClick={() => setActiveMenu(null)}
                           >
@@ -564,9 +561,8 @@ export default function Navbar() {
                   >
                     <span>{item.title}</span>
                     <IoIosArrowDown
-                      className={`transform transition-transform ${
-                        openMenus[index] ? "rotate-180" : ""
-                      }`}
+                      className={`transform transition-transform ${openMenus[index] ? "rotate-180" : ""
+                        }`}
                     />
                   </button>
                   {openMenus[index] &&
