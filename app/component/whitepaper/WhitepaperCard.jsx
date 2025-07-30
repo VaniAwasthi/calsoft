@@ -1,12 +1,20 @@
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Info1 from "../../assets/Infographic/whitepaper1.webp";
-import Info2 from "../../assets/Infographic/whitepaper2.webp";
+
 import { FilterSec } from "../utilities/FilterSec";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchWhitepaperList } from "../../store/actions/whitepaperAction";
+import { useRouter } from "next/navigation";
+import { setSelectedWhitepaperId } from "../../store/reducers/whitepaperReducer";
 
 export const WhitepaperCards = () => {
+  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+  const dispatch = useDispatch();
+  const listData = useSelector((state) => state.whitepaper.list);
+  const router = useRouter();
+
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
   const [activeFilters, setActiveFilters] = useState({
@@ -22,26 +30,39 @@ export const WhitepaperCards = () => {
     Author: ["All", "Anton Frank", "John Doe"],
   };
 
-  const images = [Info1, Info2];
+  useEffect(() => {
+    dispatch(fetchWhitepaperList());
+  }, [dispatch]);
 
-  const cardData = new Array(18).fill(0).map((_, i) => ({
-    id: i + 1,
-    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.  ${
-      i + 1
-    }`,
-    image: images[i % images.length],
-    link: `https://yourdomain.com/card/${i + 1}`,
-    author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    tags: ["AI", "Security", "Gaps"],
-    industry: i % 2 === 0 ? "Tech" : "Healthcare",
-  }));
+  const resources = Array.isArray(listData)
+    ? listData.map((item, idx) => ({
+        id: item._id,
+        title: item.hero_title1 || "Untitled",
+        image: `${baseUrl}/${item.featured_image}`,
+        slug: item.hero_title1
+          ? item.hero_title1
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/(^-|-$)/g, "")
+          : "untitled",
+        link: `/insights/whitepaper/${item._id}`,
+        author: item.author || "Unknown",
+        tags: item.tags?.split(",") || ["General"],
+        industry: item.industry || "Tech",
+      }))
+    : [];
+
   const heading =
     "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool";
   const description = `A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....
 <br><br>
 
 A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....`;
-  const [resources] = useState([...cardData]);
+
+  const handleClick = (id, slug) => {
+    dispatch(setSelectedWhitepaperId(id));
+    router.push(`/insights/whitepaper/${slug}`);
+  };
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -127,6 +148,7 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-[400px] md:h-[450px]   overflow-hidden"
+                onClick={() => handleClick(item.id, item.slug)}
               >
                 {/* Image */}
                 <div className="w-full h-3/5 border-2 border-[#2E3092] rounded-2xl">
@@ -136,6 +158,7 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
                     className="w-full h-full object-cover rounded-2xl "
                     width={400}
                     height={400}
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
 

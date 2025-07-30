@@ -281,7 +281,7 @@ export const CaseStudiesCard = () => {
                     <Image
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-100 object-cover"
                       width={400}
                       height={400}
                     />
