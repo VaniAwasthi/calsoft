@@ -19,7 +19,7 @@ const BannerWithRightSec = ({
   rightSecClass = "",
   ImageClass = "",
   ImageClassname = "",
-  backgroundMain = "",
+  backgroundMain = ""
 }) => {
   return (
     <div
