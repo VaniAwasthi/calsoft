@@ -101,7 +101,7 @@ export const HeroSecWebinar = ({
 };
 //CommitmentSection
 
-export const CommitmentSection = ({ cards }) => {
+export const CommitmentSection = ({ cards, description, heading }) => {
   return (
     <section className="mx-auto manrope container py-10  px-4 md:px-12">
       <motion.div
@@ -111,29 +111,28 @@ export const CommitmentSection = ({ cards }) => {
         viewport={{ once: false, amount: 0.3 }}
         className="text-center mb-10 "
       >
-        <motion.h2
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
-          className="text-3xl md:text-[45px] font-bold text-[#2E3092] text-center my-10 "
-        >
-          Our Continuing
-          <span className="px-2 bg-gradient-to-r from-[#2E3092] via-[#6A329F] to-[#ED1C24] bg-clip-text text-transparent">
-            Commitment
-          </span>
-        </motion.h2>
-        <motion.p
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
-          className="font-normal text-sm md:text-[18px]"
-        >
-          We see CSR as a continuous responsibility. Calsonit will stay focused
-          on initiatives that align with our values – supporting education,
-          engaging communities, and creating meaningful local impact.
-        </motion.p>
+        {heading && (
+          <motion.h2
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-xl md:text-2xl lg:text-[40px] font-semibold mb-4 text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_44%,#ED1C24_70%)]"
+          >
+            {heading}
+          </motion.h2>
+        )}
+        {description && (
+          <motion.p
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="font-normal text-sm md:text-[18px]"
+          >
+            {description}
+          </motion.p>
+        )}
       </motion.div>
 
       {/* Desktop Grid */}
@@ -147,17 +146,19 @@ export const CommitmentSection = ({ cards }) => {
             key={index}
             className="bg-[#353BA5] text-white p-5 rounded-lg shadow-md"
           >
-            <Image src={card.icon} alt={card.title} width={50} height={50} />
+            <Image src={card.icon} alt="icon" width={50} height={50} />
             <div className="mt-4">
-              <motion.h4
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="font-semibold text-xl  mb-6 h-12"
-              >
-                {card.title}
-              </motion.h4>
+              {card.title && (
+                <motion.h4
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="font-semibold text-xl  mb-6 h-12"
+                >
+                  {card.title}
+                </motion.h4>
+              )}
               <motion.p
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -206,23 +207,20 @@ export const CommitmentSection = ({ cards }) => {
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="bg-[#353BA5] text-white p-6 rounded-xl shadow-lg h-full flex flex-col justify-between min-h-[280px] "
+                  className="bg-[#353BA5] text-white p-6 rounded-xl shadow-lg h-full flex flex-col justify-between min-h-[180px] "
                 >
-                  <Image
-                    src={card.icon}
-                    alt={card.title}
-                    width={50}
-                    height={50}
-                  />
-                  <motion.h4
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    className="font-semibold text-lg mt-4 mb-2 h-12"
-                  >
-                    {card.title}
-                  </motion.h4>
+                  <Image src={card.icon} alt="icons" width={50} height={50} />
+                  {card.title && (
+                    <motion.h4
+                      initial={{ x: -50, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      className="font-semibold text-lg mt-4 mb-2 h-12"
+                    >
+                      {card.title}
+                    </motion.h4>
+                  )}
                   <motion.p
                     initial={{ x: -50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -299,7 +297,7 @@ export const RecommendedFor = ({ recommendedData }) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.2,
-                delay: idx * 0.1, // 👈 delays each item based on its index
+                delay: 0.1, // 👈 delays each item based on its index
               }}
               viewport={{ once: true, amount: 0.3 }}
               className="flex  items-center justify-center space-x-4 px-4"

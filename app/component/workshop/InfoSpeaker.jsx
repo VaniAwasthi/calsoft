@@ -1,24 +1,91 @@
 "use client";
-import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 import LinkdineImg from "../../assets/webinar/linkedin.svg";
-import ReferenceBlogImg from "../../assets/webinar/referenceblogImg.svg";
 
-export const SpeakersHostSection = ({ people }) => {
+import CalTIAImage from "../../assets/webinar/CtaiaImage.webp";
+import Link from "next/link";
+
+export const WhyCalTIA = () => {
   return (
-    <section className="px-6 py-12 md:px-16 bg-[#F5F5F5] my-[4rem]">
+    <section className="px-4 md:px-16 py-10 w-full">
+      <motion.div
+        initial={{ x: 30, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.2, delay: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="manrope container mx-auto  rounded-xl overflow-hidden flex flex-col md:flex-row"
+      >
+        {/* Left Image */}
+        <div className="w-full md:w-1/2">
+          <Image
+            src={CalTIAImage}
+            alt="CalTIA Illustration"
+            className="w-full h-[300px] md:h-[500px] object-cover"
+            placeholder="blur"
+            height={400}
+            width={400}
+          />
+        </div>
+
+        {/* Right Content */}
+        <div className="w-full md:w-1/2 p-6  text-white flex flex-col bg-[#2E3092]">
+          <motion.h2
+            initial={{ x: 30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.2, delay: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-2xl md:text-[35px] font-semibold mb-3"
+          >
+            Why CalTIA?
+          </motion.h2>
+          <motion.p
+            initial={{ x: 30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.2, delay: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
+            s
+            className="text-sm md:text-[20px] mb-4 py-4"
+          >
+            CalTIA (Calsoft Test Impact Analyzer) is an AI-enabled test
+            automation on-prem solution designed to tackle the complexity of
+            modern regression testing.
+          </motion.p>
+
+          <motion.ul
+            initial={{ x: 30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.2, delay: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="list-disc list-inside space-y-2 text-sm md:text-[15px]"
+          >
+            <li>Optimizes end-to-end testing with advanced AI/ML</li>
+            <li>Executes critical test subsets to reduce regression</li>
+            <li>15% faster GTM, leaner and smarter regression</li>
+            <li>36% reduction in infrastructure costs</li>
+            <li>Seamlessly integrates with CI/CD pipelines</li>
+            <li>On-prem solution keeps sensitive data in-house</li>
+          </motion.ul>
+        </div>
+      </motion.div>
+    </section>
+  );
+};
+
+export const SpeakerSecWorkshop = ({ people }) => {
+  return (
+    <section className="container mx-auto px-6 py-12 md:px-16  ">
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="container mx-auto "
+        className=" bg-[#F5F5F5]  py-10"
       >
         {/* Layout */}
-        <div className="flex flex-col lg:flex-row gap-10 md:gap-2 items-start">
+        <div className="flex flex-col lg:flex-row gap-10 md:gap-2 items-start px-2">
           {/* === SPEAKERS === */}
           <motion.div
             initial={{ x: 50, opacity: 0 }}
@@ -32,7 +99,7 @@ export const SpeakersHostSection = ({ people }) => {
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-3xl text-center sm:text-left font-semibold text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_35%,#ED1C24_77%)]"
+              className="text-xl md:text-[38px] font-semibold mb-6 md:mb-10 text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_35%)]"
             >
               Speakers
             </motion.h2>
@@ -76,7 +143,6 @@ export const SpeakersHostSection = ({ people }) => {
               ))}
             </div>
           </motion.div>
-          <div className="hidden md:block w-px bg-gray-300 mx-8 my-10 self-stretch"></div>
           {/* === HOST === */}
           <motion.div
             initial={{ x: 50, opacity: 0 }}
@@ -85,8 +151,9 @@ export const SpeakersHostSection = ({ people }) => {
             viewport={{ once: true }}
             className="w-full md:w-1/3 md:pl-8  pt-10 md:pt-0"
           >
-            <h2 className="text-3xl font-semibold text-[#4C3CA3] mb-4">
-              <span className="text-[#E31E24]">Hos</span>t
+            <h2 className="text-xl md:text-[38px] font-semibold mb-6 md:mb-10 text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_30%)]">
+              {" "}
+              Host
             </h2>
             <div className="grid grid-cols-1 gap-18 md:gap-16 items-center text-white">
               {people.host.map((host, index) => (
@@ -130,75 +197,6 @@ export const SpeakersHostSection = ({ people }) => {
           </motion.div>
         </div>
       </motion.div>
-    </section>
-  );
-};
-
-export const BlogAndWebinarSection = ({ blogs = [], webinars = [] }) => {
-  return (
-    <section className="manrope container mx-auto px-4 ">
-      <div className="flex flex-col md:flex-row rounded-xl overflow-hidden shadow-lg bg-white mb-10">
-        {/* Left Side - Image */}
-        <div className="w-full md:w-[35%] lg:w-[40%]">
-          <Image
-            src={ReferenceBlogImg}
-            alt="Reference Visual"
-            width={600}
-            height={300}
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Right Side - Content */}
-        <div className="w-full md:w-[65%] lg:w-[60%] bg-[#353BA5] text-white  px-2 flex flex-col  gap-6 relative">
-          {/* Blogs */}
-          <span className="absolute left-0 top-1/2 -translate-y-1/2 h-[20%] w-[3px] bg-red-500 rounded-full"></span>
-
-          <div className="px-6 mt-10">
-            <h3 className="text-[22px] font-semibold mb-2 relative mt-3">
-              Reference Blog:
-            </h3>
-            <ul className="space-y-2 list-disc pl-5">
-              {" "}
-              {blogs.map((blog, index) => (
-                <li key={index} className="text-sm">
-                  <div className="flex justify-between items-start">
-                    <p className="pr-4">{blog.title}</p>
-                    <Link
-                      href={blog.link}
-                      className="text-[12px] px-3 py-1 border border-white hover:bg-white hover:text-[#353BA5] transition rounded-full"
-                    >
-                      Read More...
-                    </Link>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Webinars */}
-          <div className="px-6 ">
-            <h3 className="text-[22px] font-semibold mb-2 relative mt-3">
-              Watch our previous webinar:
-            </h3>
-            <ul className="space-y-2 list-disc pl-5">
-              {webinars.map((webinar, index) => (
-                <li key={index} className="text-sm">
-                  <div className="flex justify-between items-start">
-                    <p className="pr-4">{webinar.title}</p>
-                    <Link
-                      href={webinar.link}
-                      className="text-xs px-3 py-1 border border-white hover:bg-white hover:text-[#353BA5] transition rounded-full"
-                    >
-                      Read More...
-                    </Link>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };

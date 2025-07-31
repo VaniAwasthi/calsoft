@@ -10,6 +10,7 @@ import barmenu from "../../assets/menu-bar.svg";
 import MegaMenuImg1 from "../../assets/home/megamenu1.webp";
 import MegaMenuImg2 from "../../assets/home/megamenu2.webp";
 import { usePathname } from "next/navigation";
+import { navItems } from "./data/NavItems";
 
 export default function Navbar() {
   const [openMenus, setOpenMenus] = useState({});
@@ -25,290 +26,6 @@ export default function Navbar() {
     }));
   };
 
-  const navItems = [
-    {
-      title: "DATA & AI",
-      // href: "/data-ai",
-      href: "",
-      submenu: [
-        {
-          title: "Technical consulting",
-          href: "/data-ai/technical-consulting",
-          section: [
-            "Strategic architecture advisory",
-            "Risk mitigation and recovery planning",
-            "Platform interoperability consulting",
-            "Cost-optimized orchestration planning",
-          ],
-        },
-        {
-          title: "End-to-end data pipeline implementation",
-          href: "/data-ai/end-to-end-data-pipeline-implementation",
-          section: [
-            "Data architecture enhancement",
-            "Data platform and ecosystem integration",
-            "Effortless and faultless data migration",
-            "Data sanity and lineage handling",
-          ],
-        },
-
-        {
-          title: "Data observability",
-          href: "/data-ai/data-observability",
-          section: [
-            "Real-time data streaming analytics",
-            "Compliance tracking",
-            "Real-time data workflow synchronization",
-            "Proactive risk alerts",
-          ],
-        },
-        {
-          title: "Data governance and quality",
-          href: "/data-ai/data-governance-quality",
-          section: [
-            "Data profiling and cataloging",
-            "Data cleansing and deduplication",
-            "Policy governance",
-            "Data collaboration & orchestration",
-          ],
-        },
-        {
-          title: "Data analytics and reporting",
-          href: "/data-ai/data-analytics-reporting",
-          section: [
-            "Dashboard and KPI visualization",
-            "Business Intelligence (BI) integration",
-            "Custom reporting",
-            "Real-time business insights streaming",
-          ],
-        },
-        {
-          title: "AI-driven prediction and inferences",
-          href: "/data-ai/ai-driven-prediction-inferences",
-          section: [
-            "Predictive modeling",
-            "Pattern detection",
-            "Inferential analytics",
-            "Model adaptability",
-          ],
-        },
-        {
-          title: "Agentic AI planning & development",
-          href: "/data-ai/agentic-ai-planning-development",
-          section: [
-            "AIOps planning",
-            "Use-case specific AI agents",
-            "Monitor and control",
-            "Lifecycle and adaptability",
-          ],
-        },
-        {
-          title: "Custom-LLM for Gen AI and RAG",
-          href: "/data-ai/custom-llm-for-gen-ai-rag",
-          section: [
-            "LLM fine-tuning",
-            "RAG pipeline design",
-            "Enterprise deployment models",
-            "System integration and orchestration",
-          ],
-        },
-        {
-          title: "AI-powered accelerators",
-          href: "/data-ai/ai-powered-accelerators",
-          section: [
-            "CalTIA – Faster, better, and consistent testing",
-            "CalPSR – Calsoft Performance, Scalability, and Resilience",
-            "Calsoft’s migration accelerator",
-            "Calsoft Mozaic | Engineering intelligence framework",
-          ],
-        },
-      ],
-    },
-    {
-      title: "DIGITAL PRODUCT ENGINEERING",
-      // href: "/digital-product-engineering",
-      href: "",
-      submenu: [
-        {
-          title: "Product and application development ",
-          href: "/digital-product-engineering/product-application-development",
-          section: [
-            "Ideation & architecture orchestration",
-            "Development lifecycle services",
-            "Quality engineering",
-            "DevOps + SRE with AI-driven enhancements",
-            "Deployment and upgrades",
-            "Accelerate with Calsoft’s Mozaic",
-          ],
-        },
-        {
-          title: "Modernization & Ecosystem",
-          href: "/digital-product-engineering/modernization-ecosystem",
-          section: [
-            "Maturity assessment and planning",
-            "Future readiness with application modernization",
-            "Ecosystem management",
-            "Plugin development: Improve extendibility",
-            "IoT engineering",
-          ],
-        },
-        {
-          title: "CX Engineering",
-          href: "/digital-product-engineering/cx-engineering",
-          section: [
-            "Front-end development",
-            "UX modernization : Better user journeys",
-            "Intelligent UI: Make interfaces adaptive",
-            "Rapid prototyping",
-            "Mobile engineering & development",
-          ],
-        },
-        {
-          title: "Cloud Services",
-          href: "/digital-product-engineering/cloud",
-          section: [
-            "IT infrastructure assessment and road mapping",
-            "Multi-cloud infrastructure provisioning",
-            "Cloud-native development enablement",
-            "Cloud migration and scaling",
-            "Cost and usage optimization",
-            "SRE (Site Reliability Engineering)",
-          ],
-        },
-        {
-          title: "Testing as a Service",
-          href: "/digital-product-engineering/testing-as-a-service",
-          section: [
-            "Functional and non-functional testing",
-            "CalTIA | Automated regression testing",
-            "Load and stress testing for scalability",
-            "Test impact analysis using ML models",
-            "QAOps with CI/CD pipeline integration",
-            "Product and ecosystem benchmarking",
-          ],
-        },
-        {
-          title: "Sustenance Support",
-          href: "/digital-product-engineering/sustenance-support",
-          section: [
-            "Release management",
-            "Streamline technical documentation",
-            "Multi-tier support",
-            "Uptime continuity",
-          ],
-        },
-        {
-          title: "Virtualization Solutions",
-          href: "/digital-product-engineering/virtualization",
-          section: [
-            "Virtualization lifecycle management (Day 0–N)",
-            "Containerization and orchestration",
-            "Hypervisor: Optimizing foundations",
-            "Migrate seamlessly across platforms",
-            "OpenStack environment configuration",
-          ],
-        },
-
-        {
-          title: "Storage Networking",
-          href: "/digital-product-engineering/storage-networking",
-          section: [
-            "Software-defined storage (SDS) development",
-            "Software Defined Networking (SDN) controller & engineering",
-            "Hyperconverged infrastructure (HCI) integration",
-            "Storage gateway engineering",
-            "AI-driven network automation",
-            "Network function virtualization (NFV) services",
-            "Edge computing",
-          ],
-        },
-        {
-          title: "Security Services",
-          href: "/digital-product-engineering/security",
-          section: [
-            "Endpoint and perimeter security enablement",
-            "Identity and access management (IAM)",
-            "DevSecOps - Embed security into DevOps",
-            "Zero Trust architecture enablement",
-            "Service continuity and backup automation",
-          ],
-        },
-      ],
-    },
-    {
-      title: "INDUSTRIES",
-      href: "/industries",
-      submenu: [
-        {
-          title: "Hi-tech",
-          href: "/industries/hitech",
-          section: [
-            "Software and product engineering",
-            "Cloud and platform engineering",
-            "AI-powered modernization",
-          ],
-        },
-        {
-          title: "Retail",
-          href: "/industries/retail",
-          section: [
-            "Enhance shopping experiences with AI",
-            "Improve efficiency and boost product availability",
-            "Prevent fraud and secure transactions",
-          ],
-        },
-        {
-          title: "Telecom",
-          href: "/industries/telecom",
-          section: [
-            "Automate network operations and orchestration",
-            "Build agile and low-latency telecom networks",
-            "Enhance service assurance and cybersecurity",
-          ],
-        },
-        {
-          title: "Manufacturing",
-          href: "/industries/manufacturing",
-          section: [
-            "Scale with real-time monitoring and automation",
-            "Strengthen predictive maintenance strategies",
-            "Enhance visibility, agility, and demand forecasting",
-          ],
-        },
-      ],
-    },
-    {
-      title: "INSIGHTS",
-      href: "/insights",
-      submenu: [
-        { title: "Blogs", href: "/insights/blogs" },
-        {
-          title: "Resources",
-          href: "/insights",
-          inersubmenu: [
-            { title: "Whitepapers", href: "/insights/whitepaper" },
-            { title: "Datasheets", href: "/insights/datesheets" },
-            { title: "Infographics", href: "/insights/infographic" },
-            { title: "Case Study", href: "/insights/case-studies" },
-            {
-              title: "Industry Reports",
-              href: "/insights/industry-report",
-            },
-            { title: "Videos", href: "/insights/videos" },
-          ],
-        },
-        { title: "Press Releases", href: "#" },
-        { title: "Events & Webinars", href: "/insights/webinars" },
-        { title: "Workshop", href: "/insights/workshops" },
-      ],
-    },
-    {
-      title: "ABOUT",
-      href: "/about-us",
-      submenu: [{ title: "Career", href: "#" }],
-    },
-  ];
-
   const fetaureInsights = [
     {
       image: MegaMenuImg1,
@@ -322,26 +39,30 @@ export default function Navbar() {
     },
   ];
   // Handle submenu default selection
-
+  // useEffect(() => {
+  //   const current = navItems.find((i) => i.title === activeMenu);
+  //   if (current && current.submenu?.length) {
+  //     setSelectedSubmenu(current.submenu[0]);
+  //   } else {
+  //     setSelectedSubmenu(null);
+  //   }
+  // }, [activeMenu]);
   useEffect(() => {
-    let matchedSubmenu = null;
+    const current = navItems.find((i) => i.title === activeMenu);
 
-    navItems.forEach((menu) => {
-      menu.submenu?.forEach((sub) => {
-        if (pathname.startsWith(sub.href)) {
-          matchedSubmenu = sub;
-        } else if (sub.inersubmenu) {
-          sub.inersubmenu.forEach((inner) => {
-            if (pathname.startsWith(inner.href)) {
-              matchedSubmenu = sub;
-            }
-          });
-        }
-      });
-    });
-
-    setSelectedSubmenu(matchedSubmenu);
-  }, [pathname]);
+    if (current && current.submenu?.length) {
+      const matchedSubmenu = current.submenu.find((sub) =>
+        pathname.includes(sub.href)
+      );
+      if (matchedSubmenu) {
+        setSelectedSubmenu(matchedSubmenu);
+      } else {
+        setSelectedSubmenu(current.submenu[0]);
+      }
+    } else {
+      setSelectedSubmenu(null);
+    }
+  }, [activeMenu, pathname]);
 
   return (
     <header className="w-full sticky top-0 z-[90]">
@@ -387,34 +108,29 @@ export default function Navbar() {
                         className="flex items-center space-x-1 text-white"
                       >
                         <span
-                          className={`${navItems
+                          className={`${
+                            navItems
                               .find((item) => item.title === title)
-                              ?.submenu?.some((sub) => {
-                                if (pathname.startsWith(sub.href)) return true;
-                                if (sub.inersubmenu) {
-                                  return sub.inersubmenu.some((inner) =>
-                                    pathname.startsWith(inner.href)
-                                  );
-                                }
-                                return false;
-                              })
+                              ?.submenu?.some((sub) =>
+                                pathname.startsWith(sub.href)
+                              )
                               ? "font-bold text-[#fffff] text-[16px]"
                               : "font-normal text-sm"
-                            } hover:font-bold`}
+                          } hover:font-bold`}
                         >
                           {title}
                         </span>
-
                         {submenu && (
                           <IoIosArrowDown
-                            className={`transition-transform ${navItems
+                            className={`transition-transform ${
+                              navItems
                                 .find((item) => item.title === title)
                                 ?.submenu?.some((sub) =>
                                   pathname.startsWith(sub.href)
                                 )
                                 ? "text-[#fffff] font-bold "
                                 : "text-white"
-                              }`}
+                            }`}
                           />
                         )}
                       </Link>
@@ -455,20 +171,17 @@ export default function Navbar() {
                     {navItems
                       .find((item) => item.title === activeMenu)
                       ?.submenu?.map((sub, idx) => {
-                        const isActive =
-                          pathname === sub.href ||
-                          sub.inersubmenu?.some(
-                            (inner) => pathname === inner.href
-                          );
+                        const isActive = pathname === sub.href;
 
                         return (
                           <Link
                             href={sub.href}
                             key={idx}
-                            className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${isActive
+                            className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${
+                              isActive
                                 ? "text-[#2E3092] font-semibold"
                                 : "text-[#1A1A1A]"
-                              }`}
+                            }`}
                             onMouseEnter={() => setSelectedSubmenu(sub)}
                             onClick={() => setActiveMenu(null)}
                           >
@@ -486,26 +199,22 @@ export default function Navbar() {
                   <div className="w-px h-64 bg-[#CECECE] mx-6 mt-6"></div>
                   {/* Center Column */}
                   <div className="w-[30%] p-6">
-                    {selectedSubmenu?.inersubmenu &&
-                    selectedSubmenu.inersubmenu.length > 0 ? (
-                      selectedSubmenu.inersubmenu.map((item, idx) => {
-                        const isActive = pathname.startsWith(item.href);
+                    {selectedSubmenu?.section ? (
+                      selectedSubmenu.section.map((s, idx) => {
+                        // Convert section title to ID-friendly format
 
                         return (
                           <Link
                             key={idx}
-                            href={item.href}
-                            className={`block text-sm py-1 hover:text-[#2E3092] ${
-                              isActive
-                                ? "text-[#2E3092] font-bold "
-                                : "text-gray-800"
-                            }`}
+                            href={s.href}
+                            className="block text-sm py-1 hover:text-[#2E3092]"
                           >
-                            {item.title}
+                            {s.title}
                           </Link>
                         );
                       })
                     ) : (
+                      // )
                       <div className="text-sm italic text-gray-500">
                         No details available.
                       </div>
@@ -554,8 +263,9 @@ export default function Navbar() {
                   >
                     <span>{item.title}</span>
                     <IoIosArrowDown
-                      className={`transform transition-transform ${openMenus[index] ? "rotate-180" : ""
-                        }`}
+                      className={`transform transition-transform ${
+                        openMenus[index] ? "rotate-180" : ""
+                      }`}
                     />
                   </button>
                   {openMenus[index] &&

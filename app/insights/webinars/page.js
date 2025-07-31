@@ -119,7 +119,13 @@ Kafka Workloads"
         backgroundImage={HeroBg}
       />
       <ShareSection />
-      <CommitmentSection cards={cards} />
+      <CommitmentSection
+        cards={cards}
+        heading="Our Continuing Commitment"
+        description=" We see CSR as a continuous responsibility. Calsonit will stay focused
+          on initiatives that align with our values – supporting education,
+          engaging communities, and creating meaningful local impact."
+      />
       <RecommendedFor recommendedData={recommendedData} />
       <SpeakersHostSection people={people} />
       {/* <ReferenceBlogSection /> */}
