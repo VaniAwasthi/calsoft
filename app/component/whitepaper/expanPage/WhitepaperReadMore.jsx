@@ -202,19 +202,58 @@ export const ShareSection = ({ title, description, url }) => {
   return (
     <div className="bg-[#102F9B] text-white p-1 w-full">
       <div className="flex items-center justify-center my-1 space-x-4">
-        <p>Share on:</p>
-        <a href={shareLinks.email} target="_blank" rel="noopener noreferrer">
+        <motion.p
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
+          Share on:
+        </motion.p>
+        <motion.a
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+          href={shareLinks.email}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Image src={EmailIcon} alt="email" width={30} height={30} />
-        </a>
-        <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer">
+        </motion.a>
+        <motion.a
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+          href={shareLinks.twitter}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Image src={TwitterIcon} alt="twitter" width={30} height={30} />
-        </a>
-        <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer">
+        </motion.a>
+        <motion.a
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+          href={shareLinks.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Image src={WhatsappIcon} alt="whatsapp" width={30} height={30} />
-        </a>
-        <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer">
+        </motion.a>
+        <motion.a
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+          href={shareLinks.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Image src={LinkedInIcon} alt="linkdin" width={30} height={30} />
-        </a>
+        </motion.a>
       </div>
     </div>
   );
