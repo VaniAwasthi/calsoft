@@ -735,9 +735,6 @@ export const InterfaceCard = ({
                                 </div>
                             </div>
                         </div>
-
-
-
                     </div>
                 </motion.div>
             </section>
