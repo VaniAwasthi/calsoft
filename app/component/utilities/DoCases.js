@@ -48,7 +48,7 @@ export const Do = ({ offerings, timeline, highlights, heading, subtitle, desc, B
                             spaceBetween={20}
                             slidesPerView={1}
                             breakpoints={{
-                                320: { slidesPerView: 3, spaceBetween: 10 },
+                                320: { slidesPerView: 2, spaceBetween: 10 },
                                 500: { slidesPerView: 2 },
                                 600: { slidesPerView: 3 },
                                 768: { slidesPerView: 4 },
@@ -74,7 +74,7 @@ export const Do = ({ offerings, timeline, highlights, heading, subtitle, desc, B
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         transition={{ duration: 0.2, delay: 0.1 }}
                                         viewport={{ once: false }}
-                                        className="bg-[#2E3092] rounded-xl text-white p-4 md:p-6 h-full flex flex-col md:items-center md:text-center min-h-52 md:min-h-64 hover:bg-[#1e207c] transition-all duration-300 transform hover_minus"
+                                        className="bg-[#2E3092] rounded-xl text-white py-10 md:py-8 p-2 md:p-6 h-full flex flex-col  items-center md:text-center min-h-52 md:min-h-64 hover:bg-[#1e207c] transition-all duration-300 transform hover_minus"
                                     >
                                         <div className="mb-4 bg-white h-12 w-12 md:h-18 md:w-18 rounded-full p-2 flex items-center justify-center">
                                             <Image
@@ -85,7 +85,7 @@ export const Do = ({ offerings, timeline, highlights, heading, subtitle, desc, B
                                                 className="md:h-12 md:w-12 h-8 w-8"
                                             />
                                         </div>
-                                        <p className="text-[13px] md:text-base">{item.title}</p>
+                                        <p className="text-[13px] md:text-base text-center">{item.title}</p>
                                     </motion.div>
                                 </SwiperSlide>
                             ))}

@@ -131,7 +131,7 @@ export const What = () => {
             },
             {
                 icon: icon3,
-                title: "AI-Augmented UX (Chat/Voice/Recommendations)",
+                title: "AI-Augmented UX ( Chat/ Voice/ Recommendations )",
             },
             {
                 icon: icon4,
