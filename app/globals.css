@@ -447,6 +447,65 @@ body {
   background-color: #2E3092;
 }
 
+.hover_minus:hover,
+.hover_minus:focus {
+  margin-top: -16px;
+}
+
+.fill_hover:hover {
+  opacity: 1;
+  clip-path: polygon(0px 0px, calc(100% - 0px) 0px, 110% 24px, 100% 100%, 0% 100%) !important;
+  background: linear-gradient(rgb(46, 48, 146) 46.45%, rgb(186, 0, 7) 109.78%);
+}
+
+.clip-diagonal:hover h4 {
+  color: #fff !important;
+}
+
+.outline_arrow .swiper-button-next,
+.outline_arrow .swiper-button-prev {
+  border: 1.5px solid #2E3092;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  top: 22px;
+}
+
+.outline_arrow .swiper-button-prev {
+  right: 4rem;
+  left: auto;
+}
+
+.outline_arrow .swiper-button-next::after,
+.outline_arrow .swiper-button-prev::after {
+  color: #2E3092 !important;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.gradient_bg_border {
+  position: relative;
+}
+
+.change_direction .flex-nowrap {
+  flex-direction: row-reverse;
+}
+
+.group:hover .opacity-0 {
+  opacity: 1 !important;
+}
+
+/* .gradient_bg_border::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 3px solid;
+  border-image-source: linear-gradient(90deg, #2E3092 0%, rgba(46, 48, 146, 0) 100%);
+  border-image-slice: 1;
+  border-radius: 20px;
+} */
+
 @media (max-width:1400px) {
   .shape_group .single_shape {
     min-width: 52%;
@@ -467,6 +526,8 @@ body {
     font-weight: 300;
     min-width: 70%;
   }
+
+
 }
 
 @media (max-width:767px) {
@@ -546,13 +607,19 @@ body {
   }
 
   .alter_space .arrow_main:nth-child(odd) .arrow_img img {
-    width: 130px;
+    width: 175px;
     margin-top: 10px;
+    height: 173px;
   }
 
   .alter_space .arrow_main:nth-child(even) .arrow_img img {
     width: 130px;
     margin-top: 10px;
 
+  }
+
+  .hide_arrow .swiper-button-next,
+  .hide_arrow .swiper-button-prev {
+    display: none;
   }
 }

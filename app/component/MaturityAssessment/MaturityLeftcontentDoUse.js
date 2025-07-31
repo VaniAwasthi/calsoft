@@ -50,11 +50,11 @@ export const Maturity = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Benefits",
-    "Assessment",
-    "Modernization",
-    "Ecosystem",
-    "Plugin",
+    "Why it Matters",
+    "What We Do",
+    "Use Cases",
+    "Business Value",
+    "How to Start",
   ];
   return (
     <>
@@ -119,7 +119,7 @@ export const Matters = () => {
   };
   return (
     <>
-      <WhyItMatters {...whyItMattersData} ButtonImage={ButtonImage} />
+      <WhyItMatters {...whyItMattersData} ButtonImage={ButtonImage} secId="matters" />
     </>
   )
 }
@@ -177,7 +177,8 @@ export const DoUs = () => {
 
   return (
     <>
-      <Do offeringsData {...offeringsData} heading={heading} subtitle={subtitle} desc={desc} ButtonImage={ButtonImage} />
+      <Do offeringsData {...offeringsData} heading={heading} subtitle={subtitle} desc={desc} ButtonImage={ButtonImage}
+        secId="what" />
     </>
   )
 }
@@ -211,7 +212,7 @@ export const Use = () => {
     ]
   };
   return (
-    <> <Cases {...useCasesData} ButtonImage={ButtonImage} /></>
+    <> <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use" /></>
   )
 }
 
@@ -247,7 +248,7 @@ export const Business = () => {
   };
   return (
     <>
-      <BusinessValue  {...businessValueData} ButtonImage={ButtonImage} />
+      <BusinessValue  {...businessValueData} ButtonImage={ButtonImage} secId="business" />
     </>
   )
 }
@@ -311,7 +312,7 @@ export const Howstart = () => {
   };
   return (
     <>
-      <StartSection data={startSectionData} />
+      <StartSection data={startSectionData} secId="today" />
     </>
   )
 }
