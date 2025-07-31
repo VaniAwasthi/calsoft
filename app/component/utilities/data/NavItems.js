@@ -151,7 +151,7 @@ export const navItems = [
           },
           {
             title: "Future readiness with application modernization",
-            href: "#",
+            href: "/digital-product-engineering/modernization-ecosystem/future-readiness-with-application-modernization",
           },
           {
             title: "Ecosystem management",
@@ -172,8 +172,8 @@ export const navItems = [
         href: "/digital-product-engineering/cx-engineering",
         section: [
           {
-            title: "Front-end development",
-            href: "#",
+            title: "Smart Interface Design",
+            href: "/digital-product-engineering/cx-engineering/smart-interface-design",
           },
           {
             title: "UX modernization : Better user journeys",

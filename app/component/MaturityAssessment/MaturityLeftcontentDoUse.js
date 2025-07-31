@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Submenu from '../utilities/Submenu';
+import Submenu from "../utilities/Submenu";
 import BackgroundImage from "../../assets/DigitalEngineering/mordernization/Banner.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import ButtonImage from "../../assets/home/buttonImg.webp";
@@ -8,37 +8,34 @@ import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import WhyItMatters from "../utilities/WhyItMatters";
-import bgshape1 from "../../assets/DigitalEngineering/maturity/shape1.svg"
-import bgshape2 from "../../assets/DigitalEngineering/maturity/shape2.svg"
-import bgshape3 from "../../assets/DigitalEngineering/maturity/shape3.svg"
-import { BusinessValue, Cases, Do, SprintTimeline, StartSection } from "../utilities/DoCases";
-import icon1 from "../../assets/DigitalEngineering/maturity/icon1.svg"
-import icon2 from "../../assets/DigitalEngineering/maturity/icon2.svg"
-import icon3 from "../../assets/DigitalEngineering/maturity/icon3.svg"
-import icon4 from "../../assets/DigitalEngineering/maturity/icon4.svg"
-import icon5 from "../../assets/DigitalEngineering/maturity/icon5.svg"
-import icon6 from "../../assets/DigitalEngineering/maturity/icon6.svg"
-import icon7 from "../../assets/DigitalEngineering/maturity/icon7.svg"
-import icon8 from "../../assets/DigitalEngineering/maturity/icon8.svg"
-import useimg from "../../assets/DigitalEngineering/maturity/useimg.webp"
-import businessimg from "../../assets/DigitalEngineering/maturity/business.webp"
-import start from "../../assets/DigitalEngineering/maturity/start.webp"
-import line2 from "../../assets/DigitalEngineering/maturity/line2.svg"
-import line3 from "../../assets/DigitalEngineering/maturity/line3.svg"
+import bgshape1 from "../../assets/DigitalEngineering/maturity/shape1.svg";
+import bgshape2 from "../../assets/DigitalEngineering/maturity/shape2.svg";
+import bgshape3 from "../../assets/DigitalEngineering/maturity/shape3.svg";
+import {
+  BusinessValue,
+  Cases,
+  Do,
+  SprintTimeline,
+  StartSection,
+} from "../utilities/DoCases";
+import icon1 from "../../assets/DigitalEngineering/maturity/icon1.svg";
+import icon2 from "../../assets/DigitalEngineering/maturity/icon2.svg";
+import icon3 from "../../assets/DigitalEngineering/maturity/icon3.svg";
+import icon4 from "../../assets/DigitalEngineering/maturity/icon4.svg";
+import icon5 from "../../assets/DigitalEngineering/maturity/icon5.svg";
+import icon6 from "../../assets/DigitalEngineering/maturity/icon6.svg";
+import icon7 from "../../assets/DigitalEngineering/maturity/icon7.svg";
+import icon8 from "../../assets/DigitalEngineering/maturity/icon8.svg";
+import useimg from "../../assets/DigitalEngineering/maturity/useimg.webp";
+import businessimg from "../../assets/DigitalEngineering/maturity/business.webp";
+import start from "../../assets/DigitalEngineering/maturity/start.webp";
+import line2 from "../../assets/DigitalEngineering/maturity/line2.svg";
+import line3 from "../../assets/DigitalEngineering/maturity/line3.svg";
 
-import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg"
-import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg"
-
-
-
-
-
-
-
-
+import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg";
+import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg";
 
 export const Maturity = () => {
-
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Know Where You Stand. Invest Where It Matters.",
@@ -75,15 +72,11 @@ export const Maturity = () => {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
       />
-
     </>
-  )
-}
-
-
+  );
+};
 
 export const Matters = () => {
-
   const whyItMattersData = {
     heading: "Why It Matters",
     title: "Modernization Without Context Is a Blind Bet",
@@ -107,7 +100,6 @@ export const Matters = () => {
         text: "of modernization efforts overshoot budgets by 30%",
         className: "shape2",
         bgshape: bgshape2,
-
       },
       {
         percent: "36%",
@@ -119,21 +111,25 @@ export const Matters = () => {
   };
   return (
     <>
-      <WhyItMatters {...whyItMattersData} ButtonImage={ButtonImage} secId="matters" />
+      <WhyItMatters
+        {...whyItMattersData}
+        ButtonImage={ButtonImage}
+        secId="why-it-matters"
+      />
     </>
-  )
-}
+  );
+};
 
 export const DoUs = () => {
-  const heading = "What We Do"
-  const subtitle = "Assess Smart. Plan Right. Modernize with Confidence."
-  const desc = "Calsoft’s 360° Maturity Assessment is diagnostic, data-driven, and actionable—covering not just tech, but processes, people, and dependencies. Our Offerings:"
+  const heading = "What We Do";
+  const subtitle = "Assess Smart. Plan Right. Modernize with Confidence.";
+  const desc =
+    "Calsoft’s 360° Maturity Assessment is diagnostic, data-driven, and actionable—covering not just tech, but processes, people, and dependencies. Our Offerings:";
 
   const offeringsData = {
     buttonText: "Download Best Practices",
     link: "#",
     offerings: [
-
       {
         icon: icon1,
         title: "Technology & Architecture Maturity Scan",
@@ -158,7 +154,6 @@ export const DoUs = () => {
         icon: icon6,
         title: "Custom Modernization Roadmap (3–12 month horizon)",
       },
-
     ],
     timeline: "3–4 weeks from kickoff to board-ready plan",
 
@@ -171,52 +166,55 @@ export const DoUs = () => {
         icon: icon8,
         text: "60% acceleration in roadmap clarity for clients using Calsoft’s scorecard",
       },
-
     ],
   };
 
   return (
     <>
-      <Do offeringsData {...offeringsData} heading={heading} subtitle={subtitle} desc={desc} ButtonImage={ButtonImage}
-        secId="what" />
+      <Do
+        offeringsData
+        {...offeringsData}
+        heading={heading}
+        subtitle={subtitle}
+        desc={desc}
+        ButtonImage={ButtonImage}
+        secId="what-we-do"
+      />
     </>
-  )
-}
-
-
+  );
+};
 
 export const Use = () => {
   const useCasesData = {
     image: useimg,
     heading: "Use Cases",
     subheading: "Where It Fits—and Works",
-    description: "Calsoft’s Assessment framework adapts to your business context—whether you’re cloud-first, hybrid, or legacy-heavy.",
+    description:
+      "Calsoft’s Assessment framework adapts to your business context—whether you’re cloud-first, hybrid, or legacy-heavy.",
     buttonText: "Download One Pager",
     link: "#",
     cards: [
       {
         title: "Cloud Migration Readiness",
-        description: "Map workloads to migration paths (lift & shift, refactor, rebuild)",
-
+        description:
+          "Map workloads to migration paths (lift & shift, refactor, rebuild)",
       },
       {
         title: "Application Portfolio Modernization",
         description: "Prioritize apps using business-value-to-complexity ratio",
-
       },
       {
         title: "Tech Stack Consolidation",
         description: "Evaluate redundancy across platforms, infra, licenses",
-
-      }
-    ]
+      },
+    ],
   };
   return (
-    <> <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use" /></>
-  )
-}
-
-
+    <>
+      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases" />
+    </>
+  );
+};
 
 export const Business = () => {
   const businessValueData = {
@@ -248,12 +246,14 @@ export const Business = () => {
   };
   return (
     <>
-      <BusinessValue  {...businessValueData} ButtonImage={ButtonImage} secId="business" />
+      <BusinessValue
+        {...businessValueData}
+        ButtonImage={ButtonImage}
+        secId="business-value"
+      />
     </>
-  )
-}
-
-
+  );
+};
 
 export const Leftcontent = ({
   title,
@@ -293,11 +293,8 @@ export const Leftcontent = ({
         </div>
       </section>
     </>
-  )
-}
-
-
-
+  );
+};
 
 export const Howstart = () => {
   const startSectionData = {
@@ -312,17 +309,14 @@ export const Howstart = () => {
   };
   return (
     <>
-      <StartSection data={startSectionData} secId="today" />
+      <StartSection data={startSectionData} secId="how-to-start" />
     </>
-  )
-}
-
-
-
+  );
+};
 
 export const Sprint = () => {
-  const buttonText = "Start Today"
-  const link = "#"
+  const buttonText = "Start Today";
+  const link = "#";
   const steps = [
     {
       day: "Day 0",
@@ -334,7 +328,6 @@ export const Sprint = () => {
       output: "Sprint Charter",
       arrowDesktop: line2,
       arrowMobile: mobile2,
-
     },
     {
       day: "Day 1–2",
@@ -346,7 +339,6 @@ export const Sprint = () => {
       output: "Baseline Input Deck",
       arrowDesktop: line3,
       arrowMobile: mobile3,
-
     },
     {
       day: "Day 3–4",
@@ -358,7 +350,6 @@ export const Sprint = () => {
       output: "Scorecard + Opportunity Map",
       arrowDesktop: line2,
       arrowMobile: mobile2,
-
     },
     {
       day: "Day 5–6",
@@ -370,7 +361,6 @@ export const Sprint = () => {
       output: "Custom Modernization Plan",
       arrowDesktop: line3,
       arrowMobile: mobile3,
-
     },
     {
       day: "Day 7",
@@ -387,12 +377,13 @@ export const Sprint = () => {
 
   return (
     <>
-      <SprintTimeline steps={steps} heading="7-Day Maturity Sprint: Step-by-Step"
-        buttonText={buttonText} link={link} ButtonImage={ButtonImage}
+      <SprintTimeline
+        steps={steps}
+        heading="7-Day Maturity Sprint: Step-by-Step"
+        buttonText={buttonText}
+        link={link}
+        ButtonImage={ButtonImage}
       />
-
     </>
-  )
-}
-
-
+  );
+};
