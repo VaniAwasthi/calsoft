@@ -18,7 +18,7 @@ export const HeroSectionProduct = () => {
     title: "Cloud | Grow with cloud-induced efficiency",
     description: `Engineer scalable, secure, and cost-efficient<br/>
 cloud solutions aligned to your business goals.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -106,7 +106,7 @@ export const ItInfraSec = () => {
       <InfraSection
         title="IT infrastructure assessment & road mapping"
         description="Assess infrastructure readiness and define clear, actionable migration roadmaps."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Evaluate existing environments for cloud readiness",
@@ -134,7 +134,7 @@ export const MultiCloudInfraSec = () => {
       <InfraSection
         title="Multi-cloud infrastructure provisioning"
         description="Deploy and manage scalable, governed environments across multiple cloud platforms."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Automate resource provisioning across hybrid & multi-cloud",
@@ -162,7 +162,7 @@ export const CloudNativetInfraSec = () => {
       <InfraSection
         title="Cloud-native development enablement"
         description="Engineer resilient, scalable systems using microservices, containers, and serverless models."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Architect distributed systems with microservices ",
@@ -189,7 +189,7 @@ export const CloudMigrationInfraSec = () => {
       <InfraSection
         title="Cloud migration and scaling"
         description="Execute smooth cloud transitions and enable dynamic, on-demand scalability."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Plan and execute structured application and infrastructure migrations",
@@ -216,7 +216,7 @@ export const CostInfraSec = () => {
       <InfraSection
         title="Cost and usage optimization"
         description="Control costs, optimize usage, and drive sustainable cloud operations."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Continuously monitor resource utilization and spending patterns",
@@ -243,7 +243,7 @@ export const SREInfraSec = () => {
       <InfraSection
         title="SRE (Site Reliability Engineering)"
         description="Balance development velocity with system stability through proactive operations management."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Define service-level indicators (SLIs) and service-level objectives (SLOs)",

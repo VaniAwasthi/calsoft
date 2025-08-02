@@ -29,7 +29,7 @@ function page() {
             <b> Let’s Talk!</b>
           </p>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <PolicySec />

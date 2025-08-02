@@ -32,7 +32,7 @@ function page() {
             testing control? <b>We can do it</b>
           </>
         }
-        buttonText="Know More"
+        buttonText=" Book a Meeting"
         buttonLink="#"
       />
       <TestSec />

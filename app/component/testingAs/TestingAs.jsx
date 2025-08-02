@@ -16,7 +16,7 @@ export const TestingTab = () => {
   const slide = {
     title: "Testing as a Service",
     description: `Deliver reliable, scalable products with comprehensive testing across the development lifecycle.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -104,7 +104,7 @@ export const FunctionalSec = () => {
         title="Functional and non-functional testing"
         description="Ensure functionality, security, and usability
                 across every stage of product development."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Test all modules for expected use",
@@ -132,7 +132,7 @@ export const CalTIASec = () => {
       <InfraSection
         title="CalTIA | Automated regression testing"
         description="Speed up releases with intelligent, risk-prioritized automated regression testing."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Run risk-based regression with CalTIA",
@@ -160,7 +160,7 @@ export const LoadSec = () => {
       <InfraSection
         title="Load and stress testing for scalability"
         description="Validate application performance and resilience under real-world and extreme load conditions."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Simulate user peaks and traffic loads",
@@ -187,7 +187,7 @@ export const TestSec = () => {
       <InfraSection
         title="Test impact analysis using ML models"
         description="Prioritize high-risk areas and streamline validation with ML-driven test impact analysis."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Use ML to flag risk areas post-change",
@@ -214,7 +214,7 @@ export const QaoSec = () => {
       <InfraSection
         title="QAOps with CI/CD pipeline integration"
         description="Integrate testing seamlessly into DevOps workflows for faster, reliable releases."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Embed tests into DevOps workflows",
@@ -242,7 +242,7 @@ export const ProductSec = () => {
       <InfraSection
         title="Product and ecosystem benchmarking"
         description="Test product performance, quality, and scalability against industry standards and best practices."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Compare performance to market norms",

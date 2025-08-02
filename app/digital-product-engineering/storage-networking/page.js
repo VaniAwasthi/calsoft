@@ -33,7 +33,7 @@ function page() {
             experts - <b>Schedule a consultation</b>
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <Gateway />

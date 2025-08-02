@@ -33,7 +33,7 @@ const page = () => {
             applications - <b>Talk to us</b>
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <DevOpsSec />

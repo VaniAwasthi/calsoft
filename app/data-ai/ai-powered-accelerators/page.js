@@ -27,7 +27,7 @@ function page() {
             to fast-track impact
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <ECalsoftSec />

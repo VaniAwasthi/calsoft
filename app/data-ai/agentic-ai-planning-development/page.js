@@ -27,7 +27,7 @@ function page() {
             we help you scale responsibly
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <MonitorSec />

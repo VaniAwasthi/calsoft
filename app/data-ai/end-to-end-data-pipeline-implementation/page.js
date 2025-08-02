@@ -30,7 +30,7 @@ const page = () => {
             drive faster insights and integration
           </>
         }
-        buttonText="Explore More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <EffortlessSec />

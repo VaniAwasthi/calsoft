@@ -19,7 +19,7 @@ export const CustomBanner = () => {
     title: "Custom LLM for GenAI and RAG",
     description: `Build domain-specific GenAI systems that
     deliver grounded, trusted responses.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -100,7 +100,7 @@ export const LlmSec = () => {
         title="LLM fine-tuning"
         description="Adapt language models to your data, tone,
         and business logic."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Analyze test logs to spot redundancies",
@@ -128,7 +128,7 @@ export const RagSec = () => {
       <DataInfoSection
         title="RAG pipeline design"
         description="Ground your GenAI responses in real-time, trusted enterprise knowledge."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Analyze test logs to spot redundancies",
@@ -156,7 +156,7 @@ export const EnterpriseSec = () => {
       <DataInfoSection
         title="Enterprise deployment models"
         description="Run custom LLMs where they best fit without tradeoffs."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Analyze test logs to spot redundancies",
@@ -183,7 +183,7 @@ export const SystemSec = () => {
       <DataInfoSection
         title="System integration and orchestration"
         description="Connect LLMs into real workflows, not just chat windows."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Analyze test logs to spot redundancies",

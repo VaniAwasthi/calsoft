@@ -15,7 +15,7 @@ export const VirtualizationTab = () => {
   const slide = {
     title: "Virtualization solutions",
     description: `Simplify operations, accelerate deployments, and scale infrastructure with modern virtualization strategies.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -103,7 +103,7 @@ export const VirtualizationSec = () => {
       <InfraSection
         title="Virtualization lifecycle management (Day 0–N)"
         description="Handle the complete virtualization lifecycle from setup through scaling and optimization."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Design virtual infra for flexibility",
@@ -131,7 +131,7 @@ export const Containerization = () => {
       <InfraSection
         title="Containerization and orchestration"
         description="Accelerate application portability, scalability, and resilience with containerization strategies."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Build container stacks with Kubernetes",
@@ -159,7 +159,7 @@ export const HypervisorSec = () => {
       <InfraSection
         title="Hypervisor: Optimizing foundations"
         description="Streamline hypervisor environments for performance, scalability, and operational efficiency."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Tune VM density and resources",
@@ -186,7 +186,7 @@ export const MigrateSec = () => {
       <InfraSection
         title="Migrate seamlessly across platforms"
         description="Transition virtual environments with minimal downtime and operational risk."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Shift workloads across setups",
@@ -213,7 +213,7 @@ export const OpenSec = () => {
       <InfraSection
         title="OpenStack environment configuration"
         description="Design, deploy, and optimize OpenStack environments for scalable, cost-effective cloud operations."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Deploy OpenStack infra layers",

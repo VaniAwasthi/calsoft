@@ -30,7 +30,7 @@ function page() {
             enhancements without service disruption
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <MultiSec />

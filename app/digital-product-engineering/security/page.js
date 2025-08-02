@@ -31,7 +31,7 @@ function page() {
             Zero Trust environments <b>with Calsoft</b>
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <ZeroSec />

@@ -17,7 +17,7 @@ export const HeroSectionModernization = () => {
 
     description: `Reengineer systems, integrate ecosystems, and
 future-proof operations with agility and precision.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -96,7 +96,7 @@ export const MaturityAssessmentSec = () => {
       <InfraSection
         title="Maturity assessment and planning"
         description="Map your modernization journey with structured assessments and actionable roadmaps."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Find technical debt and scale gaps",
@@ -124,7 +124,7 @@ export const FutureReadinessSec = () => {
       <InfraSection
         title="Future readiness with application modernization"
         description="Modernize platforms for agility, responsiveness, and long-term competitiveness."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Refactor apps and update flows",
@@ -152,7 +152,7 @@ export const EcosystemManagementSec = () => {
       <InfraSection
         title="Ecosystem management"
         description="Integrate platforms, partners, and tools for unified digital ecosystems."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Securely connect APIs and tools",
@@ -179,7 +179,7 @@ export const PlugindevelopmentSec = () => {
       <InfraSection
         title="Plugin development: Improve extendibility"
         description="Build lightweight plugins to enhance ecosystem connectivity and user workflows."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Build plugins for faster linking",

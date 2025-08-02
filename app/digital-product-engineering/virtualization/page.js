@@ -32,7 +32,7 @@ function page() {
             environments <b>– We can help</b>
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <MigrateSec />

@@ -19,7 +19,7 @@ export const AiBanner = () => {
     title: "AI-powered accelerators",
     description: `Deploy pre-built accelerators to solve
     targeted engineering and operational challenges.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = ["Benefits", "CalTIA", "CalPSR", "Migration", "Mozaic"];
@@ -94,7 +94,7 @@ export const CalTiaSec = () => {
         description="Streamline test planning
         and reduce QA fatigue with
         AI-driven prioritization."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Analyze test logs to spot redundancies",
@@ -122,7 +122,7 @@ export const CalPsrSec = () => {
       <DataInfoSection
         title="CalPSR – Calsoft Performance, Scalability, and Resilience"
         description="Validate release readiness with real-world fault simulation and pre-GA testing."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Simulate faults and latency delays",
@@ -150,7 +150,7 @@ export const ECalsoftSec = () => {
       <DataInfoSection
         title="Calsoft’s migration accelerator"
         description="Simplify workload transitions with guided, dependency-aware migration flows."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Discover app and infra dependencies",
@@ -177,7 +177,7 @@ export const CalsoftSec = () => {
       <DataInfoSection
         title="Calsoft Mozaic | Engineering intelligence framework"
         description="Accelerate solution delivery with reusable AI, platform, and process components."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Provide AI-ready modular toolkits",
