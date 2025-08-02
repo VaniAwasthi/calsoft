@@ -27,7 +27,7 @@ function page() {
             anticipate, adapt, and boost business
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <InferentialSec />

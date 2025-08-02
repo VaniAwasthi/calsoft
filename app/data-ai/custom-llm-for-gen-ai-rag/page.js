@@ -27,7 +27,7 @@ function page() {
             enterprise-ready language models
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <EnterpriseSec />

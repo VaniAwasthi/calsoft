@@ -31,7 +31,7 @@ const page = () => {
             ready to be unlocked - <b>Let’s connect</b>
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <PlugindevelopmentSec />

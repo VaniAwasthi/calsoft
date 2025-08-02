@@ -18,7 +18,7 @@ export const SecurityTab = () => {
 
     description: `Strengthen endpoint, identity, and infrastructure
         security for operational resilience and continuity.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -106,7 +106,7 @@ export const Endpoint = () => {
       <InfraSection
         title="Endpoint and perimeter security enablement"
         description="Deploy multi-layered defenses to secure devices, users, and network perimeters."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Deploy EPP, EDR, firewalls, and VPNs",
@@ -134,7 +134,7 @@ export const IdentitySec = () => {
       <InfraSection
         title="Identity and access management (IAM)"
         description="Control who accesses what, when, and how with structured IAM frameworks."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Centralize identity and access rules",
@@ -163,7 +163,7 @@ export const DevSec = () => {
         title="DevSecOps - Embed security into DevOps"
         description="Integrate security controls early and
                 continuously across the development lifecycle."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Scan code and pipelines for threats",
@@ -190,7 +190,7 @@ export const ZeroSec = () => {
       <InfraSection
         title="Zero Trust architecture enablement"
         description="Continuously verify access and minimize trust assumptions across your digital ecosystem."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Apply least-privilege and micro-zoning",
@@ -217,7 +217,7 @@ export const ServiceSec = () => {
       <InfraSection
         title="Service continuity and backup automation"
         description="Protect data, systems, and services with resilient backup and recovery strategies."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Schedule secure, routine backups",
@@ -244,7 +244,7 @@ export const SreSec = () => {
       <InfraSection
         title="SRE (Site Reliability Engineering)"
         description="Balance development velocity with system stability through proactive operations management."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Define service-level indicators (SLIs) and service-level objectives (SLOs)",

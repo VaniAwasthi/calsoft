@@ -34,7 +34,7 @@ const Page = () => {
             collaborative DevOps + SRE – It &apos;s time to adopt
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <CloudMigrationInfraSec />

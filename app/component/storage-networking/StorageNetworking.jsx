@@ -18,7 +18,7 @@ export const StorageTab = () => {
     title: "Storage & Networking ",
     description: `Build agile, scalable and resilient data and
         connectivity infrastructures for evolving business needs.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -107,7 +107,7 @@ export const SoftwareSec = () => {
       <InfraSection
         title="Software-defined storage (SDS) development"
         description="Modernize data management with software defined, flexible, and scalable storage solutions."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Detach control from storage hardware",
@@ -136,7 +136,7 @@ export const DefinedSec = () => {
         title="Software Defined Networking (SDN) controller
                 & engineering"
         description="Transform network operations with programmable, automated, and scalable SDN architectures."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Centralize control via SDN layers",
@@ -164,7 +164,7 @@ export const Hyperconverged = () => {
       <InfraSection
         title="Hyperconverged infrastructure (HCI) integration"
         description="Unify compute, storage, and networking into streamlined, scalable operational platforms."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Merge compute, storage, network stacks",
@@ -191,7 +191,7 @@ export const Gateway = () => {
       <InfraSection
         title="Storage gateway engineering"
         description="Enable smooth interoperability across cloud, on-premises, and hybrid storage environments."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Bridge cloud and on-prem storage",
@@ -218,7 +218,7 @@ export const AiSec = () => {
       <InfraSection
         title="AI-driven network automation"
         description="Enhance network performance, resilience, and management with AI-enabled automation."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Use AI to spot and fix issues fast",
@@ -246,7 +246,7 @@ export const NetworkSec = () => {
         title="Network function virtualization (NFV) services"
         description="Modernize networking with flexible, scalable,
                 and software-driven NFV architectures."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Replace devices with VNFs in code",
@@ -273,7 +273,7 @@ export const EdgeSec = () => {
       <InfraSection
         title="Edge computing"
         description="Deploy localized compute, storage, and analytics capabilities for real-time decision-making."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Run processing close to devices",

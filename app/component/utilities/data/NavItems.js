@@ -39,9 +39,15 @@ export const navItems = [
         title: "Data governance and quality",
         href: "/data-ai/data-governance-quality",
         section: [
-          { title: "Data profiling and cataloging", href: "#" },
+          { title: "Data profiling & cataloging", href: "#" },
           { title: "Data cleansing and deduplication", href: "#" },
-          { title: "Policy governance", href: "#" },
+          { title: "Data lake creation (and warehouse)", href: "#" },
+          {
+            title:
+              "Seamless Data streaming (Real-time anlaytics) (Data analytics and data pipeline)",
+            href: "#",
+          },
+          { title: "Governance protocols and implementation", href: "#" },
           { title: "Data collaboration & orchestration", href: "#" },
         ],
       },
@@ -49,40 +55,51 @@ export const navItems = [
         title: "Data analytics and reporting",
         href: "/data-ai/data-analytics-reporting",
         section: [
+          { title: "Data pipeline and transformation", href: "#" },
           { title: "Dashboard and KPI visualization", href: "#" },
-          { title: "Business Intelligence (BI) integration", href: "#" },
-          { title: "Custom reporting", href: "#" },
-          { title: "Real-time business insights streaming", href: "#" },
+          { title: "Real-time streaming analytics", href: "#" },
+          {
+            title: "Time-series data analysis & pattern recognition",
+            href: "#",
+          },
+          { title: "Business intelligence integration", href: "#" },
+          { title: "Custom reporting and notifications", href: "#" },
         ],
       },
       {
         title: "AI-driven prediction and inferences",
         href: "/data-ai/ai-driven-prediction-inferences",
         section: [
-          { title: "Predictive modeling", href: "#" },
-          { title: "Pattern detection", href: "#" },
-          { title: "Inferential analytics", href: "#" },
-          { title: "Model adaptability", href: "#" },
+          { title: "Telemetry-driven closed-loop automation", href: "#" },
+          { title: "Predictive maintenance models", href: "#" },
+          { title: "AIOps for infrastructure performance", href: "#" },
+          { title: "Workflow optimization with ML", href: "#" },
+          { title: "Event correlation and root cause prediction", href: "#" },
+          { title: "Intelligent resource scheduling", href: "#" },
         ],
       },
       {
         title: "Agentic AI planning & development",
         href: "/data-ai/agentic-ai-planning-development",
         section: [
-          { title: "Predictive modeling", href: "#" },
-          { title: "Pattern detection", href: "#" },
-          { title: "Inferential analytics", href: "#" },
-          { title: "Model adaptability", href: "#" },
+          { title: "AIOps Planning", href: "#" },
+          { title: "Use-case specific AI agents", href: "#" },
+          { title: "Monitor and control", href: "#" },
+          { title: "Regression alignment", href: "#" },
+          { title: "Data protection and privacy", href: "#" },
+          { title: "Scale and support", href: "#" },
         ],
       },
       {
         title: "Custom-LLM for Gen AI and RAG",
         href: "/data-ai/custom-llm-for-gen-ai-rag",
         section: [
-          { title: "LLM fine-tuning", href: "#" },
-          { title: "RAG pipeline design", href: "#" },
-          { title: "Enterprise deployment models", href: "#" },
-          { title: "System integration and orchestration", href: "#" },
+          { title: "LLM fine-tuning on proprietary data", href: "#" },
+          { title: "RAG-based application development", href: "#" },
+          { title: "Prompt engineering and optimization", href: "#" },
+          { title: "Open-source model integration", href: "#" },
+          { title: "Domain-specific chatbot development", href: "#" },
+          { title: "On-premise LLM deployment", href: "#" },
         ],
       },
       {
@@ -90,18 +107,14 @@ export const navItems = [
         href: "/data-ai/ai-powered-accelerators",
         section: [
           {
-            title: "CalTIA – Faster, better, and consistent testing",
+            title: "CalTIA",
             href: "#",
           },
           {
             title: "CalPSR – Calsoft Performance, Scalability, and Resilience",
             href: "#",
           },
-          { title: "Calsoft’s migration accelerator", href: "#" },
-          {
-            title: "Calsoft Mozaic | Engineering intelligence framework",
-            href: "#",
-          },
+          { title: "Automated migration tool", href: "#" },
         ],
       },
     ],
@@ -116,27 +129,23 @@ export const navItems = [
         href: "/digital-product-engineering/product-application-development",
         section: [
           {
-            title: "Ideation & architecture orchestration",
+            title: "Architecture & Ideation",
             href: "#",
           },
           {
-            title: "Development lifecycle services",
+            title: "Full-Cycle Development",
             href: "#",
           },
           {
-            title: "Quality engineering",
+            title: "Quality Engineering",
             href: "#",
           },
           {
-            title: "DevOps + SRE with AI-driven enhancements",
+            title: "DevOps & SRE",
             href: "#",
           },
           {
-            title: "Deployment and upgrades",
-            href: "#",
-          },
-          {
-            title: "Accelerate with Calsoft’s Mozaic",
+            title: "Smart Deployment",
             href: "#",
           },
         ],
@@ -150,19 +159,15 @@ export const navItems = [
             href: "/digital-product-engineering/modernization-ecosystem/maturity-assessment-and-planning",
           },
           {
-            title: "Future readiness with application modernization",
+            title: "Future Readiness",
             href: "/digital-product-engineering/modernization-ecosystem/future-readiness-with-application-modernization",
           },
           {
-            title: "Ecosystem management",
+            title: "Connected Ecosystem",
             href: "#",
           },
           {
-            title: "Plugin development: Improve extendibility",
-            href: "#",
-          },
-          {
-            title: "IoT engineering",
+            title: "Plugin Development",
             href: "#",
           },
         ],
@@ -176,19 +181,15 @@ export const navItems = [
             href: "/digital-product-engineering/cx-engineering/smart-interface-design",
           },
           {
-            title: "UX modernization : Better user journeys",
+            title: "Experience Modernization",
             href: "#",
           },
           {
-            title: "Intelligent UI: Make interfaces adaptive",
+            title: "Rapid Prototyping",
             href: "#",
           },
           {
-            title: "Rapid prototyping",
-            href: "#",
-          },
-          {
-            title: "Mobile engineering & development",
+            title: "Mobile Development",
             href: "#",
           },
         ],
@@ -198,23 +199,23 @@ export const navItems = [
         href: "/digital-product-engineering/cloud",
         section: [
           {
-            title: "IT infrastructure assessment and road mapping",
+            title: "Infrastructure Roadmap",
             href: "#",
           },
           {
-            title: "Multi-cloud infrastructure provisioning",
+            title: "Multi-cloud Provisioning",
             href: "#",
           },
           {
-            title: "Cloud-native development enablement",
+            title: "Cloud-native enablement",
             href: "#",
           },
           {
-            title: "Cloud migration and scaling",
+            title: "Cloud Migration",
             href: "#",
           },
           {
-            title: "Cost and usage optimization",
+            title: "Cost Optimization(Not Required)",
             href: "#",
           },
           {
@@ -232,15 +233,15 @@ export const navItems = [
             href: "#",
           },
           {
-            title: "CalTIA | Automated regression testing",
+            title: "Automated regression testing (CalTIA)",
             href: "#",
           },
           {
-            title: "Load and stress testing for scalability",
+            title: "Scale & Load Validation",
             href: "#",
           },
           {
-            title: "Test impact analysis using ML models",
+            title: "Test Impact Analysis",
             href: "#",
           },
           {
@@ -248,7 +249,7 @@ export const navItems = [
             href: "#",
           },
           {
-            title: "Product and ecosystem benchmarking",
+            title: "Benchmarking for Readiness",
             href: "#",
           },
         ],
@@ -258,19 +259,23 @@ export const navItems = [
         href: "/digital-product-engineering/sustenance-support",
         section: [
           {
-            title: "Release management",
+            title: "Release Orchestration",
             href: "#",
           },
           {
-            title: "Streamline technical documentation",
+            title: "Documentation Support",
             href: "#",
           },
           {
-            title: "Multi-tier support",
+            title: "Intelligent Ticketing",
             href: "#",
           },
           {
-            title: "Uptime continuity",
+            title: "Muti-Tier Support",
+            href: "#",
+          },
+          {
+            title: "Uptime Continuity",
             href: "#",
           },
         ],
@@ -280,7 +285,7 @@ export const navItems = [
         href: "/digital-product-engineering/virtualization",
         section: [
           {
-            title: "Virtualization lifecycle management (Day 0–N)",
+            title: "Lifecycle Governance",
             href: "#",
           },
           {
@@ -288,15 +293,19 @@ export const navItems = [
             href: "#",
           },
           {
-            title: "Hypervisor: Optimizing foundations",
-            href: "#",
-          },
-          {
-            title: "Migrate seamlessly across platforms",
+            title: "Hypervisor Optimization",
             href: "#",
           },
           {
             title: "OpenStack environment configuration",
+            href: "#",
+          },
+          {
+            title: "Infrastructure as Code (IaC)",
+            href: "#",
+          },
+          {
+            title: "Intelligent Migration",
             href: "#",
           },
         ],
@@ -307,11 +316,11 @@ export const navItems = [
         href: "/digital-product-engineering/storage-networking",
         section: [
           {
-            title: "Software-defined storage (SDS) development",
+            title: "Defined Storage Solutions",
             href: "#",
           },
           {
-            title: "Software Defined Networking (SDN) controller & engineering",
+            title: "SDN Architecture",
             href: "#",
           },
           {
@@ -323,15 +332,11 @@ export const navItems = [
             href: "#",
           },
           {
-            title: "AI-driven network automation",
+            title: "Intelligent Network Control",
             href: "#",
           },
           {
             title: "Network function virtualization (NFV) services",
-            href: "#",
-          },
-          {
-            title: "Edge computing",
             href: "#",
           },
         ],
@@ -349,11 +354,15 @@ export const navItems = [
             href: "#",
           },
           {
-            title: "DevSecOps - Embed security into DevOps",
+            title: "Vulnerability and penetration testing",
             href: "#",
           },
           {
-            title: "Zero Trust architecture enablement",
+            title: "DevSecOps",
+            href: "#",
+          },
+          {
+            title: "Zero Trust architecture enablement ",
             href: "#",
           },
           {

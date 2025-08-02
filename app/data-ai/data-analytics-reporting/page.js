@@ -27,7 +27,7 @@ function page() {
             action – with us
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <CustomSec />
