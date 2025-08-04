@@ -27,9 +27,11 @@ export default function ResourceGrid() {
     dispatch(fetchBlogFilterList());
   }, []);
   const BlogsList = useSelector((state) => state.blogs.list);
-  const FilterAuthr = useSelector((state) => state.blogs.filterAuthor);
-  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry);
-  const FilterTopic = useSelector((state) => state.blogs.filterTopic);
+  const FilterAuthr = useSelector((state) => state.blogs.filterAuthor || []);
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
 
   const filters = {
     Industry: ["All", ...FilterIndustry.map((i) => i.name)],
