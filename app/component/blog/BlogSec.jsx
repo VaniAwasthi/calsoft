@@ -11,15 +11,12 @@ import Loadmore from "../../assets/blog/loadmoreicon.svg";
 import { blogData } from "../utilities/data/BlogData";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchBlogList } from "../../store/actions/blogAction.js";
+import {
+  fetchBlogFilterList,
+  fetchBlogList,
+} from "../../store/actions/blogAction.js";
 import { setSelectedBlogId } from "../../store/reducers/blogReducer.js";
 import blogexpanImage from "../../assets/blog/blog-2.webp";
-
-const filters = {
-  Industry: ["All", "Tech", "Healthcare"],
-  Topics: ["All", "Security", "AI"],
-  Author: ["All", "Anton Frank", "John Doe"],
-};
 
 export default function ResourceGrid() {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -27,8 +24,18 @@ export default function ResourceGrid() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBlogList());
+    dispatch(fetchBlogFilterList());
   }, []);
   const BlogsList = useSelector((state) => state.blogs.list);
+  const FilterAuthr = useSelector((state) => state.blogs.filterAuthor);
+  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry);
+  const FilterTopic = useSelector((state) => state.blogs.filterTopic);
+
+  const filters = {
+    Industry: ["All", ...FilterIndustry.map((i) => i.name)],
+    Topics: ["All", ...FilterTopic.map((t) => t.name)],
+    Author: ["All", ...FilterAuthr.map((a) => a.name)],
+  };
   const resources = BlogsList;
   const slugify = (text) => {
     return text
@@ -151,7 +158,7 @@ export default function ResourceGrid() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="absolute mt-1 w-full bg-white border shadow-lg rounded z-50"
+                    className="absolute mt-1 w-full bg-white border shadow-lg rounded z-50 max-h-60 overflow-y-auto"
                   >
                     {filters[filterType].map((option) => (
                       <div

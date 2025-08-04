@@ -1,7 +1,12 @@
 import axiosInstance from "../api-config/axiosInstance.js";
-import { setBlogData, setBlogList, setError } from "../reducers/blogReducer.js";
+import {
+  setBlogData,
+  setBlogFilterList,
+  setBlogList,
+  setError,
+} from "../reducers/blogReducer.js";
 
-// Fetch all Case Study list
+// Fetch all Blog list
 export const fetchBlogList = () => async (dispatch) => {
   try {
     const response = await axiosInstance.get("/blogs");
@@ -10,7 +15,15 @@ export const fetchBlogList = () => async (dispatch) => {
     dispatch(setError(error));
   }
 };
-
+// Fetch all blogFilter list
+export const fetchBlogFilterList = () => async (dispatch) => {
+  try {
+    const response = await axiosInstance.get("/blogs/filters");
+    dispatch(setBlogFilterList(response.data));
+  } catch (error) {
+    dispatch(setError(error));
+  }
+};
 // Fetch one blog by ID
 export const fetchBlogById = (id) => async (dispatch) => {
   try {
