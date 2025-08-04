@@ -19,7 +19,7 @@ export const HeroSectionDatapipelineengineering = () => {
 
     description: `Engineer and accelerate data flow, integration,
 and trust across hybrid environments.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -99,7 +99,7 @@ export const DataArchitectureSec = () => {
         description="Design resilient and
 high-velocity pipelines
 for evolving data needs."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Map pipelines for hybrid data flows",
@@ -129,7 +129,7 @@ export const DataPlatformSec = () => {
 and ecosystem integration"
         description="Unify distributed data
 sources for seamless, intelligent operations."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Link lakes, warehouses, and stores",
@@ -157,7 +157,7 @@ export const EffortlessSec = () => {
       <DataInfoSection
         title="Effortless and faultless data migration"
         description="Move critical data assets with speed & integrity. Zero disruption guaranteed."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Create migration maps by system type",
@@ -184,7 +184,7 @@ export const DataSanitySec = () => {
       <DataInfoSection
         title="Data sanity and lineage handling"
         description="Ensure transparency, trust, and traceability across your data pipelines."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Add checks across each pipeline step",

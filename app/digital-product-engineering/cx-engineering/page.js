@@ -33,7 +33,7 @@ const Page = () => {
             market share – <b>Let’s do it</b>
           </>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
 

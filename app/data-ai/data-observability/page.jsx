@@ -26,7 +26,7 @@ function page() {
             and build operational resilience
           </p>
         }
-        buttonText="Know More"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <Real2Sec />

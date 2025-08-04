@@ -20,7 +20,7 @@ export const AgenticBanner = () => {
 
     description: `Design, deploy, and manage AI agents with
     precision and accountability.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -101,7 +101,7 @@ export const AiOopsSec = () => {
         title="AIOps Planning"
         description="Enable intelligent operations through autonomous,
         purpose-built agents."
-        buttonText="Case Study"
+        buttonText=" Learn More"
         link="#"
         whatWeDo={[
           "Agents monitor systems, logs, and events",
@@ -129,7 +129,7 @@ export const UseSec = () => {
       <DataInfoSection
         title="Use-case specific AI agents"
         description="Deploy configured agents that fulfill focused business and operational roles."
-        buttonText="Case Study"
+        buttonText=" Learn More"
         link="#"
         whatWeDo={[
           "Build agents for domain-specific tasks",
@@ -157,7 +157,7 @@ export const MonitorSec = () => {
       <DataInfoSection
         title="Monitor and control"
         description="Ensure transparency and oversight across autonomous agent behavior."
-        buttonText="Case Study"
+        buttonText=" Learn More"
         link="#"
         whatWeDo={[
           "Track agent behavior with telemetry",
@@ -184,7 +184,7 @@ export const LifecycleSec = () => {
       <DataInfoSection
         title="Lifecycle and adaptability"
         description="Manage agent evolution from deployment through continuous improvement."
-        buttonText="Case Study"
+        buttonText=" Learn More"
         link="#"
         whatWeDo={[
           "Define update and rollback protocols",

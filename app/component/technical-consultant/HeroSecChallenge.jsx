@@ -19,7 +19,7 @@ export const HeroSectionTechnicalConsulting = () => {
 
     description: `Bridge strategy and execution through data-driven
 technical advisory.`,
-    buttonText: "Talk to an Expert",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -100,7 +100,7 @@ export const StrategicSecTechnicalConsulting = () => {
         title="Strategic architecture advisory"
         description="Blueprint scalable systems aligned to long-term
 business objectives."
-        buttonText="View Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Assess system fit for future scale",
@@ -128,7 +128,7 @@ export const RiskMitigationSecTechnicalConsulting = () => {
       <DataInfoSection
         title="Risk mitigation and recovery planning"
         description="Anticipate disruptions and strengthen resilience across your tech environment."
-        buttonText="View Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Find weak points across platforms",
@@ -156,7 +156,7 @@ export const PlatformSecTechnicalConsulting = () => {
       <DataInfoSection
         title="Platform interoperability consulting"
         description="Create cohesive systems through guided integration and alignment strategies."
-        buttonText="View Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Map cross-platform connection gaps",
@@ -183,7 +183,7 @@ export const CostOptimizedSecTechnicalConsulting = () => {
       <DataInfoSection
         title="Balance performance and spend through expert system-wide planning"
         description="Bring ideas to life early and streamline decision-making with interactive prototypes."
-        buttonText="View Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Analyze workloads for imbalance",

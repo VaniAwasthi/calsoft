@@ -16,7 +16,7 @@ export const SustenanceTab = () => {
     title: "Sustenance & Support",
     description: `Deliver reliable, scalable products with comprehensive
         testing across the development lifecycle.`,
-    buttonText: "Get in touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = ["Benefits", "Release", "Document", "Multi-tier", "Up-time"];
@@ -91,7 +91,7 @@ export const ReleaseSec = () => {
         title="Release management"
         description="Deliver updates and enhancements smoothly
                 without disrupting operational continuity."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Plan updates with minimal downtime",
@@ -119,7 +119,7 @@ export const StreamlineSec = () => {
       <InfraSection
         title="Streamline technical documentation"
         description="Keep operational and technical information accurate, accessible, and actionable."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Keep docs accurate and easy to use",
@@ -147,7 +147,7 @@ export const MultiSec = () => {
       <InfraSection
         title="Multi-tier support (L1, L2, and L3)"
         description="Validate application performance and resilience under real-world and extreme load conditions."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Solve common issues and questions",
@@ -174,7 +174,7 @@ export const UptimeSec = () => {
       <InfraSection
         title="Uptime continuity"
         description="Proactively monitor, manage, and optimize system availability and performance."
-        buttonText="Case Study"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Monitor systems 24x7 with alerts",

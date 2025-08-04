@@ -30,7 +30,7 @@ const page = () => {
             insight
           </>
         }
-        buttonText="Explore Our Approach"
+        buttonText="Book a Meeting"
         buttonLink="#"
       />
       <PlatformSecTechnicalConsulting />
