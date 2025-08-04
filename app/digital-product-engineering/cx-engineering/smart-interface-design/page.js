@@ -3,6 +3,8 @@ import { Interface, Smart, Start, Step, Uses, What, Why } from '../../../compone
 import { FooterBg } from '../../../component/utilities/DoCases';
 import ContactImg from "../../../assets/Data-Ai/PipeLine/ConnectBg.webp";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
+import Image from 'next/image';
+
 function page() {
     return (
         <>
@@ -22,6 +24,7 @@ function page() {
                     link="#"
                 />
             </div>
+
         </>
     )
 }

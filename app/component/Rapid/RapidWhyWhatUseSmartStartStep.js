@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState } from "react";
 import BannerWithRightSec from '../utilities/BannerWithRightsec';
@@ -15,16 +14,16 @@ import bgshape from "../../assets/DigitalEngineering/CX/triangle.svg"
 
 
 import { Cases, Do, InterfaceCard, SprintTimeline, StartSection } from "../utilities/DoCases";
-import icon1 from "../../assets/DigitalEngineering/smart/icon1.svg"
-import icon2 from "../../assets/DigitalEngineering/smart/icon2.svg"
-import icon3 from "../../assets/DigitalEngineering/smart/icon3.svg"
-import icon4 from "../../assets/DigitalEngineering/smart/icon4.svg"
-import icon5 from "../../assets/DigitalEngineering/smart/icon5.svg"
-import icon6 from "../../assets/DigitalEngineering/smart/icon6.svg"
-import icon7 from "../../assets/DigitalEngineering/maturity/icon7.svg"
-import icon8 from "../../assets/DigitalEngineering/maturity/icon8.svg"
-import useimg from "../../assets/DigitalEngineering/smart/useimg.webp"
-import start from "../../assets/DigitalEngineering/smart/start.webp"
+import icon1 from "../../assets/DigitalEngineering/CX/icon1.svg"
+import icon2 from "../../assets/DigitalEngineering/CX/icon2.svg"
+import icon3 from "../../assets/DigitalEngineering/CX/icon3.svg"
+import icon4 from "../../assets/DigitalEngineering/CX/icon4.svg"
+import icon5 from "../../assets/DigitalEngineering/CX/icon5.svg"
+import icon6 from "../../assets/DigitalEngineering/CX/icon6.svg"
+import icon7 from "../../assets/DigitalEngineering/CX/icon7.svg"
+import icon8 from "../../assets/DigitalEngineering/CX/icon8.svg"
+import useimg from "../../assets/DigitalEngineering/CX/useimg.webp"
+import start from "../../assets/DigitalEngineering/CX/start.webp"
 import line2 from "../../assets/DigitalEngineering/maturity/line2.svg"
 import line3 from "../../assets/DigitalEngineering/maturity/line3.svg"
 import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg"
@@ -32,14 +31,14 @@ import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg"
 import imginter from "../../assets/DigitalEngineering/smart/imginter.webp"
 import { MatterTriangle } from "../utilities/Shape";
 
-
-export const Smart = () => {
+export const Rapid = () => {
     const [activeTab, setActiveTab] = useState("benefits");
     const slide = {
-        title: "Interfaces That Think, Learn, and Convert.",
+        title: "Prototype in Days Decide with Confidence",
 
-        description: `Design isn’t just about beauty—it’s about outcomes. Calsoft creates intelligent, conversion-driven interfaces that enhance user engagement and reduce friction across devices.`,
-        buttonText: "Request CX Audit",
+        description: `Accelerate your product validation with interactive, stakeholder-ready
+        prototypes built on real workflows and data logic.`,
+        buttonText: "Watch Demo",
         image: BackgroundImage,
     };
     const navItems = [
@@ -52,7 +51,7 @@ export const Smart = () => {
 
     return (
         <>
-            <div className="big_btn custom_banner">
+            <div className=" custom_banner">
                 <BannerWithRightSec
                     heroBg={BackgroundImage}
                     title={slide.title}
@@ -74,27 +73,28 @@ export const Smart = () => {
     )
 }
 
+
 export const Why = () => {
     const whyItMattersData = {
         heading: "Why It Matters",
-        title: "Poor Interfaces Leak Business. We Fix That.",
+        title: "Building Too Soon Is the Costliest Mistake.",
 
         description:
-            "Enterprise applications lose more than <b>30% user engagement</b> due to outdated, unintuitive interfaces. The cost? Slower adoption, longer onboarding, and missed conversions. Calsoft’s Smart Interface Design combines behavior analytics, task simplification, and AI-assisted interactions to drive clarity and speed across digital journeys. ",
+            "40% of digital product features are rarely used. Teams waste months building functions users don’t want—simply because they skip validation. Calsoft helps you prototype fast, test early, and reduce product risk by 50%—<b>before investing in full development.</b> ",
 
         buttonText: "Download One Pager",
         link: "#",
 
         cards: [
             {
-                percent: "80%",
-                text: "of users judge software credibility based on UI within 5 seconds",
+                percent: "70%",
+                text: "less rework occurs when companies validate early",
                 className: "shape1",
                 bgshape: bgshape1,
             },
             {
-                percent: "45%",
-                text: "more tasks can be completed with well-designed interfaces.",
+                percent: "80-90%",
+                text: "stakeholder alignment is confirmed by Calsoft clients within the first prototype  ",
                 className: "shape2",
                 bgshape: bgshape2,
 
@@ -104,8 +104,8 @@ export const Why = () => {
 
             },
             {
-                percent: "20-35%",
-                text: "higher adoption is reported by Calsoft clients within 6 weeks after a redesign.",
+                percent: "4-6",
+                text: "weeks per product iteration are saved on average",
                 className: "shape3",
                 bgshape: bgshape3,
             },
@@ -121,8 +121,8 @@ export const Why = () => {
 
 export const What = () => {
     const heading = "What We Do"
-    const subtitle = "Assess Smart. Plan Right. Modernize with Confidence."
-    const desc = "Calsoft’s 360° Maturity Assessment is diagnostic, data-driven, and actionable—covering not just tech, but processes, people, and dependencies. Our Offerings:"
+    const subtitle = "Prototypes That Aren’t Just Pretty—They Work"
+    const desc = "We don’t build throwaway wireframes. We engineer functional, interactive prototypes mapped to real workflows, use cases, and design logic. Our Capabilities:"
 
     const offeringsData = {
         buttonText: "Talk to Expert",
@@ -131,31 +131,31 @@ export const What = () => {
 
             {
                 icon: icon1,
-                title: "Task-Driven UI/UX Design",
+                title: "UX flow mapping & ideation",
             },
             {
                 icon: icon2,
-                title: "Responsive Dashboards for Multi-Device Use",
+                title: "Low-fidelity to high-fidelity clickable prototypes",
             },
             {
                 icon: icon3,
-                title: "AI-Augmented UX ( Chat/ Voice/ Recommendations )",
+                title: "Web, mobile & dashboard interface designs",
             },
             {
                 icon: icon4,
-                title: "Accessibility Compliant Interfaces (WCAG 2.1)",
+                title: "Data-linked UI elements (mock or live data feeds)",
             },
             {
                 icon: icon5,
-                title: "UX Performance Benchmarking",
+                title: "Scenario simulation & guided walkthroughs",
             },
             {
                 icon: icon6,
-                title: "Microinteractions & Behavior Triggers",
+                title: "Role-based interaction prototypes",
             },
             {
-                icon: icon1,
-                title: "Task-Driven UI/UX Design",
+                icon: icon7,
+                title: "Stakeholder review packs (with notes, feedback layers)",
             },
 
         ],
@@ -163,16 +163,16 @@ export const What = () => {
 
         highlights: [
             {
-                icon: icon7,
-                text: "Time-on-task reduced by 30% for CX-critical journeys",
+                icon: icon8,
+                text: "Time to working prototype: 7–10 business days",
             },
             {
                 icon: icon8,
-                text: "50% drop in support calls after redesign",
+                text: "Usability scoring included in every delivery",
             },
             {
                 icon: icon8,
-                text: "3x user satisfaction via simplified decision paths",
+                text: "Built on tools like Figma, Adobe XD, and interactive dev-ready UI kits",
             },
 
         ],
@@ -186,28 +186,29 @@ export const What = () => {
 }
 
 
-export const Uses = () => {
+
+export const Use = () => {
     const useCasesData = {
         image: useimg,
         heading: "Use Cases",
-        subheading: "Real Products. Real Interfaces. Real Impact.",
-        description: "We design interfaces for mission-critical platforms—where every click impacts revenue, trust, or retention.",
+        subheading: "Prototypes That Drive Business Decisions.",
+        description: "Our rapid prototypes have helped startups get funding, enterprises get buy-in, and engineering teams accelerate build cycles.",
         buttonText: "Download One Pager",
         link: "#",
         cards: [
             {
-                title: "B2B SaaS Admin Dashboard",
-                description: "KPI-focused UI with micro-permissions and predictive controls",
+                title: "MVP Flow Prototype for SaaS Platform",
+                description: "Helped CEO & product team align on feature cuts & value delivery",
 
             },
             {
-                title: "Healthcare Portal Interface",
-                description: "HIPAA-compliant patient experience with contextual alerts",
+                title: "Mobile UX Simulation for Field App",
+                description: "Enabled real-time usability testing with end users before launch",
 
             },
             {
-                title: "E-commerce Back-Office UI",
-                description: "Inventory + order workflows optimized for touch and mobility",
+                title: "CX Portal Redesign Walkthrough",
+                description: "Used as live demo during board presentation—secured modernization budget",
 
             }
         ]
@@ -218,18 +219,19 @@ export const Uses = () => {
 }
 
 
-export const Interface = () => {
+
+export const Smart = () => {
     const stats = [
-        { highlight: "35%", label: "reduction in process completion time" },
-        { highlight: "Up to 50%", label: "increase in self-serve actions\nless strain on support" },
-        { highlight: "4X", label: "faster onboarding via intuitive, guide-based UI" },
-        { highlight: "30–40%", label: "improvement in task accuracy" },
+        { highlight: "60-70%", label: "reduction in ambiguity during product scoping" },
+        { highlight: "$150K+", label: "saved per product by avoiding bad builds" },
+        { highlight: "2X", label: "faster go-to-market by de-risking early" },
+        { highlight: "4X faster", label: "Stakeholder consensus reached " },
     ];
     return (
         <>
             <InterfaceCard
-                title="Interfaces That Deliver More Than Screens."
-                description="Calsoft-designed interfaces don’t just look good—they deliver:"
+                title="Smarter Decisions. Shorter Timelines. Bigger Wins."
+                description="Rapid prototyping improves alignment, reduces risk, and accelerates product clarity. Here’s what teams gained:"
                 buttonText="Request a custom ROI Projection"
                 link="#"
                 stats={stats}
@@ -241,15 +243,13 @@ export const Interface = () => {
 }
 
 
-
 export const Start = () => {
     const startSectionData = {
         title: "How to Start",
         highlight: "Start",
-        heading: "Interface Sprint:",
-        subheading: "From Wireframe to Prototype in 10 Days.",
+        heading: "Prototype Sprint: Validate in Just 10 Days.",
         description:
-            "We begin with a focused sprint to audit UX gaps, define user flows, and prototype a smart interface tailored to your business goals.",
+            "Our 10-day sprint delivers a clickable, testable prototype based on real use cases and user journeys—ready for stakeholder and user review.",
         image: start,
         alt: "Maturity Sprint Image",
     };
@@ -261,67 +261,66 @@ export const Start = () => {
 }
 
 
-
 export const Step = () => {
     const buttonText = "Start Today"
     const link = "#"
     const steps = [
         {
             day: "Day 0",
-            title: "Kickoff ",
+            title: "Sprint Kickoff ",
             points: [
-                "Define goals, persona focus, primary journeys",
+                "Define target use case, users, success criteria",
             ],
-            output: " Design Sprint Charter",
+            output: "Sprint Brief + Stakeholder Map",
             arrowDesktop: line2,
             arrowMobile: mobile2,
 
         },
         {
             day: "Day 1-3",
-            title: "UX Audit & Flow Mapping",
+            title: "Flow Design & Sketching",
             points: [
-                "Review existing interface + drop-off analysis",
-                "Map tasks, pain points, and improvement areas",
+                "User journey mapping",
+                "Low-fidelity wireframes + journey variants",
             ],
-            output: " CX Opportunity Map + Task Flow Diagrams",
+            output: "UX Flow & Wireframes",
             arrowDesktop: line3,
             arrowMobile: mobile3,
 
         },
         {
             day: "Day 4-6",
-            title: "Wireframe & IA Design",
+            title: "Interactive UI Prototyping",
             points: [
-                "Create role/task-specific wireframes",
-                "Establish interaction models (click, hover, scroll, voice, etc.)",
+                "High-fidelity interface design",
+                "Clickable paths with feedback markers",
 
             ],
-            output: " Clickable Wireframes",
+            output: " Interactive Prototype",
             arrowDesktop: line2,
             arrowMobile: mobile2,
 
         },
         {
             day: "Day 7-9",
-            title: "Smart Prototyping",
+            title: "Testing & Iteration",
             points: [
-                "Add AI interactions, adaptive content blocks",
-                "Run usability tests + iterate"
+                "Walkthrough with stakeholders or users",
+                "Capture input, refine interactions"
             ],
-            output: "Smart Prototype",
+            output: " Final Prototype v2",
             arrowDesktop: line3,
             arrowMobile: mobile3,
 
         },
         {
             day: "Day 10",
-            title: "Demo + Planning",
+            title: "Delivery & Handoff",
             points: [
-                "Stakeholder walkthrough",
-                "Share asset library + scale roadmap",
+                "Deliver annotated prototype",
+                "Share usability score & roadmap",
             ],
-            output: "Final Prototype + Next Steps Deck",
+            output: "Figma/XD Link + Feedback Summary Deck",
             arrowDesktop: null,
             arrowMobile: null,
         },
@@ -336,4 +335,3 @@ export const Step = () => {
         </>
     )
 }
-
