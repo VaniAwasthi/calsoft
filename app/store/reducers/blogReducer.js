@@ -6,6 +6,9 @@ const initialState = {
   selectedId: null,
   isLoading: false,
   error: null,
+  filterAuthor: null,
+  filterTopic: null,
+  filterIndustry: null,
 };
 
 const blogsSlice = createSlice({
@@ -17,6 +20,11 @@ const blogsSlice = createSlice({
     },
     setBlogData: (state, action) => {
       state.data = action.payload.data;
+    },
+    setBlogFilterList: (state, action) => {
+      state.filterAuthor = action.payload.authors;
+      state.filterIndustry = action.payload.industries;
+      state.filterTopic = action.payload.topics;
     },
     setSelectedBlogId: (state, action) => {
       state.selectedId = action.payload;
@@ -33,6 +41,7 @@ const blogsSlice = createSlice({
 export const {
   setBlogList,
   setBlogData,
+  setBlogFilterList,
   setSelectedBlogId,
   setLoading,
   setError,
