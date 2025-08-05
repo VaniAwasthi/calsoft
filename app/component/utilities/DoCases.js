@@ -574,10 +574,10 @@ export const SprintTimeline = ({ steps, heading, buttonText, link, ButtonImage }
 
                             <div className="flex flex-col md:items-start items-center gap-4 z-10 relative">
                                 <div className="py-0 flex items-center">
-                                    <span className="bg-[#2E3092] text-white min-w-[100px] py-1 md:py-2 md:px-4 px-3 md:min-w-[160px] text-center font-semibold text-sm md:text-2xl flex items-center h-[60px] md:h-full rounded-tl-[10px]">
+                                    <span className="bg-[#2E3092] text-white min-w-[100px] py-1 md:py-2 md:px-4 px-3 md:min-w-[160px] text-center justify-center font-semibold text-sm md:text-2xl flex items-center h-[60px] md:h-full rounded-tl-[10px]">
                                         {step.day}
                                     </span>
-                                    <span className="bg-[#F2F0F5] text-black min-w-[180px] py-1 md:py-2 md:px-4 px-3 md:min-w-[400px] text-center font-semibold text-sm md:text-2xl flex items-center h-[60px] md:h-full rounded-tr-[10px]">
+                                    <span className="bg-[#F2F0F5] text-black min-w-[180px] py-1 md:py-2 md:px-4 px-3 md:min-w-[400px] text-center justify-center font-semibold text-sm md:text-2xl flex items-center h-[60px] md:h-full rounded-tr-[10px]">
                                         {step.title}
                                     </span>
                                 </div>
@@ -699,7 +699,7 @@ export const InterfaceCard = ({
                     <div className="flex md:flex-nowrap flex-wrap gap-6 items-center ">
                         <div className='md:w-4/12 md:border-r border-[#00000080]'>
                             <div className="space-y-6 md:w-[80%] md:ps-4 ps-4 pt-4 md:pt-0">
-                                <h2 className="text-lg md:text-[26px]  font-semibold mb-2 md:mb-4">{title}</h2>
+                                <h2 className="text-lg md:text-[26px] font-semibold mb-2 md:mb-4">{title}</h2>
                                 <p className="text-black  mb-6 md:text-base text-sm">{description}</p>
                                 {buttonText && (
                                     <div className='big_btn w-[250px] md:w-[300px] mt-10 shadow_btn'>

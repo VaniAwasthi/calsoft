@@ -8,7 +8,6 @@ const WhyItMatters = ({ title, description, highlight, buttonText, link, cards, 
             <div className="container mx-auto px-4 md:px-16">
                 <div className="flex flex-col lg:flex-row gap-10 items-center">
 
-                    {/* Left Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -41,7 +40,6 @@ const WhyItMatters = ({ title, description, highlight, buttonText, link, cards, 
                         )}
                     </motion.div>
 
-                    {/* Cards Section */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         whileInView={{ opacity: 1, x: 0 }}

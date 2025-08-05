@@ -8,9 +8,12 @@ import Image from "next/image";
 import BackgroundImage from "../../assets/DigitalEngineering/smart/banner.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp"
 import WhyItMatters from "../utilities/WhyItMatters";
-import bgshape1 from "../../assets/DigitalEngineering/maturity/shape1.svg"
-import bgshape2 from "../../assets/DigitalEngineering/maturity/shape2.svg"
-import bgshape3 from "../../assets/DigitalEngineering/maturity/shape3.svg"
+import bgshape1 from "../../assets/DigitalEngineering/CX/triangle1.svg"
+import bgshape2 from "../../assets/DigitalEngineering/CX/triangle2.svg"
+import bgshape3 from "../../assets/DigitalEngineering/CX/triangle3.svg"
+import bgshape from "../../assets/DigitalEngineering/CX/triangle.svg"
+
+
 import { Cases, Do, InterfaceCard, SprintTimeline, StartSection } from "../utilities/DoCases";
 import icon1 from "../../assets/DigitalEngineering/smart/icon1.svg"
 import icon2 from "../../assets/DigitalEngineering/smart/icon2.svg"
@@ -27,6 +30,7 @@ import line3 from "../../assets/DigitalEngineering/maturity/line3.svg"
 import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg"
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg"
 import imginter from "../../assets/DigitalEngineering/smart/imginter.webp"
+import { MatterTriangle } from "../utilities/Shape";
 
 
 export const Smart = () => {
@@ -96,6 +100,10 @@ export const Why = () => {
 
             },
             {
+                bgshape: bgshape,
+
+            },
+            {
                 percent: "20-35%",
                 text: "higher adoption is reported by Calsoft clients within 6 weeks after a redesign.",
                 className: "shape3",
@@ -105,7 +113,7 @@ export const Why = () => {
     };
     return (
         <>
-            <WhyItMatters {...whyItMattersData} ButtonImage={ButtonImage} />
+            <MatterTriangle {...whyItMattersData} ButtonImage={ButtonImage} />
         </>
     )
 }
