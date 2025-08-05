@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 
 const BannerLayout = ({
   image,
+  logo,
+  logoClass,
   title,
   title2,
   description,
@@ -21,15 +23,21 @@ const BannerLayout = ({
   return (
     <div className=" relative">
       {/* Background Image */}
-      <Image
-        src={image}
-        alt="Background Image"
-        className="w-full md:h-[600px] h-[280px] object-cover"
-      />
+      <div className="h-fit w-full relative">
+        <div className="absolute top-0 w-full h-full bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
+        <Image
+          src={image}
+          alt="Background Image"
+          className="w-full h-[37.5rem] object-cover"
+        />
+      </div>
 
       {/* Content Section - Centered */}
       <div className="absolute top-[10%] md:top-[0%] w-[60%] left-0 z-10 md:w-full container mx-auto px-4 md:px-20">
-        <div className="flex flex-col items-start justify-center xl:min-h-screen text-white">
+        <div className="flex flex-col items-start justify-center h-[calc(100vh-20rem)] md:min-h-screen text-white md:pl-20">
+          {logo && logo != null && logo != "" && (
+            <Image src={logo} width={260} height={260} className="w-48" />
+          )}
           <motion.h2
             initial={{ y: -30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -53,25 +61,27 @@ const BannerLayout = ({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             viewport={{ once: false, amount: 0.3 }}
-            className={`mt-2 text-sm md:text-lg leading-6 font-light  max-w-[90%] md:max-w-[400px] ${descriptionClass}`}
+            className={`mt-2 text-sm md:text-lg leading-6 font-light max-w-[90%] md:max-w-[400px] ${descriptionClass}`}
           >
             {description}
           </motion.p>
 
           {/* Button */}
-          <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            viewport={{ once: false, amount: 0.3 }}
-            className="mt-9"
-          >
-            <ButtonLayout
-              text={buttonText}
-              image={buttonImage}
-              hoverImage={hoverImage}
-            />
-          </motion.div>
+          {buttonText && (
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="mt-9"
+            >
+              <ButtonLayout
+                text={buttonText}
+                image={buttonImage}
+                hoverImage={hoverImage}
+              />
+            </motion.div>
+          )}
         </div>
       </div>
     </div>
