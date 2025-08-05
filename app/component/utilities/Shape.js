@@ -62,7 +62,7 @@ export const MatterTriangle = ({ title, description, highlight, buttonText, link
                                 <div className="relative w-[50%] flex justify-center">
                                     {cards[0] && (
                                         <motion.div
-                                            className="relative w-[200px] md:w-[240px] h-[220px]  text-white text-center"
+                                            className="relative w-[180px] md:w-[240px] h-[220px]  text-white text-center"
                                             style={{ backgroundImage: `url('${cards[0].bgshape.src}')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 1.05 }}
@@ -80,11 +80,11 @@ export const MatterTriangle = ({ title, description, highlight, buttonText, link
                                 </div>
 
 
-                                <div className="flex flex-nowrap items-center -mt-16 md:-mt-4">
+                                <div className="flex flex-nowrap items-center -mt-19 md:-mt-4">
                                     {/* Left Triangle */}
                                     {cards[1] && (
                                         <motion.div
-                                            className="relative -mr-10 md:-mr-20 w-[180px] md:w-[240px] h-[220px] text-white text-center"
+                                            className="relative -mr-12 md:-mr-20 w-[180px] md:w-[240px] h-[220px] text-white text-center"
                                             style={{ backgroundImage: `url('${cards[1].bgshape.src}')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 1.05 }}
@@ -122,7 +122,7 @@ export const MatterTriangle = ({ title, description, highlight, buttonText, link
                                     {/* Right Triangle */}
                                     {cards[3] && (
                                         <motion.div
-                                            className="relative -ml-10 md:-ml-20 w-[180px] md:w-[240px] h-[220px] text-white text-center"
+                                            className="relative -ml-12 md:-ml-20 w-[180px] md:w-[240px] h-[220px] text-white text-center"
                                             style={{ backgroundImage: `url('${cards[3].bgshape.src}')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 1.05 }}
@@ -203,7 +203,7 @@ export const MatterCircle = ({ title, description, highlight, buttonText, link, 
                                 <div className="relative w-[50%] flex justify-center">
                                     {cards[0] && (
                                         <motion.div
-                                            className="relative w-[200px] md:w-[220px] h-[220px]  text-white text-center"
+                                            className="relative w-[200px] -ml-4 md:ml-0 md:w-[220px] h-[220px]  text-white text-center"
                                             style={{ backgroundImage: `url('${cards[0].bgshape.src}')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 1.05 }}
@@ -226,7 +226,7 @@ export const MatterCircle = ({ title, description, highlight, buttonText, link, 
                                     {/* Center (Bottom) Triangle */}
                                     {cards[1] && (
                                         <motion.div
-                                            className="relative -mt-6 md:-mt-12 ml-6  w-[180px] md:w-[220px] h-[220px] text-white text-center"
+                                            className="relative -mt-7 md:-mt-12 ml-0  w-[180px] md:w-[220px] h-[220px] text-white text-center"
                                             style={{ backgroundImage: `url('${cards[1].bgshape.src}')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 1.05 }}
@@ -245,7 +245,7 @@ export const MatterCircle = ({ title, description, highlight, buttonText, link, 
                                     {/* Right Triangle */}
                                     {cards[2] && (
                                         <motion.div
-                                            className="relative -ml-2 -mt-5 md:-ml-5 md:-mt-14 w-[180px] md:w-[220px] h-[220px] text-white text-center"
+                                            className="relative -ml-2 -mt-4 md:-ml-5 md:-mt-14 w-[180px] md:w-[220px] h-[220px] text-white text-center"
                                             style={{ backgroundImage: `url('${cards[2].bgshape.src}')`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
                                             whileHover={{ scale: 1.05 }}
                                             whileTap={{ scale: 1.05 }}

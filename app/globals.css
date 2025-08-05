@@ -373,6 +373,10 @@ body {
   width: 100%;
 }
 
+.big_btn2 .rounded-full {
+  min-width: 240px;
+}
+
 .shadow_btn a {
   box-shadow: 0px 12px 16px 0px #00361340;
   min-width: 240px;
