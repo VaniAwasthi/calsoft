@@ -1,28 +1,21 @@
-"use client";
+import { ToKnowMoreSection } from "../component/caseStudies/HeroSecLanding";
+import knowMore from "../assets/know_more.png";
+import ButtonImage from "../assets/home/buttonImg.webp";
 
-import Image from "next/image";
-import AboutUsDes from "../assets/AboutUs.webp";
-import Mobile from "../assets/Mobileview.webp";
-
-const Page = () => {
+export default function Page() {
   return (
-    <div className="relative">
-      <Image
-        src={AboutUsDes}
-        alt="About Us"
-        width={1500}
-        height={1500}
-        className="w-full h-full hidden md:block"
+    <>
+      <ToKnowMoreSection
+        backgroundImage={knowMore}
+        title="To Know More"
+        description="About how we can align our expertise to your requirements, reach out to us."
+        buttonLabel="Contact Us"
+        buttonImage={ButtonImage}
+        hoverImage={ButtonImage}
+        // onButtonClick={() => {
+        //   console.log("submit");
+        // }}
       />
-      <Image
-        src={Mobile}
-        alt="About Us"
-        width={1500}
-        height={1500}
-        className="w-full h-full block md:hidden"
-      />
-    </div>
+    </>
   );
-};
-
-export default Page;
+}

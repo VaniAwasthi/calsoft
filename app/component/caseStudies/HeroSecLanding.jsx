@@ -277,6 +277,7 @@ export const ToKnowMoreSection = ({
 }) => {
   return (
     <div className="relative w-full h-[300px] sm:h-[400px] ">
+      <div className="w-full h-full bg-[linear-gradient(90deg,_rgba(0,0,0,1)_0%,_rgba(0,0,0,0.5)_50%,_rgba(0,0,0,0)_100%)] absolute z-10" />
       <Image
         src={backgroundImage}
         alt="Banner"
