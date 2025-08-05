@@ -252,6 +252,8 @@ body {
   padding-bottom: 2.4rem !important;
 }
 
+
+
 @media (max-width: 767px) {
   .gradient-border {
     border: none;
@@ -369,6 +371,10 @@ body {
 .big_btn a.group {
   min-width: 280px;
   width: 100%;
+}
+
+.big_btn2 .rounded-full {
+  min-width: 240px;
 }
 
 .shadow_btn a {
@@ -506,6 +512,7 @@ body {
   border-radius: 20px;
 } */
 
+
 @media (max-width:1400px) {
   .shape_group .single_shape {
     min-width: 52%;
@@ -527,6 +534,14 @@ body {
     min-width: 70%;
   }
 
+  .padd_sec .overflow-hidden.rounded-2xl {
+    height: 200px !important;
+  }
+
+  .banner_light1 .rounded-2xl.overflow-hidden {
+    height: 200px !important;
+
+  }
 
 }
 

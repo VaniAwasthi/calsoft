@@ -48,7 +48,7 @@ export const Do = ({ offerings, timeline, highlights, heading, subtitle, desc, B
                             spaceBetween={20}
                             slidesPerView={1}
                             breakpoints={{
-                                320: { slidesPerView: 3, spaceBetween: 10 },
+                                320: { slidesPerView: 2, spaceBetween: 10 },
                                 500: { slidesPerView: 2 },
                                 600: { slidesPerView: 3 },
                                 768: { slidesPerView: 4 },
@@ -74,7 +74,7 @@ export const Do = ({ offerings, timeline, highlights, heading, subtitle, desc, B
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         transition={{ duration: 0.2, delay: 0.1 }}
                                         viewport={{ once: false }}
-                                        className="bg-[#2E3092] rounded-xl text-white p-4 md:p-6 h-full flex flex-col md:items-center md:text-center min-h-52 md:min-h-64 hover:bg-[#1e207c] transition-all duration-300 transform hover_minus"
+                                        className="bg-[#2E3092] rounded-xl text-white py-10 md:py-8 p-2 md:p-6 h-full flex flex-col  items-center md:text-center min-h-52 md:min-h-64 hover:bg-[#1e207c] transition-all duration-300 transform hover_minus"
                                     >
                                         <div className="mb-4 bg-white h-12 w-12 md:h-18 md:w-18 rounded-full p-2 flex items-center justify-center">
                                             <Image
@@ -85,7 +85,7 @@ export const Do = ({ offerings, timeline, highlights, heading, subtitle, desc, B
                                                 className="md:h-12 md:w-12 h-8 w-8"
                                             />
                                         </div>
-                                        <p className="text-[13px] md:text-base">{item.title}</p>
+                                        <p className="text-[13px] md:text-base text-center">{item.title}</p>
                                     </motion.div>
                                 </SwiperSlide>
                             ))}
@@ -179,13 +179,13 @@ export const Do = ({ offerings, timeline, highlights, heading, subtitle, desc, B
                                             >
                                                 {highlights.map((highlight, idx) => (
                                                     <div key={idx} className="flex md:gap-6 gap-4 items-center">
-                                                        <div className="flex items-center justify-center">
+                                                        <div className="flex items-center justify-center min-w-8">
                                                             <Image
                                                                 src={highlight.icon}
                                                                 alt="icon"
                                                                 height={100}
                                                                 width={100}
-                                                                className="md:h-8 md:w-8 w-12 h-12"
+                                                                className="md:h-8 md:w-8 w-6 h-6"
                                                             />
                                                         </div>
                                                         <p
@@ -574,10 +574,10 @@ export const SprintTimeline = ({ steps, heading, buttonText, link, ButtonImage }
 
                             <div className="flex flex-col md:items-start items-center gap-4 z-10 relative">
                                 <div className="py-0 flex items-center">
-                                    <span className="bg-[#2E3092] text-white min-w-[100px] py-1 md:py-2 md:px-4 px-3 md:min-w-[160px] text-center font-semibold text-sm md:text-2xl flex items-center h-[60px] md:h-full rounded-tl-[10px]">
+                                    <span className="bg-[#2E3092] text-white min-w-[100px] py-1 md:py-2 md:px-4 px-3 md:min-w-[160px] text-center justify-center font-semibold text-sm md:text-2xl flex items-center h-[60px] md:h-full rounded-tl-[10px]">
                                         {step.day}
                                     </span>
-                                    <span className="bg-[#F2F0F5] text-black min-w-[180px] py-1 md:py-2 md:px-4 px-3 md:min-w-[400px] text-center font-semibold text-sm md:text-2xl flex items-center h-[60px] md:h-full rounded-tr-[10px]">
+                                    <span className="bg-[#F2F0F5] text-black min-w-[180px] py-1 md:py-2 md:px-4 px-3 md:min-w-[400px] text-center justify-center font-semibold text-sm md:text-2xl flex items-center h-[60px] md:h-full rounded-tr-[10px]">
                                         {step.title}
                                     </span>
                                 </div>
@@ -699,7 +699,7 @@ export const InterfaceCard = ({
                     <div className="flex md:flex-nowrap flex-wrap gap-6 items-center ">
                         <div className='md:w-4/12 md:border-r border-[#00000080]'>
                             <div className="space-y-6 md:w-[80%] md:ps-4 ps-4 pt-4 md:pt-0">
-                                <h2 className="text-lg md:text-[26px]  font-semibold mb-2 md:mb-4">{title}</h2>
+                                <h2 className="text-lg md:text-[26px] font-semibold mb-2 md:mb-4">{title}</h2>
                                 <p className="text-black  mb-6 md:text-base text-sm">{description}</p>
                                 {buttonText && (
                                     <div className='big_btn w-[250px] md:w-[300px] mt-10 shadow_btn'>
