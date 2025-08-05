@@ -14,7 +14,7 @@ function page() {
             <Why />
             <What />
             <Use />
-            <section className="banner_light1">
+            <section className="banner_light1 big_btn2">
                 <BannerSection
                     backgroundImage={BannerwithButtonBg}
                     title={

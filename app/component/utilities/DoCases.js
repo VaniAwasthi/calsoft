@@ -179,13 +179,13 @@ export const Do = ({ offerings, timeline, highlights, heading, subtitle, desc, B
                                             >
                                                 {highlights.map((highlight, idx) => (
                                                     <div key={idx} className="flex md:gap-6 gap-4 items-center">
-                                                        <div className="flex items-center justify-center">
+                                                        <div className="flex items-center justify-center min-w-8">
                                                             <Image
                                                                 src={highlight.icon}
                                                                 alt="icon"
                                                                 height={100}
                                                                 width={100}
-                                                                className="md:h-8 md:w-8 w-12 h-12"
+                                                                className="md:h-8 md:w-8 w-6 h-6"
                                                             />
                                                         </div>
                                                         <p
