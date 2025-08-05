@@ -14,9 +14,11 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchBlogFilterList,
   fetchBlogList,
+  fetchFilteredBlogs,
 } from "../../store/actions/blogAction.js";
 import { setSelectedBlogId } from "../../store/reducers/blogReducer.js";
 import blogexpanImage from "../../assets/blog/blog-2.webp";
+import FilterPanel from "../utilities/FilterPannel";
 
 export default function ResourceGrid() {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -34,30 +36,31 @@ export default function ResourceGrid() {
   const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
 
   const filters = {
-    Industry: ["All", ...FilterIndustry.map((i) => i.name)],
-    Topics: ["All", ...FilterTopic.map((t) => t.name)],
-    Author: ["All", ...FilterAuthr.map((a) => a.name)],
+    Industry: [...FilterIndustry],
+    Topics: [...FilterTopic],
+    Author: [...FilterAuthr],
   };
   const resources = BlogsList;
   const slugify = (text) => {
     return text
       .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-") // replace spaces & symbols
-      .replace(/^-+|-+$/g, ""); // trim hyphens
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
   };
   const [visibleCount, setVisibleCount] = useState(6);
+  const [topicLimitWarning, setTopicLimitWarning] = useState(false);
+
   const [activeFilters, setActiveFilters] = useState({
-    Industry: "All",
-    Topics: "All",
-    Author: "All",
+    Author: null,
+    Industry: null,
+    Topics: [], // Array of topic objects or IDs
   });
   const [openDropdown, setOpenDropdown] = useState("");
   const loadMoreRef = useRef(null);
   const router = useRouter();
   const handleBlogClick = (item) => {
-    const slug = item.slug ? item.slug : slugify(item.title); // fallback
+    const slug = item.slug ? item.slug : slugify(item.title);
     dispatch(setSelectedBlogId(item._id));
-    console.log(item._id, "id");
     router.push(`/insights/blogs/${slug}`);
   };
 
@@ -65,10 +68,41 @@ export default function ResourceGrid() {
     setOpenDropdown(openDropdown === filter ? "" : filter);
   };
 
-  const selectFilter = (type, value) => {
-    setActiveFilters({ ...activeFilters, [type]: value });
+  const selectFilter = (type, selected) => {
+    let updatedFilters = { ...activeFilters };
+
+    if (type === "Topics") {
+      const exists = updatedFilters.Topics.find((t) => t._id === selected._id);
+
+      if (exists) {
+        updatedFilters.Topics = updatedFilters.Topics.filter(
+          (t) => t._id !== selected._id
+        );
+        setTopicLimitWarning(false);
+      } else {
+        if (updatedFilters.Topics.length >= 3) {
+          setTopicLimitWarning(true);
+
+          // Auto-hide warning after 3 seconds
+          setTimeout(() => setTopicLimitWarning(false), 3000);
+          return;
+        }
+        updatedFilters.Topics = [...updatedFilters.Topics, selected];
+      }
+    } else {
+      updatedFilters[type] = selected;
+    }
+
+    setActiveFilters(updatedFilters);
     setOpenDropdown("");
-    setVisibleCount(6); // Reset visible count on filter change
+
+    dispatch(
+      fetchFilteredBlogs({
+        author: updatedFilters.Author?._id || null,
+        industry: updatedFilters.Industry?._id || null,
+        topics: updatedFilters.Topics.map((t) => t._id),
+      })
+    );
   };
 
   const handleShare = async (item) => {
@@ -87,28 +121,13 @@ export default function ResourceGrid() {
     }
   };
 
-  const filteredResources = useMemo(() => {
-    return resources.filter((item) => {
-      const authorMatch =
-        activeFilters.Author === "All" || item.author === activeFilters.Author;
-      const tagMatch =
-        activeFilters.Topics === "All" || item.tag === activeFilters.Topics;
-      const industryMatch =
-        activeFilters.Industry === "All" ||
-        item.industry === activeFilters.Industry;
-      return authorMatch && tagMatch && industryMatch;
-    });
-  }, [resources, activeFilters]);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setVisibleCount((prev) => {
             const next = prev + 6;
-            return next <= filteredResources.length
-              ? next
-              : filteredResources.length;
+            return next <= BlogsList.length ? next : BlogsList.length;
           });
         }
       },
@@ -124,89 +143,32 @@ export default function ResourceGrid() {
         observer.unobserve(loadMoreRef.current);
       }
     };
-  }, [filteredResources.length]);
+  }, [BlogsList.length]);
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto  px-4 sm:px-6 lg:px-8">
         {/* Filters */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6 relative z-10">
-          {Object.keys(filters).map((filterType) => (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              transition={{ duration: 0.3 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: false, amount: 0.2 }}
-              key={filterType}
-              className="relative"
-            >
-              <button
-                onClick={() => toggleDropdown(filterType)}
-                className="w-full h-12 bg-[#2b2eae] text-white px-4 py-2 rounded flex items-center justify-between"
-              >
-                <span>
-                  {filterType} ({activeFilters[filterType]})
-                </span>
-                <IoIosArrowDown
-                  className={`transition-transform duration-300 ${
-                    openDropdown === filterType ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              <AnimatePresence>
-                {openDropdown === filterType && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="absolute mt-1 w-full bg-white border shadow-lg rounded z-50 max-h-60 overflow-y-auto"
-                  >
-                    {filters[filterType].map((option) => (
-                      <div
-                        key={option}
-                        onClick={() => selectFilter(filterType, option)}
-                        className="px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer"
-                      >
-                        {option}
-                      </div>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-
-          {/* Search & Reset */}
-          <div className="flex gap-2">
-            <button className="w-14 h-14 p-2 rounded-lg bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex flex-col justify-center items-center">
-              <Image src={SearchIcon} alt="search" width={20} height={20} />
-              <span className="text-[10px] text-[#2E3092] ">Search</span>
-            </button>
-            <button
-              className="w-14 h-14 p-2 rounded-lg bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex flex-col justify-center items-center"
-              onClick={() =>
-                setActiveFilters({
-                  Industry: "All",
-                  Topics: "All",
-                  Author: "All",
-                })
-              }
-            >
-              <Image src={FilterIcon} alt="reset" width={25} height={25} />
-              <span className="text-[10px] text-[#2E3092] ">Clear</span>
-            </button>
+        <FilterPanel
+          filters={filters}
+          activeFilters={activeFilters}
+          openDropdown={openDropdown}
+          toggleDropdown={toggleDropdown}
+          selectFilter={selectFilter}
+          setActiveFilters={setActiveFilters}
+        />
+        {topicLimitWarning && (
+          <div className="text-red-600 text-sm mb-4">
+            You can only select up to 3 topics.
           </div>
-        </div>
-
+        )}
         {/* Results Count */}
-        <p className="mb-4 text-sm">{filteredResources.length} Results</p>
+        <p className="mb-4 text-sm">{BlogsList.length} Results</p>
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredResources.slice(0, visibleCount).map((item, idx) => (
+          {BlogsList.slice(0, visibleCount).map((item, idx) => (
             <motion.div
-              key={item._id}
+              key={idx}
               initial={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -256,17 +218,18 @@ export default function ResourceGrid() {
                 </h3>
 
                 <div className="flex flex-wrap gap-1 my-2">
-                  {item?.tagData.map((tag, index) => (
-                    <span
-                      key={tag._id}
-                      className="text-[#2E3092] font-semibold text-[12px]  rounded flex items-center"
-                    >
-                      {tag.name}
-                      {index !== item.tagData.length - 1 && (
-                        <span className="mx-1 text-[#2E3092]">|</span>
-                      )}
-                    </span>
-                  ))}
+                  {Array.isArray(item?.tagData) &&
+                    item.tagData.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="text-[#2E3092] font-semibold text-[12px]  rounded flex items-center"
+                      >
+                        {tag.name}
+                        {index !== item.tagData.length - 1 && (
+                          <span className="mx-1 text-[#2E3092]">|</span>
+                        )}
+                      </span>
+                    ))}
                 </div>
 
                 <div className="flex justify-between text-[14px] font-semibold">
@@ -284,7 +247,7 @@ export default function ResourceGrid() {
 
               <div className="relative w-full  overflow-hidden rounded-b-lg h-[50%]">
                 <Image
-                  src={item.image ? `${baseUrl}/${item.image}` : blogexpanImage} // fallback optional
+                  src={item.image ? `${baseUrl}/${item.image}` : blogexpanImage}
                   alt={item.title}
                   fill
                   className="object-cover"
@@ -298,19 +261,17 @@ export default function ResourceGrid() {
         </div>
 
         {/* Load More */}
-        {filteredResources.length > 6 && (
+        {BlogsList.length > 6 && (
           <div className="flex justify-center mt-10">
             <button
               onClick={() =>
                 setVisibleCount((prev) =>
-                  prev >= filteredResources.length
-                    ? 6
-                    : filteredResources.length
+                  prev >= BlogsList.length ? 6 : BlogsList.length
                 )
               }
               className="flex flex-col items-center gap-2 text-[#2b2eae] text-sm hover:underline"
             >
-              {visibleCount >= filteredResources.length ? null : (
+              {visibleCount >= BlogsList.length ? null : (
                 <motion.div
                   ref={loadMoreRef}
                   whileHover={{ scale: 1.2, rotate: 10 }}
