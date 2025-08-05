@@ -4,12 +4,12 @@ import BannerWithRightSec from '../utilities/BannerWithRightsec';
 import Submenu from '../utilities/Submenu';
 import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
-import BackgroundImage from "../../assets/DigitalEngineering/smart/banner.webp";
+import BackgroundImage from "../../assets/DigitalEngineering/CX/banner2.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp"
 import WhyItMatters from "../utilities/WhyItMatters";
-import bgshape1 from "../../assets/DigitalEngineering/CX/triangle1.svg"
-import bgshape2 from "../../assets/DigitalEngineering/CX/triangle2.svg"
-import bgshape3 from "../../assets/DigitalEngineering/CX/triangle3.svg"
+import bgshape1 from "../../assets/DigitalEngineering/CX/circle1.svg"
+import bgshape2 from "../../assets/DigitalEngineering/CX/circle2.svg"
+import bgshape3 from "../../assets/DigitalEngineering/CX/circle3.svg"
 import bgshape from "../../assets/DigitalEngineering/CX/triangle.svg"
 
 
@@ -29,7 +29,7 @@ import line3 from "../../assets/DigitalEngineering/maturity/line3.svg"
 import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg"
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg"
 import imginter from "../../assets/DigitalEngineering/smart/imginter.webp"
-import { MatterTriangle } from "../utilities/Shape";
+import { MatterCircle, MatterTriangle } from "../utilities/Shape";
 
 export const Rapid = () => {
     const [activeTab, setActiveTab] = useState("benefits");
@@ -99,10 +99,7 @@ export const Why = () => {
                 bgshape: bgshape2,
 
             },
-            {
-                bgshape: bgshape,
 
-            },
             {
                 percent: "4-6",
                 text: "weeks per product iteration are saved on average",
@@ -113,7 +110,7 @@ export const Why = () => {
     };
     return (
         <>
-            <MatterTriangle {...whyItMattersData} ButtonImage={ButtonImage} />
+            <MatterCircle {...whyItMattersData} ButtonImage={ButtonImage} />
         </>
     )
 }
