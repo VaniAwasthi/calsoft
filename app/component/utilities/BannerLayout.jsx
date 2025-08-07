@@ -1,7 +1,9 @@
 "use client";
+
 import Image from "next/image";
 import ButtonLayout from "./ButtonLayout";
 import { motion } from "framer-motion";
+import { IoPlayOutline } from "react-icons/io5";
 
 const BannerLayout = ({
   image,
@@ -10,6 +12,7 @@ const BannerLayout = ({
   title,
   title2,
   description,
+  knowMoreAboutUs,
   buttonText,
   buttonImage,
   hoverImage,
@@ -36,13 +39,17 @@ const BannerLayout = ({
       <div className="absolute top-[10%] md:top-[0%] w-[60%] left-0 z-10 md:w-full container mx-auto px-4 md:px-20">
         <div className="flex flex-col items-start justify-center h-[calc(100vh-20rem)] md:min-h-screen text-white md:pl-20">
           {logo && logo != null && logo != "" && (
-            <Image
-              src={logo}
-              width={260}
-              height={260}
-              className="w-48"
-              alt="image"
-            />
+
+            <motion.image
+              initial={{ y: -30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.2, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className={``}
+            >
+              <Image src={logo} width={260} height={260} className="w-48" />
+            </motion.image>
+
           )}
           <motion.h2
             initial={{ y: -30, opacity: 0 }}
@@ -86,6 +93,23 @@ const BannerLayout = ({
                 image={buttonImage}
                 hoverImage={hoverImage}
               />
+            </motion.div>
+          )}
+
+          {knowMoreAboutUs && (
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="mt-9 flex gap-3 items-center"
+            >
+              <div className="flex justify-center items-center border border-red-600 rounded-full p-[0.18rem]">
+                <div className="flex justify-center items-center border border-red-600 rounded-full p-1">
+                  <IoPlayOutline size={"1.2rem"} className="text-red-600" />
+                </div>
+              </div>
+              <span className="text-xl">Know More About Us</span>
             </motion.div>
           )}
         </div>

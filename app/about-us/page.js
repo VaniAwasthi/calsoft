@@ -1,21 +1,23 @@
-import { ToKnowMoreSection } from "../component/caseStudies/HeroSecLanding";
-import knowMore from "../assets/know_more.png";
-import ButtonImage from "../assets/home/buttonImg.webp";
+import HeroSection from "../component/about-us/HeroSection";
+import WhoWeAre from "../component/about-us/WhoWeAre";
+import WeWork from "../component/about-us/WeWork";
+import Benefits from "../component/about-us/Benefits";
+import Vision from "../component/about-us/Vision";
+import Values from "../component/about-us/Values";
+import BuildSomething from "../component/about-us/BuildSomething";
+import ThoughTheYear from "../component/about-us/ThoughTheYear";
 
 export default function Page() {
   return (
     <>
-      <ToKnowMoreSection
-        backgroundImage={knowMore}
-        title="To Know More"
-        description="About how we can align our expertise to your requirements, reach out to us."
-        buttonLabel="Contact Us"
-        buttonImage={ButtonImage}
-        hoverImage={ButtonImage}
-        // onButtonClick={() => {
-        //   console.log("submit");
-        // }}
-      />
+      <HeroSection />
+      <WhoWeAre />
+      <WeWork />
+      <Benefits />
+      <Vision />
+      <Values />
+      <ThoughTheYear />
+      <BuildSomething />
     </>
   );
 }
