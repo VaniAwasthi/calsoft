@@ -121,7 +121,7 @@ export const navItems = [
   },
   {
     title: "DIGITAL PRODUCT ENGINEERING",
-    // href: "/digital-product-engineering",
+    href: "/digital-product-engineering",
     href: "",
     submenu: [
       {
