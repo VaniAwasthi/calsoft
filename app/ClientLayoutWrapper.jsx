@@ -1,5 +1,4 @@
-// app/ClientLayoutWrapper.jsx
-"use client"; // THIS IS REQUIRED
+"use client";
 
 import GlobalLoader from "./component/GlobalLoader";
 import Navbar from "./component/utilities/topnav";
