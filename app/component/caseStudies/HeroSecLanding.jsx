@@ -50,7 +50,7 @@ export const HeroSectionLanding = ({
                 alt="Card 1"
                 width={200}
                 height={200}
-                className="w-20 mb-0 md:mt-8 md:h-[400px] md:w-[200px] -translate-y-10 rounded-lg"
+                className="w-20 mb-0 md:mt-8 md:h-[350px] md:w-[200px] -translate-y-10 rounded-lg"
               />
               <Image
                 src={image1}

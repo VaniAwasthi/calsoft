@@ -479,6 +479,10 @@ export const navItems = [
   {
     title: "ABOUT",
     href: "/about-us",
-    submenu: [{ title: "Career", href: "#" }],
+    submenu: [
+      { title: "Career", href: "#" },
+      { title: "Leadership", href: "/leadership" },
+      { title: "CSR", href: "/csr" },
+    ],
   },
 ];
