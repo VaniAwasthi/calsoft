@@ -1,13 +1,13 @@
 import React from "react";
 import Card from "./Card";
-import anupam from "../../assets/leadership/Anupam.png";
-import sharmila from "../../assets/leadership/Sharmila.png";
-import parag from "../../assets/leadership/Parag.png";
-import anshul from "../../assets/leadership/Anshul.png";
-import uday from "../../assets/leadership/Uday.png";
-import pradipta from "../../assets/leadership/Pradipta.png";
-import somenath from "../../assets/leadership/Somenath.png";
-import vipin from "../../assets/leadership/Vipin.png";
+import anupam from "../../assets/leadership/Anupam.webp";
+import sharmila from "../../assets/leadership/Sharmila.webp";
+import parag from "../../assets/leadership/Parag.webp";
+import anshul from "../../assets/leadership/Anshul.webp";
+import uday from "../../assets/leadership/Uday.webp";
+import pradipta from "../../assets/leadership/Pradipta.webp";
+import somenath from "../../assets/leadership/Somenath.webp";
+import vipin from "../../assets/leadership/Vipin.webp";
 
 export default function LeadershipTeam() {
   const data = [

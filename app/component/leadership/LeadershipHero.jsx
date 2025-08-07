@@ -1,5 +1,5 @@
 import React from "react";
-import heroImage from "../../assets/leadership/hero_image.png";
+import heroImage from "../../assets/leadership/hero_image.webp";
 import BannerLayout from "../utilities/BannerLayout";
 
 export default function LeadershipHero() {
