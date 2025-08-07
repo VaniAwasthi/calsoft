@@ -318,6 +318,45 @@ body {
   width: 400px !important;
 }
 
+.white_after::after,
+.white_after::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 20px;
+  height: 3px;
+  width: 75%;
+  z-index: 10;
+  background: #fff;
+  transform: rotate(34deg);
+}
+
+.white_after::before {
+  bottom: 22px;
+  top: auto;
+  transform: rotate(324deg);
+}
+
+.after_mobile::before {
+  bottom: 16px;
+  top: auto;
+  left: 17px;
+  transform: rotate(307deg);
+  width: 80%;
+}
+
+.after_mobile::after {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 14px;
+  height: 3px;
+  width: 81%;
+  z-index: 10;
+  background: #fff;
+  transform: rotate(53deg);
+}
+
 /* Hide scrollbar on small screens */
 @media (max-width: 767px) {
   .custom-blog-swiper .swiper-scrollbar {
