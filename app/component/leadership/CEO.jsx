@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import anupam from "../../assets/leadership/Anupam.png";
+import anupam from "../../assets/leadership/Anupam.webp";
 
 export default function CEO() {
   return (
