@@ -74,13 +74,13 @@ export const CSRFocusSection = () => {
             loop
             breakpoints={{
               320: { slidesPerView: 1 }, // mobile
-              768: { slidesPerView: 2 }, // tablet
-              1024: { slidesPerView: 3 }, // desktop if needed
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 }, // desktop
             }}
           >
             {data.map((item, index) => (
               <SwiperSlide key={index} className="!overflow-visible">
-                <motion.div className="w-[320px] relative flex items-center bg-gray-100 rounded-lg shadow border border-gray-200 px-6 py-6 mx-auto">
+                <motion.div className="w-[270px] sm:w-[360px] relative flex items-center bg-gray-100 rounded-lg shadow border border-gray-200 px-6 py-6 mx-auto">
                   {/* Icon */}
                   <div className="absolute -left-8 w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center shadow-lg">
                     <img
@@ -91,7 +91,7 @@ export const CSRFocusSection = () => {
                   </div>
 
                   {/* Text */}
-                  <div className="ml-12">
+                  <div className="ml-10">
                     <h3 className="text-lg font-bold text-blue-800 mb-2">
                       {item.title}
                     </h3>
@@ -150,10 +150,10 @@ export const ScholarshipSection = ({
 }) => {
   return (
     <section
-      className={`w-full py-12 my-10`}
+      className={`w-full py-12 my-10 `}
       style={{ backgroundColor: bgColor }}
     >
-      <div className="container mx-auto px-4 md:px-16">
+      <div className="container mx-auto px-10 md:px-16">
         <div
           className={`flex flex-col lg:flex-row items-stretch justify-between gap-10 ${
             isRight ? "" : "lg:flex-row-reverse"

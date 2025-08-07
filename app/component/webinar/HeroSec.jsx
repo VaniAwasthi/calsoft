@@ -194,7 +194,7 @@ export const CommitmentSection = ({
               centeredSlides: true,
             },
             401: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               centeredSlides: false,
             },
             768: {
