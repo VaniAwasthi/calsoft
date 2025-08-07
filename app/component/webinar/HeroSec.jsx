@@ -101,7 +101,12 @@ export const HeroSecWebinar = ({
 };
 //CommitmentSection
 
-export const CommitmentSection = ({ cards, description, heading }) => {
+export const CommitmentSection = ({
+  cards,
+  description,
+  heading,
+  gridStyle = "grid-cols-4",
+}) => {
   return (
     <section className="mx-auto manrope container py-10  px-4 md:px-12">
       <motion.div
@@ -136,7 +141,7 @@ export const CommitmentSection = ({ cards, description, heading }) => {
       </motion.div>
 
       {/* Desktop Grid */}
-      <div className="hidden lg:grid grid-cols-4 gap-10 mb-[3rem]">
+      <div className={`hidden lg:grid ${gridStyle} gap-10 mb-[3rem]`}>
         {cards.map((card, index) => (
           <motion.div
             initial={{ x: -50, opacity: 0 }}
