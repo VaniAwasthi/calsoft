@@ -270,3 +270,109 @@ export const MatterCircle = ({ title, description, highlight, buttonText, link, 
         </>
     )
 }
+
+
+
+
+export const StepsSection = ({ heading, steps }) => {
+    return (
+        <section className="md:pb-12 pb-0 md:pt-12 pt-6   bg-white">
+            <div className='container mx-auto px-4 md:px-16'>
+                <h2 className="text-xl md:text-[38px] font-semibold mb-6 md:mb-10 text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_60%)] ">
+                    {heading.split(" ").map((word, idx) =>
+                        word === "all" || word === "stages" ? (
+                            <span
+                                key={idx}
+                                className={`${word === "all"
+                                    ? "text-gradient-purple"
+                                    : "text-gradient-red"
+                                    }`}
+                            >
+                                {word + " "}
+                            </span>
+                        ) : (
+                            word + " "
+                        )
+                    )}
+                </h2>
+
+                <div className="flex flex-col md:flex-row items-center md:items-stretch justify-center gap-0 relative max-w-7xl mx-auto">
+
+                    {steps.map((step, index) => (
+                        <div
+
+                            key={index}
+                            className={`relative bg-[#2E3092] text-white px-6 py-8 flex-1 text-center border-1 md:border-2 border-r border-white ${index % 2 !== 0 ? "bg-[#021553]" : "bg-[#2E3092]"
+                                }`}
+                        >
+
+                            {index !== steps.length - 1 && (
+                                <div
+                                    className={`hidden md:block absolute top-[30%] white_after -right-8 transform z-10 -translate-y-1/2 w-12 h-16 ${index % 2 !== 0 ? "bg-[#021553]" : "bg-[#2E3092]"}`}
+                                    style={{
+                                        clipPath: "polygon(0 0, 100% 50%, 0 100%)",
+                                    }}
+                                >
+                                </div>
+                            )}
+
+                            {/* Downward arrow for mobile */}
+                            {index !== steps.length - 1 && (
+                                <div
+                                    className={`block md:hidden absolute left-2/4 white_after after_mobile -bottom-8 transform z-10  -translate-x-1/2 w-12 h-8 ${index % 2 !== 0 ? "bg-[#021553]" : "bg-[#2E3092]"}`}
+                                    style={{
+                                        clipPath: "polygon(100% 0, 0 0, 50% 100%)",
+                                    }}
+                                >
+                                </div>
+                            )}
+                            <div className='w-[80%] m-auto py-6 md:py-8'>
+                                <h3 className="text-lg md:text-xl mb-4 md:mb-6 md:w-[80%] mx-auto">{step.title}</h3>
+                                <p className="text-[15px] font-light">{step.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+    );
+};
+
+
+export const Imagethree = ({ heading, data }) => {
+    return (
+        <section className="  md:pt-16 pt-8   bg-white">
+            <div className='container mx-auto px-4 md:px-16'>
+                <h2 className="text-xl md:text-[38px] font-semibold mb-6 md:mb-10 text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] ">
+                    {heading}
+                </h2>
+                <div className='grid md:grid-cols-3 grid-cols-1 gap-6 md:gap-10'>
+
+                    {data.map((item, index) => (
+                        <div
+                            key={index}
+                            className="border border-[#2E3092] rounded overflow-hidden"
+                        >
+                            <Image
+                                src={item.image}
+                                alt={item.title}
+                                width={500}
+                                height={300}
+                                className="rounded w-full h-auto"
+                            />
+                            <div className="py-4 px-6 !pb-10  md:py-6 md:px-10 text-center">
+                                <h2 className="text-black text-lg md:text-[20px] font-semibold">
+                                    {item.title}
+                                </h2>
+                                <p className="text-sm md:text-base text-black mt-2">
+                                    {item.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
