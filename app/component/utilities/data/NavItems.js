@@ -1,8 +1,8 @@
 export const navItems = [
   {
     title: "DATA & AI",
-    // href: "/data-ai",
-    href: "",
+    href: "/data-ai",
+
     submenu: [
       {
         title: "Technical consulting",
