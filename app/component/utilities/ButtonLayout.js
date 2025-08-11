@@ -1,6 +1,8 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
+
 export default function ButtonLayout({
   text,
   onClick,
@@ -20,7 +22,7 @@ export default function ButtonLayout({
     <Link
       href={link}
       onClick={onClick}
-      className={`relative group w-[170px] h-[40px] md:w-[220px] md:h-[48px] rounded-full flex items-center justify-center gap-2 transition-all duration-500 ease-out overflow-hidden transform hover:scale-105 ${className}`}
+      className={`relative group h-[40px] md:h-[48px] rounded-full flex items-center justify-center gap-4 transition-all duration-500 ease-out overflow-hidden transform hover:scale-105 px-4 ${className}`}
       style={{
         backgroundColor: bgColor,
         color: textColor,

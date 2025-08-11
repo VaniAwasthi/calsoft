@@ -22,6 +22,7 @@ const BannerLayout = ({
   titleOneClass,
   titleTwoClass,
   descriptionClass,
+  buttonClass = "",
 }) => {
   return (
     <div className=" relative">
@@ -90,6 +91,7 @@ const BannerLayout = ({
                 text={buttonText}
                 image={buttonImage}
                 hoverImage={hoverImage}
+                className={buttonClass}
               />
             </motion.div>
           )}
