@@ -6,6 +6,7 @@ import UseCases from "../component/infra/UseCases";
 import FirstStep from "../component/infra/FirstStep";
 import WhyCalsoft from "../component/infra/WhyCalsoft";
 import Agility from "../component/infra/Agility";
+import Connect from "../component/infra/Connect";
 
 export default function page() {
   return (
@@ -17,6 +18,7 @@ export default function page() {
       <UseCases />
       <WhyCalsoft />
       <FirstStep />
+      <Connect />
     </>
   );
 }

@@ -167,7 +167,8 @@ const CIRCLE_SPACING = 200; // Fixed spacing between circles in pixels
 
 export default function Component() {
   return (
-    <div className="bg-[#ffffff] min-h-screen py-20">
+    <div className="bg-[#ffffff] min-h-screen">
+      <div className="h-16"></div>
       <div className="max-w-6xl mx-auto px-8 relative">
         {/* Container with fixed height to accommodate all steps */}
         <div

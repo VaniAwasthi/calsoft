@@ -14,40 +14,42 @@ export default function Component() {
   ];
 
   return (
-    <div className="bg-[#ffffff] py-16 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex gap-12 items-stretch">
-          {/* Left Content */}
-          <div className="space-y-2 w-[100%]">
-            {/* Header */}
-            <div className=" mb-5">
-              <h2 className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-5">
-                Use Cases
-              </h2>
-              <div className="space-y-1">
-                <h3 className="text-3xl font-bold text-[#000000]">
-                  Where It Works Best.
-                </h3>
-                <p className="text-lg text-[#000000] leading-relaxed">
-                  Our Infrastructure Roadmap services have unlocked outcomes
-                  for:
-                </p>
+    <div className="bg-[#ffffff] px-6">
+      <div className="container">
+        <div className="h-8" />
+        <div className="max-w-7xl mx-auto">
+          <div className="flex gap-12 items-stretch">
+            {/* Left Content */}
+            <div className="space-y-2 w-[100%]">
+              {/* Header */}
+              <div className=" mb-5">
+                <h2 className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-5">
+                  Use Cases
+                </h2>
+                <div className="space-y-1">
+                  <h3 className="text-3xl font-bold text-[#000000]">
+                    Where It Works Best.
+                  </h3>
+                  <p className="text-lg text-[#000000] leading-relaxed">
+                    Our Infrastructure Roadmap services have unlocked outcomes
+                    for:
+                  </p>
+                </div>
               </div>
-            </div>
 
-            {/* Use Cases Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* First row - 3 cards */}
-              <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {useCases.slice(0, 3).map((useCase, index) => (
-                  <div
-                    key={index}
-                    className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092]"
-                  >
-                    <div className="bg-[#ffffff] rounded-[calc(0.5rem-2px)] p-6 h-full space-y-4">
-                      <div className="w-8 h-8 bg-[#2e3092] rounded-full flex items-center justify-center">
-                        <Check className="w-5 h-5 text-[#ffffff]" />
-                        {/* <svg
+              {/* Use Cases Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* First row - 3 cards */}
+                <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {useCases.slice(0, 3).map((useCase, index) => (
+                    <div
+                      key={index}
+                      className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092]"
+                    >
+                      <div className="bg-[#ffffff] rounded-[calc(0.5rem-2px)] p-6 h-full space-y-4">
+                        <div className="w-8 h-8 bg-[#2e3092] rounded-full flex items-center justify-center">
+                          <Check className="w-5 h-5 text-[#ffffff]" />
+                          {/* <svg
                           width="36"
                           height="36"
                           viewBox="0 0 36 36"
@@ -59,26 +61,26 @@ export default function Component() {
                             fill="#2E3092"
                           />
                         </svg> */}
+                        </div>
+                        <p className="text-[#000000] font-medium leading-tight">
+                          {useCase}
+                        </p>
                       </div>
-                      <p className="text-[#000000] font-medium leading-tight">
-                        {useCase}
-                      </p>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
 
-              {/* Second row - 2 cards */}
-              <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
-                {useCases.slice(3, 5).map((useCase, index) => (
-                  <div
-                    key={index + 3}
-                    className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092]"
-                  >
-                    <div className="bg-[#ffffff] rounded-[calc(0.5rem-2px)] p-6 h-full space-y-4">
-                      <div className="w-8 h-8 bg-[#2e3092] rounded-full flex items-center justify-center">
-                        <Check className="w-5 h-5 text-[#ffffff]" />
-                        {/* <svg
+                {/* Second row - 2 cards */}
+                <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
+                  {useCases.slice(3, 5).map((useCase, index) => (
+                    <div
+                      key={index + 3}
+                      className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092]"
+                    >
+                      <div className="bg-[#ffffff] rounded-[calc(0.5rem-2px)] p-6 h-full space-y-4">
+                        <div className="w-8 h-8 bg-[#2e3092] rounded-full flex items-center justify-center">
+                          <Check className="w-5 h-5 text-[#ffffff]" />
+                          {/* <svg
                           width="36"
                           height="36"
                           viewBox="0 0 36 36"
@@ -90,38 +92,40 @@ export default function Component() {
                             fill="#2E3092"
                           />
                         </svg> */}
+                        </div>
+                        <p className="text-[#000000] font-medium leading-tight">
+                          {useCase}
+                        </p>
                       </div>
-                      <p className="text-[#000000] font-medium leading-tight">
-                        {useCase}
-                      </p>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <ButtonLayout
+                  text={"Talk to Infra Strategist"}
+                  image={buttonImage}
+                  hoverImage={buttonImage}
+                  className={"w-fit"}
+                />
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="pt-4">
-              <ButtonLayout
-                text={"Talk to Infra Strategist"}
-                image={buttonImage}
-                hoverImage={buttonImage}
-                className={"w-fit"}
+            {/* Right Image */}
+            <div className="w-[50%] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src={UseCases}
+                alt="Team collaborating around a laptop in a modern office setting"
+                // width={600}
+                // height={600}
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
-
-          {/* Right Image */}
-          <div className="w-[50%] rounded-2xl overflow-hidden shadow-2xl">
-            <Image
-              src={UseCases}
-              alt="Team collaborating around a laptop in a modern office setting"
-              // width={600}
-              // height={600}
-              className="w-full h-full object-cover"
-            />
-          </div>
         </div>
+        <div className="h-8" />
       </div>
     </div>
   );

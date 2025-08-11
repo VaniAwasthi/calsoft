@@ -5,7 +5,8 @@ import buttonImage from "../../../assets/home/buttonImg.webp";
 export default function WhyItMatters() {
   return (
     <>
-      <div className="p-8 lg:p-12 py-8 pb-0">
+      <div className="m-8 lg:m-12 my-8 mb-0 container">
+        <div className="h-8 lg:h-12" />
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left Content */}
@@ -192,6 +193,7 @@ export default function WhyItMatters() {
             </div>
           </div>
         </div>
+        <div className="h-8 lg:h-12" />
       </div>
     </>
   );

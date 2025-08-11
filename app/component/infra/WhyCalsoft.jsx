@@ -4,7 +4,8 @@ import buttonImage from "../../assets/home/buttonImg.webp";
 
 export default function WhyCalsoft() {
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="max-w-7xl mx-auto px-6 container">
+      <div className="h-8" />
       {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-[#2e3092] text-4xl font-bold mb-8">Why Calsoft</h1>
@@ -221,6 +222,7 @@ export default function WhyCalsoft() {
           </div>
         </div>
       </div>
+      <div className="h-10" />
     </div>
   );
 }

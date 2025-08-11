@@ -5,8 +5,9 @@ import Guesswork from "./GuessWork";
 
 export default function FirstStep() {
   return (
-    <>
-      <div className="container grid grid-cols-2 gap-5">
+    <div className="container">
+      <div className="h-8" />
+      <div className="grid grid-cols-2 gap-5">
         {/* <div className=""> */}
         <div className="space-y-8 flex-1">
           <div className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-8 leading-[2.5rem] flex flex-col">
@@ -25,6 +26,6 @@ export default function FirstStep() {
         />
       </div>
       <Guesswork />
-    </>
+    </div>
   );
 }

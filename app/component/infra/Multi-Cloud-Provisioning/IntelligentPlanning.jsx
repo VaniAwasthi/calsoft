@@ -169,121 +169,126 @@ export default function IntelligentPlanning() {
   }, []);
 
   return (
-    <div className="bg-[#f2f0f5] min-h-screen py-16 pt-0 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="flex justify-between items-end mb-10">
-          <div>
-            <p className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-8 leading-20">
-              Intelligent Planning
-            </p>
-            <h2 className="text-black text-4xl font-bold mb-6">
-              Build What's Right — Not What's Trendy
-            </h2>
-            <p className="text-black text-xl leading-relaxed max-w-4xl">
-              Cloud modernization isn't about a one-size-fits-all blueprint.
-              It's about aligning infra to your business needs. Calsoft brings:
-            </p>
-          </div>
-          <div className="flex justify-center items-center gap-5">
-            <button
-              onClick={scrollLeft}
-              disabled={!canScrollLeft}
-              className={`transition-opacity duration-200 ${
-                !canScrollLeft
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:opacity-80"
-              }`}
-            >
-              <svg
-                width="55"
-                height="55"
-                viewBox="0 0 55 55"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+    <div className="bg-[#f2f0f5]">
+      <div className="container min-h-screen pt-0 px-4">
+        <div className="h-4 lg:h-6" />
+        <div className="max-w-7xl mx-auto">
+          {/* Header Section */}
+          <div className="flex justify-between items-end mb-10">
+            <div>
+              <p className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-8 leading-20">
+                Intelligent Planning
+              </p>
+              <h2 className="text-black text-4xl font-bold mb-6">
+                Build What's Right — Not What's Trendy
+              </h2>
+              <p className="text-black text-xl leading-relaxed max-w-4xl">
+                Cloud modernization isn't about a one-size-fits-all blueprint.
+                It's about aligning infra to your business needs. Calsoft
+                brings:
+              </p>
+            </div>
+            <div className="flex justify-center items-center gap-5">
+              <button
+                onClick={scrollLeft}
+                disabled={!canScrollLeft}
+                className={`transition-opacity duration-200 ${
+                  !canScrollLeft
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:opacity-80"
+                }`}
               >
-                <path
-                  d="M27.0971 0.0014059C42.0386 0.00140685 54.1934 12.1556 54.1934 27.0964C54.1934 42.0372 42.0386 54.1914 27.0971 54.1914C12.1555 54.1914 0.000764324 42.0372 0.000766026 27.0964C0.000767728 12.1556 12.1555 0.00140495 27.0971 0.0014059ZM27.0971 52.3545C41.0246 52.3545 52.3563 41.0242 52.3563 27.0964C52.3563 13.1687 41.0246 1.83836 27.0971 1.83835C13.1696 1.83835 1.8378 13.1687 1.8378 27.0964C1.8378 41.0242 13.1696 52.3545 27.0971 52.3545Z"
-                  fill="#2E3092"
-                />
-                <path
-                  d="M30.446 18.4886L31.7429 19.7901L24.3911 27.1112L31.7549 34.7272L30.435 36.0039L21.811 27.0874L30.446 18.4886Z"
-                  fill="#2E3092"
-                />
-              </svg>
-            </button>
-            <button
-              onClick={scrollRight}
-              disabled={!canScrollRight}
-              className={`transition-opacity duration-200 ${
-                !canScrollRight
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:opacity-80"
-              }`}
-            >
-              <svg
-                width="55"
-                height="55"
-                viewBox="0 0 55 55"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  width="55"
+                  height="55"
+                  viewBox="0 0 55 55"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.0971 0.0014059C42.0386 0.00140685 54.1934 12.1556 54.1934 27.0964C54.1934 42.0372 42.0386 54.1914 27.0971 54.1914C12.1555 54.1914 0.000764324 42.0372 0.000766026 27.0964C0.000767728 12.1556 12.1555 0.00140495 27.0971 0.0014059ZM27.0971 52.3545C41.0246 52.3545 52.3563 41.0242 52.3563 27.0964C52.3563 13.1687 41.0246 1.83836 27.0971 1.83835C13.1696 1.83835 1.8378 13.1687 1.8378 27.0964C1.8378 41.0242 13.1696 52.3545 27.0971 52.3545Z"
+                    fill="#2E3092"
+                  />
+                  <path
+                    d="M30.446 18.4886L31.7429 19.7901L24.3911 27.1112L31.7549 34.7272L30.435 36.0039L21.811 27.0874L30.446 18.4886Z"
+                    fill="#2E3092"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={scrollRight}
+                disabled={!canScrollRight}
+                className={`transition-opacity duration-200 ${
+                  !canScrollRight
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:opacity-80"
+                }`}
               >
-                <path
-                  d="M27.9049 54.3814C12.9633 54.3814 0.808594 42.2272 0.808594 27.2864C0.808594 12.3456 12.9633 0.191406 27.9049 0.191406C42.8464 0.191406 55.0012 12.3456 55.0012 27.2864C55.0012 42.2272 42.8464 54.3814 27.9049 54.3814ZM27.9049 2.02836C13.9774 2.02836 2.64563 13.3587 2.64563 27.2864C2.64563 41.2142 13.9774 52.5445 27.9049 52.5445C41.8324 52.5445 53.1642 41.2142 53.1642 27.2864C53.1642 13.3587 41.8324 2.02836 27.9049 2.02836Z"
-                  fill="#2E3092"
-                />
-                <path
-                  d="M24.556 35.8981L23.259 34.5966L30.6108 27.2755L23.2471 19.6595L24.567 18.3828L33.191 27.2994L24.556 35.8981Z"
-                  fill="#2E3092"
-                />
-              </svg>
-            </button>
+                <svg
+                  width="55"
+                  height="55"
+                  viewBox="0 0 55 55"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.9049 54.3814C12.9633 54.3814 0.808594 42.2272 0.808594 27.2864C0.808594 12.3456 12.9633 0.191406 27.9049 0.191406C42.8464 0.191406 55.0012 12.3456 55.0012 27.2864C55.0012 42.2272 42.8464 54.3814 27.9049 54.3814ZM27.9049 2.02836C13.9774 2.02836 2.64563 13.3587 2.64563 27.2864C2.64563 41.2142 13.9774 52.5445 27.9049 52.5445C41.8324 52.5445 53.1642 41.2142 53.1642 27.2864C53.1642 13.3587 41.8324 2.02836 27.9049 2.02836Z"
+                    fill="#2E3092"
+                  />
+                  <path
+                    d="M24.556 35.8981L23.259 34.5966L30.6108 27.2755L23.2471 19.6595L24.567 18.3828L33.191 27.2994L24.556 35.8981Z"
+                    fill="#2E3092"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Feature Cards Grid */}
+
+          <div
+            // ref={scrollContainerRef}
+            // className="flex gap-10 overflow-x-auto scrollbar-hide pb-4"
+            // style={{
+            //   scrollbarWidth: "none",
+            //   msOverflowStyle: "none",
+            // }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16"
+          >
+            {/* Card 1 - Gradient Background */}
+            {data.map((ele) => (
+              <>
+                <div className="relative bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 text-white min-h-[280px]">
+                  <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#2e3092] border-[1px] border-white rounded-full flex items-center justify-center">
+                    {ele.icon}
+                  </div>
+                  <div className="mt-16">
+                    <h3 className="text-xl font-bold mb-2">{ele.title}</h3>
+                    <p className="text-white/90 text-sm">{ele.subTitle}</p>
+                  </div>
+                </div>
+              </>
+            ))}
+          </div>
+
+          {/* Result Section */}
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div>
+              <h3 className="text-black text-3xl font-bold mb-4">Result:</h3>
+              <p className="text-black text-xl max-w-2xl">
+                A modular, scalable, and compliant roadmap that evolves with
+                your business.
+              </p>
+            </div>
+            <ButtonLayout
+              text={"Talk to Infra Strategist"}
+              image={buttonImage}
+              hoverImage={buttonImage}
+              className={"w-fit"}
+            />
           </div>
         </div>
-
-        {/* Feature Cards Grid */}
-
-        <div
-          // ref={scrollContainerRef}
-          // className="flex gap-10 overflow-x-auto scrollbar-hide pb-4"
-          // style={{
-          //   scrollbarWidth: "none",
-          //   msOverflowStyle: "none",
-          // }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16"
-        >
-          {/* Card 1 - Gradient Background */}
-          {data.map((ele) => (
-            <>
-              <div className="relative bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 text-white min-h-[280px]">
-                <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#2e3092] border-[1px] border-white rounded-full flex items-center justify-center">
-                  {ele.icon}
-                </div>
-                <div className="mt-16">
-                  <h3 className="text-xl font-bold mb-2">{ele.title}</h3>
-                  <p className="text-white/90 text-sm">{ele.subTitle}</p>
-                </div>
-              </div>
-            </>
-          ))}
-        </div>
-
-        {/* Result Section */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          <div>
-            <h3 className="text-black text-3xl font-bold mb-4">Result:</h3>
-            <p className="text-black text-xl max-w-2xl">
-              A modular, scalable, and compliant roadmap that evolves with your
-              business.
-            </p>
-          </div>
-          <ButtonLayout
-            text={"Talk to Infra Strategist"}
-            image={buttonImage}
-            hoverImage={buttonImage}
-            className={"w-fit"}
-          />
-        </div>
+        <div className="h-4 lg:h-6" />
       </div>
     </div>
   );
