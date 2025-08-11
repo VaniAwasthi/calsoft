@@ -24,6 +24,23 @@ export const fetchBlogFilterList = () => async (dispatch) => {
     dispatch(setError(error));
   }
 };
+// Fetch filtered blog list
+export const fetchFilteredBlogs =
+  ({ author, industry, topics = [] }) =>
+  async (dispatch) => {
+    try {
+      const params = new URLSearchParams();
+
+      if (author) params.append("author", author);
+      if (industry) params.append("industry", industry);
+      topics.forEach((topic) => params.append("topic", topic)); // Support multiple topics
+
+      const response = await axiosInstance.get(`/blogs?${params.toString()}`);
+      dispatch(setBlogList(response.data));
+    } catch (error) {
+      dispatch(setError(error.message));
+    }
+  };
 // Fetch one blog by ID
 export const fetchBlogById = (id) => async (dispatch) => {
   try {

@@ -1,8 +1,8 @@
 export const navItems = [
   {
     title: "DATA & AI",
-    // href: "/data-ai",
-    href: "",
+    href: "/data-ai",
+
     submenu: [
       {
         title: "Technical consulting",
@@ -121,7 +121,7 @@ export const navItems = [
   },
   {
     title: "DIGITAL PRODUCT ENGINEERING",
-    // href: "/digital-product-engineering",
+    href: "/digital-product-engineering",
     href: "",
     submenu: [
       {
@@ -479,6 +479,10 @@ export const navItems = [
   {
     title: "ABOUT",
     href: "/about-us",
-    submenu: [{ title: "Career", href: "#" }],
+    submenu: [
+      { title: "Career", href: "#" },
+      { title: "Leadership", href: "/leadership" },
+      { title: "CSR", href: "/csr" },
+    ],
   },
 ];

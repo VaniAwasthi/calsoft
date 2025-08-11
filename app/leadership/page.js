@@ -1,3 +1,4 @@
+"use client";
 import { ToKnowMoreSection } from "../component/caseStudies/HeroSecLanding";
 import CEO from "../component/leadership/CEO";
 import LeadershipHero from "../component/leadership/LeadershipHero";
