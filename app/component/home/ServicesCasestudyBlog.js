@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -24,8 +24,10 @@ import blogimg1 from "../../assets/home/blog1.webp";
 import blogimg2 from "../../assets/home/blog2.webp";
 import blogimg3 from "../../assets/home/blog3.webp";
 import { LuArrowUpRight } from "react-icons/lu";
-// import { BlogCard } from "../../component/blog/BlogCard";
 import Casestudybg from "../../assets/home/casestudybg.webp";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCaseStudyListLimit } from "../../store/actions/caseStudyActions";
+import Link from "next/link";
 export const Services = () => {
   const title = "Services";
   const heading = "Services | Expertise-infused and business-optimized.";
@@ -144,135 +146,34 @@ export const Services = () => {
 };
 
 export const Casestudy = () => {
+  const baseUrl = "http://35.162.115.74/admin/assets/dist/";
+  const dispatch = useDispatch();
   const title = "Case Study";
   const heading = `Cloud Provider Accelerates VMware Migration <span className="text-black font-normal"> with Calsoft’s CLI Tool</span>`;
   // data for Case Study
-  const caseStudyDataArray = [
-    {
-      id: 1,
-      title:
-        " Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
-      description: [
-        "Faced with long test cycles and high infrastructure costs, a global networking leader turned to Calsoft to bring speed and precision to their software validation process. By implementing CalTIA, Calsoft’s AI-powered test intelligence platform, the company replaced manual test selection with intelligent automation—cutting waste, accelerating releases, and improving engineering efficiency. What once slowed down delivery is now a competitive edge.",
-      ],
-      buttonText: "Case Study",
-      pdfLink: "/pdfs/case1.pdf",
-      stats: [
-        { count: "40%", text: " faster validation cycles" },
-        { count: "30% ", text: "lower infrastructure costs" },
-        { count: "20% ", text: "increase in test accuracy" },
-      ],
-    },
-    {
-      id: 2,
-      title: "AI-powered test optimization with CalTIA",
-      description: [
-        "To ensure performance across diverse and complex network environments, a global networking solutions leader partnered with Calsoft to modernize its test validation process. By integrating a custom-trained Large Language Model (LLM), the company automated the generation of real-world test scenarios from topology diagrams and device configurations. This shift from manual to AI-led validation enabled the team to cover edge cases with greater accuracy, reduce testing cycles, and scale test coverage effortlessly across unique deployments.",
-      ],
-      buttonText: "Case Study",
-      pdfLink:
-        "https://www.calsoftinc.com/blogs/the-impact-of-ai-on-software-testing-from-automation-to-intelligent-qa.html",
-      stats: [
-        { count: "60%", text: "reduction in manual effort for test creation" },
-        { count: "3X", text: "faster validation cycles" },
-        { count: "40%", text: " improvement in test coverage accuracy" },
-      ],
-    },
-    {
-      id: 3,
-      title:
-        "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool",
-      description: [
-        " A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation—enabling fast, error-free virtual machine (VM) migrations at scale. With platform-neutral packaging, parallel execution, and built-in consistency checks, the solution accelerated onboarding and empowered customers with operational autonomy.",
-      ],
-      buttonText: "Case Study",
-      pdfLink:
-        "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
-      stats: [
-        {
-          count: "50%",
-          text: " faster onboarding with automated VM migration",
-        },
-        { count: "3x ", text: "migration speed via parallel execution" },
-        { count: " Zero GUI dependency  ", text: "with CLI-driven operations" },
-      ],
-    },
-    {
-      id: 4,
-      title:
-        "Accelerating VMware Workload Migration with Calsoft’s Migration Server",
-      description: [
-        " A leading cloud infrastructure provider partnered with Calsoft to simplify and scale its VMware workload migration strategy. With growing licensing costs and the need for platform flexibility, the client needed a secure, self-contained, and repeatable solution to move workloads to Red Hat OpenShift and AWS. Calsoft’s Migration Server-based framework offered full lifecycle support—automating discovery, conversion, cost planning, and validation—while minimizing disruption and improving operational efficiency.",
-      ],
-      buttonText: "Case Study",
-      pdfLink:
-        "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
-      stats: [
-        {
-          count: "60%",
-          text: " less manual effort with automation",
-        },
-        { count: "40%", text: "faster migration to OpenShift and AWS" },
-        { count: "3x", text: "framework reuse across teams and workloads" },
-      ],
-    },
-    {
-      id: 5,
-      title:
-        "Streamlining Legal Case Classification with Calsoft’s GenAI Copilot",
-      description: [
-        " Calsoft partnered with one of the largest personal injury law firms in the United States to streamline legal operations using a GenAI-powered case classification solution. By integrating GPT-based intelligence into the firm’s existing workflow, Calsoft enabled smarter, faster, and more reliable decisions on case viability and team allocation—significantly reducing manual overhead and accelerating legal turnaround times.",
-      ],
-      buttonText: "Case Study",
-      pdfLink:
-        "https://www.calsoft.ai/success-stories/ai-powered-optimization-of-data-center-operations/",
-      stats: [
-        {
-          count: "30%",
-          text: " reduction in dependency on manual legal review",
-        },
-        { count: "24x7 ", text: "availability of legal case evaluation" },
-        {
-          count: " Real-time decisions",
-          text: "powered by integrated AI Copilot",
-        },
-      ],
-    },
-  ];
+  useEffect(() => {
+    dispatch(fetchCaseStudyListLimit());
+  }, []);
+  const casStudiesDatalist = useSelector(
+    (state) => state.caseStudy?.limitedList
+  );
 
-  const sliderData = [
-    {
-      id: 1,
-      image: blogimg1,
-      title:
-        "Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
-    },
-    {
-      id: 2,
-      image: blogimg2,
-      title: "AI-powered test optimization with CalTIA",
-    },
-    {
-      id: 3,
-      image: blogimg3,
-      title:
-        "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool",
-    },
-    {
-      id: 4,
-      image: blogimg3,
-      title:
-        "Accelerating VMware Workload Migration with Calsoft’s Migration Server",
-    },
-    {
-      id: 5,
-      image: blogimg3,
-      title:
-        "Streamlining Legal Case Classification with Calsoft’s GenAI Copilot",
-    },
-  ];
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const caseStudyData = caseStudyDataArray[selectedIndex];
+  const caseStudyDataArray = {
+    id: 1,
+    title:
+      " Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
+    description: [
+      "Faced with long test cycles and high infrastructure costs, a global networking leader turned to Calsoft to bring speed and precision to their software validation process. By implementing CalTIA, Calsoft’s AI-powered test intelligence platform, the company replaced manual test selection with intelligent automation—cutting waste, accelerating releases, and improving engineering efficiency. What once slowed down delivery is now a competitive edge.",
+    ],
+    buttonText: "Case Study",
+    pdfLink: "/pdfs/case1.pdf",
+    stats: [
+      { count: "40%", text: " faster validation cycles" },
+      { count: "30% ", text: "lower infrastructure costs" },
+      { count: "20% ", text: "increase in test accuracy" },
+    ],
+  };
+  const caseStudyData = caseStudyDataArray;
   return (
     <>
       <section className="md:py-8 py-10" id="case-studies">
@@ -435,37 +336,51 @@ export const Casestudy = () => {
               navigation
               className="slider_t play_slider"
             >
-              {sliderData.map((item, index) => (
+              {casStudiesDatalist.map((item, index) => (
                 <SwiperSlide key={item.id}>
                   <motion.div
-                    onClick={() => setSelectedIndex(index)}
                     className="group relative bg-white cursor-pointer"
                     initial={{ opacity: 0, y: 20 }}
                     transition={{ duration: 0.5 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
-                    <Image
-                      src={item.image}
-                      alt="Slide"
-                      className="w-full h-44 md:h-56 rounded-xl object-cover"
-                    />
-                    <div className="py-4">
-                      <p className="text-base font-medium text-black">
-                        {item.title}
-                      </p>
-                    </div>
-                    <motion.div
-                      whileHover={{ y: -8 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      viewport={{ once: false, amount: 0.3 }}
-                      className="absolute -top-4 -right-4 bg-white p-2 border-2 border-[#2E3092] rounded-full shadow-md group-hover:scale-105 transition-transform duration-300"
+                    <Link
+                      href={`/insights/case-studies/${item.hero_title1
+                        ?.toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/(^-|-$)+/g, "")}`}
+                      passHref
                     >
-                      <LuArrowUpRight
-                        className="text-4xl  text-[#2E3092]"
-                        strokeWidth={4}
-                      />
-                    </motion.div>
+                      <div className="relative w-full h-44 md:h-56 rounded-xl overflow-hidden">
+                        <Image
+                          src={
+                            item.card_one
+                              ? `${baseUrl}${item.card_one}`
+                              : blogimg1
+                          }
+                          fill
+                          alt="Slide"
+                          className=" rounded-xl object-cover"
+                        />
+                      </div>
+                      <div className="py-4">
+                        <p className="text-base font-medium text-black">
+                          {item.hero_title1}
+                        </p>
+                      </div>
+                      <motion.div
+                        whileHover={{ y: -8 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="absolute -top-4 -right-4 bg-white p-2 border-2 border-[#2E3092] rounded-full shadow-md group-hover:scale-105 transition-transform duration-300"
+                      >
+                        <LuArrowUpRight
+                          className="text-4xl  text-[#2E3092]"
+                          strokeWidth={4}
+                        />
+                      </motion.div>
+                    </Link>
                   </motion.div>
                 </SwiperSlide>
               ))}
@@ -475,8 +390,4 @@ export const Casestudy = () => {
       </section>
     </>
   );
-};
-
-export const Blog = () => {
-  return <div>Blog</div>;
 };

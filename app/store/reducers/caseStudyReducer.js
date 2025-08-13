@@ -6,6 +6,7 @@ const initialState = {
   selectedId: null,
   isLoading: false,
   error: null,
+  limitedList: [],
 };
 
 const caseStudySlice = createSlice({
@@ -14,6 +15,9 @@ const caseStudySlice = createSlice({
   reducers: {
     setCaseStudyList: (state, action) => {
       state.list = action.payload.data;
+    },
+    setCaseStudyListLimit: (state, action) => {
+      state.limitedList = action.payload.data;
     },
     setCaseStudyData: (state, action) => {
       state.data = action.payload;
@@ -32,6 +36,7 @@ const caseStudySlice = createSlice({
 
 export const {
   setCaseStudyList,
+  setCaseStudyListLimit,
   setCaseStudyData,
   setSelectedCaseStudyId,
   setLoading,

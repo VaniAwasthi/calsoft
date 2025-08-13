@@ -15,6 +15,11 @@ const nextConfig = {
         hostname: "35.162.115.74",
         pathname: "/**", // Allow all image paths from this host
       },
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+        pathname: "/**",
+      },
     ],
   },
 };

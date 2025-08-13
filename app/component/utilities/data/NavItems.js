@@ -122,7 +122,6 @@ export const navItems = [
   {
     title: "DIGITAL PRODUCT ENGINEERING",
     href: "/digital-product-engineering",
-    href: "",
     submenu: [
       {
         title: "Product and application development ",
@@ -130,7 +129,7 @@ export const navItems = [
         section: [
           {
             title: "Architecture & Ideation",
-            href: "#",
+            href: "/digital-product-engineering/product-application-development/architecture-ideation",
           },
           {
             title: "Full-Cycle Development",
@@ -195,7 +194,7 @@ export const navItems = [
         ],
       },
       {
-        title: "Cloud Services",
+        title: "Cloud",
         href: "/digital-product-engineering/cloud",
         section: [
           {
@@ -255,7 +254,7 @@ export const navItems = [
         ],
       },
       {
-        title: "Sustenance Support",
+        title: "Sustenance & Support",
         href: "/digital-product-engineering/sustenance-support",
         section: [
           {
@@ -281,7 +280,7 @@ export const navItems = [
         ],
       },
       {
-        title: "Virtualization Solutions",
+        title: "Virtualization ",
         href: "/digital-product-engineering/virtualization",
         section: [
           {

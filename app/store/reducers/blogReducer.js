@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   list: [],
+  limitedList: null,
   data: null,
   selectedId: null,
   isLoading: false,
@@ -17,6 +18,9 @@ const blogsSlice = createSlice({
   reducers: {
     setBlogList: (state, action) => {
       state.list = action.payload.data;
+    },
+    setBlogLimitedList: (state, action) => {
+      state.limitedList = action.payload.data;
     },
     setBlogData: (state, action) => {
       state.data = action.payload.data;
@@ -40,6 +44,7 @@ const blogsSlice = createSlice({
 
 export const {
   setBlogList,
+  setBlogLimitedList,
   setBlogData,
   setBlogFilterList,
   setSelectedBlogId,

@@ -78,14 +78,12 @@ const Footer = () => {
 
             {/* Industries */}
             <div>
-              <h3 className="text-[20px] font-semibold mb-4">Industries</h3>
+              <h3 className="text-[20px] font-semibold mb-4">Services</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#">Product engineering</Link>
+                  <Link href="#"> Digital Product engineering</Link>
                 </li>
-                <li>
-                  <Link href="#">Digital engineering</Link>
-                </li>
+
                 <li>
                   <Link href="#">Managed testing services</Link>
                 </li>
@@ -93,10 +91,7 @@ const Footer = () => {
                   <Link href="#">Sustaining & Support</Link>
                 </li>
                 <li>
-                  <Link href="#">Data</Link>
-                </li>
-                <li>
-                  <Link href="#">Artificial Intelligence</Link>
+                  <Link href="#">Data and Artificial Intelligence</Link>
                 </li>
               </ul>
             </div>

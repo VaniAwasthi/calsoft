@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import cardImg1 from "../../assets/blog/idcBanner1.webp";
-import cardImg2 from "../../assets/blog/banner2.webp";
+
 import { motion } from "framer-motion";
 
 export const BlogsBanner = ({ cards }) => {
@@ -21,7 +20,7 @@ export const BlogsBanner = ({ cards }) => {
 
         {/* Cards */}
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2">
-          {cards.map((card, index) => (
+          {cards?.map((card, index) => (
             <div key={index} className="border-t border-white pt-4">
               <motion.p
                 initial={{ y: 30, opacity: 0 }}
@@ -50,9 +49,8 @@ export const BlogsBanner = ({ cards }) => {
                     transition={{ duration: 0.2, delay: 0.2 }}
                     viewport={{ once: false, amount: 0.3 }}
                     className="Inter text-sm text-white mt-3 max-w-md"
-                  >
-                    {card.description}
-                  </motion.p>
+                    dangerouslySetInnerHTML={{ __html: card.description }}
+                  ></motion.p>
                   <motion.a
                     initial={{ y: 30, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
@@ -76,8 +74,9 @@ export const BlogsBanner = ({ cards }) => {
                   <Image
                     src={card.image}
                     alt="Resource Image"
-                    fill
-                    className="object-contain rounded-[2rem]"
+                    width={100}
+                    height={100}
+                    className="object-center rounded-full w-100 h-full"
                   />
                 </motion.div>
               </div>
