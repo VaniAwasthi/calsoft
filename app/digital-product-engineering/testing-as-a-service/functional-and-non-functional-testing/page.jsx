@@ -7,7 +7,7 @@ import FirstStep from "../../../component/infra/FirstStep";
 import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import Connect from "../../../component/infra/Connect";
-import WhyItMatters from "../../component/testing/Functional-Testing/WhyItMatters";
+import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 
 export default function Page() {
   return (
