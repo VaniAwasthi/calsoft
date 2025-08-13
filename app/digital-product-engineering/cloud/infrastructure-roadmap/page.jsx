@@ -7,7 +7,7 @@ import UseCases from "../../../component/infra/UseCases";
 import FirstStep from "../../../component/infra/FirstStep";
 import WhyCalsoft from "../../../component/infra/WhyCalsoft";
 
-export const page = () => {
+export const Page = () => {
   return (
     <>
       <HeroSec />
