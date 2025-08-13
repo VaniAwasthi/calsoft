@@ -178,7 +178,10 @@ export default function Navbar() {
                             href={sub.href}
                             key={idx}
                             className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${
-                              isActive
+                              pathname.startsWith(sub.href) ||
+                              sub.inersubmenu?.some((inner) =>
+                                pathname.startsWith(inner.href)
+                              )
                                 ? "text-[#2E3092] font-semibold"
                                 : "text-[#1A1A1A]"
                             }`}
@@ -186,7 +189,10 @@ export default function Navbar() {
                             onClick={() => setActiveMenu(null)}
                           >
                             <span>{sub.title}</span>
-                            {isActive && (
+                            {(pathname.startsWith(sub.href) ||
+                              sub.inersubmenu?.some((inner) =>
+                                pathname.startsWith(inner.href)
+                              )) && (
                               <IoMdArrowDropright
                                 size={25}
                                 className="text-[#2E3092]"

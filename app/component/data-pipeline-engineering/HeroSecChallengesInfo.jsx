@@ -40,6 +40,7 @@ and trust across hybrid environments.`,
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
+        buttonWidth="!w-[250px]"
       />
       <Submenu
         navItems={navItems}

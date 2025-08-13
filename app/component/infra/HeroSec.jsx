@@ -21,7 +21,7 @@ export default function HeroSec() {
     <>
       <BannerLayout
         image={Hero_bg}
-        title={"Future-Proof Your Infrastructure with a Strategic Roadmap."}
+        title="Future-Proof Your Infrastructure with a Strategic Roadmap."
         description={
           "Build an actionable infrastructure roadmap aligned to your growth, resilience, and cost objectives. No guesswork. Just clarity, performance, and ROI."
         }

@@ -39,6 +39,7 @@ that drive adoption and engagement.`,
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
+        buttonWidth="!w-[250px]"
       />
       <Submenu
         navItems={navItems}

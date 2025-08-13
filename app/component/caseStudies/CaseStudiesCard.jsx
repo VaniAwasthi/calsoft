@@ -43,7 +43,6 @@ export const CaseStudiesCard = () => {
   const filters = {
     Industry: ["All", "Tech", "Healthcare"],
     Topics: ["All", "Security", "AI"],
-    Author: ["All", "Anton Frank", "John Doe"],
   };
   const router = useRouter();
 
