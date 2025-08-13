@@ -14,7 +14,7 @@ import ContactImg from "../../../assets/Data-Ai/PipeLine/ConnectBg.webp";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import { BannerSection } from "../../../component/utilities/InfraSectorSec";
 
-export const Page = () => {
+const Page = () => {
   return (
     <>
       <Future />
@@ -45,3 +45,4 @@ export const Page = () => {
     </>
   );
 };
+export default Page;
