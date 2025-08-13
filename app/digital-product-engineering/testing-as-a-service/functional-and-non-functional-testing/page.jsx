@@ -1,6 +1,5 @@
 import React from "react";
 import HeroSection from "../../../component/testing/HeroSection";
-import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
 import UseCases from "../../../component/testing/UseCases";
 import WhyCalsoft from "../../../component/infra/WhyCalsoft";
@@ -8,6 +7,7 @@ import FirstStep from "../../../component/infra/FirstStep";
 import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import Connect from "../../../component/infra/Connect";
+import WhyItMatters from "../../component/testing/Functional-Testing/WhyItMatters";
 
 export default function Page() {
   return (
