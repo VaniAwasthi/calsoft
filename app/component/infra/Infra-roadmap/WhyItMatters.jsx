@@ -4,7 +4,7 @@ import ButtonLayout from "../../utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
 
-export default WhyItMatters = () => {
+const WhyItMatters = () => {
   return (
     <>
       <div className="container">
@@ -141,3 +141,4 @@ export default WhyItMatters = () => {
     </>
   );
 };
+export default WhyItMatters;

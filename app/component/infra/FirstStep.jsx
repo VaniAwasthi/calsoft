@@ -26,6 +26,7 @@ export default function FirstStep({
         </div>
         <Image
           src={img}
+          alt="FirstStep"
           className="w-full h-72 flex-1 rounded-xl object-cover"
         />
       </div>
