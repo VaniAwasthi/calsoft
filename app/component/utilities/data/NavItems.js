@@ -221,27 +221,27 @@ export const navItems = [
         section: [
           {
             title: "Functional and non-functional testing",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/functional-and-non-functional-testing",
           },
           {
             title: "Automated regression testing (CalTIA)",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/automated-regression-testing",
           },
           {
             title: "Scale & Load Validation",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/scale-load-validation",
           },
           {
             title: "Test Impact Analysis",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/test-impact-analysis",
           },
           {
             title: "QAOps with CI/CD pipeline integration",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/qaops-with-ci-cd-pipeline-integration",
           },
           {
             title: "Benchmarking for Readiness",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/benchmarking-for-readiness",
           },
         ],
       },
