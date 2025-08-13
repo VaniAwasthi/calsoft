@@ -13,10 +13,11 @@ export const FilterSec = ({
   openDropdown,
   toggleDropdown,
   selectFilter,
+  mainClass,
 }) => {
   return (
     <section className="w-full bg-white mb-6">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-1">
+      <div className={`container mx-auto px-4 sm:px-6 lg:px-1 ${mainClass}`}>
         <div className="grid grid-cols-12 gap-4 items-start">
           {/* Dropdown filters (3 items, span 9 cols) */}
           <div className="col-span-12 md:col-span-9 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
