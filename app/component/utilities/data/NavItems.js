@@ -199,27 +199,19 @@ export const navItems = [
         section: [
           {
             title: "Infrastructure Roadmap",
-            href: "#",
+            href: "/digital-product-engineering/cloud/infrastructure-roadmap",
           },
           {
             title: "Multi-cloud Provisioning",
-            href: "#",
+            href: "/digital-product-engineering/cloud/multi-cloud-provisioning",
           },
           {
             title: "Cloud-native enablement",
-            href: "#",
+            href: "/digital-product-engineering/cloud/cloud-native-enablement",
           },
           {
             title: "Cloud Migration",
-            href: "#",
-          },
-          {
-            title: "Cost Optimization(Not Required)",
-            href: "#",
-          },
-          {
-            title: "SRE (Site Reliability Engineering)",
-            href: "#",
+            href: "/digital-product-engineering/cloud/cloud-migration",
           },
         ],
       },
