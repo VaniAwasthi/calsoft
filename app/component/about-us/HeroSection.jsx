@@ -3,6 +3,7 @@ import heroImage from "../../assets/about-us/Hero_image.webp";
 import BannerLayout from "../utilities/BannerLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import logo from "../../assets/about-us/logo.webp";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
