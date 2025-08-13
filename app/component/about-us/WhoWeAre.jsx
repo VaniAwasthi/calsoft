@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import WhoWeAre1 from "../../assets/about-us/WhoWeAre1.webp";
+import { motion } from "framer-motion";
 
 export default function WhoWeAre() {
   const data = [
@@ -53,12 +56,19 @@ export default function WhoWeAre() {
             return (
               <>
                 {/* Desktop view */}
-                <div className="h-full flex-col md:flex hidden gap-3 justify-evenly">
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: idx * 0.1 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="h-full flex-col md:flex hidden gap-3 justify-evenly"
+                >
                   <p className="text-5xl lg:text-7xl font-medium">
                     {ele.number}
                   </p>
                   <p className="text-xl lg:text-3xl font-light">{ele.desc}</p>
-                </div>
+                </motion.div>
                 {/* Mobile view */}
                 <div className="flex justify-between w-full md:hidden gap-3">
                   <p className="text-[2.5rem] sm:text-5xl lg:text-7xl font-medium">

@@ -8,6 +8,7 @@ import uday from "../../assets/leadership/Uday.webp";
 import pradipta from "../../assets/leadership/Pradipta.webp";
 import somenath from "../../assets/leadership/Somenath.webp";
 import vipin from "../../assets/leadership/Vipin.webp";
+import { motion } from "framer-motion";
 
 export default function LeadershipTeam() {
   const data = [
@@ -62,7 +63,13 @@ export default function LeadershipTeam() {
   ];
   return (
     <div className="my-5 pb-12 space-y-10 container">
-      <div className="flex flex-col justify-center items-center gap-5 max-w-3xl mx-auto">
+      <motion.div
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="flex flex-col justify-center items-center gap-5 max-w-3xl mx-auto"
+      >
         <p className="text-4xl sm:text-5xl font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">
           Leadership Team
         </p>
@@ -70,10 +77,18 @@ export default function LeadershipTeam() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
         </p>
-      </div>
+      </motion.div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 container">
         {data.map((ele, idx) => (
-          <Card key={idx} data={ele} />
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: idx * 0.1 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <Card data={ele} />
+          </motion.div>
         ))}
       </div>
       <div className="h-6"></div>

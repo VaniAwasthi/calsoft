@@ -4,12 +4,46 @@ import React from "react";
 import ButtonLayout from "../../component/utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
+import bgshape1 from "../../assets/DigitalEngineering/maturity/shape1.svg";
+import bgshape2 from "../../assets/DigitalEngineering/maturity/shape2.svg";
+import bgshape3 from "../../assets/DigitalEngineering/maturity/shape3.svg";
 
 export default function WhyItMatters({
   title = "Problem + Solution Fit",
   desc = "Most enterprises operate in a fragmented infra state — with on-prem, cloud-native, and edge setups running in silos. This complexity leads to:",
   buttonText = "Download",
 }) {
+  const whyItMattersData = {
+    heading: "Why It Matters",
+    title: "Build Once. Deploy Across Ecosystems.",
+
+    description:
+      "With partner ecosystems growing and customers demanding seamless workflows, plugins are no longer optional—they’re a product strategy. But poorly built plugins can cause security risks, UX issues, or slow adoption. Calsoft helps you develop high-performance plugins that drive integration, automation, and business stickiness.",
+
+    buttonText: "Download Case Study",
+    link: "#",
+
+    cards: [
+      {
+        percent: "50%",
+        text: "of enterprise buyers expect native plugin support",
+        className: "shape1",
+        bgshape: bgshape1,
+      },
+      {
+        percent: "70%",
+        text: "of SaaS tools with plugin marketplaces grow 2x faster",
+        className: "shape2",
+        bgshape: bgshape2,
+      },
+      {
+        percent: "40%",
+        text: "reduction in time-to- market is achieved by Calsoft clients through our plugin frameworks.",
+        className: "shape3",
+        bgshape: bgshape3,
+      },
+    ],
+  };
   return (
     <>
       <div className="container">
@@ -22,19 +56,8 @@ export default function WhyItMatters({
                 Why It Matters
               </p>
               <div className="space-y-6">
-                <p className="text-3xl font-semibold">Problem + Solution Fit</p>
-                <div className="space-y-6 text-black text-lg leading-relaxed">
-                  <p>
-                    Most enterprises operate in a fragmented infra state — with
-                    on-prem, cloud-native, and edge setups running in silos.
-                    This complexity leads to:
-                  </p>
-                  <p>
-                    Calsoft's Roadmap Approach begins with mapping your existing
-                    ecosystem, identifying technical and business bottlenecks,
-                    and creating a data-backed transformation baseline.
-                  </p>
-                </div>
+                <p className="text-3xl font-semibold">{title}</p>
+                <p className="text-lg leading-relaxed">{desc}</p>
               </div>
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
@@ -56,92 +79,92 @@ export default function WhyItMatters({
             </div>
 
             {/* Right Hexagonal Visualization */}
-            <div className="relative w-full h-[380px] flex justify-center items-center">
-              {/* Center hexagon - 2.4X */}
-              <div className="absolute top-[13rem] left-[4rem] transform -translate-y-1/2 -translate-x-8">
-                <div
-                  className="hexagon bg-gradient-to-b from-[#2e3092] to-[#6b4fb8] text-white flex flex-col items-center justify-center text-center"
-                  style={{
-                    width: "200px",
-                    height: "200px",
-                    clipPath:
-                      "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                  }}
-                >
-                  <div className="text-4xl font-bold mb-2">2.4X</div>
-                  <div className="text-sm leading-tight px-4">
-                    increase in rework
-                    <br />
-                    cost due to lack of
-                    <br />
-                    interoperability
-                  </div>
-                </div>
-              </div>
+            {/* <WhyItMatters
+              {...whyItMattersData}
+              ButtonImage={buttonImage}
+              secId="why-it-matters"
+            /> */}
+            <section
+              className={`md:pb-12 pb-0 md:pt-12 pt-6   bg-white`}
+              id={secId}
+            >
+              <div className="container mx-auto px-4 md:px-16">
+                <div className="flex flex-col lg:flex-row gap-10 items-center">
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: false }}
+                    className="flex-1 md:w-2/4"
+                  >
+                    <h2 className="text-xl md:text-[38px] font-semibold mb-6 md:mb-10 text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)]">
+                      {heading}
+                    </h2>
+                    <h3 className="text-xl md:text-[26px] font-semibold mb-5">
+                      {title}
+                    </h3>
+                    <p
+                      className="md:text-base text-sm text-black font-normal"
+                      dangerouslySetInnerHTML={{ __html: description }}
+                    />
+                    {/* <p className="md:text-base text-sm text-[#2E3092] mb-10 font-normal">
+                      {highlight}
+                    </p> */}
 
-              {/* Top right hexagon - 30% redundant tools */}
-              <div className="absolute top-0 right-40">
-                <div
-                  className="hexagon bg-gradient-to-b from-[#2e3092] to-[#4a4fb8] text-white flex flex-col items-center justify-center text-center"
-                  style={{
-                    width: "200px",
-                    height: "200px",
-                    clipPath:
-                      "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                  }}
-                >
-                  <div className="text-4xl font-bold mb-2">30%</div>
-                  <div className="text-sm leading-tight px-4">
-                    from redundant tools
-                    <br />& inconsistent
-                    <br />
-                    provisioning
-                  </div>
-                </div>
-              </div>
+                    {buttonText && (
+                      <motion.div
+                        initial={{ x: -50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.8 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="flex flex-col md:flex-row gap-4 increse_btn shadow_btn"
+                      >
+                        <ButtonLayout
+                          link={whyItMattersData.link}
+                          text={buttonText}
+                          image={buttonImage}
+                          hoverImage={buttonImage}
+                        />
+                      </motion.div>
+                    )}
+                  </motion.div>
 
-              {/* Right hexagon - Outage */}
-              <div className="absolute top-[4.8rem] right-0 transform translate-y-8">
-                <div
-                  className="hexagon bg-gradient-to-b from-[#2e3092] to-[#8b4fb8] text-white flex flex-col items-center justify-center text-center"
-                  style={{
-                    width: "200px",
-                    height: "200px",
-                    clipPath:
-                      "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                  }}
-                >
-                  <div className="text-4xl font-bold mb-2">Outage</div>
-                  <div className="text-sm leading-tight px-4">
-                    risks from aging
-                    <br />
-                    workloads on
-                    <br />
-                    brittle infra
-                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                    className="flex-1 flex flex-wrap justify-center gap-4 shape_group md:w-2/4"
+                  >
+                    {whyItMattersData.cards.map((card, idx) => (
+                      <motion.div
+                        key={idx}
+                        className={`h-[200px] md:h-[240px] bg-gradient-to-br text-white flex pt-8 md:pt-10 items-start justify-center text-center rounded-[2rem] relative transform ${card.className} single_shape bg-contain md:bg-contain bg-no-repeat bg-center`}
+                        style={{
+                          backgroundImage: `url('${card.bgshape.src}')`,
+                        }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 1.05 }} // <- Added for mobile tap effect
+                        transition={{
+                          type: "spring",
+                          stiffness: 200,
+                          damping: 15,
+                        }}
+                      >
+                        <div className="w-[65%] md:w-[40%] mx-auto">
+                          <p className="text-[17px] md:text-3xl font-bold pt-[2px] md:pt-0">
+                            {card.percent}
+                          </p>
+                          <p className="text-[10px] md:text-[12px] md:mt-2">
+                            {card.text}
+                          </p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
                 </div>
               </div>
-
-              {/* Bottom hexagon - 30% fail */}
-              <div className="absolute -bottom-[2rem] right-48 transform translate-x-8">
-                <div
-                  className="hexagon bg-gradient-to-b from-[#6b4fb8] to-[#ba0007] text-white flex flex-col items-center justify-center text-center"
-                  style={{
-                    width: "200px",
-                    height: "200px",
-                    clipPath:
-                      "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
-                  }}
-                >
-                  <div className="text-4xl font-bold mb-2">30%</div>
-                  <div className="text-sm leading-tight px-4">
-                    fail due to
-                    <br />
-                    wrong stack
-                  </div>
-                </div>
-              </div>
-            </div>
+            </section>
           </div>
         </div>
         <div className="h-8" />

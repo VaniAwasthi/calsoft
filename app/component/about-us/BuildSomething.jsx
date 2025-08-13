@@ -6,9 +6,12 @@
 // import { motion } from "framer-motion";
 // import ButtonLayout from "../utilities/BannerLayout";
 
+"use client";
+
 import Image from "next/image";
 import Career from "../../assets/about-us/Career.webp";
 import prospect from "../../assets/about-us/Prospects.webp";
+import { motion } from "framer-motion";
 
 // export default function BuildSomething() {
 //   return (
@@ -105,23 +108,49 @@ export default function CareersPage() {
       <div className="hidden lg:flex flex-col gap-10">
         {/* Top Left - Careers Sign Image */}
         <div className="flex rounded-xl overflow-hidden">
-          <div className="relative overflow-hidden flex-1">
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="relative overflow-hidden flex-1"
+          >
             <Image
               src={Career}
               alt="Careers sign against blue sky"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
 
           {/* Top Right - Careers Content */}
           <div className="bg-gray-200 flex items-center justify-center flex-1">
             <div className="max-w-md">
-              <h1 className="text-black text-5xl font-bold mb-6">Careers</h1>
-              <p className="text-black text-lg leading-relaxed mb-8">
+              <motion.h1
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-black text-5xl font-bold mb-6"
+              >
+                Careers
+              </motion.h1>
+              <motion.p
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-black text-lg leading-relaxed mb-8"
+              >
                 Team up with the best to build for the future, in a place that
                 encourages talent and ambition.
-              </p>
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">
+              </motion.p>
+              <motion.button
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
+              >
                 Learn More
                 <svg
                   className="w-5 h-5"
@@ -136,7 +165,7 @@ export default function CareersPage() {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
@@ -145,12 +174,32 @@ export default function CareersPage() {
         <div className="flex rounded-xl overflow-hidden">
           <div className="bg-gray-200 flex items-center justify-center flex-1">
             <div className="max-w-md">
-              <h2 className="text-black text-5xl font-bold mb-6">Prospects</h2>
-              <p className="text-black text-lg leading-relaxed mb-8">
+              <motion.h2
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-black text-5xl font-bold mb-6"
+              >
+                Prospects
+              </motion.h2>
+              <motion.p
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-black text-lg leading-relaxed mb-8"
+              >
                 Let's turn complexity into clarity, connect with us to start the
                 conversation.
-              </p>
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors">
+              </motion.p>
+              <motion.button
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
+              >
                 Learn More
                 <svg
                   className="w-5 h-5"
@@ -165,18 +214,24 @@ export default function CareersPage() {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-              </button>
+              </motion.button>
             </div>
           </div>
 
           {/* Bottom Right - Puzzle/Magnifying Glass Image */}
-          <div className="relative overflow-hidden flex-1">
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="relative overflow-hidden flex-1"
+          >
             <Image
               src={prospect}
               alt="Puzzle pieces with magnifying glass and business icons"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 

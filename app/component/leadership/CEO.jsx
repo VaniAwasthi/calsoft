@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import anupam from "../../assets/leadership/Anupam.webp";
+import { motion } from "framer-motion";
 
 export default function CEO() {
   return (
@@ -33,7 +34,13 @@ export default function CEO() {
         </div>
 
         {/* Text Content */}
-        <div className="w-5/6 my-4 mr-3 -ml-16 self-end">
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="w-5/6 my-4 mr-3 -ml-16 self-end"
+        >
           <h2 className="text-xl font-semibold text-black">Anupam Bhide</h2>
           <p className="text-base text-gray-800 mb-3">CEO, Co-founder</p>
           <p className="text-sm text-gray-700 max-w-xl">
@@ -42,7 +49,7 @@ export default function CEO() {
             scalable, intelligent, and secure technology solutions that evolve
             with our clients’ ambitions.
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Mobile View */}

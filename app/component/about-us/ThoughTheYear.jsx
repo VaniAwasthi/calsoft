@@ -44,14 +44,14 @@ const timelineData = [
     title: "Broadening the portfolio",
     Icon: PieChart,
     position: { top: "11%", left: "85%" },
-    labelAlignment: "left",
+    labelAlignment: "right",
   },
   {
     year: "2018-2020",
     title: "Data and automation focus",
     Icon: Sun,
     position: { top: "23%", left: "50%" },
-    labelAlignment: "top",
+    labelAlignment: "left",
   },
   {
     year: "2021-2023",
@@ -64,22 +64,22 @@ const timelineData = [
     year: "2024",
     title: "AI as core strategy",
     Icon: Target,
-    position: { top: "39%", left: "65%" },
-    labelAlignment: "top",
+    position: { top: "39%", left: "70%" },
+    labelAlignment: "right",
   },
   {
     year: "2025",
     title: "Consulting-led, vertical expansion",
     Icon: Cog,
     position: { top: "54%", left: "45%" },
-    labelAlignment: "top",
+    labelAlignment: "left",
   },
   {
     year: "2026 & beyond",
     title: "Looking Ahead",
     Icon: FastForward,
     position: { top: "65%", left: "23%" },
-    labelAlignment: "top",
+    labelAlignment: "left",
   },
 ];
 
