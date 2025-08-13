@@ -65,6 +65,7 @@ export const Maturity = () => {
           buttonImage={ButtonImage}
           hoverImage={ButtonImage}
           rightSec={false}
+          buttonWidth="!w-[250px]"
         />
       </div>
       <Submenu

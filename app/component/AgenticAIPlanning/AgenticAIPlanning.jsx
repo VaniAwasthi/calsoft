@@ -41,6 +41,7 @@ export const AgenticBanner = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
+        buttonWidth="!w-[250px]"
       />
       <Submenu
         navItems={navItems}

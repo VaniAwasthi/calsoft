@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import BackgroundImage1 from "../../assets/home/VMwareBanner.webp";
 import BackgroundImage2 from "../../assets/home/CalTIA-Banner.webp";
@@ -19,6 +19,7 @@ const slides = [
     description:
       "Architect, engineer, modernize, secure, and scale with Calsoft - for AI-powered innovation, faster go-to-market, and higher efficiency.",
     buttonText: "What We Do",
+    link: "data-ai/ai-driven-prediction-inferences",
   },
   {
     type: "banner",
@@ -37,16 +38,18 @@ const slides = [
     description:
       "Transform Your Testing with AI-Powered Test Intelligence Platform and Accelerate Your GTM Timeline",
     buttonText: "Read More",
+    link: "/data-ai/ai-powered-accelerators",
   },
 ];
 
 const HeroSec = () => {
   return (
     <Swiper
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
       pagination={{ clickable: true }}
       loop={true}
       className="w-full"
+      autoplay={{ delay: 3000 }}
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className="relative w-full">
@@ -112,6 +115,7 @@ const HeroSec = () => {
                         text={slide.buttonText}
                         image={ButtonImage}
                         hoverImage={ButtonImage}
+                        link={slide.link}
                       />
                     </motion.div>
                   </div>
