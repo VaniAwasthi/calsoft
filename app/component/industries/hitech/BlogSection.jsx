@@ -42,8 +42,8 @@ export const BlogSection = () => {
     // Create slug from title
     const slug = item.title
       ?.toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-") // replace non-alphanumeric with dash
-      .replace(/^-+|-+$/g, ""); // trim leading/trailing dashes
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
 
     return {
       id: index,

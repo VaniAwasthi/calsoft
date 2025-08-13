@@ -27,6 +27,7 @@ import { LuArrowUpRight } from "react-icons/lu";
 import Casestudybg from "../../assets/home/casestudybg.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCaseStudyListLimit } from "../../store/actions/caseStudyActions";
+import Link from "next/link";
 export const Services = () => {
   const title = "Services";
   const heading = "Services | Expertise-infused and business-optimized.";
@@ -156,7 +157,6 @@ export const Casestudy = () => {
   const casStudiesDatalist = useSelector(
     (state) => state.caseStudy?.limitedList
   );
-  console.log(casStudiesDatalist, "data");
 
   const caseStudyDataArray = {
     id: 1,
@@ -173,39 +173,6 @@ export const Casestudy = () => {
       { count: "20% ", text: "increase in test accuracy" },
     ],
   };
-
-  const sliderData = [
-    {
-      id: 1,
-      image: blogimg1,
-      title:
-        "Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
-    },
-    {
-      id: 2,
-      image: blogimg2,
-      title: "AI-powered test optimization with CalTIA",
-    },
-    {
-      id: 3,
-      image: blogimg3,
-      title:
-        "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool",
-    },
-    {
-      id: 4,
-      image: blogimg3,
-      title:
-        "Accelerating VMware Workload Migration with Calsoft’s Migration Server",
-    },
-    {
-      id: 5,
-      image: blogimg3,
-      title:
-        "Streamlining Legal Case Classification with Calsoft’s GenAI Copilot",
-    },
-  ];
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const caseStudyData = caseStudyDataArray;
   return (
     <>
@@ -372,41 +339,48 @@ export const Casestudy = () => {
               {casStudiesDatalist.map((item, index) => (
                 <SwiperSlide key={item.id}>
                   <motion.div
-                    onClick={() => setSelectedIndex(index)}
                     className="group relative bg-white cursor-pointer"
                     initial={{ opacity: 0, y: 20 }}
                     transition={{ duration: 0.5 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
-                    <div className="relative w-full h-44 md:h-56 rounded-xl overflow-hidden">
-                      <Image
-                        src={
-                          item.card_one
-                            ? `${baseUrl}${item.card_one}`
-                            : blogimg1
-                        }
-                        fill
-                        alt="Slide"
-                        className=" rounded-xl object-cover"
-                      />
-                    </div>
-                    <div className="py-4">
-                      <p className="text-base font-medium text-black">
-                        {item.hero_title1}
-                      </p>
-                    </div>
-                    <motion.div
-                      whileHover={{ y: -8 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      viewport={{ once: false, amount: 0.3 }}
-                      className="absolute -top-4 -right-4 bg-white p-2 border-2 border-[#2E3092] rounded-full shadow-md group-hover:scale-105 transition-transform duration-300"
+                    <Link
+                      href={`/insights/case-studies/${item.hero_title1
+                        ?.toLowerCase()
+                        .replace(/[^a-z0-9]+/g, "-")
+                        .replace(/(^-|-$)+/g, "")}`}
+                      passHref
                     >
-                      <LuArrowUpRight
-                        className="text-4xl  text-[#2E3092]"
-                        strokeWidth={4}
-                      />
-                    </motion.div>
+                      <div className="relative w-full h-44 md:h-56 rounded-xl overflow-hidden">
+                        <Image
+                          src={
+                            item.card_one
+                              ? `${baseUrl}${item.card_one}`
+                              : blogimg1
+                          }
+                          fill
+                          alt="Slide"
+                          className=" rounded-xl object-cover"
+                        />
+                      </div>
+                      <div className="py-4">
+                        <p className="text-base font-medium text-black">
+                          {item.hero_title1}
+                        </p>
+                      </div>
+                      <motion.div
+                        whileHover={{ y: -8 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="absolute -top-4 -right-4 bg-white p-2 border-2 border-[#2E3092] rounded-full shadow-md group-hover:scale-105 transition-transform duration-300"
+                      >
+                        <LuArrowUpRight
+                          className="text-4xl  text-[#2E3092]"
+                          strokeWidth={4}
+                        />
+                      </motion.div>
+                    </Link>
                   </motion.div>
                 </SwiperSlide>
               ))}
