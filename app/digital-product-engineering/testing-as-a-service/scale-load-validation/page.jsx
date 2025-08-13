@@ -10,7 +10,7 @@ import Agility from "../../../component/infra/Agility";
 import Connect from "../../../component/infra/Connect";
 import LoadValidationMatter from "../../../component/testing/LoadValidationMatter";
 
-export default function page() {
+export default function Page() {
   return (
     <>
       <HeroSection

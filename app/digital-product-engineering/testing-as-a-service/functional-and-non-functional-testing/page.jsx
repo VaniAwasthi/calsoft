@@ -9,7 +9,7 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import Connect from "../../../component/infra/Connect";
 
-export default function page() {
+export default function Page() {
   return (
     <>
       <HeroSection

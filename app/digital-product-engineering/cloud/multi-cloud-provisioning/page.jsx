@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HeroSec from "../../../component/infra/HeroSec";
 import WhyItMatters from "../../../component/infra/Multi-Cloud-Provisioning/WhyItMatters";
@@ -6,7 +7,7 @@ import UseCases from "../../../component/infra/UseCases";
 import FirstStep from "../../../component/infra/FirstStep";
 import WhyCalsoft from "../../../component/infra/WhyCalsoft";
 
-export default function page() {
+export const Page = () => {
   return (
     <>
       <HeroSec />
@@ -17,4 +18,4 @@ export default function page() {
       <FirstStep />
     </>
   );
-}
+};

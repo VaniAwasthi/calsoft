@@ -10,7 +10,7 @@ import Agility from "../../../component/infra/Agility";
 import Connect from "../../../component/infra/Connect";
 import RegressionTestingMatter from "../../../component/testing/Regression-Testing-Matter";
 
-export default function page() {
+export default Page = () => {
   return (
     <>
       <HeroSection
@@ -107,4 +107,4 @@ export default function page() {
       <Connect />
     </>
   );
-}
+};
