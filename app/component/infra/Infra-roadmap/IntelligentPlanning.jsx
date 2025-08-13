@@ -4,8 +4,8 @@ import buttonImage from "../../../assets/home/buttonImg.webp";
 
 export default function IntelligentPlanning() {
   return (
-    <div className="bg-[#f2f0f5] min-h-screen py-16 pt-0 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-[#f2f0f5] min-h-screen pb-8 px-4">
+      <div className="max-w-7xl mx-auto container">
         {/* Header Section */}
         <div className="mb-16">
           <p className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-8 leading-20">
