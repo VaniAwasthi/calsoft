@@ -66,7 +66,7 @@ export default function CSRBanner() {
               </div>
             ) : (
               <ReactPlayer
-                url="https://www.w3schools.com/html/mov_bbb.mp4"
+                url="https://www.youtube.com/watch?v=apGGhHcOJ3A"
                 controls
                 playing
                 width="100%"

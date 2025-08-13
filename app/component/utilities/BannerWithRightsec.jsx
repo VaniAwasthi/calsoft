@@ -19,7 +19,8 @@ const BannerWithRightSec = ({
   rightSecClass = "",
   ImageClass = "",
   ImageClassname = "",
-  backgroundMain = ""
+  backgroundMain = "",
+  buttonWidth = "!w-[200px]",
 }) => {
   return (
     <div
@@ -74,7 +75,7 @@ const BannerWithRightSec = ({
                   text={buttonText}
                   image={buttonImage}
                   hoverImage={hoverImage}
-                  className="!w-[200px]"
+                  className={buttonWidth}
                 />
               </motion.div>
             </div>

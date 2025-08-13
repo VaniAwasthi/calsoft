@@ -127,7 +127,7 @@ export default function ResourceGrid() {
         if (entries[0].isIntersecting) {
           setVisibleCount((prev) => {
             const next = prev + 6;
-            return next <= BlogsList.length ? next : BlogsList.length;
+            return Math.min(next, BlogsList.length);
           });
         }
       },
@@ -138,12 +138,9 @@ export default function ResourceGrid() {
       observer.observe(loadMoreRef.current);
     }
 
-    return () => {
-      if (loadMoreRef.current) {
-        observer.unobserve(loadMoreRef.current);
-      }
-    };
-  }, [BlogsList.length]);
+    return () => observer.disconnect();
+  }, []); // ✅ no BlogsList.length here
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto  px-4 sm:px-6 lg:px-8">

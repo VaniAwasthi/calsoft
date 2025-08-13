@@ -38,7 +38,7 @@ export const IndustryData = [
     id: 1,
     image: Hitech,
     category: "Hi-Tech",
-
+    Pagelink: "/industries/hitech",
     title: "Hi-Tech & digital innovation",
     description:
       "Build smarter products, platforms, and experiences with AI-driven engineering and cloud-native solutions.",
@@ -76,6 +76,7 @@ export const IndustryData = [
     image: Retail,
     category: "Retail",
     title: "Retail | Smart Retail",
+    Pagelink: "/industries/retail",
     description:
       "Enhance customer experiences and streamline operations with AI-driven personalization, predictive analytics, and intelligent automation.",
     iconData: [
@@ -116,6 +117,7 @@ export const IndustryData = [
     image: industry,
     category: "Telecom",
     title: "Next-gen telecom & networking",
+    Pagelink: "/industries/telecom",
     description:
       "Enable future-ready networks with 5G, SDN/NFV, and AI-driven orchestration for seamless connectivity and service delivery.",
     iconData: [
@@ -156,6 +158,7 @@ export const IndustryData = [
     image: Manufacturing,
     category: "Manufacturing",
     title: "Manufacturing",
+    Pagelink: "/industries/manufacturing",
     description:
       "Drive operational efficiency, reduce downtime, and improve product quality with smart manufacturing solutions powered by AI, IoT, and automation.",
     iconData: [
