@@ -10,7 +10,7 @@ import Agility from "../../../component/infra/Agility";
 import Connect from "../../../component/infra/Connect";
 import BenchmarkingMatter from "../../../component/testing/BenchmarkingMatter";
 
-export default Page = () => {
+const Page = () => {
   return (
     <>
       <HeroSection
@@ -108,3 +108,4 @@ export default Page = () => {
     </>
   );
 };
+export default Page;

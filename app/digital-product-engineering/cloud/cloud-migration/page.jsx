@@ -9,7 +9,7 @@ import WhyCalsoft from "../../../component/infra/WhyCalsoft";
 import Agility from "../../../component/infra/Agility";
 import Connect from "../../../component/infra/Connect";
 
-export const Page = () => {
+const Page = () => {
   return (
     <>
       <HeroSec />
@@ -23,3 +23,4 @@ export const Page = () => {
     </>
   );
 };
+export default Page;
