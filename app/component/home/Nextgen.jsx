@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { IoArrowForwardCircleSharp } from "react-icons/io5";
 import { IndustryData } from "../utilities/data/IndustryData";
+import Link from "next/link";
 
 const Nextgen = () => {
   const [activeTab, setActiveTab] = useState("Hi-Tech");
@@ -139,7 +140,8 @@ const Nextgen = () => {
                         </span>
                         <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
                       </button>
-                      <button
+                      <Link
+                        href={activeIndustry.Pagelink}
                         className="relative hidden md:flex gap-2 justify-between items-center bg-transparent border-1 border-white px-2 md:px-8 py-4 rounded-full shadow-md text-white transition-all duration-500 overflow-hidden group"
                         style={{
                           boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
@@ -149,7 +151,7 @@ const Nextgen = () => {
                           Know More
                         </span>
                         <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
-                      </button>
+                      </Link>
                     </div>
                   </>
                 )}

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -28,38 +28,31 @@ import ContactImg from "../../../assets/industries/hitech/contactbg.webp";
 import ButtonLayout from "../../utilities/ButtonLayout";
 import ServiceImge from "../../../assets/industries/hitech/Intellegence.webp";
 import ServiceImgeMobile from "../../../assets/industries/hitech/IntellegentMobile.webp";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogListLimit } from "../../../store/actions/blogAction";
+import { baseUrl } from "../../../../config";
+import Link from "next/link";
 export const BlogSection = () => {
-  const sliderData = [
-    {
-      id: 1,
-      image: blogimg1,
-      title:
-        "Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
-    },
-    {
-      id: 2,
-      image: blogimg2,
-      title: "AI-powered test optimization with CalTIA",
-    },
-    {
-      id: 3,
-      image: blogimg3,
-      title:
-        "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool",
-    },
-    {
-      id: 4,
-      image: blogimg3,
-      title:
-        "Accelerating VMware Workload Migration with Calsoft’s Migration Server",
-    },
-    {
-      id: 5,
-      image: blogimg3,
-      title:
-        "Streamlining Legal Case Classification with Calsoft’s GenAI Copilot",
-    },
-  ];
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBlogListLimit(5));
+  }, [dispatch]);
+  const data = useSelector((state) => state.blogs.limitedList);
+  const sliderData = data?.map((item, index) => {
+    // Create slug from title
+    const slug = item.title
+      ?.toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-") // replace non-alphanumeric with dash
+      .replace(/^-+|-+$/g, ""); // trim leading/trailing dashes
+
+    return {
+      id: index,
+      image: item.image ? `${baseUrl}${item.image}` : blogimg1,
+      title: item.title,
+      link: `/insights/blogs/${slug}`,
+    };
+  });
+
   return (
     <>
       <section className="md:py-10">
@@ -83,37 +76,40 @@ export const BlogSection = () => {
                 clickable: true,
               }}
             >
-              {sliderData.map((item, index) => (
+              {sliderData?.map((item, index) => (
                 <SwiperSlide key={item.id}>
                   <motion.div
-                    // onClick={() => setSelectedIndex(index)}
-                    className="group relative bg-white cursor-pointer mb-10"
+                    className="group relative bg-white cursor-pointer mb-10 px-3"
                     initial={{ opacity: 0, y: 20 }}
                     transition={{ duration: 0.5 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
-                    <Image
-                      src={item.image}
-                      alt="Slide"
-                      className="w-full h-44 md:h-56 rounded-xl object-cover"
-                    />
-                    <div className="py-4 md:hidden block">
-                      <p className="text-base font-medium text-black">
-                        {item.title}
-                      </p>
-                    </div>
-                    <motion.div
-                      whileHover={{ y: -8 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      viewport={{ once: false, amount: 0.3 }}
-                      className="absolute -top-4 -right-4 bg-white p-2 border-2 border-[#2E3092] rounded-full shadow-md group-hover:scale-105 transition-transform duration-300"
-                    >
-                      <LuArrowUpRight
-                        className="text-3xl  text-[#2E3092]"
-                        strokeWidth={4}
+                    <Link href={item.link}>
+                      <Image
+                        src={item.image}
+                        alt="Slide"
+                        width={300}
+                        height={200}
+                        className="w-full h-44 md:h-56 rounded-xl object-cover"
                       />
-                    </motion.div>
+                      <div className="py-5 block">
+                        <p className="text-base font-medium text-black">
+                          {item.title}
+                        </p>
+                      </div>
+                      <motion.div
+                        whileHover={{ y: -8 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="absolute -top-4 -right-4 bg-white p-2 border-2 border-[#2E3092] rounded-full shadow-md group-hover:scale-105 transition-transform duration-300"
+                      >
+                        <LuArrowUpRight
+                          className="text-3xl  text-[#2E3092]"
+                          strokeWidth={4}
+                        />
+                      </motion.div>
+                    </Link>
                   </motion.div>
                 </SwiperSlide>
               ))}
