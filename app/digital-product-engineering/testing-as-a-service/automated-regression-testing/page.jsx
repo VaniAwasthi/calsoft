@@ -1,23 +1,30 @@
 import React from "react";
-import HeroSection from "../component/testing/HeroSection";
-import WhyItMatters from "../component/testing/Functional-Testing/WhyItMatters";
-import IntelligentPlanning from "../component/testing/IntelligentPlanning";
-import UseCases from "../component/testing/UseCases";
-import WhyCalsoft from "../component/infra/WhyCalsoft";
-import FirstStep from "../component/infra/FirstStep";
-import Guesswork from "../component/testing/Guesswork";
-import Agility from "../component/infra/Agility";
-import Connect from "../component/infra/Connect";
+import HeroSection from "../../../component/testing/HeroSection";
+import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
+import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
+import UseCases from "../../../component/testing/UseCases";
+import WhyCalsoft from "../../../component/infra/WhyCalsoft";
+import FirstStep from "../../../component/infra/FirstStep";
+import Guesswork from "../../../component/testing/Guesswork";
+import Agility from "../../../component/infra/Agility";
+import Connect from "../../../component/infra/Connect";
+import RegressionTestingMatter from "../../../component/testing/Regression-Testing-Matter";
 
-export default function page() {
+const Page = () => {
   return (
     <>
       <HeroSection
-        title="Migrate with Certainty. Modernize without Disruption."
-        description="Accelerate cloud adoption through risk-aware, business-aligned migration strategies — backed by automation, security, and predictable ROI."
-        buttonText="Access Readiness"
+        title="Never Re-Test Everything. Always Test What Matters"
+        description="Accelerate release cycles and improve test coverage with Calsoft’s Automated Regression Testing — engineered for speed, stability, and scalability."
+        buttonText="Request Free Assessment"
       />
-      <WhyItMatters />
+      <WhyItMatters
+        title="Outdated Regression = Delayed Releases."
+        desc="Manual or partially automated regression testing often fails to keep pace with agile sprints and CI/CD pipelines, leading to:"
+        desc2="Calsoft helps QA teams shift from script-heavy testing to impact-driven, maintainable regression automation aligned with release velocity."
+        buttonText="Download Case Study"
+        Component={RegressionTestingMatter}
+      />
       <IntelligentPlanning />
       <Agility
         data={{
@@ -100,4 +107,5 @@ export default function page() {
       <Connect />
     </>
   );
-}
+};
+export default Page;

@@ -40,6 +40,7 @@ export const GovernJounery = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
+        buttonWidth="!w-[250px]"
       />
       <Submenu
         navItems={navItems}

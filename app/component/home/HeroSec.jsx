@@ -2,9 +2,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
-import BackgroundImage from "../../assets/home/Hero-sec2.webp";
+import BackgroundImage1 from "../../assets/home/VMwareBanner.webp";
+import BackgroundImage2 from "../../assets/home/CalTIA-Banner.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import BannerLayout from "../utilities/BannerLayout";
 import ButtonLayout from "../utilities/ButtonLayout";
@@ -18,25 +19,37 @@ const slides = [
     description:
       "Architect, engineer, modernize, secure, and scale with Calsoft - for AI-powered innovation, faster go-to-market, and higher efficiency.",
     buttonText: "What We Do",
+    link: "data-ai/ai-driven-prediction-inferences",
   },
   {
     type: "banner",
-    image: BackgroundImage,
-    title: "Tech-driven growth",
-    title2: "on your mind?",
+    image: BackgroundImage1,
+    title: "Migrate away from VMware",
+    title2: "",
     description:
-      "Architect, engineer, modernize, secure, and scale with Calsoft - for AI-powered innovation, faster go-to-market, and higher efficiency.",
-    buttonText: "What We Do",
+      "Secure Migration with 50% lower TCO, near-zero downtime, 40% post-migration savings",
+    buttonText: "Read More",
+  },
+  {
+    type: "banner",
+    image: BackgroundImage2,
+    title: "AI-Powered",
+    title2: "Test intelligence Platform",
+    description:
+      "Transform Your Testing with AI-Powered Test Intelligence Platform and Accelerate Your GTM Timeline",
+    buttonText: "Read More",
+    link: "/data-ai/ai-powered-accelerators",
   },
 ];
 
 const HeroSec = () => {
   return (
     <Swiper
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
       pagination={{ clickable: true }}
       loop={true}
       className="w-full"
+      autoplay={{ delay: 3000 }}
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className="relative w-full">
@@ -102,6 +115,7 @@ const HeroSec = () => {
                         text={slide.buttonText}
                         image={ButtonImage}
                         hoverImage={ButtonImage}
+                        link={slide.link}
                       />
                     </motion.div>
                   </div>

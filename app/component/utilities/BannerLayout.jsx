@@ -33,6 +33,8 @@ const BannerLayout = ({
           src={image}
           alt="Background Image"
           className="w-full h-[37.5rem] object-cover"
+          width={200}
+          height={200}
         />
       </div>
 
@@ -54,7 +56,7 @@ const BannerLayout = ({
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.2, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className={`font-bold  text-left leading-8 md:leading-14  ${titleOneClass}`}
+            className={`font-semibold  text-left leading-8 md:leading-14 md:w-2/3 ${titleOneClass}`}
           >
             {title}
           </motion.h2>

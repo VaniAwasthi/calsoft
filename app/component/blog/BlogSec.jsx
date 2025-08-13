@@ -94,7 +94,7 @@ export default function ResourceGrid() {
     }
 
     setActiveFilters(updatedFilters);
-    setOpenDropdown("");
+    setOpenDropdown(null);
 
     dispatch(
       fetchFilteredBlogs({

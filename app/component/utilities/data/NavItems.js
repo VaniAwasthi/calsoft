@@ -199,27 +199,19 @@ export const navItems = [
         section: [
           {
             title: "Infrastructure Roadmap",
-            href: "#",
+            href: "/digital-product-engineering/cloud/infrastructure-roadmap",
           },
           {
             title: "Multi-cloud Provisioning",
-            href: "#",
+            href: "/digital-product-engineering/cloud/multi-cloud-provisioning",
           },
           {
             title: "Cloud-native enablement",
-            href: "#",
+            href: "/digital-product-engineering/cloud/cloud-native-enablement",
           },
           {
             title: "Cloud Migration",
-            href: "#",
-          },
-          {
-            title: "Cost Optimization(Not Required)",
-            href: "#",
-          },
-          {
-            title: "SRE (Site Reliability Engineering)",
-            href: "#",
+            href: "/digital-product-engineering/cloud/cloud-migration",
           },
         ],
       },
@@ -229,27 +221,27 @@ export const navItems = [
         section: [
           {
             title: "Functional and non-functional testing",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/functional-and-non-functional-testing",
           },
           {
             title: "Automated regression testing (CalTIA)",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/automated-regression-testing",
           },
           {
             title: "Scale & Load Validation",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/scale-load-validation",
           },
           {
             title: "Test Impact Analysis",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/test-impact-analysis",
           },
           {
             title: "QAOps with CI/CD pipeline integration",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/qaops-with-ci-cd-pipeline-integration",
           },
           {
             title: "Benchmarking for Readiness",
-            href: "#",
+            href: "/digital-product-engineering/testing-as-a-service/benchmarking-for-readiness",
           },
         ],
       },
