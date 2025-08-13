@@ -1,16 +1,16 @@
 import React from "react";
-import HeroSection from "../component/testing/HeroSection";
-import WhyItMatters from "../component/testing/Functional-Testing/WhyItMatters";
-import IntelligentPlanning from "../component/testing/IntelligentPlanning";
-import UseCases from "../component/testing/UseCases";
-import WhyCalsoft from "../component/infra/WhyCalsoft";
-import FirstStep from "../component/infra/FirstStep";
-import Guesswork from "../component/testing/Guesswork";
-import Agility from "../component/infra/Agility";
-import Connect from "../component/infra/Connect";
-import BenchmarkingMatter from "../component/testing/BenchmarkingMatter";
+import HeroSection from "../../../component/testing/HeroSection";
+import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
+import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
+import UseCases from "../../../component/testing/UseCases";
+import WhyCalsoft from "../../../component/infra/WhyCalsoft";
+import FirstStep from "../../../component/infra/FirstStep";
+import Guesswork from "../../../component/testing/Guesswork";
+import Agility from "../../../component/infra/Agility";
+import Connect from "../../../component/infra/Connect";
+import LoadValidationMatter from "../../../component/testing/LoadValidationMatter";
 
-export default function page() {
+const Page = () => {
   return (
     <>
       <HeroSection
@@ -23,7 +23,8 @@ export default function page() {
         desc="Manual or partially automated regression testing often fails to keep pace with agile sprints and CI/CD pipelines, leading to:"
         desc2="Calsoft helps QA teams shift from script-heavy testing to impact-driven, maintainable regression automation aligned with release velocity."
         buttonText="Download Case Study"
-        Component={BenchmarkingMatter}
+        Component={LoadValidationMatter}
+        contentWidth="w-[80%]"
       />
       <IntelligentPlanning />
       <Agility
@@ -107,4 +108,5 @@ export default function page() {
       <Connect />
     </>
   );
-}
+};
+export default Page;
