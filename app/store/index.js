@@ -7,6 +7,7 @@ import loadingReducer from "./reducers/loadingReducer";
 import blogsReducer from "./reducers/blogReducer";
 import whitepaperReducer from "./reducers/whitepaperReducer";
 import datasheetsReducer from "./reducers/datasheetReducer";
+import webinarsReducer from "./reducers/webinarsReducer";
 
 // Helper function for persist configs
 const persistConfig = (key) => ({
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   blogs: persistReducer(persistConfig("blogs"), blogsReducer),
   whitepaper: persistReducer(persistConfig("whitepaper"), whitepaperReducer),
   datasheets: persistReducer(persistConfig("datasheets"), datasheetsReducer),
+  webinars: persistReducer(persistConfig("webinars"), webinarsReducer),
 });
 
 export const store = configureStore({
@@ -28,7 +30,7 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredActions: ["persist/PERSIST"], // Ignore non-serializable Redux Persist actions
+        ignoredActions: ["persist/PERSIST"],
       },
     }),
 });
