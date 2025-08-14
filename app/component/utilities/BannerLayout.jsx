@@ -29,13 +29,15 @@ const BannerLayout = ({
       {/* Background Image */}
       <div className="h-fit w-full relative">
         <div className="absolute top-0 w-full h-full bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
-        <Image
-          src={image}
-          alt="Background Image"
-          className="w-full h-[37.5rem] object-cover"
-          width={200}
-          height={200}
-        />
+        <div className="h-[37.5rem] w-full relative">
+          <Image
+            src={image}
+            alt="Background Image"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
       </div>
 
       {/* Content Section - Centered */}

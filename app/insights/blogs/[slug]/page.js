@@ -19,6 +19,11 @@ import {
 } from "../../../component/blog/blog-expand/BannerArticle.jsx";
 
 const Page = () => {
+  useEffect(() => {
+    console.log("Hash:", window.location.hash);
+    console.log("Scroll position:", window.scrollY);
+  }, []);
+
   const dispatch = useDispatch();
   const { slug } = useParams();
 

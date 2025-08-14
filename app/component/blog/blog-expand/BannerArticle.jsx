@@ -157,11 +157,35 @@ export const ArticleContent = ({ blog }) => {
                   />
                 </div>
               </div>
-              <h3 className="text-[20px] font-bold mb-2">Tom Neaves</h3>
-              <p className="text-[15px]  leading-relaxed">
-                Lorem ipsum is a dummy or placeholder text commonly used in
-                graphic design, publishing, and web development.
-              </p>
+              {Array.isArray(blog?.authorData) ? (
+                blog.authorData.map((auth, idx) => (
+                  <div key={idx}>
+                    <h3 className="text-[20px] font-bold mb-2">{auth.name}</h3>
+                    <p className="text-[15px] leading-relaxed">
+                      Lorem ipsum is a dummy or placeholder text commonly used
+                      in graphic design, publishing, and web development.
+                    </p>
+                  </div>
+                ))
+              ) : blog?.authorData ? (
+                <div>
+                  <h3 className="text-[20px] font-bold mb-2">
+                    {blog.authorData.name}
+                  </h3>
+                  <p className="text-[15px] leading-relaxed">
+                    Lorem ipsum is a dummy or placeholder text commonly used in
+                    graphic design, publishing, and web development.
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <h3 className="text-[20px] font-bold mb-2">Tom Neaves</h3>
+                  <p className="text-[15px] leading-relaxed">
+                    Lorem ipsum is a dummy or placeholder text commonly used in
+                    graphic design, publishing, and web development.
+                  </p>
+                </div>
+              )}
             </div>
             {/* Share Icons */}
             <div className="flex flex-wrap gap-8  items-center">
