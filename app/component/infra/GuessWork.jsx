@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 function RoundedArrow({ className = "", turn = "left" }) {
   if (turn == "right")
@@ -186,7 +187,13 @@ export default function Component() {
               <div className="relative flex items-start">
                 {/* Left Content for odd steps */}
                 {step.side === "left" && (
-                  <div className="w-[45%] pr-16">
+                  <motion.div
+                    initial={{ x: -50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    className="w-[45%] pr-16"
+                  >
                     {/* <div className="flex items-start gap-3 mb-4"> */}
                     {/* <ChevronRight className="w-6 h-6 text-[#2e3092] mt-1 flex-shrink-0" /> */}
                     <h2 className="text-[28px] font-bold text-[#000000] leading-tight whitespace-pre-line">
@@ -216,7 +223,7 @@ export default function Component() {
                         <span className="font-bold">Output:</span> {step.output}
                       </p>
                     )}
-                  </div>
+                  </motion.div>
                 )}
 
                 {/* Center Circle - positioned at the top of content block */}
@@ -230,7 +237,13 @@ export default function Component() {
 
                 {/* Right Content for even steps */}
                 {step.side === "right" && (
-                  <div className="w-[45%] ml-auto pl-16">
+                  <motion.div
+                    initial={{ x: 50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    className="w-[45%] ml-auto pl-16"
+                  >
                     {/* <div className="flex items-start gap-3 mb-4">
                       <RoundedArrow
                         className="mt-1 flex-shrink-0"
@@ -263,7 +276,7 @@ export default function Component() {
                         <span className="font-bold">Output:</span> {step.output}
                       </p>
                     )}
-                  </div>
+                  </motion.div>
                 )}
 
                 {/* Curved Connector - positioned below the circle */}

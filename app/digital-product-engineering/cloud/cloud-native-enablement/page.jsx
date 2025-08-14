@@ -6,6 +6,8 @@ import IntelligentPlanning from "../../../component/infra/Multi-Cloud-Provisioni
 import UseCases from "../../../component/infra/UseCases";
 import FirstStep from "../../../component/infra/FirstStep";
 import WhyCalsoft from "../../../component/infra/WhyCalsoft";
+import Agility from "../../../component/infra/Agility";
+import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
   return (
@@ -13,9 +15,16 @@ const Page = () => {
       <HeroSec />
       <WhyItMatters />
       <IntelligentPlanning />
+      <Agility />
       <UseCases />
       <WhyCalsoft />
       <FirstStep />
+      <ContactSecDataAi
+        lightContent={
+          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+        }
+        link={"#"}
+      />
     </>
   );
 };

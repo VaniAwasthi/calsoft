@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import img from "../../assets/infra/agility.webp";
 import predict from "../../assets/infra/predictibility.webp";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
+import { motion } from "framer-motion";
 
 export default function Agility({
   data = {
@@ -49,28 +52,60 @@ export default function Agility({
             <div className="h-full flex gap-8 items-center justify-between">
               {/* Left content */}
               <div className="flex-1 p-10 h-full flex flex-col gap-6 justify-center">
-                <p className="text-3xl font-bold">
+                <motion.p
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="text-3xl font-bold"
+                >
                   {data.leftSideContent.title}
-                </p>
-                <p className="text-xl font-semibold">
+                </motion.p>
+                <motion.p
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="text-xl font-semibold"
+                >
                   {data.leftSideContent.subTitle}
-                </p>
-                <p className="text-lg">{data.leftSideContent.description}</p>
-                <ButtonLayout
-                  text={buttonText}
-                  image={buttonImage}
-                  hoverImage={buttonImage}
-                  className={"w-fit mt-3"}
-                />
+                </motion.p>
+                <motion.p
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="text-lg"
+                >
+                  {data.leftSideContent.description}
+                </motion.p>
+                <motion.div
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.7 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                >
+                  <ButtonLayout
+                    text={buttonText}
+                    image={buttonImage}
+                    hoverImage={buttonImage}
+                    className={"w-fit mt-3"}
+                  />
+                </motion.div>
               </div>
               <div className="bg-white w-px h-[70%]" />
               {/* Right Content */}
               <div className="flex-1 flex gap-4 flex-col">
-                {data.rightSideContent.map((ele) => (
-                  <div>
+                {data.rightSideContent.map((ele, idx) => (
+                  <motion.div
+                    initial={{ x: 50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: idx * 0.1 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                  >
                     <p className="text-4xl">{ele.title}</p>
                     <p className="text-xl font-light">{ele.subTitle}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -82,10 +117,24 @@ export default function Agility({
         <Image src={predict} className="w-full object-cover" />
         <div className="absolute top-0 w-full h-full bg-[#2e309293] bg-[linear-gradient(90deg,rgba(46,48,146,0.7)_0%,rgba(46,48,146,0.5)_60%,rgba(255,255,255,0)_100%)] text-white">
           <div className="w-full h-full flex justify-between items-center gap-5 p-5">
-            <p className="text-4xl font-medium">{bookMeetingData.title}</p>
-            <button className="text-xl  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg">
+            <motion.p
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="text-4xl font-medium"
+            >
+              {bookMeetingData.title}
+            </motion.p>
+            <motion.button
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="text-xl  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg"
+            >
               {bookMeetingData.buttonText}
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
