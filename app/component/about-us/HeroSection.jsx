@@ -1,31 +1,15 @@
+"use client";
+
 import React from "react";
 import heroImage from "../../assets/about-us/Hero_image.webp";
 import BannerLayout from "../utilities/BannerLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import logo from "../../assets/about-us/logo.webp";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    // <section className="w-full">
-    //   <BannerLayout
-    //     image={heroImage}
-    //     logo={logo}
-    //     // title={"Calsoft’s Digital"}
-    //     title2={"Technology-first partner"}
-    //     description={
-    //       "Engineer smarter outcomes with the right tech and dependable delivery. Designed for your goals, Optimized for cost, time, and scale."
-    //     }
-    //     knowMoreAboutUs={true}
-    //     buttonText={"Get in touch"}
-    //     buttonImage={ButtonImage}
-    //     hoverImage={ButtonImage}
-    //     titleOneClass="md:text-5xl text-[20px] mt-2"
-    //     titleTwoClass="text-[28px] md:text-5xl md:mt-4"
-    //     descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[200px] md:w-full"
-    //     BgClassname="object-cover w-full h-full object-center"
-    //   />
-    // </section>
     <motion.section
       className="relative text-white"
       style={{
@@ -44,13 +28,20 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center max-w-md"
           >
+            <Image
+              src={logo}
+              alt="logo"
+              width={200}
+              height={200}
+              className="mb-5"
+            />
             <h1 className="text-3xl sm:text-4xl md:text-[50px] font-light mb-4 leading-tight">
-              Calsoft’s CSR initiatives
+              Technology-first partner
             </h1>
             <p className="text-base sm:text-xl opacity-90 max-w-lg">
-              Our corporate social responsibility efforts reflect our core
-              commitments to sustainability, community upliftment, and
-              inclusion.
+              Engineer smarter outcomes with the right tech and dependable
+              delivery. Designed for your goals, Optimized for cost, time, and
+              scale.
             </p>
           </motion.div>
 

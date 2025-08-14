@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Benefits() {
   const data = [
@@ -279,8 +282,16 @@ export default function Benefits() {
           Some benefits for clients with Calsoft
         </p>
         <div className="lg:flex gap-8 gap-y-20 md:gap-6 grid sm:grid-cols-3 grid-cols-2">
-          {data.map((ele) => (
-            <BenefitComps ele={ele} />
+          {data.map((ele, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: idx * 0.1 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <BenefitComps ele={ele} />
+            </motion.div>
           ))}
         </div>
       </div>

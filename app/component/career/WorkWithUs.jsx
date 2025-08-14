@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function WorkWithUs() {
   const data = [
@@ -140,9 +143,17 @@ export default function WorkWithUs() {
         <p className="text-4xl sm:text-5xl font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">
           Some benefits for clients with Calsoft
         </p>
-        <div className="lg:flex gap-8 gap-y-20 md:gap-6 grid sm:grid-cols-3 grid-cols-2">
-          {data.map((ele) => (
-            <BenefitComps ele={ele} />
+        <div className="gap-8 gap-y-20 md:gap-6 grid sm:grid-cols-3 grid-cols-2 lg:grid-cols-6">
+          {data.map((ele, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: idx * 0.1 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <BenefitComps ele={ele} />
+            </motion.div>
           ))}
         </div>
       </div>

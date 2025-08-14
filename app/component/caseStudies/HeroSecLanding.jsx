@@ -289,12 +289,24 @@ export const ToKnowMoreSection = ({
       {/* Content */}
       <div className="max-w-7xl mx-auto relative z-20 flex flex-col md:flex-row items-center md:items-center justify-start md:justify-start min-h-[220px] w-full h-full p-6 md:p-12">
         <div className="w-full md:w-1/2 flex flex-col justify-center items-start">
-          <h2 className="text-white text-2xl md:text-3xl font-semibold mb-2">
+          <motion.h2
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-white text-2xl md:text-3xl font-semibold mb-2"
+          >
             {title}
-          </h2>
-          <p className="text-white/80 text-base md:text-lg mb-6 max-w-md">
+          </motion.h2>
+          <motion.p
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-white/80 text-base md:text-lg mb-6 max-w-md"
+          >
             {description}
-          </p>
+          </motion.p>
           <motion.div
             initial={{ x: 30, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}

@@ -1,13 +1,28 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function ReferSomeone() {
   return (
     <div className="bg-[#2E3092] flex justify-between items-center px-10 md:px-16 py-8">
-      <div className="text-white flex lg:gap-5 lg:flex-row flex-col gap-4 items-center">
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.4 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="text-white flex lg:gap-5 lg:flex-row flex-col gap-4 items-center"
+      >
         <p className="text-3xl md:text-4xl font-bold">Want to refer someone?</p>
         <p className="text-xl md:text-2xl">Be the difference for someone</p>
-      </div>
-      <button className="flex justify-center items-center bg-white p-4 rounded-full">
+      </motion.div>
+      <motion.button
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="flex justify-center items-center bg-white p-4 rounded-full"
+      >
         <svg
           width="28"
           height="28"
@@ -20,7 +35,7 @@ export default function ReferSomeone() {
             fill="black"
           />
         </svg>
-      </button>
+      </motion.button>
     </div>
   );
 }

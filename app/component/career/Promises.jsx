@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Promises() {
   const data = [
@@ -205,15 +208,22 @@ export default function Promises() {
           Calsoft’s Career 360 promise
         </p>
         <div className="grid xs:grid-cols-2 md:grid-cols-3 gap-12">
-          {data.map((ele) => (
-            <div className="flex flex-col items-start justify-between gap-3 h-full">
+          {data.map((ele, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: idx * 0.1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex flex-col items-start justify-between gap-3 h-full"
+            >
               <div>{ele.icon}</div>
               <p className="text-3xl text-[#2E3092] xs:h-28 lg:h-20">
                 {ele.title}
               </p>
               <p className="text-lg lg:h-[7.5rem] xl:h-24">{ele.desc}</p>
               <div className="bg-black h-px w-full self-end justify-self-end" />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

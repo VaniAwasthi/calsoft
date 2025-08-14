@@ -19,9 +19,6 @@ export default function LeadershipPage() {
         buttonLabel="Contact Us"
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
-        // onButtonClick={() => {
-        //   console.log("submit");
-        // }}
       />
     </>
   );

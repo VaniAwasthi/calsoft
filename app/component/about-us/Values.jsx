@@ -439,10 +439,13 @@
 //   );
 // }
 
+"use client";
+
 import React from "react";
 import Employee from "../../assets/about-us/employee.webp";
 import Client from "../../assets/about-us/client.webp";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Values() {
   const data = {
@@ -697,50 +700,67 @@ export default function Values() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Desktop Layout */}
-      <div className="hidden lg:flex items-center justify-center p-8 min-h-screen">
-        <div className="relative w-full max-w-6xl">
-          {/* Left Column - Employee Values */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 space-y-6">
-            {data.employee.map((value, index) => (
-              <div key={value.title} className="relative">
-                <div className="bg-[#4338ca] text-white px-6 py-4 rounded-2xl flex items-center gap-3 w-56 shadow-lg">
-                  <div className="w-6 h-6 flex items-center justify-center">
-                    {value.icon}
-                  </div>
-                  <span className="font-semibold text-lg">{value.title}</span>
-                </div>
-                {/* Dotted line to center */}
-                <div
-                  className="absolute left-full top-1/2 w-64 border-t-2 border-dotted border-gray-400"
-                  style={{ transform: "translateY(-1px)" }}
-                />
-              </div>
-            ))}
-          </div>
+      <div className="p-8">
+        <h1 className="text-4xl font-semibold text-center">Values</h1>
 
-          {/* Right Column - Client Values */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 space-y-6">
-            {data.client.map((value, index) => (
-              <div key={value.title} className="relative">
-                <div className="bg-[#4338ca] text-white px-6 py-4 rounded-2xl flex items-center gap-3 w-56 shadow-lg">
-                  <div className="w-6 h-6 flex items-center justify-center">
-                    {value.icon}
+        <div className="hidden lg:flex items-center justify-center min-h-[80vh]">
+          <div className="relative w-full max-w-6xl">
+            {/* Left Column - Employee Values */}
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 space-y-6">
+              {data.employee.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.2 * index }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="relative"
+                >
+                  <div className="bg-[#4338ca] text-white px-6 py-4 rounded-2xl flex items-center gap-3 w-56 shadow-lg">
+                    <div className="w-6 h-6 flex items-center justify-center">
+                      {value.icon}
+                    </div>
+                    <span className="font-semibold text-lg">{value.title}</span>
                   </div>
-                  <span className="font-semibold text-lg">{value.title}</span>
-                </div>
-                {/* Dotted line to center */}
-                <div
-                  className="absolute right-full top-1/2 w-64 border-t-2 border-dotted border-gray-400"
-                  style={{ transform: "translateY(-1px)" }}
-                />
-              </div>
-            ))}
-          </div>
+                  {/* Dotted line to center */}
+                  <div
+                    className="absolute left-full top-1/2 w-64 border-t-2 border-dotted border-gray-400"
+                    style={{ transform: "translateY(-1px)" }}
+                  />
+                </motion.div>
+              ))}
+            </div>
 
-          {/* Center Images */}
-          <div className="flex justify-center items-center h-full">
-            {/* Left Image - Employee */}
-            {/* <div className="relative w-40 h-80 rounded-2xl overflow-hidden shadow-xl">
+            {/* Right Column - Client Values */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 space-y-6">
+              {data.client.map((value, index) => (
+                <motion.div
+                  key={value.title}
+                  initial={{ x: 50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.2 * index }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="relative"
+                >
+                  <div className="bg-[#4338ca] text-white px-6 py-4 rounded-2xl flex items-center gap-3 w-56 shadow-lg">
+                    <div className="w-6 h-6 flex items-center justify-center">
+                      {value.icon}
+                    </div>
+                    <span className="font-semibold text-lg">{value.title}</span>
+                  </div>
+                  {/* Dotted line to center */}
+                  <div
+                    className="absolute right-full top-1/2 w-64 border-t-2 border-dotted border-gray-400"
+                    style={{ transform: "translateY(-1px)" }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Center Images */}
+            <div className="flex justify-center items-center h-full">
+              {/* Left Image - Employee */}
+              {/* <div className="relative w-40 h-80 rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src={Employee || "/placeholder.svg"}
                   alt="Team collaboration"
@@ -760,31 +780,43 @@ export default function Values() {
                   </div>
                 </div>
               </div> */}
-            <div className="relative w-[30rem] h-[12rem] rounded-2xl overflow-hidden shadow-xl rotate-270 left-[10%]">
-              <div className="w-full h-full">
-                <Image
-                  src={Employee}
-                  className="w-full h-full object-cover object-[center_20%]"
-                />
+              <div className="relative w-[30rem] h-[12rem] rounded-2xl overflow-hidden shadow-xl rotate-270 left-[10%]">
+                <div className="w-full h-full">
+                  <Image
+                    src={Employee}
+                    className="w-full h-full object-cover object-[center_20%]"
+                  />
+                </div>
+                <motion.div
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="absolute top-0 w-full h-full flex justify-center items-center text-7xl font-semibold text-white bg-[#00000081]"
+                >
+                  Employee
+                </motion.div>
               </div>
-              <div className="absolute top-0 w-full h-full flex justify-center items-center text-7xl font-semibold text-white bg-[#00000081]">
-                Employee
-              </div>
-            </div>
 
-            {/* Right Image - Client */}
-            <div className="relative w-[30rem] h-[12rem] rounded-2xl overflow-hidden shadow-xl rotate-90 right-[10%]">
-              <div className="w-full h-full">
-                <Image
-                  src={Client}
-                  className="w-full h-full object-cover object-[center_20%]"
-                />
+              {/* Right Image - Client */}
+              <div className="relative w-[30rem] h-[12rem] rounded-2xl overflow-hidden shadow-xl rotate-90 right-[10%]">
+                <div className="w-full h-full">
+                  <Image
+                    src={Client}
+                    className="w-full h-full object-cover object-[center_20%]"
+                  />
+                </div>
+                <motion.div
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="absolute top-0 w-full h-full flex justify-center items-center text-7xl font-semibold text-white bg-[#00000081]"
+                >
+                  Client
+                </motion.div>
               </div>
-              <div className="absolute top-0 w-full h-full flex justify-center items-center text-7xl font-semibold text-white bg-[#00000081]">
-                Client
-              </div>
-            </div>
-            {/* <div className="relative w-40 h-80 rounded-2xl overflow-hidden shadow-xl">
+              {/* <div className="relative w-40 h-80 rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src={Client || "/placeholder.svg"}
                   alt="Client focus"
@@ -804,6 +836,7 @@ export default function Values() {
                   </span>
                 </div>
               </div> */}
+            </div>
           </div>
         </div>
       </div>
