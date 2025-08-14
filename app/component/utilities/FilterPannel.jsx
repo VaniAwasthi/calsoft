@@ -31,7 +31,7 @@ export default function FilterPanel({
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6 relative z-90">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6 relative z-20">
       {Object.keys(filters).map((filterType) => (
         <motion.div
           key={filterType}

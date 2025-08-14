@@ -1,24 +1,20 @@
 "use client";
 
-import Image from "next/image";
 import React from "react";
-import img from "../../assets/infra/FirstStep.webp";
-import Guesswork from "./GuessWork";
 import { motion } from "framer-motion";
+import img from "../../assets/infra/FirstStep.webp";
+import Image from "next/image";
 
-export default function FirstStep({
+export default function HowToStart({
   headerContent = {
-    title1: "Take the First Step –",
-    title2: "Without the Guesswork",
+    title: "Start Smart, Scale Fast",
     description:
-      "We don’t ask you to commit to a massive overhaul. Instead, we guide you step-by-step — from discovery to deployment — with zero ambiguity and measurable outcomes.",
+      "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
   },
-  Component = Guesswork,
 }) {
   return (
     <div className="container">
-      <div className="h-8" />
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-2 gap-5 mb-10 mt-5">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -27,10 +23,12 @@ export default function FirstStep({
           className="space-y-8 flex-1"
         >
           <div className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-8 leading-[2.5rem] flex flex-col">
-            <span>{headerContent.title1}</span>
-            <span>{headerContent.title2}</span>
+            <p>How to Start</p>
           </div>
-          <p className="text-lg">{headerContent.description}</p>
+          <div className="space-y-4">
+            <p className="text-3xl font-medium">{headerContent.title}</p>
+            <p className="text-lg">{headerContent.description}</p>
+          </div>
         </motion.div>
         <motion.div
           initial={{ x: 50, opacity: 0 }}
@@ -45,7 +43,6 @@ export default function FirstStep({
           />
         </motion.div>
       </div>
-      <Component />
     </div>
   );
 }

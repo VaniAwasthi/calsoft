@@ -40,7 +40,7 @@ export default function ResourceGrid() {
     Topics: [...FilterTopic],
     Author: [...FilterAuthr],
   };
-  const resources = BlogsList;
+
   const slugify = (text) => {
     return text
       .toLowerCase()
@@ -96,13 +96,12 @@ export default function ResourceGrid() {
     setActiveFilters(updatedFilters);
     setOpenDropdown(null);
 
-    dispatch(
-      fetchFilteredBlogs({
-        author: updatedFilters.Author?._id || null,
-        industry: updatedFilters.Industry?._id || null,
-        topics: updatedFilters.Topics.map((t) => t._id),
-      })
-    );
+    // dispatch(
+    //   fetchFilteredBlogs({
+    //     industry: updatedFilters.Industry?._id || null,
+    //     topics: updatedFilters.Topics.map((t) => t._id),
+    //   })
+    // );
   };
 
   const handleShare = async (item) => {
@@ -139,7 +138,7 @@ export default function ResourceGrid() {
     }
 
     return () => observer.disconnect();
-  }, []); // ✅ no BlogsList.length here
+  }, []);
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">

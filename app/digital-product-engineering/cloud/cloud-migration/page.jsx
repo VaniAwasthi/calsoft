@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import HeroSec from "../../../component/infra/HeroSec";
 import WhyItMatters from "../../../component/infra/Cloud-Migration/WhyItMatters";
@@ -7,7 +8,7 @@ import UseCases from "../../../component/infra/UseCases";
 import FirstStep from "../../../component/infra/FirstStep";
 import WhyCalsoft from "../../../component/infra/WhyCalsoft";
 import Agility from "../../../component/infra/Agility";
-import Connect from "../../../component/infra/Connect";
+import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
   return (
@@ -19,7 +20,12 @@ const Page = () => {
       <UseCases />
       <WhyCalsoft />
       <FirstStep />
-      <Connect />
+      <ContactSecDataAi
+        lightContent={
+          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+        }
+        link={"#"}
+      />
     </>
   );
 };

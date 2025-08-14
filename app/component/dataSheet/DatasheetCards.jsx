@@ -1,78 +1,133 @@
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Info1 from "../../assets/Infographic/whitepaper1.webp";
-import Info2 from "../../assets/Infographic/whitepaper2.webp";
-import { FilterSec } from "../utilities/FilterSec";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchDatasheetList } from "../../store/actions/datasheetAction";
+import { baseUrl } from "../../../config";
+import {
+  fetchBlogFilterList,
+  fetchFilteredBlogs,
+} from "../../store/actions/blogAction";
+import FilterPanel from "../utilities/FilterPannel";
+import { setSelectedDatasheetsId } from "../../store/reducers/datasheetReducer";
+import { useRouter } from "next/navigation";
 
 export const DataSheetCards = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
+  const [topicLimitWarning, setTopicLimitWarning] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
-    Industry: "All",
-    Topics: "All",
-    Author: "All",
+    Industry: null,
+    Topics: [],
   });
   const [currentPage, setCurrentPage] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(6);
+  const loadMoreRef = useRef(null);
+  const handleClick = (item) => {
+    const slug = item.slug ? item.slug : slugify(item.title);
+    dispatch(setSelectedDatasheetsId(item._id));
+    router.push(`/insights/datesheets/${slug}`);
+  };
+  useEffect(() => {
+    dispatch(fetchDatasheetList());
+    dispatch(fetchBlogFilterList());
+  }, [dispatch]);
+
+  const datasheetData = useSelector((state) => state.datasheets?.list || []);
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
 
   const filters = {
-    Industry: ["All", "Tech", "Healthcare"],
-    Topics: ["All", "Security", "AI"],
-    Author: ["All", "Anton Frank", "John Doe"],
+    Industry: [...FilterIndustry],
+    Topics: [...FilterTopic],
   };
 
-  const images = [Info1, Info2];
-
-  const cardData = new Array(18).fill(0).map((_, i) => ({
-    id: i + 1,
-    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.  ${
-      i + 1
-    }`,
-    image: images[i % images.length],
-    link: `https://yourdomain.com/card/${i + 1}`,
-    author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    tags: ["AI", "Security", "Gaps"],
-    industry: i % 2 === 0 ? "Tech" : "Healthcare",
+  const resources = datasheetData?.map((item) => ({
+    ...item,
+    id: item._id,
+    title: item.hero_title1,
+    image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
+    tags: ["AI"],
+    slug: item.hero_title1
+      ? item.hero_title1
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "")
+      : "untitled",
+    link: `/${item._id}`,
   }));
-  const heading =
-    "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool";
-  const description = `A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....
-<br><br>
 
-A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....`;
-  const [resources] = useState([...cardData]);
+  const filteredResources = resources;
+
+  const handleCopy = (link, id) => {
+    navigator.clipboard.writeText(`${window.location.origin}${link}`);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
   };
 
-  const selectFilter = (type, value) => {
-    setActiveFilters({ ...activeFilters, [type]: value });
-    setOpenDropdown("");
-    setCurrentPage(0);
-  };
+  const selectFilter = (type, selected) => {
+    let updatedFilters = { ...activeFilters };
 
-  const handleCopy = async (link, id) => {
-    try {
-      await navigator.clipboard.writeText(link);
-      setCopiedId(id);
-      setTimeout(() => setCopiedId(null), 1500);
-    } catch (error) {
-      console.error("Copy failed:", error);
+    if (type === "Topics") {
+      const exists = updatedFilters.Topics.find((t) => t._id === selected._id);
+
+      if (exists) {
+        updatedFilters.Topics = updatedFilters.Topics.filter(
+          (t) => t._id !== selected._id
+        );
+        setTopicLimitWarning(false);
+      } else {
+        if (updatedFilters.Topics.length >= 3) {
+          setTopicLimitWarning(true);
+          setTimeout(() => setTopicLimitWarning(false), 3000);
+          return;
+        }
+        updatedFilters.Topics = [...updatedFilters.Topics, selected];
+      }
+    } else {
+      updatedFilters[type] = selected;
     }
+
+    setActiveFilters(updatedFilters);
+    setOpenDropdown("");
+
+    dispatch(
+      fetchFilteredBlogs({
+        industry: updatedFilters.Industry?._id || null,
+        topics: updatedFilters.Topics.map((t) => t._id),
+      })
+    );
   };
 
-  const filteredResources = resources.filter((item) => {
-    const authorMatch =
-      activeFilters.Author === "All" || item.author === activeFilters.Author;
-    const tagMatch =
-      activeFilters.Topics === "All" || item.tag === activeFilters.Topics;
-    const industryMatch =
-      activeFilters.Industry === "All" ||
-      item.industry === activeFilters.Industry;
-    return authorMatch && tagMatch && industryMatch;
-  });
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => {
+            const next = prev + 6;
+            return Math.min(next, filteredResources.length);
+          });
+        }
+      },
+      { threshold: 1.0 }
+    );
+
+    if (loadMoreRef.current) {
+      observer.observe(loadMoreRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [filteredResources]);
 
   const itemsPerPage = 6;
   const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
@@ -89,17 +144,24 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterSec
+        <FilterPanel
           filters={filters}
           activeFilters={activeFilters}
-          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
+          setActiveFilters={setActiveFilters}
         />
 
+        {topicLimitWarning && (
+          <p className="text-red-500 text-sm mb-2">
+            You can select a maximum of 3 topics.
+          </p>
+        )}
+
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
-        {/* Grid Display with animation */}
+
+        {/* Grid Display */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
@@ -109,16 +171,10 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="
-          relative flex flex-col h-[200px] md:h-[250px]
-          border border-[#2E3092] rounded-xl overflow-hidden shadow
-          hover:shadow-lg hover:bg-[#2E3092]/0.4 transition duration-300
-          group
-        "
+                onClick={() => handleClick(item)}
+                className="relative flex flex-col h-[200px] md:h-[250px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg hover:bg-[#2E3092]/40 transition duration-300 group"
               >
-                {/* Image Container */}
                 <div className="w-full h-[75%] relative">
-                  {/* Image */}
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -128,16 +184,10 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
                   />
                 </div>
 
-                {/* Overlay on Card Hover */}
-                <div
-                  className="
-          absolute inset-0 bg-[#2E3092]/20 flex items-center justify-center
-          opacity-0 group-hover:opacity-100 transition-opacity duration-300
-          backdrop-blur-sm
-        "
-                >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-[#2E3092]/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
                   <div className="flex justify-between items-start px-4 w-full">
-                    <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-white">
+                    <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words text-white">
                       {item.title}
                     </h3>
                     <div className="flex flex-col">
@@ -148,24 +198,17 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
                       >
                         <FaShareAlt className="w-6 h-6" />
                       </button>
-                      <div>
-                        {copiedId === item.id && (
-                          <span className="text-green-500 text-xs mt-2">
-                            Link copied!
-                          </span>
-                        )}
-                      </div>
+                      {copiedId === item.id && (
+                        <span className="text-green-500 text-xs mt-2">
+                          Link copied!
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div
-                  className="
-          w-full px-4 py-3 flex flex-col justify-between
-          group-hover:opacity-0 transition-opacity duration-300
-        "
-                >
+                {/* Tags */}
+                <div className="w-full px-4 py-3 flex flex-col justify-between group-hover:opacity-0 transition-opacity duration-300">
                   <div className="flex flex-wrap gap-2 mb-5 mt-3">
                     {item.tags.map((tag) => (
                       <span
@@ -182,10 +225,10 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
           </AnimatePresence>
         </div>
 
-        {/* Custom Pagination with animation */}
+        {/* Pagination */}
         <div className="flex justify-center items-center">
-          <div className="mt-8  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Previous Button */}
+          <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
+            {/* Previous */}
             <motion.button
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 0}
@@ -200,7 +243,7 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
               <FaLessThan className="w-3 h-3" />
             </motion.button>
 
-            {/* Page Numbers */}
+            {/* Pages */}
             {Array.from({ length: totalPages }, (_, i) => (
               <motion.button
                 key={i}
@@ -217,7 +260,7 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
               </motion.button>
             ))}
 
-            {/* Next Button */}
+            {/* Next */}
             <motion.button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages - 1}
@@ -233,6 +276,9 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
             </motion.button>
           </div>
         </div>
+
+        {/* Load More Trigger */}
+        <div ref={loadMoreRef} className="h-1"></div>
       </div>
     </section>
   );

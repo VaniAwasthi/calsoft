@@ -32,7 +32,6 @@ const tabs = [
     id: "datasheets",
     name: "Datasheets",
     icon: DatesheetIcon,
-    // component: <DatasheetsContent />,
     component: DataSheetCards,
   },
   {

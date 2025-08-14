@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
+import { motion } from "framer-motion";
 
 export default function WhyCalsoft({
   sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here’s how we stand apart:",
@@ -73,7 +76,13 @@ export default function WhyCalsoft({
         </h1>
 
         <div className="flex justify-between items-center mb-12">
-          <div className="max-w-2xl">
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="max-w-2xl"
+          >
             <h2 className="text-[#000000] text-3xl font-bold mb-4">
               Competitive Edge
             </h2>
@@ -81,14 +90,20 @@ export default function WhyCalsoft({
               Cloud migration is not a copy-paste operation — it’s a strategic
               transformation. Calsoft is uniquely positioned to deliver:
             </p>
-          </div>
-
-          <ButtonLayout
-            text={"Download Case Study"}
-            image={buttonImage}
-            hoverImage={buttonImage}
-            className={"w-fit"}
-          />
+          </motion.div>
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <ButtonLayout
+              text={"Download Case Study"}
+              image={buttonImage}
+              hoverImage={buttonImage}
+              className={"w-fit"}
+            />
+          </motion.div>
         </div>
       </div>
 
@@ -105,7 +120,11 @@ export default function WhyCalsoft({
 
         {/* Table Rows */}
         {data.tableContent.map((feature, index) => (
-          <div
+          <motion.div
+            initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
             key={feature.name}
             className={`grid grid-cols-3 py-6 px-8 items-center ${
               index % 2 === 0 ? "bg-[#f2f0f5]" : "bg-white"
@@ -131,7 +150,7 @@ export default function WhyCalsoft({
                 {feature.vendor}
               </span>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className="h-10" />

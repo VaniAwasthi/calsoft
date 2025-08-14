@@ -1,5 +1,5 @@
 import axios from "axios";
-import { store } from "../index.js"; // path to your Redux store
+import { store } from "../index.js";
 import { startLoading, stopLoading } from "../reducers/loadingReducer.js";
 
 const axiosInstance = axios.create({

@@ -1,0 +1,265 @@
+"use client";
+
+import Image from "next/image";
+import UseCases from "../../assets/infra/UseCases.webp";
+import ButtonLayout from "../utilities/ButtonLayout";
+import buttonImage from "../../assets/home/buttonImg.webp";
+import { Check } from "lucide-react";
+import { motion } from "framer-motion";
+import img from "../../assets/infra/agility.webp";
+import predict from "../../assets/infra/predictibility.webp";
+
+export default function Component() {
+  const useCaseData = [
+    {
+      title: "New Product Launch",
+      desc: "Define MVP. Select stack. Design for scale.",
+    },
+    {
+      title: "Legacy Modernization",
+      desc: "Re-architect monoliths into microservices.",
+    },
+    {
+      title: "Cloud-native Transformation",
+      desc: "Design for AWS, Azure, or hybrid deployment.",
+    },
+  ];
+  const data = {
+    leftSideContent: {
+      title: "Beyond Tech- Real Business Outcomes.",
+      subTitle: "Enterprises with a documented infrastructure roadmap have:",
+      description:
+        "Calsoft quantifies ROI for each roadmap milestone —from VM consolidation to cloud-native transitions —and ensures you get board-level buy-in with real data.",
+    },
+    rightSideContent: [
+      {
+        title: "35%",
+        subTitle: "faster cloud migration cycles",
+      },
+      {
+        title: "18-25%",
+        subTitle: "reduction in OpEx via optimized resource usage",
+      },
+      {
+        title: "2X",
+        subTitle:
+          "better incident response through standardized observability stack",
+      },
+      {
+        title: "Faster",
+        subTitle: "innovation cycles with modular, decoupled infra",
+      },
+    ],
+  };
+
+  return (
+    <div className="bg-[#ffffff] px-6">
+      <div className="h-8" />
+      <div className="container space-y-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex gap-12 items-stretch">
+            {/* Left Content */}
+            <div className="space-y-2 w-[100%]">
+              {/* Header */}
+              <div className=" mb-5">
+                <h2 className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-5">
+                  Use Cases
+                </h2>
+                <motion.div
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="space-y-1"
+                >
+                  <h3 className="text-3xl font-bold text-[#000000]">
+                    Where It Works Best.
+                  </h3>
+                  <p className="text-lg text-[#000000] leading-relaxed">
+                    Our Infrastructure Roadmap services have unlocked outcomes
+                    for:
+                  </p>
+                </motion.div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-6">
+                {useCaseData.map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="relative w-full h-52 p-0.5 bg-[linear-gradient(180deg,#2E3092_0%,#ED1C24_100%)] [clip-path:polygon(100%_0,100%_66%,82%_100%,0_100%,0_0)]"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: idx * 0.1 }}
+                    viewport={{ once: false }}
+                  >
+                    <div className="relative w-full h-full p-6 group cursor-pointer bg-white [clip-path:polygon(100%_0,100%_66%,82%_100%,0_100%,0_0)] shadow-lg">
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,#2E3092_0%,#ED1C24_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 [clip-path:polygon(100%_0,100%_66%,82%_100%,0_100%,0_0)]"></div>
+
+                      {/* Content */}
+                      <div className="relative z-10">
+                        <h4 className="font-semibold text-2xl mb-2 group-hover:text-white transition-colors duration-300">
+                          {item.title}
+                        </h4>
+                        <p className="text-lg font-light group-hover:text-white transition-colors duration-300">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              {/* <motion.div
+                key={idx}
+                className="relative h-full p-[2px] group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                viewport={{ once: false }}
+              >
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,#2E3092_0%,#ED1C24_100%)] clip-diagonal z-0 group-hover:bg-transparent"></div>
+
+                <div
+                  className="relative w-full h-full clip-diagonal p-6 z-10 transition-all duration-100"
+                  style={{
+                    background: "white",
+                  }}
+                >
+                  <div
+                    className="absolute inset-0 z-[-1] transition-all duration-100 opacity-0 "
+                    style={{
+                      background:
+                        "linear-gradient(180deg, #2E3092 46.45%, #BA0007 109.78%)",
+                      borderRadius: "inherit",
+                      clipPath:
+                        "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0% 100%)",
+                    }}
+                  ></div>
+
+                  <h4 className="font-semibold text-lg md:text-2xl mb-2 group-hover:text-white">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm md:text-[15px] text-[#4C4C4C] group-hover:text-white">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div> */}
+            </div>
+
+            {/* Right Image */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="w-[50%] rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <Image
+                src={UseCases}
+                alt="Team collaborating around a laptop in a modern office setting"
+                // width={600}
+                // height={600}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+        {/* Book a meeting */}
+        <div className="w-full h-40 relative rounded-xl overflow-hidden mt-12">
+          <Image src={predict} className="w-full object-cover" />
+          <div className="absolute top-0 w-full h-full bg-[#2e309293] bg-[linear-gradient(90deg,rgba(46,48,146,0.7)_0%,rgba(46,48,146,0.5)_60%,rgba(255,255,255,0)_100%)] text-white">
+            <div className="w-full h-full flex justify-between items-center gap-5 p-5">
+              <motion.p
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-4xl font-medium"
+              >
+                Reduce design cycle by 30% via architecture-led ideation.
+              </motion.p>
+              <motion.button
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-xl  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg"
+              >
+                Book a Meeting
+              </motion.button>
+            </div>
+          </div>
+        </div>
+        {/* Download one pager */}
+        <div className="w-full h-full relative rounded-xl overflow-hidden">
+          <Image src={img} className="w-full object-cover" />
+          <div className="absolute top-0 w-full h-full bg-[linear-gradient(90deg,rgba(46,48,146,0.95)_0%,rgba(46,48,146,0.9)_35%,rgba(255,255,255,0.0)_100%)] flex justify-between items-center">
+            <div className="w-[65%] h-full text-white">
+              <div className="h-full flex gap-8 items-center justify-between">
+                {/* Left content */}
+                <div className="flex-1 p-10 h-full flex flex-col gap-6 justify-center">
+                  <motion.p
+                    initial={{ x: -50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    className="text-3xl font-bold"
+                  >
+                    {data.leftSideContent.title}
+                  </motion.p>
+                  <motion.p
+                    initial={{ x: -50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    className="text-xl font-semibold"
+                  >
+                    {data.leftSideContent.subTitle}
+                  </motion.p>
+                  <motion.p
+                    initial={{ x: -50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    className="text-lg"
+                  >
+                    {data.leftSideContent.description}
+                  </motion.p>
+                  <motion.div
+                    initial={{ x: -50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.7 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                  >
+                    <ButtonLayout
+                      text={"Download One Pager"}
+                      image={buttonImage}
+                      hoverImage={buttonImage}
+                      className={"w-fit mt-3"}
+                    />
+                  </motion.div>
+                </div>
+                <div className="bg-white w-px h-[70%]" />
+                {/* Right Content */}
+                <div className="flex-1 flex gap-4 flex-col">
+                  {data.rightSideContent.map((ele, idx) => (
+                    <motion.div
+                      initial={{ x: 50, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: idx * 0.1 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                    >
+                      <p className="text-4xl">{ele.title}</p>
+                      <p className="text-xl font-light">{ele.subTitle}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+              <div className="w-[35%]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="h-8" />
+    </div>
+  );
+}
