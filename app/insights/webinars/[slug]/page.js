@@ -4,15 +4,15 @@ import {
   HeroSecWebinar,
   RecommendedFor,
 } from "../../component/webinar/HeroSec";
-import ButtonImage from "../../assets/home/buttonImg.webp";
-import HeroBg from "../../assets/caseStudies/whitepaperBg.webp";
-import FeatureImage from "../../assets/webinar/WebninarFeature.webp";
+import ButtonImage from "../../../assets/home/buttonImg.webp";
+import HeroBg from "../../../assets/caseStudies/whitepaperBg.webp";
+import FeatureImage from "../../../assets/webinar/WebninarFeature.webp";
 import React from "react";
-import { ShareSection } from "../../component/whitepaper/expanPage/WhitepaperReadMore";
-import CommitmentIcon1 from "../../assets/webinar/commitmentIcon1.svg";
-import CommitmentIcon2 from "../../assets/webinar/commitmentIcon2.svg";
-import CommitmentIcon3 from "../../assets/webinar/commitmentIcon3.svg";
-import CommitmentIcon4 from "../../assets/webinar/commitmentIcon4.svg";
+import { ShareSection } from "../../../component/whitepaper/expanPage/WhitepaperReadMore";
+import CommitmentIcon1 from "../../../assets/webinar/commitmentIcon1.svg";
+import CommitmentIcon2 from "../../../assets/webinar/commitmentIcon2.svg";
+import CommitmentIcon3 from "../../../assets/webinar/commitmentIcon3.svg";
+import CommitmentIcon4 from "../../../assets/webinar/commitmentIcon4.svg";
 import {
   SpeakersHostSection,
   BlogAndWebinarSection,
