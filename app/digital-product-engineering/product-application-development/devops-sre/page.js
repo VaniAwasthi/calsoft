@@ -1,10 +1,10 @@
 import React from "react";
 import HeroSection from "../../../component/testing/HeroSection";
-import { Why } from "../../../component/Plugin/PluginWhyWhatUseBusinessHowStep";
 import Steps from "../../../component/product-application-development/Steps";
 import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
+import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 
 const Page = () => {
   return (
@@ -15,7 +15,7 @@ const Page = () => {
               built for scale, speed, and ROI."
         buttonText="Get Architecture Readiness Score"
       />
-      <Why />
+      <WhyItMatters />
       <WhatWeOffer />
       <UseCases />
       <HowToStart
