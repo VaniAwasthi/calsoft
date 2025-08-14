@@ -80,7 +80,11 @@ export default function UseCases() {
             </div>
           ))}
         </div>
-        <Image src={img} className="w-full h-72 object-cover rounded-b-xl" />
+        <Image
+          src={img}
+          alt="image"
+          className="w-full h-72 object-cover rounded-b-xl"
+        />
       </div>
       <div className="h-10" />
     </div>
