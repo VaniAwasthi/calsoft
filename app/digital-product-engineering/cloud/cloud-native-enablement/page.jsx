@@ -7,7 +7,6 @@ import UseCases from "../../../component/infra/UseCases";
 import FirstStep from "../../../component/infra/FirstStep";
 import WhyCalsoft from "../../../component/infra/WhyCalsoft";
 import Agility from "../../../component/infra/Agility";
-import Connect from "../../../component/infra/Connect";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {

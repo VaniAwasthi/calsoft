@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import ButtonLayout from "../../utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
+import { motion } from "framer-motion";
 
 export default function WhyItMatters() {
   return (
@@ -11,14 +14,32 @@ export default function WhyItMatters() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left Content */}
             <div className="space-y-10">
-              <p className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_50%)] bg-clip-text text-transparent">
+              <motion.p
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_50%)] bg-clip-text text-transparent"
+              >
                 Why It Matters
-              </p>
+              </motion.p>
               <div className="space-y-6">
-                <p className="text-3xl font-semibold">
+                <motion.p
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="text-3xl font-semibold"
+                >
                   Debunking Cloud-Native Myths
-                </p>
-                <div className="space-y-6 text-black text-lg leading-relaxed">
+                </motion.p>
+                <motion.div
+                  initial={{ x: -50, opacity: 0 }}
+                  whileInView={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.6 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="space-y-6 text-black text-lg leading-relaxed"
+                >
                   <p>
                     For most enterprises, “cloud-native” remains aspirational —
                     often misunderstood as just container adoption. In reality,
@@ -29,13 +50,13 @@ export default function WhyItMatters() {
                     architecture, engineering practices, security, and
                     operations — at scale.
                   </p>
-                </div>
+                </motion.div>
               </div>
-              <div
-                //   initial={{ x: -50, opacity: 0 }}
-                //   whileInView={{ x: 0, opacity: 1 }}
-                //   transition={{ duration: 0.5, delay: 0.8 }}
-                //   viewport={{ once: false, amount: 0.3 }}
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                viewport={{ once: false, amount: 0.3 }}
                 className="mt-9"
               >
                 <ButtonLayout
@@ -44,13 +65,19 @@ export default function WhyItMatters() {
                   hoverImage={buttonImage}
                   className={"w-fit shadow-2xl"}
                 />
-              </div>
+              </motion.div>
             </div>
 
             <div className="w-full max-w-lg mx-auto p-4 pt-0">
               <div className="grid grid-cols-2 gap-3">
                 {/* Top Left - Lift-and-shift pitfalls */}
-                <div className="relative w-full aspect-square">
+                <motion.div
+                  initial={{ opacity: 0, y: -30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="relative w-full aspect-square"
+                >
                   {/* Red background shape */}
                   <div
                     className="absolute inset-0"
@@ -82,10 +109,16 @@ export default function WhyItMatters() {
                       borderRadius: "100% 0 0 0",
                     }}
                   />
-                </div>
+                </motion.div>
 
                 {/* Top Right - Downtime Risk */}
-                <div className="relative w-full aspect-square">
+                <motion.div
+                  initial={{ opacity: 0, y: -30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="relative w-full aspect-square"
+                >
                   {/* Red background shape */}
                   <div
                     className="absolute inset-0"
@@ -117,10 +150,16 @@ export default function WhyItMatters() {
                       borderRadius: "0 100% 0 0",
                     }}
                   />
-                </div>
+                </motion.div>
 
                 {/* Bottom Left - Inconsistent security */}
-                <div className="relative w-full aspect-square">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="relative w-full aspect-square"
+                >
                   {/* Red background shape */}
                   <div
                     className="absolute inset-0"
@@ -152,10 +191,16 @@ export default function WhyItMatters() {
                       borderRadius: "0 0 0 100%",
                     }}
                   />
-                </div>
+                </motion.div>
 
                 {/* Bottom Right - Inadequate workload */}
-                <div className="relative w-full aspect-square">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="relative w-full aspect-square"
+                >
                   {/* Red background shape */}
                   <div
                     className="absolute inset-0"
@@ -188,7 +233,7 @@ export default function WhyItMatters() {
                       borderRadius: "0 0 100% 0",
                     }}
                   />
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

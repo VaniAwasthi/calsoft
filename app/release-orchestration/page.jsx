@@ -7,7 +7,7 @@ import WhyCalsoft from "../component/infra/WhyCalsoft";
 import FirstStep from "../component/infra/FirstStep";
 import Guesswork from "../component/testing/Guesswork";
 import Agility from "../component/infra/Agility";
-import Connect from "../component/infra/Connect";
+import { ContactSecDataAi } from "../component/utilities/ChallengeSolutionDataAi";
 
 export default function page() {
   return (
@@ -101,7 +101,12 @@ export default function page() {
         }}
         Component={Guesswork}
       />
-      <Connect />
+      <ContactSecDataAi
+        lightContent={
+          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+        }
+        link={"#"}
+      />
     </>
   );
 }
