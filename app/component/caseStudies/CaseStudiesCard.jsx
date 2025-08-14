@@ -70,7 +70,7 @@ export const CaseStudiesCard = () => {
           .replace(/(^-|-$)/g, "")
       : "untitled",
     link: `https://yourdomain.com/card/${item._id}`,
-  })); // fallback if not yet loaded
+  }));
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
   };

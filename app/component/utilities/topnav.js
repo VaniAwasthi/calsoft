@@ -69,13 +69,19 @@ export default function Navbar() {
       {/* Top Bar */}
       <div className="text-white px-6 py-3 border-b bg-[#141414] border-gray-700">
         <div className="flex items-end justify-end text-sm container mx-auto px-1 md:px-20 transition-all">
-          <Link href="#" className="text-xs md:text-sm hover:font-bold ">
+          <Link
+            href="/insights/case-studies"
+            className="text-xs md:text-sm hover:font-bold "
+          >
             Customer Stories<span className="text-white p-3">|</span>
           </Link>
-          <Link href="#" className="text-xs md:text-sm hover:font-bold">
+          <Link
+            href="/insights/blogs"
+            className="text-xs md:text-sm hover:font-bold"
+          >
             Blogs<span className="text-white p-3">|</span>
           </Link>
-          <Link href="#" className="text-xs md:text-sm hover:font-bold">
+          <Link href="/career" className="text-xs md:text-sm hover:font-bold">
             Careers
           </Link>
         </div>

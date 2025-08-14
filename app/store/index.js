@@ -1,41 +1,36 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+
 import caseStudyReducer from "./reducers/caseStudyReducer";
 import loadingReducer from "./reducers/loadingReducer";
 import blogsReducer from "./reducers/blogReducer";
 import whitepaperReducer from "./reducers/whitepaperReducer";
+import datasheetsReducer from "./reducers/datasheetReducer";
 
-// Persist only `selectedId` inside `blogs`
-const blogsPersistConfig = {
-  key: "blogs",
+// Helper function for persist configs
+const persistConfig = (key) => ({
+  key,
   storage,
-  whitelist: ["selectedId"], // ✅ Only this will persist
-};
-const caseStudyPersistConfig = {
-  key: "caseStudy",
-  storage,
-  whitelist: ["selectedId"], // ✅ Only this will persist
-};
-const WhitepaperPersistConfig = {
-  key: "whitepaper",
-  storage,
-  whitelist: ["selectedId"], // ✅ Only this will persist
-};
-
-// Combine all reducers
-const rootReducer = combineReducers({
-  loading: loadingReducer,
-  caseStudy: persistReducer(caseStudyPersistConfig, caseStudyReducer),
-  blogs: persistReducer(blogsPersistConfig, blogsReducer),
-  whitepaper: persistReducer(WhitepaperPersistConfig, whitepaperReducer),
+  whitelist: ["selectedId"],
 });
 
-// Configure store
+const rootReducer = combineReducers({
+  loading: loadingReducer,
+  caseStudy: persistReducer(persistConfig("caseStudy"), caseStudyReducer),
+  blogs: persistReducer(persistConfig("blogs"), blogsReducer),
+  whitepaper: persistReducer(persistConfig("whitepaper"), whitepaperReducer),
+  datasheets: persistReducer(persistConfig("datasheets"), datasheetsReducer),
+});
+
 export const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }),
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ["persist/PERSIST"], // Ignore non-serializable Redux Persist actions
+      },
+    }),
 });
 
 export const persistor = persistStore(store);

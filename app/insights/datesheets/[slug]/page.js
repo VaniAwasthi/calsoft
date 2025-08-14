@@ -12,9 +12,9 @@ import {
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchCaseStudyById } from "../../../store/actions/caseStudyActions.js";
 import { useSearchParams } from "next/navigation";
 import { ShareSection } from "../../../component/whitepaper/expanPage/WhitepaperReadMore";
+import { fetchDatasheetById } from "../../../store/actions/datasheetAction";
 
 const Page = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -22,20 +22,20 @@ const Page = () => {
   const searchParams = useSearchParams();
 
   // 1. Get ID from Redux if available
-  const selectedId = useSelector((state) => state.caseStudy.selectedId);
+  const selectedId = useSelector((state) => state.datasheets.selectedId);
 
   // 2. Get ID from query params as fallback
   const idFromQuery = searchParams.get("id");
 
   // 3. Get case study data from Redux
-  const caseStudy = useSelector((state) => state.caseStudy.data);
-  const isLoading = useSelector((state) => state.caseStudy.isLoading);
-  const error = useSelector((state) => state.caseStudy.error);
+  const caseStudy = useSelector((state) => state.datasheets.data);
+  const isLoading = useSelector((state) => state.datasheets.isLoading);
+  const error = useSelector((state) => state.datasheets.error);
 
   useEffect(() => {
     const idToFetch = selectedId || idFromQuery;
     if (idToFetch) {
-      dispatch(fetchCaseStudyById(idToFetch));
+      dispatch(fetchDatasheetById(idToFetch));
     }
   }, [dispatch, selectedId, idFromQuery]);
 
