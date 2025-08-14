@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";

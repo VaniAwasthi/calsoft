@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
