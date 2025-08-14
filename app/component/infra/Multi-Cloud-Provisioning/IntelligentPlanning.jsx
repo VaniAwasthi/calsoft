@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import ButtonLayout from "../../utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
+import { motion } from "framer-motion";
 
 export default function IntelligentPlanning() {
   const scrollContainerRef = useRef(null);
@@ -176,10 +177,10 @@ export default function IntelligentPlanning() {
           {/* Header Section */}
           <div className="flex justify-between items-end mb-10">
             <div>
-              <p className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-8 leading-20">
+              <p className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-5 leading-16">
                 Intelligent Planning
               </p>
-              <h2 className="text-black text-4xl font-bold mb-6">
+              <h2 className="text-black text-4xl font-bold mb-4">
                 Build What's Right — Not What's Trendy
               </h2>
               <p className="text-black text-xl leading-relaxed max-w-4xl">
@@ -256,36 +257,52 @@ export default function IntelligentPlanning() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16"
           >
             {/* Card 1 - Gradient Background */}
-            {data.map((ele) => (
-              <>
-                <div className="relative bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 text-white min-h-[280px]">
-                  <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#2e3092] border-[1px] border-white rounded-full flex items-center justify-center">
-                    {ele.icon}
-                  </div>
-                  <div className="mt-16">
-                    <h3 className="text-xl font-bold mb-2">{ele.title}</h3>
-                    <p className="text-white/90 text-sm">{ele.subTitle}</p>
-                  </div>
+            {data.map((ele, idx) => (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: idx * 0.1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="relative bg-white hover:bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 hover:text-white min-h-[280px] hover:border-none border-2 border-[#2e3092] transition-all"
+              >
+                <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#2e3092] border-[1px] border-white rounded-full flex items-center justify-center">
+                  {ele.icon}
                 </div>
-              </>
+                <div className="mt-16">
+                  <h3 className="text-xl font-bold mb-2">{ele.title}</h3>
+                  <p className="text-white/90 text-sm">{ele.subTitle}</p>
+                </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Result Section */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div>
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
               <h3 className="text-black text-3xl font-bold mb-4">Result:</h3>
               <p className="text-black text-xl max-w-2xl">
                 A modular, scalable, and compliant roadmap that evolves with
                 your business.
               </p>
-            </div>
-            <ButtonLayout
-              text={"Talk to Infra Strategist"}
-              image={buttonImage}
-              hoverImage={buttonImage}
-              className={"w-fit"}
-            />
+            </motion.div>
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <ButtonLayout
+                text={"Talk to Infra Strategist"}
+                image={buttonImage}
+                hoverImage={buttonImage}
+                className={"w-fit"}
+              />
+            </motion.div>
           </div>
         </div>
         <div className="h-4 lg:h-6" />

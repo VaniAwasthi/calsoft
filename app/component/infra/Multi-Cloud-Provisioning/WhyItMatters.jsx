@@ -1,7 +1,9 @@
+"use client";
+
 import React from "react";
 import ButtonLayout from "../../utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function WhyItMatters() {
   return (
@@ -14,10 +16,22 @@ export default function WhyItMatters() {
               Why It Matters
             </p>
             <div className="space-y-6">
-              <p className="text-3xl font-semibold">
+              <motion.p
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-3xl font-semibold"
+              >
                 Multi-Cloud Without Governance = Risk
-              </p>
-              <div className="space-y-6 text-black text-lg leading-relaxed">
+              </motion.p>
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="space-y-6 text-black text-lg leading-relaxed"
+              >
                 <p>
                   Most enterprises today operate in multi-cloud by accident, not
                   by design. Teams spin up resources on AWS, Azure, or GCP to
@@ -28,13 +42,13 @@ export default function WhyItMatters() {
                   Calsoft’s approach ensures intentional, governed multi-cloud
                   provisioning — without slowing down innovation.
                 </p>
-              </div>
+              </motion.div>
             </div>
-            <div
-              //   initial={{ x: -50, opacity: 0 }}
-              //   whileInView={{ x: 0, opacity: 1 }}
-              //   transition={{ duration: 0.5, delay: 0.8 }}
-              //   viewport={{ once: false, amount: 0.3 }}
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+              viewport={{ once: false, amount: 0.3 }}
               className="mt-9"
             >
               <ButtonLayout
@@ -43,10 +57,9 @@ export default function WhyItMatters() {
                 hoverImage={buttonImage}
                 className={"w-fit shadow-2xl"}
               />
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right Hexagonal Visualization */}
           {/* <div className="relative w-full h-[380px] flex justify-center items-center">
             <div className="absolute top-[13rem] left-[6.7rem] transform -translate-y-1/2 -translate-x-8">
               <div
@@ -131,7 +144,13 @@ export default function WhyItMatters() {
           </div> */}
           <div className="relative w-full aspect-[5/4]">
             {/* Top Left Card - Redundant */}
-            <div className="absolute top-3.5 left-2.5 w-[47%] h-[45%]">
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="absolute top-3.5 left-2.5 w-[47%] h-[45%]"
+            >
               <div className="relative w-full h-full">
                 {/* Outer gradient border */}
                 <div
@@ -175,10 +194,16 @@ export default function WhyItMatters() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Top Right Card - Policy */}
-            <div className="absolute top-3.5 right-2.5 w-[47%] h-[45%]">
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="absolute top-3.5 right-2.5 w-[47%] h-[45%]"
+            >
               <div className="relative w-full h-full">
                 {/* Outer gradient border */}
                 <div
@@ -224,10 +249,16 @@ export default function WhyItMatters() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Bottom Left Card - 80% */}
-            <div className="absolute bottom-3.5 left-2.5 w-[47%] h-[45%]">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="absolute bottom-3.5 left-2.5 w-[47%] h-[45%]"
+            >
               <div className="relative w-full h-full">
                 {/* Outer gradient border */}
                 <div
@@ -275,10 +306,16 @@ export default function WhyItMatters() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Bottom Right Card - Fragmented */}
-            <div className="absolute bottom-3.5 right-2.5 w-[47%] h-[45%]">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="absolute bottom-3.5 right-2.5 w-[47%] h-[45%]"
+            >
               <div className="relative w-full h-full">
                 {/* Outer gradient border */}
                 <div
@@ -324,7 +361,7 @@ export default function WhyItMatters() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
