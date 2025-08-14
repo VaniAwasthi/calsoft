@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import BgImage from "../../assets/career/Bg_LifeAtCalsoft.webp";
@@ -6,6 +8,7 @@ import ButtonLayout from "../utilities/ButtonLayout";
 import Life_1 from "../../assets/career/Life_1.webp";
 import Life_2 from "../../assets/career/Life_2.webp";
 import Life_3 from "../../assets/career/Life_3.webp";
+import { motion } from "framer-motion";
 
 // function ButtonLayout({ link, text, image, hoverImage }) {
 //   return (
@@ -37,21 +40,39 @@ export default function LifeAtCalsoft() {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 min-h-screen lg:min-h-0">
           {/* Left Content */}
           <div className="flex-1 lg:w-[44%] space-y-6 md:space-y-8 xl:space-y-12 pt-8 lg:pt-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+            <motion.h1
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+            >
               Life @Calsoft
-            </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-medium leading-relaxed max-w-2xl">
+            </motion.h1>
+            <motion.p
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-medium leading-relaxed max-w-2xl"
+            >
               From social gatherings to festivities, our culture is shaped by
               employee-driven experiences.
-            </p>
-            <div className="pt-4">
+            </motion.p>
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.5 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="pt-4"
+            >
               <ButtonLayout
                 link=""
                 text="Learn More"
                 image={ButtonImage}
                 hoverImage={ButtonImage}
               />
-            </div>
+            </motion.div>
           </div>
 
           {/* Right Images Section */}
@@ -59,7 +80,13 @@ export default function LifeAtCalsoft() {
             {/* Mobile Layout - Single Column */}
             <div className="lg:hidden space-y-6">
               {/* Image 1 */}
-              <div className="relative w-full max-w-sm mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="relative w-full max-w-sm mx-auto"
+              >
                 <div className="relative aspect-[3/4] w-full">
                   <div className="absolute inset-0 border-2 border-[#4197EA] rounded-3xl translate-x-3 translate-y-3" />
                   <div className="relative w-full h-full rounded-3xl overflow-hidden">
@@ -71,11 +98,18 @@ export default function LifeAtCalsoft() {
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Images 2 & 3 */}
               <div className="flex gap-4 justify-center">
-                <div className="relative w-32 sm:w-40">
+                {/* Images 2 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="relative w-32 sm:w-40"
+                >
                   <div className="relative aspect-square">
                     <div className="absolute inset-0 border-2 border-[#4197EA] rounded-2xl translate-x-2 translate-y-2" />
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
@@ -87,9 +121,16 @@ export default function LifeAtCalsoft() {
                       />
                     </div>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="relative w-32 sm:w-40">
+                {/* Images 3 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="relative w-32 sm:w-40"
+                >
                   <div className="relative aspect-square">
                     <div className="absolute inset-0 border-2 border-[#4197EA] rounded-2xl translate-x-2 translate-y-2" />
                     <div className="relative w-full h-full rounded-2xl overflow-hidden">
@@ -101,7 +142,7 @@ export default function LifeAtCalsoft() {
                       />
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
 

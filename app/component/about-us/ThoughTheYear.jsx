@@ -36,14 +36,14 @@ const timelineData = [
     year: "2008-2012",
     title: "Expansion and maturity",
     Icon: Compass,
-    position: { top: "4%", left: "36.2%" },
+    position: { top: "3.5%", left: "39%" },
     labelAlignment: "top",
   },
   {
     year: "2013-2017",
     title: "Broadening the portfolio",
     Icon: PieChart,
-    position: { top: "11%", left: "85%" },
+    position: { top: "10%", left: "88%" },
     labelAlignment: "right",
   },
   {
@@ -57,21 +57,21 @@ const timelineData = [
     year: "2021-2023",
     title: "Product-led innovation at scale",
     Icon: Lightbulb,
-    position: { top: "31%", left: "23%" },
+    position: { top: "31%", left: "25%" },
     labelAlignment: "top",
   },
   {
     year: "2024",
     title: "AI as core strategy",
     Icon: Target,
-    position: { top: "39%", left: "70%" },
+    position: { top: "39%", left: "72%" },
     labelAlignment: "right",
   },
   {
     year: "2025",
     title: "Consulting-led, vertical expansion",
     Icon: Cog,
-    position: { top: "54%", left: "45%" },
+    position: { top: "54%", left: "42%" },
     labelAlignment: "left",
   },
   {
@@ -134,15 +134,13 @@ const TimelineItemComponent = ({ item, index, isInView }) => {
       animate={isInView ? "visible" : "hidden"}
       variants={variants}
     >
-      <div className={`flex items-center ${getLabelPosition()}`}>
+      <div className={`flex items-start ${getLabelPosition()} gap-2`}>
         {/* Year and Title */}
         <div className={getTextAlignment()}>
           <p className="font-bold text-xl text-[#2e3092] mb-1 whitespace-nowrap">
             {year}
           </p>
-          <p className="text-sm text-gray-700 font-medium max-w-[140px] whitespace-nowrap">
-            {title}
-          </p>
+          <p className="text-sm text-gray-700 font-medium ">{title}</p>
         </div>
 
         {/* Timeline Pointer - Always Vertical */}
@@ -165,7 +163,7 @@ export default function Timeline() {
   const isInView = useInView(ref, { margin: "-100px 0px", once: false });
 
   return (
-    <div className="bg-white w-full min-h-screen flex flex-col justify-start items-center p-8 sm:p-16 overflow-hidden">
+    <div className="bg-white w-full min-h-screen flex flex-col justify-start items-center p-5 sm:p-16 overflow-hidden">
       {/* Title */}
       <div className="w-full max-w-7xl mb-25">
         <p className="text-4xl font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent leading-20">
@@ -176,13 +174,7 @@ export default function Timeline() {
       {/* Timeline Container */}
       <div ref={ref} className="relative w-full max-w-7xl h-[800px]">
         {/* Background Path Image */}
-        <div
-          className="absolute inset-0 w-full h-full bg-contain bg-no-repeat bg-center"
-          //   style={{
-          //     backgroundImage: "url('../../assets/about-us/Vector.png')",
-          //     backgroundSize: "100% 100%",
-          //   }}
-        >
+        <div className="absolute inset-0 w-full h-full bg-contain bg-no-repeat bg-center">
           <Image src={Path} className="w-full h-full" />
         </div>
 

@@ -62,7 +62,7 @@ export default function LeadershipTeam() {
     },
   ];
   return (
-    <div className="my-5 pb-12 space-y-10 container">
+    <div className="my-5 pb-12 space-y-20 container">
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}

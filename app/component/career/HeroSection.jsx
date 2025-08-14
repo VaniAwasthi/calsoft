@@ -1,11 +1,13 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-// import { motion } from "framer-motion";
-import MainHeroImage from "../../assets/career/Main_hero_image.webp";
+import { motion } from "framer-motion";
 import Hero_1 from "../../assets/career/Hero_1.webp";
 import Hero_2 from "../../assets/career/Hero_2.webp";
 import Hero_3 from "../../assets/career/Hero_3.webp";
 import Hero_4 from "../../assets/career/Hero_4.webp";
+import MainHeroImage from "../../assets/career/Main_hero_image.webp";
 
 export default function HeroSection() {
   return (
@@ -27,20 +29,34 @@ export default function HeroSection() {
         <div className="flex items-start justify-center h-full md:min-h-screen text-white w-full mt-20 gap-5 xl:gap-0">
           <div className="h-full flex-1 flex flex-col justify-between items-start gap-y-10">
             <div>
-              <h2
+              <motion.h2
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.3 }}
                 className={`font-bold  text-left leading-8 md:leading-14 md:text-5xl xs:text-4xl text-[20px] mt-2`}
               >
                 Evolve with Calsoft
-              </h2>
-              <p
+              </motion.h2>
+              <motion.p
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.4 }}
+                viewport={{ once: false, amount: 0.3 }}
                 className={`md:text-lg font-light max-w-[90%] md:max-w-[400px] mt-4 text-lg leading-8 sm:w-[200px] md:w-full`}
               >
                 Build cutting-edge solutions with a team that values your
                 growth.
-              </p>
+              </motion.p>
             </div>
             <div className="flex  gap-5">
-              <div className="relative rounded-full w-40 h-40 overflow-hidden shrink-0">
+              <motion.div
+                initial={{ y: -30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.2, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="relative rounded-full w-40 h-40 overflow-hidden shrink-0"
+              >
                 <Image
                   src={Hero_4}
                   alt="image_3"
@@ -49,8 +65,14 @@ export default function HeroSection() {
                 <div className="absolute top-0 w-full h-full flex justify-center items-center p-8 bg-[#ba0006bb]">
                   <p className="text-white text-center">SEE ALL OPENINGS (5)</p>
                 </div>
-              </div>
-              <div className="relative md:size-auto size-[110%]">
+              </motion.div>
+              <motion.div
+                initial={{ y: -30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.2, delay: 0.4 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="relative md:size-auto size-[110%]"
+              >
                 <Image
                   src={Hero_3}
                   alt="image_4"
@@ -70,10 +92,16 @@ export default function HeroSection() {
                     />
                   </svg>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
-          <div className="xl:flex-1 hidden xl:flex justify-center items-center gap-5">
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="xl:flex-1 hidden xl:flex justify-center items-center gap-5"
+          >
             <Image
               src={Hero_1}
               alt="Hero image"
@@ -88,7 +116,7 @@ export default function HeroSection() {
               height={200}
               className="shrink-0"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
