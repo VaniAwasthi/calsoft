@@ -46,12 +46,12 @@ export default function ButtonLayout({
         <Image
           src={hoverImage}
           alt="Button Icon"
-          className="absolute inset-0 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+          className="absolute inset-0 transition-opacity duration-300 ease-in-out group-hover:opacity-0 shrink-0"
         />
         <Image
           src={hoverImage}
           alt="Button Icon Hover"
-          className="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+          className="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 shrink-0"
         />
       </div>
     </Link>

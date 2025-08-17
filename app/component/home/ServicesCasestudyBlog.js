@@ -153,7 +153,7 @@ export const Casestudy = () => {
   // data for Case Study
   useEffect(() => {
     dispatch(fetchCaseStudyListLimit());
-  }, []);
+  }, [dispatch]);
   const casStudiesDatalist = useSelector(
     (state) => state.caseStudy?.limitedList
   );

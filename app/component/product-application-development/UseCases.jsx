@@ -57,7 +57,7 @@ export default function Component() {
       <div className="h-8" />
       <div className="container space-y-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-12 items-stretch">
+          <div className="flex gap-12 lg:flex-row flex-col items-stretch">
             {/* Left Content */}
             <div className="space-y-2 w-[100%]">
               {/* Header */}
@@ -82,7 +82,7 @@ export default function Component() {
                 </motion.div>
               </div>
 
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                 {useCaseData.map((item, idx) => (
                   <motion.div
                     key={idx}
@@ -151,7 +151,7 @@ export default function Component() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="w-[50%] rounded-2xl overflow-hidden shadow-2xl"
+              className="lg:w-[50%] rounded-2xl overflow-hidden shadow-2xl"
             >
               <Image
                 src={UseCases}
@@ -164,16 +164,16 @@ export default function Component() {
           </div>
         </div>
         {/* Book a meeting */}
-        <div className="w-full h-40 relative rounded-xl overflow-hidden mt-12">
-          <Image src={predict} className="w-full object-cover" />
+        <div className="w-full h-60 sm:h-40 relative rounded-xl overflow-hidden mt-12">
+          <Image src={predict} className="w-full h-full object-cover" />
           <div className="absolute top-0 w-full h-full bg-[#2e309293] bg-[linear-gradient(90deg,rgba(46,48,146,0.7)_0%,rgba(46,48,146,0.5)_60%,rgba(255,255,255,0)_100%)] text-white">
-            <div className="w-full h-full flex justify-between items-center gap-5 p-5">
+            <div className="w-full h-full flex flex-col sm:flex-row justify-start sm:justify-between sm:items-center items-start gap-5 p-5">
               <motion.p
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="text-4xl font-medium"
+                className="text-3xl sm:text-4xl font-medium"
               >
                 Reduce design cycle by 30% via architecture-led ideation.
               </motion.p>
@@ -182,7 +182,7 @@ export default function Component() {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="text-xl  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg"
+                className="text-xl  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg whitespace-nowrap"
               >
                 Book a Meeting
               </motion.button>
