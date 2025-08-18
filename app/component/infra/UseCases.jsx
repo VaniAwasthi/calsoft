@@ -21,7 +21,7 @@ export default function Component() {
       <div className="container">
         <div className="h-8" />
         <div className="max-w-7xl mx-auto">
-          <div className="flex gap-12 items-stretch">
+          <div className="flex flex-col lg:flex-row gap-12 items-stretch">
             {/* Left Content */}
             <div className="space-y-2 w-[100%]">
               {/* Header */}
@@ -118,14 +118,14 @@ export default function Component() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="w-[50%] rounded-2xl overflow-hidden shadow-2xl"
+              className="lg:w-[50%] h-[30rem] lg:h-auto overflow-hidden rounded-2xl shadow-2xl"
             >
               <Image
                 src={UseCases}
                 alt="Team collaborating around a laptop in a modern office setting"
                 // width={600}
                 // height={600}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[center_20%] lg:object-center"
               />
             </motion.div>
           </div>

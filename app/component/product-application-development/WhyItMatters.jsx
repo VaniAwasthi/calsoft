@@ -8,16 +8,20 @@ import DevopsSREMatters from "./DevopsSREMatters";
 export default function WhyItMatters({
   title = "Don’t Build Blind. Architect to Win.",
   desc = "75% of digital product failures stem from poor early decisions—wrong tech stack, unclear user flows, or over-engineered features. Calsoft helps you cut through ambiguity and shape a scalable, cloud-first, cost-efficient architecture that aligns with your business goals from Day 1.",
+  desc2,
   buttonText = "Download",
+  ButtonComponent = <></>,
+  MainComponenent = DevopsSREMatters,
+  contentClass = "",
 }) {
   return (
     <>
       <div className="container">
         <div className="h-12" />
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid xl:grid-cols-2 gap-10 xl:gap-16 items-start">
           {/* Left Content */}
-          {/* <div className={`space-y-10 ${contentWidth}`}> */}
-          <div className={`space-y-10`}>
+          <div className={`space-y-10 ${contentClass}`}>
+            {/* <div className={`space-y-10`}> */}
             <p className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_50%)] bg-clip-text text-transparent">
               Why It Matters
             </p>
@@ -25,6 +29,7 @@ export default function WhyItMatters({
               <p className="text-3xl font-semibold">{title}</p>
               <div className="space-y-6 text-black text-lg leading-relaxed">
                 <p className="font-light">{desc}</p>
+                {desc2 && <p>{desc2}</p>}
               </div>
             </div>
             <div
@@ -42,8 +47,9 @@ export default function WhyItMatters({
               />
             </div>
           </div>
-
-          <DevopsSREMatters />
+          <div className="sm:flex hidden justify-center items-center">
+            <MainComponenent />
+          </div>
         </div>
         <div className="h-12" />
       </div>

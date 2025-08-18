@@ -1,31 +1,29 @@
 import React from "react";
 import HeroSection from "../../../component/testing/HeroSection";
-import { Why } from "../../../component/Plugin/PluginWhyWhatUseBusinessHowStep";
+import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
+import DevelopmentCycle from "../../../component/product-application-development/DevelopementCycleMatters";
 import Steps from "../../../component/product-application-development/Steps";
 import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
-import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
-import ArchitectureIdeation from "../../../component/product-application-development/ArchitectureIdeationMatters";
 
-const Page = () => {
+export default function page() {
   return (
     <>
       <HeroSection
-        title="Turn Ideas into Intelligent Products."
+        title="Turn Ideas into Intelligent Products"
         description="De-risk early decisions with the right architecture,
-              built for scale, speed, and ROI."
+built for scale, speed, and ROI."
         buttonText="Get Architecture Readiness Score"
       />
-      {/* <Why /> */}
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
         desc="75% of digital product failures stem from poor early decisions—wrong tech stack, unclear user flows, or over-engineered features. Calsoft helps you cut through ambiguity and shape a scalable, cloud-first, cost-efficient architecture that aligns with your business goals from Day 1."
         buttonText="Download"
-        MainComponenent={ArchitectureIdeation}
-        // contentClass="w-[90%]"
+        MainComponenent={DevelopmentCycle}
+        contentClass="w-[90%]"
       />
       <WhatWeOffer />
       <UseCases />
@@ -45,6 +43,4 @@ const Page = () => {
       />
     </>
   );
-};
-
-export default Page;
+}

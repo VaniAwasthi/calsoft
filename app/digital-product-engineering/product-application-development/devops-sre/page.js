@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
@@ -6,6 +7,8 @@ import WhatWeOffer from "../../../component/product-application-development/What
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
+import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
 
 const Page = () => {
   return (
@@ -27,6 +30,12 @@ const Page = () => {
         }}
       />
       <Steps />
+      <ArchitectureSprint />
+      <ContactSecDataAi
+        BoldContent="Let’s talk!"
+        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+        link="#"
+      />
     </>
   );
 };

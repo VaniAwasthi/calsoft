@@ -52,7 +52,7 @@ const Page = () => {
         }
       }
     }
-  }, [selectedBlogId, slug, blogList]);
+  }, [selectedBlogId, slug, blogList, dispatch]);
 
   return (
     <>
