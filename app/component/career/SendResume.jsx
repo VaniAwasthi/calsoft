@@ -10,7 +10,7 @@ export default function SendResume() {
     <div className="relative w-full h-64 overflow-hidden">
       <div className="absolute top-0 h-full w-full bg-[linear-gradient(90deg,_rgba(0,0,0,1)_0%,_rgba(0,0,0,0.5)_50%,_rgba(0,0,0,0)_100%)] text-white">
         {" "}
-        <div className="p-8 sm:p-16 md:p-20 flex md:flex-row flex-col md:gap-0 gap-2 xs:gap-8 justify-between items-center">
+        <div className="p-8 sm:p-16 md:p-20 flex md:flex-row flex-col md:gap-0 gap-2 2xs:gap-8 justify-between items-center">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}

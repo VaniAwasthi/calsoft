@@ -62,6 +62,7 @@ export default function HeroSection() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
+              className="sm:h-full h-72 sm:w-full w-fit"
             ></iframe>
           </motion.div>
         </div>

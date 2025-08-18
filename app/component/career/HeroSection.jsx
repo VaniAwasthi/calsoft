@@ -34,7 +34,7 @@ export default function HeroSection() {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className={`font-bold  text-left leading-8 md:leading-14 md:text-5xl xs:text-4xl text-[20px] mt-2`}
+                className={`font-bold  text-left leading-8 md:leading-14 md:text-5xl 2xs:text-4xl text-[20px] mt-2`}
               >
                 Evolve with Calsoft
               </motion.h2>

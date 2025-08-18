@@ -203,11 +203,11 @@ export default function Promises() {
   return (
     <div className="container">
       <div className="h-10" />
-      <div className="space-y-14 xs:px-0 px-3">
+      <div className="space-y-14 2xs:px-0 px-3">
         <p className="text-4xl font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">
           Calsoft’s Career 360 promise
         </p>
-        <div className="grid xs:grid-cols-2 md:grid-cols-3 gap-12">
+        <div className="grid 2xs:grid-cols-2 md:grid-cols-3 gap-12">
           {data.map((ele, idx) => (
             <motion.div
               key={idx}
@@ -218,7 +218,7 @@ export default function Promises() {
               className="flex flex-col items-start justify-between gap-3 h-full"
             >
               <div>{ele.icon}</div>
-              <p className="text-3xl text-[#2E3092] xs:h-28 lg:h-20">
+              <p className="text-3xl text-[#2E3092] 2xs:h-28 lg:h-20">
                 {ele.title}
               </p>
               <p className="text-lg lg:h-[7.5rem] xl:h-24">{ele.desc}</p>
