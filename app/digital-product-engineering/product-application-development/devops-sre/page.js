@@ -21,7 +21,7 @@ const Page = () => {
       />
       <WhyItMatters />
       <WhatWeOffer />
-      <UseCases />
+      <UseCases CTACopy="Speed up release cycles by 60% using SRE practices."/>
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",

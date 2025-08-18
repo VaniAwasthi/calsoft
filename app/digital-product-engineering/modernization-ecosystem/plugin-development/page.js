@@ -24,14 +24,8 @@ function Page() {
       <section className="banner_light padd_sec">
         <BannerSection
           backgroundImage={BannerwithButtonBg}
-          title={
-            <>
-              We help SaaS and platform companies turn partner needs into
-              production-ready plugins—secure, scalable, and instantly
-              deployable.
-            </>
-          }
-          buttonText="Request Checklist"
+          title="Launch extensions 3x faster with custom plugins."
+          buttonText="Book a meeting"
           buttonLink="#"
         />
       </section>

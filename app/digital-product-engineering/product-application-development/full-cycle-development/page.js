@@ -26,7 +26,7 @@ built for scale, speed, and ROI."
         contentClass="w-[90%]"
       />
       <WhatWeOffer />
-      <UseCases />
+      <UseCases CTACopy="Accelerate MVP delivery by 40% with agile builds."/>
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",

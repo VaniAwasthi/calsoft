@@ -26,7 +26,7 @@ built for scale, speed, and ROI."
         contentClass="w-[90%]"
       />
       <WhatWeOffer />
-      <UseCases />
+      <UseCases CTACopy="Ensure 98% defect-free releases with automation."/>
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",
