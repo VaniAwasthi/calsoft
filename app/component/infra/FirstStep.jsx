@@ -18,7 +18,7 @@ export default function FirstStep({
   return (
     <div className="container">
       <div className="h-8" />
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid lg:grid-cols-2 gap-5">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}

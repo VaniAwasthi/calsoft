@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function Guesswork() {
   const steps = [
@@ -43,10 +46,11 @@ export default function Guesswork() {
       alignment: "left",
     },
   ];
+
   return (
     <div className="py-14">
       <div className="relative">
-        <div className="absolute left-1/2 top-3 bottom-3 w-3 bg-[#d9d9d9] transform -translate-x-1/2 z-0" />
+        <div className="absolute left-1/2 top-20 bottom-20 w-3 bg-[#d9d9d9] transform -translate-x-1/2 z-0" />
 
         {steps.map((step, index) => (
           <div key={index} className="relative mb-16 last:mb-0">
@@ -55,7 +59,11 @@ export default function Guesswork() {
                 <>
                   {/* Left-aligned content box that crosses center */}
                   <div className="w-full flex justify-start items-center">
-                    <div
+                    <motion.div
+                      initial={{ x: -50, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      viewport={{ once: false, amount: 0.3 }}
                       className="relative"
                       style={{ width: "calc(50% + 70px)" }}
                     >
@@ -91,20 +99,36 @@ export default function Guesswork() {
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div className="ml-12">
+                    </motion.div>
+                    <motion.div
+                      initial={{ x: 50, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      className="ml-12"
+                    >
                       <span className="text-6xl font-bold">Step</span>
-                    </div>
+                    </motion.div>
                   </div>
                 </>
               ) : (
                 <>
                   {/* Right-aligned content box that crosses center */}
                   <div className="w-full flex justify-end items-center">
-                    <div className="mr-12">
+                    <motion.div
+                      initial={{ x: -50, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      className="mr-12"
+                    >
                       <span className="text-6xl font-bold">Step</span>
-                    </div>
-                    <div
+                    </motion.div>
+                    <motion.div
+                      initial={{ x: 50, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      viewport={{ once: false, amount: 0.3 }}
                       className="relative"
                       style={{ width: "calc(50% + 70px)" }}
                     >
@@ -139,7 +163,7 @@ export default function Guesswork() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </>
               )}

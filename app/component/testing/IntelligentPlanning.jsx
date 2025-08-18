@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
+import { motion } from "framer-motion";
 
 export default function IntelligentPlanning() {
   const data = [
@@ -34,7 +37,7 @@ export default function IntelligentPlanning() {
           Intelligent Planning
         </h1>
 
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-5">
           <div className="max-w-2xl">
             <h2 className="text-[#000000] text-3xl font-bold mb-4">
               Move What Matters, Not Just What Exists
@@ -50,22 +53,22 @@ export default function IntelligentPlanning() {
             text={"Get a Free 6R Analysis Report"}
             image={buttonImage}
             hoverImage={buttonImage}
-            className={"w-fit"}
+            className={" whitespace-nowrap"}
           />
         </div>
       </div>
-      <div className="grid grid-cols-5 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 gap-y-9">
         {data.map((ele, idx) => (
-          <div
-            className={`p-6 space-y-4 text-center ${
-              idx == 0
-                ? "shadow-[0_20px_25px_-5px_#ba0007,_0_10px_10px_-5px_#ba0007] bg-[#2E3092] text-white"
-                : "shadow-xl bg-[#f9f9f9]"
-            } rounded-lg`}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: idx * 0.1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className={`p-6 space-y-4 text-center shadow-xl hover:shadow-[0_20px_25px_-5px_#ba0007,_0_10px_10px_-5px_#ba0007] hover:bg-[#2E3092] hover:text-white bg-[#f9f9f9] rounded-lg transition-all`}
           >
             <p className="text-2xl font-bold">{ele.title}</p>
             <p className="text-lg">{ele.subTitle}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className="h-10" />

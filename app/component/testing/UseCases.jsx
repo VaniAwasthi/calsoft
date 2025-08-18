@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 import Image from "next/image";
 import img from "../../assets/infra/UseCases.webp";
+import { motion } from "framer-motion";
 
 export default function UseCases() {
   const data = [
@@ -36,7 +39,7 @@ export default function UseCases() {
           Use Cases
         </h1>
 
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-5">
           <div className="max-w-2xl">
             <h2 className="text-[#000000] text-3xl font-bold mb-4">
               Where It Works Best
@@ -50,14 +53,18 @@ export default function UseCases() {
             text={"Request Use Cases"}
             image={buttonImage}
             hoverImage={buttonImage}
-            className={"w-fit"}
+            className={"whitespace-nowrap"}
           />
         </div>
       </div>
       <div className="space-y-10">
-        <div className="grid grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
           {data.map((ele, idx) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: idx * 0.1 }}
+              viewport={{ once: false, amount: 0.3 }}
               className={`relative rounded-lg bg-[#BA0007] bg-[linear-gradient(0deg,rgba(186,0,7,1)_0%,rgba(46,48,146,1)_100%)] p-0.5`}
             >
               <div className="absolute -top-2 -left-2 bg-[#2E3092] rounded-lg w-full h-11/12 -z-10" />
@@ -77,7 +84,7 @@ export default function UseCases() {
                 <p className="text-2xl font-bold">{ele.title}</p>
                 <p className="text-lg">{ele.subTitle}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         <Image
