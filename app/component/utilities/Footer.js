@@ -57,73 +57,69 @@ const Footer = () => {
 
           {/* Main Footer Grid */}
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3 text-sm md:text-base">
-            {/* Company */}
-            <div>
-              <h3 className="text-[20px] font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-[14px]">
-                <li>
-                  <Link href="#">Leadership</Link>
-                </li>
-                <li>
-                  <Link href="#">Careers</Link>
-                </li>
-                <li>
-                  <Link href="#">Press</Link>
-                </li>
-                <li>
-                  <Link href="#">Contact us</Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Industries */}
+            {/* Services */}
             <div>
               <h3 className="text-[20px] font-semibold mb-4">Services</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#"> Digital Product engineering</Link>
+                  <Link href="/digital-product-engineering"> Digital Product engineering</Link>
                 </li>
 
                 <li>
-                  <Link href="#">Managed testing services</Link>
+                  <Link href="/data-ai">Data and Artificial Intelligence</Link>
                 </li>
                 <li>
-                  <Link href="#">Sustaining & Support</Link>
+                  <Link href="/digital-product-engineering/sustenance-support">Sustaining & Support</Link>
                 </li>
                 <li>
-                  <Link href="#">Data and Artificial Intelligence</Link>
+                  <Link href="/digital-product-engineering/testing-as-a-service">Managed testing services</Link>
                 </li>
               </ul>
             </div>
-
             {/* Resources */}
             <div>
               <h3 className="text-[20px] font-semibold mb-4">Resources</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#">Help center</Link>
+                  <Link href="/insights/blogs">Blog</Link>
                 </li>
                 <li>
-                  <Link href="#">Blog</Link>
+                  <Link href="/insights/case-studies">Case Study</Link>
                 </li>
                 <li>
-                  <Link href="#">Community</Link>
+                  <Link href="/insights/whitepaper">Whitepapers</Link>
                 </li>
                 <li>
-                  <Link href="#">Terms</Link>
+                  <Link href="/insights/industry-report">Industry Reports</Link>
+                </li>
+               
+              </ul>
+            </div>
+   {/* Company */}
+            <div>
+              <h3 className="text-[20px] font-semibold mb-4">Company</h3>
+              <ul className="space-y-2 text-[14px]">
+                <li>
+                  <Link href="/leadership">Leadership</Link>
                 </li>
                 <li>
-                  <Link href="#">Privacy policy</Link>
+                  <Link href="/career">Careers</Link>
+                </li>
+                <li>
+                  <Link href="/insights/webinars">Press</Link>
+                </li>
+                <li>
+                  <Link href="#">Privacy Policy</Link>
                 </li>
               </ul>
             </div>
-
             {/* Headquarters */}
             <div>
               <h3 className="text-[20px] font-semibold mb-4">Headquarters</h3>
               <ul className="space-y-2 text-sm">
                 <li>USA - San Jose</li>
                 <li>INDIA - Pune</li>
+                <li><Link href="#">Contact us</Link></li>
               </ul>
             </div>
 
