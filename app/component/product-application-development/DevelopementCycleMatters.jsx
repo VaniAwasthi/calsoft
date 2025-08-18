@@ -25,13 +25,13 @@ export default function DevelopementCycleMatters() {
             y2="424.596"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.639423" stop-color="#2E3092" />
-            <stop offset="1" stop-color="#BA0007" />
+            <stop offset="0.639423" stopColor="#2E3092" />
+            <stop offset="1" stopColor="#BA0007" />
           </linearGradient>
         </defs>
       </svg>
       <div
-        class="absolute top-[calc(50%-4.5rem)] left-[calc(50%-4.35rem)] 
+        className="absolute top-[calc(50%-4.5rem)] left-[calc(50%-4.35rem)] 
      [clip-path:polygon(50%_0%,0%_100%,100%_100%)] 
      bg-[linear-gradient(180deg,#2E3092_50%,#ED1C24_105%)] 
      size-36"

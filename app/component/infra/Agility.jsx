@@ -46,7 +46,11 @@ export default function Agility({
     <div className="container">
       <div className="h-4 lg:h-6" />
       <div className="w-full h-full relative rounded-xl overflow-hidden">
-        <Image src={img} className="w-full object-cover" />
+        <Image
+          src={img}
+          alt="agile work culture"
+          className="w-full object-cover"
+        />
         <div className="absolute top-0 w-full h-full bg-[linear-gradient(90deg,rgba(46,48,146,0.95)_0%,rgba(46,48,146,0.9)_35%,rgba(255,255,255,0.0)_100%)] flex justify-between items-center">
           <div className="w-[65%] h-full text-white">
             <div className="h-full flex gap-8 items-center justify-between">
@@ -114,7 +118,11 @@ export default function Agility({
         </div>
       </div>
       <div className="w-full h-40 relative rounded-xl overflow-hidden mt-10">
-        <Image src={predict} className="w-full object-cover" />
+        <Image
+          src={predict}
+          alt="book a meeting"
+          className="w-full object-cover"
+        />
         <div className="absolute top-0 w-full h-full bg-[#2e309293] bg-[linear-gradient(90deg,rgba(46,48,146,0.7)_0%,rgba(46,48,146,0.5)_60%,rgba(255,255,255,0)_100%)] text-white">
           <div className="w-full h-full flex justify-between items-center gap-5 p-5">
             <motion.p

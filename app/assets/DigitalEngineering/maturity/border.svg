@@ -2,8 +2,8 @@
 <path d="M199.254 1.5L237.694 73.8047V214.476H2.18262V1.5H199.254Z" stroke="url(#paint0_linear_10377_622)" stroke-width="3"/>
 <defs>
 <linearGradient id="paint0_linear_10377_622" x1="119.939" y1="0" x2="119.939" y2="215.976" gradientUnits="userSpaceOnUse">
-<stop stop-color="#2E3092"/>
-<stop offset="1" stop-color="#ED1C24"/>
+<stop stopColor="#2E3092"/>
+<stop offset="1" stopColor="#ED1C24"/>
 </linearGradient>
 </defs>
 </svg>

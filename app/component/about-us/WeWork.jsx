@@ -46,7 +46,7 @@ export default function WeWork() {
             alt={"Image"}
             className="w-full h-full object-cover rounded-lg aspect-square"
           />
-          <div class="w-0 h-0 absolute 2xs:-right-[0.6rem] md:-right-[4.1rem] -right-[1.4rem] md:-bottom-[0.91rem] -bottom-[0.6rem] md:border-l-[6.2rem] border-l-[4rem] md:border-r-[6.2rem] border-r-[4rem] md:border-b-[6.2rem] border-b-[4rem] border-l-transparent border-r-transparent border-b-white rotate-[135deg]"></div>
+          <div className="w-0 h-0 absolute 2xs:-right-[0.6rem] md:-right-[4.1rem] -right-[1.4rem] md:-bottom-[0.91rem] -bottom-[0.6rem] md:border-l-[6.2rem] border-l-[4rem] md:border-r-[6.2rem] border-r-[4rem] md:border-b-[6.2rem] border-b-[4rem] border-l-transparent border-r-transparent border-b-white rotate-[135deg]"></div>
         </motion.div>
       </div>
       <div className="h-32 md:h-8" />

@@ -48,6 +48,7 @@ export default function SendResume() {
       <Image
         src={sendResume}
         className="w-full h-full object-cover object-[center_50%]"
+        alt="send resume"
       />
     </div>
   );

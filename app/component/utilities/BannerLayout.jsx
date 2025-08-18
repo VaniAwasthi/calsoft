@@ -50,7 +50,13 @@ const BannerLayout = ({
               transition={{ duration: 0.2, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <Image src={logo} width={260} height={260} className="w-48" />
+              <Image
+                src={logo}
+                width={260}
+                height={260}
+                alt="logo"
+                className="w-48"
+              />
             </motion.image>
           )}
           <motion.h2

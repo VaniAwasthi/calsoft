@@ -34,7 +34,7 @@ export default function WhyItMatters({
             </div>
             <div
               initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              whileinview={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               viewport={{ once: false, amount: 0.3 }}
               className="mt-9"

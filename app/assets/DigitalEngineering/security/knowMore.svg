@@ -18,16 +18,16 @@
 <use xlink:href="#image2_8632_4909" transform="matrix(0.001 0 0 0.0061401 0 -1.55079)"/>
 </pattern>
 <linearGradient id="paint0_linear_8632_4909" x1="-217" y1="103.5" x2="1278" y2="103.5" gradientUnits="userSpaceOnUse">
-<stop stop-color="#091D60"/>
+<stop stopColor="#091D60"/>
 <stop offset="1" stop-opacity="0"/>
 </linearGradient>
 <linearGradient id="paint1_linear_8632_4909" x1="0" y1="103.5" x2="1278" y2="103.5" gradientUnits="userSpaceOnUse">
-<stop offset="0.730293" stop-color="#2E3092"/>
+<stop offset="0.730293" stopColor="#2E3092"/>
 <stop offset="1" stop-opacity="0"/>
 </linearGradient>
 <linearGradient id="paint2_linear_8632_4909" x1="0" y1="103.5" x2="1278" y2="103.5" gradientUnits="userSpaceOnUse">
 <stop offset="0.427454" stop-opacity="0"/>
-<stop offset="0.596431" stop-color="#00012A" stop-opacity="0.69"/>
+<stop offset="0.596431" stopColor="#00012A" stop-opacity="0.69"/>
 </linearGradient>
 <linearGradient id="paint3_linear_8632_4909" x1="1" y1="103.5" x2="1272" y2="103.5" gradientUnits="userSpaceOnUse">
 <stop/>

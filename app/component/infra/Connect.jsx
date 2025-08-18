@@ -7,7 +7,7 @@ import buttonImage from "../../assets/home/buttonImg.webp";
 export default function Connect() {
   return (
     <div className="w-full h-80 relative overflow-hidden mt-10">
-      <Image src={img} className="w-full object-cover" />
+      <Image src={img} alt="connect" className="w-full object-cover" />
       <div className="absolute top-0 w-full h-full bg-[#2e309293] bg-[linear-gradient(90deg,rgba(46,48,146,0.7)_0%,rgba(46,48,146,0.5)_60%,rgba(255,255,255,0)_100%)] text-white">
         <div className="w-full h-full grid grid-cols-2 p-10">
           <div />
