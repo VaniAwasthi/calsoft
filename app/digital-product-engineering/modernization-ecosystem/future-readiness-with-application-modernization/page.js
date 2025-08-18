@@ -24,8 +24,8 @@ const Page = () => {
       <section className="banner_light">
         <BannerSection
           backgroundImage={BannerwithButtonBg}
-          title={<>Top 5 Signs Your Tech Stack is Aging Out</>}
-          buttonText="Read Blog"
+          title="Enable 100% cloud-native readiness for tomorrow."
+          buttonText="Book a meeting"
           buttonLink="#"
         />
       </section>

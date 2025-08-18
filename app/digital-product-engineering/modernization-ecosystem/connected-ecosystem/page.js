@@ -24,8 +24,8 @@ const Page = () => {
       <section className="banner_light padd_sec">
         <BannerSection
           backgroundImage={BannerwithButtonBg}
-          title={<>When Everything Connects, Everything Works.</>}
-          buttonText="Read Blog"
+          title="Integrate apps 2x faster with open ecosystems."
+          buttonText="Book a meeting"
           buttonLink="#"
         />
       </section>

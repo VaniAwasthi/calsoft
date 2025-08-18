@@ -28,9 +28,7 @@ const page = () => {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Let’s build great products and {""}
-            <br className="hidden md:block" />
-            applications - <b>Talk to us</b>
+           Reduce time-to-market by 35% with rapid development.
           </>
         }
         buttonText="Book a Meeting"

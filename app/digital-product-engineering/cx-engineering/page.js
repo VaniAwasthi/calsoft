@@ -26,13 +26,7 @@ const Page = () => {
       <IntelligentUISec />
       <BannerSection
         backgroundImage={BannerwithButtonBg}
-        title={
-          <>
-            Great user experiences lead to higher{" "}
-            <br className="hidden md:block" />
-            market share – <b>Let’s do it</b>
-          </>
-        }
+        title="Boost user retention by 50% through smart CX."
         buttonText="Book a Meeting"
         buttonLink="#"
       />
