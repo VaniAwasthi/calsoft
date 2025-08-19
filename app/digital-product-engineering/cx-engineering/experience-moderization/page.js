@@ -27,7 +27,54 @@ const Page = () => {
         mainComponenentClass="justify-start"
       />
       <WhatWeOffer />
-      <UseCases />
+      <UseCases
+        useCaseData={[
+          {
+            title: "New Product Launch",
+            desc: "Define MVP. Select stack. Design for scale.",
+          },
+          {
+            title: "Legacy Modernization",
+            desc: "Re-architect monoliths into microservices.",
+          },
+          {
+            title: "Cloud-native Transformation",
+            desc: "Design for AWS, Azure, or hybrid deployment.",
+          },
+        ]}
+        data={{
+          leftSideContent: {
+            title: "Beyond Tech- Real Business Outcomes.",
+            subTitle:
+              "Enterprises with a documented infrastructure roadmap have:",
+            description:
+              "Calsoft quantifies ROI for each roadmap milestone —from VM consolidation to cloud-native transitions —and ensures you get board-level buy-in with real data.",
+          },
+          rightSideContent: [
+            {
+              title: "35%",
+              subTitle: "faster cloud migration cycles",
+            },
+            {
+              title: "18-25%",
+              subTitle: "reduction in OpEx via optimized resource usage",
+            },
+            {
+              title: "2X",
+              subTitle:
+                "better incident response through standardized observability stack",
+            },
+            {
+              title: "Faster",
+              subTitle: "innovation cycles with modular, decoupled infra",
+            },
+          ],
+        }}
+        bookMeetingData={{
+          title: "Modernize legacy UIs 3x faster with low-code.",
+          buttontext: "Book a Meeting",
+        }}
+      />
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",

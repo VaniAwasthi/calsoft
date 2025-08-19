@@ -2,7 +2,6 @@
 
 import React from "react";
 import HeroSec from "../../../component/infra/HeroSec";
-// import WhyItMatters from "../../../component/infra/Cloud-Native-Enablement/WhyItMatters";
 import IntelligentPlanning from "../../../component/infra/Multi-Cloud-Provisioning/IntelligentPlanning";
 import UseCases from "../../../component/infra/UseCases";
 import FirstStep from "../../../component/infra/FirstStep";
@@ -30,7 +29,40 @@ const Page = () => {
         contentClass="w-[80%]"
       />
       <IntelligentPlanning />
-      <Agility />
+      <Agility
+        data={{
+          leftSideContent: {
+            title: "From Agile Code to Agile Enterprise",
+            subTitle:
+              "True cloud-native adoption delivers tangible business benefits:",
+            description:
+              "Calsoft delivers engineering-led outcomes, not just infrastructure uplift.",
+          },
+          rightSideContent: [
+            {
+              title: "30-40%",
+              subTitle: "faster release cycles via automated pipelines",
+            },
+            {
+              title: "70%",
+              subTitle: "improvement in deployment consistency with GitOps",
+            },
+            {
+              title: "20-35%",
+              subTitle: "reduced infra cost through right-sized workloads",
+            },
+            {
+              title: "Build-in",
+              subTitle: "compliance with runtime security and policy-as-code",
+            },
+          ],
+        }}
+        bookMeetingData={{
+          title: "Achieve 80% app modernization with native tech.",
+          buttonText: "Book a Meeting",
+        }}
+        buttonText="Try Now"
+      />
       <UseCases />
       <WhyCalsoft />
       <FirstStep />

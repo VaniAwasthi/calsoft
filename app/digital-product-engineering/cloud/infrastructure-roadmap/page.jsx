@@ -9,6 +9,7 @@ import FirstStep from "../../../component/infra/FirstStep";
 import WhyCalsoft from "../../../component/infra/WhyCalsoft";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import InfraRoadmap from "../../../component/infra/InfraRoadmapMatters";
+import Agility from "../../../component/infra/Agility";
 
 const Page = () => {
   return (
@@ -24,6 +25,7 @@ const Page = () => {
         MainComponenent={InfraRoadmap}
       />
       <IntelligentPlanning />
+      <Agility />
       <UseCases />
       <WhyCalsoft />
       <FirstStep />

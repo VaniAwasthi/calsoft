@@ -4,13 +4,12 @@ import Image from "next/image";
 import UseCases from "../../assets/infra/UseCases.webp";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
-import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import img from "../../assets/infra/agility.webp";
 import predict from "../../assets/infra/predictibility.webp";
 
-export default function Component() {
-  const useCaseData = [
+export default function Component({
+  useCaseData = [
     {
       title: "New Product Launch",
       desc: "Define MVP. Select stack. Design for scale.",
@@ -23,8 +22,8 @@ export default function Component() {
       title: "Cloud-native Transformation",
       desc: "Design for AWS, Azure, or hybrid deployment.",
     },
-  ];
-  const data = {
+  ],
+  data = {
     leftSideContent: {
       title: "Beyond Tech- Real Business Outcomes.",
       subTitle: "Enterprises with a documented infrastructure roadmap have:",
@@ -50,8 +49,12 @@ export default function Component() {
         subTitle: "innovation cycles with modular, decoupled infra",
       },
     ],
-  };
-
+  },
+  bookMeetingData = {
+    title: "Reduce design cycle by 30% via architecture-led ideation.",
+    buttontext: "Book a Meeting",
+  },
+}) {
   return (
     <div className="bg-[#ffffff] px-6">
       <div className="h-8" />
@@ -178,9 +181,7 @@ export default function Component() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: false, amount: 0.3 }}
                 className="text-3xl sm:text-4xl font-medium"
-              >
-                Reduce design cycle by 30% via architecture-led ideation.
-              </motion.p>
+              ></motion.p>
               <motion.button
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}

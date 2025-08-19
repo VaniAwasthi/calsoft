@@ -9,6 +9,7 @@ import FirstStep from "../../../component/infra/FirstStep";
 import WhyCalsoft from "../../../component/infra/WhyCalsoft";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import MultiCloudMatters from "../../../component/infra/MultiCloudMatters";
+import Agility from "../../../component/infra/Agility";
 
 const Page = () => {
   return (
@@ -25,6 +26,43 @@ const Page = () => {
         MainComponenent={MultiCloudMatters}
       />
       <IntelligentPlanning />
+
+      <Agility
+        data={{
+          leftSideContent: {
+            title: "Provision Smarter, Not Just Faster.",
+            subTitle:
+              "Effective multi-cloud provisioning drives measurable outcomes:",
+            description:
+              "Calsoft quantifies ROI for each roadmap milestone —from VM consolidation to cloud-native transitions —and ensures you get board-level buy-in with real data.",
+          },
+          rightSideContent: [
+            {
+              title: "Up to 30%",
+              subTitle:
+                "reduction in cloud costs with quota policies & lifecycle hooks",
+            },
+            {
+              title: "50-70%",
+              subTitle: "faster environment provisioning using IaC templates",
+            },
+            {
+              title: "Improved compliance",
+              subTitle:
+                "posture via consistent tagging and encryption standards",
+            },
+            {
+              title: "Enhanced developer",
+              subTitle: "autonomy with sandboxed self-service",
+            },
+          ],
+        }}
+        bookMeetingData={{
+          title: "Provision cloud across vendors 3x faster.",
+          buttonText: "Book a Meeting",
+        }}
+        buttonText="Try Now"
+      />
       <UseCases />
       <WhyCalsoft />
       <FirstStep />

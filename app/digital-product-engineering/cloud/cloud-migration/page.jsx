@@ -27,7 +27,40 @@ const Page = () => {
         MainComponenent={CloudMigration}
       />
       <IntelligentPlanning />
-      <Agility />
+      <Agility
+        data={{
+          leftSideContent: {
+            title: "Faster, Safer, Smarter Cloud Transitions",
+            subTitle: "Cloud migration done right delivers real impact:",
+            description:
+              "Calsoft delivers engineering-led outcomes, not just infrastructure uplift.",
+          },
+          rightSideContent: [
+            {
+              title: "Up to 40%",
+              subTitle: "reduction in infra costs via right-sized provisioning",
+            },
+            {
+              title: "Zero-downtime",
+              subTitle: "cutovers for production-critical systems",
+            },
+            {
+              title: "50-70%",
+              subTitle: "faster migration through automation",
+            },
+            {
+              title: "90%",
+              subTitle:
+                "improvement in post-migration application performance ",
+            },
+          ],
+        }}
+        bookMeetingData={{
+          title: "Achieve 80% app modernization with native tech.",
+          buttonText: "Book a Meeting",
+        }}
+        buttonText="Try Now"
+      />
       <UseCases />
       <WhyCalsoft />
       <FirstStep />
