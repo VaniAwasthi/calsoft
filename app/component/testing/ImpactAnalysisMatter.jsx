@@ -32,7 +32,7 @@ export default function ImpactAnalysisMatter() {
           <p className="text-[17px] font-semibold">Missed regressions</p>
           <p className="font-light">due to skipped critical paths</p>
         </div>
-        <Image src={bg_img_1} height={10000} className="h-full" />
+        <Image src={bg_img_1} alt="bg_img" height={10000} className="h-full" />
       </div>
     </div>
   );

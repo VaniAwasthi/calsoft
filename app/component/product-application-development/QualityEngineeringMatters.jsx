@@ -64,8 +64,8 @@ export default function SmartDevelopmentMatters() {
                 y2="225.404"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.490396" stop-color="#2E3092" />
-                <stop offset="1" stop-color="#BA0007" />
+                <stop offset="0.490396" stopColor="#2E3092" />
+                <stop offset="1" stopColor="#BA0007" />
               </linearGradient>
             </defs>
           </svg>
@@ -105,8 +105,8 @@ export default function SmartDevelopmentMatters() {
                 y2="0.945312"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#BA0007" />
-                <stop offset="0.499616" stop-color="#2E3092" />
+                <stop stopColor="#BA0007" />
+                <stop offset="0.499616" stopColor="#2E3092" />
               </linearGradient>
             </defs>
           </svg>

@@ -46,8 +46,8 @@ export default function ArchitectureIdeationMatters() {
                 y2="-10.0634"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#BA0007" />
-                <stop offset="0.658654" stop-color="#2E3092" />
+                <stop stopColor="#BA0007" />
+                <stop offset="0.658654" stopColor="#2E3092" />
               </linearGradient>
             </defs>
           </svg>
@@ -77,8 +77,8 @@ export default function ArchitectureIdeationMatters() {
                 y2="-10.11"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#BA0007" />
-                <stop offset="0.658654" stop-color="#2E3092" />
+                <stop stopColor="#BA0007" />
+                <stop offset="0.658654" stopColor="#2E3092" />
               </linearGradient>
             </defs>
           </svg>
