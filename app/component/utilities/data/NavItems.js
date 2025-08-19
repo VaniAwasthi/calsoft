@@ -163,11 +163,11 @@ export const navItems = [
           },
           {
             title: "Connected Ecosystem",
-            href: "#",
+            href: "/digital-product-engineering/modernization-ecosystem/connected-ecosystem",
           },
           {
             title: "Plugin Development",
-            href: "#",
+            href: "/digital-product-engineering/modernization-ecosystem/plugin-development",
           },
         ],
       },
