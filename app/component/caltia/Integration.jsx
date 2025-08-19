@@ -22,7 +22,7 @@ import { motion } from "framer-motion";
 export default function Integration() {
   return (
     <div className="bg-[#f7f7f7] py-10">
-      <div className="container flex items-center h-full gap-8">
+      <div className="container flex flex-col lg:flex-row items-center h-full gap-8">
         <div className="flex-1 flex flex-col gap-4">
           <motion.p
             initial={{ x: -50, opacity: 0 }}

@@ -15,7 +15,7 @@ export default function TestCase() {
   ];
   return (
     <div className="container">
-      <div className="flex gap-5 mb-12">
+      <div className="flex flex-col lg:flex-row gap-5 mb-12">
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -38,10 +38,14 @@ export default function TestCase() {
           viewport={{ once: false, amount: 0.3 }}
           className="flex-1 rounded-lg overflow-hidden border-2 border-[#ED1C24]"
         >
-          <Image src={code} />
+          <Image
+            src={code}
+            alt="code"
+            className="w-full h-full object-contain"
+          />
         </motion.div>
       </div>
-      <div className="grid grid-cols-5 gap-5 mb-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-5 mb-10">
         {data.map((ele, idx) => (
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -151,7 +151,7 @@ export default function TabsComponent() {
 
         {/* Tab Content */}
         <div className="bg-[#f4f4f4] min-h-[400px] p-8">
-          <div className="flex gap-8 container">
+          <div className="flex flex-col lg:flex-row gap-8 container">
             {/* Left side - Features */}
             <div className="flex-1">
               <div className="space-y-6">
@@ -189,7 +189,7 @@ export default function TabsComponent() {
 
             {/* Right side - Dashboard mockup */}
             <div className="flex-1">
-              <div className="bg-white rounded-lg shadow-lg p-6 h-[350px] flex items-center justify-center">
+              <div className="bg-white rounded-lg shadow-lg p-6 lg:h-[350px] flex items-center justify-center">
                 <Image
                   src={activeTabData.content.img}
                   alt="Dashboard Interface"
