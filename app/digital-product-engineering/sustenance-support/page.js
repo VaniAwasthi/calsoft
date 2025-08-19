@@ -13,6 +13,7 @@ import {
 } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Sustaine/Knowmore.svg";
+
 function page() {
   return (
     <>
@@ -23,13 +24,7 @@ function page() {
 
       <BannerSection
         backgroundImage={BannerwithButtonBg}
-        title={
-          <>
-            Manage releases, updates, and platform
-            <br className="hidden md:block" />
-            enhancements without service disruption
-          </>
-        }
+        title="Reduce downtime by 45% with proactive support."
         buttonText="Book a Meeting"
         buttonLink="#"
       />

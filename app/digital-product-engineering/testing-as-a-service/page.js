@@ -15,6 +15,7 @@ import {
   BannerSection,
   ContactSecData,
 } from "../../component/utilities/InfraSectorSec.jsx";
+
 function page() {
   return (
     <>
@@ -25,13 +26,7 @@ function page() {
       <LoadSec />
       <BannerSection
         backgroundImage={BannerwithButtonBg}
-        title={
-          <>
-            Want full continuous and automated
-            <br className="hidden md:block" />
-            testing control? <b>We can do it</b>
-          </>
-        }
+        title="Achieve 90% test automation coverage with CalTIA."
         buttonText=" Book a Meeting"
         buttonLink="#"
       />

@@ -27,13 +27,7 @@ const Page = () => {
       <CloudNativetInfraSec />
       <BannerSection
         backgroundImage={BannerwithButtonBg}
-        title={
-          <>
-            Become cloud-native for faster and{" "}
-            <br className="hidden md:block" />
-            collaborative DevOps + SRE – It &apos;s time to adopt
-          </>
-        }
+        title="Accelerate cloud provisioning by 60% across environments."
         buttonText="Book a Meeting"
         buttonLink="#"
       />
@@ -43,7 +37,7 @@ const Page = () => {
       <ContactSecData
         BoldContent="Engineer cloud environments "
         lightContent="with us that are scalable, resilient,
-and cost-efficient"
+        and cost - efficient "
         link="#"
       />
     </>

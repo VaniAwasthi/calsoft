@@ -14,6 +14,7 @@ import {
 } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/security/knowMore.svg";
+
 function page() {
   return (
     <>
@@ -24,13 +25,7 @@ function page() {
       <DevSec />
       <BannerSection
         backgroundImage={BannerwithButtonBg}
-        title={
-          <>
-            Embed security into DevOps and architect{" "}
-            <br className="hidden md:block" />
-            Zero Trust environments <b>with Calsoft</b>
-          </>
-        }
+        title="Improve security posture by 70% with zero trust."
         buttonText="Book a Meeting"
         buttonLink="#"
       />

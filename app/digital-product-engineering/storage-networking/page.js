@@ -26,13 +26,7 @@ function page() {
       <Hyperconverged />
       <BannerSection
         backgroundImage={BannerwithButtonBg}
-        title={
-          <>
-            Talk to our storage and networking{" "}
-            <br className="hidden md:block" />
-            experts - <b>Schedule a consultation</b>
-          </>
-        }
+        title="Optimize storage ops with 99.9% availability assurance."
         buttonText="Book a Meeting"
         buttonLink="#"
       />
