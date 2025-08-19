@@ -9,8 +9,8 @@ import Image from "next/image";
 import { FaArrowRightLong } from "react-icons/fa6";
 import WhyItMatters from "../utilities/WhyItMatters";
 import bgshape1 from "../../assets/DigitalEngineering/maturity/shape1.svg";
-import bgshape2 from "../../assets/DigitalEngineering/maturity/shape2.svg";
-import bgshape3 from "../../assets/DigitalEngineering/maturity/shape3.svg";
+import bgshape2 from "../../assets/DigitalEngineering/shape2.svg";
+import bgshape3 from "../../assets/DigitalEngineering/shape3.svg";
 import {
   BusinessValue,
   Cases,
