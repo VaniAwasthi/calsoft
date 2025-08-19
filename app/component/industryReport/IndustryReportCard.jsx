@@ -2,34 +2,46 @@
 
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Industry1 from "../../assets/Infographic/Industry1.webp";
 
-import { FilterSec } from "../utilities/FilterSec";
 import Link from "next/link";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
+import FilterPanel from "../utilities/FilterPannel";
 
 export const IndustryReportCard = () => {
+  const dispatch = useDispatch();
+
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
+
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+  }, [dispatch]);
+
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
-    Topics: "All",
-    Author: "All",
+    Topics: [],
   });
-  const [currentPage, setCurrentPage] = useState(0);
 
   const filters = {
-    Industry: ["All", "Tech", "Healthcare"],
-    Topics: ["All", "Security", "AI"],
-    Author: ["All", "Anton Frank", "John Doe"],
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
   };
+
+  const [currentPage, setCurrentPage] = useState(0);
 
   const images = [Industry1];
 
   const cardData = new Array(18).fill(0).map((_, i) => ({
     id: i + 1,
-    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer ${
+    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Example ${
       i + 1
     }`,
     image: images[i % images.length],
@@ -60,16 +72,16 @@ export const IndustryReportCard = () => {
       console.error("Copy failed:", error);
     }
   };
-
   const filteredResources = resources.filter((item) => {
-    const authorMatch =
-      activeFilters.Author === "All" || item.author === activeFilters.Author;
-    const tagMatch =
-      activeFilters.Topics === "All" || item.tag === activeFilters.Topics;
     const industryMatch =
       activeFilters.Industry === "All" ||
       item.industry === activeFilters.Industry;
-    return authorMatch && tagMatch && industryMatch;
+
+    const tagMatch =
+      activeFilters.Topics.length === 0 ||
+      activeFilters.Topics.some((topic) => item.tags.includes(topic));
+
+    return industryMatch && tagMatch;
   });
 
   const itemsPerPage = 6;
@@ -87,19 +99,19 @@ export const IndustryReportCard = () => {
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterSec
+        <FilterPanel
           filters={filters}
           activeFilters={activeFilters}
-          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
+          setActiveFilters={setActiveFilters}
         />
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
         {/* Grid Display with animation */}
-        <div className="grid grid-cols-1  gap-8">
+        <div className="grid grid-cols-1 gap-8">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
               <motion.div
@@ -108,7 +120,7 @@ export const IndustryReportCard = () => {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="flex flex-col md:flex-row  h-[450px] md:h-[250px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+                className="flex flex-col md:flex-row h-[450px] md:h-[250px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 {/* Image */}
                 <div className="md:w-2/4 w-full h-full">
@@ -124,11 +136,10 @@ export const IndustryReportCard = () => {
                 {/* Content */}
                 <div className="w-full h-full p-4 flex flex-col justify-between">
                   <div className="flex flex-col justify-between items-start md:px-7">
-                    <h3 className="text-sm md:text-[18px] font-semibold  break-words whitespace-normal text-[#28272D]">
+                    <h3 className="text-sm md:text-[18px] font-semibold break-words whitespace-normal text-[#28272D]">
                       {item.title}
                     </h3>
                     <div className="flex flex-wrap gap-2 my-2">
-                      {/* Container to hold tags */}
                       {item.tags.map((tag) => (
                         <span
                           key={tag}
@@ -138,7 +149,7 @@ export const IndustryReportCard = () => {
                         </span>
                       ))}
                     </div>
-                    <div className="flex justify-between w-full items-center py-5 mt-2 lg-10 lg:py-10">
+                    <div className="flex justify-between w-full items-center py-5 mt-2">
                       <Link
                         href="#"
                         className="px-9 py-3 rounded-4xl border border-[#2E3092]"
@@ -166,9 +177,9 @@ export const IndustryReportCard = () => {
           </AnimatePresence>
         </div>
 
-        {/* Custom Pagination with animation */}
+        {/* Pagination */}
         <div className="flex justify-center items-center">
-          <div className="mt-8  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
+          <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
             {/* Previous Button */}
             <motion.button
               onClick={() => goToPage(currentPage - 1)}

@@ -2,28 +2,38 @@
 
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaPlay, FaShareAlt } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Info1 from "../../assets/Infographic/Info1.webp";
 import Info2 from "../../assets/Infographic/Info2.webp";
 import { FilterSec } from "../utilities/FilterSec";
 import ReactPlayer from "react-player";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
+import FilterPanel from "../utilities/FilterPannel";
 
 export const VideoCards = () => {
+  const dispatch = useDispatch();
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+  }, [dispatch]);
+
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
-    Topics: "All",
-    Author: "All",
+    Topics: [],
   });
-  const [currentPage, setCurrentPage] = useState(0);
 
   const filters = {
-    Industry: ["All", "Tech", "Healthcare"],
-    Topics: ["All", "Security", "AI"],
-    Author: ["All", "Anton Frank", "John Doe"],
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
   };
+  const [currentPage, setCurrentPage] = useState(0);
 
   const images = [Info1, Info2];
 
@@ -64,14 +74,15 @@ export const VideoCards = () => {
   };
 
   const filteredResources = resources.filter((item) => {
-    const authorMatch =
-      activeFilters.Author === "All" || item.author === activeFilters.Author;
-    const tagMatch =
-      activeFilters.Topics === "All" || item.tag === activeFilters.Topics;
     const industryMatch =
       activeFilters.Industry === "All" ||
       item.industry === activeFilters.Industry;
-    return authorMatch && tagMatch && industryMatch;
+
+    const tagMatch =
+      activeFilters.Topics.length === 0 ||
+      activeFilters.Topics.some((topic) => item.tags.includes(topic));
+
+    return industryMatch && tagMatch;
   });
 
   const itemsPerPage = 6;
@@ -89,13 +100,13 @@ export const VideoCards = () => {
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterSec
+        <FilterPanel
           filters={filters}
           activeFilters={activeFilters}
-          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
+          setActiveFilters={setActiveFilters}
         />
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
         {/* Grid Display with animation */}
