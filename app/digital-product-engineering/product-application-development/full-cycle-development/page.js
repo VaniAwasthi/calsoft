@@ -15,7 +15,9 @@ export default function page() {
       <HeroSection
         title="Turn Ideas into Intelligent Products"
         description="De-risk early decisions with the right architecture,
-built for scale, speed, and ROI."
+        built
+        for scale, speed, and ROI.
+        "
         buttonText="Get Architecture Readiness Score"
       />
       <WhyItMatters
@@ -26,14 +28,14 @@ built for scale, speed, and ROI."
         contentClass="w-[90%]"
       />
       <WhatWeOffer />
-      <UseCases CTACopy="Accelerate MVP delivery by 40% with agile builds."/>
+      <UseCases CTACopy="Accelerate MVP delivery by 40% with agile builds." />
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:
             "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
         }}
-      />
+      />{" "}
       <Steps />
       <ArchitectureSprint />
       <ContactSecDataAi
