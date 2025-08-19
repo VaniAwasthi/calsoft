@@ -27,7 +27,7 @@ const Page = () => {
         // contentClass="w-[90%]"
       />
       <WhatWeOffer />
-      <UseCases />
+      <UseCases CTACopy="Reduce design cycle by 30% via architecture-led ideation."/>
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",

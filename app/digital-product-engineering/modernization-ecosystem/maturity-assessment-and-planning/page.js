@@ -28,11 +28,10 @@ function Page() {
           backgroundImage={BannerwithButtonBg}
           title={
             <>
-              Calsoft’s Modernization Maturity Assessment helps you pinpoint
-              gaps across your tech ecosystem
+              Reduce tech debt by 45% with maturity mapping.
             </>
           }
-          buttonText="Know More"
+          buttonText="Book a meeting"
           buttonLink="#"
         />
       </section>

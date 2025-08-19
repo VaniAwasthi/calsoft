@@ -111,41 +111,6 @@ export default function Component({
                   </motion.div>
                 ))}
               </div>
-              {/* <motion.div
-                key={idx}
-                className="relative h-full p-[2px] group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                viewport={{ once: false }}
-              >
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,#2E3092_0%,#ED1C24_100%)] clip-diagonal z-0 group-hover:bg-transparent"></div>
-
-                <div
-                  className="relative w-full h-full clip-diagonal p-6 z-10 transition-all duration-100"
-                  style={{
-                    background: "white",
-                  }}
-                >
-                  <div
-                    className="absolute inset-0 z-[-1] transition-all duration-100 opacity-0 "
-                    style={{
-                      background:
-                        "linear-gradient(180deg, #2E3092 46.45%, #BA0007 109.78%)",
-                      borderRadius: "inherit",
-                      clipPath:
-                        "polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0% 100%)",
-                    }}
-                  ></div>
-
-                  <h4 className="font-semibold text-lg md:text-2xl mb-2 group-hover:text-white">
-                    {item.title}
-                  </h4>
-                  <p className="text-sm md:text-[15px] text-[#4C4C4C] group-hover:text-white">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div> */}
             </div>
 
             {/* Right Image */}
@@ -181,7 +146,9 @@ export default function Component({
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: false, amount: 0.3 }}
                 className="text-3xl sm:text-4xl font-medium"
-              ></motion.p>
+              >
+                {bookMeetingData.title}
+              </motion.p>
               <motion.button
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -189,7 +156,7 @@ export default function Component({
                 viewport={{ once: false, amount: 0.3 }}
                 className="text-xl  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg whitespace-nowrap"
               >
-                Book a Meeting
+                {bookMeetingData.buttontext}
               </motion.button>
             </div>
           </div>

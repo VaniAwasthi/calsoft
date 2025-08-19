@@ -171,7 +171,7 @@ export default function Navbar() {
                 onMouseEnter={() => setActiveMenu(activeMenu)}
                 onMouseLeave={() => setActiveMenu(null)}
               >
-                <div className="max-w-[1340px] mx-auto bg-white text-black rounded-xl shadow-xl flex ">
+                <div className="max-w-[1200px] mx-auto bg-white text-black rounded-xl shadow-xl flex ">
                   {/* Left Column */}
                   <div className="w-[30%]  p-6">
                     {navItems

@@ -133,19 +133,19 @@ export const navItems = [
           },
           {
             title: "Full-Cycle Development",
-            href: "#",
+            href: "/digital-product-engineering/product-application-development/full-cycle-development",
           },
           {
             title: "Quality Engineering",
-            href: "#",
+            href: "/digital-product-engineering/product-application-development/quality-engineering",
           },
           {
             title: "DevOps & SRE",
-            href: "#",
+            href: "/digital-product-engineering/product-application-development/devops-sre",
           },
           {
             title: "Smart Deployment",
-            href: "#",
+            href: "/digital-product-engineering/product-application-development/smart-development",
           },
         ],
       },

@@ -25,13 +25,7 @@ function page() {
       <HypervisorSec />
       <BannerSection
         backgroundImage={BannerwithButtonBg}
-        title={
-          <>
-            Design and deploy agile, scalable virtual{" "}
-            <br className="hidden md:block" />
-            environments <b>– We can help</b>
-          </>
-        }
+        title="Lower infra footprint 30 % via virtualization efficiency."
         buttonText="Book a Meeting"
         buttonLink="#"
       />

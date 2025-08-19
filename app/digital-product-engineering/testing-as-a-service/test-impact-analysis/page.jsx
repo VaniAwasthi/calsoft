@@ -55,8 +55,7 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title:
-            "Book a 30-minute call to stop 80% of your cloud spend from going to waste.",
+          title: "Reduce test cycles by 40% with smart analysis.",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"

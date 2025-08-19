@@ -27,7 +27,7 @@ Can’t Ship Reliably."
         contentClass="w-[90%]"
       />
       <WhatWeOffer />
-      <UseCases />
+      <UseCases CTACopy="Cut deployment time by 50% through automation."/>
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",
