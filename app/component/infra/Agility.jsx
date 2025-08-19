@@ -44,7 +44,7 @@ export default function Agility({
 }) {
   return (
     <div className="container">
-      <div className="h-4 lg:h-6" />
+      <div className="h-6 lg:h-8" />
       <div className="w-full h-full relative rounded-xl overflow-hidden">
         <Image
           src={img}
