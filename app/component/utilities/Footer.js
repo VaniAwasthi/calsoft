@@ -10,13 +10,13 @@ import {
 import Logo from "../../assets/logo.png";
 import user from "../../assets/webinar.png";
 import { GoArrowRight } from "react-icons/go";
-
+import IsoImg from "../../assets/isoImg.jpg"
 const Footer = () => {
   return (
     <>
       {/* Webinar Floating Button */}
       <button
-        className=" fixed rounded-full cursor-pointer w-18 h-18 md:w-20 md:h-20 flex p-3 gap-0 flex-wrap items-center z-90 right-10 md:right-6 bottom-8 justify-center bg-[#ED1C24] text-white"
+        className="fixed rounded-full cursor-pointer w-18 h-18 md:w-20 md:h-20 flex p-3 gap-0 flex-wrap items-center z-90 right-10 md:right-6 bottom-8 justify-center bg-[#ED1C24] text-white"
         style={{
           boxShadow:
             "0px 2px 4px rgba(0, 0, 0, 0.53), 0px 7px 7px rgba(0, 0, 0, 0.46), 0px 16px 10px rgba(0, 0, 0, 0.27), 0px 29px 12px rgba(0, 0, 0, 0.08), 0px 46px 13px rgba(0, 0, 0, 0.01)",
@@ -34,7 +34,7 @@ const Footer = () => {
 
       {/* Main Footer */}
       <footer className="bg-black text-white">
-        <div className="container mx-auto px-4 py-6  xl:px-15">
+        <div className="container mx-auto px-4 py-6 xl:px-15">
           <div className="flex flex-col md:flex-row justify-between items-start pt-8 pb-8">
             <div>
               <Image src={Logo} alt="Calsoft Logo" width={150} height={50} />
@@ -62,20 +62,28 @@ const Footer = () => {
               <h3 className="text-[20px] font-semibold mb-4">Services</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="/digital-product-engineering"> Digital Product engineering</Link>
-                </li>
-
-                <li>
-                  <Link href="/data-ai">Data and Artificial Intelligence</Link>
+                  <Link href="/digital-product-engineering">
+                    Digital Product Engineering
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/digital-product-engineering/sustenance-support">Sustaining & Support</Link>
+                  <Link href="/data-ai">
+                    Data and Artificial Intelligence
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/digital-product-engineering/testing-as-a-service">Managed testing services</Link>
+                  <Link href="/digital-product-engineering/sustenance-support">
+                    Sustaining & Support
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/digital-product-engineering/testing-as-a-service">
+                    Managed Testing Services
+                  </Link>
                 </li>
               </ul>
             </div>
+
             {/* Resources */}
             <div>
               <h3 className="text-[20px] font-semibold mb-4">Resources</h3>
@@ -92,10 +100,10 @@ const Footer = () => {
                 <li>
                   <Link href="/insights/industry-report">Industry Reports</Link>
                 </li>
-               
               </ul>
             </div>
-   {/* Company */}
+
+            {/* Company */}
             <div>
               <h3 className="text-[20px] font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-[14px]">
@@ -113,52 +121,59 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+
             {/* Headquarters */}
             <div>
               <h3 className="text-[20px] font-semibold mb-4">Headquarters</h3>
               <ul className="space-y-2 text-sm">
                 <li>USA - San Jose</li>
                 <li>INDIA - Pune</li>
-                <li><Link href="#">Contact us</Link></li>
+                <li>
+                  <Link href="#">Contact us</Link>
+                </li>
               </ul>
             </div>
 
             {/* Social Presence */}
             <div>
-              <h3 className="text-[20px] font-semibold mb-4">
-                Social Presence
-              </h3>
-              <div className="flex flex-wrap gap-3 ">
-                <Link
-                  href="#"
-                  className="rounded-full w-8 h-8 md:w-8 md:h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+              <h3 className="text-[20px] font-semibold mb-4">Social Presence</h3>
+              <div className="flex flex-wrap gap-3">
+                <a 
+                  href="https://www.linkedin.com/company/calsoft/" target="_blank"
+                  className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaLinkedinIn size={20} />
-                </Link>
-                <Link
-                  href="#"
-                  className="rounded-full ww-8 h-8 md:w-8 md:h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                </a>
+                <a
+                  href="https://x.com/CalsoftInc" target="_blank"
+                  className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaXTwitter size={20} />
-                </Link>
-                <Link
-                  href="#"
-                  className="rounded-full ww-8 h-8 md:w-8 md:h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                </a>
+                <a target="_blank"
+                  href="https://www.youtube.com/user/TheCalsoftInc?themeRefresh=1"
+                  className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaYoutube size={20} />
-                </Link>
-                <Link
-                  href="#"
-                  className="rounded-full ww-8 h-8 md:w-8 md:h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                </a>
+                <a target="_blank"
+                  href="https://www.facebook.com/Calsoft"
+                  className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaFacebookF size={20} />
-                </Link>
-                <Link
-                  href="#"
-                  className="rounded-full ww-8 h-8 md:w-8 md:h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                </a>
+                <a target="_blank"
+                  href="https://www.instagram.com/calsoftinc/"
+                  className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaInstagram size={20} />
-                </Link>
+                </a>
+                <div 
+                  
+                  className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                >
+                  <Image src={IsoImg} alt="isoImg" width={20} height={20} />
+                </div>
               </div>
             </div>
           </div>
@@ -166,8 +181,8 @@ const Footer = () => {
 
         {/* Bottom Strip */}
         <div className="bg-[#2E3092] mt-8">
-          <div className="container mx-auto px-4 py-4 md:px-20 text-sm text-white text-center ">
-            © 2024 Calsoft | Designed by Crux
+          <div className="container mx-auto px-4 py-4 md:px-20 text-sm text-white text-center">
+            ©2024 Calsoft | Designed by Crux
           </div>
         </div>
       </footer>

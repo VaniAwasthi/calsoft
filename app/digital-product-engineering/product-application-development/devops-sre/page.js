@@ -14,21 +14,22 @@ const Page = () => {
   return (
     <>
       <HeroSection
-        title="Turn Ideas into Intelligent Products."
-        description="De-risk early decisions with the right architecture,
-              built for scale, speed, and ROI."
-        buttonText="Get Architecture Readiness Score"
+        title="Build Fast. Ship Often. Stay Always-On."
+        description="Calsoft’s DevOps & Site Reliability Engineering services automate delivery,
+        accelerate releases, and ensure 99.99 % uptime— across cloud, hybrid, and edge deployments.
+        "
+        buttonText="Book your DevOps Health Check"
       />
       <WhyItMatters />
       <WhatWeOffer />
-      <UseCases CTACopy="Speed up release cycles by 60% using SRE practices."/>
+      <UseCases CTACopy="Speed up release cycles by 60% using SRE practices." />
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:
             "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
         }}
-      />
+      />{" "}
       <Steps />
       <ArchitectureSprint />
       <ContactSecDataAi
