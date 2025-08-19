@@ -2,71 +2,91 @@ import React from "react";
 import ButtonLayout from "./ButtonLayout";
 import { motion } from "framer-motion";
 
-const WhyItMatters = ({ title, description, highlight, buttonText, link, cards, heading, ButtonImage, secId }) => {
-    return (
-        <section className={`md:pb-12 pb-0 md:pt-12 pt-6   bg-white`} id={secId}>
-            <div className="container mx-auto px-4 md:px-16">
-                <div className="flex flex-col lg:flex-row gap-10 items-center">
+const WhyItMatters = ({
+  title,
+  description,
+  highlight,
+  buttonText,
+  link,
+  cards,
+  heading,
+  ButtonImage,
+  secId,
+}) => {
+  return (
+    <section className={`md:pb-12 pb-0 md:pt-12 pt-6   bg-white`} id={secId}>
+      <div className="container mx-auto px-4 md:px-16">
+        <div className="flex flex-col lg:flex-row gap-10 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false }}
+            className="flex-1 lg:w-2/4"
+          >
+            <h2 className="text-xl md:text-[38px] font-semibold mb-6 md:mb-10 text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)]">
+              {heading}
+            </h2>
+            <h3 className="text-xl md:text-[26px] font-semibold mb-5">
+              {title}
+            </h3>
+            <p
+              className="md:text-base text-sm text-black font-normal"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+            <p className="md:text-base text-sm text-[#2E3092] mb-10 font-normal">
+              {highlight}
+            </p>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: false }}
-                        className="flex-1 md:w-2/4"
-                    >
-                        <h2 className="text-xl md:text-[38px] font-semibold mb-6 md:mb-10 text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)]">
-                            {heading}
-                        </h2>
-                        <h3 className="text-xl md:text-[26px] font-semibold mb-5">{title}</h3>
-                        <p className="md:text-base text-sm text-black font-normal" dangerouslySetInnerHTML={{ __html: description }} />
-                        <p className="md:text-base text-sm text-[#2E3092] mb-10 font-normal">{highlight}</p>
+            {buttonText && (
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="flex flex-col md:flex-row gap-4 increse_btn shadow_btn"
+              >
+                <ButtonLayout
+                  link={link}
+                  text={buttonText}
+                  image={ButtonImage}
+                  hoverImage={ButtonImage}
+                />
+              </motion.div>
+            )}
+          </motion.div>
 
-                        {buttonText && (
-                            <motion.div
-                                initial={{ x: -50, opacity: 0 }}
-                                whileInView={{ x: 0, opacity: 1 }}
-                                transition={{ duration: 0.5, delay: 0.8 }}
-                                viewport={{ once: false, amount: 0.3 }}
-                                className="flex flex-col md:flex-row gap-4 increse_btn shadow_btn"
-                            >
-                                <ButtonLayout
-                                    link={link}
-                                    text={buttonText}
-                                    image={ButtonImage}
-                                    hoverImage={ButtonImage}
-                                />
-                            </motion.div>
-                        )}
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        viewport={{ once: true }}
-                        className="flex-1 flex flex-wrap justify-center gap-4 shape_group md:w-2/4"
-                    >
-                        {cards.map((card, idx) => (
-                            <motion.div
-                                key={idx}
-                                className={`h-[200px] md:h-[240px] bg-gradient-to-br text-white flex pt-8 md:pt-10 items-start justify-center text-center rounded-[2rem] relative transform ${card.className} single_shape bg-contain md:bg-contain bg-no-repeat bg-center`}
-                                style={{ backgroundImage: `url('${card.bgshape.src}')` }}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 1.05 }} // <- Added for mobile tap effect
-                                transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-                            >
-                                <div className="w-[65%] md:w-[40%] mx-auto">
-                                    <p className="text-[17px] md:text-3xl font-bold pt-[2px] md:pt-0">{card.percent}</p>
-                                    <p className="text-[10px] md:text-[12px] md:mt-2">{card.text}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="xl:flex-1 flex flex-wrap justify-center gap-4 shape_group w-[35rem]"
+          >
+            {cards.map((card, idx) => (
+              <motion.div
+                key={idx}
+                className={`h-[200px] md:h-[240px] bg-gradient-to-br text-white flex pt-8 md:pt-10 items-start justify-center text-center rounded-[2rem] relative transform ${card.className} single_shape bg-contain md:bg-contain bg-no-repeat bg-center`}
+                style={{ backgroundImage: `url('${card.bgshape.src}')` }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 1.05 }} // <- Added for mobile tap effect
+                transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              >
+                <div className="w-[65%] md:w-[40%] mx-auto">
+                  <p className="text-[17px] md:text-3xl font-bold pt-[2px] md:pt-0">
+                    {card.percent}
+                  </p>
+                  <p className="text-[10px] md:text-[12px] md:mt-2">
+                    {card.text}
+                  </p>
                 </div>
-            </div>
-        </section>
-    );
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default WhyItMatters;
