@@ -1,32 +1,184 @@
-import React from "react";
+"use client";
 
-export default function OnePlatform() {
-  const data = [
-    {
-      title: "Predictive Test Recommendation",
-      points: [
+import Image from "next/image";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import tabImg from "@/app/assets/caltia/TabContentImg.webp";
+
+const tabsData = [
+  {
+    id: "predictive-test",
+    title: "Predictive Test Recommendation",
+    content: {
+      img: tabImg,
+      features: [
         "Intelligently selects the most relevant tests based on code changes using predictive test analytics",
-        "Intelligently selects the most relevant tests based on code changes using predictive test analytics",
+        "Executes essential test subsets, reducing regression time",
         "Ensure efficient and optimized testing cycles",
         "Accelerates release cycles and lowers infrastructure costs with automated regression testing",
       ],
     },
-    {
-      title: "Intuitive Interface and Reporting",
-      points: [
-        "Intelligently selects the most relevant tests based on code changes using predictive test analytics",
-        "Intelligently selects the most relevant tests based on code changes using predictive test analytics",
-        "Ensure efficient and optimized testing cycles",
-        "Accelerates release cycles and lowers infrastructure costs with automated regression testing",
+  },
+  {
+    id: "intuitive-interface",
+    title: "Intuitive Interface and Reporting",
+    content: {
+      img: tabImg,
+      features: [
+        "User-friendly dashboard with comprehensive test analytics",
+        "Real-time reporting and visualization of test results",
+        "Customizable reports and metrics tracking",
+        "Easy-to-understand test coverage and performance insights",
       ],
     },
-  ];
+  },
+  {
+    id: "zero-touch",
+    title: "Zero-Touch Workflow",
+    content: {
+      img: tabImg,
+      features: [
+        "Fully automated testing pipeline with minimal manual intervention",
+        "Seamless integration with existing development workflows",
+        "Automatic test execution on code commits and deployments",
+        "Self-healing test maintenance and optimization",
+      ],
+    },
+  },
+  {
+    id: "easy-integration",
+    title: "Easy Integration with DevOps Pipeline",
+    content: {
+      img: tabImg,
+      features: [
+        "Compatible with popular CI/CD tools and platforms",
+        "Simple setup and configuration process",
+        "API-first approach for custom integrations",
+        "Support for multiple deployment environments",
+      ],
+    },
+  },
+  {
+    id: "programming-language",
+    title: "Programming language and Domain Agnostic",
+    content: {
+      img: tabImg,
+      features: [
+        "Support for multiple programming languages and frameworks",
+        "Domain-independent testing capabilities",
+        "Flexible test execution across different technology stacks",
+        "Universal compatibility with various application types",
+      ],
+    },
+  },
+  {
+    id: "on-prem",
+    title: "On-Prem Solution",
+    content: {
+      img: tabImg,
+      features: [
+        "Complete on-premises deployment option",
+        "Full data control and security compliance",
+        "No external dependencies or cloud requirements",
+        "Customizable infrastructure and scaling options",
+      ],
+    },
+  },
+  {
+    id: "optimizing-quality",
+    title: "Optimizing Software Quality Assurance",
+    content: {
+      img: tabImg,
+      features: [
+        "Advanced quality metrics and analysis",
+        "Continuous improvement recommendations",
+        "Risk assessment and mitigation strategies",
+        "Comprehensive quality assurance automation",
+      ],
+    },
+  },
+];
+
+export default function TabsComponent() {
+  const [activeTab, setActiveTab] = useState(tabsData[0].id);
+
+  const activeTabData = tabsData.find((tab) => tab.id === activeTab);
+
   return (
-    <div className="container">
-      <div className="h-8" />
-      <p className="text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_50%)] bg-clip-text text-transparent">
-        One Platform. Multiple Features. Smarter Testing
-      </p>
+    <div className="flex flex-col gap-y-11">
+      <div className="mt-8">
+        <p className="text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_50%)] bg-clip-text text-transparent container">
+          One Platform. Multiple Features. Smarter Testing
+        </p>
+      </div>
+      {/* Tab Headers */}
+      <div className="overflow-x-auto [scrollbar-width:none] [scrollbar-height:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden border-b border-[#f3f3f3] relative container">
+        <div className="flex min-w-max">
+          {tabsData.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-6 py-4 text-sm font-medium transition-all duration-200 relative whitespace-nowrap ${
+                activeTab === tab.id
+                  ? "bg-[#2e3092] text-white"
+                  : "bg-[#f4f4f4] text-[#4e4e4e] hover:bg-[#f3f3f3]"
+              }`}
+            >
+              {tab.title}
+              {/* Triangle indicator */}
+              {/* {activeTab === tab.id && (
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-[#2e3092]"></div>
+                </div>
+              )} */}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Tab Content */}
+      <div className="bg-[#f4f4f4] min-h-[400px] p-8">
+        <div className="flex gap-8 container">
+          {/* Left side - Features */}
+          <div className="flex-1">
+            <div className="space-y-6">
+              {activeTabData?.content.features.map((feature, index) => (
+                <div key={index} className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-8 h-8 bg-[#2e3092] rounded-full flex items-center justify-center mt-1">
+                    <svg
+                      className="w-5 h-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <p className="text-[#4e4e4e] text-lg leading-relaxed">
+                    {feature}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right side - Dashboard mockup */}
+          <div className="flex-1">
+            <div className="bg-white rounded-lg shadow-lg p-6 h-[350px] flex items-center justify-center">
+              <Image
+                src={activeTabData.content.img}
+                alt="Dashboard Interface"
+                className="w-full h-full object-contain rounded"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="h-8" />
     </div>
   );

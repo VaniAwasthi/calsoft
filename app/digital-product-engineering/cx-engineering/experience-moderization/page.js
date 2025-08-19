@@ -5,9 +5,8 @@ import WhatWeOffer from "../../../component/product-application-development/What
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
-import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
-import ArchitectureIdeation from "../../../component/product-application-development/ArchitectureIdeationMatters";
+import ModerizationMatters from "@/app/component/cx-engineering/ModerizationMatters";
 
 const Page = () => {
   return (
@@ -18,13 +17,14 @@ const Page = () => {
               built for scale, speed, and ROI."
         buttonText="Get Architecture Readiness Score"
       />
-      {/* <Why /> */}
       <WhyItMatters
-        title="Don’t Build Blind. Architect to Win."
-        desc="75% of digital product failures stem from poor early decisions—wrong tech stack, unclear user flows, or over-engineered features. Calsoft helps you cut through ambiguity and shape a scalable, cloud-first, cost-efficient architecture that aligns with your business goals from Day 1."
-        buttonText="Download"
-        MainComponenent={ArchitectureIdeation}
-        // contentClass="w-[90%]"
+        title="Mobile Isn’t a Channel. It’s the Frontline."
+        desc="Mobile is where business happens—whether it’s a field rep capturing leads, a consumer placing an order, or a manager approving workflows. Yet 60% of enterprise apps fail user expectations due to poor UX, offline issues, or clunky performance. Calsoft solves this by engineering apps that align business goals with intuitive, dependable experiences."
+        buttonText="Download Case Study"
+        MainComponenent={ModerizationMatters}
+        // contentClass="h-[31.5rem]"
+        gridClass="sm:h-[55rem] md:h-[53rem] xl:h-[31.5rem]"
+        mainComponenentClass="justify-start"
       />
       <WhatWeOffer />
       <UseCases />
@@ -36,7 +36,6 @@ const Page = () => {
         }}
       />
       <Steps />
-      <ArchitectureSprint />
       <ContactSecDataAi
         BoldContent="Let’s talk!"
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "

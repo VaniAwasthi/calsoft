@@ -251,6 +251,7 @@ export default function Component() {
                 <div className="flex-1 flex gap-4 flex-col">
                   {data.rightSideContent.map((ele, idx) => (
                     <motion.div
+                      key={idx}
                       initial={{ x: 50, opacity: 0 }}
                       whileInView={{ x: 0, opacity: 1 }}
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
