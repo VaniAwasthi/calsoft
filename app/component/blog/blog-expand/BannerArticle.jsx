@@ -72,7 +72,7 @@ export const ArticleContent = ({ blog }) => {
         "rel",
         "colspan",
         "rowspan",
-        "class",
+        "className",
       ],
     },
     allowedSchemes: ["http", "https", "mailto"],

@@ -32,7 +32,7 @@ const BannerWithRightSec = ({
           src={heroBg}
           alt="Background"
           fill
-          className={`object-cover object-[100%_25%] md:object-[100%_100%] md:object-center ${ImageClassname}`}
+          className={`object-cover object-[100%_25%] md:object-center ${ImageClassname}`}
           priority
         />
       </div>

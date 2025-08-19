@@ -56,6 +56,7 @@ export default function CEO() {
       <div className="flex flex-col items-center justify-center md:hidden my-10 gap-3">
         <Image
           src={anupam}
+          alt="anupam bhide"
           className="border-2 border-[#3F3D9B] size-20 rounded-full bg-[#E0E0E0]"
         />
         <div className="text-center">

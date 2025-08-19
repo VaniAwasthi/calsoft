@@ -1,6 +1,5 @@
 import React from "react";
 import HeroSection from "../../../component/testing/HeroSection";
-import { Why } from "../../../component/Plugin/PluginWhyWhatUseBusinessHowStep";
 import Steps from "../../../component/product-application-development/Steps";
 import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
