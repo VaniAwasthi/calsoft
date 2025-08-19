@@ -170,9 +170,9 @@ const Footer = () => {
                 </a>
                 <div 
                   
-                  className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
+                  className="rounded-full w-30 h-30  flex items-center justify-center p-2"
                 >
-                  <Image src={IsoImg} alt="isoImg" width={20} height={20} />
+                  <Image src={IsoImg} alt="isoImg" width={60} height={40} />
                 </div>
               </div>
             </div>
