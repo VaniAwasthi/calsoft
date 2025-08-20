@@ -3,6 +3,8 @@
 import BgImage from "../../../assets/caseStudies/caseStudyLanding.webp";
 import BusinessValueBg from "../../../assets/caseStudies/BusinessValueBg.webp";
 import ToKnowMoreBg from "../../../assets/caseStudies/knowmorebg.webp";
+import { useParams } from "next/navigation";
+
 import {
   BusinessValueSection,
   HeroSectionLanding,
@@ -11,45 +13,69 @@ import {
 } from "../../../component/caseStudies/HeroSecLanding.jsx";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { ShareSection } from "../../../component/whitepaper/expanPage/WhitepaperReadMore";
-import { fetchDatasheetById } from "../../../store/actions/datasheetAction";
+import { fetchDatasheetById, fetchDatasheetList } from "../../../store/actions/datasheetAction";
 
 const Page = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
-  const searchParams = useSearchParams();
+const { slug } = useParams();
 
-  // 1. Get ID from Redux if available
-  const selectedId = useSelector((state) => state.datasheets.selectedId);
+  // Redux state
+  const { list, data: datasheets, isLoading, error, selectedId } = useSelector(
+    (state) => state.datasheets
+  );
 
-  // 2. Get ID from query params as fallback
-  const idFromQuery = searchParams.get("id");
+  const [matchedId, setMatchedId] = useState(null);
 
-  // 3. Get case study data from Redux
-  const caseStudy = useSelector((state) => state.datasheets.data);
-  const isLoading = useSelector((state) => state.datasheets.isLoading);
-  const error = useSelector((state) => state.datasheets.error);
+  // slugify helper (same as backend logic you used)
+  const slugify = (text) =>
+    text
+      ?.toString()
+      .toLowerCase()
+      .trim()
+      .replace(/[\s\W-]+/g, "-");
 
+  // 1️⃣ fetch case study list if empty
   useEffect(() => {
-    const idToFetch = selectedId || idFromQuery;
+    if (!list.length) {
+      dispatch(fetchDatasheetList());
+    }
+  }, [dispatch, list.length]);
+
+  // 2️⃣ once list or slug is ready → find match and fetch by ID
+  useEffect(() => {
+    const idToFetch = selectedId || localStorage.getItem("selectedDateSheetId");
+
     if (idToFetch) {
       dispatch(fetchDatasheetById(idToFetch));
+    } else if (slug && list.length) {
+      const match = list.find((cs) => slugify(cs.hero_title1) === slug);
+      if (match) {
+        setMatchedId(match._id);
+        dispatch(fetchDatasheetById(match._id));
+      } else {
+        console.error("No datesheet found for slug:", slug);
+      }
     }
-  }, [dispatch, selectedId, idFromQuery]);
+  }, [dispatch, selectedId, slug, list]);
 
-  if (!selectedId && !idFromQuery) {
+  // 3️⃣ handle loading / error states
+  if (!matchedId && !selectedId && !localStorage.getItem("selectedDateSheetId")) {
     return <div className="text-red-500 p-8">Missing case study ID.</div>;
   }
 
+
+
   if (isLoading) return <div className="p-8">Loading case study...</div>;
   if (error) return <div className="text-red-500 p-8">Error: {error}</div>;
-  if (!caseStudy) return null;
+  if (!datasheets) return null;
 
-  const CaseStudiesCardData = caseStudy.data;
+  const CaseStudiesCardData = datasheets.data;
   console.log(CaseStudiesCardData, "data");
-  const businessValueData2 = caseStudy?.data?.business_cards;
+  const businessValueData2 = datasheets?.data?.business_cards;
   const Heroimage1 = `${baseUrl}${CaseStudiesCardData?.card_one}`;
 
   // Extract from hubspot_form string
@@ -66,8 +92,8 @@ const Page = () => {
   return (
     <div>
       <HeroSectionLanding
-        image1={`${baseUrl}${CaseStudiesCardData?.card_one}`}
-        image2={`${baseUrl}${CaseStudiesCardData?.card_two}`}
+        image2={`${baseUrl}${CaseStudiesCardData?.card_one}`}
+        image1={`${baseUrl}${CaseStudiesCardData?.card_two}`}
         title={CaseStudiesCardData?.hero_title1}
         subtitle={CaseStudiesCardData?.hero_title2}
         description={CaseStudiesCardData?.hero_content}

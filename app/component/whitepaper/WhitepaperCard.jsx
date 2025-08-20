@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchWhitepaperList } from "../../store/actions/whitepaperAction";
 import { useRouter } from "next/navigation";
 import { setSelectedWhitepaperId } from "../../store/reducers/whitepaperReducer";
+import { slugify } from "../utilities/SlugGenerator";
 
 export const WhitepaperCards = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -59,8 +60,11 @@ export const WhitepaperCards = () => {
 
 A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....`;
 
-  const handleClick = (id, slug) => {
-    dispatch(setSelectedWhitepaperId(id));
+  const handleClick = (item) => {
+      const slug = slugify(item.title, { lower: true });
+    
+    dispatch(setSelectedWhitepaperId(item.id));
+localStorage.setItem("selectedWhitepaperId", item.id);
     router.push(`/insights/whitepaper/${slug}`);
   };
 
@@ -148,7 +152,7 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-[400px] md:h-[450px]   overflow-hidden"
-                onClick={() => handleClick(item.id, item.slug)}
+                onClick={() => handleClick(item)}
               >
                 {/* Image */}
                 <div className="w-full h-3/5 border-2 border-[#2E3092] rounded-2xl">
