@@ -5,37 +5,54 @@ import ToKnowMoreBg from "../../../assets/caseStudies/knowmorebg.webp";
 import { ToKnowMoreSection } from "../../../component/caseStudies/HeroSecLanding.jsx";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useParams, useSearchParams } from "next/navigation";
 import {
   AccordionSection,
   HeroSectionWhitePaper,
   InfoWithFormSectionWhitePaper,
   ShareSection,
 } from "../../../component/whitepaper/expanPage/WhitepaperReadMore.jsx";
-import { fetchWhitepaperById } from "../../../store/actions/whitepaperAction";
+import { fetchWhitepaperById, fetchWhitepaperList } from "../../../store/actions/whitepaperAction";
+import { slugify } from "@/app/component/utilities/SlugGenerator";
 
 const Page = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
-  const searchParams = useSearchParams();
+const { slug } = useParams();
 
-  const selectedId = useSelector((state) => state.whitepaper.selectedId);
+  // Redux state
+  const { list, data: whitepapers, isLoading, error, selectedId } = useSelector(
+    (state) => state.whitepaper
+  );
+  const [matchedId, setMatchedId] = useState(null);
   const whitepaperData = useSelector((state) => state.whitepaper.data);
-  const isLoading = useSelector((state) => state.whitepaper.isLoading);
-  const error = useSelector((state) => state.whitepaper.error);
-
-  const idFromQuery = searchParams.get("id");
-
-  useEffect(() => {
-    const idToFetch = selectedId || idFromQuery;
-    if (idToFetch) {
-      dispatch(fetchWhitepaperById(idToFetch));
-    }
-  }, [dispatch, selectedId, idFromQuery]);
-
-  if (!selectedId && !idFromQuery) {
-    return <div className="text-red-500 p-8">Missing whitepaper ID.</div>;
+  //  fetch case study list if empty
+    useEffect(() => {
+      if (!list.length) {
+        dispatch(fetchWhitepaperList());
+      }
+    }, [dispatch, list.length]);
+  
+    //once list or slug is ready → find match and fetch by ID
+    useEffect(() => {
+      const idToFetch = selectedId || localStorage.getItem("selectedWhitepaperId");
+  
+      if (idToFetch) {
+        dispatch(fetchWhitepaperById(idToFetch));
+      } else if (slug && list.length) {
+        const match = list.find((cs) => slugify(cs.hero_title1) === slug);
+        if (match) {
+          setMatchedId(match._id);
+          console.log(match._id,"matched")
+          dispatch(fetchWhitepaperById(match._id));
+        } else {
+          console.error("No whitepaper found for slug:", slug);
+        }
+      }
+    }, [dispatch, selectedId, slug, list]);
+  if (!matchedId && !selectedId && !localStorage.getItem("selectedWhitepaperId")) {
+    return <div className="text-red-500 p-8">Missing Whitepaper ID.</div>;
   }
 
   if (isLoading) return <div className="p-8">Loading whitepaper...</div>;
@@ -73,8 +90,8 @@ const Page = () => {
   return (
     <>
       <HeroSectionWhitePaper
-        image1={`${baseUrl}${whitepaperData?.card_one}`}
-        image2={`${baseUrl}${whitepaperData?.card_two}`}
+        image2={`${baseUrl}${whitepaperData?.card_one}`}
+        image1={`${baseUrl}${whitepaperData?.card_two}`}
         title={whitepaperData?.hero_title1}
         subtitle={whitepaperData?.hero_title2}
         description={whitepaperData?.hero_content}

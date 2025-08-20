@@ -6,12 +6,11 @@ import {
   BlogSection,
   ContactSec,
 } from "../../../component/industries/hitech/BlogSection.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   fetchBlogById,
   fetchBlogList,
 } from "../../../store/actions/blogAction.js";
-import { setSelectedBlogId } from "../../../store/reducers/blogReducer.js";
 import { useDispatch, useSelector } from "react-redux";
 import {
   ArticleContent,
@@ -19,41 +18,59 @@ import {
 } from "../../../component/blog/blog-expand/BannerArticle.jsx";
 
 const Page = () => {
+  
   useEffect(() => {
     console.log("Hash:", window.location.hash);
     console.log("Scroll position:", window.scrollY);
   }, []);
 
   const dispatch = useDispatch();
-  const { slug } = useParams();
+const { slug } = useParams();
 
-  const selectedBlogId = useSelector((state) => state.blogs.selectedId);
-  const blogDetails = useSelector((state) => state.blogs.data);
-  const blogList = useSelector((state) => state.blogs.list);
+  // Redux state
+  const { list, data: blogs, isLoading, error, selectedId } = useSelector(
+    (state) => state.blogs
+  );
 
+  const [matchedId, setMatchedId] = useState(null);
+
+  // slugify helper (same as backend logic you used)
+  const slugify = (text) =>
+    text
+      ?.toString()
+      .toLowerCase()
+      .trim()
+      .replace(/[\s\W-]+/g, "-");
+
+  
+
+  // 2️⃣ once list or slug is ready → find match and fetch by ID
   useEffect(() => {
-    if (selectedBlogId) {
-      dispatch(fetchBlogById(selectedBlogId));
-    } else {
-      // Fallback if selectedBlogId is not set (e.g., on page refresh)
-      if (!blogList || blogList.length === 0) {
-        dispatch(fetchBlogList()).then((res) => {
-          const blog = res?.data?.find((b) => b.slug === slug);
-          if (blog) {
-            dispatch(setSelectedBlogId(blog._id));
-            dispatch(fetchBlogById(blog._id));
-          }
-        });
+    const idToFetch = selectedId || localStorage.getItem("selectedBlogsId");
+
+    if (idToFetch) {
+      dispatch(fetchBlogById(idToFetch));
+    } else if (slug && list.length) {
+      const match = list.find((cs) => slugify(cs.title) === slug);
+      if (match) {
+        setMatchedId(match._id);
+        console.log(match._id,"id")
+        dispatch(fetchBlogById(match._id));
       } else {
-        const blog = blogList.find((b) => b.slug === slug);
-        if (blog) {
-          dispatch(setSelectedBlogId(blog._id));
-          dispatch(fetchBlogById(blog._id));
-        }
+        console.error("No  found for slug:", slug);
       }
     }
-  }, [selectedBlogId, slug, blogList, dispatch]);
+  }, [dispatch, selectedId, slug, list]);
+  const blogDetails = blogs;
 
+useEffect(() => {
+    if (!list.length) {
+      dispatch(fetchBlogList());
+    }
+  }, [dispatch, list.length]);
+if ( !matchedId && !selectedId && !localStorage.getItem("selectedCaseStudyId")) {
+    return <div className="text-red-500 p-8 text-center text-3xl">Loading Blog Details.</div>;
+  }
   return (
     <>
       {blogDetails && (

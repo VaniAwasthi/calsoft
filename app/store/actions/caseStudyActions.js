@@ -10,7 +10,7 @@ import axiosInstance from "../api-config/axiosInstance.js";
 // Fetch all Case Study list
 export const fetchCaseStudiesList = () => async (dispatch) => {
   try {
-    const response = await axiosInstance.get("/casestudy"); // ✅ No base URL needed here
+    const response = await axiosInstance.get("/casestudy");
     dispatch(setCaseStudyList(response.data));
   } catch (error) {
     dispatch(setError(error.message));
@@ -26,6 +26,7 @@ export const fetchCaseStudyById = (id) => async (dispatch) => {
     dispatch(setError(error.message));
   }
 };
+
 
 // fetch case study for limited
 export const fetchCaseStudyListLimit = () => async (dispatch) => {

@@ -50,14 +50,14 @@ export const HeroSectionLanding = ({
                 alt="Card 1"
                 width={200}
                 height={200}
-                className="w-20 mb-0 md:mt-8 md:h-[350px] md:w-[200px] -translate-y-10 rounded-lg"
+                className="w-20 mb-0 md:mt-8 md:h-full md:w-full -translate-y-10 rounded-lg"
               />
               <Image
                 src={image1}
                 width={200}
                 height={200}
                 alt="Card 2"
-                className="w-40 md:w-[220px] md:mb-0  h-40 md:h-[300px] rounded-lg"
+                className="w-40 md:w-full md:mb-0  h-40 md:h-full rounded-lg"
               />
             </motion.div>
 
@@ -195,7 +195,7 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
         viewport={{ once: false, amount: 0.3 }}
         className="text-3xl md:text-[40px] font-bold text-[#2E3092] text-center my-10 md:text-left"
       >
-        Business
+        Business {" "}
         <span className="bg-gradient-to-r from-[#2E3092] via-[#6A329F] to-[#ED1C24] bg-clip-text text-transparent">
           Value
         </span>

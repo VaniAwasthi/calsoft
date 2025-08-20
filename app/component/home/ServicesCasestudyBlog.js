@@ -28,6 +28,9 @@ import Casestudybg from "../../assets/home/casestudybg.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCaseStudyListLimit } from "../../store/actions/caseStudyActions";
 import Link from "next/link";
+import { generateSlug } from "../utilities/SlugGenerator";
+import { useRouter } from "next/navigation";
+import { setSelectedCaseStudyId } from "@/app/store/reducers/caseStudyReducer";
 export const Services = () => {
   const title = "Services";
   const heading = "Services | Expertise-infused and business-optimized.";
@@ -149,6 +152,7 @@ export const Casestudy = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist/";
   const dispatch = useDispatch();
   const title = "Case Study";
+  const router=useRouter()
   const heading = `Cloud Provider Accelerates VMware Migration <span className="text-black font-normal"> with Calsoft’s CLI Tool</span>`;
   // data for Case Study
   useEffect(() => {
@@ -157,7 +161,12 @@ export const Casestudy = () => {
   const casStudiesDatalist = useSelector(
     (state) => state.caseStudy?.limitedList
   );
-
+const handleClick = (item) => {
+  dispatch(setSelectedCaseStudyId(item._id));
+  localStorage.setItem("selectedCaseStudyId", item._id);
+  const slug = generateSlug(item.hero_title1, { lower: true });
+  router.push(`/insights/case-studies/${slug}`);
+};
   const caseStudyDataArray = {
     id: 1,
     title:
@@ -261,7 +270,7 @@ export const Casestudy = () => {
                   </motion.a>
                 </div>
               </div>
-
+{/* for stats */}
               <div className="w-full md:w-1/3">
                 {/* Swiper for mobile */}
                 <div className="block md:hidden ">
@@ -345,18 +354,15 @@ export const Casestudy = () => {
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
-                    <Link
-                      href={`/insights/case-studies/${item.hero_title1
-                        ?.toLowerCase()
-                        .replace(/[^a-z0-9]+/g, "-")
-                        .replace(/(^-|-$)+/g, "")}`}
-                      passHref
+                    <div
+                      onClick={() => handleClick(item)}
+                      
                     >
                       <div className="relative w-full h-44 md:h-56 rounded-xl overflow-hidden">
                         <Image
                           src={
-                            item.card_one
-                              ? `${baseUrl}${item.card_one}`
+                            item.featured_image
+                              ? `${baseUrl}${item.featured_image}`
                               : blogimg1
                           }
                           fill
@@ -380,7 +386,7 @@ export const Casestudy = () => {
                           strokeWidth={4}
                         />
                       </motion.div>
-                    </Link>
+                    </div>
                   </motion.div>
                 </SwiperSlide>
               ))}
