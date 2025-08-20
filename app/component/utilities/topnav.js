@@ -30,7 +30,7 @@ export default function Navbar() {
     {
       image: MegaMenuImg1,
       detail:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Strategic decision-makers in IT and operations are facing the impacts of rising infrastructure costs and vendor constraints."
     },
     {
       image: MegaMenuImg2,
