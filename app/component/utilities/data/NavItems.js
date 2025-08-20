@@ -108,7 +108,7 @@ export const navItems = [
         section: [
           {
             title: "CalTIA",
-            href: "#",
+            href: "/data-ai/ai-powered-accelerators/caltia",
           },
           {
             title: "CalPSR – Calsoft Performance, Scalability, and Resilience",

@@ -15,8 +15,7 @@ export default function BookDemoForm() {
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-5xl font-bold mb-6"
-              style={{ color: "#2e3092" }}
+              className="text-5xl font-bold mb-6 bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_68%)] bg-clip-text text-transparent"
             >
               Book a Demo
             </motion.p>

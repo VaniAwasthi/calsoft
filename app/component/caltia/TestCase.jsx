@@ -41,7 +41,7 @@ export default function TestCase() {
           <Image
             src={code}
             alt="code"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover aspect-video"
           />
         </motion.div>
       </div>
