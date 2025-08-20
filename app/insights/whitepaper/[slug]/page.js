@@ -90,8 +90,8 @@ const { slug } = useParams();
   return (
     <>
       <HeroSectionWhitePaper
-        image1={`${baseUrl}${whitepaperData?.card_one}`}
-        image2={`${baseUrl}${whitepaperData?.card_two}`}
+        image2={`${baseUrl}${whitepaperData?.card_one}`}
+        image1={`${baseUrl}${whitepaperData?.card_two}`}
         title={whitepaperData?.hero_title1}
         subtitle={whitepaperData?.hero_title2}
         description={whitepaperData?.hero_content}
