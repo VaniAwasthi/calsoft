@@ -11,10 +11,12 @@ import ButtonImage from "../../assets/home/buttonImg.webp";
 import BannerLayout from "../utilities/BannerLayout";
 import ButtonLayout from "../utilities/ButtonLayout";
 const backgroundVideo = "/BannerGif.mp4";
+const backgroundVideo2="/HomeVideo.mp4"
 
 const slides = [
   {
     type: "video",
+    backgroundVideo:backgroundVideo,
     title: "Tech-driven growth",
     title2: "on your mind?",
     description:
@@ -41,15 +43,14 @@ const slides = [
     buttonText: "Read More",
     link: "/data-ai/ai-powered-accelerators",
   },
+ 
   {
-    type: "banner",
-    image: BackgroundImage3,
+    type: "video",
+    backgroundVideo:backgroundVideo2,
     title: "",
     title2: "",
     description:
       "",
-    buttonText: "",
-    link: "",
   },
 ];
 
@@ -73,7 +74,7 @@ const HeroSec = () => {
                 loop
                 className="absolute top-0 left-0 w-full h-[600px] object-cover -z-10"
               >
-                <source src={backgroundVideo} type="video/mp4" />
+                <source src={slide.backgroundVideo} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
 
@@ -115,6 +116,7 @@ const HeroSec = () => {
                     </motion.p>
 
                     {/* Button */}
+                   {slide.buttonText &&(
                     <motion.div
                       initial={{ x: -50, opacity: 0 }}
                       whileInView={{ x: 0, opacity: 1 }}
@@ -129,6 +131,7 @@ const HeroSec = () => {
                         link={slide.link}
                       />
                     </motion.div>
+                   )} 
                   </div>
                 </div>
               </motion.div>

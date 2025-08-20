@@ -6,14 +6,14 @@ import JobBoard from "../career/JobBoard";
 
 export default function OpenVacancies() {
   const filters = {
-    Industry: ["All", "Tech", "Healthcare"],
-    Topics: ["All", "Security", "AI"],
-    Author: ["All", "Anton Frank", "John Doe"],
+    Location: ["All", "Tech", "Healthcare"],
+    Role: ["All", "Security", "AI"],
+    Experience: ["All", "Anton Frank", "John Doe"],
   };
   const [activeFilters, setActiveFilters] = useState({
-    Industry: "All",
-    Topics: "All",
-    Author: "All",
+    Location: "All",
+    Role: "All",
+    Experience: "All",
   });
   const [openDropdown, setOpenDropdown] = useState("");
   const toggleDropdown = (filter) => {

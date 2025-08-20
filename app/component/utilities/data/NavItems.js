@@ -451,10 +451,10 @@ export const navItems = [
         title: "Resources",
         href: "/insights",
         section: [
+           { title: "Case Study", href: "/insights/case-studies" },
           { title: "Whitepapers", href: "/insights/whitepaper" },
           { title: "Datasheets", href: "/insights/datesheets" },
-          { title: "Infographics", href: "/insights/infographic" },
-          { title: "Case Study", href: "/insights/case-studies" },
+          { title: "Use Cases", href: "/insights/usecases" },//change url
           {
             title: "Industry Reports",
             href: "/insights/industry-report",

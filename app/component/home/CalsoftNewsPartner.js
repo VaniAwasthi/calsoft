@@ -5,12 +5,14 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/scrollbar";
-import { Scrollbar } from "swiper/modules";
+import { Autoplay, Scrollbar } from "swiper/modules";
 
-import img01 from "../../assets/home/News1.webp";
-import img02 from "../../assets/home/News2.webp";
-import img03 from "../../assets/home/News3.webp";
-import img04 from "../../assets/home/News4.webp";
+import img01 from "../../assets/home/news/Corporate.webp";
+import img02 from "../../assets/home/news/Customer.webp";
+import img03 from "../../assets/home/news/Innovation.webp"
+import img04 from "../../assets/home/news/Partnerships.webp";
+import img05 from "../../assets/home/news/Thoughts.webp";
+import img06 from "../../assets/home/news/People.webp";
 import icon1 from "../../assets/home/icon1.svg";
 import border from "../../assets/home/Branch.svg";
 import arrow from "../../assets/home/arrow.svg";
@@ -51,17 +53,17 @@ const data = [
     description:
       "Maximize enterprise AI investments with IBM WatsonX & Calsoft",
     link: "https://www.calsoftinc.com/calsoft-partners-with-ibm-watsonx/",
-    imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
+    imageTitle: "Corporate & Leadership Updates",
   },
   {
     id: 2,
-    img: img02,
+    img: img04,
     title:
       "Calsoft & StreamNative Partner to Cut Streaming Costs, Boost Performance",
     description:
       "Discover how enterprises can reduce Kafka costs by up to 50% without compromising on real-time performance",
     link: "https://www.californiaentertainmentpress.com/article/800036888-calsoft-and-streamnative-join-forces-to-optimize-cost-and-performance-in-real-time-data-streaming",
-    imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
+    imageTitle: " Partnerships & Ecosystem ",
   },
   {
     id: 3,
@@ -70,33 +72,35 @@ const data = [
     description:
       "Transforming product imagery with speed, scale, and creativity.",
     link: "https://www.americanbusinesstimes.com/article/779940243-calsoft-partners-with-segmind-for-ai-driven-visual-asset-creation-in-e-commerce",
-    imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
+    imageTitle: "Innovation, Products & Platforms",
   },
   {
     id: 4,
-    img: img04,
+    img: img02,
     title: "Calsoft x SmartHub.ai: Advancing AI at the Edge",
     description:
       "Delivering intelligent automation and security for next-gen connected infrastructure",
     link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
+  imageTitle:"Customer Impact & Case Studies"
   },
   {
     id: 5,
-    img: img01,
+    img: img05,
     title: "Accelerate high-quality software products.",
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
     imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
+    imageTitle:"Thought Leadership & Industry Insights"
   },
   {
     id: 6,
-    img: img02,
+    img: img06,
     title: "Enhance Your Development Process",
     description:
       "Discover innovative solutions for modern software development.",
     link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
-    imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
+    imageTitle: "People, Culture & Responsibility",
   },
 ];
 export const CalsoftNews = () => {
@@ -220,88 +224,107 @@ export const CalsoftNews = () => {
 
             <div className="md:col-span-8">
               {!isMobile ? (
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={3}
+            breakpoints={{
+              640: { slidesPerView: 3, spaceBetween: 10 },
+              768: { slidesPerView: 3, spaceBetween: 10 },
+              1024: { slidesPerView: 3, spaceBetween: 10 },
+            }}
+            scrollbar={{ hide: false }}
+            autoplay={{
+              delay: 3000, // 3s autoplay
+              disableOnInteraction: false, // keep autoplay even after clicks
+            }}
+            modules={[Scrollbar, Autoplay]}
+            className="w-full"
+          >
+            {data.map((item) => (
+              <SwiperSlide key={item.id} className="items-center">
                 <motion.div
-                  initial={{ opacity: 0, x: -100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 1 }}
-                  viewport={{ once: true }}
+                  className={`cursor-pointer relative rounded-lg mb-6 transition-all duration-500 ${
+                    selected.id === item.id ? "scale-105" : "scale-90"
+                  }`}
+                  onClick={() => setSelected(item)}
                 >
-                  <Swiper
-                    spaceBetween={10}
-                    slidesPerView={3}
-                    breakpoints={{
-                      640: { slidesPerView: 3, spaceBetween: 10 },
-                      768: { slidesPerView: 3, spaceBetween: 10 },
-                      1024: { slidesPerView: 3, spaceBetween: 10 },
-                    }}
-                    scrollbar={{ hide: false }}
-                    modules={[Scrollbar]}
-                    className="w-full"
-                  >
-                    {data.map((item) => (
-                      <SwiperSlide key={item.id} className="items-center">
-                        <motion.div
-                          className={`cursor-pointer rounded-lg mb-6 transition-all duration-500 ${
-                            selected.id === item.id ? "scale-100" : "scale-70"
-                          }`}
-                          onClick={() => setSelected(item)}
-                        >
-                          <Image
-                            src={item.img}
-                            alt={item.title}
-                            width={300}
-                            height={200}
-                            className="object-cover rounded-lg"
-                          />
-                        </motion.div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    width={300}
+                    height={200}
+                    className="object-cover rounded-lg"
+                  />
+
+                  {/* Title Overlay */}
+                  <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white text-center py-2 rounded-b-lg">
+                    <p className="text-sm md:text-base font-medium">
+                      {item.imageTitle}
+                    </p>
+                  </div>
                 </motion.div>
-              ) : (
-                <div>
-                  <Swiper
-                    spaceBetween={10}
-                    slidesPerView={3}
-                    breakpoints={{
-                      640: { slidesPerView: 3, spaceBetween: 10 },
-                      768: { slidesPerView: 3, spaceBetween: 10 },
-                      1024: { slidesPerView: 3, spaceBetween: 10 },
-                    }}
-                    scrollbar={{ hide: false }}
-                    modules={[Scrollbar]}
-                    className="w-full"
-                  >
-                    {data.map((item) => (
-                      <SwiperSlide key={item.id} className="items-center">
-                        <div
-                          className={`cursor-pointer rounded-lg mb-6 transition-all duration-500 ${
-                            selected.id === item.id ? "scale-100" : "scale-70"
-                          }`}
-                          onClick={() => setSelected(item)}
-                        >
-                          <Image
-                            src={item.img}
-                            alt={item.title}
-                            width={300}
-                            height={200}
-                            className="object-cover rounded-lg"
-                          />
-                          <p
-                            className={`${
-                              selected.id === item.id
-                                ? "font-semibold"
-                                : "font-normal"
-                            } text-[12px] py-6`}
-                          >
-                            {item.imageTitle}
-                          </p>
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
+      ) : (
+        <div>
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={3}
+            breakpoints={{
+              640: { slidesPerView: 3, spaceBetween: 10 },
+              768: { slidesPerView: 3, spaceBetween: 10 },
+              1024: { slidesPerView: 3, spaceBetween: 10 },
+            }}
+            scrollbar={{ hide: false }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            modules={[Scrollbar, Autoplay]}
+            className="w-full"
+          >
+            {data.map((item) => (
+              <SwiperSlide key={item.id} className="items-center">
+                <div
+                  className={`cursor-pointer relative rounded-lg mb-6 transition-all duration-500 ${
+                    selected.id === item.id ? "scale-105" : "scale-90"
+                  }`}
+                  onClick={() => setSelected(item)}
+                >
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    width={300}
+                    height={300}
+                    className="object-cover rounded-lg h-full"
+                  />
+
+                  {/* Title Overlay */}
+                  <div className="absolute bottom-0 left-0 w-full bg-black/10 text-white text-center py-2 rounded-b-lg">
+                    <p
+                      className={`${
+                        selected.id === item.id
+                          ? "font-semibold"
+                          : "font-normal"
+                      } text-[12px]`}
+                    >
+                      {item.imageTitle}
+                    </p>
+                  </div>
                 </div>
-              )}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      )}
             </div>
           </div>
         </div>
