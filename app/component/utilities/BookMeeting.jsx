@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import predict from "@/app/assets/infra/predictibility.webp";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function BookMeeting({
   img = predict,
@@ -26,7 +29,7 @@ export default function BookMeeting({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-xl  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg"
+            className="text-xl font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg whitespace-nowrap"
           >
             {buttonText}
           </motion.button>
