@@ -32,11 +32,17 @@ export default function WeWork() {
           viewport={{ once: false, amount: 0.3 }}
           className="h-56 px- md:w-[50%] lg:w-[60%] md:h-full mt-10 md:mt-0"
         >
-          <Image
-            src={Vision}
-            alt={"Image"}
-            className="w-full h-full object-cover object-top lg:object-[center_18%] rounded-lg aspect-square"
-          />
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/OzO-2LZv4kk?si=Hylk0zNjDGLH8oc-"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            className="sm:h-full h-72 sm:w-full w-fit"
+          ></iframe>
         </motion.div>
       </div>
       <div className="h-8" />

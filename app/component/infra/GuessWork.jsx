@@ -93,80 +93,80 @@ function CurvedConnector({ className = "", turn = "right" }) {
       </div>
     );
 }
-
-const stepsData = [
-  {
-    id: 1,
-    title: "Infra Readiness Review",
-    description:
-      "Kick off with a structured 60-minute discovery call.\nWe assess your current infra stack across:",
-    items: [
-      "Architecture maturity",
-      "Workload distribution",
-      "Tool & platform redundancy",
-      "Performance & cost leaks",
-    ],
-    output: "Preliminary Infra Heatmap + Risk Flags",
-    side: "left",
-  },
-  {
-    id: 2,
-    title: "Deep-Dive Assessment &\nBenchmarking",
-    description:
-      "We dive deeper into workload-specific evaluations, performance logs, usage patterns, and compliance requirements.",
-    items: [
-      "Workload Modernization Recommendations (Rehost/Replatform/Refactor)",
-      "Cost Optimization Forecast",
-      "Operational Bottleneck Report",
-    ],
-    output: null,
-    side: "right",
-  },
-  {
-    id: 3,
-    title: "Roadmap Design & Prioritization",
-    description:
-      "Kick off with a structured 60-minute discovery call.\nWe assess your current infra stack across:",
-    items: [
-      "Architecture maturity",
-      "Workload distribution",
-      "Tool & platform redundancy",
-      "Performance & cost leaks",
-    ],
-    output: "Preliminary Infra Heatmap + Risk Flags",
-    side: "left",
-  },
-  {
-    id: 4,
-    title: "Validation & Buy-in",
-    description: "We help you build a business case internally.",
-    items: [
-      "TCO & ROI Models",
-      "Compliance Alignment",
-      "Presentation for CXOs / Boards",
-    ],
-    output: "Data-backed Infra Transformation Proposal",
-    side: "right",
-  },
-  {
-    id: 5,
-    title: "Execution Blueprint & Handoff",
-    description:
-      "Once approved, we create a detailed migration and integration execution plan, aligned with your internal teams or implementation partners.",
-    items: [
-      "Architecture maturity",
-      "Workload distribution",
-      "Tool & platform redundancy",
-      "Performance & cost leaks",
-    ],
-    output: "Preliminary Infra Heatmap + Risk Flags",
-    side: "left",
-  },
-];
-
 const CIRCLE_SPACING = 200; // Fixed spacing between circles in pixels
 
-export default function Component() {
+export default function Component({
+  stepsData = [
+    {
+      id: 1,
+      title: "Infra Readiness Review",
+      description:
+        "Kick off with a structured 60-minute discovery call.\nWe assess your current infra stack across:",
+      items: [
+        "Architecture maturity",
+        "Workload distribution",
+        "Tool & platform redundancy",
+        "Performance & cost leaks",
+      ],
+      output: "Preliminary Infra Heatmap + Risk Flags",
+      side: "left",
+    },
+    {
+      id: 2,
+      title: "Deep-Dive Assessment &\nBenchmarking",
+      description:
+        "We dive deeper into workload-specific evaluations, performance logs, usage patterns, and compliance requirements.",
+      items: [
+        "Workload Modernization Recommendations (Rehost/Replatform/Refactor)",
+        "Cost Optimization Forecast",
+        "Operational Bottleneck Report",
+      ],
+      output: null,
+      side: "right",
+    },
+    {
+      id: 3,
+      title: "Roadmap Design & Prioritization",
+      description:
+        "Kick off with a structured 60-minute discovery call.\nWe assess your current infra stack across:",
+      items: [
+        "Architecture maturity",
+        "Workload distribution",
+        "Tool & platform redundancy",
+        "Performance & cost leaks",
+      ],
+      output: "Preliminary Infra Heatmap + Risk Flags",
+      side: "left",
+    },
+    {
+      id: 4,
+      title: "Validation & Buy-in",
+      description: "We help you build a business case internally.",
+      items: [
+        "TCO & ROI Models",
+        "Compliance Alignment",
+        "Presentation for CXOs / Boards",
+      ],
+      output: "Data-backed Infra Transformation Proposal",
+      side: "right",
+    },
+    {
+      id: 5,
+      title: "Execution Blueprint & Handoff",
+      description:
+        "Once approved, we create a detailed migration and integration execution plan, aligned with your internal teams or implementation partners.",
+      items: [
+        "Architecture maturity",
+        "Workload distribution",
+        "Tool & platform redundancy",
+        "Performance & cost leaks",
+      ],
+      output: "Preliminary Infra Heatmap + Risk Flags",
+      side: "left",
+    },
+  ],
+}) {
+  console.log(stepsData);
   return (
     <div className="bg-[#ffffff] min-h-screen">
       <div className="h-16"></div>
@@ -203,21 +203,24 @@ export default function Component() {
                     <p className="text-[#000000] text-[16px] leading-relaxed mb-6 whitespace-pre-line">
                       {step.description}
                     </p>
-                    <div className="space-y-4 mb-8">
-                      {step.items.map((item, itemIndex) => (
-                        <div
-                          key={itemIndex}
-                          className="flex items-center gap-3"
-                        >
-                          <div className="w-6 h-6 bg-[#2e3092] rounded-full flex items-center justify-center flex-shrink-0">
-                            <Check className="w-4 h-4 text-[#ffffff]" />
+                    {step.items && (
+                      <div className="space-y-4 mb-8">
+                        {step.items.map((item, itemIndex) => (
+                          <div
+                            key={itemIndex}
+                            className="flex items-center gap-3"
+                          >
+                            <div className="w-6 h-6 bg-[#2e3092] rounded-full flex items-center justify-center flex-shrink-0">
+                              <Check className="w-4 h-4 text-[#ffffff]" />
+                            </div>
+                            <span className="text-[#000000] text-[16px]">
+                              {item}
+                            </span>
                           </div>
-                          <span className="text-[#000000] text-[16px]">
-                            {item}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
+                        ))}
+                      </div>
+                    )}
+
                     {step.output && (
                       <p className="text-[#000000] text-[16px]">
                         <span className="font-bold">Output:</span> {step.output}

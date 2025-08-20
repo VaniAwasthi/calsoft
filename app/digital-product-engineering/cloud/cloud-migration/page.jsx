@@ -63,7 +63,61 @@ const Page = () => {
       />
       <UseCases />
       <WhyCalsoft />
-      <FirstStep />
+      <FirstStep
+        guessworkData={[
+          {
+            id: 1,
+            title: "Readiness Assessment",
+            description:
+              "Evaluate infrastructure, workloads, compliance constraints, and cloud goals.",
+            items: null,
+            output: "Migration Feasibility Report + Risk Scorecard",
+            side: "left",
+          },
+          {
+            id: 2,
+            title: "Workload Discovery & Mapping",
+            description:
+              "Use automated tools to classify workloads, dependencies, and optimization opportunities.",
+            items: null,
+            output: "Cloud Suitability Map + Prioritized Backlog",
+            side: "right",
+          },
+          {
+            id: 3,
+            title: "Migration Strategy Design",
+            description:
+              "Choose the right approach — Rehost / Replatform / Refactor — based on impact and complexity.",
+            items: null,
+            output: "6R Decision Plan + TCO Estimate",
+            side: "left",
+          },
+          {
+            id: 4,
+            title: "Pilot Migration & Cutover Testing",
+            description:
+              "Execute pilot migration, monitor cutover behavior, test rollback and audit workflows.",
+            items: null,
+            output: "Pilot Outcome Report + Security Validation",
+            side: "right",
+          },
+          {
+            id: 5,
+            title: "Full Rollout + Optimization",
+            description:
+              "Implement phased migration with performance tuning, observability, and cost governance.",
+            items: [
+              "Architecture maturity",
+              "Workload distribution",
+              "Tool & platform redundancy",
+              "Performance & cost leaks",
+            ],
+            output:
+              "Live Migration Dashboard + ROI Dashboard + Post-Migration Playbook",
+            side: "left",
+          },
+        ]}
+      />
       <ContactSecDataAi
         lightContent={
           "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
