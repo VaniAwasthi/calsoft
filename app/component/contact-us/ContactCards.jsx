@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 function Card({ data, idx }) {
   return (
     <div className="group w-full h-full transition-all">
-      <div className="h-3 bg-[#BA0007] group-hover:bg-[#2E3092]"></div>
+      <div className="h-3 bg-[#2E3092] group-hover:bg-[#BA0007]"></div>
       <div className="p-10 w-full h-full bg-[#F5F5F5] group-hover:bg-[linear-gradient(to_bottom,#2E3092_25%,#ED1C24_88%)] rounded-b-lg flex flex-col items-center gap-5 text-center group-hover:text-white">
         <div>{data.icon}</div>
         <p className="text-[38px] font-medium">{data.title}</p>
@@ -109,9 +112,16 @@ export default function ContactCards({
 }) {
   return (
     <div className="py-8">
-      <div className="container grid grid-cols-3 gap-10">
+      <div className="container grid grid-cols-1 lg:grid-cols-3 gap-10">
         {cardData.map((ele, idx) => (
-          <Card key={idx} data={ele} idx={idx} />
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: idx * 0.1 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <Card key={idx} data={ele} idx={idx} />
+          </motion.div>
         ))}
       </div>
     </div>

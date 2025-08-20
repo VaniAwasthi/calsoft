@@ -54,8 +54,8 @@ export default function TestCase() {
             viewport={{ once: false, amount: 0.3 }}
             className="space-y-5 hover:text-white bg-[#f7f7f7] hover:bg-[#2E3092] p-5 rounded-xl transition-all"
           >
-            <p className="text-[97px]">{idx + 1}</p>
-            <p className="text-xl">{ele}</p>
+            <p className="text-[97px] font-londrina">0{idx + 1}</p>
+            <p className="text-lg">{ele}</p>
           </motion.div>
         ))}
       </div>

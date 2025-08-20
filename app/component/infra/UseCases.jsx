@@ -7,14 +7,14 @@ import buttonImage from "../../assets/home/buttonImg.webp";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 
-export default function Component() {
-  const useCases = [
+export default function Component({useCases=[
     "ISVs migrating monoliths to containerized microservices",
     "Healthcare firms ensuring HIPAA-aligned infra blueprints",
     "FinTechs building cloud DR strategy with 99.99% uptime SLAs",
     "Retail giants integrating edge & cloud workloads across geos",
     "Product companies needing DevOps-first infra planning",
-  ];
+  ]}) {
+  
 
   return (
     <div className="bg-[#ffffff] px-6">

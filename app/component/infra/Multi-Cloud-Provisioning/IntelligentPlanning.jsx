@@ -5,12 +5,10 @@ import ButtonLayout from "../../utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
 
-export default function IntelligentPlanning() {
-  const scrollContainerRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const data = [
+export default function IntelligentPlanning({data={
+  title: "Provision with Purpose",
+  desc: "Calsoft helps you standardize provisioning processes across AWS, Azure, GCP, and private clouds — with a consistent control plane.",
+  cardData: [
     {
       title: "Workload-level suitability mapping",
       subTitle: "(Rehost, Replatform, Refactor)",
@@ -125,7 +123,13 @@ export default function IntelligentPlanning() {
     //     </svg>
     //   ),
     // },
-  ];
+  ]
+}}) {
+  const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  
 
   const checkScrollPosition = () => {
     if (scrollContainerRef.current) {
@@ -181,12 +185,10 @@ export default function IntelligentPlanning() {
                 Intelligent Planning
               </p>
               <h2 className="text-black text-4xl font-bold mb-4">
-                Build What's Right — Not What's Trendy
+                {data.title}
               </h2>
               <p className="text-black text-xl leading-relaxed max-w-4xl">
-                Cloud modernization isn't about a one-size-fits-all blueprint.
-                It's about aligning infra to your business needs. Calsoft
-                brings:
+                {data.desc}
               </p>
             </div>
             <div className="flex justify-center items-center gap-5">
@@ -257,7 +259,7 @@ export default function IntelligentPlanning() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16"
           >
             {/* Card 1 - Gradient Background */}
-            {data.map((ele, idx) => (
+            {data.cardData.map((ele, idx) => (
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
