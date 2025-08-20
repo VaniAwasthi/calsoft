@@ -222,7 +222,7 @@ export default function Component({
                     )}
 
                     {step.output && (
-                      <p className="text-[#000000] text-[16px]">
+                      <p className="text-[#000000] text-[16px] font-bold">
                         <span className="font-bold">Output:</span> {step.output}
                       </p>
                     )}
@@ -259,7 +259,7 @@ export default function Component({
                     <p className="text-[#000000] text-[16px] leading-relaxed mb-6 whitespace-pre-line">
                       {step.description}
                     </p>
-                    <div className="space-y-4 mb-8">
+                    {step.items && <div className="space-y-4 mb-8">
                       {step.items.map((item, itemIndex) => (
                         <div
                           key={itemIndex}
@@ -273,9 +273,9 @@ export default function Component({
                           </span>
                         </div>
                       ))}
-                    </div>
+                    </div>}
                     {step.output && (
-                      <p className="text-[#000000] text-[16px]">
+                      <p className="text-[#000000] text-[16px] font-bold">
                         <span className="font-bold">Output:</span> {step.output}
                       </p>
                     )}

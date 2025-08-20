@@ -65,7 +65,63 @@ const Page = () => {
       />
       <UseCases />
       <WhyCalsoft />
-      <FirstStep />
+      <FirstStep 
+      headerContent={{
+          title1: "Start Standardizing Your",
+          title2: "Cloud Footprint Today",
+          description:
+            "We make it easy to bring control to your cloud provisioning — without disrupting what works. Here’s how:",
+        }}
+
+      guessworkData={[
+          {
+            id: 1,
+            title: "Provisioning Health Check",
+            description:
+              "Understand your current provisioning patterns, tools, cloud usage inconsistencies.",
+            items: null,
+            output: "Provisioning Maturity Score + Gap Report",
+            side: "left",
+          },
+          {
+            id: 2,
+            title: "IaC & Policy Assessment",
+            description:
+              "We evaluate existing scripts (Terraform, ARM, etc.), policies, and security baselines.",
+            items: null,
+            output: "IaC Audit Report + Policy Drift Map",
+            side: "right",
+          },
+          {
+            id: 3,
+            title: "Blueprint Design & Governance Model",
+            description:
+              "Design modular, reusable provisioning blueprints mapped to teams, roles, and environments.",
+            items: null,
+            output: "Cloud Provisioning Framework + Sample Blueprints",
+            side: "left",
+          },
+          {
+            id: 4,
+            title: "Pilot Rollout & Feedback",
+            description:
+              "Rollout to one team/project with real-time feedback loops.",
+            items: null,
+            output: "Performance Benchmark Report + Change Logs",
+            side: "right",
+          },
+          {
+            id: 5,
+            title: "Scale Across Org",
+            description:
+              "Roll out across business units with ongoing refinement and training.",
+            items: null,
+            output:
+              " Governance Dashboard + Developer Enablement Kit",
+            side: "left",
+          },
+        ]}
+         />
     </>
   );
 };
