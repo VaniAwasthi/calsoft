@@ -65,7 +65,63 @@ const Page = () => {
       />
       <UseCases />
       <WhyCalsoft />
-      <FirstStep />
+      <FirstStep
+      headerContent={{
+          title1: "Accelerate Your Cloud-Native",
+          title2: "Journey, Step-by-Step",
+          description:
+            "You don’t need to refactor everything at once. Start lean, build fast, and scale securely. Here's how:",
+        }}
+
+      guessworkData={[
+          {
+            id: 1,
+            title: "Cloud-Native Readiness Assessment",
+            description:
+              "Evaluate current infra, architecture, CI/CD maturity, and team readiness.",
+            items: null,
+            output: "Cloud-Native Scorecard + Gaps",
+            side: "left",
+          },
+          {
+            id: 2,
+            title: "Application & Platform Strategy",
+            description:
+              "Identify which workloads to refactor, replatform, or retire. Align on platform tech stack.",
+            items: null,
+            output: "Microservices Map + Platform Plan",
+            side: "right",
+          },
+          {
+            id: 3,
+            title: "DevSecOps & GitOps Implementation",
+            description:
+              "Build secure CI/CD with policy-as-code and Git-based automation.",
+            items: null,
+            output: "Reference Pipelines + Policy Engine Setup",
+            side: "left",
+          },
+          {
+            id: 4,
+            title: "Pilot Containerization & Observability",
+            description:
+              "Deploy pilot apps on Kubernetes, test runtime, logging, tracing, and scaling.",
+            items: null,
+            output: "Pilot Launch Report + Toolchain Blueprint",
+            side: "right",
+          },
+          {
+            id: 5,
+            title: "Enterprise Rollout & Governance Model",
+            description:
+              "Scale across BU teams with standard templates, audit hooks, and developer onboarding.",
+            items: null,
+            output:
+              "IDP Guide + Governance Framework + TCO Model",
+            side: "left",
+          },
+        ]}
+        />
       <ContactSecDataAi
         lightContent={
           "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
