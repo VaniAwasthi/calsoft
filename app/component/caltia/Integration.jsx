@@ -19,7 +19,62 @@ import travis from "@/app/assets/caltia/logo/travis.webp";
 import xRay from "@/app/assets/caltia/logo/x-ray.webp";
 import { motion } from "framer-motion";
 
-export default function Integration() {
+export default function Integration({
+  data = {
+    leftSideContent: {
+      heading: "20+ Integrations",
+      heading2: "Connecting to the Tools You Need for Efficient Workflows",
+      desc: "CalTIATM™ seamlessly integrates with various tools through customized plugins, supporting GitHub, Bitbucket, TestRail, Jira, Xray, pytest, JUnit, Robot, Cypress, Jenkins, Travis CI, Google Docs, Teams, Slack, and more, enabling smooth DevOps testing automation across your ecosystem. ",
+    },
+    rightSideContent: {
+      cards: [
+        {
+          title: "Code Repo",
+          className: "ml-10",
+          logos: [
+            { logo: git, alt: "github" },
+            { logo: bucket, alt: "bit bucket" },
+            { logo: gitlab, alt: "Gitlab" },
+          ],
+        },
+        {
+          title: "Test\nManagement",
+          className: "ml-32",
+          logos: [
+            { logo: jira, alt: "jira" },
+            { logo: rail, alt: "test rail" },
+            { logo: xRay, alt: "x-ray" },
+          ],
+        },
+        {
+          title: "Automation\nFrameworks",
+          className: "ml-10",
+          logos: [
+            { logo: py, alt: "py-test" },
+            { logo: robot, alt: "robot" },
+            { logo: cy, alt: "cypress" },
+          ],
+        },
+        {
+          title: "CI/CD",
+          className: "ml-32",
+          logos: [
+            { logo: travis, alt: "travis" },
+            { logo: jenkins, alt: "jenkins" },
+          ],
+        },
+        {
+          title: "Collaboration",
+          className: "ml-10",
+          logos: [
+            { logo: teams, alt: "MS-Teams" },
+            { logo: slack, alt: "Slack" },
+          ],
+        },
+      ],
+    },
+  },
+}) {
   return (
     <div className="bg-[#f7f7f7] py-10">
       <div className="container flex flex-col lg:flex-row items-center h-full gap-8">
@@ -31,7 +86,7 @@ export default function Integration() {
             viewport={{ once: false, amount: 0.3 }}
             className="bg-[linear-gradient(to_right,#2E3092_15%,#ED1C24_50%)] bg-clip-text text-transparent text-[38px] font-semibold"
           >
-            20+ Integrations
+            {data.leftSideContent.heading}
           </motion.p>
           <motion.p
             initial={{ x: -50, opacity: 0 }}
@@ -40,7 +95,7 @@ export default function Integration() {
             viewport={{ once: false, amount: 0.3 }}
             className="text-3xl font-semibold"
           >
-            Connecting to the Tools You Need for Efficient Workflows
+            {data.leftSideContent.heading2}
           </motion.p>
           <motion.p
             initial={{ x: -50, opacity: 0 }}
@@ -49,11 +104,7 @@ export default function Integration() {
             viewport={{ once: false, amount: 0.3 }}
             className="text-xl mt-2"
           >
-            CalTIATM™ seamlessly integrates with various tools through
-            customized plugins, supporting GitHub, Bitbucket, TestRail, Jira,
-            Xray, pytest, JUnit, Robot, Cypress, Jenkins, Travis CI, Google
-            Docs, Teams, Slack, and more, enabling smooth DevOps testing
-            automation across your ecosystem.
+            {data.leftSideContent.desc}
           </motion.p>
         </div>
         <div className="flex-1 flex justify-center items-center gap-5">
@@ -72,33 +123,30 @@ export default function Integration() {
           </div>
           <div className="w-[70%] flex flex-col items-start gap-5 relative z-10">
             {/* Cards */}
-            <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="px-3.5 py-2.5 bg-white shadow-xl rounded-lg flex gap-6 items-center w-fit ml-10"
-            >
-              <p className="text-[15px] font-medium">Code Repo</p>
-              <div className="flex justify-center items-center gap-3.5">
-                <Image
-                  src={git}
-                  alt="github"
-                  className="aspect-square size-8"
-                />
-                <Image
-                  src={bucket}
-                  alt="bucket"
-                  className="aspect-square size-8"
-                />
-                <Image
-                  src={gitlab}
-                  alt="gitlab"
-                  className="aspect-square size-8"
-                />
-              </div>
-            </motion.div>
-            <motion.div
+            {data.rightSideContent.cards.map((ele, idx) => (
+              <motion.div
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className={`px-3.5 py-2.5 bg-white shadow-xl rounded-lg flex gap-6 items-center w-fit ${ele.className}`}
+              >
+                <p className="text-[15px] font-medium whitespace-pre-line">
+                  {ele.title}
+                </p>
+                <div className="flex justify-center items-center gap-3.5">
+                  {ele.logos.map((logo, index) => (
+                    <Image
+                      key={index}
+                      src={logo.logo}
+                      alt={logo.alt}
+                      className="aspect-square size-8"
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+            {/* <motion.div
               initial={{ x: 50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -183,7 +231,7 @@ export default function Integration() {
                   className="aspect-square size-8"
                 />
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* arrows */}
             <div>
