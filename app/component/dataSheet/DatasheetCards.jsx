@@ -13,7 +13,7 @@ import {
 import FilterPanel from "../utilities/FilterPannel";
 import { setSelectedDatasheetsId } from "../../store/reducers/datasheetReducer";
 import { useRouter } from "next/navigation";
-import { generateSlug } from "../utilities/SlugGenerator";
+import { generateSlug } from "../utilities/helper/SlugGenerator";
 
 export const DataSheetCards = () => {
   const dispatch = useDispatch();
