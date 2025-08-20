@@ -13,6 +13,7 @@ import {
 import FilterPanel from "../utilities/FilterPannel";
 import { setSelectedDatasheetsId } from "../../store/reducers/datasheetReducer";
 import { useRouter } from "next/navigation";
+import { generateSlug } from "../utilities/SlugGenerator";
 
 export const DataSheetCards = () => {
   const dispatch = useDispatch();
@@ -27,11 +28,12 @@ export const DataSheetCards = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [visibleCount, setVisibleCount] = useState(6);
   const loadMoreRef = useRef(null);
-  const handleClick = (item) => {
-    const slug = item.slug ? item.slug : slugify(item.title);
-    dispatch(setSelectedDatasheetsId(item._id));
-    router.push(`/insights/datesheets/${slug}`);
-  };
+ const handleClick = (item) => {
+   dispatch(setSelectedDatasheetsId(item._id));
+   localStorage.setItem("selectedDateSheetId", item._id);
+   const slug = generateSlug(item.hero_title1, { lower: true });
+   router.push(`/insights/datesheets/${slug}`);
+ };
   useEffect(() => {
     dispatch(fetchDatasheetList());
     dispatch(fetchBlogFilterList());
