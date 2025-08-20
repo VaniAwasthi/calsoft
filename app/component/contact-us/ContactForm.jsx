@@ -1,23 +1,38 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function ContactForm() {
   return (
     <div className="min-h-screen bg-[#ffffff] p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header Section */}
-        <div className="mb-16">
-          <h1 className="text-[55px] font-bold text-[#000000] mb-4 leading-tight">
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="mb-16"
+        >
+          <h1 className="text-4xl sm:text-5xl lg:text-[55px] font-bold text-[#000000] mb-4 leading-tight">
             Get in touch with us.
           </h1>
-          <h2 className="text-[55px] font-bold text-[#000000] leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-[55px] font-bold text-[#000000] leading-tight">
             We're here to assist you.
           </h2>
-        </div>
+        </motion.div>
 
         {/* Form Section */}
-        <form className="space-y-12">
+        <motion.form
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="space-y-12"
+        >
           {/* Input Row */}
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="space-y-2">
               <label className="block text-2xl text-[#000000] font-medium">
                 Your Name
@@ -68,7 +83,7 @@ export default function ContactForm() {
           <div className="pt-2">
             <button
               type="submit"
-              className="bg-[#ba0007] text-[#ffffff] px-12 py-6 rounded-full text-xl font-medium hover:bg-[#a00006] transition-colors flex items-center gap-3"
+              className="bg-[#ba0007] text-[#ffffff] px-8 lg:px-12 py-4 lg:py-6 rounded-full text-xl font-medium hover:bg-[#a00006] transition-colors flex items-center gap-3"
             >
               Leave us a Message
               <svg
@@ -85,7 +100,7 @@ export default function ContactForm() {
               </svg>
             </button>
           </div>
-        </form>
+        </motion.form>
       </div>
     </div>
   );
