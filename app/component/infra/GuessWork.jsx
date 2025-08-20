@@ -259,21 +259,24 @@ export default function Component({
                     <p className="text-[#000000] text-[16px] leading-relaxed mb-6 whitespace-pre-line">
                       {step.description}
                     </p>
-                    {step.items && <div className="space-y-4 mb-8">
-                      {step.items.map((item, itemIndex) => (
-                        <div
-                          key={itemIndex}
-                          className="flex items-center gap-3"
-                        >
-                          <div className="w-6 h-6 bg-[#2e3092] rounded-full flex items-center justify-center flex-shrink-0">
-                            <Check className="w-4 h-4 text-[#ffffff]" />
+
+                    {step.items && (
+                      <div className="space-y-4 mb-8">
+                        {step.items.map((item, itemIndex) => (
+                          <div
+                            key={itemIndex}
+                            className="flex items-center gap-3"
+                          >
+                            <div className="w-6 h-6 bg-[#2e3092] rounded-full flex items-center justify-center flex-shrink-0">
+                              <Check className="w-4 h-4 text-[#ffffff]" />
+                            </div>
+                            <span className="text-[#000000] text-[16px]">
+                              {item}
+                            </span>
                           </div>
-                          <span className="text-[#000000] text-[16px]">
-                            {item}
-                          </span>
-                        </div>
-                      ))}
-                    </div>}
+                        ))}
+                      </div>
+                    )}
                     {step.output && (
                       <p className="text-[#000000] text-[16px] font-bold">
                         <span className="font-bold">Output:</span> {step.output}
