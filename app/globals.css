@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -6,6 +7,7 @@
   --primary-font: "Manrope", serif;
   --secondary-font: "Inter", serif;
   --ternary-font: "Poppins", serif;
+  --londrina-font: "Londrina_Shadow", "serif";
 }
 
 @theme inline {
@@ -27,6 +29,10 @@
 
 .manrope {
   font-family: var(--primary-font);
+}
+
+.font-londrina {
+  font-family: "Londrina Shadow", cursive;
 }
 
 .Inter {

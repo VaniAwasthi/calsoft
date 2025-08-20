@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const LocationIcon = () => (
   <svg
@@ -92,8 +93,8 @@ export default function OurOffices() {
               </button>
               {/* Triangle indicator */}
               {activeTab === "India" && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-1">
-                  <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-[#2e3092]"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-7">
+                  <div className="w-0 h-0 border-l-[12px] border-r-[12px] border-t-[20px] border-l-transparent border-r-transparent border-t-[#2e3092]" />
                 </div>
               )}
             </div>
@@ -112,8 +113,8 @@ export default function OurOffices() {
               </button>
               {/* Triangle indicator */}
               {activeTab === "USA" && (
-                <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-5">
-                  <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-[#2e3092]"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 -bottom-7">
+                  <div className="w-0 h-0 border-l-[12px] border-r-[12px] border-t-[20px] border-l-transparent border-r-transparent border-t-[#2e3092]" />
                 </div>
               )}
             </div>
@@ -123,8 +124,12 @@ export default function OurOffices() {
         {/* Tab Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {officeData[activeTab].map((office, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
               className="bg-[#ffffff] rounded-lg p-8 shadow-sm border border-[#d9d9d9]"
             >
               <div className="flex items-start gap-4">
@@ -140,7 +145,7 @@ export default function OurOffices() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
