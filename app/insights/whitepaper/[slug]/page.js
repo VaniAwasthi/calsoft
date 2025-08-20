@@ -14,7 +14,7 @@ import {
   ShareSection,
 } from "../../../component/whitepaper/expanPage/WhitepaperReadMore.jsx";
 import { fetchWhitepaperById, fetchWhitepaperList } from "../../../store/actions/whitepaperAction";
-import { slugify } from "@/app/component/utilities/SlugGenerator";
+import { slugify } from "@/app/component/utilities/helper/SlugGenerator";
 
 const Page = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";

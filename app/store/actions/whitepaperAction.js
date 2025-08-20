@@ -19,7 +19,7 @@ export const fetchWhitepaperList = () => async (dispatch) => {
 export const fetchWhitepaperById = (id) => async (dispatch) => {
   try {
     const response = await axiosInstance.get(`/casestudy/${id}`);
-    console.log(response.data, "response data");
+    
 
     dispatch(setWhitepaperData(response.data));
   } catch (error) {

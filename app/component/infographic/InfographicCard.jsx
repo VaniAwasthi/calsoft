@@ -1,54 +1,63 @@
 "use client";
 
+
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Info1 from "../../assets/Infographic/Info1.webp";
-import Info2 from "../../assets/Infographic/Info2.webp";
-import { FilterSec } from "../utilities/FilterSec";
+import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "../../store/actions/blogAction";
 import FilterPanel from "../utilities/FilterPannel";
+import { fetchUsecasesList } from "@/app/store/actions/useCases";
 
 export const InfographicCard = () => {
-  const dispatch = useDispatch();
-  const [copiedId, setCopiedId] = useState(null);
-  const [openDropdown, setOpenDropdown] = useState("");
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-  }, [dispatch]);
+  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+   const dispatch = useDispatch();
+   const listData = useSelector((state) => state.usecases.list);
+   const router = useRouter();
+    const [currentPage, setCurrentPage] = useState(0);
 
-  const FilterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
-  );
-  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
-  const [activeFilters, setActiveFilters] = useState({
-    Industry: "All",
-    Topics: [],
-  });
+   const [copiedId, setCopiedId] = useState(null);
+   const [openDropdown, setOpenDropdown] = useState("");
+   const FilterIndustry = useSelector(
+     (state) => state.blogs.filterIndustry || []
+   );
+   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+   const [activeFilters, setActiveFilters] = useState({
+     Industry: "All",
+     Topics: [],
+   });
+ 
+   const filters = {
+     Industry: ["All", ...FilterIndustry],
+     Topics: ["All", ...FilterTopic],
+   };
+ 
+   
+   useEffect(() => {
+      dispatch(fetchBlogFilterList());
+     dispatch(fetchUsecasesList());
+   }, [dispatch]);
+ 
 
-  const filters = {
-    Industry: ["All", ...FilterIndustry],
-    Topics: ["All", ...FilterTopic],
-  };
-  const [currentPage, setCurrentPage] = useState(0);
 
-  const images = [Info1, Info2];
+const cardData = Array.isArray(listData)
+  ? listData.map((item) => ({
+      id: item._id,
+      title: item.title || "Untitled",
+      image: `${baseUrl}/${item.usecase_image}`,
+      slug: item.title
+        ? item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
+        : "untitled",
+      link: `/insights/whitepaper/${item._id}`,
+      tags: item.tags || ["General"],
+      industry: item.industry || "Tech",
+    }))
+  : [];
 
-  const cardData = new Array(18).fill(0).map((_, i) => ({
-    id: i + 1,
-    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry number ${
-      i + 1
-    }`,
-    image: images[i % images.length],
-    link: `https://yourdomain.com/card/${i + 1}`,
-    author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    tags: ["AI", "Security"],
-    industry: i % 2 === 0 ? "Tech" : "Healthcare",
-  }));
+const resources = cardData; // ✅ re-renders when Redux listData updates
 
-  const [resources] = useState([...cardData]);
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);

@@ -24,7 +24,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { fetchCaseStudiesList } from "../../store/actions/caseStudyActions.js";
 import { setSelectedCaseStudyId } from "../../store/reducers/caseStudyReducer.js";
-import { slugify } from "../utilities/SlugGenerator";
+import { slugify } from "../utilities/helper/SlugGenerator";
 
 export const CaseStudiesCard = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -50,30 +50,33 @@ export const CaseStudiesCard = () => {
     dispatch(fetchCaseStudiesList());
   }, [dispatch]);
 
- const handleClick = (item) => {
-  const slug = slugify(item.title, { lower: true });
-  dispatch(setSelectedCaseStudyId(item._id)); 
-    localStorage.setItem("selectedCaseStudyId", item._id);
-
+const handleClick = (item) => {
+  const safeTitle = item.title || "untitled";
+  const slug = slugify(safeTitle, { lower: true });
+  dispatch(setSelectedCaseStudyId(item._id));
+  localStorage.setItem("selectedCaseStudyId", item._id);
   router.push(`/insights/case-studies/${slug}`);
 };
 
 
+
   const images = [Info1, Info2];
 
-  const resources = listData.map((item) => ({
+  const resources = listData.map((item) => {
+  const safeTitle = item?.hero_title1 || "Untitled"; // fallback
+  return {
     ...item,
     id: item._id,
-    title: item.hero_title1,
+    title: safeTitle,
     image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
-    slug: item.hero_title1
-      ? item.hero_title1
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/(^-|-$)/g, "")
-      : "untitled",
+    slug: safeTitle
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, ""),
     link: `https://yourdomain.com/card/${item._id}`,
-  }));
+  };
+});
+
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
   };
@@ -266,7 +269,7 @@ export const CaseStudiesCard = () => {
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
               <div
-                onClick={() => handleClick(item.id, item.slug)}
+                onClick={() => handleClick(item)}
                 key={idx}
                 className="cursor-pointer"
               >
