@@ -10,6 +10,7 @@ import Banner from "../assets/insights/whitepaper.webp"
 const Page = () => {
   return (
     <>
+
       <BannerInfo heading=""  BannerBg={Banner}/>
       <TabsInfo defaultTab="case-study" />
       <ContactSec
