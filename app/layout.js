@@ -3,6 +3,13 @@ import "./globals.css";
 import ClientProvider from "./ClientProvider";
 import ClientLayoutWrapper from "./ClientLayoutWrapper";
 import Script from "next/script";
+import { Londrina_Shadow } from "next/font/google";
+
+const londrina = Londrina_Shadow({
+  subsets: ["latin"],
+  weight: ["400"], // pick what you need
+  variable: "--font-londrina", // custom CSS variable
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +28,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="overflow-x-hidden">
+    <html lang="en" className={`overflow-x-hidden ${londrina.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

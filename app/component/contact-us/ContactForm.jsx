@@ -32,10 +32,10 @@ export default function ContactForm() {
           className="space-y-12"
         >
           {/* Input Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-8 gap-y-16">
             <div className="space-y-2">
               <label className="block text-2xl text-[#000000] font-medium">
-                Your Name
+                Your Name*
               </label>
               <input
                 type="text"
@@ -65,6 +65,36 @@ export default function ContactForm() {
                 placeholder=""
               />
             </div>
+            <div className="space-y-2">
+              <label className="block text-2xl text-[#000000] font-medium">
+                Company Name*
+              </label>
+              <input
+                type="text"
+                className="w-full border-b-2 border-[#cacaca] bg-transparent pb-3 text-xl text-[#000000] placeholder-[#cacaca] focus:border-[#000000] focus:outline-none transition-colors"
+                placeholder=""
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="block text-2xl text-[#000000] font-medium">
+                Designation
+              </label>
+              <input
+                type="text"
+                className="w-full border-b-2 border-[#cacaca] bg-transparent pb-3 text-xl text-[#000000] placeholder-[#cacaca] focus:border-[#000000] focus:outline-none transition-colors"
+                placeholder=""
+              />
+            </div>
+            <div className="space-y-2">
+              <label className="block text-2xl text-[#000000] font-medium">
+                Country*
+              </label>
+              <input
+                type="text"
+                className="w-full border-b-2 border-[#cacaca] bg-transparent pb-3 text-xl text-[#000000] placeholder-[#cacaca] focus:border-[#000000] focus:outline-none transition-colors"
+                placeholder=""
+              />
+            </div>
           </div>
 
           {/* Message Section */}
@@ -85,7 +115,7 @@ export default function ContactForm() {
               type="submit"
               className="bg-[#ba0007] text-[#ffffff] px-8 lg:px-12 py-4 lg:py-6 rounded-full text-xl font-medium hover:bg-[#a00006] transition-colors flex items-center gap-3"
             >
-              Leave us a Message
+              Get in Touch
               <svg
                 width="20"
                 height="20"
