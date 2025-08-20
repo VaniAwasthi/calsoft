@@ -25,6 +25,8 @@ import { useRouter } from "next/navigation";
 import { fetchCaseStudiesList } from "../../store/actions/caseStudyActions.js";
 import { setSelectedCaseStudyId } from "../../store/reducers/caseStudyReducer.js";
 import { slugify } from "../utilities/helper/SlugGenerator";
+import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
+import FilterPanel from "../utilities/FilterPannel";
 
 export const CaseStudiesCard = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -33,20 +35,27 @@ export const CaseStudiesCard = () => {
 
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
-  const [activeFilters, setActiveFilters] = useState({
-    Industry: "All",
-    Topics: "All",
-    Author: "All",
-  });
+
   const [currentPage, setCurrentPage] = useState(0);
 
-  const filters = {
-    Industry: ["All", "Tech", "Healthcare"],
-    Topics: ["All", "Security", "AI"],
-  };
+     const FilterIndustry = useSelector(
+     (state) => state.blogs.filterIndustry || []
+   );
+   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+   const [activeFilters, setActiveFilters] = useState({
+     Industry: "All",
+     Topics: [],
+   });
+ 
+   const filters = {
+     Industry: ["All", ...FilterIndustry],
+     Topics: ["All", ...FilterTopic],
+   };
   const router = useRouter();
 
   useEffect(() => {
+          dispatch(fetchBlogFilterList());
+    
     dispatch(fetchCaseStudiesList());
   }, [dispatch]);
 
@@ -57,8 +66,6 @@ const handleClick = (item) => {
   localStorage.setItem("selectedCaseStudyId", item._id);
   router.push(`/insights/case-studies/${slug}`);
 };
-
-
 
   const images = [Info1, Info2];
 
@@ -76,6 +83,8 @@ const handleClick = (item) => {
     link: `https://yourdomain.com/card/${item._id}`,
   };
 });
+
+
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -96,16 +105,16 @@ const handleClick = (item) => {
       console.error("Copy failed:", error);
     }
   };
-  const filteredResources = resources.filter((item) => {
-    const authorMatch =
-      activeFilters.Author === "All" || item.author === activeFilters.Author;
-    const tagMatch =
-      activeFilters.Topics === "All" ||
-      item.tags.includes(activeFilters.Topics);
+ const filteredResources = resources.filter((item) => {
     const industryMatch =
       activeFilters.Industry === "All" ||
       item.industry === activeFilters.Industry;
-    return authorMatch && tagMatch && industryMatch;
+
+    const tagMatch =
+      activeFilters.Topics.length === 0 ||
+      activeFilters.Topics.some((topic) => item.tags.includes(topic));
+
+    return industryMatch && tagMatch;
   });
 
   const itemsPerPage = 6;
@@ -135,14 +144,14 @@ const handleClick = (item) => {
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full  sm:px-6 lg:px-8">
-        <FilterSec
-          filters={filters}
-          activeFilters={activeFilters}
-          setActiveFilters={setActiveFilters}
-          openDropdown={openDropdown}
-          toggleDropdown={toggleDropdown}
-          selectFilter={selectFilter}
-        />
+        <FilterPanel
+                 filters={filters}
+                 activeFilters={activeFilters}
+                 openDropdown={openDropdown}
+                 toggleDropdown={toggleDropdown}
+                 selectFilter={selectFilter}
+                 setActiveFilters={setActiveFilters}
+               />
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
         {/* recent */}

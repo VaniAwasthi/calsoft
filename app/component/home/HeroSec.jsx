@@ -6,6 +6,7 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import BackgroundImage1 from "../../assets/home/VMwareBanner.webp";
 import BackgroundImage2 from "../../assets/home/CalTIA-Banner.webp";
+import BackgroundImage3 from "../../assets/CEOBanner.png";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import BannerLayout from "../utilities/BannerLayout";
 import ButtonLayout from "../utilities/ButtonLayout";
@@ -39,6 +40,16 @@ const slides = [
       "Transform Your Testing with AI-Powered Test Intelligence Platform and Accelerate Your GTM Timeline",
     buttonText: "Read More",
     link: "/data-ai/ai-powered-accelerators",
+  },
+  {
+    type: "banner",
+    image: BackgroundImage3,
+    title: "",
+    title2: "",
+    description:
+      "",
+    buttonText: "",
+    link: "",
   },
 ];
 

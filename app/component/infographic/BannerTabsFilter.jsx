@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import BannerBg from "../../assets/Infographic/Background.webp";
 import React, { useEffect, useState } from "react";
 import InfoIcon from "../../assets/Infographic/infographic.svg";
 import IndustryIcon from "../../assets/Infographic/IndustryReports.svg";
@@ -54,7 +53,7 @@ const tabs = [
   },
 ];
 
-export const BannerInfo = ({ heading }) => {
+export const BannerInfo = ({ heading,BannerBg }) => {
   return (
     <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px]">
       {/* Background Image */}
