@@ -28,7 +28,7 @@ import Casestudybg from "../../assets/home/casestudybg.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCaseStudyListLimit } from "../../store/actions/caseStudyActions";
 import Link from "next/link";
-import { generateSlug } from "../utilities/SlugGenerator";
+import { generateSlug } from "../utilities/helper/SlugGenerator";
 import { useRouter } from "next/navigation";
 import { setSelectedCaseStudyId } from "@/app/store/reducers/caseStudyReducer";
 export const Services = () => {

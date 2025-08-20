@@ -2,13 +2,13 @@ import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-import { FilterSec } from "../utilities/FilterSec";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchWhitepaperList } from "../../store/actions/whitepaperAction";
 import { useRouter } from "next/navigation";
 import { setSelectedWhitepaperId } from "../../store/reducers/whitepaperReducer";
-import { slugify } from "../utilities/SlugGenerator";
+import { slugify } from "../utilities/helper/SlugGenerator";
+import FilterPanel from "../utilities/FilterPannel";
+import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
 
 export const WhitepaperCards = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -18,20 +18,24 @@ export const WhitepaperCards = () => {
 
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
-    Topics: "All",
-    Author: "All",
+    Topics: [],
   });
-  const [currentPage, setCurrentPage] = useState(0);
 
   const filters = {
-    Industry: ["All", "Tech", "Healthcare"],
-    Topics: ["All", "Security", "AI"],
-    Author: ["All", "Anton Frank", "John Doe"],
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
   };
+  const [currentPage, setCurrentPage] = useState(0);
 
+  
   useEffect(() => {
+     dispatch(fetchBlogFilterList());
     dispatch(fetchWhitepaperList());
   }, [dispatch]);
 
@@ -62,7 +66,6 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
 
   const handleClick = (item) => {
       const slug = slugify(item.title, { lower: true });
-    
     dispatch(setSelectedWhitepaperId(item.id));
 localStorage.setItem("selectedWhitepaperId", item.id);
     router.push(`/insights/whitepaper/${slug}`);
@@ -89,15 +92,17 @@ localStorage.setItem("selectedWhitepaperId", item.id);
   };
 
   const filteredResources = resources.filter((item) => {
-    const authorMatch =
-      activeFilters.Author === "All" || item.author === activeFilters.Author;
-    const tagMatch =
-      activeFilters.Topics === "All" || item.tags === activeFilters.Topics;
     const industryMatch =
       activeFilters.Industry === "All" ||
       item.industry === activeFilters.Industry;
-    return authorMatch && tagMatch && industryMatch;
+
+    const tagMatch =
+      activeFilters.Topics.length === 0 ||
+      activeFilters.Topics.some((topic) => item.tags.includes(topic));
+
+    return industryMatch && tagMatch;
   });
+
 
   const itemsPerPage = 6;
   const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
@@ -114,14 +119,14 @@ localStorage.setItem("selectedWhitepaperId", item.id);
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterSec
-          filters={filters}
-          activeFilters={activeFilters}
-          setActiveFilters={setActiveFilters}
-          openDropdown={openDropdown}
-          toggleDropdown={toggleDropdown}
-          selectFilter={selectFilter}
-        />
+        <FilterPanel
+                  filters={filters}
+                  activeFilters={activeFilters}
+                  openDropdown={openDropdown}
+                  toggleDropdown={toggleDropdown}
+                  selectFilter={selectFilter}
+                  setActiveFilters={setActiveFilters}
+                />
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 

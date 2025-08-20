@@ -60,7 +60,7 @@ export default function ResourceGrid() {
   const router = useRouter();
  const handleBlogClick = (item) => {
    const slug = slugify(item.title, { lower: true });
-   dispatch(setSelectedBlogId(item._id)); // keep ID in Redux
+   dispatch(setSelectedBlogId(item._id)); 
    router.push(`/insights/blogs/${slug}`);
  };
 

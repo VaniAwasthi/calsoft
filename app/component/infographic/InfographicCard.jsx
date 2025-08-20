@@ -1,54 +1,63 @@
 "use client";
 
+
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Info1 from "../../assets/Infographic/Info1.webp";
-import Info2 from "../../assets/Infographic/Info2.webp";
-import { FilterSec } from "../utilities/FilterSec";
+import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "../../store/actions/blogAction";
 import FilterPanel from "../utilities/FilterPannel";
+import { fetchUsecasesList } from "@/app/store/actions/useCases";
 
 export const InfographicCard = () => {
-  const dispatch = useDispatch();
-  const [copiedId, setCopiedId] = useState(null);
-  const [openDropdown, setOpenDropdown] = useState("");
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-  }, [dispatch]);
+  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+   const dispatch = useDispatch();
+   const listData = useSelector((state) => state.usecases.list);
+   const router = useRouter();
+    const [currentPage, setCurrentPage] = useState(0);
 
-  const FilterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
-  );
-  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
-  const [activeFilters, setActiveFilters] = useState({
-    Industry: "All",
-    Topics: [],
-  });
+   const [copiedId, setCopiedId] = useState(null);
+   const [openDropdown, setOpenDropdown] = useState("");
+   const FilterIndustry = useSelector(
+     (state) => state.blogs.filterIndustry || []
+   );
+   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+   const [activeFilters, setActiveFilters] = useState({
+     Industry: "All",
+     Topics: [],
+   });
+ 
+   const filters = {
+     Industry: ["All", ...FilterIndustry],
+     Topics: ["All", ...FilterTopic],
+   };
+ 
+   
+   useEffect(() => {
+      dispatch(fetchBlogFilterList());
+     dispatch(fetchUsecasesList());
+   }, [dispatch]);
+ 
 
-  const filters = {
-    Industry: ["All", ...FilterIndustry],
-    Topics: ["All", ...FilterTopic],
-  };
-  const [currentPage, setCurrentPage] = useState(0);
 
-  const images = [Info1, Info2];
+const cardData = Array.isArray(listData)
+  ? listData.map((item) => ({
+      id: item._id,
+      title: item.title || "Untitled",
+      image: `${baseUrl}/${item.usecase_image}`,
+      slug: item.title
+        ? item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
+        : "untitled",
+      link: `/insights/whitepaper/${item._id}`,
+     tags: item.tags?.length > 0 ? item.tags.map(tag => tag.name) : ["General"],
+      industry: item.industry || "Tech",
+    }))
+  : [];
 
-  const cardData = new Array(18).fill(0).map((_, i) => ({
-    id: i + 1,
-    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry number ${
-      i + 1
-    }`,
-    image: images[i % images.length],
-    link: `https://yourdomain.com/card/${i + 1}`,
-    author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    tags: ["AI", "Security"],
-    industry: i % 2 === 0 ? "Tech" : "Healthcare",
-  }));
+const resources = cardData; // ✅ re-renders when Redux listData updates
 
-  const [resources] = useState([...cardData]);
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -118,7 +127,7 @@ export const InfographicCard = () => {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+                className="flex flex-col h-[400px] md:h-[380px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 {/* Image */}
                 <div className="w-full h-3/5">
@@ -133,19 +142,23 @@ export const InfographicCard = () => {
 
                 {/* Content */}
                 <div className="w-full h-2/5 p-4 flex flex-col justify-between">
-                  <div className="flex flex-wrap gap-2 my-2">
+                  <div className="flex flex-wrap gap-1 mt-1">
                     {/* Container to hold tags */}
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    {item.tags.map((tag, index) => (
+  <span
+    key={index}
+    className="text-[#2E3092] font-semibold text-[15px] flex items-center"
+  >
+    {tag}
+    {index !== item.tags.length - 1 && (
+      <span className="mx-1 text-[#2E3092]">|</span>
+    )}
+  </span>
+))}
+
                   </div>
                   <div className="flex justify-between items-start">
-                    <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
+                    <h3 className="text-sm md:text-[18px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
                       {item.title}
                     </h3>
                     <button
