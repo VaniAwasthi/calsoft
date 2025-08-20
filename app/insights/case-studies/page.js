@@ -10,7 +10,7 @@ import React from "react";
 const Page = () => {
   return (
     <>
-      <BannerInfo heading="We can do it to divide myself knowledge" BannerBg={Banner} />
+      <BannerInfo heading="Real-World Success Stories" BannerBg={Banner} />
       <TabsInfo defaultTab="case-study" />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "

@@ -10,7 +10,7 @@ import Banner from "../../assets/insights/infographics.webp"
 const Page = () => {
   return (
     <>
-      <BannerInfo heading="" BannerBg={Banner} />
+      <BannerInfo heading="Visual Insights at a Glance" BannerBg={Banner} />
       <TabsInfo defaultTab="infographics" />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
