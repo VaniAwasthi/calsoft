@@ -44,27 +44,6 @@ export default function HeroSection() {
               scale.
             </p>
           </motion.div>
-
-          {/* Right Video/Image */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative w-full h-60 sm:h-72 md:h-80 lg:h-96"
-          >
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/OzO-2LZv4kk?si=Hylk0zNjDGLH8oc-"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-              className="sm:h-full h-72 sm:w-full w-fit"
-            ></iframe>
-          </motion.div>
         </div>
       </div>
     </motion.section>
