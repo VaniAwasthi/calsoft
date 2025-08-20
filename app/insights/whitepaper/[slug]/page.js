@@ -52,7 +52,7 @@ const { slug } = useParams();
       }
     }, [dispatch, selectedId, slug, list]);
   if (!matchedId && !selectedId && !localStorage.getItem("selectedWhitepaperId")) {
-    return <div className="text-red-500 p-8">Missing case study ID.</div>;
+    return <div className="text-red-500 p-8">Missing Whitepaper ID.</div>;
   }
 
   if (isLoading) return <div className="p-8">Loading whitepaper...</div>;
