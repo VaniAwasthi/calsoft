@@ -14,6 +14,7 @@ export default function FirstStep({
       "We don’t ask you to commit to a massive overhaul. Instead, we guide you step-by-step — from discovery to deployment — with zero ambiguity and measurable outcomes.",
   },
   Component = Guesswork,
+  guessworkData,
 }) {
   return (
     <div className="container">
@@ -45,7 +46,7 @@ export default function FirstStep({
           />
         </motion.div>
       </div>
-      <Component />
+      <Component stepsData={guessworkData} />
     </div>
   );
 }

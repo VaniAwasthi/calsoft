@@ -12,6 +12,7 @@ import Image from "next/image";
 import Career from "../../assets/about-us/Career.webp";
 import prospect from "../../assets/about-us/Prospects.webp";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 // export default function BuildSomething() {
 //   return (
@@ -149,22 +150,26 @@ export default function CareersPage() {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
               >
-                Learn More
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                <Link
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
+                  href={"/career"}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+                  Learn More
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
               </motion.button>
             </div>
           </div>
@@ -198,22 +203,26 @@ export default function CareersPage() {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.4, delay: 0.6 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
               >
-                Learn More
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+                <Link
+                  href={"/csr"}
+                  className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+                  Learn More
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </Link>
               </motion.button>
             </div>
           </div>

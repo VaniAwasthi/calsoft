@@ -66,7 +66,7 @@ export default function HeroSection() {
                   <p className="text-white text-center">SEE ALL OPENINGS (5)</p>
                 </div>
               </motion.div>
-              <motion.div
+              {/* <motion.div
                 initial={{ y: -30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.4 }}
@@ -92,7 +92,7 @@ export default function HeroSection() {
                     />
                   </svg>
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
           <motion.div

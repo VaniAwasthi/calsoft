@@ -51,7 +51,7 @@ const cardData = Array.isArray(listData)
         ? item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
         : "untitled",
       link: `/insights/whitepaper/${item._id}`,
-      tags: item.tags || ["General"],
+     tags: item.tags?.length > 0 ? item.tags.map(tag => tag.name) : ["General"],
       industry: item.industry || "Tech",
     }))
   : [];
@@ -127,7 +127,7 @@ const resources = cardData; // ✅ re-renders when Redux listData updates
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+                className="flex flex-col h-[400px] md:h-[380px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 {/* Image */}
                 <div className="w-full h-3/5">
@@ -142,19 +142,23 @@ const resources = cardData; // ✅ re-renders when Redux listData updates
 
                 {/* Content */}
                 <div className="w-full h-2/5 p-4 flex flex-col justify-between">
-                  <div className="flex flex-wrap gap-2 my-2">
+                  <div className="flex flex-wrap gap-1 mt-1">
                     {/* Container to hold tags */}
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    {item.tags.map((tag, index) => (
+  <span
+    key={index}
+    className="text-[#2E3092] font-semibold text-[15px] flex items-center"
+  >
+    {tag}
+    {index !== item.tags.length - 1 && (
+      <span className="mx-1 text-[#2E3092]">|</span>
+    )}
+  </span>
+))}
+
                   </div>
                   <div className="flex justify-between items-start">
-                    <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
+                    <h3 className="text-sm md:text-[18px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
                       {item.title}
                     </h3>
                     <button

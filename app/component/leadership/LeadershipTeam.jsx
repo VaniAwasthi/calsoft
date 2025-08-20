@@ -60,6 +60,22 @@ export default function LeadershipTeam() {
         "Pradipta Mitra has 30+ years in hi‑tech, leading storage, compute, software, and platform initiatives across the US, UK, and India. He aligns sales strategies with engineering and product teams...",
       link: "",
     },
+    {
+      image: somenath,
+      name: "Somenath Nag",
+      post: "Sr. Vice President",
+      description:
+        "Somenath Nag is a seasoned leader with nearly 30 years of experience in Telecom, Networking, and IoT. He spearheads business growth at Calsoft, managing strategic accounts and offshore teams.",
+      link: "",
+    },
+    {
+      image: vipin,
+      name: "Vipin Shankar",
+      post: "Senior Vice President Technology& Head of Presales",
+      description:
+        "Vipin Shankar leads the Technology Office and presales at Calsoft, with 25+ years building engineering teams and technology roadmaps. He has developed cloud‑based EDA, MDM, storage, disaster‑recovery...",
+      link: "",
+    },
   ];
   return (
     <div className="my-5 pb-12 space-y-20 container">
