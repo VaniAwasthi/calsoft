@@ -78,13 +78,13 @@ export const BannerInfo = ({ heading,BannerBg }) => {
           {heading}
         </motion.h2>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <Image src={BannerTags} alt="Icon" className="w-full h-[200px] " />
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );
