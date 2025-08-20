@@ -24,7 +24,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { fetchCaseStudiesList } from "../../store/actions/caseStudyActions.js";
 import { setSelectedCaseStudyId } from "../../store/reducers/caseStudyReducer.js";
-import { title } from "process";
+import { slugify } from "../utilities/SlugGenerator";
 
 export const CaseStudiesCard = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -50,11 +50,14 @@ export const CaseStudiesCard = () => {
     dispatch(fetchCaseStudiesList());
   }, [dispatch]);
 
-  const handleClick = (id, slug) => {
-    dispatch(setSelectedCaseStudyId(id));
-    // this should be correct
-    router.push(`/insights/case-studies/${slug}`);
-  };
+ const handleClick = (item) => {
+  const slug = slugify(item.title, { lower: true });
+  dispatch(setSelectedCaseStudyId(item._id)); 
+    localStorage.setItem("selectedCaseStudyId", item._id);
+
+  router.push(`/insights/case-studies/${slug}`);
+};
+
 
   const images = [Info1, Info2];
 
