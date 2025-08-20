@@ -2,9 +2,9 @@ import React from "react";
 
 function Card({ data, idx }) {
   return (
-    <div className="group w-full h-full">
+    <div className="group w-full h-full transition-all">
       <div className="h-3 bg-[#BA0007] group-hover:bg-[#2E3092]"></div>
-      <div className="p-10 bg-[#F5F5F5] rounded-b-lg flex flex-col items-center gap-5 text-center">
+      <div className="p-10 w-full h-full bg-[#F5F5F5] group-hover:bg-[linear-gradient(to_bottom,#2E3092_25%,#ED1C24_88%)] rounded-b-lg flex flex-col items-center gap-5 text-center group-hover:text-white">
         <div>{data.icon}</div>
         <p className="text-[38px] font-medium">{data.title}</p>
         <p className="text-lg">{data.desc}</p>
