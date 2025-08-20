@@ -5,11 +5,12 @@ import {
   TabsInfo,
 } from "../../component/infographic/BannerTabsFilter.jsx";
 import React from "react";
+import Banner from "../../assets/insights/caseStudy.webp"
 
 const Page = () => {
   return (
     <>
-      <BannerInfo heading="We can do it to divide myself knowledge" />
+      <BannerInfo heading="" BannerBg={Banner} />
       <TabsInfo defaultTab="whitepapers" />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
