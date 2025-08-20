@@ -55,7 +55,7 @@ const tabs = [
 
 export const BannerInfo = ({ heading,BannerBg }) => {
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px]">
+     <div className="relative w-full h-[500px] md:h-[500px] lg:h-[500px]">
       {/* Background Image */}
       <Image
         src={BannerBg}
@@ -67,12 +67,15 @@ export const BannerInfo = ({ heading,BannerBg }) => {
         priority
       />
 
+      {/* Black Overlay */}
+      <div className="absolute inset-0 bg-black/40 z-5"></div>
+
       {/* Centered Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-4">
         <motion.h2
           className="text-white text-2xl sm:text-3xl md:text-5xl font-semibold mb-10"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
         >
           {heading}

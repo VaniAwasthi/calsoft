@@ -10,7 +10,7 @@ import Banner from "../../assets/insights/industry-report.webp"
 const Page = () => {
   return (
     <>
-      <BannerInfo heading="" BannerBg={Banner} />
+      <BannerInfo heading="Product & Service Fact Sheets" BannerBg={Banner} />
       <TabsInfo defaultTab="datasheets" />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
