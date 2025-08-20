@@ -2,6 +2,8 @@ import React from "react";
 import HeroSection from "@/app/component/contact-us/HeroSection";
 import ContactForm from "@/app/component/contact-us/ContactForm";
 import ContactCards from "@/app/component/contact-us/ContactCards";
+import Subscribe from "../component/contact-us/Subscribe";
+import ContactTab from "@/app/component/contact-us/ContactTab";
 
 export default function page() {
   return (
@@ -9,6 +11,8 @@ export default function page() {
       <HeroSection />
       <ContactCards />
       <ContactForm />
+      <ContactTab />
+      <Subscribe />
     </>
   );
 }

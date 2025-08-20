@@ -64,6 +64,13 @@ const Page = () => {
       <UseCases />
       <WhyCalsoft />
       <FirstStep
+        headerContent={{
+          title1: "Migrate with Method,",
+          title2: "Not Momentum",
+          description:
+            "We take you from readiness to run-state through a risk-mitigated, ROI-led framework. Here's how:",
+        }}
+        
         guessworkData={[
           {
             id: 1,
@@ -106,12 +113,7 @@ const Page = () => {
             title: "Full Rollout + Optimization",
             description:
               "Implement phased migration with performance tuning, observability, and cost governance.",
-            items: [
-              "Architecture maturity",
-              "Workload distribution",
-              "Tool & platform redundancy",
-              "Performance & cost leaks",
-            ],
+            items: null,
             output:
               "Live Migration Dashboard + ROI Dashboard + Post-Migration Playbook",
             side: "left",
