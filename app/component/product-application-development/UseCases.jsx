@@ -9,6 +9,8 @@ import img from "../../assets/infra/agility.webp";
 import predict from "../../assets/infra/predictibility.webp";
 
 export default function Component({
+  title = "Where It Works Best.",
+  description = "Our Infrastructure Roadmap services have unlocked outcomes for:",
   useCaseData = [
     {
       title: "New Product Launch",
@@ -75,12 +77,9 @@ export default function Component({
                   viewport={{ once: false, amount: 0.3 }}
                   className="space-y-1"
                 >
-                  <h3 className="text-3xl font-bold text-[#000000]">
-                    Where It Works Best.
-                  </h3>
+                  <h3 className="text-3xl font-bold text-[#000000]">{title}</h3>
                   <p className="text-lg text-[#000000] leading-relaxed">
-                    Our Infrastructure Roadmap services have unlocked outcomes
-                    for:
+                    {description}
                   </p>
                 </motion.div>
               </div>
