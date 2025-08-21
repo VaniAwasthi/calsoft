@@ -15,7 +15,7 @@ export const BlogsBanner = ({ cards ,onCardClick}) => {
           viewport={{ once: false, amount: 0.3 }}
           className="Inter text-3xl md:text-5xl font-light inline-block py-5 mb-8"
         >
-          Resource Library
+          Latest Blogs
         </motion.h2>
 
         {/* Cards */}

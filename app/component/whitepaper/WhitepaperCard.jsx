@@ -131,21 +131,7 @@ localStorage.setItem("selectedWhitepaperId", item.id);
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
         {/* Content */}
-        <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-[34px] font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent"
-        >
-          {heading}
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-[12px] md:text-[13px] font-normal text-[#959595] my-4 py-4"
-          dangerouslySetInnerHTML={{ __html: description }}
-        ></motion.p>
+       
         {/* Grid Display with animation */}
         <div className="grid grid-cols-1 sm:grid-cols-2  gap-8 mt-[2rem]">
           <AnimatePresence>

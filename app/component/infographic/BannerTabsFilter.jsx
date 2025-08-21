@@ -35,7 +35,7 @@ const tabs = [
   },
   {
     id: "infographics",
-    name: "Infographics",
+    name: "Use Cases",
     icon: InfoIcon,
     component: InfographicCard,
   },

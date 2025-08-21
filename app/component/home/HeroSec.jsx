@@ -16,15 +16,22 @@ const backgroundVideo = "/BannerGif.mp4";
 const backgroundVideo2 = "/HomeVideo.mp4";
 
 const slides = [
-  {
+  // {
+  //   type: "video",
+  //   backgroundVideo: backgroundVideo,
+  //   title: "Tech-driven growth",
+  //   title2: "on your mind?",
+  //   description:
+  //     "Architect, engineer, modernize, secure, and scale with Calsoft - for AI-powered innovation, faster go-to-market, and higher efficiency.",
+  //   buttonText: "What We Do",
+  //   hubspotClass: "what-we-do", 
+  // },
+   {
     type: "video",
-    backgroundVideo: backgroundVideo,
-    title: "Tech-driven growth",
-    title2: "on your mind?",
-    description:
-      "Architect, engineer, modernize, secure, and scale with Calsoft - for AI-powered innovation, faster go-to-market, and higher efficiency.",
-    buttonText: "What We Do",
-    hubspotClass: "what-we-do", // <-- add your HubSpot class here
+    backgroundVideo: backgroundVideo2,
+    title: "",
+    title2: "",
+    description: "",
   },
   {
     type: "banner",
@@ -46,13 +53,7 @@ const slides = [
     buttonText: "Read More",
     link: "/data-ai/ai-powered-accelerators",
   },
-  {
-    type: "video",
-    backgroundVideo: backgroundVideo2,
-    title: "",
-    title2: "",
-    description: "",
-  },
+ ,
 ];
 
 const HeroSec = () => {
@@ -70,17 +71,17 @@ const HeroSec = () => {
       pagination={{ clickable: true }}
       loop={true}
       className="w-full"
-      autoplay={{ delay: 3000 }}
+      autoplay={{ delay: 20000 }}
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index} className="relative w-full">
           {slide.type === "video" ? (
-            <div className="relative w-full h-[600px]">
+            <div className="relative w-full h-[44.5rem]">
               <video
                 autoPlay
                 muted
                 loop
-                className="absolute top-0 left-0 w-full h-[600px] object-cover -z-10"
+                className="absolute top-0 left-0 w-full h-[44.5rem] object-cover -z-10"
               >
                 <source src={slide.backgroundVideo} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -155,6 +156,7 @@ const HeroSec = () => {
               titleTwoClass="text-[28px] md:text-5xl md:mt-4"
               descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[200px] md:w-full"
               BgClassname="object-cover w-full h-full object-center"
+              height="h-[44.5rem]"
               onButtonClick={() => handleButtonClick(slide)} // pass click handler
             />
           )}

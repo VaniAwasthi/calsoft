@@ -106,7 +106,7 @@ export const FrontEndSec = () => {
         title="Front-end development"
         description="Deliver fast, responsive, and accessible digital experiences across all devices."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/cx-engineering/smart-interface-design"
         whatWeDo={[
           "Build device-agnostic front-end apps",
           "Tune performance and accessibility",
@@ -162,7 +162,7 @@ export const IntelligentUISec = () => {
         title="Intelligent UI: Make interfaces adaptive"
         description="Design intelligent user interfaces that personalize workflows and automate decisions."
         buttonText="Learn More"
-        link="/digital-product-engineering/cx-engineering/smart-interface-design"
+        link="#"
         whatWeDo={[
           "Use AI to adapt UIs by behavior",
           "Add rules for predictive flow shifts",

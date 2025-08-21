@@ -483,10 +483,11 @@ export const Imagethree = ({
                     className="mt-6 md:mt-2 flex justify-center items-center"
                   >
                     <ButtonLayout
-                      text={buttonText}
+                      text={item.buttonText}
                       image={ButtonImage}
                       hoverImage={ButtonImage}
                       className="!w-[200px]"
+                      link={item.buttonLink}
                     />
                   </div>
                 )}
