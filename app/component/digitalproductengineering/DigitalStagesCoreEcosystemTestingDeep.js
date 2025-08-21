@@ -107,6 +107,7 @@ export const Core = () => {
       title: "Product & application development",
       description:
         "Agile, full-cycle engineering with DevOps, quality, and architecture alignment.",
+        link:"/digital-product-engineering/product-application-development"
     },
     {
       image: image2,
@@ -114,6 +115,7 @@ export const Core = () => {
       title: "CX engineering",
       description:
         "Design modern, responsive, and user-centric interfaces across web and mobile",
+        link:"/digital-product-engineering/cx-engineering"
     },
     {
       image: image3,
@@ -121,11 +123,12 @@ export const Core = () => {
       title: "Cloud services",
       description:
         "Cloud-native engineering, deployment pipelines, and multi-cloud readiness.",
+        link:"/digital-product-engineering/cloud"
     },
   ];
   return (
     <>
-      <Imagethree heading="Core product engineering" data={data} />
+      <Imagethree heading="Core product engineering" data={data} islearnMoreButton={true} />
     </>
   );
 };
@@ -137,6 +140,7 @@ export const Ecosystem = () => {
       title: "Modernization & ecosystem",
       description:
         "Re-architect legacy apps and extend into digital ecosystems with partner-ready interfaces.",
+        link:"/digital-product-engineering/modernization-ecosystem"
     },
     {
       image: image5,
@@ -144,6 +148,7 @@ export const Ecosystem = () => {
       title: "Storage & networking",
       description:
         "Agile, scalable infrastructure design with SDS, SDN, HCI, and edge integration.",
+        link:"/digital-product-engineering/storage-networking"
     },
     {
       image: image6,
@@ -151,6 +156,7 @@ export const Ecosystem = () => {
       title: "Virtualization",
       description:
         "Manage VMs, containers, and orchestration across hybrid and multi-cloud setups.",
+        link:"/digital-product-engineering/virtualization"
     },
   ];
   return (
@@ -158,6 +164,7 @@ export const Ecosystem = () => {
       <Imagethree
         heading="Ecosystem and infrastructure alignment"
         data={data}
+        slearnMoreButton={true}
       />
     </>
   );
@@ -170,6 +177,7 @@ export const Testing = () => {
       title: "Testing as a Service (TaaS)",
       description:
         "Automated functional and non-functional testing integrated into CI/CD pipelines.",
+        link:"/digital-product-engineering/testing-as-a-service"
     },
     {
       image: image8,
@@ -177,6 +185,7 @@ export const Testing = () => {
       title: "Security",
       description:
         "DevSecOps, Zero Trust, IAM, and business continuity for secure engineering at scale.",
+        link:"/digital-product-engineering/security"
     },
     {
       image: image9,
@@ -184,11 +193,12 @@ export const Testing = () => {
       title: "Sustenance & support",
       description:
         "Release planning, uptime monitoring, documentation, and tiered support frameworks.",
+        link:"/digital-product-engineering/sustenance-support"
     },
   ];
   return (
     <>
-      <Imagethree heading="Testing, support, and sustenance" data={data} />
+      <Imagethree heading="Testing, support, and sustenance" data={data} slearnMoreButton={true} />
     </>
   );
 };
