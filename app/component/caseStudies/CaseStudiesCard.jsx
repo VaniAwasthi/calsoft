@@ -188,7 +188,7 @@ const handleClick = (item) => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-               <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
+               {/* <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
                   <Image
                     src={logo2}
                     className="w-full"
@@ -196,7 +196,7 @@ const handleClick = (item) => {
                     width={100}
                     height={100}
                   />
-                </div>
+                </div> */}
               
             </motion.div>
 

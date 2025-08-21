@@ -164,7 +164,7 @@ export const Ecosystem = () => {
       <Imagethree
         heading="Ecosystem and infrastructure alignment"
         data={data}
-        slearnMoreButton={true}
+        islearnMoreButton={true}
       />
     </>
   );
@@ -198,7 +198,7 @@ export const Testing = () => {
   ];
   return (
     <>
-      <Imagethree heading="Testing, support, and sustenance" data={data} slearnMoreButton={true} />
+      <Imagethree heading="Testing, support, and sustenance" data={data} islearnMoreButton={true} />
     </>
   );
 };
