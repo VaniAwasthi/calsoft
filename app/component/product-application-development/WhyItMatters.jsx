@@ -10,7 +10,7 @@ export default function WhyItMatters({
   title = "Don’t Build Blind. Architect to Win.",
   desc = "75% of digital product failures stem from poor early decisions—wrong tech stack, unclear user flows, or over-engineered features. Calsoft helps you cut through ambiguity and shape a scalable, cloud-first, cost-efficient architecture that aligns with your business goals from Day 1.",
   desc2,
-  buttonText = "Download",
+  buttonText = "Download Case Study",
   ButtonComponent = <></>,
   MainComponenent = DevopsSREMatters,
   contentClass = "",
