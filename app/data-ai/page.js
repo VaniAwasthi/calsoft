@@ -13,18 +13,22 @@ const Page = () => {
         {
           title: "Data pipeline engineering",
           desc: "Design scalable, cloud-ready ingestion and integration workflows.",
+          link:"/data-ai/enterprise-data-management"
         },
         {
           title: "Data governance & quality",
           desc: "Profile, cleanse, and secure your data for trust and compliance.",
+          link:"/data-ai/data-ops-governance"
         },
         {
-          title: "Data observability",
+          title: "Data Modernization",
           desc: "Monitor pipeline health, trace lineage, and detect anomalies in real time.",
+          link:"/data-ai/data-modernization"
         },
         {
-          title: "Analytics & reporting",
+          title: "Analytics & Visualization",
           desc: "Enable live dashboards, BI integration, and role-based reporting at scale.",
+          link:"/data-ai/data-analytics-visualization"
         },
       ],
     },
@@ -32,20 +36,24 @@ const Page = () => {
       label: "AI engineering",
       items: [
         {
-          title: "AI-driven prediction",
+          title: "AI-driven Predictive Orchestration",
           desc: "Forecast outcomes and automate insights using models.",
+          link:"/data-ai/predictive-orchestration"
         },
         {
           title: "Custom LLMs",
           desc: "Fine-tune LLMs on enterprise data for grounded answers.",
+          link:"/data-ai/custom-llm-for-gen-ai-rag"
         },
         {
           title: "Agentic AI systems",
           desc: "Deploy autonomous agents with oversight.",
+          link:"/data-ai/agentic-ai-development"
         },
         {
-          title: "AI consulting",
+          title: "AI-powered accelerators",
           desc: "Strategize AI adoption and roadmap.",
+          link:"/data-ai/ai-powered-accelerators"
         },
       ],
     },
@@ -75,17 +83,20 @@ const Page = () => {
   ];
   const data = [
     {
-      image: image1,
-      title: "Product & application development",
+      image: image2,
+      buttontext:"Visit CalTIA",
+buttonLink:"/data-ai/ai-powered-accelerators/test-impact-analyzer-caltia",
+      title: "CalTIA",
       description:
-        "Agile, full-cycle engineering with DevOps, quality, and architecture alignment.",
+        "AI-powered test intelligence to optimize QA and release cycles.",
     },
     {
-      image: image2,
-
-      title: "CX engineering",
+      image: image1,
+buttontext:"Visit CalPSR",
+buttonLink:"/data-ai/ai-powered-accelerators/calsoft-performance-scalability-and-resilience-calpsr",
+      title: "CalPSR",
       description:
-        "Design modern, responsive, and user-centric interfaces across web and mobile",
+        "AI-driven testing and simulation to validate performance, resilience, and scalability.",
     },
   ];
   return (
