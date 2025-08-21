@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -7,10 +8,14 @@ import {
   FaFacebookF,
   FaInstagram,
 } from "react-icons/fa6";
+import { GoArrowRight } from "react-icons/go";
+
 import Logo from "../../assets/logo.png";
 import user from "../../assets/webinar.png";
-import { GoArrowRight } from "react-icons/go";
-import IsoImg from "../../assets/isoImg.jpg"
+import IsoImg from "../../assets/isoImg.jpg";
+
+import { showHubSpotForm } from "./showHubSpotForm"; // <-- Utility import
+
 const Footer = () => {
   return (
     <>
@@ -21,6 +26,7 @@ const Footer = () => {
           boxShadow:
             "0px 2px 4px rgba(0, 0, 0, 0.53), 0px 7px 7px rgba(0, 0, 0, 0.46), 0px 16px 10px rgba(0, 0, 0, 0.27), 0px 29px 12px rgba(0, 0, 0, 0.08), 0px 46px 13px rgba(0, 0, 0, 0.01)",
         }}
+        onClick={() => showHubSpotForm("webinar")}
       >
         <Image
           src={user}
@@ -48,7 +54,10 @@ const Footer = () => {
                   placeholder="Add your email*"
                   className="w-full text-gray-300 px-4 py-3 pr-10 bg-transparent rounded-full focus:outline-none"
                 />
-                <button className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0">
+                <button
+                  onClick={() => showHubSpotForm("subscribe")}
+                  className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0"
+                >
                   <GoArrowRight /> Subscribe
                 </button>
               </div>
@@ -67,9 +76,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/data-ai">
-                    Data and Artificial Intelligence
-                  </Link>
+                  <Link href="/data-ai">Data and Artificial Intelligence</Link>
                 </li>
                 <li>
                   <Link href="/digital-product-engineering/sustenance-support">
@@ -138,40 +145,42 @@ const Footer = () => {
             <div>
               <h3 className="text-[20px] font-semibold mb-4">Social Presence</h3>
               <div className="flex flex-wrap gap-3">
-                <a 
-                  href="https://www.linkedin.com/company/calsoft/" target="_blank"
+                <a
+                  href="https://www.linkedin.com/company/calsoft/"
+                  target="_blank"
                   className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaLinkedinIn size={20} />
                 </a>
                 <a
-                  href="https://x.com/CalsoftInc" target="_blank"
+                  href="https://x.com/CalsoftInc"
+                  target="_blank"
                   className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaXTwitter size={20} />
                 </a>
-                <a target="_blank"
+                <a
+                  target="_blank"
                   href="https://www.youtube.com/user/TheCalsoftInc?themeRefresh=1"
                   className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaYoutube size={20} />
                 </a>
-                <a target="_blank"
+                <a
+                  target="_blank"
                   href="https://www.facebook.com/Calsoft"
                   className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaFacebookF size={20} />
                 </a>
-                <a target="_blank"
+                <a
+                  target="_blank"
                   href="https://www.instagram.com/calsoftinc/"
                   className="rounded-full w-8 h-8 border flex items-center justify-center p-2 border-[#ED1C24] hover:bg-[#ED1C24]"
                 >
                   <FaInstagram size={20} />
                 </a>
-                <div 
-                  
-                  className="rounded-full w-30 h-30  flex items-center justify-center p-2"
-                >
+                <div className="rounded-full w-30 h-30 flex items-center justify-center p-2">
                   <Image src={IsoImg} alt="isoImg" width={60} height={40} />
                 </div>
               </div>
