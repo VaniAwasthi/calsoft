@@ -181,15 +181,15 @@ export const navItems = [
           },
           {
             title: "Experience Modernization",
-            href: "#",
+            href: "/digital-product-engineering/cx-engineering/experience-moderization",
           },
           {
             title: "Rapid Prototyping",
-            href: "#",
+            href: "/digital-product-engineering/cx-engineering/rapid-prototyping",
           },
           {
             title: "Mobile Development",
-            href: "#",
+            href: "/digital-product-engineering/cx-engineering/mobile-development",
           },
         ],
       },
@@ -454,7 +454,7 @@ export const navItems = [
            { title: "Case Study", href: "/insights/case-studies" },
           { title: "Whitepapers", href: "/insights/whitepaper" },
           { title: "Datasheets", href: "/insights/datesheets" },
-          { title: "Use Cases", href: "/insights/usecases" },//change url
+          { title: "Use Cases", href: "/insights/usecases" },
           {
             title: "Industry Reports",
             href: "/insights/industry-report",
