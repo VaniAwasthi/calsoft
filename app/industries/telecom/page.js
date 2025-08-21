@@ -117,7 +117,7 @@ Here, companies must deploy SDN, NFV, and AI-driven automation to simplify netwo
       "Accelerate service delivery through self-configuring networks",
       "Lower operational costs with predictive fault management",
     ],
-    buttonText: "Learn More",
+     buttonText: "Case Study",
     buttonLink: "#",
     image: TelecomInfo1,
     imagePosition: "right",
@@ -140,7 +140,7 @@ Companies must integrate multi-access edge computing (MEC), AI-driven insights, 
       "Reduce bandwidth costs by processing data closer to users",
       "Enhance customer experience with ultra-low latency applications",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: TelecomInfo2,
     imagePosition: "left",
@@ -162,7 +162,7 @@ We help you get ahead of such threats with real-time risk mitigation, powered by
       "Prevent security breaches through AI-powered anomaly detection",
       "Improve regulatory compliance with telecom security frameworks",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: TelecomInfo3,
     imagePosition: "right",
@@ -187,7 +187,7 @@ We help you get ahead of such threats with real-time risk mitigation, powered by
         headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-14 line-clamp-4"
         contentClass=" md:h-60 lg:h-64 "
       />
-      <TopClients />
+      {/* <TopClients /> */}
       <InfoImageSection
         {...SectionOne}
         rounded="rounded-l-[30px]"

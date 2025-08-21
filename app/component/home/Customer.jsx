@@ -62,8 +62,8 @@ const Customer = () => {
     {
       id: 5,
       image: Fortunecustomers,
-      value: "21+ 500 ",
-      label: "Fortune customers",
+      value: "21+ ",
+      label: "Fortune  500 customers",
     },
   ];
   // const logos = [
@@ -144,7 +144,7 @@ const Customer = () => {
                   viewport={{ once: false, amount: 0.3 }}
                 >
                   <p className="mt-4 w-full md:mt-[3rem] text-[13px] md:text-base mb-8 text-[#7E7E7E] md:w-[300px]">
-                    Powering 21+500 Fortune customers, fast-growing start-ups,
+                    Powering 21+ Fortune 500 customers, fast-growing start-ups,
                     and digital innovators in their transformation journey.
                   </p>
                 </motion.div>

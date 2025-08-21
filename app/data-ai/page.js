@@ -2,8 +2,8 @@ import React from "react";
 import { DataAiBanner, MultiFeatureGrid } from "../component/data-ai/HeroSec";
 import { Imagethree, StepsSection } from "../component/utilities/Shape";
 import { ContactSecDataAi } from "../component/utilities/ChallengeSolutionDataAi";
-import image1 from "../assets/Data-Ai/mainPage/acceImg1.webp";
-import image2 from "../assets/Data-Ai/mainPage/acceImg2.webp";
+import image1 from "../assets/Data-Ai/CalTIA.webp";
+import image2 from "../assets/Data-Ai/CalPSR.webp";
 
 const Page = () => {
   const sections = [
@@ -83,16 +83,16 @@ const Page = () => {
   ];
   const data = [
     {
-      image: image2,
-      buttontext:"Visit CalTIA",
+      image: image1,
+      buttonText:"Visit CalTIA",
 buttonLink:"/data-ai/ai-powered-accelerators/test-impact-analyzer-caltia",
       title: "CalTIA",
       description:
         "AI-powered test intelligence to optimize QA and release cycles.",
     },
     {
-      image: image1,
-buttontext:"Visit CalPSR",
+      image: image2,
+buttonText:"Visit CalPSR",
 buttonLink:"/data-ai/ai-powered-accelerators/calsoft-performance-scalability-and-resilience-calpsr",
       title: "CalPSR",
       description:
@@ -108,14 +108,14 @@ buttonLink:"/data-ai/ai-powered-accelerators/calsoft-performance-scalability-and
       />
       <MultiFeatureGrid
         sections={sections}
-        heading="Core product engineering"
+        heading="Our Data and AI service stack"
       />
       <Imagethree
         heading="Accelerators"
         data={data}
         gridStyle="md:grid-cols-2"
         isButton={true}
-        buttonText="Visit CalTIA"
+        
       />
       <ContactSecDataAi
         lightContent="Our services speak "

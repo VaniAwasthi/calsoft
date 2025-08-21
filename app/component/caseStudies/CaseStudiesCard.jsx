@@ -11,8 +11,8 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Info1 from "../../assets/Infographic/Info1.webp";
 import Info2 from "../../assets/Infographic/Info2.webp";
-import { FilterSec } from "../utilities/FilterSec";
-import Casestudybg from "../../assets/home/casestudybg.webp";
+import logo2 from "../../assets/home/logo2.png";
+import Casestudybg from "../../assets/home/Insights.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -133,7 +133,7 @@ const handleClick = (item) => {
     title:
       "Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
     description: [
-      "A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud...",
+      "Discover how a cloud infrastructure leader enabled self-service, large-scale VM workload migrations with Calsoft’s CLI-powered solution.",
     ],
     stats: [
       { count: "40%", text: "faster validation cycles" },
@@ -179,7 +179,7 @@ const handleClick = (item) => {
             className="mt-8 flex flex-col md:flex-row gap-8 md:gap-12 items-stretch"
           >
             <motion.div
-              className=" text-white p-4 md:p-8 rounded-[20px]  md:w-2/3 flex flex-col justify-center bg-cover bg-center"
+              className=" text-white p-4 md:p-8 rounded-[20px] h-[350px]  md:w-2/3 flex flex-col justify-center bg-cover bg-center"
               initial={{ opacity: 0, x: -50 }}
               style={{
                 backgroundImage: `url(${Casestudybg.src})`,
@@ -188,18 +188,28 @@ const handleClick = (item) => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2"></div>
-              <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem]">
-                {caseStudyData.title}
-              </h2>
+               <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
+                  <Image
+                    src={logo2}
+                    className="w-full"
+                    alt="logo"
+                    width={100}
+                    height={100}
+                  />
+                </div>
+              
             </motion.div>
 
             <div className=" w-full flex flex-col justify-between">
               <div>
                 {caseStudyData.description.map((desc, index) => (
+                  <>
+<h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem] py-2">
+                {caseStudyData.title}
+              </h2>
                   <motion.p
                     key={index}
-                    className="text-[#959595] text-sm md:text-[15px] font-light p-2"
+                    className="text-[#959595] text-sm md:text-[18px] font-light p-2"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.2 }}
@@ -207,6 +217,7 @@ const handleClick = (item) => {
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: false, amount: 0.3 }}
                   />
+                  </>
                 ))}
               </div>
             </div>

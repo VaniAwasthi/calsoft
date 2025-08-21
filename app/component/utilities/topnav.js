@@ -7,8 +7,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/logo.png";
 import barmenu from "../../assets/menu-bar.svg";
-import MegaMenuImg1 from "../../assets/home/megamenu1.webp";
-import MegaMenuImg2 from "../../assets/home/megamenu2.webp";
+import MegaMenuImg1 from "../../assets/feature1.webp";
+import MegaMenuImg2 from "../../assets/feature2.webp";
 import { usePathname } from "next/navigation";
 import { navItems } from "./data/NavItems";
 
@@ -35,7 +35,7 @@ export default function Navbar() {
     {
       image: MegaMenuImg2,
       detail:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Enhancing legal accuracy, reducing manual effort, and ensuring compliance with Calsoft’s GenAI solution",
     },
   ];
   // Handle submenu default selection
@@ -251,7 +251,7 @@ export default function Navbar() {
                               alt="Insight"
                               width={250}
                               height={50}
-                              className="w-[200px] h-44"
+                              className="w-[200px] h-44 rounded-3xl"
                             />
                             <p className="text-sm text-[#454545] leading-tight p-4">
                               {f.detail}

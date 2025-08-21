@@ -115,7 +115,7 @@ const Page = () => {
       "Increase customer retention through hyper-personalized experiences",
       "Enhance decision-making with deep customer analytics",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: Retailinfo1,
     imagePosition: "right",
@@ -137,7 +137,7 @@ const Page = () => {
       "Optimize supply chain flow to minimize delivery delays",
       "Enhance operational efficiency with automated inventory control",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: Retailinfo2,
     imagePosition: "left",
@@ -159,7 +159,7 @@ const Page = () => {
       "Improve transaction security for both online and in-store purchases",
       "Enhance customer confidence with seamless and safe digital payments",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: Retailinfo3,
     imagePosition: "right",
@@ -184,7 +184,7 @@ const Page = () => {
         headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-10 line-clamp-4"
         contentClass=" md:h-64 lg:h-64 "
       />
-      <TopClients />
+      {/* <TopClients /> */}
       <InfoImageSection
         {...SectionOne}
         rounded="rounded-l-[30px]"

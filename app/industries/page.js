@@ -159,7 +159,7 @@ const Page = () => {
         activeTab={activeTab}
       />
       <AnimatedSection />
-      <TopClients />
+      {/* <TopClients /> */}
       <CaseStudies />
       <InfoSection
         {...SectionOne}

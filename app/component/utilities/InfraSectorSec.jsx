@@ -256,12 +256,7 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
                 {lightContent}
               </h2>
 
-              <form className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your work email"
-                  className="w-[150px] sm:w-[200px] h-8 md:h-10 px-6 text-sm text-black bg-white placeholder-gray-500 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
-                />{" "}
+              
                 <motion.div
                   initial={{ x: -50, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -271,13 +266,13 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
                 >
                   <ButtonLayout
                     link={link}
-                    text="Learn More"
+                    text="Contact Us" //add popup
                     image={ButtonImage}
                     hoverImage={ButtonImage}
                     className="!w-[170px] sm:w-[200px] h-8 md:h-10 px-6"
                   />
                 </motion.div>
-              </form>
+              
             </div>
           </div>
         </div>
