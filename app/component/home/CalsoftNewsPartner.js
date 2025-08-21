@@ -203,7 +203,7 @@ export const CalsoftNews = () => {
                   </p>
                 </motion.div>
               ) : ( */}
-              <div>
+              <div className="md:block hidden">
                 <h3 className="text-2xl md:text-3xl mb-8 w-[80%] md:w-full flex gap-6 items-center md:text-[36px] font-semibold text-black">
                   Calsoft News
                   <Link href="#">
@@ -222,7 +222,7 @@ export const CalsoftNews = () => {
               {/* )} */}
             </div>
 
-            <div className="md:col-span-8">
+            <div className="md:block hidden md:col-span-8">
               {!isMobile ? (
         <motion.div
           initial={{ opacity: 0, x: -100 }}
@@ -382,6 +382,17 @@ export const CalsoftPartner = () => {
       logos: [logo20, logo21],
     },
   ];
+const Mobilelogos = [
+  { src: logo1, alt: "Google Cloud Partner" },
+  { src: logo2, alt: "Azure" },
+  { src: logo3, alt: "AWS" },
+  { src: logo5, alt: "Octopai" },
+  { src: logo4, alt: "Snowflake" },
+  { src: logo20, alt: "NASSCOM" },
+  { src: logo8, alt: "Memo" },
+  { src: logo6, alt: "LlamaIndex" },
+  { src: logo7, alt: "Portkey" },
+];
 
   return (
     <section
@@ -418,7 +429,7 @@ export const CalsoftPartner = () => {
           </motion.div>
 
           {/* Grid Container */}
-          <div className="grid  grid-cols-12 md:grid-cols-12 gap-6 md:gap-8 mb-6 mt-10">
+          <div className="hidden md:grid  grid-cols-12 md:grid-cols-12 gap-6 md:gap-8 mb-6 mt-10">
             {/* Cloud Partnerships */}
             <div className="col-span-4 md:col-span-3 md:order-none order-1 flex flex-col h-full">
               <motion.div
@@ -588,6 +599,28 @@ export const CalsoftPartner = () => {
               </motion.div>
             </div>
           </div>
+          <div className="w-full py-10 flex justify-center">
+      <div className="grid grid-cols-3  md:hidden gap-6 max-w-5xl w-full">
+        {Mobilelogos.map((logo, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="flex justify-center items-center bg-gray-50 rounded-xl shadow-sm p-6 hover:shadow-md transition"
+          >
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={100}
+              height={100}
+              className="max-h-80 object-contain"
+            />
+          </motion.div>
+        ))}
+      </div>
+    </div>
         </motion.div>
       </div>
     </section>
