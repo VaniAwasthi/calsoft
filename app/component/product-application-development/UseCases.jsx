@@ -89,7 +89,7 @@ export default function Component({
                 {useCaseData.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    className="relative w-full h-52 p-0.5 bg-[linear-gradient(180deg,#2E3092_0%,#ED1C24_100%)] [clip-path:polygon(100%_0,100%_66%,82%_100%,0_100%,0_0)]"
+                    className="relative w-full h-full p-0.5 bg-[linear-gradient(180deg,#2E3092_0%,#ED1C24_100%)] [clip-path:polygon(100%_0,100%_66%,82%_100%,0_100%,0_0)]"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: idx * 0.1 }}
