@@ -108,7 +108,7 @@ export const Endpoint = () => {
         title="Endpoint and perimeter security enablement"
         description="Deploy multi-layered defenses to secure devices, users, and network perimeters."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/security/endpoint-and-perimeter-security-enablement"
         whatWeDo={[
           "Deploy EPP, EDR, firewalls, and VPNs",
           "Add intrusion and threat detection tools",
@@ -136,7 +136,7 @@ export const IdentitySec = () => {
         title="Identity and access management (IAM)"
         description="Control who accesses what, when, and how with structured IAM frameworks."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/security/identity-and-access-management"
         whatWeDo={[
           "Centralize identity and access rules",
           "Enable MFA and adaptive controls",
@@ -165,7 +165,7 @@ export const DevSec = () => {
         description="Integrate security controls early and
                 continuously across the development lifecycle."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/security/dev-sec-ops"
         whatWeDo={[
           "Scan code and pipelines for threats",
           "Train teams on secure coding habits",
@@ -192,7 +192,7 @@ export const ZeroSec = () => {
         title="Zero Trust architecture enablement"
         description="Continuously verify access and minimize trust assumptions across your digital ecosystem."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/security/zero-trust-architecture-enablement"
         whatWeDo={[
           "Apply least-privilege and micro-zoning",
           "Verify devices, users, and behaviors",
@@ -219,7 +219,7 @@ export const ServiceSec = () => {
         title="Service continuity and backup automation"
         description="Protect data, systems, and services with resilient backup and recovery strategies."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/security/service-continuity-and-backup-automation"
         whatWeDo={[
           "Schedule secure, routine backups",
           "Automate recovery after failures",
