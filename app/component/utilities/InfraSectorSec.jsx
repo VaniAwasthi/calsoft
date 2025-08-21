@@ -186,17 +186,13 @@ export const BannerSection = ({
   backgroundImage,
   title,
   buttonText = "Know More",
-  buttonLink = "#",
   height = "h-[200px] md:h-[150px]",
   link,
+  onButtonClick, // <-- add this
 }) => {
   return (
     <div className="container mx-auto py-15 px-4 md:px-16">
-      {/* Wrapper with Relative Position */}
-      <div
-        className={`relative w-full ${height} rounded-2xl overflow-hidden my-10`}
-      >
-        {/* Background Image */}
+      <div className={`relative w-full ${height} rounded-2xl overflow-hidden my-10`}>
         <Image
           src={backgroundImage}
           alt="Banner Background"
@@ -205,14 +201,11 @@ export const BannerSection = ({
           priority
         />
 
-        {/* Overlay */}
-        <div className="absolute inset-0  flex flex-col md:flex-row md:items-center md:justify-between px-6 md:px-12 text-white">
-          {/* Title */}
+        <div className="absolute inset-0 flex flex-col md:flex-row md:items-center md:justify-between px-6 md:px-12 text-white">
           <h2 className="text-base md:text-3xl font-medium max-w-2xl text-left md:text-left py-4 md:py-0">
             {title}
           </h2>
 
-          {/* Button */}
           {buttonText && (
             <motion.div
               initial={{ x: -50, opacity: 0 }}
@@ -223,6 +216,7 @@ export const BannerSection = ({
             >
               <ButtonLayout
                 link={link}
+                onClick={onButtonClick} // <-- pass it here
                 text={buttonText}
                 image={ButtonImage}
                 hoverImage={ButtonImage}
