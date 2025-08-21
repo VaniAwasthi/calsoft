@@ -192,6 +192,10 @@ export const navItems = [
             href: "/digital-product-engineering/cx-engineering/experience-moderization",
           },
           {
+            title: "Intelligent UI",
+            href: "#",
+          },
+          {
             title: "Rapid Prototyping",
             href: "/digital-product-engineering/cx-engineering/rapid-prototyping",
           },
@@ -482,6 +486,7 @@ export const navItems = [
       { title: "Career", href: "/career" },
       { title: "Leadership", href: "/leadership" },
       { title: "CSR", href: "/csr" },
+      { title: "Contact Us", href: "/contact-us" },
     ],
   },
 ];

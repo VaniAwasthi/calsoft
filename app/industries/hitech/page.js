@@ -124,7 +124,7 @@ const Page = () => {
       "Improve system performance with optimized workflows",
       "Enhance security and reliability with DevOps best practices",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     link: "#",
     image: SoftwareImg,
     imagePosition: "right",
@@ -147,7 +147,7 @@ const Page = () => {
       "Reduce operational overhead with automated cloud workflows",
       "Ensure seamless scaling with optimized infrastructure",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     link: "#",
     image: CloudImage,
     imagePosition: "left",
@@ -170,7 +170,7 @@ const Page = () => {
       "Enhance user experience with intelligent process flows",
       "Ensure long-term product adaptability with modular architectures",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     link: "#",
     image: AIImage,
     imagePosition: "right",
@@ -195,7 +195,7 @@ const Page = () => {
         headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-14 line-clamp-4 "
         contentClass=" md:h-40 lg:h-64 "
       />
-      <TopClients />
+      {/* <TopClients /> */}
       <InfoImageSection
         {...softwareEngineeringSection}
         rounded="rounded-l-[30px]"

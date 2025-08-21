@@ -5,7 +5,7 @@ import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import Info1 from "../../assets/DigitalEngineering/storage-net/Info1.svg";
+import Info1 from "@/app/assets/DigitalEngineering/storage-net/Info1.svg?url";
 import Info2 from "../../assets/DigitalEngineering/storage-net/Info2.svg";
 import Info3 from "../../assets/DigitalEngineering/storage-net/Info3.svg";
 import Info4 from "../../assets/DigitalEngineering/storage-net/Info4.svg";

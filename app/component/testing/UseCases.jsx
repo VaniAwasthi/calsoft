@@ -7,8 +7,7 @@ import Image from "next/image";
 import img from "../../assets/infra/UseCases.webp";
 import { motion } from "framer-motion";
 
-export default function UseCases() {
-  const data = [
+export default function UseCases({data=[
     {
       title: "ISVs",
       subTitle:
@@ -30,7 +29,8 @@ export default function UseCases() {
       title: "Media houses",
       subTitle: "migrating storage-heavy assets to cloud object storage",
     },
-  ];
+  ]}) {
+  
   return (
     <div className="container">
       <div className="h-8" />

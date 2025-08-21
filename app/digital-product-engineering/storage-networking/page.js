@@ -16,7 +16,7 @@ import {
 } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
-import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
+
 
 function page() {
   return (
@@ -31,7 +31,6 @@ function page() {
         title="Optimize storage ops with 99.9% availability assurance."
         buttonText="Book a Meeting"
         buttonLink="#"
-         onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <Gateway />
       <AiSec />

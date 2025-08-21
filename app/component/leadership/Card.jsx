@@ -23,9 +23,9 @@ export default function Card({ data }) {
       <p className="text-sm h-36 sm:h-24 p-2">
         {truncateWords(data.description, 18)}
       </p>
-      <button className="flex gap-1 justify-center items-center text-[#2E3092] font-medium p-2">
+      {/* <button className="flex gap-1 justify-center items-center text-[#2E3092] font-medium p-2">
         Read More <FaCaretDown />
-      </button>
+      </button> */}
     </div>
   );
 }

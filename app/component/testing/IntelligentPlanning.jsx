@@ -5,30 +5,34 @@ import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
 
-export default function IntelligentPlanning() {
-  const data = [
+export default function IntelligentPlanning({
+  data=[
     {
-      title: "Workload Rationalization",
+      title: "Automated regression suites for UI, API, and business logicad Rationalization",
       subTitle:
-        "using 6R framework (Rehost, Refactor, Replatform, Repurchase, Retire, Retain)",
+        null,
     },
     {
-      title: "Dependency Mapping",
-      subTitle: "via automated tools",
+      title: "Test data generation, version control, and environment isolation",
+      subTitle: null,
     },
     {
-      title: "Business Impact Heatmaps",
-      subTitle: "to prioritize based on risk and value",
+      title: "Change-aware test triggers via Git-based automation",
+      subTitle: null,
     },
     {
-      title: "TCO Estimation",
-      subTitle: "across cloud providers",
+      title: "Test suite optimization with tagging, parallelization, and prioritization",
+      subTitle: null,
     },
     {
-      title: "Security & Compliance Mapping",
-      subTitle: "to ensure regulated workload migration",
+      title: "Continuous regression validation as part of CI/CD workflows",
+      subTitle: null,
     },
-  ];
+  ],
+  title="Move What Matters, Not Just What Exists",
+  description=" We don’t just move workloads — we evaluate, prioritize, and engineer them for performance and ROI. Calsoft’s approach includes:",
+}) {
+  
   return (
     <div className="container">
       <div className="h-8" />
@@ -40,12 +44,10 @@ export default function IntelligentPlanning() {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-5">
           <div className="max-w-2xl">
             <h2 className="text-[#000000] text-3xl font-bold mb-4">
-              Move What Matters, Not Just What Exists
+              {title}
             </h2>
             <p className="text-[#000000] text-lg leading-relaxed">
-              We don’t just move workloads — we evaluate, prioritize, and
-              engineer them for performance and ROI. Calsoft’s approach
-              includes:
+              {description}
             </p>
           </div>
 

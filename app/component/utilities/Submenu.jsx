@@ -53,10 +53,7 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
             </div>
 
             <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              viewport={{ once: false, amount: 0.3 }}
+             
               className="flex justify-between w-full text-sm md:text-base xl:ml-[2rem]"
             >
               {navItems.map((item, index) => (
