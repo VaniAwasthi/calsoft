@@ -1,5 +1,6 @@
 "use client";
 import { ContactSec } from "../../component/industries/hitech/BlogSection.jsx";
+import Banner from "../../assets/insights/caseStudy.webp"
 import {
   BannerInfo,
   TabsInfo,
@@ -9,7 +10,7 @@ import React from "react";
 const Page = () => {
   return (
     <>
-      <BannerInfo heading="We can do it to divide myself knowledge" />
+      <BannerInfo heading="Real-World Success Stories" BannerBg={Banner} />
       <TabsInfo defaultTab="case-study" />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
