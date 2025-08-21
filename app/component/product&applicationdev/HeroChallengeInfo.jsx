@@ -101,7 +101,7 @@ export const IdeationSec = () => {
         description="Translate ideas into actionable blueprints with
 clarity and precision."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/product-application-development/architecture-ideation"
         whatWeDo={[
           "Shape product ideas with stakeholders",
           "Design scalable system blueprints",
@@ -129,7 +129,7 @@ export const DevelopmentSec = () => {
         title="Development lifecycle services"
         description="Deliver scalable, secure products through agile development practices."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/product-application-development/full-cycle-development"
         whatWeDo={[
           "Use agile and CI/CD workflows",
           "Secure code with regular reviews",
@@ -157,7 +157,7 @@ export const QualityengineeringSec = () => {
         title="Quality engineering"
         description="Embed testing and validation throughout the product lifecycle for consistency."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/product-application-development/quality-engineering"
         whatWeDo={[
           "Test UX, speed, and data safety",
           "Use automation for test cycles",
@@ -184,7 +184,7 @@ export const DevOpsSec = () => {
         title="DevOps + SRE with AI-driven enhancements"
         description="Automate, optimize, and proactively manage systems through intelligent DevOps."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/product-application-development/devops-sre"
         whatWeDo={[
           "Automate build, test, deploy tasks",
           "Add AI to catch risks early",
@@ -211,7 +211,7 @@ export const DeploymentSec = () => {
         title="Deployment and Upgrades"
         description="Execute smooth deployments and controlled upgrades without disrupting operations."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/product-application-development/smart-development"
         whatWeDo={[
           "Automate updates and rollbacks",
           "Test before going live",

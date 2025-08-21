@@ -175,11 +175,10 @@ const handleClick = (item) => {
       "Faced with long test cycles and high infrastructure costs, a global networking leader turned to Calsoft to bring speed and precision to their software validation process. By implementing CalTIA, Calsoft’s AI-powered test intelligence platform, the company replaced manual test selection with intelligent automation—cutting waste, accelerating releases, and improving engineering efficiency. What once slowed down delivery is now a competitive edge.",
     ],
     buttonText: "Case Study",
-    pdfLink: "/pdfs/case1.pdf",
+    pdfLink: "/insights/case-studies",
     stats: [
-      { count: "40%", text: " faster validation cycles" },
-      { count: "30% ", text: "lower infrastructure costs" },
-      { count: "20% ", text: "increase in test accuracy" },
+      { count: "40%", text: "  faster validation cycle" },
+      { count: "36% ", text: "lower infrastructure costs" },
     ],
   };
   const caseStudyData = caseStudyDataArray;

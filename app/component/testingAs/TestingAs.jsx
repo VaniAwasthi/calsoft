@@ -106,7 +106,7 @@ export const FunctionalSec = () => {
         description="Ensure functionality, security, and usability
                 across every stage of product development."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/testing-as-a-service/functional-and-non-functional-testing"
         whatWeDo={[
           "Test all modules for expected use",
           "Check security, speed, and usability",
@@ -134,7 +134,7 @@ export const CalTIASec = () => {
         title="CalTIA | Automated regression testing"
         description="Speed up releases with intelligent, risk-prioritized automated regression testing."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/testing-as-a-service/automated-regression-testing"
         whatWeDo={[
           "Run risk-based regression with CalTIA",
           "Sync tests with build pipelines",
@@ -162,7 +162,7 @@ export const LoadSec = () => {
         title="Load and stress testing for scalability"
         description="Validate application performance and resilience under real-world and extreme load conditions."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/testing-as-a-service/scale-load-validation"
         whatWeDo={[
           "Simulate user peaks and traffic loads",
           "Push systems to find weak points",
@@ -189,7 +189,7 @@ export const TestSec = () => {
         title="Test impact analysis using ML models"
         description="Prioritize high-risk areas and streamline validation with ML-driven test impact analysis."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/testing-as-a-service/test-impact-analysis"
         whatWeDo={[
           "Use ML to flag risk areas post-change",
           "Cut unnecessary test cycles",
@@ -216,7 +216,7 @@ export const QaoSec = () => {
         title="QAOps with CI/CD pipeline integration"
         description="Integrate testing seamlessly into DevOps workflows for faster, reliable releases."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/testing-as-a-service/qaops-with-ci-cd-pipeline-integration"
         whatWeDo={[
           "Embed tests into DevOps workflows",
           "Run tests early and post-deploy",
@@ -244,7 +244,7 @@ export const ProductSec = () => {
         title="Product and ecosystem benchmarking"
         description="Test product performance, quality, and scalability against industry standards and best practices."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/testing-as-a-service/benchmarking-for-readiness"
         whatWeDo={[
           "Compare performance to market norms",
           "Test product fit in wider platforms",
