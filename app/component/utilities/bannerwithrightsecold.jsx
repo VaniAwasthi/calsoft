@@ -7,12 +7,12 @@ import { motion } from "framer-motion";
 const BannerWithRightSec = ({
   heroBg,
   title,
+
   description,
   rightImage,
   buttonText,
   buttonImage,
   hoverImage,
-  onButtonClick,  // <-- add this
   rightSec = true,
   mainDivClass = "",
   leftSecClass = "",
@@ -23,7 +23,9 @@ const BannerWithRightSec = ({
   buttonWidth = "!w-[200px]",
 }) => {
   return (
-    <div className={`relative w-full h-[300px] md:h-[450px] lg:h-[550px] ${backgroundMain}`}>
+    <div
+      className={`relative w-full h-[300px] md:h-[450px] lg:h-[550px] ${backgroundMain}`}
+    >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -35,9 +37,11 @@ const BannerWithRightSec = ({
         />
       </div>
 
-      {/* Overlay Content */}
+      {/* Overlay Content Section */}
       <div className="relative z-10 h-full flex items-center">
-        <div className={`container mx-auto px-4 md:px-20 w-full ${mainDivClass}`}>
+        <div
+          className={`container mx-auto px-4 md:px-20 w-full ${mainDivClass}`}
+        >
           <div className="flex flex-col md:flex-row items-start justify-between w-full">
             {/* Left Section */}
             <div className={`text-white w-full md:w-[55%] ${leftSecClass}`}>
@@ -72,12 +76,11 @@ const BannerWithRightSec = ({
                   image={buttonImage}
                   hoverImage={hoverImage}
                   className={buttonWidth}
-                  onClick={onButtonClick}  // <-- wire it here
                 />
               </motion.div>
             </div>
 
-            {/* Right Section */}
+            {/* Right Section - Image */}
             {rightSec && (
               <motion.div
                 initial={{ x: 50, opacity: 0 }}
@@ -101,6 +104,5 @@ const BannerWithRightSec = ({
     </div>
   );
 };
-
 
 export default BannerWithRightSec;
