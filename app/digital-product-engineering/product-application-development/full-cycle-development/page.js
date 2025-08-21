@@ -28,7 +28,12 @@ export default function page() {
         contentClass="w-[90%]"
       />
       <WhatWeOffer />
-      <UseCases CTACopy="Accelerate MVP delivery by 40% with agile builds." />
+      <UseCases
+        bookMeetingData={{
+          title: "DevOps Maturity Self-Audit Template",
+          buttontext: "Book a Meeting",
+        }}
+      />
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",

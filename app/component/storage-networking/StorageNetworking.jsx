@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import BackgroundImage from "../../assets/DigitalEngineering/storage-net/Banner.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
@@ -12,6 +13,7 @@ import Info4 from "../../assets/DigitalEngineering/storage-net/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/storage-net/i=Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/storage-net/Info6.svg";
 import Info7 from "../../assets/DigitalEngineering/storage-net/Info7.svg";
+
 export const StorageTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -166,7 +168,7 @@ export const Hyperconverged = () => {
         title="Hyperconverged infrastructure (HCI) integration"
         description="Unify compute, storage, and networking into streamlined, scalable operational platforms."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/storage-networking/hyperconverged-infrastructure-integration"
         whatWeDo={[
           "Merge compute, storage, network stacks",
           "Simplify ops with unified control",
@@ -186,6 +188,7 @@ export const Hyperconverged = () => {
     </>
   );
 };
+
 export const Gateway = () => {
   return (
     <>
@@ -193,7 +196,7 @@ export const Gateway = () => {
         title="Storage gateway engineering"
         description="Enable smooth interoperability across cloud, on-premises, and hybrid storage environments."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/storage-networking/storage-gateway-engineering"
         whatWeDo={[
           "Bridge cloud and on-prem storage",
           "Sync across formats and systems",
@@ -213,6 +216,7 @@ export const Gateway = () => {
     </>
   );
 };
+
 export const AiSec = () => {
   return (
     <>
@@ -240,6 +244,7 @@ export const AiSec = () => {
     </>
   );
 };
+
 export const NetworkSec = () => {
   return (
     <>
@@ -248,7 +253,7 @@ export const NetworkSec = () => {
         description="Modernize networking with flexible, scalable,
                 and software-driven NFV architectures."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/storage-networking/network-function-virtualization-services"
         whatWeDo={[
           "Replace devices with VNFs in code",
           "Automate scaling and provisioning",
@@ -268,6 +273,7 @@ export const NetworkSec = () => {
     </>
   );
 };
+
 export const EdgeSec = () => {
   return (
     <>

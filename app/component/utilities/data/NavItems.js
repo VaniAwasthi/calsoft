@@ -308,27 +308,27 @@ export const navItems = [
         section: [
           {
             title: "Defined Storage Solutions",
-            href: "#",
+            href: "/digital-product-engineering/storage-networking/defined-storage-solutions",
           },
           {
             title: "SDN Architecture",
-            href: "#",
+            href: "/digital-product-engineering/storage-networking/sdn-architecture",
           },
           {
             title: "Hyperconverged infrastructure (HCI) integration",
-            href: "#",
+            href: "/digital-product-engineering/storage-networking/hyperconverged-infrastructure-integration",
           },
           {
             title: "Storage gateway engineering",
-            href: "#",
+            href: "/digital-product-engineering/storage-networking/storage-gateway-engineering",
           },
           {
             title: "Intelligent Network Control",
-            href: "#",
+            href: "/digital-product-engineering/storage-networking/intelligent-network-control",
           },
           {
             title: "Network function virtualization (NFV) services",
-            href: "#",
+            href: "/digital-product-engineering/storage-networking/network-function-virtualization-services",
           },
         ],
       },
@@ -353,7 +353,7 @@ export const navItems = [
             href: "#",
           },
           {
-            title: "Zero Trust architecture enablement ",
+            title: "Zero Trust architecture enablement",
             href: "#",
           },
           {

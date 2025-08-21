@@ -21,7 +21,10 @@ const Page = () => {
         buttonText="Book your DevOps Health Check"
       />
       <WhyItMatters />
-      <WhatWeOffer />
+      <WhatWeOffer
+        heading="Automation. Observability. Reliability. All in One Flow."
+        description="We deliver production-grade DevOps & SRE services that fit your team, stack, and scale ambition."
+      />
       <UseCases CTACopy="Speed up release cycles by 60% using SRE practices." />
       <HowToStart
         headerContent={{
@@ -42,3 +45,4 @@ const Page = () => {
 };
 
 export default Page;
+z;
