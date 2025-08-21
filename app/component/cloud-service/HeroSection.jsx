@@ -108,7 +108,7 @@ export const ItInfraSec = () => {
         title="IT infrastructure assessment & road mapping"
         description="Assess infrastructure readiness and define clear, actionable migration roadmaps."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/cloud/infrastructure-roadmap"
         whatWeDo={[
           "Evaluate existing environments for cloud readiness",
           "Define migration strategies aligned with performance",
@@ -136,7 +136,7 @@ export const MultiCloudInfraSec = () => {
         title="Multi-cloud infrastructure provisioning"
         description="Deploy and manage scalable, governed environments across multiple cloud platforms."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/cloud/multi-cloud-provisioning"
         whatWeDo={[
           "Automate resource provisioning across hybrid & multi-cloud",
           "Implement unified monitoring, access control, & policy",
@@ -152,6 +152,7 @@ export const MultiCloudInfraSec = () => {
         imageLeft={true}
         isDivider={true}
         secId="multi-cloud"
+       
       />
     </>
   );
@@ -164,7 +165,7 @@ export const CloudNativetInfraSec = () => {
         title="Cloud-native development enablement"
         description="Engineer resilient, scalable systems using microservices, containers, and serverless models."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/cloud/cloud-native-enablement"
         whatWeDo={[
           "Architect distributed systems with microservices ",
           "Implement containerization and orchestration frameworks ",
@@ -191,7 +192,7 @@ export const CloudMigrationInfraSec = () => {
         title="Cloud migration and scaling"
         description="Execute smooth cloud transitions and enable dynamic, on-demand scalability."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/cloud/cloud-migration"
         whatWeDo={[
           "Plan and execute structured application and infrastructure migrations",
           "Optimize workloads post-migration for scale & performance ",

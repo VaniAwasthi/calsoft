@@ -98,7 +98,7 @@ export const MaturityAssessmentSec = () => {
         title="Maturity assessment and planning"
         description="Map your modernization journey with structured assessments and actionable roadmaps."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/modernization-ecosystem/maturity-assessment-and-planning"
         whatWeDo={[
           "Find technical debt and scale gaps",
           "Build phased, goal-aligned roadmaps",
@@ -126,7 +126,7 @@ export const FutureReadinessSec = () => {
         title="Future readiness with application modernization"
         description="Modernize platforms for agility, responsiveness, and long-term competitiveness."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/modernization-ecosystem/future-readiness-with-application-modernization"
         whatWeDo={[
           "Refactor apps and update flows",
           "Modernize UX with agile designs",
@@ -154,7 +154,7 @@ export const EcosystemManagementSec = () => {
         title="Ecosystem management"
         description="Integrate platforms, partners, and tools for unified digital ecosystems."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/modernization-ecosystem/connected-ecosystem"
         whatWeDo={[
           "Securely connect APIs and tools",
           "Sync hybrid cloud workflows",
@@ -181,7 +181,7 @@ export const PlugindevelopmentSec = () => {
         title="Plugin development: Improve extendibility"
         description="Build lightweight plugins to enhance ecosystem connectivity and user workflows."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/modernization-ecosystem/plugin-development"
         whatWeDo={[
           "Build plugins for faster linking",
           "Ensure safe, seamless usage",
