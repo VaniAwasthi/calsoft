@@ -10,7 +10,7 @@ import Banner from "../../assets/insights/caseStudy.webp"
 const Page = () => {
   return (
     <>
-      <BannerInfo heading="" BannerBg={Banner} />
+      <BannerInfo heading="In-Depth Research & Insights" BannerBg={Banner} />
       <TabsInfo defaultTab="whitepapers" />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
