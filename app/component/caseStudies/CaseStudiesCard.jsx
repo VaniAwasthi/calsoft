@@ -137,8 +137,7 @@ const handleClick = (item) => {
     ],
     stats: [
       { count: "40%", text: "faster validation cycles" },
-      { count: "30%", text: "lower infrastructure costs" },
-      { count: "20%", text: "increase in test accuracy" },
+      { count: "36%", text: "lower infrastructure costs" },
     ],
   };
   return (
