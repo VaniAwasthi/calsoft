@@ -12,6 +12,7 @@ import {
   MultiCloudInfraSec,
   SREInfraSec,
 } from "../../component/cloud-service/HeroSection.jsx";
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 import {
   BannerSection,
   ContactSecData,
@@ -25,12 +26,12 @@ const Page = () => {
       <ItInfraSec />
       <MultiCloudInfraSec />
       <CloudNativetInfraSec />
-      <BannerSection
-        backgroundImage={BannerwithButtonBg}
-        title="Accelerate cloud provisioning by 60% across environments."
-        buttonText="Book a Meeting"
-        buttonLink="#"
-      />
+    <BannerSection
+  backgroundImage={BannerwithButtonBg}
+  title="Accelerate cloud provisioning by 60% across environments."
+  buttonText="Book a Meeting"
+  onButtonClick={() => showHubSpotForm("book-a-meeting")}
+/>
       <CloudMigrationInfraSec />
       <CostInfraSec />
       <SREInfraSec />
