@@ -8,6 +8,7 @@ import {
   TestingChallenge,
   TestingTab,
 } from "../../component/testingAs/TestingAs.jsx";
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/testing/KnowMore.svg";
@@ -29,6 +30,7 @@ function page() {
         title="Achieve 90% test automation coverage with CalTIA."
         buttonText=" Book a Meeting"
         buttonLink="#"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <TestSec />
       <QaoSec />

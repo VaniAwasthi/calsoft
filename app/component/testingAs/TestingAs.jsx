@@ -11,6 +11,8 @@ import Info3 from "../../assets/DigitalEngineering/testing/Info3.svg";
 import Info4 from "../../assets/DigitalEngineering/testing/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/testing/Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/testing/Info6.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
+
 export const TestingTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -40,6 +42,7 @@ export const TestingTab = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("testing-as-a-service-datasheet")}
       />
       <Submenu
         navItems={navItems}
