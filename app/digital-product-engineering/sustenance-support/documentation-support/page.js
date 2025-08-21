@@ -1,7 +1,7 @@
 import React from "react";
+import Image from "next/image";
+import documentation from "@/app/assets/sustenance/Documentation Support.webp";
 
-function page() {
-  return <div>page</div>;
+export default function page() {
+  return <Image src={documentation} alt="multi-tier" />;
 }
-
-export default page;
