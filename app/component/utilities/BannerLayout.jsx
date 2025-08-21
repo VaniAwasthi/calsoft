@@ -23,13 +23,14 @@ const BannerLayout = ({
   titleTwoClass,
   descriptionClass,
   buttonClass = "",
+  height="h-[37.5rem]"
 }) => {
   return (
     <div className=" relative">
       {/* Background Image */}
       <div className="h-fit w-full relative">
         <div className="absolute top-0 w-full h-full bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
-        <div className="h-[37.5rem] w-full relative">
+        <div className={`${height} w-full relative`}>
           <Image
             src={image}
             alt="Background Image"

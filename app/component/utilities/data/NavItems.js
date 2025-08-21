@@ -5,116 +5,124 @@ export const navItems = [
 
     submenu: [
       {
-        title: "Technical consulting",
-        href: "/data-ai/technical-consulting",
+        title: "Enterprise Data Management",
+        href: "/data-ai/enterprise-data-management",
         section: [
-          { title: "Strategic architecture advisory", href: "#" },
-          { title: "Risk mitigation and recovery planning", href: "#" },
-          { title: "Platform interoperability consulting", href: "#" },
-          { title: "Cost-optimized orchestration planning", href: "#" },
+          { title: "Modern data architecture", href: "data-ai/enterprise-data-management/modern-data-architecture" },
+          { title: "Data Quality & Lineage", href: "/data-ai/enterprise-data-management/data-quality-lineage" },
+          { title: "Data Quality & Lineage", href: "/data-ai/enterprise-data-management/data-platform-ecosystem" },
+          { title: "Risk mitigation and recovery ", href: "/data-ai/enterprise-data-management/risk-mitigation-recovery" },
+          { title: "Data protection and privacy", href: "data-ai/enterprise-data-management/data-protection-privacy" },
+          { title: "Effortless and faultless data migration", href: "/data-ai/enterprise-data-management/data-migration" },
+        ],
+      },
+    
+ {
+        title: "Agentic AI Development",
+        href: "/data-ai/agentic-ai-development",
+        section: [
+          { title: "AIOps Planning", href: "/data-ai/agentic-ai-development/aiops-planning" },
+          { title: "Use-case specific AI agents", href: "/data-ai/agentic-ai-development/ai-agents" },
+          { title: "Monitor and control", href: "/data-ai/agentic-ai-development/monitor-control" },
+          { title: "Regression alignment", href: "/data-ai/agentic-ai-development/regression-alignment" },
+          { title: "Scale and support", href: "/data-ai/agentic-ai-development/scale-support" },
+          
         ],
       },
       {
-        title: "End-to-end data pipeline implementation",
-        href: "/data-ai/end-to-end-data-pipeline-implementation",
+        title: "DataOps & Governance",
+        href: "/data-ai/data-ops-governance",
         section: [
-          { title: "Data architecture enhancement", href: "#" },
-          { title: "Data platform and ecosystem integration", href: "#" },
-          { title: "Effortless and faultless data migration", href: "#" },
-          { title: "Data sanity and lineage handling", href: "#" },
-        ],
-      },
-
-      {
-        title: "Data observability",
-        href: "/data-ai/data-observability",
-        section: [
-          { title: "Real-time data streaming analytics", href: "#" },
-          { title: "Compliance tracking", href: "#" },
-          { title: "Real-time data workflow synchronization", href: "#" },
-          { title: "Proactive risk alerts", href: "#" },
-        ],
-      },
-      {
-        title: "Data governance and quality",
-        href: "/data-ai/data-governance-quality",
-        section: [
-          { title: "Data profiling & cataloging", href: "#" },
-          { title: "Data cleansing and deduplication", href: "#" },
-          { title: "Data lake creation (and warehouse)", href: "#" },
+          { title: "Data profiling & cataloging", href: "/data-ai/data-ops-governance/data-profiling-cataloging" },
+          { title: "Data cleansing and deduplication", href: "/data-ai/data-ops-governance/data-cleansing-deduplication" },
+          { title: "Data lake creation and warehouse", href: "/data-ai/data-ops-governance/data-lake-creation" },
           {
             title:
-              "Seamless Data streaming (Real-time anlaytics) (Data analytics and data pipeline)",
-            href: "#",
+              "Seamless Data streaming",
+            href: "/data-ai/data-ops-governance/data-streaming",
           },
-          { title: "Governance protocols and implementation", href: "#" },
-          { title: "Data collaboration & orchestration", href: "#" },
+          { title: "Governance protocols and implementation", href: "/data-ai/data-ops-governance/governance-protocols-implementation" },
+          { title: "Data collaboration & orchestration", href: "/data-ai/data-ops-governance/data-collaboration-orchestration" },
         ],
       },
+      // {
+      //   title: "Data observability",
+      //   href: "/data-ai/data-observability",
+      //   section: [
+      //     { title: "Real-time data streaming analytics", href: "#" },
+      //     { title: "Compliance tracking", href: "#" },
+      //     { title: "Real-time data workflow synchronization", href: "#" },
+      //     { title: "Proactive risk alerts", href: "#" },
+      //   ],
+      // },
       {
-        title: "Data analytics and reporting",
-        href: "/data-ai/data-analytics-reporting",
+        title: "Data Modernization",
+        href: "/data-ai/data-modernization",
         section: [
-          { title: "Data pipeline and transformation", href: "#" },
-          { title: "Dashboard and KPI visualization", href: "#" },
-          { title: "Real-time streaming analytics", href: "#" },
-          {
-            title: "Time-series data analysis & pattern recognition",
-            href: "#",
-          },
-          { title: "Business intelligence integration", href: "#" },
-          { title: "Custom reporting and notifications", href: "#" },
+          { title: "Event-ready data frameworks", href: "/data-ai/data-modernization/data-frameworks" },
+          { title: "Data & storage optimization", href: "/data-ai/data-modernization/data-storage-optimization" },
+          { title: "Data warehouse modernization", href: "/data-ai/data-modernization/data-warehouse-modernization" },
+          { title: "Analytics engine (BI) updates", href: "/data-ai/data-modernization/analytics-engine-bi" },
+          { title: "Real-time compliance tracking", href: "/data-ai/data-modernization/compliance-tracking" },
+          { title: "Cost-optimized data orchestration", href: "/data-ai/data-modernization/orchestration-planning" },
         ],
       },
-      {
-        title: "AI-driven prediction and inferences",
-        href: "/data-ai/ai-driven-prediction-inferences",
-        section: [
-          { title: "Telemetry-driven closed-loop automation", href: "#" },
-          { title: "Predictive maintenance models", href: "#" },
-          { title: "AIOps for infrastructure performance", href: "#" },
-          { title: "Workflow optimization with ML", href: "#" },
-          { title: "Event correlation and root cause prediction", href: "#" },
-          { title: "Intelligent resource scheduling", href: "#" },
-        ],
-      },
-      {
-        title: "Agentic AI planning & development",
-        href: "/data-ai/agentic-ai-planning-development",
-        section: [
-          { title: "AIOps Planning", href: "#" },
-          { title: "Use-case specific AI agents", href: "#" },
-          { title: "Monitor and control", href: "#" },
-          { title: "Regression alignment", href: "#" },
-          { title: "Data protection and privacy", href: "#" },
-          { title: "Scale and support", href: "#" },
-        ],
-      },
-      {
+       {
         title: "Custom-LLM for Gen AI and RAG",
         href: "/data-ai/custom-llm-for-gen-ai-rag",
         section: [
-          { title: "LLM fine-tuning on proprietary data", href: "#" },
-          { title: "RAG-based application development", href: "#" },
-          { title: "Prompt engineering and optimization", href: "#" },
-          { title: "Open-source model integration", href: "#" },
-          { title: "Domain-specific chatbot development", href: "#" },
-          { title: "On-premise LLM deployment", href: "#" },
+          { title: "LLM fine-tuning on proprietary data", href: "/data-ai/custom-llm-for-gen-ai-rag/llm-fine-tuning" },
+          { title: "RAG-based application development", href: "/data-ai/custom-llm-for-gen-ai-rag/rag-based-application-development" },
+          { title: "Prompt engineering and optimization", href: "/data-ai/custom-llm-for-gen-ai-rag/prompt-engineering-optimization" },
+          { title: "Open-source model integration", href: "/data-ai/custom-llm-for-gen-ai-rag/open-source-model-integration" },
+          { title: "Domain-specific chatbot development", href: "/data-ai/custom-llm-for-gen-ai-rag/chatbot-development" },
+          { title: "On-premise LLM deployment", href: "/data-ai/custom-llm-for-gen-ai-rag/llm-deployment" },
         ],
       },
+       {
+        title: "Analytics & Visualization",
+        href: "/data-ai/data-analytics-visualization",
+        section: [
+          { title: "Data pipeline and transformation", href: "/data-ai/data-analytics-visualization/data-pipeline-transformation" },
+          { title: "Dashboard and KPI visualization", href: "/data-ai/data-analytics-visualization/dashboard-kpi-visualization" },
+          { title: "Real-time streaming analytics", href: "/data-ai/data-analytics-visualization/streaming-analytics" },
+          {
+            title: "Time-Series Intelligence",
+            href: "/data-ai/data-analytics-visualization/time-series-intelligence",
+          },
+          { title: "Business intelligence integration", href: "/data-ai/data-analytics-visualization/business-intelligence-integration" },
+          { title: "Custom reporting and notifications", href: "/data-ai/data-analytics-visualization/custom-reporting-notifications" },
+        ],
+      },
+       {
+        title: "AI-driven Predictive Orchestration",
+        href: "/data-ai/predictive-orchestration",
+        section: [
+          { title: "Telemetry-Driven Automation", href: "/data-ai/predictive-orchestration/telemetry-driven-automation" },
+          { title: "Predictive maintenance models", href: "/data-ai/predictive-orchestration/predictive-maintenance-models" },
+          { title: "AIOps for infrastructure performance", href: "/data-ai/predictive-orchestration/aiops-infrastrucuture-performance" },
+          { title: "Workflow optimization with ML", href: "/data-ai/predictive-orchestration/workflow-optimization" },
+          { title: "Smart Incident Detection", href: "/data-ai/predictive-orchestration/smart-incident-detection" },
+          { title: "Intelligent resource scheduling", href: "/data-ai/predictive-orchestration/intelligent-resource-scheduling" },
+        ],
+      },
+     
+     
+     
+     
       {
         title: "AI-powered accelerators",
         href: "/data-ai/ai-powered-accelerators",
         section: [
           {
             title: "CalTIA",
-            href: "/data-ai/ai-powered-accelerators/caltia",
+            href: "/data-ai/ai-powered-accelerators/test-impact-analyzer-caltia",
           },
           {
             title: "CalPSR – Calsoft Performance, Scalability, and Resilience",
-            href: "#",
+            href: "/data-ai/ai-powered-accelerators/calsoft-performance-scalability-and-resilience-calpsr",
           },
-          { title: "Automated migration tool", href: "#" },
+          { title: "Automated migration tool", href: "/data-ai/ai-powered-accelerators/vmware-migration" },
         ],
       },
     ],
@@ -182,6 +190,10 @@ export const navItems = [
           {
             title: "Experience Modernization",
             href: "/digital-product-engineering/cx-engineering/experience-moderization",
+          },
+          {
+            title: "Intelligent UI",
+            href: "#",
           },
           {
             title: "Rapid Prototyping",
@@ -474,6 +486,7 @@ export const navItems = [
       { title: "Career", href: "/career" },
       { title: "Leadership", href: "/leadership" },
       { title: "CSR", href: "/csr" },
+      { title: "Contact Us", href: "/contact-us" },
     ],
   },
 ];

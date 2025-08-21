@@ -16,13 +16,15 @@ export default function IntegrationMatter() {
             <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
                 <div className="text-xl font-medium leading-tight">
-                  Missed
+                  Security
                   <br />
-                  defects in
+                  performance
                   <br />
-                  reused code
+                  or UX validations
                   <br />
-                  paths
+                  left for
+                  <br />
+                  staging
                 </div>
               </div>
             </div>
@@ -41,13 +43,13 @@ export default function IntegrationMatter() {
             <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
                 <div className="text-xl font-medium leading-tight">
-                  Long
+                  Unversioned
                   <br />
-                  execution times,
+                  or environment-
                   <br />
-                  delaying
+                  dependent test
                   <br />
-                  deployments
+                  scripts
                 </div>
               </div>
             </div>
@@ -68,11 +70,13 @@ export default function IntegrationMatter() {
                 <div className="text-xl font-medium leading-tight">
                   Lack of
                   <br />
-                  traceability to
+                  real-time
                   <br />
-                  user stories or
+                  feedback loops 
                   <br />
-                  features
+                  for failed
+                  <br />
+                  builds
                 </div>
               </div>
             </div>
@@ -91,13 +95,13 @@ export default function IntegrationMatter() {
             <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
                 <div className="text-xl font-medium leading-tight">
-                  Test
+                  Flaky tests
                   <br />
-                  suite bloat
+                  delaying
                   <br />
-                  without
-                  <br />
-                  prioritization
+                  deployments
+                  {/* <br />
+                  prioritization */}
                 </div>
               </div>
             </div>
@@ -116,13 +120,11 @@ export default function IntegrationMatter() {
             <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
                 <div className="text-xl font-medium leading-tight">
-                  Ineffective
+                  Manual QA 
                   <br />
-                  reuse of
+                  cycles outside 
                   <br />
-                  automation
-                  <br />
-                  across builds
+                  CI/CD pipelines
                 </div>
               </div>
             </div>

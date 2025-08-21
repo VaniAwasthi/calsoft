@@ -52,7 +52,7 @@ const data = [
     title: "Calsoft Partners with IBM WatsonX to deliver AI-driven Solutions",
     description:
       "Maximize enterprise AI investments with IBM WatsonX & Calsoft",
-    link: "https://www.calsoftinc.com/calsoft-partners-with-ibm-watsonx/",
+    link: "https://www.calsoftinc.com/calsoft-partners-with-ibm-watsonx",
     imageTitle: "Corporate & Leadership Updates",
   },
   {
@@ -62,7 +62,7 @@ const data = [
       "Calsoft & StreamNative Partner to Cut Streaming Costs, Boost Performance",
     description:
       "Discover how enterprises can reduce Kafka costs by up to 50% without compromising on real-time performance",
-    link: "https://www.californiaentertainmentpress.com/article/800036888-calsoft-and-streamnative-join-forces-to-optimize-cost-and-performance-in-real-time-data-streaming",
+    link: "https://www.einpresswire.com/press-releases/report/5147172",
     imageTitle: " Partnerships & Ecosystem ",
   },
   {
@@ -71,7 +71,7 @@ const data = [
     title: "Calsoft x Segmind: AI-Powered Visuals for Smarter E-Commerce",
     description:
       "Transforming product imagery with speed, scale, and creativity.",
-    link: "https://www.americanbusinesstimes.com/article/779940243-calsoft-partners-with-segmind-for-ai-driven-visual-asset-creation-in-e-commerce",
+    link: "https://www.einpresswire.com/press-releases/report/u0YVj93WNWxZB3Mm?n=2",
     imageTitle: "Innovation, Products & Platforms",
   },
   {
@@ -163,8 +163,9 @@ export const CalsoftNews = () => {
                   {selected.description}
                 </motion.p>
 
-                <Link
+                <a
                   href={selected.link}
+                  target="_blank"
                   className="relative flex w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group"
                   style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25" }}
                 >
@@ -173,7 +174,7 @@ export const CalsoftNews = () => {
                     <IoArrowForwardCircleSharp className="text-3xl tra" />
                   </span>
                   <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
-                </Link>
+                </a>
               </div>
             </motion.div>
           </div>

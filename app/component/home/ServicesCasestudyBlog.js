@@ -24,7 +24,7 @@ import blogimg1 from "../../assets/home/blog1.webp";
 import blogimg2 from "../../assets/home/blog2.webp";
 import blogimg3 from "../../assets/home/blog3.webp";
 import { LuArrowUpRight } from "react-icons/lu";
-import Casestudybg from "../../assets/home/casestudybg.webp";
+import Casestudybg from "../../assets/home/caseStudy.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCaseStudyListLimit } from "../../store/actions/caseStudyActions";
 import Link from "next/link";
@@ -233,9 +233,9 @@ const handleClick = (item) => {
                     height={100}
                   />
                 </div>
-                <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem]">
+                {/* <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem]">
                   {caseStudyData.title}
-                </h2>
+                </h2> */}
               </motion.div>
 
               <div className="  md:w-2/3 flex flex-col justify-between">
