@@ -10,19 +10,21 @@ import BackgroundImage3 from "../../assets/CEOBanner.png";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import BannerLayout from "../utilities/BannerLayout";
 import ButtonLayout from "../utilities/ButtonLayout";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // <-- import your util
+
 const backgroundVideo = "/BannerGif.mp4";
-const backgroundVideo2="/HomeVideo.mp4"
+const backgroundVideo2 = "/HomeVideo.mp4";
 
 const slides = [
   {
     type: "video",
-    backgroundVideo:backgroundVideo,
+    backgroundVideo: backgroundVideo,
     title: "Tech-driven growth",
     title2: "on your mind?",
     description:
       "Architect, engineer, modernize, secure, and scale with Calsoft - for AI-powered innovation, faster go-to-market, and higher efficiency.",
     buttonText: "What We Do",
-    link: "data-ai/ai-driven-prediction-inferences",
+    hubspotClass: "what-we-do", // <-- add your HubSpot class here
   },
   {
     type: "banner",
@@ -32,6 +34,7 @@ const slides = [
     description:
       "Secure Migration with 50% lower TCO, near-zero downtime, 40% post-migration savings",
     buttonText: "Read More",
+    link: "#",
   },
   {
     type: "banner",
@@ -43,18 +46,24 @@ const slides = [
     buttonText: "Read More",
     link: "/data-ai/ai-powered-accelerators",
   },
- 
   {
     type: "video",
-    backgroundVideo:backgroundVideo2,
+    backgroundVideo: backgroundVideo2,
     title: "",
     title2: "",
-    description:
-      "",
+    description: "",
   },
 ];
 
 const HeroSec = () => {
+  const handleButtonClick = (slide) => {
+    if (slide.hubspotClass) {
+      showHubSpotForm(slide.hubspotClass); // <-- trigger the HubSpot form
+    } else if (slide.link) {
+      window.location.href = slide.link;
+    }
+  };
+
   return (
     <Swiper
       modules={[Pagination, Autoplay]}
@@ -67,7 +76,6 @@ const HeroSec = () => {
         <SwiperSlide key={index} className="relative w-full">
           {slide.type === "video" ? (
             <div className="relative w-full h-[600px]">
-              {/* Video Background */}
               <video
                 autoPlay
                 muted
@@ -78,7 +86,6 @@ const HeroSec = () => {
                 Your browser does not support the video tag.
               </video>
 
-              {/* Animated Content */}
               <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -115,23 +122,22 @@ const HeroSec = () => {
                       {slide.description}
                     </motion.p>
 
-                    {/* Button */}
-                   {slide.buttonText &&(
-                    <motion.div
-                      initial={{ x: -50, opacity: 0 }}
-                      whileInView={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.5, delay: 0.8 }}
-                      viewport={{ once: false, amount: 0.3 }}
-                      className="mt-9"
-                    >
-                      <ButtonLayout
-                        text={slide.buttonText}
-                        image={ButtonImage}
-                        hoverImage={ButtonImage}
-                        link={slide.link}
-                      />
-                    </motion.div>
-                   )} 
+                    {slide.buttonText && (
+                      <motion.div
+                        initial={{ x: -50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.8 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="mt-9"
+                      >
+                        <button
+                          onClick={() => handleButtonClick(slide)}
+                          className="flex items-center gap-2 bg-[#2E3092] text-white px-6 py-3 rounded-full"
+                        >
+                          {slide.buttonText}
+                        </button>
+                      </motion.div>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -149,6 +155,7 @@ const HeroSec = () => {
               titleTwoClass="text-[28px] md:text-5xl md:mt-4"
               descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[200px] md:w-full"
               BgClassname="object-cover w-full h-full object-center"
+              onButtonClick={() => handleButtonClick(slide)} // pass click handler
             />
           )}
         </SwiperSlide>
