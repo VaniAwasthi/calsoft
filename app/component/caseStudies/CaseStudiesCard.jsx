@@ -188,7 +188,7 @@ const handleClick = (item) => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-               <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
+               {/* <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
                   <Image
                     src={logo2}
                     className="w-full"
@@ -196,7 +196,7 @@ const handleClick = (item) => {
                     width={100}
                     height={100}
                   />
-                </div>
+                </div> */}
               
             </motion.div>
 
@@ -204,9 +204,9 @@ const handleClick = (item) => {
               <div>
                 {caseStudyData.description.map((desc, index) => (
                   <>
-<h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem] py-2">
+{/* <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem] py-2">
                 {caseStudyData.title}
-              </h2>
+              </h2> */}
                   <motion.p
                     key={index}
                     className="text-[#959595] text-sm md:text-[18px] font-light p-2"

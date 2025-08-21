@@ -26,8 +26,8 @@ const Page = () => {
         MainComponenent={ArchitectureIdeation}
         // contentClass="w-[90%]"
       />
-      <WhatWeOffer />
-      <UseCases CTACopy="Reduce design cycle by 30% via architecture-led ideation."/>
+      <WhatWeOffer description="Our architecture-led ideation workshops deliver clarity in just 7–10 working days. You walk away with:" />
+      <UseCases CTACopy="Reduce design cycle by 30% via architecture-led ideation." />
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",
