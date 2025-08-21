@@ -277,27 +277,27 @@ export const navItems = [
         section: [
           {
             title: "Lifecycle Governance",
-            href: "#",
+            href: "/digital-product-engineering/virtualization/lifecycle-governance",
           },
           {
             title: "Containerization and orchestration",
-            href: "#",
+            href: "/digital-product-engineering/virtualization/containerization-and-orchestration",
           },
           {
             title: "Hypervisor Optimization",
-            href: "#",
+            href: "/digital-product-engineering/virtualization/hypervisor-optimization",
           },
           {
             title: "OpenStack environment configuration",
-            href: "#",
+            href: "/digital-product-engineering/virtualization/openStack-environment-configuration",
           },
           {
             title: "Infrastructure as Code (IaC)",
-            href: "#",
+            href: "/digital-product-engineering/virtualization/infrastructure-as-code",
           },
           {
             title: "Intelligent Migration",
-            href: "#",
+            href: "/digital-product-engineering/virtualization/intelligent-migration",
           },
         ],
       },
