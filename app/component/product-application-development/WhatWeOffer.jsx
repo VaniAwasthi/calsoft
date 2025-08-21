@@ -113,6 +113,7 @@ export default function FeatureCards({
   title = "What We Offer",
   heading = "From Vision to Viable Blueprint",
   description = "Cloud modernization isn't about a one-size-fits-all blueprint. It's about aligning infra to your business needs. Calsoft brings:",
+  buttonText = "Request Architecture Blueprint",
 }) {
   return (
     <div className="bg-[#F5F5F5]">
@@ -183,7 +184,7 @@ export default function FeatureCards({
             viewport={{ once: false, amount: 0.3 }}
           >
             <ButtonLayout
-              text={"Request Architecture Blueprint"}
+              text={buttonText}
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit"}
