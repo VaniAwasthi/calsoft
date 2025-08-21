@@ -251,23 +251,23 @@ export const navItems = [
         section: [
           {
             title: "Release Orchestration",
-            href: "#",
+            href: "/digital-product-engineering/sustenance-support/release-orchestration",
           },
           {
             title: "Documentation Support",
-            href: "#",
+            href: "/digital-product-engineering/sustenance-support/documentation-support",
           },
           {
             title: "Intelligent Ticketing",
-            href: "#",
+            href: "/digital-product-engineering/sustenance-support/intelligent-ticketing",
           },
           {
             title: "Muti-Tier Support",
-            href: "#",
+            href: "/digital-product-engineering/sustenance-support/muti-tier-support",
           },
           {
             title: "Uptime Continuity",
-            href: "#",
+            href: "/digital-product-engineering/sustenance-support/uptime-continuity",
           },
         ],
       },
@@ -451,7 +451,7 @@ export const navItems = [
         title: "Resources",
         href: "/insights",
         section: [
-           { title: "Case Study", href: "/insights/case-studies" },
+          { title: "Case Study", href: "/insights/case-studies" },
           { title: "Whitepapers", href: "/insights/whitepaper" },
           { title: "Datasheets", href: "/insights/datesheets" },
           { title: "Use Cases", href: "/insights/usecases" },
