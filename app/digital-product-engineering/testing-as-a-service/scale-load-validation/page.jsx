@@ -16,93 +16,139 @@ const Page = () => {
   return (
     <>
       <HeroSection
-        title="Never Re-Test Everything. Always Test What Matters"
-        description="Accelerate release cycles and improve test coverage with Calsoft’s Automated Regression Testing — engineered for speed, stability, and scalability."
-        buttonText="Request Free Assessment"
+        title="Validate Scale. Simulate Reality. Release with Confidence"
+        description="Ensure your applications can handle real-world traffic and usage peaks with Calsoft’s engineered scale & load validation services."
+        buttonText="Try Free Load Test"
       />
       <WhyItMatters
-        title="Outdated Regression = Delayed Releases."
-        desc="Manual or partially automated regression testing often fails to keep pace with agile sprints and CI/CD pipelines, leading to:"
-        desc2="Calsoft helps QA teams shift from script-heavy testing to impact-driven, maintainable regression automation aligned with release velocity."
+        title="Every Missed Test Case Is a Revenue Risk."
+        desc="Even with agile and DevOps practices in place, many enterprises struggle to validate releases across environments, devices, and user journeys. Common gaps include:"
+        desc2="Calsoft bridges these gaps by combining business-aligned test scenarios with automated, scalable validation frameworks."
         buttonText="Download Case Study"
         Component={LoadValidationMatter}
         contentWidth="w-[80%]"
       />
-      <IntelligentPlanning />
+      <IntelligentPlanning 
+      data={[
+          {
+            title: "Concurrent user load patterns",
+            subTitle: "(spike, soak, stress, endurance)",
+          },
+          {
+            title: "Geo-distributed traffic surges",
+            subTitle: "(CDN & edge scenarios)",
+          },
+          {
+            title: "Session concurrency, memory leaks,",
+            subTitle: "DB query saturation",
+          },
+          {
+            title: "Upstream & downstream",
+            subTitle: "API latency under load",
+          },
+          {
+            title: "Multi-layer monitoring",
+            subTitle: "application, infra, network",
+          },
+        ]}
+        />
       <Agility
         data={{
           leftSideContent: {
-            title: "Faster, Safer, Smarter Cloud Transitions",
-            subTitle: "Cloud migration done right delivers real impact:",
+            title: "Prevent Downtime. Preserve Experience. Protect Revenue.",
+            subTitle: "Validated scale unlocks measurable business and technical outcomes:",
             description:
-              "Calsoft focuses on business-first outcomes — not just technical transition.",
+              "Calsoft moves performance testing from optional to essential — with metrics that matter.",
           },
           rightSideContent: [
             {
-              title: "Up to 40%",
-              subTitle: "reduction in infra costs via right-sized provisioning",
+              title: "95%",
+              subTitle: "fewer production incidents under high concurrency",
             },
             {
-              title: "Zero-downtime",
-              subTitle: "cutovers for production-critical systems",
+              title: "3X Faster",
+              subTitle: "incident root cause detection through pre-production instrumentation",
             },
             {
-              title: "50–70%",
-              subTitle: "faster migration through automation",
+              title: "Up to 30%",
+              subTitle: "cost savings via right-sized infra recommendations",
             },
             {
-              title: "90%",
-              subTitle: "improvement in post-migration application performance",
+              title: "100% SLA",
+              subTitle: "compliance during seasonal, campaign, or product launches",
             },
           ],
         }}
         bookMeetingData={{
-          title: "Validate scalability under 10x load conditions.",
+          title: "On average, Calsoft clients detect 4x more performance bottlenecks before release.",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"
       />
-      <UseCases />
+      <UseCases 
+      data={[
+          {
+            title: "E-commerce platforms",
+            subTitle:
+              "validating flash-sale concurrency (50K+ users)",
+          },
+          {
+            title: "SaaS ISVs",
+            subTitle: "simulating multi-tenant login & usage patterns",
+          },
+          {
+            title: "Banking portals",
+            subTitle: "validating peak transaction throughput & failover",
+          },
+          {
+            title: "Healthcare systems",
+            subTitle: "testing 3rd-party APIs under mass usage",
+          },
+          {
+            title: "Streaming/media firms",
+            subTitle: "simulating bandwidth variability across geos",
+          },
+        ]}
+      />
       <WhyCalsoft
-        sectionDescription="Cloud migration is not a copy-paste operation — it’s a strategic transformation. Calsoft is uniquely positioned to deliver:"
-        buttonText="Download One Pager"
+        sectionDescription="Calsoft blends QA depth with infrastructure visibility — offering more than just a tool-based approach."
         data={{
           tableHeadings: ["Capability", "Calsoft", "Standard Providers"],
           tableContent: [
             {
-              name: "Engineering-Led Migration Design",
-              calsoft: "Deep Technical Depth",
-              vendor: "Generic Templates",
-            },
-            {
-              name: "Multi-Cloud Strategy Alignment",
-              calsoft: "Azure, AWS, GCP",
-              vendor: "Vendor Bias",
-            },
-            {
-              name: "Automated Dependency Discovery",
+              name: "SLA-Centric Load Planning",
               calsoft: "Yes",
-              vendor: "Manual Analysis",
+              vendor: "Tool-Based Testing",
             },
             {
-              name: "Security-First Cutover Planning",
-              calsoft: "Integrated Controls",
-              vendor: "Post-hoc Remediation",
+              name: "App + Infra + API Observability",
+              calsoft: "Full-Stack Correlation",
+              vendor: "App Layer Only",
             },
             {
-              name: "Post-Migration Optimization",
-              calsoft: "Built-In",
-              vendor: "Not Included",
+              name: "Realistic Traffic Models",
+              calsoft: "Geo + Concurrency Modeled",
+              vendor: "Linear Load Only",
+            },
+            {
+              name: "Dynamic Resource Bottleneck Detection",
+              calsoft: "Yes",
+              vendor: "Manual Debugging",
+            },
+            {
+              name: "Optimization Feedback Loop",
+              calsoft: "Post-Test Infra Tuning",
+              vendor: "No Post-Analysis",
             },
           ],
         }}
       />
       <FirstStep
         headerContent={{
-          title1: "Migrate with Method,",
-          title2: "Not Momentum",
+          title1: "Move from Hope to Proof —",
+          title2: "Validate Before You Scale",
           description:
-            "We take you from readiness to run-state through a risk-mitigated, ROI-led framework. Here's how:",
+            "Calsoft makes performance validation predictable, repeatable, and value-focused.",
         }}
         Component={Guesswork}
       />

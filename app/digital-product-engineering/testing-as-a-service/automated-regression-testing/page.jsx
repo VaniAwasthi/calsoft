@@ -30,75 +30,98 @@ const Page = () => {
       <Agility
         data={{
           leftSideContent: {
-            title: "Faster, Safer, Smarter Cloud Transitions",
-            subTitle: "Cloud migration done right delivers real impact:",
+            title: "Faster Cycles. Fewer Bugs. Smarter QA.",
+            subTitle: "Automated regression testing delivers measurable technical and business impact:",
             description:
-              "Calsoft focuses on business-first outcomes — not just technical transition.",
+              "Calsoft ensures regression is no longer a bottleneck — but a competitive advantage.",
           },
           rightSideContent: [
             {
+              title: "50-70%",
+              subTitle: "faster validation across sprints and releases",
+            },
+            {
+              title: "80-90%",
+              subTitle: "defect detection coverage on reused and edge flows",
+            },
+            {
               title: "Up to 40%",
-              subTitle: "reduction in infra costs via right-sized provisioning",
+              subTitle: "reduction in rework and rollback effort",
             },
             {
-              title: "Zero-downtime",
-              subTitle: "cutovers for production-critical systems",
-            },
-            {
-              title: "50–70%",
-              subTitle: "faster migration through automation",
-            },
-            {
-              title: "90%",
-              subTitle: "improvement in post-migration application performance",
+              title: "2X",
+              subTitle: "faster developer feedback on code commits",
             },
           ],
         }}
         bookMeetingData={{
-          title: "Accelerate testing by 70% with CalTIA automation.",
+          title: "Let’s talk about cutting your regression time by up to 60% — book a discovery call today.",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"
       />
-      <UseCases />
+      <UseCases
+        data={[
+          {
+            title: "SaaS platforms",
+            subTitle:
+              "with multi-tenant, frequent feature releases",
+          },
+          {
+            title: "ISVs",
+            subTitle: "re-architecting monoliths into services needing regression reuse",
+          },
+          {
+            title: "FinTech apps",
+            subTitle: "with regulatory compliance and high test repeatability",
+          },
+          {
+            title: "Retail and eCommerce",
+            subTitle: "workflows across devices and browsers",
+          },
+          {
+            title: "Enterprises adopting CI/CD",
+            subTitle: "and requiring quality gates pre-deploy",
+          },
+        ]}
+      />
       <WhyCalsoft
-        sectionDescription="Cloud migration is not a copy-paste operation — it’s a strategic transformation. Calsoft is uniquely positioned to deliver:"
-        buttonText="Download One Pager"
+        sectionDescription="Most automation stops at scripts. Calsoft enables scalable regression intelligence that keeps pace with your releases."
         data={{
           tableHeadings: ["Capability", "Calsoft", "Standard Providers"],
           tableContent: [
             {
-              name: "Engineering-Led Migration Design",
-              calsoft: "Deep Technical Depth",
-              vendor: "Generic Templates",
-            },
-            {
-              name: "Multi-Cloud Strategy Alignment",
-              calsoft: "Azure, AWS, GCP",
-              vendor: "Vendor Bias",
-            },
-            {
-              name: "Automated Dependency Discovery",
+              name: "Test Impact + Change Awareness",
               calsoft: "Yes",
-              vendor: "Manual Analysis",
+              vendor: "Absent",
             },
             {
-              name: "Security-First Cutover Planning",
-              calsoft: "Integrated Controls",
-              vendor: "Post-hoc Remediation",
+              name: "Multi-layer Regression (API, UI, Logic)",
+              calsoft: "Full Stack",
+              vendor: "UI-Centric Only",
             },
             {
-              name: "Post-Migration Optimization",
-              calsoft: "Built-In",
-              vendor: "Not Included",
+              name: "CI/CD Integration + Scheduling",
+              calsoft: "Jenkins, GitHub, Azure",
+              vendor: "Manual Triggering",
+            },
+            {
+              name: "Dynamic Test Data & Mocking",
+              calsoft: "Built-in",
+              vendor: "Hardcoded Inputs",
+            },
+            {
+              name: "Custom Dashboards & Traceability",
+              calsoft: "Story-Level Mapping",
+              vendor: "Generic Reports",
             },
           ],
         }}
       />
       <FirstStep
         headerContent={{
-          title1: "Migrate with Method,",
-          title2: "Not Momentum",
+          title1: "Modernize Your Regression Strategy Without Disrupting Delivery",
+          title2: null,
           description:
             "We take you from readiness to run-state through a risk-mitigated, ROI-led framework. Here's how:",
         }}

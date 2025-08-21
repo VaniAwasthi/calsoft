@@ -15,82 +15,128 @@ const Page = () => {
   return (
     <>
       <HeroSection
-        title="Never Re-Test Everything. Always Test What Matters"
-        description="Accelerate release cycles and improve test coverage with Calsoft’s Automated Regression Testing — engineered for speed, stability, and scalability."
+        title="Know Before You Grow — Benchmark with Intent"
+        description="Establish performance, scalability, and quality baselines before your next release, migration, or modernization effort — with Calsoft’s Benchmarking Readiness service."
         buttonText="Request Free Assessment"
       />
       <WhyItMatters
-        title="Outdated Regression = Delayed Releases."
-        desc="Manual or partially automated regression testing often fails to keep pace with agile sprints and CI/CD pipelines, leading to:"
-        desc2="Calsoft helps QA teams shift from script-heavy testing to impact-driven, maintainable regression automation aligned with release velocity."
+        title="Measure What Matters — Before You Deploy."
+        desc="Most teams measure application performance reactively — post-deployment or after customer feedback. This leads to:"
+        desc2="Calsoft enables structured, scenario-driven benchmarking that aligns with your architecture, release roadmap, and business KPIs."
         buttonText="Download Case Study"
         Component={BenchmarkingMatter}
       />
-      <IntelligentPlanning />
+      <IntelligentPlanning 
+      data={[
+          {
+            title: "Define KPIs",
+            subTitle: "across performance, stability, cost, and scalability",
+          },
+          {
+            title: "Identify workloads,",
+            subTitle: "endpoints, and APIs to be benchmarked",
+          },
+          {
+            title: "Run synthetic workloads",
+            subTitle: "that simulate real usage scenarios",
+          },
+          {
+            title: "Benchmark across infra layers",
+            subTitle: "(app, DB, network, edge)",
+          },
+          {
+            title: "Use A/B or pre-post",
+            subTitle: "models to compare tech stacks or deployments",
+          },
+        ]}
+      />
       <Agility
         data={{
           leftSideContent: {
-            title: "Faster, Safer, Smarter Cloud Transitions",
-            subTitle: "Cloud migration done right delivers real impact:",
-            description:
-              "Calsoft focuses on business-first outcomes — not just technical transition.",
+            title: "Turn Unknowns Into Predictable Outcomes.",
+            subTitle: "Benchmarking before critical changes reduces risk and enhances decision-making:",
+            // description:
+            //   "Calsoft focuses on business-first outcomes — not just technical transition.",
           },
           rightSideContent: [
             {
+              title: "30-40%",
+              subTitle: "better architectural decisions through data-backed comparisons",
+            },
+            {
               title: "Up to 40%",
-              subTitle: "reduction in infra costs via right-sized provisioning",
+              subTitle: "cost savings by avoiding over-engineering or under-provisioning",
             },
             {
-              title: "Zero-downtime",
-              subTitle: "cutovers for production-critical systems",
+              title: "Faster stakeholder",
+              subTitle: "alignment with objective performance visibility",
             },
             {
-              title: "50–70%",
-              subTitle: "faster migration through automation",
-            },
-            {
-              title: "90%",
-              subTitle: "improvement in post-migration application performance",
+              title: "Improved vendor",
+              subTitle: "selection for infra, platforms, or cloud",
             },
           ],
         }}
         bookMeetingData={{
-          title: "Achieve 100% release readiness through benchmarks.",
+          title: "Get a customized readiness scorecard aligned to your architecture and KPIs",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"
       />
-      <UseCases />
+      <UseCases 
+      data={[
+          {
+            title: "Cloud migration",
+            subTitle:
+              "planning for legacy workloads",
+          },
+          {
+            title: "Platform modernization",
+            subTitle: "from monolith to microservices",
+          },
+          {
+            title: "Comparative benchmarking",
+            subTitle: "of in-house vs SaaS tools",
+          },
+          {
+            title: "DevOps efficiency",
+            subTitle: "measurement before pipeline changes",
+          },
+          {
+            title: "OEM & hardware stack evaluation",
+            subTitle: "(e.g., storage, network, edge devices)",
+          },
+        ]}
+      />
       <WhyCalsoft
-        sectionDescription="Cloud migration is not a copy-paste operation — it’s a strategic transformation. Calsoft is uniquely positioned to deliver:"
-        buttonText="Download One Pager"
+        sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
         data={{
           tableHeadings: ["Capability", "Calsoft", "Standard Providers"],
           tableContent: [
             {
-              name: "Engineering-Led Migration Design",
-              calsoft: "Deep Technical Depth",
-              vendor: "Generic Templates",
-            },
-            {
-              name: "Multi-Cloud Strategy Alignment",
-              calsoft: "Azure, AWS, GCP",
-              vendor: "Vendor Bias",
-            },
-            {
-              name: "Automated Dependency Discovery",
+              name: "Business-KPI-Driven Benchmark Design",
               calsoft: "Yes",
-              vendor: "Manual Analysis",
+              vendor: "Feature-Driven Only",
             },
             {
-              name: "Security-First Cutover Planning",
-              calsoft: "Integrated Controls",
-              vendor: "Post-hoc Remediation",
+              name: "Synthetic & Real Load Modeling",
+              calsoft: "Combined",
+              vendor: "One-Dimensional",
             },
             {
-              name: "Post-Migration Optimization",
-              calsoft: "Built-In",
-              vendor: "Not Included",
+              name: "Multi-layer Benchmarking (App + Infra)",
+              calsoft: "Yes",
+              vendor: "App-Focused Only",
+            },
+            {
+              name: "Decision-Grade Reports",
+              calsoft: "Board-Ready",
+              vendor: "Technical Only",
+            },
+            {
+              name: "Comparative & SLA Validation",
+              calsoft: "Reference Benchmarks",
+              vendor: "No Industry Mapping",
             },
           ],
         }}
