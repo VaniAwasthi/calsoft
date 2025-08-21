@@ -204,9 +204,9 @@ const handleClick = (item) => {
               <div>
                 {caseStudyData.description.map((desc, index) => (
                   <>
-<h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem] py-2">
+{/* <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem] py-2">
                 {caseStudyData.title}
-              </h2>
+              </h2> */}
                   <motion.p
                     key={index}
                     className="text-[#959595] text-sm md:text-[18px] font-light p-2"
