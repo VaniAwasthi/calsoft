@@ -134,7 +134,7 @@ export const UXModernizationSec = () => {
         title="UX modernization: Better user journeys"
         description="Modernize experiences to align with today’s usability and engagement standards."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/cx-engineering/experience-moderization"
         whatWeDo={[
           "Redesign legacy user journeys",
           "Test usability with real users",
@@ -162,7 +162,7 @@ export const IntelligentUISec = () => {
         title="Intelligent UI: Make interfaces adaptive"
         description="Design intelligent user interfaces that personalize workflows and automate decisions."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/cx-engineering/smart-interface-design"
         whatWeDo={[
           "Use AI to adapt UIs by behavior",
           "Add rules for predictive flow shifts",
@@ -189,7 +189,7 @@ export const RapidprototypingSec = () => {
         title="Rapid prototyping"
         description="Bring ideas to life early and streamline decision-making with interactive prototypes."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/cx-engineering/rapid-prototyping"
         whatWeDo={[
           "Create clickable UI mockups early",
           "Use tools for fast design cycles",
@@ -216,7 +216,7 @@ export const MobileEngineeringSec = () => {
         title="Mobile engineering & development"
         description="Create high-performance mobile applications optimized for usability, security, and scalability."
         buttonText="Learn More"
-        link="#"
+        link="/digital-product-engineering/cx-engineering/mobile-development"
         whatWeDo={[
           "Build native and hybrid mobile apps",
           "Ensure offline use and security",
