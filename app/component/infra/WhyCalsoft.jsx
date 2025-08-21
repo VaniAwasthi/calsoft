@@ -87,8 +87,7 @@ export default function WhyCalsoft({
               Competitive Edge
             </h2>
             <p className="text-[#000000] text-lg leading-relaxed">
-              Cloud migration is not a copy-paste operation — it’s a strategic
-              transformation. Calsoft is uniquely positioned to deliver:
+              {sectionDescription}
             </p>
           </motion.div>
           <motion.div
@@ -98,7 +97,7 @@ export default function WhyCalsoft({
             viewport={{ once: false, amount: 0.3 }}
           >
             <ButtonLayout
-              text={"Download Case Study"}
+              text={buttonText}
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit"}

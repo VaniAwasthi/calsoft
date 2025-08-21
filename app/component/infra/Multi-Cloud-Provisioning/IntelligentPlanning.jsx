@@ -5,7 +5,8 @@ import ButtonLayout from "../../utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
 
-export default function IntelligentPlanning({data={
+export default function IntelligentPlanning({
+  data={
   title: "Provision with Purpose",
   desc: "Calsoft helps you standardize provisioning processes across AWS, Azure, GCP, and private clouds — with a consistent control plane.",
   cardData: [
