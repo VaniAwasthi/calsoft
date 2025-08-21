@@ -16,15 +16,15 @@ import CloudMigration from "../../../component/infra/CloudMigrationMatters";
 const Page = () => {
   return (
     <>
-      <HeroSec />
+      <HeroSec
+      title="Migrate with Certainty. Modernize without Disruption."
+      description="Accelerate cloud adoption through risk-aware, business-aligned migration strategies — backed by automation, security, and predictable ROI."
+      buttonText="Access Readiness"
+      />
       <WhyItMatters
-        title="Debunking Cloud-Native Myths"
-        desc="For most enterprises, “cloud-native” remains aspirational —
-                    often misunderstood as just container adoption. In reality,
-                    incomplete strategies lead to:"
-        desc2="Calsoft ensures true cloud-native enablement by aligning
-                    architecture, engineering practices, security, and
-                    operations — at scale."
+        title="Cloud Migration Mistakes You Can’t Afford"
+        desc="Many enterprises begin cloud migration with limited visibility into interdependencies, business impact, or future scalability. This results in:"
+        desc2="Calsoft brings a structured, zero-disruption approach to migration, tuned for enterprise-scale complexity and post-migration optimization."
         MainComponenent={CloudMigration}
       />
       <IntelligentPlanning 
