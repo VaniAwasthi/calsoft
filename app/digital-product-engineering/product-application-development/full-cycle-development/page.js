@@ -8,6 +8,11 @@ import UseCases from "../../../component/product-application-development/UseCase
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
+import line2 from "../../../assets/DigitalEngineering/maturity/line2.svg";
+import line3 from "../../../assets/DigitalEngineering/maturity/line3.svg";
+
+import mobile2 from "../../../assets/DigitalEngineering/maturity/mobile2.svg";
+import mobile3 from "../../../assets/DigitalEngineering/maturity/mobile3.svg";
 
 export default function page() {
   return (
@@ -136,6 +141,50 @@ export default function page() {
         buttonText="Request Demo"
       />
       <UseCases
+        title="Built for Startups, Scaled for Enterprises"
+        description="Whether you’re a Series A startup or a Fortune 100 innovator, Calsoft adapts to your context."
+        useCaseData={[
+          {
+            title: "SaaS Platform Development",
+            desc: "Build multi-tenant, subscription-ready platforms.",
+          },
+          {
+            title: "AI/ML Product Engineering",
+            desc: "Data pipelines, inferencing modules, scalable APIs.",
+          },
+          {
+            title: "Enterprise App Modernization",
+            desc: "Rebuild legacy apps as microservices or serverless functions.",
+          },
+        ]}
+        data={{
+          leftSideContent: {
+            title: "Deliver Better. Scale Smarter. Win Faster.",
+            subTitle:
+              "Here’s what our clients gained with Calsoft's full-cycle approach:",
+            description:
+              "Calsoft quantifies ROI for each roadmap milestone —from VM consolidation to cloud-native transitions —and ensures you get board-level buy-in with real data.",
+          },
+          rightSideContent: [
+            {
+              title: "35%",
+              subTitle: "faster MVP launches",
+            },
+            {
+              title: "40%",
+              subTitle: "fewer post-release defects due to shift-left QA",
+            },
+            {
+              title: "50%",
+              subTitle: "more sprint efficiency using cross-functional pods",
+            },
+            {
+              title: "Up to $400K",
+              subTitle:
+                "saved/year by choosing optimal infra stack & code reuse",
+            },
+          ],
+        }}
         bookMeetingData={{
           title: "DevOps Maturity Self-Audit Template",
           buttontext: "Book a Meeting",
@@ -143,12 +192,68 @@ export default function page() {
       />
       <HowToStart
         headerContent={{
-          title: "Start Smart, Scale Fast",
+          title: "Your First Sprint Starts Here",
           description:
-            "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
+            "A 3-week working prototype. That’s how we begin. No lock-in. No over-commitment. Just delivery.",
         }}
       />{" "}
-      <Steps />
+      <Steps
+        heading="3-Week Build Sprint: Step-by-Step"
+        steps={[
+          {
+            day: "Day 0",
+            title: "Sprint Setup",
+            points: [
+              "Define sprint scope",
+              "Finalize roles & collaboration cadence",
+            ],
+            output: "Sprint Charter",
+            arrowDesktop: line2,
+            arrowMobile: mobile2,
+          },
+          {
+            day: "Day 1-5",
+            title: "Design & Dev Start",
+            points: [
+              "Finalize UI flows + APIs",
+              "Kickstart backend & frontend in parallel",
+            ],
+            output: "Dev Environment + UI mockups + repo setup",
+            arrowDesktop: line3,
+            arrowMobile: mobile3,
+          },
+          {
+            day: "Day 6-10",
+            title: "Feature Development",
+            points: [
+              "Core functionality built",
+              "Mid-sprint demo for early feedback",
+            ],
+            output: "Working Modules + Unit Tests",
+            arrowDesktop: line2,
+            arrowMobile: mobile2,
+          },
+          {
+            day: "Day 11-14",
+            title: "QA & Refinement",
+            points: [
+              "Automated tests + UAT testing",
+              "Bug fixes + feature tweaks",
+            ],
+            output: "MVP-ready prototype",
+            arrowDesktop: line3,
+            arrowMobile: mobile3,
+          },
+          {
+            day: "Day 9-10",
+            title: "Sprint Demo & Plan Next Phase",
+            points: ["Final walkthrough", "Deployment advisory + roadmap"],
+            output: "Demo Build + Sprint Summary Report",
+            arrowDesktop: null,
+            arrowMobile: null,
+          },
+        ]}
+      />
       <ArchitectureSprint />
       <ContactSecDataAi
         BoldContent="Let’s talk!"
