@@ -9,6 +9,7 @@ import Info1 from "../../assets/DigitalEngineering/Sustaine/Info-1.svg";
 import Info2 from "../../assets/DigitalEngineering/Sustaine/Info-2.svg";
 import Info3 from "../../assets/DigitalEngineering/Sustaine/Info-3.svg";
 import Info4 from "../../assets/DigitalEngineering/Sustaine/Info-4.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 
 export const SustenanceTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
@@ -31,6 +32,7 @@ export const SustenanceTab = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
+         onButtonClick={() => showHubSpotForm("sustenance-and-support-datasheet")}
       />
       <Submenu
         navItems={navItems}

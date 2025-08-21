@@ -1,3 +1,4 @@
+"use client"
 import {
   Containerization,
   HypervisorSec,
@@ -9,6 +10,7 @@ import {
 } from "../../component/VirtualizationSolutions/Virtualization.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/virtualisation/KnowMorw.svg";
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 // data
 import {
   BannerSection,
@@ -28,6 +30,7 @@ function page() {
         title="Lower infra footprint 30 % via virtualization efficiency."
         buttonText="Book a Meeting"
         buttonLink="#"
+          onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <MigrateSec />
       <OpenSec />

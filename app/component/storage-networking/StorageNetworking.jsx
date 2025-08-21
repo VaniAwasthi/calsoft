@@ -6,7 +6,7 @@ import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import Info1 from "../../assets/DigitalEngineering/storage-net/Info1.svg";
+import Info1 from "@/app/assets/DigitalEngineering/storage-net/Info1.svg?url";
 import Info2 from "../../assets/DigitalEngineering/storage-net/Info2.svg";
 import Info3 from "../../assets/DigitalEngineering/storage-net/Info3.svg";
 import Info4 from "../../assets/DigitalEngineering/storage-net/Info4.svg";
@@ -14,6 +14,7 @@ import Info5 from "../../assets/DigitalEngineering/storage-net/i=Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/storage-net/Info6.svg";
 import Info7 from "../../assets/DigitalEngineering/storage-net/Info7.svg";
 
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 export const StorageTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -45,6 +46,7 @@ export const StorageTab = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+          onButtonClick={() => showHubSpotForm("storage-and-networking-datasheet")}
       />
       <Submenu
         navItems={navItems}
