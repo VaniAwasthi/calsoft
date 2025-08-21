@@ -10,6 +10,8 @@ import Info2 from "../../assets/DigitalEngineering/virtualisation/Info2.svg";
 import Info3 from "../../assets/DigitalEngineering/virtualisation/Info3.svg";
 import Info4 from "../../assets/DigitalEngineering/virtualisation/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/virtualisation/Info5.svg";
+
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 export const VirtualizationTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -37,6 +39,7 @@ export const VirtualizationTab = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
+          onButtonClick={() => showHubSpotForm("virtualization-datasheet")}
       />
       <Submenu
         navItems={navItems}

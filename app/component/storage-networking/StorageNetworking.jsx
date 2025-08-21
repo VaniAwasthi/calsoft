@@ -12,6 +12,8 @@ import Info4 from "../../assets/DigitalEngineering/storage-net/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/storage-net/i=Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/storage-net/Info6.svg";
 import Info7 from "../../assets/DigitalEngineering/storage-net/Info7.svg";
+
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 export const StorageTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -43,6 +45,7 @@ export const StorageTab = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+          onButtonClick={() => showHubSpotForm("storage-and-networking-datasheet")}
       />
       <Submenu
         navItems={navItems}
