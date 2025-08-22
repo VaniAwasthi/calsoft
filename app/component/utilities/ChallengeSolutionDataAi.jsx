@@ -9,6 +9,7 @@ import Arrow from "../../assets/Data-Ai/arrowupward.svg";
 import ButtonLayout from "./ButtonLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import ContactImg from "../../assets/Data-Ai/PipeLine/ConnectBg.webp";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 
 export const ChallengeSolutionComp = ({
   data,
@@ -316,10 +317,12 @@ export const ContactSecDataAi = ({ BoldContent, lightContent, link }) => {
                   className="flex flex-col md:flex-row gap-4"
                 >
                   <ButtonLayout
-                    link={link}
+                    // link={link}
                     text="Learn More"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    onClick={() => showHubSpotForm("contact-us-popup")}
+                   
                   />
                 </motion.div>
               
