@@ -10,6 +10,8 @@ import Info2 from "../../assets/DigitalEngineering/mordernization/Info-2.svg";
 import Info3 from "../../assets/DigitalEngineering/mordernization/Info-3.svg";
 import Info4 from "../../assets/DigitalEngineering/mordernization/Info-4.svg";
 
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
+
 export const HeroSectionModernization = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -29,17 +31,19 @@ future-proof operations with agility and precision.`,
   ];
   return (
     <>
-      <BannerWithRightSec
-        heroBg={BackgroundImage}
-        title={slide.title}
-        description={slide.description}
-        rightImage={slide.rightImage}
-        buttonText={slide.buttonText}
-        buttonImage={ButtonImage}
-        hoverImage={ButtonImage}
-        rightSec={false}
-        buttonWidth="!w-[250px]"
-      />
+     <BannerWithRightSec
+  heroBg={BackgroundImage}
+  title={slide.title}
+  description={slide.description}
+  rightImage={slide.rightImage}
+  buttonText={slide.buttonText}
+  buttonImage={ButtonImage}
+  hoverImage={ButtonImage}
+  rightSec={false}
+  buttonWidth="!w-[250px]"
+  className="modernization-ecosystem-download-datasheet"
+  onButtonClick={() => showHubSpotForm("modernization-ecosystem-download-datasheet")}
+/>
       <Submenu
         navItems={navItems}
         activeTab={activeTab}

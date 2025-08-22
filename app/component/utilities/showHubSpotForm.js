@@ -2,6 +2,8 @@
 import Swal from "sweetalert2";
 
 export const showHubSpotForm = async (className) => {
+
+    console.log('crap');
   if (!className) {
     console.error("className is required for HubSpot form");
     return;

@@ -12,6 +12,7 @@ import Info4 from "../../assets/DigitalEngineering/cloud-service/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/cloud-service/Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/cloud-service/Info6.svg";
 import Info7 from "../../assets/DigitalEngineering/cloud-service/Info7.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 export const HeroSectionProduct = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -32,6 +33,17 @@ cloud solutions aligned to your business goals.`,
   ];
   return (
     <>
+      {/* <BannerWithRightSec
+        heroBg={BackgroundImage}
+        title={slide.title}
+        description={slide.description}
+        rightImage={slide.rightImage}
+        buttonText={slide.buttonText}
+        buttonImage={ButtonImage}
+        hoverImage={ButtonImage}
+        rightSec={false}
+        buttonWidth="!w-[250px]"
+      /> */}
       <BannerWithRightSec
         heroBg={BackgroundImage}
         title={slide.title}
@@ -42,6 +54,8 @@ cloud solutions aligned to your business goals.`,
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        buttonClassName="cloud-datasheet"
+        onButtonClick={() => showHubSpotForm("cloud-datasheet")}
       />
       <Submenu
         navItems={navItems}

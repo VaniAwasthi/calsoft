@@ -14,6 +14,7 @@ import {
   ModernizationChallengeSec,
   PlugindevelopmentSec,
 } from "../../component/modernizationandecosystem/HeroChallengesInfoSec.jsx";
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 const page = () => {
   return (
     <>
@@ -22,16 +23,17 @@ const page = () => {
       <MaturityAssessmentSec />
       <FutureReadinessSec />
       <EcosystemManagementSec />
-      <BannerSection
-        backgroundImage={BannerwithButtonBg}
-        title={
-          <>
-           Cut legacy costs by 40% via modernization strategy.
-          </>
-        }
-        buttonText="Book a Meeting"
-        buttonLink="#"
-      />
+     <BannerSection
+  backgroundImage={BannerwithButtonBg}
+  title={
+    <>
+      Cut legacy costs by 40% via modernization strategy.
+    </>
+  }
+  buttonText="Book a Meeting"
+  onButtonClick={() => showHubSpotForm("book-a-meeting")}
+  className="book-a-meeting"
+/>
       <PlugindevelopmentSec />
       <ContactSecData
         BoldContent="Modernize and build ecosystems ready for tomorrow’s growth "
