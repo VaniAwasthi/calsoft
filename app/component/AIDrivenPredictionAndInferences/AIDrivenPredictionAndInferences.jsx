@@ -8,6 +8,8 @@ import Info1 from "../../assets/Data-Ai/dataDriven/Info1.svg";
 import Info2 from "../../assets/Data-Ai/dataDriven/Info2.svg";
 import Info3 from "../../assets/Data-Ai/dataDriven/Info3.svg";
 import Info4 from "../../assets/Data-Ai/dataDriven/Info4.svg";
+
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -41,6 +43,7 @@ export const DrivenBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+         onButtonClick={() => showHubSpotForm("ai-driven-prediction-datasheet")}
       />
       <Submenu
         navItems={navItems}
