@@ -20,7 +20,31 @@ const Page = () => {
         buttonText="Access Readiness"
       />
       <WhyItMatters />
-      <IntelligentPlanning />
+      <IntelligentPlanning
+        data={[
+          {
+            title: "Workload Rationalization",
+            subTitle:
+              "using 6R framework (Rehost, Refactor, Replatform, Repurchase, Retire, Retain)",
+          },
+          {
+            title: "Dependency Mapping",
+            subTitle: "via automated tools",
+          },
+          {
+            title: "Business Impact Heatmaps",
+            subTitle: "to prioritize based on risk and value",
+          },
+          {
+            title: "TCO Estimation",
+            subTitle: "across cloud providers",
+          },
+          {
+            title: "Security & Compliance Mapping",
+            subTitle: "to ensure regulated workload migration",
+          },
+        ]}
+      />
       <Agility
         data={{
           leftSideContent: {
@@ -49,7 +73,8 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title: "Book a 30-minute call to stop 80% of your cloud spend from going to waste.",
+          title:
+            "Book a 30-minute call to stop 80% of your cloud spend from going to waste.",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"

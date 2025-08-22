@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
@@ -26,8 +27,8 @@ const Page = () => {
         buttonText="Download Case Study"
         Component={BenchmarkingMatter}
       />
-      <IntelligentPlanning 
-      data={[
+      <IntelligentPlanning
+        data={[
           {
             title: "Define KPIs",
             subTitle: "across performance, stability, cost, and scalability",
@@ -54,18 +55,21 @@ const Page = () => {
         data={{
           leftSideContent: {
             title: "Turn Unknowns Into Predictable Outcomes.",
-            subTitle: "Benchmarking before critical changes reduces risk and enhances decision-making:",
+            subTitle:
+              "Benchmarking before critical changes reduces risk and enhances decision-making:",
             // description:
             //   "Calsoft focuses on business-first outcomes — not just technical transition.",
           },
           rightSideContent: [
             {
               title: "30-40%",
-              subTitle: "better architectural decisions through data-backed comparisons",
+              subTitle:
+                "better architectural decisions through data-backed comparisons",
             },
             {
               title: "Up to 40%",
-              subTitle: "cost savings by avoiding over-engineering or under-provisioning",
+              subTitle:
+                "cost savings by avoiding over-engineering or under-provisioning",
             },
             {
               title: "Faster stakeholder",
@@ -78,17 +82,17 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title: "Get a customized readiness scorecard aligned to your architecture and KPIs",
+          title:
+            "Get a customized readiness scorecard aligned to your architecture and KPIs",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"
       />
-      <UseCases 
-      data={[
+      <UseCases
+        data={[
           {
             title: "Cloud migration",
-            subTitle:
-              "planning for legacy workloads",
+            subTitle: "planning for legacy workloads",
           },
           {
             title: "Platform modernization",

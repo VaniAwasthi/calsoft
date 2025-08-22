@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function IntegrationMatter() {
   return (
@@ -41,7 +44,7 @@ export default function IntegrationMatter() {
             }}
           >
             <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
-              <div className="transform -rotate-45 text-white text-center px-4">
+              <div className="transform -rotate-45 text-white text-center px-4 pt-6">
                 <div className="text-xl font-medium leading-tight">
                   Unversioned
                   <br />
@@ -72,7 +75,7 @@ export default function IntegrationMatter() {
                   <br />
                   real-time
                   <br />
-                  feedback loops 
+                  feedback loops
                   <br />
                   for failed
                   <br />
@@ -120,9 +123,9 @@ export default function IntegrationMatter() {
             <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
                 <div className="text-xl font-medium leading-tight">
-                  Manual QA 
+                  Manual QA
                   <br />
-                  cycles outside 
+                  cycles outside
                   <br />
                   CI/CD pipelines
                 </div>
