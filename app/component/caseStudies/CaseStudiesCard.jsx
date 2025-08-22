@@ -38,53 +38,51 @@ export const CaseStudiesCard = () => {
 
   const [currentPage, setCurrentPage] = useState(0);
 
-     const FilterIndustry = useSelector(
-     (state) => state.blogs.filterIndustry || []
-   );
-   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
-   const [activeFilters, setActiveFilters] = useState({
-     Industry: "All",
-     Topics: [],
-   });
- 
-   const filters = {
-     Industry: ["All", ...FilterIndustry],
-     Topics: ["All", ...FilterTopic],
-   };
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+  const [activeFilters, setActiveFilters] = useState({
+    Industry: "All",
+    Topics: [],
+  });
+
+  const filters = {
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
+  };
   const router = useRouter();
 
   useEffect(() => {
-          dispatch(fetchBlogFilterList());
-    
+    dispatch(fetchBlogFilterList());
+
     dispatch(fetchCaseStudiesList());
   }, [dispatch]);
 
-const handleClick = (item) => {
-  const safeTitle = item.title || "untitled";
-  const slug = slugify(safeTitle, { lower: true });
-  dispatch(setSelectedCaseStudyId(item._id));
-  localStorage.setItem("selectedCaseStudyId", item._id);
-  router.push(`/insights/case-studies/${slug}`);
-};
+  const handleClick = (item) => {
+    const safeTitle = item.title || "untitled";
+    const slug = slugify(safeTitle, { lower: true });
+    dispatch(setSelectedCaseStudyId(item._id));
+    localStorage.setItem("selectedCaseStudyId", item._id);
+    router.push(`/insights/case-studies/${slug}`);
+  };
 
   const images = [Info1, Info2];
 
   const resources = listData.map((item) => {
-  const safeTitle = item?.hero_title1 || "Untitled"; // fallback
-  return {
-    ...item,
-    id: item._id,
-    title: safeTitle,
-    image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
-    slug: safeTitle
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)/g, ""),
-    link: `https://yourdomain.com/card/${item._id}`,
-  };
-});
-
-
+    const safeTitle = item?.hero_title1 || "Untitled"; // fallback
+    return {
+      ...item,
+      id: item._id,
+      title: safeTitle,
+      image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
+      slug: safeTitle
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, ""),
+      link: `https://yourdomain.com/card/${item._id}`,
+    };
+  });
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -105,7 +103,7 @@ const handleClick = (item) => {
       console.error("Copy failed:", error);
     }
   };
- const filteredResources = resources.filter((item) => {
+  const filteredResources = resources.filter((item) => {
     const industryMatch =
       activeFilters.Industry === "All" ||
       item.industry === activeFilters.Industry;
@@ -144,13 +142,13 @@ const handleClick = (item) => {
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full  sm:px-6 lg:px-8">
         <FilterPanel
-                 filters={filters}
-                 activeFilters={activeFilters}
-                 openDropdown={openDropdown}
-                 toggleDropdown={toggleDropdown}
-                 selectFilter={selectFilter}
-                 setActiveFilters={setActiveFilters}
-               />
+          filters={filters}
+          activeFilters={activeFilters}
+          openDropdown={openDropdown}
+          toggleDropdown={toggleDropdown}
+          selectFilter={selectFilter}
+          setActiveFilters={setActiveFilters}
+        />
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
         {/* recent */}
@@ -188,35 +186,34 @@ const handleClick = (item) => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-               <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
-                  <Image
-                    src={logo2}
-                    className="w-full"
-                    alt="logo"
-                    width={100}
-                    height={100}
-                  />
-                </div>
-              
+              <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
+                <Image
+                  src={logo2}
+                  className="w-full"
+                  alt="logo"
+                  width={100}
+                  height={100}
+                />
+              </div>
             </motion.div>
 
             <div className=" w-full flex flex-col justify-between">
               <div>
                 {caseStudyData.description.map((desc, index) => (
                   <>
-<h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem] py-2">
-                {caseStudyData.title}
-              </h2>
-                  <motion.p
-                    key={index}
-                    className="text-[#959595] text-sm md:text-[18px] font-light p-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.2 }}
-                    dangerouslySetInnerHTML={{ __html: desc }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                  />
+                    <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem] py-2">
+                      {caseStudyData.title}
+                    </h2>
+                    <motion.p
+                      key={index}
+                      className="text-[#959595] text-sm md:text-[18px] font-light p-2"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.2 }}
+                      dangerouslySetInnerHTML={{ __html: desc }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                    />
                   </>
                 ))}
               </div>

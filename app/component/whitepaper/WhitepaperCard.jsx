@@ -33,9 +33,8 @@ export const WhitepaperCards = () => {
   };
   const [currentPage, setCurrentPage] = useState(0);
 
-  
   useEffect(() => {
-     dispatch(fetchBlogFilterList());
+    dispatch(fetchBlogFilterList());
     dispatch(fetchWhitepaperList());
   }, [dispatch]);
 
@@ -65,9 +64,9 @@ export const WhitepaperCards = () => {
 A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....`;
 
   const handleClick = (item) => {
-      const slug = slugify(item.title, { lower: true });
+    const slug = slugify(item.title, { lower: true });
     dispatch(setSelectedWhitepaperId(item.id));
-localStorage.setItem("selectedWhitepaperId", item.id);
+    localStorage.setItem("selectedWhitepaperId", item.id);
     router.push(`/insights/whitepaper/${slug}`);
   };
 
@@ -103,7 +102,6 @@ localStorage.setItem("selectedWhitepaperId", item.id);
     return industryMatch && tagMatch;
   });
 
-
   const itemsPerPage = 6;
   const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
   const currentPageData = filteredResources.slice(
@@ -120,18 +118,18 @@ localStorage.setItem("selectedWhitepaperId", item.id);
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
         <FilterPanel
-                  filters={filters}
-                  activeFilters={activeFilters}
-                  openDropdown={openDropdown}
-                  toggleDropdown={toggleDropdown}
-                  selectFilter={selectFilter}
-                  setActiveFilters={setActiveFilters}
-                />
+          filters={filters}
+          activeFilters={activeFilters}
+          openDropdown={openDropdown}
+          toggleDropdown={toggleDropdown}
+          selectFilter={selectFilter}
+          setActiveFilters={setActiveFilters}
+        />
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
         {/* Content */}
-       
+
         {/* Grid Display with animation */}
         <div className="grid grid-cols-1 sm:grid-cols-2  gap-8 mt-[2rem]">
           <AnimatePresence>

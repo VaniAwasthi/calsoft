@@ -7,7 +7,8 @@ import Image from "next/image";
 import img from "../../assets/infra/UseCases.webp";
 import { motion } from "framer-motion";
 
-export default function UseCases({data=[
+export default function UseCases({
+  data = [
     {
       title: "ISVs",
       subTitle:
@@ -29,8 +30,8 @@ export default function UseCases({data=[
       title: "Media houses",
       subTitle: "migrating storage-heavy assets to cloud object storage",
     },
-  ]}) {
-  
+  ],
+}) {
   return (
     <div className="container">
       <div className="h-8" />
@@ -61,6 +62,7 @@ export default function UseCases({data=[
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
           {data.map((ele, idx) => (
             <motion.div
+              key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}

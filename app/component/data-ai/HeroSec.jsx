@@ -79,9 +79,9 @@ export const MultiFeatureGrid = ({ sections, heading }) => {
           {/* Grid of Cards */}
           <div className="relative grid grid-cols-1 sm:grid-cols-2  gap-6">
             {section.items.map((item, idx) => (
-             <Link  key={idx} href={item.link}>
-             <Card title={item.title} desc={item.desc} />
-             </Link> 
+              <Link key={idx} href={item.link}>
+                <Card title={item.title} desc={item.desc} />
+              </Link>
             ))}
 
             {/* Purple Center Label (Desktop only) */}
