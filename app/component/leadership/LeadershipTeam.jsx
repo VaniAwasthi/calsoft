@@ -12,10 +12,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function LeadershipTeam() {
-  const truncateWords = (text, limit) => {
-  const words = text.split(" ");
-  return words.length > limit ? words.slice(0, limit).join(" ") + "..." : text;
-};
+//   const truncateWords = (text, limit) => {
+//   const words = text.split(" ");
+//   return words.length > limit ? words.slice(0, limit).join(" ") + "..." : text;
+// };
   const data = [
     {
       image: anupam,
@@ -131,7 +131,7 @@ export default function LeadershipTeam() {
   <div className="absolute inset-0 bg-[#2E3092] text-white opacity-0 translate-y-5 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex flex-col justify-center items-left p-4 text-left">
     <p className="text-lg font-medium">{ele.name}</p>
     <p className="text-sm italic">{ele.post}</p>
-    <p className="text-xs mt-2">{truncateWords(ele.description, 22)}</p>
+    <p className="text-xs mt-2">{ele.description}</p>
   </div>
 </motion.div>
 
