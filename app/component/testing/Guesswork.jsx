@@ -3,8 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function Guesswork() {
-  const steps = [
+export default function Guesswork({
+  stepsData = [
     {
       number: "1",
       title: "Readiness Assessment",
@@ -45,14 +45,14 @@ export default function Guesswork() {
       output: "Output: Migration Feasibility Report + Risk Scorecard",
       alignment: "left",
     },
-  ];
-
+  ],
+}) {
   return (
     <div className="py-14">
       <div className="relative">
         <div className="absolute left-1/2 top-20 bottom-20 w-3 bg-[#d9d9d9] transform -translate-x-1/2 z-0" />
 
-        {steps.map((step, index) => (
+        {stepsData.map((step, index) => (
           <div key={index} className="relative mb-16 last:mb-0">
             <div className="flex items-center justify-center">
               {step.alignment === "left" ? (
@@ -90,11 +90,8 @@ export default function Guesswork() {
                           style={{ right: "20px" }}
                         >
                           <div className="w-24 h-24 bg-[#2e3092] rounded-full flex items-center justify-center">
-                            <span
-                              className="text-white text-2xl font-light"
-                              style={{ WebkitTextStroke: "1px #ffffff" }}
-                            >
-                              {step.number}
+                            <span className="text-white text-7xl font-londrina">
+                              {index + 1}
                             </span>
                           </div>
                         </div>
@@ -145,7 +142,7 @@ export default function Guesswork() {
                           <p className="text-black text-lg mb-3 leading-relaxed">
                             {step.description}
                           </p>
-                          <p className="text-black text-lg font-medium">
+                          <p className="text-black text-lg font-bold">
                             {step.output}
                           </p>
                         </div>
@@ -154,11 +151,8 @@ export default function Guesswork() {
                           style={{ left: "20px" }}
                         >
                           <div className="w-24 h-24 bg-[#2e3092] rounded-full flex items-center justify-center">
-                            <span
-                              className="text-white text-2xl font-light"
-                              style={{ WebkitTextStroke: "1px #ffffff" }}
-                            >
-                              {step.number}
+                            <span className="text-white text-7xl font-londrina">
+                              {index + 1}
                             </span>
                           </div>
                         </div>

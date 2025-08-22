@@ -28,6 +28,9 @@ const Page = () => {
         Component={BenchmarkingMatter}
       />
       <IntelligentPlanning
+        heading="Measure What Matters — Precisely."
+        description="We help enterprises define what to benchmark, how to measure it, and what to expect, based on application type, usage model, and business goals."
+        buttonText="Request POC"
         data={[
           {
             title: "Define KPIs",
@@ -147,12 +150,50 @@ const Page = () => {
       />
       <FirstStep
         headerContent={{
-          title1: "Migrate with Method,",
-          title2: "Not Momentum",
+          title1: "Benchmark Today. Transform",
+          title2: "Smarter Tomorrow",
           description:
-            "We take you from readiness to run-state through a risk-mitigated, ROI-led framework. Here's how:",
+            "Here’s how we bring benchmarking into your transformation process — without slowing it down.",
         }}
         Component={Guesswork}
+        guessworkData={[
+          {
+            title: "Readiness Evaluation",
+            description:
+              "Assess your application landscape, KPIs, infra stack, and modernization plans.",
+            output: "Output: Benchmark Readiness Report + Scope Definition",
+            alignment: "left",
+          },
+          {
+            title: "Scenario Definition & KPI Mapping",
+            description:
+              "Identify use cases to benchmark — tech stack, user flow, performance attributes, and business impact areas.",
+            output: "Output: Benchmark KPI Matrix + Test Scenarios",
+            alignment: "right",
+          },
+          {
+            title: "Toolchain Setup & Simulation Design",
+            description:
+              "Set up synthetic loads, monitoring tools, telemetry collection, and comparison baselines.",
+            output: "Output: Test Harness Blueprint + Execution Plan",
+            alignment: "left",
+          },
+          {
+            title: "Execution & Observability",
+            description:
+              "Run benchmarks with real-time dashboards, alerting, and test comparisons.",
+            output: "Output: Benchmark Execution Summary + Gap Insights",
+            alignment: "right",
+          },
+          {
+            title: "Recommendations & Decision Pack",
+            description:
+              "Deliver actionable reports, infra right-sizing, SLA alignment, and architectural improvement areas.",
+            output:
+              "Output: Executive Benchmarking Deck + Optimization Roadmap",
+            alignment: "left",
+          },
+        ]}
       />
       <ContactSecDataAi
         lightContent={

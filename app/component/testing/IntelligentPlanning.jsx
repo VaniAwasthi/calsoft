@@ -31,31 +31,59 @@ export default function IntelligentPlanning({
       subTitle: "Continuous regression validation as part of CI/CD workflows",
     },
   ],
-  title = "Move What Matters, Not Just What Exists",
+  title = "Intelligent Planning",
+  heading = "Move What Matters, Not Just What Exists",
   description = " We don’t just move workloads — we evaluate, prioritize, and engineer them for performance and ROI. Calsoft’s approach includes:",
+  buttonText = "Get a Free 6R Analysis Report",
 }) {
   return (
     <div className="container">
       <div className="h-8" />
       <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-3 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent leading-16">
-          Intelligent Planning
-        </h1>
+        <motion.h1
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="text-4xl font-bold mb-3 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent leading-16"
+        >
+          {title}
+        </motion.h1>
 
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-5">
           <div className="max-w-2xl">
-            <h2 className="text-[#000000] text-3xl font-bold mb-4">{title}</h2>
-            <p className="text-[#000000] text-lg leading-relaxed">
+            <motion.h2
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="text-[#000000] text-3xl font-bold mb-4"
+            >
+              {heading}
+            </motion.h2>
+            <motion.p
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="text-[#000000] text-lg leading-relaxed"
+            >
               {description}
-            </p>
+            </motion.p>
           </div>
-
-          <ButtonLayout
-            text={"Get a Free 6R Analysis Report"}
-            image={buttonImage}
-            hoverImage={buttonImage}
-            className={" whitespace-nowrap"}
-          />
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <ButtonLayout
+              text={buttonText}
+              image={buttonImage}
+              hoverImage={buttonImage}
+              className={" whitespace-nowrap"}
+            />
+          </motion.div>
         </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 gap-y-9">
