@@ -15,11 +15,12 @@ import {
 export const HeroSectionTechnicalConsulting = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
-    title: "Technical Consulting",
+    title: "End-to-end data pipeline implementation ",
 
-    description: `Bridge strategy and execution through data-driven
-technical advisory.`,
-    buttonText: "Download Datasheet",
+    description: `Engineer and accelerate data flow, 
+integration, and trust across hybrid 
+environments.`,
+    buttonText: "Get in touch",
     image: BackgroundImage,
   };
   const navItems = [
@@ -53,32 +54,32 @@ technical advisory.`,
 export const ChallengeSolutionSecTechnicalConsulting = () => {
   const data = [
     {
-      tag: "ARCHITECTURE ALIGNMENT",
+      tag: "Fragmented systems ",
       challenge:
-        "Is your current infrastructure misaligned with evolving business demands?",
+        "Are fragmented systems slowing your data consolidation efforts? ",
       solution:
-        "Evaluate and refine data and system architectures to match strategic objectives and scale",
+        "Architect unified, scalable pipelines that streamline multi-source ingestion and integration. ",
     },
     {
-      tag: "OPERATIONAL GAPS",
+      tag: "Resilience assessment ",
       challenge:
-        "Are inefficiencies and bottlenecks slowing down delivery and responsiveness?",
+        "Facing risks of inconsistent or incomplete data during migration? ",
       solution:
-        "Identify system-level friction points and redesign workflows for improved throughput and agility",
+        "Enable governed, validated migration frameworks for seamless data transitions. ",
     },
     {
-      tag: "TECH ROI",
+      tag: "Migration and scaling ",
       challenge:
-        "Uncertain whether current tools and platforms are delivering ROI?",
+        "Struggling to maintain transparency across complex data flows?",
       solution:
-        "Assess utilization patterns, recommend right-sizing, and guide platform rationalization",
+        "Implement real-time data lineage tracking and impact analysis mechanisms. ",
     },
     {
-      tag: "CHANGE READINESS",
+      tag: "Lack of transparency",
       challenge:
-        "Struggling to plan and execute tech shifts (change) without disruption?",
+        "Worried about slow onboarding of new data sources? ",
       solution:
-        "Structured roadmaps for adoption, migration, or modernization initiatives with built-in risk safeguards",
+        "Design modular, cloud-ready ingestion pipelines to accelerate source integration. ",
     },
   ];
   return (
@@ -86,7 +87,7 @@ export const ChallengeSolutionSecTechnicalConsulting = () => {
       <ChallengeSolutionComp
         secId="benefits"
         data={data}
-        BlackHeading="Scalable AI Agents"
+        BlackHeading="Architect, implement, and scale data pipelines "
         GradientHeading="Challenge to solutions:"
       />
     </>
@@ -97,19 +98,19 @@ export const StrategicSecTechnicalConsulting = () => {
   return (
     <>
       <DataInfoSection
-        title="Strategic architecture advisory"
-        description="Blueprint scalable systems aligned to long-term
-business objectives."
-        buttonText="Learn More"
+        title="Data architecture enhancement"
+        description="Design resilient and high-velocity pipelines 
+for evolving data needs. "
+        buttonText="Case study (or asset)"
         link="#"
         whatWeDo={[
-          "Assess system fit for future scale",
-          "Propose modular, flexible design",
-          "Add security and governance layers",
+          "Map pipelines for hybrid data flows ",
+          "Support varied formats and scales ",
+          "Build resilient, parallel systems",
         ]}
         businessImpact={[
-          "Systems scale with business goals",
-          "Architecture supports key strategy",
+          "Speed up trusted data delivery ",
+          "Scale easily with new sources",
           "Modular design cuts future rework",
         ]}
         imageSrc={InfoSec1}
@@ -126,19 +127,19 @@ export const RiskMitigationSecTechnicalConsulting = () => {
   return (
     <>
       <DataInfoSection
-        title="Risk mitigation and recovery planning"
-        description="Anticipate disruptions and strengthen resilience across your tech environment."
-        buttonText="Learn More"
+        title="Data platform and ecosystem integration "
+        description="Unify distributed data sources for seamless, intelligent operations. "
+        buttonText="Case study (or asset)"
         link="#"
         whatWeDo={[
-          "Find weak points across platforms",
-          "Plan for fallbacks and recovery",
-          "Align with SLAs and compliance",
+          "Link lakes, warehouses, and stores",
+          "Connect process and storage layers",
+          "Build APIs to unify data movement ",
         ]}
         businessImpact={[
-          "Fewer breakdowns during stress",
-          "Fast recovery from disruptions",
-          "Greater trust in tech planning",
+          "Faster access to connected data",
+          "Lower integration effort at scale",
+          "Better policy control across flows",
         ]}
         imageSrc={InfoSec2}
         imageAlt="Image"
@@ -154,19 +155,19 @@ export const PlatformSecTechnicalConsulting = () => {
   return (
     <>
       <DataInfoSection
-        title="Platform interoperability consulting"
-        description="Create cohesive systems through guided integration and alignment strategies."
-        buttonText="Learn More"
+        title="Effortless and faultless data migration"
+        description="Move critical data assets with integrity, speed, and zero disruption. "
+        buttonText="Case study (or asset)"
         link="#"
         whatWeDo={[
-          "Map cross-platform connection gaps",
-          "Align integration with governance",
-          "Guide phased API and data setup",
+          "Create migration maps by system type",
+          "Add rollback and audit routines ",
+          "Manage transitions with low risk ",
         ]}
         businessImpact={[
-          "Simpler system-to-system flow",
-          "Fewer issues from data drift",
-          "Quicker integration launches",
+          "Migration is quicker and cleaner",
+          "Cloud moves become smoother",
+          "Data quality stays intact end-to-end",
         ]}
         imageSrc={InfoSec3}
         imageAlt="Infrastructure globe"
@@ -181,19 +182,19 @@ export const CostOptimizedSecTechnicalConsulting = () => {
   return (
     <>
       <DataInfoSection
-        title="Balance performance and spend through expert system-wide planning"
-        description="Bring ideas to life early and streamline decision-making with interactive prototypes."
-        buttonText="Learn More"
+        title="Data sanity and lineage handling"
+        description="Ensure transparency, trust, and traceability across your data pipelines. "
+        buttonText="Case study (or asset)"
         link="#"
         whatWeDo={[
-          "Analyze workloads for imbalance",
-          "Plan orchestration to match use",
-          "Map cost to real business value",
+          "Add checks across each pipeline step ",
+          "Map full data journeys visually ",
+          "Use tags and metadata for audits ",
         ]}
         businessImpact={[
-          "Waste cut from unused capacity",
-          "Systems use fewer idle cycles",
-          "Spend matches performance goals",
+          "Trust rises with full traceability",
+          "Audits take less time to execute ",
+          "Root causes are faster to uncover ",
         ]}
         imageSrc={InfoSec4}
         imageAlt="Infrastructure globe"
