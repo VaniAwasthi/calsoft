@@ -11,6 +11,7 @@ import Info3 from "../../assets/DigitalEngineering/security/Info3.svg";
 import Info4 from "../../assets/DigitalEngineering/security/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/security/Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/security/Info6.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 export const SecurityTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -42,6 +43,7 @@ export const SecurityTab = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+         onButtonClick={() => showHubSpotForm("security-datasheet")}
       />
       <Submenu
         navItems={navItems}

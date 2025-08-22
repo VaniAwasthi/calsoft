@@ -14,6 +14,8 @@ import {
 import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
+
 const page = () => {
   return (
     <>
@@ -32,6 +34,7 @@ const page = () => {
         }
         buttonText="Book a Meeting"
         buttonLink="#"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <PlatformSecTechnicalConsulting />
       <CostOptimizedSecTechnicalConsulting />
