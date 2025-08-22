@@ -8,6 +8,7 @@ import InfoSec1 from "../../assets/Data-Ai/technical-consultant/InfoSec1.svg";
 import InfoSec2 from "../../assets/Data-Ai/technical-consultant/InfoSec2.svg";
 import InfoSec3 from "../../assets/Data-Ai/technical-consultant/InfoSec3.svg";
 import InfoSec4 from "../../assets/Data-Ai/technical-consultant/InfoSec4.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -40,6 +41,7 @@ technical advisory.`,
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
+         onButtonClick={() => showHubSpotForm("technical-consulting-datasheet")}
       />
       <Submenu
         navItems={navItems}
