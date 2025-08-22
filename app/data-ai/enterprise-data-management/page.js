@@ -25,9 +25,9 @@ const page = () => {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Strategize, stabilize, and scale
-            <br className="hidden md:block px-1" /> with expert engineering
-            insight
+            Design intelligent data pipelines
+            <br className="hidden md:block px-1" /> that drive faster insights and
+            integration
           </>
         }
         buttonText="Book a Meeting"
@@ -36,8 +36,8 @@ const page = () => {
       <PlatformSecTechnicalConsulting />
       <CostOptimizedSecTechnicalConsulting />
       <ContactSecDataAi
-        BoldContent="Let Calsoft guide your technology transformation"
-        lightContent="Bridge strategy and execution"
+        BoldContent="Calsoft can show you how"
+        lightContent="Innovate and grow with future-ready data pipelines"
         link="#"
       />
     </>
