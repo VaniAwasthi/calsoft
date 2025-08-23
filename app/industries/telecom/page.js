@@ -35,19 +35,17 @@ We help telecoms with streamlining operations, automating networks, and enhancin
   const [activeTab, setActiveTab] = useState("Journey");
   const navItems = [
     "Journey",
-    "Customers",
-    "Industries",
-    "What's New",
-    "Partners",
+    "Orchestration",
+    "Networks",
+    "Security",
+    "Case Studies",
     "Services",
-    "Case Study",
   ];
   const Gradientheading = "";
   const BlackHeading = "Achieving next-gen success";
   const icons = [
     {
       icon: Incon1,
-
       title: "Optimized network operations",
       desc: "Deploy SDN/NFV solutions for intelligent automation.",
       positionClass:
@@ -58,7 +56,6 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     },
     {
       icon: Incon2,
-
       title: "Ensuring seamless cloud transformation",
       desc: "Leverage cloud-native architectures for flexibility.",
       positionClass:
@@ -69,7 +66,6 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     },
     {
       icon: Incon3,
-
       title: "Enhanced service assurance & security",
       desc: "Strengthen monitoring and threat detection.",
       positionClass:
@@ -80,7 +76,6 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     },
     {
       icon: Incon4,
-
       title: "Scaled 5G & edge computing capabilities",
       desc: "Enable real-time data processing at the edge.",
       positionClass:
@@ -101,6 +96,7 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     },
   ];
   const SectionOne = {
+    id: "orchestration",
     title: "Automate network operations and orchestration",
     description: `Legacy networks may struggle with agility and cost-efficiency.
 <br/><br/>
@@ -117,13 +113,14 @@ Here, companies must deploy SDN, NFV, and AI-driven automation to simplify netwo
       "Accelerate service delivery through self-configuring networks",
       "Lower operational costs with predictive fault management",
     ],
-     buttonText: "Case Study",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: TelecomInfo1,
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
   };
   const SectionTwo = {
+    id: "networks",
     title: "Build agile, scalable, and low-latency telecom networks",
     description: `Thinking 5G? 5G requires real-time processing and low-latency infrastructure.
 <br/><br/>
@@ -147,6 +144,7 @@ Companies must integrate multi-access edge computing (MEC), AI-driven insights, 
     bgColor: "bg-[#F8F9FA]",
   };
   const SectionThree = {
+    id: "security",
     title: "Enhance service assurance and cybersecurity",
     description: `With growing cyber threats, telecom networks need enhanced security and real-time monitoring.<br/><br/>
 We help you get ahead of such threats with real-time risk mitigation, powered by AI-driven automation.`,

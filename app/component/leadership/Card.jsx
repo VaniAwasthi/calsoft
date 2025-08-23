@@ -1,6 +1,4 @@
-import React from "react";
 import Image from "next/image";
-import { FaCaretDown } from "react-icons/fa";
 
 export default function Card({ data }) {
   function truncateWords(text, wordLimit) {
@@ -10,22 +8,40 @@ export default function Card({ data }) {
   }
 
   return (
-    <div className=" flex flex-col gap-4 items-start group hover:shadow-xl rounded-lg">
-      <div className="rounded-lg bg-[#E0E0E0] relative w-full group-hover:scale-105 transition-all">
-        <div className="overflow-hidden">
-          <Image src={data.image} alt={data.name} className="w-full -z-10" />
+    <div className="flex flex-col gap-4 items-start hover:shadow-xl rounded-lg">
+      <div className="rounded-lg bg-[#E0E0E0] relative w-full overflow-hidden group">
+        {/* Image container - separate from sheet */}
+        <div className="w-full h-80 overflow-hidden rounded-t-lg group-hover:h-0 transition-all duration-500 ease-in-out">
+          <Image
+            src={data.image || "/placeholder.svg"}
+            alt={data.name}
+            className="w-full h-full object-cover"
+            width={400}
+            height={320}
+          />
         </div>
-        <div className="p-2 bg-[#2E3092] text-white rounded-b-lg flex flex-col gap-1 z-0">
-          <p className="text-lg font-medium">{data.name}</p>
-          <p className="text-sm h-10">{data.post}</p>
+
+        {/* Blue sheet - starts below image, expands upward on hover */}
+        <div className="w-full h-24 bg-[#2E3092] text-white rounded-b-lg group-hover:rounded-lg group-hover:h-[416px] flex flex-col justify-center px-4 py-3 transition-all duration-500 ease-in-out">
+          <div className="flex flex-col gap-1">
+            <div>
+              <p className="text-lg font-medium leading-tight">{data.name}</p>
+              <p className="text-sm opacity-95 leading-tight">{data.post}</p>
+            </div>
+            {/* Description appears on hover */}
+            <div className="hidden group-hover:block  opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 mt-4">
+              <p className="text-sm leading-relaxed">
+                {truncateWords(data.description, 60)}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <p className="text-sm h-36 sm:h-24 p-2">
-        {truncateWords(data.description, 18)}
+
+      {/* Bottom description - unchanged */}
+      <p className="text-sm h-36 sm:h-24 p-2 group-hover:opacity-50 transition-opacity duration-300">
+        {truncateWords(data.description, 15)}
       </p>
-      {/* <button className="flex gap-1 justify-center items-center text-[#2E3092] font-medium p-2">
-        Read More <FaCaretDown />
-      </button> */}
     </div>
   );
 }

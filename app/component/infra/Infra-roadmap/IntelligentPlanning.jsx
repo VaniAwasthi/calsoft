@@ -103,7 +103,10 @@ export default function IntelligentPlanning() {
     },
   ];
   return (
-    <div className="bg-[#f2f0f5] min-h-screen pb-8 px-4">
+    <div
+      id="intelligent-planning"
+      className="bg-[#f2f0f5] min-h-screen pb-8 px-4"
+    >
       <div className="h-2" />
       <div className="container">
         {/* Header Section */}

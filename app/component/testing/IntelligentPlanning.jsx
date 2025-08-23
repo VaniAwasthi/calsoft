@@ -37,7 +37,7 @@ export default function IntelligentPlanning({
   buttonText = "Get a Free 6R Analysis Report",
 }) {
   return (
-    <div className="container">
+    <div id="intelligent-planning" className="container">
       <div className="h-8" />
       <div className="mb-8">
         <motion.h1

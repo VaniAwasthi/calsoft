@@ -43,7 +43,7 @@ export default function Agility({
   buttonText = "Try Now",
 }) {
   return (
-    <div className="container">
+    <div id="business-value" className="container">
       <div className="h-6 lg:h-8" />
       <div className="w-full h-full relative rounded-xl overflow-hidden">
         <Image

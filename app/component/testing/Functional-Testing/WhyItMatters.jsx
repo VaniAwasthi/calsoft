@@ -15,7 +15,7 @@ export default function WhyItMatters({
   contentWidth = "",
 }) {
   return (
-    <div className="container">
+    <div id="why-it-matters" className="container">
       <div className="h-8" />
       <div className="grid lg:grid-cols-2 gap-16 items-start">
         {/* Left Content */}

@@ -13,7 +13,10 @@ export default function IndustryIntelligence({
   contentClass,
 }) {
   return (
-    <section className="py-3 md:py-16 px-4 sm:px-8 lg:px-16 bg-white relative overflow-hidden">
+    <section
+      id="journey"
+      className="py-3 md:py-16 px-4 sm:px-8 lg:px-16 bg-white relative overflow-hidden"
+    >
       <motion.h2
         initial={{ y: 30, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

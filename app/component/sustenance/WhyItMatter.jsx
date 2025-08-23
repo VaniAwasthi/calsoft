@@ -135,7 +135,7 @@ export default function WhyItMatters({
     },
   ];
   return (
-    <div className="container">
+    <div id="why-it-matters" className="container">
       <div className="h-8" />
       <div className="flex flex-col justify-center gap-12">
         {/* Upper content */}

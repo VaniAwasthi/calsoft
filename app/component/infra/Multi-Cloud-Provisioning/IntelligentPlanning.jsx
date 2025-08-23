@@ -174,7 +174,7 @@ export default function IntelligentPlanning({
   }, []);
 
   return (
-    <div className="bg-[#f2f0f5]">
+    <div id="intelligent-planning" className="bg-[#f2f0f5]">
       <div className="container min-h-screen pt-0 px-4">
         <div className="h-4 lg:h-6" />
         <div className="max-w-7xl mx-auto">
@@ -263,7 +263,7 @@ export default function IntelligentPlanning({
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileinview={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
                 viewport={{ once: false, amount: 0.3 }}
                 className="relative bg-white hover:bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 hover:text-white min-h-[280px] hover:border-none border-2 border-[#2e3092] transition-all"
@@ -283,7 +283,7 @@ export default function IntelligentPlanning({
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <motion.div
               initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              whileinview={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
             >
@@ -295,7 +295,7 @@ export default function IntelligentPlanning({
             </motion.div>
             <motion.div
               initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              whileinview={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
             >

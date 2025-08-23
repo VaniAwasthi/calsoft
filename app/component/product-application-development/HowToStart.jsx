@@ -13,7 +13,7 @@ export default function HowToStart({
   },
 }) {
   return (
-    <div className="container">
+    <div id="how-to-start" className="container">
       <div className="grid lg:grid-cols-2 gap-5 mb-10 mt-5 px-3">
         <motion.div
           initial={{ x: -50, opacity: 0 }}

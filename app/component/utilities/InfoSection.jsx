@@ -5,6 +5,7 @@ import ButtonLayout from "./ButtonLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 
 const InfoImageSection = ({
+  id,
   title,
   description,
   pointsTitle,
@@ -21,7 +22,7 @@ const InfoImageSection = ({
   const isImageLeft = imagePosition === "left";
 
   return (
-    <section className="container mx-auto px-6 my-5 xl:px-20 py-3">
+    <section id={id} className="container mx-auto px-6 my-5 xl:px-20 py-3">
       <div className={`${bgColor}  px-0 mt-[3rem]`}>
         {/* Text Section with BG */}
         <motion.div

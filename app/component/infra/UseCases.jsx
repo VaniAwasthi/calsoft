@@ -17,7 +17,7 @@ export default function Component({
   ],
 }) {
   return (
-    <div className="bg-[#ffffff] px-6">
+    <div id="use-cases" className="bg-[#ffffff] px-6">
       <div className="container">
         <div className="h-8" />
         <div className="max-w-7xl mx-auto">

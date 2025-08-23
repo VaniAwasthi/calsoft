@@ -95,7 +95,7 @@ export default function LeadershipTeam() {
           technology-first vision to guide our customers’ success
         </p>
       </motion.div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 container">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {data.map((ele, idx) => (
           <motion.div
             key={idx}

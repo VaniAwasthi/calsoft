@@ -116,7 +116,7 @@ export default function FeatureCards({
   buttonText = "Request Architecture Blueprint",
 }) {
   return (
-    <div className="bg-[#F5F5F5]">
+    <div id="what-we-offer" className="bg-[#F5F5F5]">
       <div className="h-2" />
       <div className="container space-y-8">
         <div className="mb-12">

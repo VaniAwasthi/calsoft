@@ -21,6 +21,13 @@ export default function page() {
         title="From First Line to Full Launch—We Build to Deliver"
         description="Build intelligent, cloud-native products—from MVP to enterprise scale—without vendor lock-in."
         buttonText="Download Datasheet"
+        navItems={[
+          "Why it Matters",
+          "What We Offer",
+          "Use Cases",
+          "Business Value",
+          "How to Start",
+        ]}
       />
       <WhyItMatters
         title="90% of Product Delays Are Self-Inflicted. Avoid Them."

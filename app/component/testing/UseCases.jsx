@@ -36,7 +36,7 @@ export default function UseCases({
   description = "Our Infrastructure Roadmap services have unlocked outcomes for:",
 }) {
   return (
-    <div className="container">
+    <div id="use-cases" className="container">
       <div className="h-8" />
       <div className="mb-14">
         <h1 className="text-4xl font-bold mb-3 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent leading-16">

@@ -67,7 +67,7 @@ export default function WhyCalsoft({
     </div>
   );
   return (
-    <div className="max-w-7xl mx-auto px-6 container">
+    <div id="why-calsoft" className="max-w-7xl mx-auto px-6 container">
       <div className="h-8" />
       {/* Header Section */}
       <div className="mb-8">

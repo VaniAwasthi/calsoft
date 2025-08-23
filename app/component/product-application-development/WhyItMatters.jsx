@@ -19,7 +19,7 @@ export default function WhyItMatters({
 }) {
   return (
     <>
-      <div className="container">
+      <div id="why-it-matters" className="container">
         <div className="h-12" />
         <div
           className={`flex flex-col xl:grid xl:grid-cols-2 gap-10 xl:gap-16 items-start ${gridClass}`}

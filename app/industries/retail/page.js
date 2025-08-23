@@ -33,12 +33,11 @@ const Page = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const navItems = [
     "Journey",
-    "Customers",
-    "Industries",
-    "What's New",
-    "Partners",
+    "Personalization",
+    "Forecasting",
+    "Security",
+    "Case Studies",
     "Services",
-    "Case Study",
   ];
   const Gradientheading = "";
   const BlackHeading = "Acquire and retain customers while increasing margins";
@@ -100,6 +99,7 @@ const Page = () => {
     },
   ];
   const SectionOne = {
+    id: "personalization",
     title: "Understand, predict, and enhance shopping experiences with AI",
     description: `Are you facing higher cart abandonment rates or in-store sales drops? This must be a call to improve shopper experiences and relevance across catalogs, design, layout, and more.
     <br/> Our industry-learned AI can help you anticipate customer needs, offer tailored recommendations, and create more intuitive (personal) experiences.`,
@@ -122,6 +122,7 @@ const Page = () => {
     bgColor: "bg-[#FBFBF2]",
   };
   const SectionTwo = {
+    id: "forecasting",
     title: "Improve efficiency, reduce waste, and ensure product availability",
     description:
       "Retailers need real-time visibility into their inventory to avoid overstocking, stockouts, and logistical inefficiencies. Our data-driven supply chain automation helps ensure the right products are available at the right time – so you don’t worry.",
@@ -144,6 +145,7 @@ const Page = () => {
     bgColor: "bg-[#F8F9FA]",
   };
   const SectionThree = {
+    id: "security",
     title: "Protect customers, prevent fraud, and secure transactions",
     description: `As retail transactions shift online, security concerns grow. One must have real-time fraud detection and secure digital payments to protect customer trust.
 <br/>We have this covered with intelligent security solutions to prevent all such fraud and mitigate risks.`,
