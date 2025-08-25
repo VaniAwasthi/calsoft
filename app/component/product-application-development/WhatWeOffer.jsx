@@ -6,6 +6,7 @@ import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 
 export default function FeatureCards({
+  id="",
   features = [
     {
       icon: (
@@ -116,7 +117,7 @@ export default function FeatureCards({
   buttonText = "Request Architecture Blueprint",
 }) {
   return (
-    <div className="bg-[#F5F5F5]">
+    <div className="bg-[#F5F5F5]" id={id}>
       <div className="h-2" />
       <div className="container space-y-8">
         <div className="mb-12">

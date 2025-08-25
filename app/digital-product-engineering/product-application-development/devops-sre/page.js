@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
 import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
@@ -11,6 +11,15 @@ import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolution
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
 
 const Page = () => {
+    const [activeTab, setActiveTab] = useState("why-it-matters");
+    
+      const navItems = [
+      "Why it Matters",
+      "What We Offer",
+      "Use Cases",
+      "Business Value",
+      "How to Start",
+    ];
   return (
     <>
       <HeroSection
@@ -19,14 +28,19 @@ const Page = () => {
         accelerate releases, and ensure 99.99 % uptime— across cloud, hybrid, and edge deployments.
         "
         buttonText="Book your DevOps Health Check"
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
-      <WhyItMatters />
+      <WhyItMatters id="why-it-matters" />
       <WhatWeOffer
         heading="Automation. Observability. Reliability. All in One Flow."
         description="We deliver production-grade DevOps & SRE services that fit your team, stack, and scale ambition."
+        id="what-we-offer"
       />
-      <UseCases CTACopy="Speed up release cycles by 60% using SRE practices." />
+      <UseCases CTACopy="Speed up release cycles by 60% using SRE practices." id="use-cases" BussinessId="business-value"/>
       <HowToStart
+      id="how-to-start"
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:
@@ -45,4 +59,4 @@ const Page = () => {
 };
 
 export default Page;
-z;
+

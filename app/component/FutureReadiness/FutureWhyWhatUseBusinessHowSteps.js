@@ -34,7 +34,7 @@ import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg";
 
 export const Future = () => {
-  const [activeTab, setActiveTab] = useState("benefits");
+  const [activeTab, setActiveTab] = useState("why-it-matters");
   const slide = {
     title: "Be Ready for Change Before It Hits You.",
 

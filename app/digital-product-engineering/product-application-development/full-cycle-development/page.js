@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import DevelopmentCycle from "../../../component/product-application-development/DevelopementCycleMatters";
@@ -14,13 +15,26 @@ import line3 from "../../../assets/DigitalEngineering/maturity/line3.svg";
 import mobile2 from "../../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../../assets/DigitalEngineering/maturity/mobile3.svg";
 
-export default function page() {
+const Page=()=> {
+  
+    const [activeTab, setActiveTab] =useState("why-it-matters");
+      
+  const navItems = [
+        "Why it Matters",
+        "What We Offer",
+        "Use Cases",
+        "Business Value",
+        "How to Start",
+      ];
   return (
     <>
       <HeroSection
         title="From First Line to Full Launch—We Build to Deliver"
         description="Build intelligent, cloud-native products—from MVP to enterprise scale—without vendor lock-in."
         buttonText="Download Datasheet"
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
       <WhyItMatters
         title="90% of Product Delays Are Self-Inflicted. Avoid Them."
@@ -28,8 +42,10 @@ export default function page() {
         buttonText="Download Case Study"
         MainComponenent={DevelopmentCycle}
         contentClass="w-[90%]"
+        id="why-it-matters"
       />
       <WhatWeOffer
+      id="what-we-offer"
         heading="Everything You Need. Nothing You Don’t."
         description="We don’t just write code. We build working products—designed for scale, with engineering accountability. Our Full-Cycle Development covers:"
         features={[
@@ -141,6 +157,8 @@ export default function page() {
         buttonText="Request Demo"
       />
       <UseCases
+      id="use-cases"
+      BussinessId="business-value"
         title="Built for Startups, Scaled for Enterprises"
         description="Whether you’re a Series A startup or a Fortune 100 innovator, Calsoft adapts to your context."
         useCaseData={[
@@ -191,6 +209,7 @@ export default function page() {
         }}
       />
       <HowToStart
+      id="how-to-start"
         headerContent={{
           title: "Your First Sprint Starts Here",
           description:
@@ -263,3 +282,4 @@ export default function page() {
     </>
   );
 }
+export default Page

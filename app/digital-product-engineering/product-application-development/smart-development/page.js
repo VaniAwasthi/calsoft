@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import SmartDevelopmentMatters from "../../../component/product-application-development/SmartDevelopmentMatters";
@@ -9,7 +10,16 @@ import HowToStart from "../../../component/product-application-development/HowTo
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
 
-export default function page() {
+const Page=()=>{
+   const [activeTab, setActiveTab] =useState("why-it-matters");
+          
+      const navItems = [
+            "Why it Matters",
+            "What We Offer",
+            "Use Cases",
+            "Business Value",
+            "How to Start",
+          ];
   return (
     <>
       <HeroSection
@@ -17,6 +27,9 @@ export default function page() {
         description="Accelerate go-to-market, reduce infrastructure waste, and
 eliminate downtime with Calsoft’s intelligent deployment strategies."
         buttonText="Request Deployment Blueprint"
+        activeTab={activeTab}
+        navItems={navItems}
+        setActiveTab={setActiveTab}
       />
       <WhyItMatters
         title="Code That’s Ready Is Useless If It
@@ -25,10 +38,12 @@ Can’t Ship Reliably."
         buttonText="Download Case Study"
         MainComponenent={SmartDevelopmentMatters}
         contentClass="w-[90%]"
+        id="why-it-matters"
       />
-      <WhatWeOffer />
-      <UseCases CTACopy="Cut deployment time by 50% through automation."/>
+      <WhatWeOffer id="what-we-offer" />
+      <UseCases CTACopy="Cut deployment time by 50% through automation." id="use-cases" BussinessId="business-value"/>
       <HowToStart
+      id="how-to-start"
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:
@@ -45,3 +60,4 @@ Can’t Ship Reliably."
     </>
   );
 }
+export default Page

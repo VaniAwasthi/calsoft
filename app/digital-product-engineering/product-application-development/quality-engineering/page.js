@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import QualityEngineering from "../../../component/product-application-development/QualityEngineeringMatters";
@@ -9,7 +10,16 @@ import HowToStart from "../../../component/product-application-development/HowTo
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
 
-export default function page() {
+const Page=()=> {
+   const [activeTab, setActiveTab] =useState("why-it-matters");
+        
+    const navItems = [
+          "Why it Matters",
+          "What We Offer",
+          "Use Cases",
+          "Business Value",
+          "How to Start",
+        ];
   return (
     <>
       <HeroSection
@@ -17,6 +27,9 @@ export default function page() {
         description="De-risk early decisions with the right architecture,
 built for scale, speed, and ROI."
         buttonText="Get Architecture Readiness Score"
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
@@ -24,10 +37,12 @@ built for scale, speed, and ROI."
         buttonText="Download"
         MainComponenent={QualityEngineering}
         contentClass="w-[90%]"
+        id="why-it-matters"
       />
-      <WhatWeOffer />
-      <UseCases CTACopy="Ensure 98% defect-free releases with automation."/>
+      <WhatWeOffer id="what-we-offer" />
+      <UseCases CTACopy="Ensure 98% defect-free releases with automation." id="use-cases" BussinessId="business-value"/>
       <HowToStart
+      id="how-to-start"
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:
@@ -44,3 +59,4 @@ built for scale, speed, and ROI."
     </>
   );
 }
+export default Page
