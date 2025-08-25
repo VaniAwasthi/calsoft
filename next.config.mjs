@@ -12,6 +12,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "http",
+        hostname: "dev.calsoft.org",
+        pathname: "/**", // Allow all image paths from this host
+      },
+      {
+        protocol: "http",
         hostname: "35.162.115.74",
         pathname: "/**", // Allow all image paths from this host
       },

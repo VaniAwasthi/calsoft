@@ -24,9 +24,9 @@ const slides = [
   //   description:
   //     "Architect, engineer, modernize, secure, and scale with Calsoft - for AI-powered innovation, faster go-to-market, and higher efficiency.",
   //   buttonText: "What We Do",
-  //   hubspotClass: "what-we-do", 
+  //   hubspotClass: "what-we-do",
   // },
-   {
+  {
     type: "video",
     backgroundVideo: backgroundVideo2,
     title: "",
@@ -53,7 +53,7 @@ const slides = [
     buttonText: "Read More",
     link: "/data-ai/ai-powered-accelerators",
   },
- ,
+  ,
 ];
 
 const HeroSec = () => {

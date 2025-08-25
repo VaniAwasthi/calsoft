@@ -747,10 +747,11 @@ export const InterfaceCard = ({
   stats = [],
   imageSrc,
   ButtonImage,
+  secId
 }) => {
   return (
     <>
-      <section className="relative container mx-auto !px-0 md:px-4 md:!my-14 !my-8">
+      <section className="relative container mx-auto !px-0 md:px-4 md:!my-14 !my-8" id={secId}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

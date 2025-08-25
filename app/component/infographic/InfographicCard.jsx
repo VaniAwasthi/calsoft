@@ -1,6 +1,5 @@
 "use client";
 
-
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -13,51 +12,53 @@ import { fetchUsecasesList } from "@/app/store/actions/useCases";
 
 export const InfographicCard = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
-   const dispatch = useDispatch();
-   const listData = useSelector((state) => state.usecases.list);
-   const router = useRouter();
-    const [currentPage, setCurrentPage] = useState(0);
+  const dispatch = useDispatch();
+  const listData = useSelector((state) => state.usecases.list);
+  const router = useRouter();
+  const [currentPage, setCurrentPage] = useState(0);
 
-   const [copiedId, setCopiedId] = useState(null);
-   const [openDropdown, setOpenDropdown] = useState("");
-   const FilterIndustry = useSelector(
-     (state) => state.blogs.filterIndustry || []
-   );
-   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
-   const [activeFilters, setActiveFilters] = useState({
-     Industry: "All",
-     Topics: [],
-   });
- 
-   const filters = {
-     Industry: ["All", ...FilterIndustry],
-     Topics: ["All", ...FilterTopic],
-   };
- 
-   
-   useEffect(() => {
-      dispatch(fetchBlogFilterList());
-     dispatch(fetchUsecasesList());
-   }, [dispatch]);
- 
+  const [copiedId, setCopiedId] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState("");
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+  const [activeFilters, setActiveFilters] = useState({
+    Industry: "All",
+    Topics: [],
+  });
 
+  const filters = {
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
+  };
 
-const cardData = Array.isArray(listData)
-  ? listData.map((item) => ({
-      id: item._id,
-      title: item.title || "Untitled",
-      image: `${baseUrl}/${item.usecase_image}`,
-      slug: item.title
-        ? item.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
-        : "untitled",
-      link: `/insights/whitepaper/${item._id}`,
-     tags: item.tags?.length > 0 ? item.tags.map(tag => tag.name) : ["General"],
-      industry: item.industry || "Tech",
-    }))
-  : [];
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(fetchUsecasesList());
+  }, [dispatch]);
 
-const resources = cardData; // ✅ re-renders when Redux listData updates
+  const cardData = Array.isArray(listData)
+    ? listData.map((item) => ({
+        id: item._id,
+        title: item.title || "Untitled",
+        image: `${baseUrl}/${item.usecase_image}`,
+        slug: item.title
+          ? item.title
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/(^-|-$)/g, "")
+          : "untitled",
+        link: `/insights/whitepaper/${item._id}`,
+        tags:
+          item.tags?.length > 0
+            ? item.tags.map((tag) => tag.name)
+            : ["General"],
+        industry: item.industry || "Tech",
+      }))
+    : [];
 
+  const resources = cardData; // ✅ re-renders when Redux listData updates
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -145,17 +146,16 @@ const resources = cardData; // ✅ re-renders when Redux listData updates
                   <div className="flex flex-wrap gap-1 mt-1">
                     {/* Container to hold tags */}
                     {item.tags.map((tag, index) => (
-  <span
-    key={index}
-    className="text-[#2E3092] font-semibold text-[15px] flex items-center"
-  >
-    {tag}
-    {index !== item.tags.length - 1 && (
-      <span className="mx-1 text-[#2E3092]">|</span>
-    )}
-  </span>
-))}
-
+                      <span
+                        key={index}
+                        className="text-[#2E3092] font-semibold text-[15px] flex items-center"
+                      >
+                        {tag}
+                        {index !== item.tags.length - 1 && (
+                          <span className="mx-1 text-[#2E3092]">|</span>
+                        )}
+                      </span>
+                    ))}
                   </div>
                   <div className="flex justify-between items-start">
                     <h3 className="text-sm md:text-[18px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">

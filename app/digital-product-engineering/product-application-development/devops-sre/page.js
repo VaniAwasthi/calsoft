@@ -28,9 +28,6 @@ const Page = () => {
         accelerate releases, and ensure 99.99 % uptime— across cloud, hybrid, and edge deployments.
         "
         buttonText="Book your DevOps Health Check"
-        navItems={navItems}
-        setActiveTab={setActiveTab}
-        activeTab={activeTab}
       />
       <WhyItMatters id="why-it-matters" />
       <WhatWeOffer
@@ -59,4 +56,4 @@ const Page = () => {
 };
 
 export default Page;
-
+z;

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
@@ -12,12 +12,26 @@ import ImpactAnalysisMatter from "../../../component/testing/ImpactAnalysisMatte
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
+    const [activeTab, setActiveTab] = useState("why-it-matters");
+    
+      const navItems = [
+        "Why it Matters",
+        "Intelligent Planning",
+        "Business Value",
+        "Use Cases",
+        "Why Calsoft",
+        "How to Start",
+      ];
   return (
     <>
       <HeroSection
         title="Test Smarter, Not Slower — With Impact-Driven Validation"
         description="Accelerate quality cycles by identifying and executing only the tests that matter — powered by Calsoft’s Test Impact Analysis services."
         buttonText="Try Free Load Test"
+        navItems={navItems}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        
       />
       <WhyItMatters
         title="The Missing Link in DevOps? Continuous Quality."
@@ -26,8 +40,11 @@ const Page = () => {
         buttonText="Download Case Study"
         Component={ImpactAnalysisMatter}
       />
-      <IntelligentPlanning 
-      data={[
+      <IntelligentPlanning
+        heading="Targeted Testing. Faster Feedback. Fewer Misses."
+        description="We enable real-time test impact analysis across your code base and pipelines — ensuring smart regression without sacrificing coverage."
+        buttonText="Request POC"
+        data={[
           {
             title: "Change mapping at file/function level",
             subTitle: "using version control diffs",
@@ -54,7 +71,8 @@ const Page = () => {
         data={{
           leftSideContent: {
             title: "More Confidence. Less Rework. Same Coverage.",
-            subTitle: "Test Impact Analysis offers measurable engineering and business gains:",
+            subTitle:
+              "Test Impact Analysis offers measurable engineering and business gains:",
             description:
               "Calsoft’s approach eliminates noise and focuses testing where it protects releases the most.",
           },
@@ -78,17 +96,17 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title: "Want faster, leaner QA cycles? Let’s walk you through how our Test Impact Analysis",
+          title:
+            "Want faster, leaner QA cycles? Let’s walk you through how our Test Impact Analysis",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"
       />
-      <UseCases 
-      data={[
+      <UseCases
+        data={[
           {
             title: "Microservices architectures",
-            subTitle:
-              "with modular dependencies",
+            subTitle: "with modular dependencies",
           },
           {
             title: "Large monoliths",
@@ -149,6 +167,43 @@ const Page = () => {
             "We implement test impact intelligence without disrupting your workflows. Here's the step-by-step path:",
         }}
         Component={Guesswork}
+        guessworkData={[
+          {
+            title: "Test Inventory & Change Audit",
+            description:
+              "Assess current test suite, execution time, version control usage, and code change patterns.",
+            output: "Output: TIA Readiness Report + Test Coverage Insights",
+            alignment: "left",
+          },
+          {
+            title: "TIA Model Design",
+            description:
+              "Configure test selection rules, change-to-test mapping strategy, and baseline coverage.",
+            output: "Output: Test Impact Mapping Rules + Confidence Thresholds",
+            alignment: "right",
+          },
+          {
+            title: "Validation & Rollout",
+            description:
+              "Compare full vs partial runs, validate missed detections, and tune the selection engine.",
+            output: "Output: Finalized TIA Workflow + Quality Gate Thresholds",
+            alignment: "left",
+          },
+          {
+            title: "Pilot Run & Benchmarking",
+            description:
+              "Run selected regression packs, monitor feedback, track flakiness, execution time, and false negatives.",
+            output: "Regression Pilot Report + Execution Time Savings",
+            alignment: "right",
+          },
+          {
+            title: "Enterprise Scale Deployment",
+            description:
+              "Roll out to all test environments with dashboards, training, and alerts for test coverage anomalies.",
+            output: "Output: Impact Dashboard + Optimization Toolkit",
+            alignment: "left",
+          },
+        ]}
       />
       <ContactSecDataAi
         lightContent={

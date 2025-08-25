@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
@@ -13,12 +13,25 @@ import LoadValidationMatter from "../../../component/testing/LoadValidationMatte
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
+    const [activeTab, setActiveTab] = useState("why-it-matters");
+    
+      const navItems = [
+        "Why it Matters",
+        "Intelligent Planning",
+        "Business Value",
+        "Use Cases",
+        "Why Calsoft",
+        "How to Start",
+      ];
   return (
     <>
       <HeroSection
         title="Validate Scale. Simulate Reality. Release with Confidence"
         description="Ensure your applications can handle real-world traffic and usage peaks with Calsoft’s engineered scale & load validation services."
         buttonText="Try Free Load Test"
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
+        navItems={navItems}
       />
       <WhyItMatters
         title="Every Missed Test Case Is a Revenue Risk."
@@ -28,8 +41,11 @@ const Page = () => {
         Component={LoadValidationMatter}
         contentWidth="w-[80%]"
       />
-      <IntelligentPlanning 
-      data={[
+      <IntelligentPlanning
+        heading="Test Limits Before Your Users Do"
+        description="Calsoft builds contextual, metric-driven scale validation plans aligned with business-critical operations. We simulate:"
+        buttonText="Request POC"
+        data={[
           {
             title: "Concurrent user load patterns",
             subTitle: "(spike, soak, stress, endurance)",
@@ -51,12 +67,13 @@ const Page = () => {
             subTitle: "application, infra, network",
           },
         ]}
-        />
+      />
       <Agility
         data={{
           leftSideContent: {
             title: "Prevent Downtime. Preserve Experience. Protect Revenue.",
-            subTitle: "Validated scale unlocks measurable business and technical outcomes:",
+            subTitle:
+              "Validated scale unlocks measurable business and technical outcomes:",
             description:
               "Calsoft moves performance testing from optional to essential — with metrics that matter.",
           },
@@ -67,7 +84,8 @@ const Page = () => {
             },
             {
               title: "3X Faster",
-              subTitle: "incident root cause detection through pre-production instrumentation",
+              subTitle:
+                "incident root cause detection through pre-production instrumentation",
             },
             {
               title: "Up to 30%",
@@ -75,22 +93,23 @@ const Page = () => {
             },
             {
               title: "100% SLA",
-              subTitle: "compliance during seasonal, campaign, or product launches",
+              subTitle:
+                "compliance during seasonal, campaign, or product launches",
             },
           ],
         }}
         bookMeetingData={{
-          title: "On average, Calsoft clients detect 4x more performance bottlenecks before release.",
+          title:
+            "On average, Calsoft clients detect 4x more performance bottlenecks before release.",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"
       />
-      <UseCases 
-      data={[
+      <UseCases
+        data={[
           {
             title: "E-commerce platforms",
-            subTitle:
-              "validating flash-sale concurrency (50K+ users)",
+            subTitle: "validating flash-sale concurrency (50K+ users)",
           },
           {
             title: "SaaS ISVs",
@@ -151,6 +170,43 @@ const Page = () => {
             "Calsoft makes performance validation predictable, repeatable, and value-focused.",
         }}
         Component={Guesswork}
+        guessworkData={[
+          {
+            title: "Performance Readiness Check",
+            description:
+              "Review application architecture, expected peak loads, and infrastructure limits.",
+            output: "Output: Readiness Heatmap + Risk Areas",
+            alignment: "left",
+          },
+          {
+            title: "Load Test Plan Creation",
+            description:
+              "Define test types (spike, stress, soak), target metrics, and traffic simulation design.",
+            output: "Output: Detailed Test Plan + Tooling Strategy",
+            alignment: "right",
+          },
+          {
+            title: "Tool Setup & Environment Modeling",
+            description:
+              "Deploy load agents, define environments, configure monitoring dashboards.",
+            output: "Output: End-to-End Test Setup + Scripting Readiness",
+            alignment: "left",
+          },
+          {
+            title: "Execution & Monitoring",
+            description:
+              "Run iterative tests with live dashboards; correlate metrics across app, DB, and infra.",
+            output: "Output: Performance Test Report + Bottleneck Analysis",
+            alignment: "right",
+          },
+          {
+            title: "Remediation Recommendations & Retest",
+            description:
+              "Provide infra optimization, configuration tuning, and support for retest cycles.",
+            output: "Output: Optimization Plan + Final Sign-Off Report",
+            alignment: "left",
+          },
+        ]}
       />
       <ContactSecDataAi
         lightContent={

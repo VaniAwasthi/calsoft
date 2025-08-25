@@ -43,12 +43,11 @@ const Page = () => {
 
   const navItems = [
     "Journey",
-    "Customers",
-    "Industries",
-    "What's New",
-    "Partners",
+    "Product",
+    "Platform",
+    "Modernization",
+    "Case Studies",
     "Services",
-    "Case Study",
   ];
   const icons = [
     {
@@ -108,6 +107,7 @@ const Page = () => {
     },
   ];
   const softwareEngineeringSection = {
+    id: "product",
     title: "Software & product engineering",
     description:
       "Create market-leading and high-performance products, built within agile frameworks and secure environments, with go-to-market capabilities and scalability and at scale.",
@@ -132,6 +132,7 @@ const Page = () => {
     isgradientheading: false,
   };
   const CloudEngineeringSec = {
+    id: "platform",
     title: "Cloud & platform engineering",
     description:
       "Enabling cloud-first agility is key for high-tech businesses. We design, implement, and maintain cloud ecosystems - delivering resilient performance and cost efficiency.",
@@ -155,6 +156,7 @@ const Page = () => {
     isgradientheading: true,
   };
   const AIPoweredSection = {
+    id: "modernization",
     title: "AI-powered modernization",
     description:
       "Gain AI-powered automation, predictive analytics, and intelligent architecture to enhance software functionality, efficiency, and adaptability.",

@@ -28,12 +28,12 @@ export const DataSheetCards = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [visibleCount, setVisibleCount] = useState(6);
   const loadMoreRef = useRef(null);
- const handleClick = (item) => {
-   dispatch(setSelectedDatasheetsId(item._id));
-   localStorage.setItem("selectedDateSheetId", item._id);
-   const slug = generateSlug(item.hero_title1, { lower: true });
-   router.push(`/insights/datesheets/${slug}`);
- };
+  const handleClick = (item) => {
+    dispatch(setSelectedDatasheetsId(item._id));
+    localStorage.setItem("selectedDateSheetId", item._id);
+    const slug = generateSlug(item.hero_title1, { lower: true });
+    router.push(`/insights/datesheets/${slug}`);
+  };
   useEffect(() => {
     dispatch(fetchDatasheetList());
     dispatch(fetchBlogFilterList());

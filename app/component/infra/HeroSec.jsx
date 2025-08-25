@@ -7,14 +7,14 @@ import Hero_bg from "../../assets/infra/Hero_bg.webp";
 import Submenu from "../utilities/Submenu";
 
 export default function HeroSec({
-      title="Future-Proof Your Infrastructure with a Strategic Roadmap.",
-      description="Build an actionable infrastructure roadmap aligned to your growth, resilience, and cost objectives. No guesswork. Just clarity, performance, and ROI.",
-      buttonText="Request your custom roadmap",
-    }) {
-  const [activeTab, setActiveTab] = useState("Journey");
+  title = "Future-Proof Your Infrastructure with a Strategic Roadmap.",
+  description = "Build an actionable infrastructure roadmap aligned to your growth, resilience, and cost objectives. No guesswork. Just clarity, performance, and ROI.",
+  buttonText = "Request your custom roadmap",
+}) {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
 
   const navItems = [
-    "What it Matters",
+    "Why it Matters",
     "Intelligent Planning",
     "Business Value",
     "Use Cases",
@@ -25,9 +25,9 @@ export default function HeroSec({
     <>
       <BannerLayout
         image={Hero_bg}
-        title = {title}
-        description= {description}       
-        buttonText = {buttonText}
+        title={title}
+        description={description}
+        buttonText={buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         titleOneClass="font-bold md:text-5xl text-[20px] mt-2"

@@ -58,11 +58,11 @@ export default function ResourceGrid() {
   const [openDropdown, setOpenDropdown] = useState("");
   const loadMoreRef = useRef(null);
   const router = useRouter();
- const handleBlogClick = (item) => {
-   const slug = slugify(item.title, { lower: true });
-   dispatch(setSelectedBlogId(item._id)); 
-   router.push(`/insights/blogs/${slug}`);
- };
+  const handleBlogClick = (item) => {
+    const slug = slugify(item.title, { lower: true });
+    dispatch(setSelectedBlogId(item._id));
+    router.push(`/insights/blogs/${slug}`);
+  };
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);

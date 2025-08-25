@@ -195,7 +195,7 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
         viewport={{ once: false, amount: 0.3 }}
         className="text-3xl md:text-[40px] font-bold text-[#2E3092] text-center my-10 md:text-left"
       >
-        Business {" "}
+        Business{" "}
         <span className="bg-gradient-to-r from-[#2E3092] via-[#6A329F] to-[#ED1C24] bg-clip-text text-transparent">
           Value
         </span>

@@ -40,8 +40,8 @@ Can’t Ship Reliably."
         contentClass="w-[90%]"
         id="why-it-matters"
       />
-      <WhatWeOffer id="what-we-offer" />
-      <UseCases CTACopy="Cut deployment time by 50% through automation." id="use-cases" BussinessId="business-value"/>
+      <WhatWeOffer />
+      <UseCases CTACopy="Cut deployment time by 50% through automation." />
       <HowToStart
       id="how-to-start"
         headerContent={{

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import BannerLayout from "../utilities/BannerLayout";
 import heroImage from "../../assets/infra/Hero_bg.webp";
@@ -10,7 +12,10 @@ export default function HeroSection({
   title = "Technology-first partner",
   description = "Accelerate cloud adoption through risk-aware, business-aligned migration strategies — backed by automation, security, and predictable ROI.",
   buttonText = "Access Readiness",
+
 }) {
+
+
   return (
     <>
       <BannerLayout

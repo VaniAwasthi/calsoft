@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
 import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
@@ -9,6 +10,15 @@ import WhyItMatters from "../../../component/product-application-development/Why
 import MobileDevelpmentMatters from "@/app/component/cx-engineering/MobileDevelpmentMatters";
 
 const Page = () => {
+  const navItems = [
+      "Why it Matters",
+      "What We Offer",
+      "Use Cases",
+      "Business Value",
+      "How to Start",
+    ]
+      const [activeTab, setActiveTab] = useState("why-it-matters");
+    
   return (
     <>
       <HeroSection
@@ -16,6 +26,9 @@ const Page = () => {
         description="De-risk early decisions with the right architecture,
               built for scale, speed, and ROI."
         buttonText="Get Architecture Readiness Score"
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
       <WhyItMatters
         title="Mobile Isn’t a Channel. It’s the Frontline."
@@ -25,9 +38,10 @@ const Page = () => {
         // contentClass="h-[31.5rem]"
         gridClass="sm:h-[55rem] md:h-[53rem] xl:h-[31.5rem]"
         mainComponenentClass="justify-start"
+        id="why-it-matters"
       />
-      <WhatWeOffer />
-      <UseCases
+      <WhatWeOffer id="what-we-offer" />
+      <UseCases id="use-cases" BussinessId="business-value"
         useCaseData={[
           {
             title: "New Product Launch",
@@ -76,6 +90,7 @@ const Page = () => {
         }}
       />
       <HowToStart
+      id="how-to-start"
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:

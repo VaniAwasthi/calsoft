@@ -133,7 +133,10 @@ export default function Component({
           </div>
         </div>
         {/* Book a meeting */}
-        <div className="w-full h-60 sm:h-40 relative rounded-xl overflow-hidden mt-12">
+        <div
+          id="business-value"
+          className="w-full h-60 sm:h-40 relative rounded-xl overflow-hidden mt-12"
+        >
           <Image
             src={predict}
             alt={"book a meeting"}

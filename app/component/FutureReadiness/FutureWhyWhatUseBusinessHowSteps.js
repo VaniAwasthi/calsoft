@@ -108,7 +108,7 @@ export const Why = () => {
   };
   return (
     <>
-      <WhyItMatters {...whyItMattersData} ButtonImage={ButtonImage} />
+      <WhyItMatters {...whyItMattersData} ButtonImage={ButtonImage} secId="why-it-matters"/>
     </>
   );
 };
@@ -178,6 +178,7 @@ export const What = () => {
         subtitle={subtitle}
         desc={desc}
         ButtonImage={ButtonImage}
+        secId="what-we-do"
       />
     </>
   );
@@ -213,7 +214,7 @@ export const Use = () => {
   return (
     <>
       {" "}
-      <Cases {...useCasesData} ButtonImage={ButtonImage} />
+      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases"/>
     </>
   );
 };
@@ -248,7 +249,7 @@ export const Business = () => {
   };
   return (
     <>
-      <BusinessValue {...businessValueData} ButtonImage={ButtonImage} />
+      <BusinessValue {...businessValueData} ButtonImage={ButtonImage} secId="business-value"/>
     </>
   );
 };
@@ -265,7 +266,7 @@ export const How = () => {
   };
   return (
     <>
-      <StartSection data={startSectionData} />
+      <StartSection data={startSectionData} secId="how-to-start"/>
     </>
   );
 };
