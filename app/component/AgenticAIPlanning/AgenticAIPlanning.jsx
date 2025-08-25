@@ -42,6 +42,7 @@ export const AgenticBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("agentic-ai-datasheet")}
       />
       <Submenu
         navItems={navItems}

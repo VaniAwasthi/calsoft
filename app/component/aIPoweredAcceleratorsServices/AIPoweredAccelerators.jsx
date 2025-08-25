@@ -8,6 +8,7 @@ import Info1 from "../../assets/Data-Ai/ai-accelerate/Info-1.svg";
 import Info2 from "../../assets/Data-Ai/ai-accelerate/Info-2.svg";
 import Info3 from "../../assets/Data-Ai/ai-accelerate/Info-3.svg";
 import Info4 from "../../assets/Data-Ai/ai-accelerate/Info-4.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 
 import {
   ChallengeSolutionComp,
@@ -35,6 +36,7 @@ export const AiBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <Submenu
         navItems={navItems}

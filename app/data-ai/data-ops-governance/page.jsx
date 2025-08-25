@@ -1,3 +1,4 @@
+"use client";
 import {
   GovernJounery,
   GovernSolutionSec,
@@ -10,6 +11,8 @@ import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/Data-Ai/dataGovernance/KnowMore.webp";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
+
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 
 function page() {
   return (
@@ -31,6 +34,7 @@ function page() {
         }
         buttonText="Book a Meeting"
         buttonLink="#"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <PolicySec />
       <CollaborationSec />
