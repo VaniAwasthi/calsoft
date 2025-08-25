@@ -7,9 +7,9 @@ export default function CEO() {
   return (
     <>
       {/* Desktop view */}
-      <div className="items-center border-2 border-[#3F3D9B] border-l-0 rounded-l-none rounded-2xl p-0 max-w-2xl mx-auto bg-white my-12 hidden md:flex relative justify-end">
+      <div className="items-center border-2 border-[#3F3D9B] border-l-0 rounded-2xl p-0 max-w-2xl mx-auto bg-white my-12 hidden md:flex relative justify-end">
         {/* Main circular container */}
-        <div className="absolute -left-[4.7rem] h-full rounded-full overflow-hidden bg-[#F2F0F5]">
+        <div className="absolute -left-[4rem] h-full rounded-full overflow-hidden bg-[#F2F0F5]">
           {/* Person's image */}
           <Image
             src={anupam}
@@ -39,7 +39,7 @@ export default function CEO() {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="w-5/6 my-4 mr-3 -ml-16 self-end"
+          className="w-5/6 my-4 -ml-16 self-end"
         >
           <h2 className="text-xl font-semibold text-black">Anupam Bhide</h2>
           <p className="text-base text-gray-800 mb-3">CEO, Co-founder</p>

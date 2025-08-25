@@ -58,7 +58,7 @@ export default function Component({
   },
 }) {
   return (
-    <div className="bg-[#ffffff] px-6">
+    <div id="use-cases" className="bg-[#ffffff] px-6">
       <div className="h-8" />
       <div className="container space-y-8">
         <div className="max-w-7xl mx-auto">
@@ -131,7 +131,10 @@ export default function Component({
           </div>
         </div>
         {/* Book a meeting */}
-        <div className="w-full h-60 sm:h-40 relative rounded-xl overflow-hidden mt-12">
+        <div
+          id="business-value"
+          className="w-full h-60 sm:h-40 relative rounded-xl overflow-hidden mt-12"
+        >
           <Image
             src={predict}
             alt={"book a meeting"}

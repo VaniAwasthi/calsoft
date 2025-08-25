@@ -1,6 +1,6 @@
 "use client";
+
 import React, { useEffect } from "react";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,6 +32,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogListLimit } from "../../../store/actions/blogAction";
 import { baseUrl } from "../../../../config";
 import Link from "next/link";
+
 export const BlogSection = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -55,7 +56,7 @@ export const BlogSection = () => {
 
   return (
     <>
-      <section className="md:py-10">
+      <section id="case-studies" className="md:py-10">
         <div className="container mx-auto px-4 xl:px-20">
           <div className="relative w-full py-8">
             <Swiper
@@ -244,7 +245,7 @@ export const ServicesSec = () => {
       style={{
         background: `url(${bgimg.src}) center center/ cover no-repeat`,
       }}
-      id="customers"
+      id="services"
     >
       <div className="container mx-auto px-4 xl:px-20">
         <motion.h2

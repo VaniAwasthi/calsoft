@@ -19,6 +19,13 @@ const Page = () => {
         accelerate releases, and ensure 99.99 % uptime— across cloud, hybrid, and edge deployments.
         "
         buttonText="Book your DevOps Health Check"
+        navItems={[
+          "Why it Matters",
+          "What We Offer",
+          "Use Cases",
+          "Business Value",
+          "How to Start",
+        ]}
       />
       <WhyItMatters />
       <WhatWeOffer
@@ -45,4 +52,3 @@ const Page = () => {
 };
 
 export default Page;
-z;

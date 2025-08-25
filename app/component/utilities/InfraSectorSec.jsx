@@ -251,23 +251,21 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
                 {lightContent}
               </h2>
 
-              
-                <motion.div
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="flex flex-col md:flex-row gap-4"
-                >
-                  <ButtonLayout
-                    link={link}
-                    text="Contact Us" //add popup
-                    image={ButtonImage}
-                    hoverImage={ButtonImage}
-                    className="!w-[170px] sm:w-[200px] h-8 md:h-10 px-6"
-                  />
-                </motion.div>
-              
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="flex flex-col md:flex-row gap-4"
+              >
+                <ButtonLayout
+                  link={link}
+                  text="Contact Us" //add popup
+                  image={ButtonImage}
+                  hoverImage={ButtonImage}
+                  className="!w-[170px] sm:w-[200px] h-8 md:h-10 px-6"
+                />
+              </motion.div>
             </div>
           </div>
         </div>

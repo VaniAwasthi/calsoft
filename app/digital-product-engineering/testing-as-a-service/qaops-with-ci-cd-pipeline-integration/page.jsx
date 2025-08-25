@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
@@ -27,8 +28,11 @@ const Page = () => {
         Component={IntegrationMatter}
         contentWidth="w-[80%]"
       />
-      <IntelligentPlanning 
-      data={[
+      <IntelligentPlanning
+        heading="Shift-Left Meets Shift-Smart"
+        description="We help you embed continuous testing across your CI/CD ecosystem, aligned with release velocity, risk profile, and coverage requirements."
+        buttonText="Request POC"
+        data={[
           {
             title: "Automated smoke,",
             subTitle: "regression, API, & functional test packs",
@@ -62,7 +66,8 @@ const Page = () => {
           rightSideContent: [
             {
               title: "50-70%",
-              subTitle: "faster test execution via parallelization and orchestration",
+              subTitle:
+                "faster test execution via parallelization and orchestration",
             },
             {
               title: "90%",
@@ -74,22 +79,23 @@ const Page = () => {
             },
             {
               title: "Zero ",
-              subTitle: "build to release gaps via quality gates and rollback triggers",
+              subTitle:
+                "build to release gaps via quality gates and rollback triggers",
             },
           ],
         }}
         bookMeetingData={{
-          title: "Want 24/7 quality checks built right into your CI/CD flow? Our demo shows how real-time QAOps ",
+          title:
+            "Want 24/7 quality checks built right into your CI/CD flow? Our demo shows how real-time QAOps ",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"
       />
-      <UseCases 
-      data={[
+      <UseCases
+        data={[
           {
             title: "Product teams",
-            subTitle:
-              "deploying multiple microservices daily via GitOps",
+            subTitle: "deploying multiple microservices daily via GitOps",
           },
           {
             title: "SaaS platforms",
@@ -101,7 +107,8 @@ const Page = () => {
           },
           {
             title: "ISVs",
-            subTitle: "streamlining automated sanity and regression pre-release",
+            subTitle:
+              "streamlining automated sanity and regression pre-release",
           },
           {
             title: "Cloud-native DevOps teams",
@@ -150,6 +157,43 @@ const Page = () => {
             "Calsoft helps you define and embed QAOps — across every stage of your release lifecycle.",
         }}
         Component={Guesswork}
+        guessworkData={[
+          {
+            title: "Pipeline Assessment",
+            description:
+              "Analyze your current DevOps pipelines, test automation maturity, and tool gaps.",
+            output: "Output: QAOps Feasibility Report + Gaps Identified",
+            alignment: "left",
+          },
+          {
+            title: "Test Strategy Alignment",
+            description:
+              "Map tests to CI/CD stages — commit, build, pre-prod, deploy — and define quality gates.",
+            output: "Output: Test Orchestration Plan + Metrics Baselines",
+            alignment: "right",
+          },
+          {
+            title: "Toolchain Integration",
+            description:
+              "Set up test runners, configure build hooks, parallelize executions, integrate reporting.",
+            output: "Output: CI/CD Test Setup Dashboard + Alerts",
+            alignment: "left",
+          },
+          {
+            title: "Run Pilot Workflows",
+            description:
+              "Automate and run end-to-end CI/CD with integrated QA and rollback triggers.",
+            output: "Output: Pilot Validation Report + KPIs",
+            alignment: "right",
+          },
+          {
+            title: "Scale Across Pipelines",
+            description:
+              "Enable governance, dashboarding, change alerts, and modular suite extension.",
+            output: "Output: QAOps Playbook + Enterprise Rollout Tracker",
+            alignment: "left",
+          },
+        ]}
       />
       <ContactSecDataAi
         lightContent={

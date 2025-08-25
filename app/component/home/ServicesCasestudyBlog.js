@@ -152,7 +152,7 @@ export const Casestudy = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist/";
   const dispatch = useDispatch();
   const title = "Case Study";
-  const router=useRouter()
+  const router = useRouter();
   const heading = `Cloud Provider Accelerates VMware Migration <span className="text-black font-normal"> with Calsoft’s CLI Tool</span>`;
   // data for Case Study
   useEffect(() => {
@@ -161,12 +161,12 @@ export const Casestudy = () => {
   const casStudiesDatalist = useSelector(
     (state) => state.caseStudy?.limitedList
   );
-const handleClick = (item) => {
-  dispatch(setSelectedCaseStudyId(item._id));
-  localStorage.setItem("selectedCaseStudyId", item._id);
-  const slug = generateSlug(item.hero_title1, { lower: true });
-  router.push(`/insights/case-studies/${slug}`);
-};
+  const handleClick = (item) => {
+    dispatch(setSelectedCaseStudyId(item._id));
+    localStorage.setItem("selectedCaseStudyId", item._id);
+    const slug = generateSlug(item.hero_title1, { lower: true });
+    router.push(`/insights/case-studies/${slug}`);
+  };
   const caseStudyDataArray = {
     id: 1,
     title:
@@ -261,7 +261,7 @@ const handleClick = (item) => {
                   </motion.a>
                 </div>
               </div>
-{/* for stats */}
+              {/* for stats */}
               <div className="w-full md:w-1/3">
                 {/* Swiper for mobile */}
                 <div className="block md:hidden ">
@@ -345,10 +345,7 @@ const handleClick = (item) => {
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
-                    <div
-                      onClick={() => handleClick(item)}
-                      
-                    >
+                    <div onClick={() => handleClick(item)}>
                       <div className="relative w-full h-44 md:h-56 rounded-xl overflow-hidden">
                         <Image
                           src={

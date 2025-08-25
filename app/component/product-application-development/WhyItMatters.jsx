@@ -19,7 +19,7 @@ export default function WhyItMatters({
 }) {
   return (
     <>
-      <div className="container">
+      <div id="why-it-matters" className="container">
         <div className="h-12" />
         <div
           className={`flex flex-col xl:grid xl:grid-cols-2 gap-10 xl:gap-16 items-start ${gridClass}`}
@@ -60,7 +60,7 @@ export default function WhyItMatters({
             {/* bug: When wrapped into motion.div the button is not visible */}
             <div
               initial={{ x: -50, opacity: 0 }}
-              whileinview={{ x: 0, opacity: 1 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               viewport={{ once: false, amount: 0.3 }}
               className="mt-9"

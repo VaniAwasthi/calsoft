@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
@@ -26,8 +27,11 @@ const Page = () => {
         buttonText="Download Case Study"
         Component={BenchmarkingMatter}
       />
-      <IntelligentPlanning 
-      data={[
+      <IntelligentPlanning
+        heading="Measure What Matters — Precisely."
+        description="We help enterprises define what to benchmark, how to measure it, and what to expect, based on application type, usage model, and business goals."
+        buttonText="Request POC"
+        data={[
           {
             title: "Define KPIs",
             subTitle: "across performance, stability, cost, and scalability",
@@ -54,18 +58,21 @@ const Page = () => {
         data={{
           leftSideContent: {
             title: "Turn Unknowns Into Predictable Outcomes.",
-            subTitle: "Benchmarking before critical changes reduces risk and enhances decision-making:",
+            subTitle:
+              "Benchmarking before critical changes reduces risk and enhances decision-making:",
             // description:
             //   "Calsoft focuses on business-first outcomes — not just technical transition.",
           },
           rightSideContent: [
             {
               title: "30-40%",
-              subTitle: "better architectural decisions through data-backed comparisons",
+              subTitle:
+                "better architectural decisions through data-backed comparisons",
             },
             {
               title: "Up to 40%",
-              subTitle: "cost savings by avoiding over-engineering or under-provisioning",
+              subTitle:
+                "cost savings by avoiding over-engineering or under-provisioning",
             },
             {
               title: "Faster stakeholder",
@@ -78,17 +85,17 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title: "Get a customized readiness scorecard aligned to your architecture and KPIs",
+          title:
+            "Get a customized readiness scorecard aligned to your architecture and KPIs",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"
       />
-      <UseCases 
-      data={[
+      <UseCases
+        data={[
           {
             title: "Cloud migration",
-            subTitle:
-              "planning for legacy workloads",
+            subTitle: "planning for legacy workloads",
           },
           {
             title: "Platform modernization",
@@ -143,12 +150,50 @@ const Page = () => {
       />
       <FirstStep
         headerContent={{
-          title1: "Migrate with Method,",
-          title2: "Not Momentum",
+          title1: "Benchmark Today. Transform",
+          title2: "Smarter Tomorrow",
           description:
-            "We take you from readiness to run-state through a risk-mitigated, ROI-led framework. Here's how:",
+            "Here’s how we bring benchmarking into your transformation process — without slowing it down.",
         }}
         Component={Guesswork}
+        guessworkData={[
+          {
+            title: "Readiness Evaluation",
+            description:
+              "Assess your application landscape, KPIs, infra stack, and modernization plans.",
+            output: "Output: Benchmark Readiness Report + Scope Definition",
+            alignment: "left",
+          },
+          {
+            title: "Scenario Definition & KPI Mapping",
+            description:
+              "Identify use cases to benchmark — tech stack, user flow, performance attributes, and business impact areas.",
+            output: "Output: Benchmark KPI Matrix + Test Scenarios",
+            alignment: "right",
+          },
+          {
+            title: "Toolchain Setup & Simulation Design",
+            description:
+              "Set up synthetic loads, monitoring tools, telemetry collection, and comparison baselines.",
+            output: "Output: Test Harness Blueprint + Execution Plan",
+            alignment: "left",
+          },
+          {
+            title: "Execution & Observability",
+            description:
+              "Run benchmarks with real-time dashboards, alerting, and test comparisons.",
+            output: "Output: Benchmark Execution Summary + Gap Insights",
+            alignment: "right",
+          },
+          {
+            title: "Recommendations & Decision Pack",
+            description:
+              "Deliver actionable reports, infra right-sizing, SLA alignment, and architectural improvement areas.",
+            output:
+              "Output: Executive Benchmarking Deck + Optimization Roadmap",
+            alignment: "left",
+          },
+        ]}
       />
       <ContactSecDataAi
         lightContent={

@@ -17,6 +17,13 @@ export default function page() {
         description="Accelerate go-to-market, reduce infrastructure waste, and
 eliminate downtime with Calsoft’s intelligent deployment strategies."
         buttonText="Request Deployment Blueprint"
+        navItems={[
+          "Why it Matters",
+          "What We Offer",
+          "Use Cases",
+          "Business Value",
+          "How to Start",
+        ]}
       />
       <WhyItMatters
         title="Code That’s Ready Is Useless If It
@@ -27,7 +34,7 @@ Can’t Ship Reliably."
         contentClass="w-[90%]"
       />
       <WhatWeOffer />
-      <UseCases CTACopy="Cut deployment time by 50% through automation."/>
+      <UseCases CTACopy="Cut deployment time by 50% through automation." />
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",

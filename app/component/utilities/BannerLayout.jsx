@@ -23,7 +23,7 @@ const BannerLayout = ({
   titleTwoClass,
   descriptionClass,
   buttonClass = "",
-  height="h-[37.5rem]"
+  height = "h-[37.5rem]",
 }) => {
   return (
     <div className=" relative">

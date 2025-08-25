@@ -49,7 +49,7 @@ export default function LeadershipTeam() {
         "Anshul Bhide leads Calsoft’s overall strategy, marketing, and heads the AI/ML practice. He brings a decade of experience spanning strategy, venture capital, and tech operations. Previously...",
       link: "",
     },
-    
+
     {
       image: uday,
       name: "Uday Ketkar",
@@ -74,7 +74,7 @@ export default function LeadershipTeam() {
         "Somenath Nag is a seasoned leader with nearly 30 years of experience in Telecom, Networking, and IoT. He spearheads business growth at Calsoft, managing strategic accounts and offshore teams.",
       link: "",
     },
-     {
+    {
       image: vipin,
       name: "Vipin Shankar",
       post: "Senior Vice President Technology& Head of Presales",
@@ -82,7 +82,6 @@ export default function LeadershipTeam() {
         "Vipin Shankar leads the Technology Office and presales at Calsoft, with 25+ years building engineering teams and technology roadmaps. He has developed cloud‑based EDA, MDM, storage, disaster‑recovery...",
       link: "",
     },
-   
   ];
   return (
     <div className="my-10 pb-12 space-y-20 container">
@@ -101,8 +100,7 @@ export default function LeadershipTeam() {
           technology-first vision to guide our customers’ success
         </p>
       </motion.div>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 container">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {data.map((ele, idx) => (
        <motion.div
   key={idx}

@@ -26,12 +26,17 @@ const Page = () => {
         buttonText="Download Case Study"
         Component={RegressionTestingMatter}
       />
-      <IntelligentPlanning />
+      <IntelligentPlanning
+        heading="Regression that Evolves with Your Codebase"
+        description="Calsoft designs modular, reusable, and scalable regression test suites that fit your current and future SDLC needs."
+        buttonText="Request POC"
+      />
       <Agility
         data={{
           leftSideContent: {
             title: "Faster Cycles. Fewer Bugs. Smarter QA.",
-            subTitle: "Automated regression testing delivers measurable technical and business impact:",
+            subTitle:
+              "Automated regression testing delivers measurable technical and business impact:",
             description:
               "Calsoft ensures regression is no longer a bottleneck — but a competitive advantage.",
           },
@@ -55,7 +60,8 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title: "Let’s talk about cutting your regression time by up to 60% — book a discovery call today.",
+          title:
+            "Let’s talk about cutting your regression time by up to 60% — book a discovery call today.",
           buttonText: "Book a Meeting",
         }}
         buttonText="Download ROI Sheet"
@@ -64,12 +70,12 @@ const Page = () => {
         data={[
           {
             title: "SaaS platforms",
-            subTitle:
-              "with multi-tenant, frequent feature releases",
+            subTitle: "with multi-tenant, frequent feature releases",
           },
           {
             title: "ISVs",
-            subTitle: "re-architecting monoliths into services needing regression reuse",
+            subTitle:
+              "re-architecting monoliths into services needing regression reuse",
           },
           {
             title: "FinTech apps",
@@ -120,12 +126,51 @@ const Page = () => {
       />
       <FirstStep
         headerContent={{
-          title1: "Modernize Your Regression Strategy Without Disrupting Delivery",
+          title1:
+            "Modernize Your Regression Strategy Without Disrupting Delivery",
           title2: null,
           description:
-            "We take you from readiness to run-state through a risk-mitigated, ROI-led framework. Here's how:",
+            "Calsoft offers a plug-and-scale approach to regression automation — built to reduce risk and optimize effort.",
         }}
         Component={Guesswork}
+        guessworkData={[
+          {
+            title: "Current Suite Assessment",
+            description:
+              "Review existing regression scripts, coverage, test execution data, and tool usage.",
+            output:
+              "Output: Regression Gap Report + Optimization Opportunities",
+            alignment: "left",
+          },
+          {
+            title: "Test Impact & Coverage Mapping",
+            description:
+              "Analyze changes vs test coverage using Git-based insights and static analysis.",
+            output: "Test Selection Matrix + Prioritized Regression Scope",
+            alignment: "right",
+          },
+          {
+            title: "Framework Setup & Optimization",
+            description:
+              "Implement CI/CD hooks, create modular test templates, enable parallel and cross-browser runs.",
+            output: "Output: Regression Test Framework + Environment Setup",
+            alignment: "left",
+          },
+          {
+            title: "Pilot Run & Benchmarking",
+            description:
+              "Run selected regression packs, monitor feedback, track flakiness, execution time, and false negatives.",
+            output: "Regression Pilot Report + Execution Time Savings",
+            alignment: "right",
+          },
+          {
+            title: "Enterprise Rollout & Maintenance Playbook",
+            description:
+              "Enable governance, dashboarding, change alerts, and modular suite extension.",
+            output: "Output: Test Suite Catalog + Maintenance SOP",
+            alignment: "left",
+          },
+        ]}
       />
       <ContactSecDataAi
         lightContent={

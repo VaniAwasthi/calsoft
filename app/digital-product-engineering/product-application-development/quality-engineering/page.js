@@ -17,6 +17,13 @@ export default function page() {
         description="De-risk early decisions with the right architecture,
 built for scale, speed, and ROI."
         buttonText="Get Architecture Readiness Score"
+        navItems={[
+          "Why it Matters",
+          "What We Offer",
+          "Use Cases",
+          "Business Value",
+          "How to Start",
+        ]}
       />
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
@@ -26,7 +33,7 @@ built for scale, speed, and ROI."
         contentClass="w-[90%]"
       />
       <WhatWeOffer />
-      <UseCases CTACopy="Ensure 98% defect-free releases with automation."/>
+      <UseCases CTACopy="Ensure 98% defect-free releases with automation." />
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",

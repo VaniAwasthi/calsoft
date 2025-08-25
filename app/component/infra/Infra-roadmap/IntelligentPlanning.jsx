@@ -103,7 +103,10 @@ export default function IntelligentPlanning() {
     },
   ];
   return (
-    <div className="bg-[#f2f0f5] min-h-screen pb-8 px-4">
+    <div
+      id="intelligent-planning"
+      className="bg-[#f2f0f5] min-h-screen pb-8 px-4"
+    >
       <div className="h-2" />
       <div className="container">
         {/* Header Section */}
@@ -124,6 +127,7 @@ export default function IntelligentPlanning() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {data.map((ele, idx) => (
             <motion.div
+              key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}

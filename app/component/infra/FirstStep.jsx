@@ -17,7 +17,7 @@ export default function FirstStep({
   guessworkData,
 }) {
   return (
-    <div className="container">
+    <div id="how-to-start" className="container">
       <div className="h-8" />
       <div className="grid lg:grid-cols-2 gap-5">
         <motion.div

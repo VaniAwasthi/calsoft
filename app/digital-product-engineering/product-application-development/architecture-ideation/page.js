@@ -17,8 +17,14 @@ const Page = () => {
         description="De-risk early decisions with the right architecture,
               built for scale, speed, and ROI."
         buttonText="Get Architecture Readiness Score"
+        navItems={[
+          "Why it Matters",
+          "What We Offer",
+          "Use Cases",
+          "Business Value",
+          "How to Start",
+        ]}
       />
-      {/* <Why /> */}
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
         desc="75% of digital product failures stem from poor early decisions—wrong tech stack, unclear user flows, or over-engineered features. Calsoft helps you cut through ambiguity and shape a scalable, cloud-first, cost-efficient architecture that aligns with your business goals from Day 1."
