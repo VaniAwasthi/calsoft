@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
@@ -12,12 +12,26 @@ import ImpactAnalysisMatter from "../../../component/testing/ImpactAnalysisMatte
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
+    const [activeTab, setActiveTab] = useState("why-it-matters");
+    
+      const navItems = [
+        "Why it Matters",
+        "Intelligent Planning",
+        "Business Value",
+        "Use Cases",
+        "Why Calsoft",
+        "How to Start",
+      ];
   return (
     <>
       <HeroSection
         title="Test Smarter, Not Slower — With Impact-Driven Validation"
         description="Accelerate quality cycles by identifying and executing only the tests that matter — powered by Calsoft’s Test Impact Analysis services."
         buttonText="Try Free Load Test"
+        navItems={navItems}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        
       />
       <WhyItMatters
         title="The Missing Link in DevOps? Continuous Quality."

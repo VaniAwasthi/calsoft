@@ -16,6 +16,7 @@ const Page = () => {
     <>
       <HeroSec />
       <WhyItMatters
+      id="why-it-matters"
         title="Problem + Solution Fit"
         desc="Most enterprises operate in a fragmented infra state — with
                     on-prem, cloud-native, and edge setups running in silos.

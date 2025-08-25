@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
 import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
@@ -14,12 +15,23 @@ import mobile2 from "../../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../../assets/DigitalEngineering/maturity/mobile3.svg";
 
 const Page = () => {
+   const navItems = [
+        "Why it Matters",
+        "What We Offer",
+        "Use Cases",
+        "Business Value",
+        "How to Start",
+      ]
+        const [activeTab, setActiveTab] = useState("why-it-matters");
   return (
     <>
       <HeroSection
         title="Interfaces That Think, Learn, and Convert."
         description="Design isn’t just about beauty—it’s about outcomes. Calsoft creates intelligent, conversion-driven interfaces that enhance user engagement and reduce friction across devices."
         buttonText="Request CX Audit"
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
       <WhyItMatters
         title="Poor Interfaces Leak Business. We Fix That."
@@ -29,8 +41,10 @@ const Page = () => {
         // contentClass="h-[31.5rem]"
         gridClass="sm:h-[55rem] md:h-[53rem] xl:h-[31.5rem]"
         mainComponenentClass="justify-start"
+        id="why-it-matters"
       />
       <WhatWeOffer
+      id="what-we-offer"
         heading="Design That Learns, Reacts, and Performs."
         description="Our interface engineering is not static design work—it’s interaction strategy built for business scale, adaptability, and intelligence. Our Capabilities:"
         features={[
@@ -228,6 +242,8 @@ const Page = () => {
         ]}
       />
       <UseCases
+      id="use-cases"
+      BussinessId="business-value"
         useCaseData={[
           {
             title: "B2B SaaS Admin Dashboard",
@@ -275,7 +291,7 @@ const Page = () => {
           buttontext: "Book a Meeting",
         }}
       />
-      <HowToStart
+      <HowToStart id="how-to-start"
         headerContent={{
           title: "Interface Sprint:\nFrom Wireframe to Prototype in 10 Days.",
           description:

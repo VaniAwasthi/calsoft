@@ -11,7 +11,7 @@ export default function HeroSec({
   description = "Build an actionable infrastructure roadmap aligned to your growth, resilience, and cost objectives. No guesswork. Just clarity, performance, and ROI.",
   buttonText = "Request your custom roadmap",
 }) {
-  const [activeTab, setActiveTab] = useState("Journey");
+  const [activeTab, setActiveTab] = useState("why-it-matters");
 
   const navItems = [
     "Why it Matters",

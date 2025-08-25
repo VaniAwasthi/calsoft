@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
 import UseCases from "../../../component/testing/UseCases";
@@ -12,12 +12,25 @@ import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMat
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
+    const [activeTab, setActiveTab] = useState("why-it-matters");
+    
+      const navItems = [
+        "Why it Matters",
+        "Intelligent Planning",
+        "Business Value",
+        "Use Cases",
+        "Why Calsoft",
+        "How to Start",
+      ];
   return (
     <>
       <HeroSection
         title="Migrate with Certainty. Modernize without Disruption."
         description="Accelerate cloud adoption through risk-aware, business-aligned migration strategies — backed by automation, security, and predictable ROI."
         buttonText="Access Readiness"
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
+        navItems={navItems}
       />
       <WhyItMatters />
       <IntelligentPlanning

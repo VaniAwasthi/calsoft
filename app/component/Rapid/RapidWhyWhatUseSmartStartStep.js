@@ -37,7 +37,7 @@ import imginter from "../../assets/DigitalEngineering/smart/imginter.webp";
 import { MatterCircle, MatterTriangle } from "../utilities/Shape";
 
 export const Rapid = () => {
-  const [activeTab, setActiveTab] = useState("benefits");
+  const [activeTab, setActiveTab] = useState("why-it-matters");
   const slide = {
     title: "Prototype in Days Decide with Confidence",
 
@@ -113,7 +113,7 @@ export const Why = () => {
   };
   return (
     <>
-      <MatterCircle {...whyItMattersData} ButtonImage={ButtonImage} />
+      <MatterCircle {...whyItMattersData} ButtonImage={ButtonImage} secId="why-it-matters"/>
     </>
   );
 };
@@ -183,6 +183,7 @@ export const What = () => {
         subtitle={subtitle}
         desc={desc}
         ButtonImage={ButtonImage}
+        secId="what-we-do"
       />
     </>
   );
@@ -222,6 +223,7 @@ export const Use = () => {
         {...useCasesData}
         ButtonImage={ButtonImage}
         direction="change_direction"
+        secId="use-cases"
       />
     </>
   );
@@ -247,6 +249,7 @@ export const Smart = () => {
         stats={stats}
         imageSrc={imginter}
         ButtonImage={ButtonImage}
+        secId="business-value"
       />
     </>
   );
@@ -264,7 +267,7 @@ export const Start = () => {
   };
   return (
     <>
-      <StartSection data={startSectionData} />
+      <StartSection data={startSectionData} secId="how-to-start" />
     </>
   );
 };

@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
 import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
@@ -10,6 +11,15 @@ import WhyItMatters from "../../../component/product-application-development/Why
 import ArchitectureIdeation from "../../../component/product-application-development/ArchitectureIdeationMatters";
 
 const Page = () => {
+    const [activeTab, setActiveTab] = useState("why-it-matters");
+  
+    const navItems = [
+    "Why it Matters",
+    "What We Offer",
+    "Use Cases",
+    "Business Value",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -17,29 +27,27 @@ const Page = () => {
         description="De-risk early decisions with the right architecture,
               built for scale, speed, and ROI."
         buttonText="Get Architecture Readiness Score"
-        navItems={[
-          "Why it Matters",
-          "What We Offer",
-          "Use Cases",
-          "Business Value",
-          "How to Start",
-        ]}
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
         desc="75% of digital product failures stem from poor early decisions—wrong tech stack, unclear user flows, or over-engineered features. Calsoft helps you cut through ambiguity and shape a scalable, cloud-first, cost-efficient architecture that aligns with your business goals from Day 1."
         buttonText="Download"
         MainComponenent={ArchitectureIdeation}
+        id="why-it-matters"
         // contentClass="w-[90%]"
       />
-      <WhatWeOffer description="Our architecture-led ideation workshops deliver clarity in just 7–10 working days. You walk away with:" />
-      <UseCases CTACopy="Reduce design cycle by 30% via architecture-led ideation." />
+      <WhatWeOffer description="Our architecture-led ideation workshops deliver clarity in just 7–10 working days. You walk away with:" id="what-we-offer" />
+      <UseCases CTACopy="Reduce design cycle by 30% via architecture-led ideation." id="use-cases" BussinessId="business-value"/>
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:
             "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
         }}
+        id="how-to-start"
       />
       <Steps />
       <ArchitectureSprint />
