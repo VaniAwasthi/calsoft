@@ -8,6 +8,8 @@ import Info1 from "../../assets/Data-Ai/analytics/Info-1.svg";
 import Info2 from "../../assets/Data-Ai/analytics/Info-2.svg";
 import Info3 from "../../assets/Data-Ai/analytics/Info-3.svg";
 import Info4 from "../../assets/Data-Ai/analytics/Info-4.svg";
+
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -40,6 +42,7 @@ export const AnalyticsBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("data-analytics-reporting-datasheet")}
       />
       <Submenu
         navItems={navItems}

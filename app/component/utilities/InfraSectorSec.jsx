@@ -8,6 +8,7 @@ import ContactImg from "../../assets/Data-Ai/PipeLine/ConnectBg.webp";
 import { useState } from "react";
 
 import CircleArrow from "../../assets/DigitalEngineering/Product/circleArrow.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 
 export const InfraSection = ({
   description,

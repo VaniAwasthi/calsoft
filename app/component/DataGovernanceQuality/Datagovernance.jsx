@@ -8,6 +8,7 @@ import Info1 from "../../assets/Data-Ai/dataGovernance/InfoSec-1.svg";
 import Info2 from "../../assets/Data-Ai/dataGovernance/InfoSec-2.svg";
 import Info3 from "../../assets/Data-Ai/dataGovernance/InfoSec-3.svg";
 import Info4 from "../../assets/Data-Ai/dataGovernance/InfoSec-4.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -41,6 +42,7 @@ export const GovernJounery = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+          onButtonClick={() => showHubSpotForm("data-governance-datasheet")}
       />
       <Submenu
         navItems={navItems}

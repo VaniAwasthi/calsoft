@@ -8,6 +8,7 @@ import Info1 from "../../assets/Data-Ai/customllm/Info-1.svg";
 import Info2 from "../../assets/Data-Ai/customllm/Info-2.svg";
 import Info3 from "../../assets/Data-Ai/customllm/Info-3.svg";
 import Info4 from "../../assets/Data-Ai/customllm/Info-4.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 
 import {
   ChallengeSolutionComp,
@@ -41,6 +42,7 @@ export const CustomBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("custom-llm-datasheet")}
       />
       <Submenu
         navItems={navItems}
