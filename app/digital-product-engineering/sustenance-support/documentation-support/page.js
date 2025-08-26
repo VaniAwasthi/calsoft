@@ -12,6 +12,7 @@ import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
+import Img from "@/app/assets/sustenance/Sustenance_BG.webp";
 
 export default function page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -32,6 +33,7 @@ export default function page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        heroImage={Img}
       />
       <WhyItMatters
         title="What’s broken in your current docs?"

@@ -2,7 +2,6 @@
 
 import React from "react";
 import BannerLayout from "../utilities/BannerLayout";
-import heroImage from "../../assets/infra/Hero_bg.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import Submenu from "../utilities/Submenu";
 
@@ -12,7 +11,7 @@ export default function HeroSection({
   title = "Technology-first partner",
   description = "Accelerate cloud adoption through risk-aware, business-aligned migration strategies — backed by automation, security, and predictable ROI.",
   buttonText = "Access Readiness",
-
+  heroImage
 }) {
 
 
