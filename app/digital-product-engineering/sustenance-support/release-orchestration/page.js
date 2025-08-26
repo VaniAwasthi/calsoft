@@ -10,6 +10,8 @@ import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
+import Img from "@/app/assets/sustenance/Sustenance_BG.webp"
+
 
 export default function page() {
   return (
@@ -18,6 +20,7 @@ export default function page() {
         title="Know Before You Grow Benchmark with Intent"
         description="Establish performance, scalability, and quality baselines before your next release, migration, or modernization effort — with Calsoft’s Benchmarking Readiness service."
         buttonText="Access Readiness"
+        heroImage={Img}
       />
       <WhyItMatters
         title="Measure What Matters — Before You Deploy."

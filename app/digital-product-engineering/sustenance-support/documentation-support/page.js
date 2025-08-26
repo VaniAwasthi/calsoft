@@ -10,6 +10,8 @@ import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
+import Img from "@/app/assets/sustenance/Sustenance_BG.webp"
+
 
 export default function page() {
   return (
@@ -18,6 +20,7 @@ export default function page() {
         title="Treat Documentation as a Product, Not a Postscript"
         description="Cut onboarding time, boost support, and stay audit-ready with Calsoft’s scalable Documentation Support."
         buttonText="Talk to Expert"
+        heroImage={Img}
       />
       <WhyItMatters
         title="What’s broken in your current docs?"
