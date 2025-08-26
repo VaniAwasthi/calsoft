@@ -13,7 +13,7 @@ export default function CloudNativeMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="absolute top-0 left-28 w-44 h-44 transform rotate-45 rounded-3xl border-4 border-[#ba0007] bg-[#2e3092] flex items-center justify-center"
+          className="absolute top-0 left-28 w-44 h-44 transform rotate-45 rounded-3xl border-4 border-[#ba0007] bg-[#2e3092] flex items-center justify-center hover:scale-105 transition-all"
         >
           <div className="transform -rotate-45 text-center px-4">
             <h3 className="text-white text-xl font-bold mb-2 leading-tight">
@@ -31,7 +31,7 @@ export default function CloudNativeMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="absolute top-0 right-28 w-44 h-44 transform rotate-45 rounded-3xl border-4 border-[#ba0007] bg-[#2e3092] flex items-center justify-center"
+          className="absolute top-0 right-28 w-44 h-44 transform rotate-45 rounded-3xl border-4 border-[#ba0007] bg-[#2e3092] flex items-center justify-center hover:scale-105 transition-all"
         >
           <div className="transform -rotate-45 text-center px-4">
             <h3 className="text-white text-xl font-bold mb-2 leading-tight">
@@ -49,7 +49,7 @@ export default function CloudNativeMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="absolute bottom-0 -left-2 w-44 h-44 transform rotate-45 rounded-3xl border-4 border-[#ba0007] bg-[#2e3092] flex items-center justify-center"
+          className="absolute bottom-0 -left-2 w-44 h-44 transform rotate-45 rounded-3xl border-4 border-[#ba0007] bg-[#2e3092] flex items-center justify-center hover:scale-105 transition-all"
         >
           <div className="transform -rotate-45 text-center px-3">
             <h3 className="text-white text-xl font-bold mb-2 leading-tight">
@@ -67,7 +67,7 @@ export default function CloudNativeMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="absolute bottom-0 left-1/2 -ml-22 w-44 h-44 transform rotate-45 rounded-3xl border-4 border-[#ba0007] bg-[#2e3092] flex items-center justify-center"
+          className="absolute bottom-0 left-1/2 -ml-22 w-44 h-44 transform rotate-45 rounded-3xl border-4 border-[#ba0007] bg-[#2e3092] flex items-center justify-center hover:scale-105 transition-all"
         >
           <div className="transform -rotate-45 text-center px-4">
             <h3 className="text-white text-xl font-bold mb-2 leading-tight">
@@ -85,7 +85,7 @@ export default function CloudNativeMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="absolute bottom-0 -right-2 w-44 h-44 transform rotate-45 rounded-3xl border-4 border-[#ba0007] bg-[#2e3092] flex items-center justify-center"
+          className="absolute bottom-0 -right-2 w-44 h-44 transform rotate-45 rounded-3xl border-4 border-[#ba0007] bg-[#2e3092] flex items-center justify-center hover:scale-105 transition-all"
         >
           <div className="transform -rotate-45 text-center px-3">
             <h3 className="text-white text-xl font-bold mb-2 leading-tight">

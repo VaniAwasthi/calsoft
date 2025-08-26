@@ -166,7 +166,6 @@ export default function Component({
     },
   ],
 }) {
-  console.log(stepsData);
   return (
     <div className="bg-[#ffffff] min-h-screen">
       <div className="h-16"></div>

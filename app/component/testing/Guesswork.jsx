@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 export default function Guesswork({
   stepsData = [
     {
-      number: "1",
       title: "Readiness Assessment",
       description:
         "Evaluate infrastructure, workloads, compliance constraints, and cloud goals.",
@@ -14,7 +13,6 @@ export default function Guesswork({
       alignment: "left",
     },
     {
-      number: "2",
       title: "Workload Discovery & Mapping",
       description:
         "Use automated tools to classify workloads, dependencies, and optimization opportunities.",
@@ -22,7 +20,6 @@ export default function Guesswork({
       alignment: "right",
     },
     {
-      number: "3",
       title: "Migration Strategy Design",
       description:
         "Choose the right approach — Rehost / Replatform / Refactor — based on impact and complexity.",
@@ -30,7 +27,6 @@ export default function Guesswork({
       alignment: "left",
     },
     {
-      number: "4",
       title: "Pilot Migration & Cutover Testing",
       description:
         "Execute pilot migration, monitor cutover behavior, test rollback and audit workflows.",
@@ -38,7 +34,6 @@ export default function Guesswork({
       alignment: "right",
     },
     {
-      number: "5",
       title: "Infra Readiness Review",
       description:
         "Kick off with a structured 60-minute discovery call. We assess your current infra stack across:",

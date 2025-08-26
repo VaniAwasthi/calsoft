@@ -12,10 +12,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function LeadershipTeam() {
-//   const truncateWords = (text, limit) => {
-//   const words = text.split(" ");
-//   return words.length > limit ? words.slice(0, limit).join(" ") + "..." : text;
-// };
+  //   const truncateWords = (text, limit) => {
+  //   const words = text.split(" ");
+  //   return words.length > limit ? words.slice(0, limit).join(" ") + "..." : text;
+  // };
   const data = [
     {
       image: anupam,
@@ -102,38 +102,36 @@ export default function LeadershipTeam() {
       </motion.div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
         {data.map((ele, idx) => (
-       <motion.div
-  key={idx}
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: idx * 0.1 }}
-  viewport={{ once: false, amount: 0.3 }}
-  className="manrope relative group rounded-lg overflow-hidden shadow-md cursor-pointer my-10"
->
-  {/* Default Image */}
-  <Image
-    src={ele.image}
-    alt={ele.name}
-    width={400}
-    height={300}
-    className="w-full h-[350px] object-cover transition-all duration-300 group-hover:opacity-0 border-gray-300 border"
-  />
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: idx * 0.1 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="manrope relative group rounded-lg overflow-hidden shadow-md cursor-pointer my-10"
+          >
+            {/* Default Image */}
+            <Image
+              src={ele.image}
+              alt={ele.name}
+              width={400}
+              height={300}
+              className="w-full h-[350px] object-cover transition-all duration-300 group-hover:opacity-0 border-gray-300 border"
+            />
 
-  {/* Blue strip (default state) */}
-  <div className="h-[80px] absolute bottom-0 left-0 w-full bg-[#2E3092]/90 text-white px-3 py-2 transition-all duration-300 group-hover:opacity-0">
-    <p className="text-[18px] font-semibold">{ele.name}</p>
-    <p className="text-[12px]">{ele.post}</p>
-  </div>
+            {/* Blue strip (default state) */}
+            <div className="h-[80px] absolute bottom-0 left-0 w-full bg-[#2E3092]/90 text-white px-3 py-2 transition-all duration-300 group-hover:opacity-0">
+              <p className="text-[18px] font-semibold">{ele.name}</p>
+              <p className="text-[12px]">{ele.post}</p>
+            </div>
 
-  {/* Floating overlay on hover */}
-  <div className="absolute inset-0 bg-[#2E3092] text-white opacity-0 translate-y-5 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex flex-col justify-center items-left p-4 text-left">
-    <p className="text-lg font-medium">{ele.name}</p>
-    <p className="text-sm italic">{ele.post}</p>
-    <p className="text-xs mt-2">{ele.description}</p>
-  </div>
-</motion.div>
-
-
+            {/* Floating overlay on hover */}
+            <div className="absolute inset-0 bg-[#2E3092] text-white opacity-0 translate-y-5 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out flex flex-col justify-center items-left p-4 text-left">
+              <p className="text-lg font-medium">{ele.name}</p>
+              <p className="text-sm italic">{ele.post}</p>
+              <p className="text-xs mt-2">{ele.description}</p>
+            </div>
+          </motion.div>
         ))}
       </div>
     </div>
