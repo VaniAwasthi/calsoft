@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import HeroSection from "@/app/component/testing/HeroSection";
 import WhyItMatters from "@/app/component/sustenance/WhyItMatter";
 import IntelligentPlanning from "@/app/component/testing/IntelligentPlanning";
@@ -10,10 +12,18 @@ import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
-import Img from "@/app/assets/sustenance/Sustenance_BG.webp"
-
+import Img from "@/app/assets/sustenance/Sustenance_BG.webp";
 
 export default function page() {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+  const navItems = [
+    "Why it Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -21,6 +31,9 @@ export default function page() {
         description="Modernize support with Calsoft’s Intelligent Ticketing — AI-driven, automated, and context-aware."
         buttonText="Talk to Expert"
         heroImage={Img}
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
       <WhyItMatters
         title="What’s broken in traditional ticketing systems?"
@@ -173,7 +186,8 @@ export default function page() {
           },
           {
             title: "Bidirectional sync",
-            subTitle: "with Jira ServiceNow, Zendesk, Freshdesk, Salesforce, etc.",
+            subTitle:
+              "with Jira ServiceNow, Zendesk, Freshdesk, Salesforce, etc.",
           },
           // {
           //   title: "Internal knowledge bases,",
@@ -191,7 +205,8 @@ export default function page() {
           btnText: "Request POC",
         }}
       />
-      <RealWorldImpact buttonText={null}
+      <RealWorldImpact
+        buttonText={null}
         title="Across enterprise deployments, Calsoft has enabled:"
         desc="Across enterprise deployments, Calsoft has enabled:"
         cardData={[
@@ -444,37 +459,37 @@ export default function page() {
         headerContent={{
           title1: "Start small, scale fast",
           title2: null,
-          description:
-            "Here’s how we get started:",
+          description: "Here’s how we get started:",
         }}
         guessworkData={[
-    {
-      heading: "Audit",
-      title: null,
-      desc: "Current support system, volume, SLA, escalation pain points",
-    },
-    {
-      heading: "Design",
-      title: null,
-      desc: "Define ticket classification, automation flows, escalation paths",
-    },
-    {
-      heading: "Integrate",
-      title: null,
-      desc: "Connect with tools: Jira, ServiceNow, CRM, monitoring systems",
-    },
-    {
-      heading: "Pilot",
-      title: null,
-      desc: "Deploy L1/L2 workflow, test against sample backlog and live volume",
-    },
-    {
-      heading: "Scale",
-      title: null,
-      desc: "Rollout across org with dashboards, knowledge base sync, and RCA tracking",
-    },
-  ]}
+          {
+            heading: "Audit",
+            title: null,
+            desc: "Current support system, volume, SLA, escalation pain points",
+          },
+          {
+            heading: "Design",
+            title: null,
+            desc: "Define ticket classification, automation flows, escalation paths",
+          },
+          {
+            heading: "Integrate",
+            title: null,
+            desc: "Connect with tools: Jira, ServiceNow, CRM, monitoring systems",
+          },
+          {
+            heading: "Pilot",
+            title: null,
+            desc: "Deploy L1/L2 workflow, test against sample backlog and live volume",
+          },
+          {
+            heading: "Scale",
+            title: null,
+            desc: "Rollout across org with dashboards, knowledge base sync, and RCA tracking",
+          },
+        ]}
         Component={Guesswork}
+        output="Output: Intelligent Support Blueprint + SLA Matrix + Escalation Engine"
       />
       <ContactSecDataAi
         lightContent={
