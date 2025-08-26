@@ -1,16 +1,17 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import image from "../../assets/sustenance/WhyItMatter.webp";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function WhyItMatters({
   title = "Measure What Matters — Before You Deploy.",
   desc = "Most teams measure application performance reactively — post-deployment or after customer feedback. This leads to:",
   buttonText = "Download Case Study",
-}) {
-  const data = [
+  data = [
     {
       title: "Lack of baseline performance",
       desc: "data for comparison",
@@ -133,29 +134,50 @@ export default function WhyItMatters({
         </svg>
       ),
     },
-  ];
+  ],
+  img = image,
+}) {
   return (
     <div id="why-it-matters" className="container">
-      <div className="h-8" />
+      <div className="h-10" />
       <div className="flex flex-col justify-center gap-12">
         {/* Upper content */}
         <div className={`space-y-10`}>
-          <p className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_50%)] bg-clip-text text-transparent">
+          <motion.p
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_20%)] bg-clip-text text-transparent"
+          >
             Why It Matters
-          </p>
-          <div className="space-y-6">
+          </motion.p>
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="space-y-6"
+          >
             <p className="text-3xl font-semibold max-w-3xl">{title}</p>
             <p className="text-lg leading-relaxed font-light max-w-2xl">
               {desc}
             </p>
-          </div>
+          </motion.div>
         </div>
         {/* Lower Image component */}
-        <div className="flex justify-between items-center gap-8">
-          <div className="space-y-8 flex-1">
+        <div className="flex xl:flex-row flex-col-reverse justify-between md:items-center items-start gap-10 container">
+          <div className="space-y-10 flex-1">
             <div className="space-y-4">
-              {data.map((ele) => (
-                <div className="flex gap-5 justify-between">
+              {data.map((ele, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: idx * 0.1 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="flex gap-5 justify-between"
+                >
                   <div>{ele.icon}</div>
                   <div className="w-full flex flex-col gap-2">
                     <p className="text-xl font-semibold">{ele.title}</p>
@@ -163,23 +185,43 @@ export default function WhyItMatters({
                       <p className="text-xl font-light">{ele.desc}</p>
                     )}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-            <ButtonLayout
-              text={buttonText}
-              image={buttonImage}
-              hoverImage={buttonImage}
-              className={"w-fit shadow-2xl"}
-            />
+            <motion.div
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <ButtonLayout
+                text={buttonText}
+                image={buttonImage}
+                hoverImage={buttonImage}
+                className={"w-fit shadow-2xl"}
+              />
+            </motion.div>
           </div>
-          <div className="relative w-full h-full flex-1 z-0">
-            <div className="absolute -left-4 w-full bottom-5 top-5 bg-[#2E3092] rounded-xl -z-30" />
-            <Image
-              src={image}
-              alt="Sustenance-Why it matter"
-              className="rounded-xl z-0 "
+          <div className="relative w-fit h-full flex-1 z-0">
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="absolute -left-4 w-20 bottom-5 top-5 bg-[#2E3092] rounded-xl -z-30"
             />
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <Image
+                src={img}
+                alt="Sustenance-Why it matter"
+                className="rounded-xl z-0"
+              />
+            </motion.div>
           </div>
         </div>
       </div>

@@ -288,7 +288,12 @@ export const DataInfoSection = ({
   );
 };
 
-export const ContactSecDataAi = ({ BoldContent, lightContent, link }) => {
+export const ContactSecDataAi = ({
+  BoldContent,
+  lightContent,
+  link,
+  buttonText = "Learn More",
+}) => {
   return (
     <>
       <section>
@@ -308,24 +313,21 @@ export const ContactSecDataAi = ({ BoldContent, lightContent, link }) => {
                 <span className="font-bold">{BoldContent}</span>
               </h2>
 
-             
-                <motion.div
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="flex flex-col md:flex-row gap-4"
-                >
-                  <ButtonLayout
-                    // link={link}
-                    text="Learn More"
-                    image={ButtonImage}
-                    hoverImage={ButtonImage}
-                    onClick={() => showHubSpotForm("contact-us-popup")}
-                   
-                  />
-                </motion.div>
-              
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="flex flex-col md:flex-row gap-4"
+              >
+                <ButtonLayout
+                  // link={link}
+                  text={buttonText}
+                  image={ButtonImage}
+                  hoverImage={ButtonImage}
+                  onClick={() => showHubSpotForm("contact-us-popup")}
+                />
+              </motion.div>
             </div>
           </div>
         </div>

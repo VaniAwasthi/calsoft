@@ -248,7 +248,6 @@ export default function IntelligentPlanning({
           </div>
 
           {/* Feature Cards Grid */}
-
           <div
             // ref={scrollContainerRef}
             // className="flex gap-10 overflow-x-auto scrollbar-hide pb-4"
@@ -256,14 +255,14 @@ export default function IntelligentPlanning({
             //   scrollbarWidth: "none",
             //   msOverflowStyle: "none",
             // }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16 z-50"
           >
             {/* Card 1 - Gradient Background */}
             {data.cardData.map((ele, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
-                whileinview={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: idx * 0.1 }}
                 viewport={{ once: false, amount: 0.3 }}
                 className="relative bg-white hover:bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 hover:text-white min-h-[280px] hover:border-none border-2 border-[#2e3092] transition-all"
@@ -283,7 +282,7 @@ export default function IntelligentPlanning({
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <motion.div
               initial={{ x: -50, opacity: 0 }}
-              whileinview={{ x: 0, opacity: 1 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
             >
@@ -295,7 +294,7 @@ export default function IntelligentPlanning({
             </motion.div>
             <motion.div
               initial={{ x: 50, opacity: 0 }}
-              whileinview={{ x: 0, opacity: 1 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
             >
