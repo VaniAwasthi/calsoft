@@ -20,6 +20,7 @@ multi-cloud provisioning approach — minimizing shadow IT and maximizing agilit
         buttonText="Request Readiness Check"
       />
       <WhyItMatters
+      id="why-it-matters"
         title="Multi-Cloud Without Governance = Risk"
         desc="Most enterprises today operate in multi-cloud by accident, not
                   by design. Teams spin up resources on AWS, Azure, or GCP to

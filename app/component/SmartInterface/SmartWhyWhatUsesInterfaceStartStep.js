@@ -37,7 +37,7 @@ import imginter from "../../assets/DigitalEngineering/smart/imginter.webp";
 import { MatterTriangle } from "../utilities/Shape";
 
 export const Smart = () => {
-  const [activeTab, setActiveTab] = useState("benefits");
+  const [activeTab, setActiveTab] = useState("why-it-matters");
   const slide = {
     title: "Interfaces That Think, Learn, and Convert.",
 
@@ -114,7 +114,7 @@ export const Why = () => {
   };
   return (
     <>
-      <MatterTriangle {...whyItMattersData} ButtonImage={ButtonImage} />
+      <MatterTriangle {...whyItMattersData} ButtonImage={ButtonImage} secId="why-it-matters"/>
     </>
   );
 };
@@ -184,6 +184,7 @@ export const What = () => {
         subtitle={subtitle}
         desc={desc}
         ButtonImage={ButtonImage}
+        secId="what-we-do"
       />
     </>
   );
@@ -223,6 +224,7 @@ export const Uses = () => {
         {...useCasesData}
         ButtonImage={ButtonImage}
         direction="change_direction"
+        secId="use-cases"
       />
     </>
   );
@@ -251,6 +253,7 @@ export const Interface = () => {
         stats={stats}
         imageSrc={imginter}
         ButtonImage={ButtonImage}
+        secId="business-value"
       />
     </>
   );
@@ -269,7 +272,7 @@ export const Start = () => {
   };
   return (
     <>
-      <StartSection data={startSectionData} />
+      <StartSection data={startSectionData} secId="how-to-start" />
     </>
   );
 };

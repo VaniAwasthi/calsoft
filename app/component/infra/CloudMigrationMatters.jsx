@@ -13,7 +13,7 @@ export default function CloudMigrationMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-full aspect-square"
+          className="relative w-full aspect-square hover:scale-105 transition-all"
         >
           {/* Red background shape */}
           <div
@@ -54,7 +54,7 @@ export default function CloudMigrationMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-full aspect-square"
+          className="relative w-full aspect-square hover:scale-105 transition-all"
         >
           {/* Red background shape */}
           <div
@@ -95,7 +95,7 @@ export default function CloudMigrationMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-full aspect-square"
+          className="relative w-full aspect-square hover:scale-105 transition-all"
         >
           {/* Red background shape */}
           <div
@@ -136,7 +136,7 @@ export default function CloudMigrationMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-full aspect-square"
+          className="relative w-full aspect-square hover:scale-105 transition-all"
         >
           {/* Red background shape */}
           <div

@@ -10,6 +10,8 @@ import predict from "../../assets/infra/predictibility.webp";
 
 export default function Component({
   title = "Where It Works Best.",
+  id="",
+  BussinessId="",
   description = "Our Infrastructure Roadmap services have unlocked outcomes for:",
   useCaseData = [
     {
@@ -58,7 +60,7 @@ export default function Component({
   },
 }) {
   return (
-    <div id="use-cases" className="bg-[#ffffff] px-6">
+    <div className="bg-[#ffffff] px-6" >
       <div className="h-8" />
       <div className="container space-y-8">
         <div className="max-w-7xl mx-auto">
@@ -66,7 +68,7 @@ export default function Component({
             {/* Left Content */}
             <div className="space-y-2 w-[100%]">
               {/* Header */}
-              <div className=" mb-5">
+              <div className=" mb-5" id={id}>
                 <h2 className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-5">
                   Use Cases
                 </h2>
@@ -164,14 +166,14 @@ export default function Component({
           </div>
         </div>
         {/* Download one pager */}
-        <div className="w-full h-full relative rounded-xl overflow-hidden">
+        <div className="w-full h-full relative rounded-xl overflow-hidden" id={BussinessId}>
           <Image
             src={img}
             alt="agile work culture"
             className="w-full object-cover"
           />
           <div className="absolute top-0 w-full h-full bg-[linear-gradient(90deg,rgba(46,48,146,0.95)_0%,rgba(46,48,146,0.9)_35%,rgba(255,255,255,0.0)_100%)] flex justify-between items-center">
-            <div className="w-[65%] h-full text-white">
+            <div className="w-[65%] h-full text-white" >
               <div className="h-full flex gap-8 items-center justify-between">
                 {/* Left content */}
                 <div className="flex-1 p-10 h-full flex flex-col gap-6 justify-center">

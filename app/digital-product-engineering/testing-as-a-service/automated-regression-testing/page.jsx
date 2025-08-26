@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
@@ -12,12 +12,25 @@ import RegressionTestingMatter from "../../../component/testing/Regression-Testi
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+  
+    const navItems = [
+      "Why it Matters",
+      "Intelligent Planning",
+      "Business Value",
+      "Use Cases",
+      "Why Calsoft",
+      "How to Start",
+    ];
   return (
     <>
       <HeroSection
         title="Never Re-Test Everything. Always Test What Matters"
         description="Accelerate release cycles and improve test coverage with Calsoft’s Automated Regression Testing — engineered for speed, stability, and scalability."
         buttonText="Request Free Assessment"
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
       <WhyItMatters
         title="Outdated Regression = Delayed Releases."

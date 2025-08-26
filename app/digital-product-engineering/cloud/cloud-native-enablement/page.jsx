@@ -21,6 +21,7 @@ const Page = () => {
       />
       {/* <WhyItMatters /> */}
       <WhyItMatters
+      id="why-it-matters"
         title="Debunking Cloud-Native Myths"
         desc="For most enterprises, “cloud-native” remains aspirational — often misunderstood as just container adoption. In reality, incomplete strategies lead to:"
         desc2="Calsoft ensures true cloud-native enablement by aligning architecture, engineering practices,

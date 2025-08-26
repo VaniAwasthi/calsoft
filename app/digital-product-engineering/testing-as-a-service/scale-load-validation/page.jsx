@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
@@ -13,12 +13,25 @@ import LoadValidationMatter from "../../../component/testing/LoadValidationMatte
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
+    const [activeTab, setActiveTab] = useState("why-it-matters");
+    
+      const navItems = [
+        "Why it Matters",
+        "Intelligent Planning",
+        "Business Value",
+        "Use Cases",
+        "Why Calsoft",
+        "How to Start",
+      ];
   return (
     <>
       <HeroSection
         title="Validate Scale. Simulate Reality. Release with Confidence"
         description="Ensure your applications can handle real-world traffic and usage peaks with Calsoft’s engineered scale & load validation services."
         buttonText="Try Free Load Test"
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
+        navItems={navItems}
       />
       <WhyItMatters
         title="Every Missed Test Case Is a Revenue Risk."
