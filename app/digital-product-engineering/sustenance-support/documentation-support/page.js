@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import HeroSection from "@/app/component/testing/HeroSection";
 import WhyItMatters from "@/app/component/sustenance/WhyItMatter";
 import IntelligentPlanning from "@/app/component/testing/IntelligentPlanning";
@@ -12,12 +14,24 @@ import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 
 export default function page() {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+  const navItems = [
+    "Why it Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
         title="Treat Documentation as a Product, Not a Postscript"
         description="Cut onboarding time, boost support, and stay audit-ready with Calsoft’s scalable Documentation Support."
         buttonText="Talk to Expert"
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
       <WhyItMatters
         title="What’s broken in your current docs?"

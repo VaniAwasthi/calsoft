@@ -57,7 +57,7 @@ export default function Component({
                       whileInView={{ x: 0, opacity: 1 }}
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
                       viewport={{ once: false, amount: 0.3 }}
-                      className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092]"
+                      className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092] hover:scale-105 transition-all"
                     >
                       <div className="bg-[#ffffff] rounded-[calc(0.5rem-2px)] p-6 h-full space-y-4">
                         <div className="w-8 h-8 bg-[#2e3092] rounded-full flex items-center justify-center">
@@ -80,7 +80,7 @@ export default function Component({
                       whileInView={{ x: 0, opacity: 1 }}
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
                       viewport={{ once: false, amount: 0.3 }}
-                      className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092]"
+                      className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092] hover:scale-105 transition-all"
                     >
                       <div className="bg-[#ffffff] rounded-[calc(0.5rem-2px)] p-6 h-full space-y-4">
                         <div className="w-8 h-8 bg-[#2e3092] rounded-full flex items-center justify-center">
