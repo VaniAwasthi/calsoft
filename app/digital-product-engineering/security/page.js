@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   DevSec,
@@ -17,7 +17,8 @@ import {
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/security/knowMore.svg";
 import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
-function page() {
+
+export default function Page() {
   return (
     <>
       <SecurityTab />
@@ -43,5 +44,3 @@ function page() {
     </>
   );
 }
-
-export default page;

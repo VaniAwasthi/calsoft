@@ -13,8 +13,7 @@ import BannerwithButtonBg from "../../assets/Data-Ai/customllm/Knowmore.webp";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 
-
-function page() {
+export default function Page() {
   return (
     <>
       <CustomBanner />
@@ -44,5 +43,3 @@ function page() {
     </>
   );
 }
-
-export default page;

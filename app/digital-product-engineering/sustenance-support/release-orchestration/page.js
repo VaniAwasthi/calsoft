@@ -14,7 +14,7 @@ import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/sustenance/Sustenance_BG.webp";
 
-export default function page() {
+export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
     "Why it Matters",

@@ -2,7 +2,7 @@ import React from "react";
 import DemoImage from "@/app/assets/virtualization/Containerization and orchestration.webp";
 import Image from "next/image";
 
-export default function page() {
+export default function Page() {
   return (
     <div className="relative w-full h-auto">
       <Image
