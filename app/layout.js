@@ -1,9 +1,9 @@
-import { Geist, Geist_Mono } from "next/font/google";
+// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientProvider from "./ClientProvider";
 import ClientLayoutWrapper from "./ClientLayoutWrapper";
 import Script from "next/script";
-import { Londrina_Shadow } from "next/font/google";
+import { Londrina_Shadow, Manrope } from "next/font/google";
 
 const londrina = Londrina_Shadow({
   subsets: ["latin"],
@@ -11,15 +11,21 @@ const londrina = Londrina_Shadow({
   variable: "--font-londrina", // custom CSS variable
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
   subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"], // pick what you need
+  variable: "--font-manrope", // custom CSS variable
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata = {
   title: "Calsoft",
@@ -28,17 +34,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`overflow-x-hidden ${londrina.variable}`}>
+    <html
+      lang="en"
+      className={`overflow-x-hidden ${londrina.variable} ${manrope.variable}`}
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
-          rel="stylesheet"
         />
       </head>
 
@@ -83,7 +88,7 @@ export default function RootLayout({ children }) {
         `}
       </Script>
 
-      <body className="overflow-x-hidden min-h-screen flex flex-col">
+      <body className="overflow-x-hidden min-h-screen flex flex-col font-manrope">
         <ClientProvider>
           <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
         </ClientProvider>

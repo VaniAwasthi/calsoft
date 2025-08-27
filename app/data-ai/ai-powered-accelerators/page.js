@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   AiBanner,
   AiChallengeSec,
@@ -13,7 +13,7 @@ import BannerwithButtonBg from "../../assets/Data-Ai/ai-accelerate/KnowMore.webp
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 
-function page() {
+export default function Page() {
   return (
     <>
       <AiBanner />
@@ -31,7 +31,7 @@ function page() {
         }
         buttonText="Book a Meeting"
         buttonLink="#"
-         onButtonClick={() => showHubSpotForm("book-a-meeting")}
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <ECalsoftSec />
       <CalsoftSec />
@@ -43,5 +43,3 @@ function page() {
     </>
   );
 }
-
-export default page;

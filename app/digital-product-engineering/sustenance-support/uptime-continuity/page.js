@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import HeroSection from "@/app/component/testing/HeroSection";
 import WhyItMatters from "@/app/component/sustenance/WhyItMatter";
 import IntelligentPlanning from "@/app/component/testing/IntelligentPlanning";
@@ -10,10 +12,18 @@ import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
-import Img from "@/app/assets/sustenance/Sustenance_BG.webp"
+import Img from "@/app/assets/sustenance/Sustenance_BG.webp";
 
-
-export default function page() {
+export default function Page() {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+  const navItems = [
+    "Why it Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -21,7 +31,9 @@ export default function page() {
         description="Calsoft’s Uptime Continuity ensures SLA-backed availability across cloud, hybrid, and edge with proactive and real-time support."
         buttonText="Talk to Expert"
         heroImage={Img}
-
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
       <WhyItMatters
         title="Where continuity often breaks down"
@@ -192,7 +204,8 @@ export default function page() {
           btnText: "Request POC",
         }}
       />
-      <RealWorldImpact buttonText={null}
+      <RealWorldImpact
+        buttonText={null}
         title="Continuity that reflects in your metrics"
         desc="Our uptime continuity programs have enabled:"
         cardData={[
@@ -441,8 +454,7 @@ export default function page() {
         headerContent={{
           title1: "From outages to",
           title2: "always-on — made practical",
-          description:
-            "Here’s how Calsoft establishes uptime continuity:",
+          description: "Here’s how Calsoft establishes uptime continuity:",
         }}
         guessworkData={[
           {
@@ -472,6 +484,7 @@ export default function page() {
           },
         ]}
         Component={Guesswork}
+        output="Output: Uptime Blueprint + SLA Dashboard + Incident Automation Framework"
       />
       <ContactSecDataAi
         lightContent={

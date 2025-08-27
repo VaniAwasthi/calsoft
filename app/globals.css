@@ -35,6 +35,10 @@
   font-family: "Londrina Shadow", cursive;
 }
 
+.font-manrope {
+  font-family: "Manrope", sans-serif, serif;
+}
+
 .Inter {
   font-family: var(--secondary-font);
 }

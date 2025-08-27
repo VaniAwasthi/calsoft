@@ -15,6 +15,7 @@ export default function FirstStep({
   },
   Component = Guesswork,
   guessworkData,
+  output,
 }) {
   return (
     <div id="how-to-start" className="container">
@@ -46,7 +47,7 @@ export default function FirstStep({
           />
         </motion.div>
       </div>
-      <Component stepsData={guessworkData} />
+      <Component stepsData={guessworkData} output={output} />
     </div>
   );
 }

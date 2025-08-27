@@ -2,7 +2,7 @@ import React from "react";
 import demoImage from "@/app/assets/virtualization/Lifecycle Governance.webp";
 import Image from "next/image";
 
-export default function page() {
+export default function Page() {
   return (
     <div className="relative w-full h-auto">
       <Image
