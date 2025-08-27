@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import shift from "@/app/assets/ai-accelerators/vmware/openShift.webp";
@@ -7,6 +9,12 @@ import HPE from "@/app/assets/ai-accelerators/vmware/HPE.webp";
 import aws from "@/app/assets/ai-accelerators/vmware/aws.webp";
 import Azure from "@/app/assets/ai-accelerators/vmware/Azure.webp";
 import kvm from "@/app/assets/ai-accelerators/vmware/KVM.webp";
+import { ArrowRight } from "lucide-react";
+import Seamless from "@/app/assets/ai-accelerators/vmware/Seamless.webp";
+import Workload from "@/app/assets/ai-accelerators/vmware/Workload.webp";
+import ButtonLayout from "../utilities/ButtonLayout";
+import buttonImage from "@/app/assets/home/buttonImg.webp";
+import { motion } from "framer-motion";
 
 const PrefferedPlatform = ({
   title = "Choose your preferred platform:",
@@ -331,4 +339,199 @@ const WhyMigrateCard = ({ icon, title, description, variant = "white" }) => {
   );
 };
 
-export { PrefferedPlatform, WhyMigrate };
+const VmwareMigration = ({
+  migrationData = [
+    {
+      imagePosition: "left",
+      title: "Seamless VMware migration with proven ROI and efficiency",
+      subtitle:
+        "Automated, secure, and cost-optimized migration with minimal downtime and up to 50% TCO savings.",
+      bulletPoints: [
+        "Near-zero disruption with high availability",
+        "30-50% TCO reduction via scalable platforms",
+        "Secure & compliant transition",
+        "Up to 40% cost efficiency gains post-migration",
+      ],
+      buttonText: "Talk To Expert",
+      buttonAction: () => console.log("Talk to Expert clicked"),
+      imageUrl: Seamless,
+      imageAlt: "Hand holding smartphone with cloud computing interface",
+      defaultHighlightWords: [
+        "Near-zero",
+        "disruption",
+        "30-50%",
+        "TCO",
+        "reduction",
+        "Secure",
+        "compliant",
+        "Up",
+        "to",
+        "40%",
+        "cost",
+        "efficiency",
+        "gains",
+      ],
+    },
+    {
+      imagePosition: "right",
+      title: "Calsoft's VMware Workload Migration Solution",
+      subtitle:
+        "The Migration server-based solution simplifies and secures the transition from VMware to modern platforms, ensuring:",
+      bulletPoints: [
+        "Faster transitions across environments",
+        "Reduced reliance on third-party support",
+        "Budget-aligned workload planning",
+      ],
+      buttonText: "Download Solution Report",
+      buttonAction: () => console.log("Download Report clicked"),
+      imageUrl: Workload,
+      imageAlt: "Hands with cloud and building interface showing upward growth",
+      defaultHighlightWords: [
+        "Faster",
+        "transitions",
+        "Reduced",
+        "reliance",
+        "Budget-aligned",
+        "workload",
+        "planning",
+      ],
+    },
+  ],
+}) => {
+  return (
+    <div className="my-10">
+      <div className="container space-y-6 lg:space-y-0">
+        {migrationData.map((section, index) => (
+          <MigrationSection key={index} {...section} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+function MigrationSection({
+  imagePosition,
+  title,
+  subtitle,
+  bulletPoints,
+  buttonText,
+  buttonAction,
+  imageUrl,
+  imageAlt,
+  className = "",
+  defaultHighlightWords = [],
+}) {
+  const renderBulletPoint = (point, index) => {
+    const text = typeof point === "string" ? point : point.text;
+    const highlightWords =
+      typeof point === "string"
+        ? // Use dynamic defaultHighlightWords instead of hardcoded array
+          defaultHighlightWords
+        : point.highlightWords || [];
+
+    return (
+      <div key={index} className="flex items-start gap-3 lg:gap-4">
+        <div className="w-5 h-5 lg:w-6 lg:h-6 bg-[#ba0007] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+          <ArrowRight className="w-2.5 h-2.5 lg:w-3 lg:h-3 text-white" />
+        </div>
+        <span className="text-[#000000] text-base lg:text-lg leading-relaxed">
+          {text.split(" ").map((word, wordIndex) => {
+            const shouldBeBlue = highlightWords.some((keyword) =>
+              word.toLowerCase().includes(keyword.toLowerCase())
+            );
+
+            return (
+              <span
+                key={wordIndex}
+                className={shouldBeBlue ? "text-[#2e3092] font-semibold" : ""}
+              >
+                {word}
+                {wordIndex < text.split(" ").length - 1 ? " " : ""}
+              </span>
+            );
+          })}
+        </span>
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className={`
+        flex flex-col lg:${
+          imagePosition === "right" ? "flex-row" : "flex-row-reverse"
+        } 
+        border border-gray-200 lg:border-0
+        ${className}
+      `}
+    >
+      {/* Image Side */}
+      <div className="flex-1 order-first lg:order-none">
+        <Image
+          src={imageUrl}
+          alt={imageAlt}
+          className={`w-full h-64 lg:h-full object-cover ${
+            imagePosition === "right" ? "rounded-l-2xl" : "rounded-r-2xl"
+          }`}
+        />
+      </div>
+
+      {/* Content Side */}
+      <div className="flex-1">
+        <div className="bg-white px-6 py-4 lg:px-16 lg:py-6 flex flex-col justify-center">
+          <h2 className="text-[#2e3092] text-2xl lg:text-4xl font-bold leading-tight mb-2 lg:mb-4">
+            {title}
+          </h2>
+
+          {subtitle && (
+            <p className="text-[#000000] text-base lg:text-lg leading-relaxed mb-4 lg:mb-6">
+              {subtitle}
+            </p>
+          )}
+
+          <div className="space-y-3 lg:space-y-4 mb-6 lg:mb-8">
+            {bulletPoints.map((point, index) =>
+              renderBulletPoint(point, index)
+            )}
+          </div>
+
+          {/* <button
+            onClick={buttonAction}
+            className="bg-[#ba0007] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full text-base lg:text-lg font-semibold flex items-center gap-2 lg:gap-3 hover:bg-[#9a0006] transition-colors w-fit disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {buttonText}
+            <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5" />
+          </button> */}
+          <ButtonLayout
+            text={buttonText}
+            image={buttonImage}
+            hoverImage={buttonImage}
+            className={"w-fit"}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const CheckIn = ({
+  title = "We’ll take care of your migration. Check in!",
+}) => {
+  return (
+    <div className="space-y-5 bg-[#f7f7f7]">
+      <div className="container">
+        <div className="flex justify-between items-center gap-5 xl:gap-8 lg:flex-row flex-col">
+          <p className="text-[38px] font-bold">{title}</p>
+          <ButtonLayout
+            text={buttonText}
+            image={buttonImage}
+            hoverImage={buttonImage}
+            className={"w-fit"}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { PrefferedPlatform, WhyMigrate, VmwareMigration, CheckIn };
