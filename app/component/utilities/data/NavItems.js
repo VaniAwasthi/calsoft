@@ -590,8 +590,9 @@ export const navItems = [
         ],
       },
       { title: "Press Releases", href: "#" },
-      { title: "Events & Webinars", href: "/insights/webinars" },
+      { title: "Webinars", href: "/insights/webinars" },
       { title: "Workshop", href: "/insights/workshops" },
+      { title: "Podcasts", href: "/insights/podcasts" },
     ],
   },
   {
