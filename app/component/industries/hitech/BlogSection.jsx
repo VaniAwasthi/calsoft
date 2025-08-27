@@ -210,12 +210,12 @@ export const ContactSec = ({ lightContent, link }) => {
                 <span className="font-bold">let’s talk!</span>
               </h2>
 
-              <form className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
+              {/* <form className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
                 <input
                   type="email"
                   placeholder="Enter your work email"
                   className="w-full sm:w-[300px] h-10 px-6 text-sm text-black bg-white placeholder-gray-500 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
-                />{" "}
+                />{" "} */}
                 <motion.div
                   initial={{ x: -50, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -230,7 +230,7 @@ export const ContactSec = ({ lightContent, link }) => {
                     hoverImage={ButtonImage}
                   />
                 </motion.div>
-              </form>
+              
             </div>
           </div>
         </div>
