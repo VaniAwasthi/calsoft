@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import {
   Containerization,
   HypervisorSec,
@@ -17,7 +18,7 @@ import {
   ContactSecData,
 } from "../../component/utilities/InfraSectorSec.jsx";
 
-function page() {
+export default function Page() {
   return (
     <>
       <VirtualizationTab />
@@ -30,7 +31,7 @@ function page() {
         title="Lower infra footprint 30 % via virtualization efficiency."
         buttonText="Book a Meeting"
         buttonLink="#"
-          onButtonClick={() => showHubSpotForm("book-a-meeting")}
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <MigrateSec />
       <OpenSec />
@@ -42,5 +43,3 @@ function page() {
     </>
   );
 }
-
-export default page;

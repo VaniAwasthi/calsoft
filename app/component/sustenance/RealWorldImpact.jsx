@@ -37,7 +37,10 @@ export default function RealWorldImpact({
   },
 }) {
   return (
-    <div className={`${buttonText && "bg-[#f9f9f9]"} py-10`}>
+    <div
+      id="business-value"
+      className={`${buttonText && "bg-[#f9f9f9]"} py-10`}
+    >
       <div className="container">
         <div className={`space-y-8`}>
           <motion.p
@@ -89,8 +92,8 @@ export default function RealWorldImpact({
               viewport={{ once: false, amount: 0.3 }}
               className="relative hover:scale-105 transition-all"
             >
-              <div className="absolute top-0 w-full h-full text-center flex flex-col justify-start items-center p-4 pt-12">
-                <p className="text-[25px] font-bold bg-[linear-gradient(to_right,#2E3092_40%,#ED1C24_80%)] bg-clip-text text-transparent">
+              <div className="absolute top-0 w-full h-full text-center flex flex-col justify-start items-center p-3.5 pt-12">
+                <p className="text-[24px] font-bold bg-[linear-gradient(to_right,#2E3092_40%,#ED1C24_80%)] bg-clip-text text-transparent">
                   {ele.title}
                 </p>
                 <p className="text-lg">{ele.desc}</p>

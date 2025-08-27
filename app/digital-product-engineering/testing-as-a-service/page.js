@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import {
   CalTIASec,
   FunctionalSec,
@@ -18,7 +19,7 @@ import {
   ContactSecData,
 } from "../../component/utilities/InfraSectorSec.jsx";
 
-function page() {
+export default function Page() {
   return (
     <>
       <TestingTab />
@@ -43,5 +44,3 @@ function page() {
     </>
   );
 }
-
-export default page;

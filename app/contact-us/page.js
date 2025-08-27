@@ -5,7 +5,7 @@ import ContactCards from "@/app/component/contact-us/ContactCards";
 import Subscribe from "../component/contact-us/Subscribe";
 import ContactTab from "@/app/component/contact-us/ContactTab";
 
-export default function page() {
+export default function Page() {
   return (
     <>
       <HeroSection />

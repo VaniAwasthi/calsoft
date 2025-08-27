@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import HeroSection from "@/app/component/testing/HeroSection";
 import WhyItMatters from "@/app/component/sustenance/WhyItMatter";
 import IntelligentPlanning from "@/app/component/testing/IntelligentPlanning";
@@ -10,10 +12,18 @@ import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
-import Img from "@/app/assets/sustenance/Sustenance_BG.webp"
+import Img from "@/app/assets/sustenance/Sustenance_BG.webp";
 
-
-export default function page() {
+export default function Page() {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+  const navItems = [
+    "Why it Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -21,7 +31,9 @@ export default function page() {
         description="Enable faster resolutions and smarter escalations with Calsoft’s Multi-Tier Support — built for 24x7 agility and SLA-driven delivery."
         buttonText="Talk to Expert"
         heroImage={Img}
-
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
       />
       <WhyItMatters
         title="Why most support models break at scale"
@@ -29,7 +41,8 @@ export default function page() {
         buttonText="Download Case Study"
         data={[
           {
-            title: "L1 agents overloaded with technical issues they can't solve",
+            title:
+              "L1 agents overloaded with technical issues they can't solve",
             desc: null,
             icon: (
               <svg
@@ -67,7 +80,8 @@ export default function page() {
             ),
           },
           {
-            title: "Long handoff cycles between product, support, and engineering",
+            title:
+              "Long handoff cycles between product, support, and engineering",
             desc: null,
             icon: (
               <svg
@@ -158,23 +172,28 @@ export default function page() {
         data={[
           {
             title: "L1 Support",
-            subTitle: "24x7 ticket intake, user education, known issue resolution, knowledge base updates",
+            subTitle:
+              "24x7 ticket intake, user education, known issue resolution, knowledge base updates",
           },
           {
             title: "L2 Support",
-            subTitle: "Log analysis, API troubleshooting, environment-specific validation, mid-tier fixes",
+            subTitle:
+              "Log analysis, API troubleshooting, environment-specific validation, mid-tier fixes",
           },
           {
             title: "L3 Support",
-            subTitle: "Source code triage, hotfix coordination, release-impact analysis, RCA documentation",
+            subTitle:
+              "Source code triage, hotfix coordination, release-impact analysis, RCA documentation",
           },
           {
             title: "Escalation Pathways",
-            subTitle: "Predefined ownership maps, auto-routing triggers, SLA dashboards",
+            subTitle:
+              "Predefined ownership maps, auto-routing triggers, SLA dashboards",
           },
           {
             title: "Toolchain Integration",
-            subTitle: "Jira, Freshdesk, ServiceNow, PagerDuty, GitHub, custom APIs",
+            subTitle:
+              "Jira, Freshdesk, ServiceNow, PagerDuty, GitHub, custom APIs",
           },
           // {
           //   title: "Internal knowledge bases,",
@@ -192,7 +211,8 @@ export default function page() {
           btnText: "Request POC",
         }}
       />
-      <RealWorldImpact buttonText={null}
+      <RealWorldImpact
+        buttonText={null}
         title="Structured support = measurable outcomes"
         desc="Calsoft's Multi-Tier Support has delivered:"
         cardData={[
@@ -240,7 +260,8 @@ export default function page() {
         data={[
           {
             title: null,
-            subTitle: "Ticket volumes are growing across time zones and regions",
+            subTitle:
+              "Ticket volumes are growing across time zones and regions",
             svg: (
               <svg
                 width="54"
@@ -370,7 +391,8 @@ export default function page() {
           },
           {
             title: null,
-            subTitle: " Release velocity increases, but support isn’t structured for scale ",
+            subTitle:
+              " Release velocity increases, but support isn’t structured for scale ",
             svg: (
               <svg
                 width="61"
@@ -477,6 +499,7 @@ export default function page() {
           },
         ]}
         Component={Guesswork}
+        output="Output: Tier Matrix + Support Workflow Engine + Escalation Runbook"
       />
       <ContactSecDataAi
         lightContent={

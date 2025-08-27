@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import {
   AiSec,
   DefinedSec,
@@ -10,7 +11,7 @@ import {
   StorageChallenge,
   StorageTab,
 } from "../../component/storage-networking/StorageNetworking.jsx";
-import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // 
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; //
 import {
   BannerSection,
   ContactSecData,
@@ -18,8 +19,7 @@ import {
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 
-
-function page() {
+export default function Page() {
   return (
     <>
       <StorageTab />
@@ -46,5 +46,3 @@ function page() {
     </>
   );
 }
-
-export default page;

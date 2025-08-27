@@ -240,16 +240,16 @@ export default function UseCases({
               className="h-full text-center"
             >
               <div className="h-5 bg-[linear-gradient(to_right,#2E3092_30%,#ED1C24_100%)]" />
-              <div className="p-3 space-y-4 bg-white w-full h-full rounded-lg rounded-t-none border-2 border-[#2E3092]">
-                <p className="text-2xl font-bold">{ele.title}</p>
-                <p className="text-lg">{ele.subTitle}</p>
+              <div className="p-3 bg-white w-full h-full rounded-lg rounded-t-none border-2 border-[#2E3092]">
+                {ele.title && <p className="text-2xl font-bold">{ele.title}</p>}
+                {ele.subTitle && <p className="text-lg">{ele.subTitle}</p>}
               </div>
             </motion.div>
           ))}
         </div>
-        <div className="flex text-2xl gap-2">
-          <p className="font-light">{bottomText.text}</p>
-          <p className="font-semibold">{bottomText.bText}</p>
+        <div className="text-2xl">
+          <span className="font-light">{bottomText.text}</span>
+          <span className="font-semibold">{bottomText.bText}</span>
         </div>
       </div>
       <div className="h-8" />

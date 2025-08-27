@@ -13,7 +13,7 @@ import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/sustenance/Sustenance_BG.webp"
 
 
-export default function page() {
+export default function Page() {
   return (
     <>
       <HeroSection

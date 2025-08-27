@@ -14,7 +14,7 @@ import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDat
 
 import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 
-function page() {
+export default function Page() {
   return (
     <>
       <GovernJounery />
@@ -46,5 +46,3 @@ function page() {
     </>
   );
 }
-
-export default page;

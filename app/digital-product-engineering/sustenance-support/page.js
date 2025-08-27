@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import {
   MultiSec,
   ReleaseSec,
@@ -16,7 +17,7 @@ import {
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Sustaine/Knowmore.svg";
 
-function page() {
+export default function Page() {
   return (
     <>
       <SustenanceTab />
@@ -29,8 +30,7 @@ function page() {
         title="Reduce downtime by 45% with proactive support."
         buttonText="Book a Meeting"
         buttonLink="#"
-         onButtonClick={() => showHubSpotForm("book-a-meeting")}
-
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <MultiSec />
       <UptimeSec />
@@ -41,5 +41,3 @@ function page() {
     </>
   );
 }
-
-export default page;

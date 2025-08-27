@@ -11,7 +11,7 @@ import React from "react";
 import BannerwithButtonBg from "../../assets/Data-Ai/data-observibility/KnowMoreBg.webp";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
-function page() {
+export default function Page() {
   return (
     <>
       <DataJounery />
@@ -39,5 +39,3 @@ function page() {
     </>
   );
 }
-
-export default page;
