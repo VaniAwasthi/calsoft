@@ -589,9 +589,10 @@ export const navItems = [
           { title: "Videos", href: "/insights/videos" },
         ],
       },
-      { title: "Press Releases", href: "#" },
-      { title: "Events & Webinars", href: "/insights/webinars" },
+      { title: "Press Releases", href: "/insights/press-releases" },
+      { title: "Webinars", href: "/insights/webinars" },
       { title: "Workshop", href: "/insights/workshops" },
+      { title: "Podcasts", href: "/insights/podcasts" },
     ],
   },
   {
