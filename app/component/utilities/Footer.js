@@ -12,7 +12,7 @@ import { GoArrowRight } from "react-icons/go";
 
 import Logo from "../../assets/logo.png";
 import user from "../../assets/webinar.png";
-import IsoImg from "../../assets/isoImg.jpg";
+import IsoImg from "../../assets/isoLogo.png";
 
 import { showHubSpotForm } from "./showHubSpotForm"; // <-- Utility import
 
@@ -180,8 +180,8 @@ const Footer = () => {
                 >
                   <FaInstagram size={20} />
                 </a>
-                <div className="rounded-full w-30 h-30 flex items-center justify-center p-2">
-                  <Image src={IsoImg} alt="isoImg" width={60} height={40} />
+                <div className="rounded-full w-10 h-10 flex items-center justify-center ">
+                  <Image src={IsoImg} alt="isoImg" width={30} height={20} />
                 </div>
               </div>
             </div>
