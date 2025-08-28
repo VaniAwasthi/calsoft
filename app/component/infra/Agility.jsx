@@ -118,7 +118,7 @@ export default function Agility({
           </div>
         </div>
       </div>
-      <div className="w-full h-40 relative rounded-xl overflow-hidden mt-10">
+     {bookMeetingData && <div className="w-full h-40 relative rounded-xl overflow-hidden mt-10">
         <Image
           src={predict}
           alt="book a meeting"
@@ -146,7 +146,7 @@ export default function Agility({
             </motion.button>
           </div>
         </div>
-      </div>
+      </div>}
       <div className="h-4 lg:h-6" />
     </div>
   );

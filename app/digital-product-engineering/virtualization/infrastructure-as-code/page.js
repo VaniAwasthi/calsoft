@@ -18,11 +18,11 @@ import Agility from "@/app/component/infra/Agility";
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
-    "Why Calsoft",
+    "Pulse Check",
+    "Smart Packaging",
+    "Orchestration at Scale",
+    "Real-World Impact",
+    "Where It Fits",
     "How to Start",
   ];
   return (
@@ -200,6 +200,10 @@ export default function Page() {
           // },
         ]}
         title="Modular Foundation"
+        bottomContent={{
+          text: null,
+          btnText: "Request POC",
+        }}
       />
       <RealWorldImpact buttonText={null}
         title="Make infra changes part of release pipelines"
@@ -270,10 +274,7 @@ export default function Page() {
             },
           ],
         }}
-        bookMeetingData={{
-          title: null,
-          buttonText: null,
-        }}
+        bookMeetingData={null}
         buttonText="Request ROI"
       />
       <UseCases
@@ -455,7 +456,7 @@ export default function Page() {
           bText: null,
         }}
       />
-      
+
       <WhyCalsoft
         sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
         buttonText="Download One Pager"
