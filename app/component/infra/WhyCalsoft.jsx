@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 export default function WhyCalsoft({
   sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here’s how we stand apart:",
   buttonText = "Download Case Study",
+  title  = "Competitive Edge",
   data = {
     tableHeadings: ["Feature", "Calsoft", "Traditional Vendors"],
     tableContent: [
@@ -72,7 +73,7 @@ export default function WhyCalsoft({
       {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-8 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent">
-          Why Calsoft
+         Why Calsoft
         </h1>
 
         <div className="flex justify-between items-center mb-12">
@@ -84,7 +85,7 @@ export default function WhyCalsoft({
             className="max-w-2xl"
           >
             <h2 className="text-[#000000] text-3xl font-bold mb-4">
-              Competitive Edge
+              {title}
             </h2>
             <p className="text-[#000000] text-lg leading-relaxed">
               {sectionDescription}
