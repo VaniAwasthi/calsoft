@@ -57,9 +57,16 @@ const PrefferedPlatform = ({
         </p>
         <div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-8 justify-center">
           {images.map((ele, idx) => (
-            <div className="flex-1 border-2 border-gray-300 bg-[#f7f7f7] rounded-xl p-1.5 flex justify-center items-center hover:scale-[103%] transition-all">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: idx * 0.1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              key={idx}
+              className="flex-1 border-2 border-gray-300 bg-[#f7f7f7] rounded-xl p-1.5 flex justify-center items-center hover:scale-[103%] transition-all"
+            >
               <Image src={ele.img} alt={ele.alt} className="object-cover" />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -293,6 +300,7 @@ const WhyMigrate = ({
             title={ele.title}
             key={idx}
             variant={ele.variant}
+            idx={idx}
           />
         ))}
       </div>
@@ -300,9 +308,21 @@ const WhyMigrate = ({
   );
 };
 
-const WhyMigrateCard = ({ icon, title, description, variant = "white" }) => {
+const WhyMigrateCard = ({
+  icon,
+  title,
+  description,
+  variant = "white",
+  idx,
+}) => {
   return (
-    <div className="p-[2px] rounded-2xl bg-gradient-to-b from-[#666666] via-[#666666] to-[#2e3092] h-full hover:scale-105 transition-all">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: idx * 0.1 }}
+      viewport={{ once: false, amount: 0.3 }}
+      className="p-[2px] rounded-2xl bg-gradient-to-b from-[#666666] via-[#666666] to-[#2e3092] h-full hover:scale-105 transition-all"
+    >
       <div
         className={`
       rounded-2xl p-8 h-full
@@ -335,7 +355,7 @@ const WhyMigrateCard = ({ icon, title, description, variant = "white" }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -466,7 +486,13 @@ function MigrationSection({
       `}
     >
       {/* Image Side */}
-      <div className="flex-1 order-first lg:order-none">
+      <motion.div
+        initial={{ x: imagePosition === "right" ? -50 : 50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="flex-1 order-first lg:order-none"
+      >
         <Image
           src={imageUrl}
           alt={imageAlt}
@@ -474,10 +500,16 @@ function MigrationSection({
             imagePosition === "right" ? "rounded-l-2xl" : "rounded-r-2xl"
           }`}
         />
-      </div>
+      </motion.div>
 
       {/* Content Side */}
-      <div className="flex-1">
+      <motion.div
+        initial={{ x: imagePosition === "right" ? 50 : -50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="flex-1"
+      >
         <div className="bg-white px-6 py-4 lg:px-16 lg:py-6 flex flex-col justify-center">
           <h2 className="text-[#2e3092] text-2xl lg:text-4xl font-bold leading-tight mb-2 lg:mb-4">
             {title}
@@ -509,29 +541,144 @@ function MigrationSection({
             className={"w-fit"}
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
 
 const CheckIn = ({
-  title = "We’ll take care of your migration. Check in!",
+  title = "We’ll take care of your migration.\nCheck in!",
+  buttonText = "Request POC",
+  data = [
+    {
+      title: "Readiness assessment",
+      description: "Identify workloads, risks, and business goals.",
+      position: { left: "15.5%", top: "60%" },
+      isTopPosition: false,
+    },
+    {
+      title: "Proof of concept (POC)",
+      description: "Run pilot migrations with minimal disruption.",
+      position: { left: "35.5%", top: "10%" },
+      isTopPosition: true,
+    },
+    {
+      title: "Incremental Full-scale migration",
+      description:
+        "Optimize, prioritize, secure, and automate workload transitions.",
+      position: { left: "56%", top: "60%" },
+      isTopPosition: false,
+    },
+    {
+      title: "Post-migration optimization",
+      description:
+        "Performance tuning, compliance adherence, and ongoing support.",
+      position: { left: "76%", top: "10%" },
+      isTopPosition: true,
+    },
+  ],
 }) => {
   return (
-    <div className="space-y-5 bg-[#f7f7f7]">
-      <div className="container">
-        <div className="flex justify-between items-center gap-5 xl:gap-8 lg:flex-row flex-col">
-          <p className="text-[38px] font-bold">{title}</p>
+    <div className="space-y-5 bg-[#f7f7f7] pt-10">
+      <div className="container flex justify-between items-center gap-5 xl:gap-8 lg:flex-row flex-col">
+        <motion.p
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="text-[38px] font-bold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent whitespace-pre-line"
+        >
+          {title}
+        </motion.p>
+        <motion.div
+          initial={{ x: 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.3 }}
+        >
           <ButtonLayout
             text={buttonText}
             image={buttonImage}
             hoverImage={buttonImage}
             className={"w-fit"}
           />
+        </motion.div>
+      </div>
+      <WaveMigrationUI steps={data} />
+    </div>
+  );
+};
+
+function WaveMigrationUI({ steps }) {
+  return (
+    <div className="pt-0">
+      <div className="relative w-full">
+        {/* Wave SVG Background */}
+        <div className="relative w-full h-[25rem]">
+          <svg
+            width="1521"
+            height="254"
+            viewBox="0 0 1521 254"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-full h-full"
+          >
+            <path
+              d="M914.159 253.134C835.42 253.134 795.863 189.92 757.567 128.787C718.556 66.4945 681.727 7.64561 606.773 7.64561C531.819 7.64561 494.99 66.4945 455.978 128.787C417.717 189.92 378.126 253.134 299.386 253.134C220.647 253.134 181.09 189.92 142.795 128.787C105.897 69.8359 71.0461 14.1238 3.90125 8.15704C2.02569 7.98656 0.627552 6.34997 0.798057 4.47472C0.968562 2.59946 2.60541 1.16745 4.48096 1.37202C75.0018 7.64561 112.411 67.381 148.592 125.173C187.603 187.466 224.432 246.315 299.386 246.315C374.34 246.315 411.169 187.466 450.181 125.173C488.442 64.0397 528.034 0.826492 606.773 0.826492C685.512 0.826492 725.069 64.0397 763.365 125.173C802.376 187.466 839.205 246.315 914.159 246.315C989.113 246.315 1025.98 187.466 1064.95 125.173C1103.22 64.0397 1142.81 0.826492 1221.55 0.826492C1300.28 0.826492 1339.88 64.0397 1378.14 125.173C1415.07 184.124 1449.92 239.802 1517.06 245.803C1518.94 245.974 1520.34 247.61 1520.17 249.485C1520 251.361 1518.33 252.725 1516.48 252.588C1445.96 246.315 1408.56 186.579 1372.37 128.787C1333.36 66.4945 1296.53 7.64561 1221.58 7.64561C1146.63 7.64561 1109.76 66.4945 1070.75 128.787C1032.49 189.92 992.898 253.134 914.159 253.134Z"
+              fill="url(#paint0_linear_44_239)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_44_239"
+                x1="0.783977"
+                y1="126.98"
+                x2="1520.18"
+                y2="126.98"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.605769" stopColor="#2E3092" />
+                <stop offset="1" stopColor="#BA0007" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          {steps.map((step, idx) => (
+            <motion.div
+              key={step.id}
+              initial={{ opacity: 0, y: step.isTopPosition ? -30 : 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="absolute"
+              style={{ left: step.position.left, top: step.position.top }}
+            >
+              <div className="relative">
+                <div className="w-28 h-28 rounded-full bg-white bg-[linear-gradient(to_bottom,#2E3092_60%,#ED1C24_105%)] p-1.5">
+                  <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                    <span className="text-6xl text-[#2E3092] font-londrina">
+                      0{idx + 1}
+                    </span>
+                  </div>
+                </div>
+                <div
+                  className={`absolute left-1/2 transform -translate-x-1/2 w-52 text-center ${
+                    step.isTopPosition ? "top-32" : "-top-32"
+                  }`}
+                >
+                  <h3 className="text-xl font-semibold text-black mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
   );
-};
+}
 
 export { PrefferedPlatform, WhyMigrate, VmwareMigration, CheckIn };
