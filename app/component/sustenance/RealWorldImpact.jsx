@@ -6,6 +6,7 @@ import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "@/app/assets/home/buttonImg.webp";
 
 export default function RealWorldImpact({
+  heading = "Real-World Impact",
   title = "Turn Unknowns Into Predictable Outcomes",
   desc = "Benchmarking before critical changes reduces risk and enhances decision-making:",
   buttonText = "Download ROI Sheet",
@@ -50,7 +51,7 @@ export default function RealWorldImpact({
             viewport={{ once: false, amount: 0.3 }}
             className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_20%)] bg-clip-text text-transparent"
           >
-            Real-World Impact
+            {heading}
           </motion.p>
           <div className="flex justify-between lg:flex-row flex-col gap-5">
             <motion.div
