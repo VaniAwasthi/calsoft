@@ -73,13 +73,12 @@ const { slug } = useParams();
   if (error) return <div className="text-red-500 p-8">Error: {error}</div>;
   if (!datasheets) return null;
 
-  const CaseStudiesCardData = datasheets.data;
-  console.log(CaseStudiesCardData, "data");
+  const DatasheetCardData = datasheets.data;
   const businessValueData2 = datasheets?.data?.business_cards;
-  const Heroimage1 = `${baseUrl}${CaseStudiesCardData?.card_one}`;
+  const Heroimage1 = `${baseUrl}${DatasheetCardData?.card_one}`;
 
   // Extract from hubspot_form string
-  const hubspotFormString = CaseStudiesCardData?.hubspot_form || "";
+  const hubspotFormString = DatasheetCardData?.hubspot_form || "";
 
   const portalIdMatch = hubspotFormString.match(/portalId:\s*["'](.+?)["']/);
   const formIdMatch = hubspotFormString.match(/formId:\s*["'](.+?)["']/);
@@ -92,12 +91,12 @@ const { slug } = useParams();
   return (
     <div>
       <HeroSectionLanding
-        image2={`${baseUrl}${CaseStudiesCardData?.card_one}`}
-        image1={`${baseUrl}${CaseStudiesCardData?.card_two}`}
-        title={CaseStudiesCardData?.hero_title1}
-        subtitle={CaseStudiesCardData?.hero_title2}
-        description={CaseStudiesCardData?.hero_content}
-        buttonLabel={CaseStudiesCardData?.herobtn_text}
+        image2={`${baseUrl}${DatasheetCardData?.card_one}`}
+        image1={`${baseUrl}${DatasheetCardData?.card_two}`}
+        title={DatasheetCardData?.hero_title1}
+        subtitle={DatasheetCardData?.hero_title2}
+        description={DatasheetCardData?.hero_content}
+        buttonLabel={DatasheetCardData?.herobtn_text}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         backgroundImage={BgImage}
@@ -107,7 +106,7 @@ const { slug } = useParams();
       <InfoWithFormSection
         heading="Calsoft In focus:"
         headingHighlight="Proven Approach"
-        description1={CaseStudiesCardData?.calsoftinfocus_text}
+        description1={DatasheetCardData?.calsoftinfocus_text}
         buttonLabel="Submit"
         isforLayout={true}
         portalId={portalId}

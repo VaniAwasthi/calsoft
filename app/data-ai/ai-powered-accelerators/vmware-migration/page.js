@@ -3,12 +3,14 @@
 import React, { useState } from "react";
 import HeroSection from "@/app/component/caltia/HeroSection";
 import {
+  CheckIn,
   PrefferedPlatform,
   VmwareMigration,
   WhyMigrate,
 } from "@/app/component/vmware/Vmware";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import meeting from "@/app/assets/caltia/meeting.webp";
+import { ManufacturingEcosystem } from "@/app/component/calPSR/CalPSR";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -46,6 +48,8 @@ const Page = () => {
         </div>
       </div>
       <VmwareMigration />
+      <CheckIn />
+      <ManufacturingEcosystem />
     </>
   );
 };
