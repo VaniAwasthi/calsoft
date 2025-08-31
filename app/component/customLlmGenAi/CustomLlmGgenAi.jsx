@@ -103,7 +103,7 @@ export const LlmSec = () => {
         title="LLM fine-tuning"
         description="Adapt language models to your data, tone,
         and business logic."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Analyze test logs to spot redundancies",
@@ -131,7 +131,7 @@ export const RagSec = () => {
       <DataInfoSection
         title="RAG pipeline design"
         description="Ground your GenAI responses in real-time, trusted enterprise knowledge."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Analyze test logs to spot redundancies",
@@ -159,7 +159,7 @@ export const EnterpriseSec = () => {
       <DataInfoSection
         title="Enterprise deployment models"
         description="Run custom LLMs where they best fit without tradeoffs."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Analyze test logs to spot redundancies",
@@ -186,7 +186,7 @@ export const SystemSec = () => {
       <DataInfoSection
         title="System integration and orchestration"
         description="Connect LLMs into real workflows, not just chat windows."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Analyze test logs to spot redundancies",

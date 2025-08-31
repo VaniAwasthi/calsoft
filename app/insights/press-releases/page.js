@@ -7,7 +7,7 @@ import Banner from "../../assets/insights/industry-report.webp"
 const Page = () => {
   return (
     <>
-     <BannerInfo heading="" BannerBg={Banner} />
+     <BannerInfo heading="Official announcements and updates from Calsoft." BannerBg={Banner} />
     <PressReleaseCard/> 
     </>
   )

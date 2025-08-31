@@ -100,7 +100,7 @@ export const RealSec = () => {
         title="Real-time data streaming
                 analytics"
         description="Boost agility and efficiency as you capture, analyze, and act on live data flows."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Set up live data pipeline monitors",
@@ -128,7 +128,7 @@ export const ComplianceSec = () => {
       <DataInfoSection
         title="Compliance tracking"
         description="Embed governance to strengthen observability, risk mitigation, and audit readiness."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Add compliance checks at each step",
@@ -156,7 +156,7 @@ export const Real2Sec = () => {
       <DataInfoSection
         title="Real-time data workflow synchronization"
         description="Coordinate data flows across platforms with precision and agility."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Sync flows across systems in real-time",
@@ -183,7 +183,7 @@ export const ProactiveSec = () => {
       <DataInfoSection
         title="Proactive risk alerts"
         description="Detect anomalies early and safeguard data integrity proactively."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Predict issues before they disrupt",
