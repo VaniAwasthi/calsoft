@@ -8,7 +8,7 @@ import { PostcastSec } from '@/app/component/podcast/PodcastSec'
 const Page = () => {
   return (
     <>
-     <BannerInfo heading="" BannerBg={Banner} />
+     <BannerInfo heading="Conversations with leaders on technology, business, and innovation." BannerBg={Banner} />
     <PostcastSec/> 
     </>
   )
