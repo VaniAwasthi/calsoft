@@ -16,7 +16,7 @@ export default function BookMeeting({
     <div className="w-full h-72 2xs:h-60 md:h-40 relative rounded-xl overflow-hidden mt-10">
       <Image src={img} alt="image" className="w-full h-full object-cover" />
       <div className="absolute top-0 w-full h-full bg-[#2e309293] bg-[linear-gradient(90deg,rgba(46,48,146,0.7)_0%,rgba(46,48,146,0.5)_60%,rgba(255,255,255,0)_100%)] text-white">
-        <div className="w-full h-full flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center gap-5  md:m-0 p-8">
+        <div className="w-full h-full flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center gap-5 md:m-0 p-8">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -25,7 +25,7 @@ export default function BookMeeting({
             className="flex flex-col items-start justify-center"
           >
             <p className="text-3xl md:text-4xl font-medium">{title}</p>
-            {desc && <p>{title}</p>}
+            {desc && <p>{desc}</p>}
           </motion.div>
           <motion.button
             initial={{ x: 50, opacity: 0 }}

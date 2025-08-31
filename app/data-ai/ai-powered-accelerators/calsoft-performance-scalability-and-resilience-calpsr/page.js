@@ -2,6 +2,14 @@
 
 import React, { useState } from "react";
 import HeroSection from "@/app/component/caltia/HeroSection";
+import {
+  BookaMeeting,
+  ConventionalTool,
+  ManufacturingEcosystem,
+  RealWorldBenefits,
+  SystemTest,
+  TestAll,
+} from "@/app/component/calPSR/CalPSR";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -14,16 +22,6 @@ const Page = () => {
     "How to Start",
   ];
   return (
-    // <div className="relative w-full h-auto">
-    //   <Image
-    //     src={DemoImage}
-    //     alt="Containerization and orchestration"
-    //     width={1200}
-    //     height={600}
-    //     className="w-full h-auto object-contain"
-    //     priority
-    //   />
-    // </div>
     <>
       <HeroSection
         heading="VMware Migration Simplified"
@@ -35,6 +33,12 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
       />
+      <SystemTest />
+      <RealWorldBenefits />
+      <BookaMeeting />
+      <TestAll />
+      <ConventionalTool />
+      <ManufacturingEcosystem />
     </>
   );
 };

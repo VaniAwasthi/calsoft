@@ -9,6 +9,7 @@ export default function WhyCalsoft({
   sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here’s how we stand apart:",
   buttonText = "Download Case Study",
   title  = "Competitive Edge",
+  heading = "Why Calsoft",
   data = {
     tableHeadings: ["Feature", "Calsoft", "Traditional Vendors"],
     tableContent: [
@@ -73,7 +74,7 @@ export default function WhyCalsoft({
       {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-8 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent">
-         Why Calsoft
+         {heading}
         </h1>
 
         <div className="flex justify-between items-center mb-12">
