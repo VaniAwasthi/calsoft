@@ -223,27 +223,28 @@ export default function Navbar() {
                   <div className="w-px h-64 bg-[#CECECE] mx-6 mt-6"></div>
                   {/* Center Column */}
                  <div className="w-[30%] p-6">
-  {selectedSubmenu?.section ? (
-    selectedSubmenu.section.map((s, idx) => {
-      const isActive = pathname.startsWith(s.href);
+ {selectedSubmenu?.section && selectedSubmenu.section.length > 0 ? (
+  selectedSubmenu.section.map((s, idx) => {
+    const isActive = pathname.startsWith(s.href);
 
-      return (
-        <Link
-          key={idx}
-          href={s.href}
-          className={`block text-sm py-1 hover:text-[#2E3092] ${
-            isActive ? "text-[#2E3092] font-semibold" : "text-[#1A1A1A]"
-          }`}
-        >
-          {s.title}
-        </Link>
-      );
-    })
-  ) : (
-    <div className="text-sm italic text-gray-500">
-      No details available.
-    </div>
-  )}
+    return (
+      <Link
+        key={idx}
+        href={s.href}
+        className={`block text-sm py-1 hover:text-[#2E3092] ${
+          isActive ? "text-[#2E3092] font-semibold" : "text-[#1A1A1A]"
+        }`}
+      >
+        {s.title}
+      </Link>
+    );
+  })
+) : (
+  <div className="text-md text-black">
+    {selectedSubmenu?.description || "No description available."}
+  </div>
+)}
+
 </div>
 
 
