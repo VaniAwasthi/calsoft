@@ -11,11 +11,11 @@ import {
   PlatformSecTechnicalConsulting,
   RiskMitigationSecTechnicalConsulting,
   StrategicSecTechnicalConsulting,
-  DataProtectionSecTechnicalConsulting,
-  EffortlessSecTechnicalConsulting
-} from "../../component/technical-consultant/HeroSecChallenge.jsx";
-import { BannerSection } from "../../component/utilities/InfraSectorSec.jsx";
-import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
+  // DataProtectionSecTechnicalConsulting,
+  // EffortlessSecTechnicalConsulting,
+} from "../../component/technical-consultant/HeroSecChallenge";
+import { BannerSection } from "../../component/utilities/InfraSectorSec";
+import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi";
 
 import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 
@@ -31,8 +31,8 @@ const page = () => {
           image: BackgroundImage,
         }}
       />
-      <ChallengeSolutionSecTechnicalConsulting 
-      data={[
+      <ChallengeSolutionSecTechnicalConsulting
+        data={[
           {
             tag: "Data Silos ",
             challenge:
@@ -42,36 +42,31 @@ const page = () => {
           },
           {
             tag: "Lineage Gaps ",
-            challenge:
-              "Lack of metadata and lineage affects auditability.",
+            challenge: "Lack of metadata and lineage affects auditability.",
             solution:
               "We bring transparency through lineage capture, versioning, and tagging. ",
           },
           {
             tag: "Tech Overload ",
-            challenge:
-              "Overlapping tools create operational inefficiencies",
+            challenge: "Overlapping tools create operational inefficiencies",
             solution:
               "We rationalize tools and embed ecosystem connectors with minimal overhead. ",
           },
           {
             tag: "Data Risk",
-            challenge:
-              "Increased cyber threats call for proactive safeguards ",
+            challenge: "Increased cyber threats call for proactive safeguards ",
             solution:
               "We embed policy-driven protection, access control, and anomaly detection. ",
           },
           {
             tag: "Migration Risk",
-            challenge:
-              "High switching costs block cloud/data migration",
+            challenge: "High switching costs block cloud/data migration",
             solution:
               "We plan and execute zero-downtime migrations with validation safeguards. ",
           },
           {
             tag: "Privacy Compliance",
-            challenge:
-              "Data privacy regulations are hard to keep up with",
+            challenge: "Data privacy regulations are hard to keep up with",
             solution:
               "We align your systems with evolving mandates like GDPR, HIPAA, and CCPA. ",
           },
@@ -84,8 +79,8 @@ const page = () => {
         title={
           <>
             Design intelligent data pipelines
-            <br className="hidden md:block px-1" /> that drive faster insights and
-            integration
+            <br className="hidden md:block px-1" /> that drive faster insights
+            and integration
           </>
         }
         buttonText="Book a Meeting"
@@ -94,8 +89,8 @@ const page = () => {
       />
       <PlatformSecTechnicalConsulting />
       <CostOptimizedSecTechnicalConsulting />
-      <DataProtectionSecTechnicalConsulting />
-      <EffortlessSecTechnicalConsulting />
+      {/* <DataProtectionSecTechnicalConsulting />
+      <EffortlessSecTechnicalConsulting /> */}
       <ContactSecDataAi
         BoldContent="Calsoft can show you how"
         lightContent="Innovate and grow with future-ready data pipelines"
