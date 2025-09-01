@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
@@ -9,11 +9,12 @@ import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolution
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import ArchitectureIdeation from "../../../component/product-application-development/ArchitectureIdeationMatters";
+import img from "@/app/assets/infra/Hero_bg.webp";
 
 const Page = () => {
-    const [activeTab, setActiveTab] = useState("why-it-matters");
-  
-    const navItems = [
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
+  const navItems = [
     "Why it Matters",
     "What We Offer",
     "Use Cases",
@@ -30,6 +31,7 @@ const Page = () => {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        heroImage={img}
       />
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
@@ -39,8 +41,15 @@ const Page = () => {
         id="why-it-matters"
         // contentClass="w-[90%]"
       />
-      <WhatWeOffer description="Our architecture-led ideation workshops deliver clarity in just 7–10 working days. You walk away with:" id="what-we-offer" />
-      <UseCases CTACopy="Reduce design cycle by 30% via architecture-led ideation." id="use-cases" BussinessId="business-value"/>
+      <WhatWeOffer
+        description="Our architecture-led ideation workshops deliver clarity in just 7–10 working days. You walk away with:"
+        id="what-we-offer"
+      />
+      <UseCases
+        CTACopy="Reduce design cycle by 30% via architecture-led ideation."
+        id="use-cases"
+        BussinessId="business-value"
+      />
       <HowToStart
         headerContent={{
           title: "Start Smart, Scale Fast",
