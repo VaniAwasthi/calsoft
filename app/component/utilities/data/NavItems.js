@@ -7,89 +7,92 @@ export const navItems = [
       {
         title: "Enterprise Data Management",
         href: "/data-ai/enterprise-data-management",
-        section: [
-          {
-            title: "Modern data architecture",
-            href: "data-ai/enterprise-data-management/modern-data-architecture",
-          },
-          {
-            title: "Data Quality & Lineage",
-            href: "/data-ai/enterprise-data-management/data-quality-lineage",
-          },
-          {
-            title: "Data Quality & Lineage",
-            href: "/data-ai/enterprise-data-management/data-platform-ecosystem",
-          },
-          {
-            title: "Risk mitigation and recovery ",
-            href: "/data-ai/enterprise-data-management/risk-mitigation-recovery",
-          },
-          {
-            title: "Data protection and privacy",
-            href: "data-ai/enterprise-data-management/data-protection-privacy",
-          },
-          {
-            title: "Effortless and faultless data migration",
-            href: "/data-ai/enterprise-data-management/data-migration",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Modern data architecture",
+        //     href: "data-ai/enterprise-data-management/modern-data-architecture",
+        //   },
+        //   {
+        //     title: "Data Quality & Lineage",
+        //     href: "/data-ai/enterprise-data-management/data-quality-lineage",
+        //   },
+        //   {
+        //     title: "Data Quality & Lineage",
+        //     href: "/data-ai/enterprise-data-management/data-platform-ecosystem",
+        //   },
+        //   {
+        //     title: "Risk mitigation and recovery ",
+        //     href: "/data-ai/enterprise-data-management/risk-mitigation-recovery",
+        //   },
+        //   {
+        //     title: "Data protection and privacy",
+        //     href: "data-ai/enterprise-data-management/data-protection-privacy",
+        //   },
+        //   {
+        //     title: "Effortless and faultless data migration",
+        //     href: "/data-ai/enterprise-data-management/data-migration",
+        //   },
+        // ],
+        description:"Driving modern data architecture with governance, quality, and protection to ensure trusted, secure, and actionable enterprise data."
       },
 
       {
         title: "Agentic AI Development",
         href: "/data-ai/agentic-ai-development",
-        section: [
-          {
-            title: "AIOps Planning",
-            href: "/data-ai/agentic-ai-development/aiops-planning",
-          },
-          {
-            title: "Use-case specific AI agents",
-            href: "/data-ai/agentic-ai-development/ai-agents",
-          },
-          {
-            title: "Monitor and control",
-            href: "/data-ai/agentic-ai-development/monitor-control",
-          },
-          {
-            title: "Regression alignment",
-            href: "/data-ai/agentic-ai-development/regression-alignment",
-          },
-          {
-            title: "Scale and support",
-            href: "/data-ai/agentic-ai-development/scale-support",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "AIOps Planning",
+        //     href: "/data-ai/agentic-ai-development/aiops-planning",
+        //   },
+        //   {
+        //     title: "Use-case specific AI agents",
+        //     href: "/data-ai/agentic-ai-development/ai-agents",
+        //   },
+        //   {
+        //     title: "Monitor and control",
+        //     href: "/data-ai/agentic-ai-development/monitor-control",
+        //   },
+        //   {
+        //     title: "Regression alignment",
+        //     href: "/data-ai/agentic-ai-development/regression-alignment",
+        //   },
+        //   {
+        //     title: "Scale and support",
+        //     href: "/data-ai/agentic-ai-development/scale-support",
+        //   },
+        // ],
+        description:"Building autonomous AI systems that reason, adapt, and act to deliver intelligent business outcomes."
       },
       {
         title: "DataOps & Governance",
         href: "/data-ai/data-ops-governance",
-        section: [
-          {
-            title: "Data profiling & cataloging",
-            href: "/data-ai/data-ops-governance/data-profiling-cataloging",
-          },
-          {
-            title: "Data cleansing and deduplication",
-            href: "/data-ai/data-ops-governance/data-cleansing-deduplication",
-          },
-          {
-            title: "Data lake creation and warehouse",
-            href: "/data-ai/data-ops-governance/data-lake-creation",
-          },
-          {
-            title: "Seamless Data streaming",
-            href: "/data-ai/data-ops-governance/data-streaming",
-          },
-          {
-            title: "Governance protocols and implementation",
-            href: "/data-ai/data-ops-governance/governance-protocols-implementation",
-          },
-          {
-            title: "Data collaboration & orchestration",
-            href: "/data-ai/data-ops-governance/data-collaboration-orchestration",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Data profiling & cataloging",
+        //     href: "/data-ai/data-ops-governance/data-profiling-cataloging",
+        //   },
+        //   {
+        //     title: "Data cleansing and deduplication",
+        //     href: "/data-ai/data-ops-governance/data-cleansing-deduplication",
+        //   },
+        //   {
+        //     title: "Data lake creation and warehouse",
+        //     href: "/data-ai/data-ops-governance/data-lake-creation",
+        //   },
+        //   {
+        //     title: "Seamless Data streaming",
+        //     href: "/data-ai/data-ops-governance/data-streaming",
+        //   },
+        //   {
+        //     title: "Governance protocols and implementation",
+        //     href: "/data-ai/data-ops-governance/governance-protocols-implementation",
+        //   },
+        //   {
+        //     title: "Data collaboration & orchestration",
+        //     href: "/data-ai/data-ops-governance/data-collaboration-orchestration",
+        //   },
+        // ],
+        description:"Streamlining data pipelines with strong governance to ensure accuracy, compliance, and reliability at scale."
       },
       // {
       //   title: "Data observability",
@@ -104,122 +107,126 @@ export const navItems = [
       {
         title: "Data Modernization",
         href: "/data-ai/data-modernization",
-        section: [
-          {
-            title: "Event-ready data frameworks",
-            href: "/data-ai/data-modernization/data-frameworks",
-          },
-          {
-            title: "Data & storage optimization",
-            href: "/data-ai/data-modernization/data-storage-optimization",
-          },
-          {
-            title: "Data warehouse modernization",
-            href: "/data-ai/data-modernization/data-warehouse-modernization",
-          },
-          {
-            title: "Analytics engine (BI) updates",
-            href: "/data-ai/data-modernization/analytics-engine-bi",
-          },
-          {
-            title: "Real-time compliance tracking",
-            href: "/data-ai/data-modernization/compliance-tracking",
-          },
-          {
-            title: "Cost-optimized data orchestration",
-            href: "/data-ai/data-modernization/orchestration-planning",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Event-ready data frameworks",
+        //     href: "/data-ai/data-modernization/data-frameworks",
+        //   },
+        //   {
+        //     title: "Data & storage optimization",
+        //     href: "/data-ai/data-modernization/data-storage-optimization",
+        //   },
+        //   {
+        //     title: "Data warehouse modernization",
+        //     href: "/data-ai/data-modernization/data-warehouse-modernization",
+        //   },
+        //   {
+        //     title: "Analytics engine (BI) updates",
+        //     href: "/data-ai/data-modernization/analytics-engine-bi",
+        //   },
+        //   {
+        //     title: "Real-time compliance tracking",
+        //     href: "/data-ai/data-modernization/compliance-tracking",
+        //   },
+        //   {
+        //     title: "Cost-optimized data orchestration",
+        //     href: "/data-ai/data-modernization/orchestration-planning",
+        //   },
+        // ],
+        description:"Transforming legacy systems with cloud-first, AI-powered platforms for agility and performance."
       },
       {
         title: "Custom-LLM for Gen AI and RAG",
         href: "/data-ai/custom-llm-for-gen-ai-rag",
-        section: [
-          {
-            title: "LLM fine-tuning on proprietary data",
-            href: "/data-ai/custom-llm-for-gen-ai-rag/llm-fine-tuning",
-          },
-          {
-            title: "RAG-based application development",
-            href: "/data-ai/custom-llm-for-gen-ai-rag/rag-based-application-development",
-          },
-          {
-            title: "Prompt engineering and optimization",
-            href: "/data-ai/custom-llm-for-gen-ai-rag/prompt-engineering-optimization",
-          },
-          {
-            title: "Open-source model integration",
-            href: "/data-ai/custom-llm-for-gen-ai-rag/open-source-model-integration",
-          },
-          {
-            title: "Domain-specific chatbot development",
-            href: "/data-ai/custom-llm-for-gen-ai-rag/chatbot-development",
-          },
-          {
-            title: "On-premise LLM deployment",
-            href: "/data-ai/custom-llm-for-gen-ai-rag/llm-deployment",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "LLM fine-tuning on proprietary data",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/llm-fine-tuning",
+        //   },
+        //   {
+        //     title: "RAG-based application development",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/rag-based-application-development",
+        //   },
+        //   {
+        //     title: "Prompt engineering and optimization",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/prompt-engineering-optimization",
+        //   },
+        //   {
+        //     title: "Open-source model integration",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/open-source-model-integration",
+        //   },
+        //   {
+        //     title: "Domain-specific chatbot development",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/chatbot-development",
+        //   },
+        //   {
+        //     title: "On-premise LLM deployment",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/llm-deployment",
+        //   },
+        // ],
+        description:"Designing domain-specific large language models and retrieval-augmented generation tailored to enterprise needs."
       },
       {
         title: "Analytics & Visualization",
         href: "/data-ai/data-analytics-visualization",
-        section: [
-          {
-            title: "Data pipeline and transformation",
-            href: "/data-ai/data-analytics-visualization/data-pipeline-transformation",
-          },
-          {
-            title: "Dashboard and KPI visualization",
-            href: "/data-ai/data-analytics-visualization/dashboard-kpi-visualization",
-          },
-          {
-            title: "Real-time streaming analytics",
-            href: "/data-ai/data-analytics-visualization/streaming-analytics",
-          },
-          {
-            title: "Time-Series Intelligence",
-            href: "/data-ai/data-analytics-visualization/time-series-intelligence",
-          },
-          {
-            title: "Business intelligence integration",
-            href: "/data-ai/data-analytics-visualization/business-intelligence-integration",
-          },
-          {
-            title: "Custom reporting and notifications",
-            href: "/data-ai/data-analytics-visualization/custom-reporting-notifications",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Data pipeline and transformation",
+        //     href: "/data-ai/data-analytics-visualization/data-pipeline-transformation",
+        //   },
+        //   {
+        //     title: "Dashboard and KPI visualization",
+        //     href: "/data-ai/data-analytics-visualization/dashboard-kpi-visualization",
+        //   },
+        //   {
+        //     title: "Real-time streaming analytics",
+        //     href: "/data-ai/data-analytics-visualization/streaming-analytics",
+        //   },
+        //   {
+        //     title: "Time-Series Intelligence",
+        //     href: "/data-ai/data-analytics-visualization/time-series-intelligence",
+        //   },
+        //   {
+        //     title: "Business intelligence integration",
+        //     href: "/data-ai/data-analytics-visualization/business-intelligence-integration",
+        //   },
+        //   {
+        //     title: "Custom reporting and notifications",
+        //     href: "/data-ai/data-analytics-visualization/custom-reporting-notifications",
+        //   },
+        // ],
+        description:"Enabling smarter decisions with advanced analytics and intuitive data visualization."
       },
       {
         title: "AI-driven Predictive Orchestration",
         href: "/data-ai/predictive-orchestration",
-        section: [
-          {
-            title: "Telemetry-Driven Automation",
-            href: "/data-ai/predictive-orchestration/telemetry-driven-automation",
-          },
-          {
-            title: "Predictive maintenance models",
-            href: "/data-ai/predictive-orchestration/predictive-maintenance-models",
-          },
-          {
-            title: "AIOps for infrastructure performance",
-            href: "/data-ai/predictive-orchestration/aiops-infrastrucuture-performance",
-          },
-          {
-            title: "Workflow optimization with ML",
-            href: "/data-ai/predictive-orchestration/workflow-optimization",
-          },
-          {
-            title: "Smart Incident Detection",
-            href: "/data-ai/predictive-orchestration/smart-incident-detection",
-          },
-          {
-            title: "Intelligent resource scheduling",
-            href: "/data-ai/predictive-orchestration/intelligent-resource-scheduling",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Telemetry-Driven Automation",
+        //     href: "/data-ai/predictive-orchestration/telemetry-driven-automation",
+        //   },
+        //   {
+        //     title: "Predictive maintenance models",
+        //     href: "/data-ai/predictive-orchestration/predictive-maintenance-models",
+        //   },
+        //   {
+        //     title: "AIOps for infrastructure performance",
+        //     href: "/data-ai/predictive-orchestration/aiops-infrastrucuture-performance",
+        //   },
+        //   {
+        //     title: "Workflow optimization with ML",
+        //     href: "/data-ai/predictive-orchestration/workflow-optimization",
+        //   },
+        //   {
+        //     title: "Smart Incident Detection",
+        //     href: "/data-ai/predictive-orchestration/smart-incident-detection",
+        //   },
+        //   {
+        //     title: "Intelligent resource scheduling",
+        //     href: "/data-ai/predictive-orchestration/intelligent-resource-scheduling",
+        //   },
+        // ],
+        description:"Orchestrating IT and business processes with predictive AI to optimize efficiency and reduce risk."
       },
 
       {
