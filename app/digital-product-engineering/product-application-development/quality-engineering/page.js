@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
@@ -9,17 +9,18 @@ import UseCases from "../../../component/product-application-development/UseCase
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
+import img from "@/app/assets/infra/Hero_bg.webp";
 
-const Page=()=> {
-   const [activeTab, setActiveTab] =useState("why-it-matters");
-        
-    const navItems = [
-          "Why it Matters",
-          "What We Offer",
-          "Use Cases",
-          "Business Value",
-          "How to Start",
-        ];
+const Page = () => {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
+  const navItems = [
+    "Why it Matters",
+    "What We Offer",
+    "Use Cases",
+    "Business Value",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -30,6 +31,7 @@ built for scale, speed, and ROI."
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        heroImage={img}
       />
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
@@ -40,9 +42,13 @@ built for scale, speed, and ROI."
         id="why-it-matters"
       />
       <WhatWeOffer id="what-we-offer" />
-      <UseCases CTACopy="Ensure 98% defect-free releases with automation." id="use-cases" BussinessId="business-value"/>
+      <UseCases
+        CTACopy="Ensure 98% defect-free releases with automation."
+        id="use-cases"
+        BussinessId="business-value"
+      />
       <HowToStart
-      id="how-to-start"
+        id="how-to-start"
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:
@@ -58,5 +64,5 @@ built for scale, speed, and ROI."
       />
     </>
   );
-}
-export default Page
+};
+export default Page;

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
@@ -14,18 +14,18 @@ import line3 from "../../../assets/DigitalEngineering/maturity/line3.svg";
 
 import mobile2 from "../../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../../assets/DigitalEngineering/maturity/mobile3.svg";
+import img from "@/app/assets/infra/Hero_bg.webp";
 
-const Page=()=> {
-  
-    const [activeTab, setActiveTab] =useState("why-it-matters");
-      
+const Page = () => {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
   const navItems = [
-        "Why it Matters",
-        "What We Offer",
-        "Use Cases",
-        "Business Value",
-        "How to Start",
-      ];
+    "Why it Matters",
+    "What We Offer",
+    "Use Cases",
+    "Business Value",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -35,6 +35,7 @@ const Page=()=> {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        heroImage={img}
       />
       <WhyItMatters
         title="90% of Product Delays Are Self-Inflicted. Avoid Them."
@@ -45,7 +46,7 @@ const Page=()=> {
         id="why-it-matters"
       />
       <WhatWeOffer
-      id="what-we-offer"
+        id="what-we-offer"
         heading="Everything You Need. Nothing You Don’t."
         description="We don’t just write code. We build working products—designed for scale, with engineering accountability. Our Full-Cycle Development covers:"
         features={[
@@ -157,8 +158,8 @@ const Page=()=> {
         buttonText="Request Demo"
       />
       <UseCases
-      id="use-cases"
-      BussinessId="business-value"
+        id="use-cases"
+        BussinessId="business-value"
         title="Built for Startups, Scaled for Enterprises"
         description="Whether you’re a Series A startup or a Fortune 100 innovator, Calsoft adapts to your context."
         useCaseData={[
@@ -209,7 +210,7 @@ const Page=()=> {
         }}
       />
       <HowToStart
-      id="how-to-start"
+        id="how-to-start"
         headerContent={{
           title: "Your First Sprint Starts Here",
           description:
@@ -281,5 +282,5 @@ const Page=()=> {
       />
     </>
   );
-}
-export default Page
+};
+export default Page;

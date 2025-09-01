@@ -180,7 +180,7 @@ export const CalsoftSec = () => {
       <DataInfoSection
         title="Calsoft Mozaic | Engineering intelligence framework"
         description="Accelerate solution delivery with reusable AI, platform, and process components."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Provide AI-ready modular toolkits",

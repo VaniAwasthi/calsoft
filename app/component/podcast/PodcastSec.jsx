@@ -17,6 +17,14 @@ export const PostcastSec = () => {
   const dispatch = useDispatch();
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  // --- NEW STATES for modal playback ---
+  const [playing, setPlaying] = useState(true);
+  const [pausedAt30, setPausedAt30] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [resumeTime, setResumeTime] = useState(0);
+
   useEffect(() => {
     dispatch(fetchBlogFilterList());
   }, [dispatch]);
@@ -46,13 +54,11 @@ export const PostcastSec = () => {
     image: images[i % images.length],
     link: `https://yourdomain.com/card/${i + 1}`,
     author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-   
     industry: i % 2 === 0 ? "Tech" : "Healthcare",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // or any valid video URL
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   }));
 
   const [resources] = useState([...cardData]);
-  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -79,11 +85,7 @@ export const PostcastSec = () => {
       activeFilters.Industry === "All" ||
       item.industry === activeFilters.Industry;
 
-    const tagMatch =
-      activeFilters.Topics.length === 0 ||
-      activeFilters.Topics.some((topic) => item.tags.includes(topic));
-
-    return industryMatch && tagMatch;
+    return industryMatch; // (Topics logic can be added later)
   });
 
   const itemsPerPage = 6;
@@ -110,122 +112,181 @@ export const PostcastSec = () => {
           setActiveFilters={setActiveFilters}
         />
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
-        {/* Grid Display with animation */}
-        <>
-          {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <AnimatePresence>
-              {currentPageData.map((item, idx) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
-                >
-                  {/* Image with Play Button Overlay */}
-                  <div className="relative w-full h-3/5">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                      width={400}
-                      height={400}
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <AnimatePresence>
+            {currentPageData.map((item, idx) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+              >
+                {/* Image with Play Button Overlay */}
+                <div className="relative w-full h-3/5">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                    width={400}
+                    height={400}
+                  />
+                  <button
+                    onClick={() => {
+                      setSelectedVideo(item.videoUrl);
+                      setPlaying(true);
+                      setPausedAt30(false);
+                      setShowForm(false);
+                      setResumeTime(0);
+                    }}
+                    className="absolute inset-0 flex items-center justify-center bg-black opacity-50 hover:bg-opacity-50 transition"
+                  >
+                    <FaPlay className="text-white text-4xl" />
+                  </button>
+                </div>
+
+                {/* Content */}
+                <div className="w-full h-2/5 p-4 flex flex-col justify-between">
+                  <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
+                    {item.title}
+                  </h3>
+                  <div className="flex items-center justify-between my-2 h-1/4">
+                    <ButtonLayout
+                      text="Read More"
+                      hoverImage={ButtonImage}
+                      className="!h-[40px] !w-[150px]"
                     />
-                    <button
-                      onClick={() => setSelectedVideo(item.videoUrl)}
-                      className="absolute inset-0 flex items-center justify-center bg-black opacity-50 hover:bg-opacity-50 transition"
-                    >
-                      <FaPlay className="text-white text-4xl" />
-                    </button>
-                  </div>
-
-                  {/* Content */}
-                  <div className="w-full h-2/5 p-4 flex flex-col justify-between">
-                   
-                    <div className="flex justify-between items-start">
-                      <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
-                        {item.title}
-                      </h3>
-                    
-                    </div>
-                     <div  className="flex items-center justify-between my-2 h-1/4">
-                   
-                        
-                        <ButtonLayout text="Read More" hoverImage={ButtonImage} className="!h-[40px] !w-[150px]"  onClick={() => handleClick(item)}/>
-                       
-
-                <div className="flex flex-col ">
+                    <div className="flex flex-col">
                       <button
                         onClick={(e) => {
-                          e.stopPropagation(); // ✅ prevent grid click
-                          handleCopy(item.link, item.index);
+                          e.stopPropagation();
+                          handleCopy(item.link, item.id);
                         }}
                         className="text-[#2E3092] hover:text-black"
                         title="Copy link"
                       >
                         <FaShareAlt className="w-6 h-6" />
                       </button>
-                      {copiedId === item.index && (
+                      {copiedId === item.id && (
                         <span className="text-green-500 text-xs mt-2">
                           Link copied!
                         </span>
                       )}
                     </div>
-                </div>
-                    
                   </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
 
-          {/* Modal */}
-          <AnimatePresence>
-            {selectedVideo && (
+        {/* Modal */}
+        <AnimatePresence>
+          {selectedVideo && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-md bg-black/60"
+            >
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                className="bg-white rounded-lg overflow-hidden w-11/12 max-w-3xl relative shadow-2xl"
               >
-                <motion.div
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  exit={{ scale: 0.8 }}
-                  className="bg-white rounded-lg overflow-hidden w-11/12 max-w-3xl relative"
+                {/* Close Button */}
+                <button
+                  onClick={() => {
+                    setSelectedVideo(null);
+                    setPlaying(true);
+                    setPausedAt30(false);
+                    setShowForm(false);
+                    setResumeTime(0);
+                  }}
+                  className="absolute top-2 right-2 text-gray-600 hover:text-black text-3xl z-10"
                 >
-                  {/* Close Button */}
-                  <button
-                    onClick={() => setSelectedVideo(null)}
-                    className="absolute top-2 right-2 text-gray-600 hover:text-black text-3xl z-10"
-                  >
-                    &times;
-                  </button>
+                  &times;
+                </button>
 
-                  {/* Video Player */}
-                  <div className="relative pt-[56.25%]">
-                    {" "}
-                    {/* 16:9 Aspect Ratio */}
+                {/* Video or Form */}
+                <div className="relative pt-[56.25%]">
+                  {!showForm ? (
                     <ReactPlayer
                       url={selectedVideo}
+                      playing={playing}
                       controls
-                      playing
                       width="100%"
                       height="100%"
                       className="absolute top-0 left-0"
+                      onProgress={(state) => {
+                        if (state.playedSeconds >= 30 && !pausedAt30) {
+                          setPlaying(false);
+                          setPausedAt30(true);
+                          setResumeTime(state.playedSeconds);
+                        }
+                      }}
+                      config={{
+                        youtube: { playerVars: { start: resumeTime } },
+                      }}
                     />
+                  ) : (
+                    <div className="absolute top-0 left-0 w-full h-full bg-white flex flex-col justify-center items-center p-6">
+                      <h2 className="text-lg font-semibold mb-4">
+                        Please Fill the Form
+                      </h2>
+                      <form
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          setShowForm(false);
+                          setPlaying(true);
+                        }}
+                        className="flex flex-col gap-3 w-3/4"
+                      >
+                        <input
+                          type="text"
+                          placeholder="Your Name"
+                          className="border p-2 rounded"
+                          required
+                        />
+                        <input
+                          type="email"
+                          placeholder="Your Email"
+                          className="border p-2 rounded"
+                          required
+                        />
+                        <ButtonLayout
+                          text="Submit & Continue"
+                          hoverImage={ButtonImage}
+                          className="!h-[40px] !w-[200px] self-center"
+                        />
+                      </form>
+                    </div>
+                  )}
+                </div>
+
+                {/* Tap to Continue button */}
+                {pausedAt30 && !showForm && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <button
+                      onClick={() => setShowForm(true)}
+                      className="bg-[#2E3092] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#1e2170] transition"
+                    >
+                      Tap to Continue
+                    </button>
                   </div>
-                </motion.div>
+                )}
               </motion.div>
-            )}
-          </AnimatePresence>
-        </>
-        {/* Custom Pagination with animation */}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Pagination */}
         <div className="flex justify-center items-center">
-          <div className="mt-8  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Previous Button */}
+          <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
             <motion.button
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 0}
@@ -240,7 +301,6 @@ export const PostcastSec = () => {
               <FaLessThan className="w-3 h-3" />
             </motion.button>
 
-            {/* Page Numbers */}
             {Array.from({ length: totalPages }, (_, i) => (
               <motion.button
                 key={i}
@@ -257,7 +317,6 @@ export const PostcastSec = () => {
               </motion.button>
             ))}
 
-            {/* Next Button */}
             <motion.button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages - 1}
