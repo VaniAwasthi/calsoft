@@ -245,7 +245,8 @@ export default function Navbar() {
                   <div className="w-px h-64 bg-[#CECECE] mx-6 mt-6"></div>
                   {/* Center Column */}
                   <div className="w-[30%] p-6">
-                    {selectedSubmenu?.section ? (
+                    {selectedSubmenu?.section &&
+                    selectedSubmenu.section.length > 0 ? (
                       selectedSubmenu.section.map((s, idx) => {
                         const isActive = pathname.startsWith(s.href);
 
@@ -264,8 +265,9 @@ export default function Navbar() {
                         );
                       })
                     ) : (
-                      <div className="text-sm italic text-gray-500">
-                        No details available.
+                      <div className="text-md text-black">
+                        {selectedSubmenu?.description ||
+                          "No description available."}
                       </div>
                     )}
                   </div>
