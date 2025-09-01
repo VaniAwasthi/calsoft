@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
@@ -9,17 +9,18 @@ import UseCases from "../../../component/product-application-development/UseCase
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
+import img from "@/app/assets/infra/Hero_bg.webp";
 
-const Page=()=>{
-   const [activeTab, setActiveTab] =useState("why-it-matters");
-          
-      const navItems = [
-            "Why it Matters",
-            "What We Offer",
-            "Use Cases",
-            "Business Value",
-            "How to Start",
-          ];
+const Page = () => {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
+  const navItems = [
+    "Why it Matters",
+    "What We Offer",
+    "Use Cases",
+    "Business Value",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -30,6 +31,7 @@ eliminate downtime with Calsoft’s intelligent deployment strategies."
         activeTab={activeTab}
         navItems={navItems}
         setActiveTab={setActiveTab}
+        heroImage={img}
       />
       <WhyItMatters
         title="Code That’s Ready Is Useless If It
@@ -43,7 +45,7 @@ Can’t Ship Reliably."
       <WhatWeOffer />
       <UseCases CTACopy="Cut deployment time by 50% through automation." />
       <HowToStart
-      id="how-to-start"
+        id="how-to-start"
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:
@@ -59,5 +61,5 @@ Can’t Ship Reliably."
       />
     </>
   );
-}
-export default Page
+};
+export default Page;

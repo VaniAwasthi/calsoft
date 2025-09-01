@@ -9,13 +9,15 @@ import Logo from "../../assets/logo.png";
 import barmenu from "../../assets/menu-bar.svg";
 import MegaMenuImg1 from "../../assets/feature1.webp";
 import MegaMenuImg2 from "../../assets/feature2.webp";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { navItems } from "./data/NavItems";
 
 export default function Navbar() {
   const [openMenus, setOpenMenus] = useState({});
   const [activeMenu, setActiveMenu] = useState(null);
   const [selectedSubmenu, setSelectedSubmenu] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
+  const router = useRouter();
   const pathname = usePathname();
 
   const toggleMenu = (index) => {
@@ -30,7 +32,7 @@ export default function Navbar() {
     {
       image: MegaMenuImg1,
       detail:
-        "Strategic decision-makers in IT and operations are facing the impacts of rising infrastructure costs and vendor constraints."
+        "Strategic decision-makers in IT and operations are facing the impacts of rising infrastructure costs and vendor constraints.",
     },
     {
       image: MegaMenuImg2,
@@ -149,9 +151,21 @@ export default function Navbar() {
                     <input
                       type="text"
                       placeholder="Search"
+                      onChange={(e) => setSearchInput(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.code.toLowerCase() === "enter") {
+                          router.push(`/search/?s=${searchInput}`);
+                        }
+                      }}
                       className="px-3 py-1 border border-red-500 rounded-full bg-black text-white w-40 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500"
                     />
-                    <button className="absolute right-2 top-1/2 -translate-y-1/2 text-white bg-red-600 p-1 rounded-full">
+                    <button
+                      onClick={() => {
+                        router.push(`/search/?s=${searchInput}`);
+                        console.log(searchInput);
+                      }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 text-white bg-red-600 p-1 rounded-full"
+                    >
                       <FaSearch />
                     </button>
                   </div>
@@ -175,78 +189,88 @@ export default function Navbar() {
                   {/* Left Column */}
                   <div className="w-[30%]  p-6">
                     {navItems
-  .find((item) => item.title === activeMenu)
-  ?.submenu?.map((sub, idx) => {
-    // ✅ allowed resource paths
-    const resourcePaths = [
-      "/insights/case-studies",
-      "/insights/whitepaper",
-      "/insights/datesheets",
-      "/insights/usecases",
-      "/industry-report",
-      "/insights/videos",
-    ];
+                      .find((item) => item.title === activeMenu)
+                      ?.submenu?.map((sub, idx) => {
+                        // ✅ allowed resource paths
+                        const resourcePaths = [
+                          "/insights/case-studies",
+                          "/insights/whitepaper",
+                          "/insights/datesheets",
+                          "/insights/usecases",
+                          "/industry-report",
+                          "/insights/videos",
+                        ];
 
-    // check if current submenu is "Resources"
-    const isResourcesMenu = sub.title.toLowerCase() === "resources";
+                        // check if current submenu is "Resources"
+                        const isResourcesMenu =
+                          sub.title.toLowerCase() === "resources";
 
-    // normal submenu active logic (without `/insights`)
-    const normalActive =
-      pathname === sub.href ||
-      sub.inersubmenu?.some((inner) => pathname.startsWith(inner.href));
+                        // normal submenu active logic (without `/insights`)
+                        const normalActive =
+                          pathname === sub.href ||
+                          sub.inersubmenu?.some((inner) =>
+                            pathname.startsWith(inner.href)
+                          );
 
-    // resource submenu active logic
-    const resourceActive =
-      isResourcesMenu && resourcePaths.some((p) => pathname.startsWith(p));
+                        // resource submenu active logic
+                        const resourceActive =
+                          isResourcesMenu &&
+                          resourcePaths.some((p) => pathname.startsWith(p));
 
-    const isActive = resourceActive || normalActive;
+                        const isActive = resourceActive || normalActive;
 
-    return (
-      <Link
-        href={sub.href}
-        key={idx}
-        className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${
-          isActive ? "text-[#2E3092] font-semibold" : "text-[#1A1A1A]"
-        }`}
-        onMouseEnter={() => setSelectedSubmenu(sub)}
-        onClick={() => setActiveMenu(null)}
-      >
-        <span>{sub.title}</span>
-        {isActive && (
-          <IoMdArrowDropright size={25} className="text-[#2E3092]" />
-        )}
-      </Link>
-    );
-  })}
-
+                        return (
+                          <Link
+                            href={sub.href}
+                            key={idx}
+                            className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${
+                              isActive
+                                ? "text-[#2E3092] font-semibold"
+                                : "text-[#1A1A1A]"
+                            }`}
+                            onMouseEnter={() => setSelectedSubmenu(sub)}
+                            onClick={() => setActiveMenu(null)}
+                          >
+                            <span>{sub.title}</span>
+                            {isActive && (
+                              <IoMdArrowDropright
+                                size={25}
+                                className="text-[#2E3092]"
+                              />
+                            )}
+                          </Link>
+                        );
+                      })}
                   </div>
                   <div className="w-px h-64 bg-[#CECECE] mx-6 mt-6"></div>
                   {/* Center Column */}
-                 <div className="w-[30%] p-6">
- {selectedSubmenu?.section && selectedSubmenu.section.length > 0 ? (
-  selectedSubmenu.section.map((s, idx) => {
-    const isActive = pathname.startsWith(s.href);
+                  <div className="w-[30%] p-6">
+                    {selectedSubmenu?.section &&
+                    selectedSubmenu.section.length > 0 ? (
+                      selectedSubmenu.section.map((s, idx) => {
+                        const isActive = pathname.startsWith(s.href);
 
-    return (
-      <Link
-        key={idx}
-        href={s.href}
-        className={`block text-sm py-1 hover:text-[#2E3092] ${
-          isActive ? "text-[#2E3092] font-semibold" : "text-[#1A1A1A]"
-        }`}
-      >
-        {s.title}
-      </Link>
-    );
-  })
-) : (
-  <div className="text-md text-black">
-    {selectedSubmenu?.description || "No description available."}
-  </div>
-)}
-
-</div>
-
+                        return (
+                          <Link
+                            key={idx}
+                            href={s.href}
+                            className={`block text-sm py-1 hover:text-[#2E3092] ${
+                              isActive
+                                ? "text-[#2E3092] font-semibold"
+                                : "text-[#1A1A1A]"
+                            }`}
+                          >
+                            {s.title}
+                          </Link>
+                        );
+                      })
+                    ) : (
+                      <div className="text-md text-black">
+                        {selectedSubmenu?.description ||
+                          "No description available."}
+                      </div>
+                    )}
+                  </div>
 
                   {/* Right Column */}
 

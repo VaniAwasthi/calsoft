@@ -9,17 +9,18 @@ import HowToStart from "../../../component/product-application-development/HowTo
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
+import img from "@/app/assets/infra/Hero_bg.webp";
 
 const Page = () => {
-    const [activeTab, setActiveTab] = useState("why-it-matters");
-    
-      const navItems = [
-      "Why it Matters",
-      "What We Offer",
-      "Use Cases",
-      "Business Value",
-      "How to Start",
-    ];
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
+  const navItems = [
+    "Why it Matters",
+    "What We Offer",
+    "Use Cases",
+    "Business Value",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -28,6 +29,10 @@ const Page = () => {
         accelerate releases, and ensure 99.99 % uptime— across cloud, hybrid, and edge deployments.
         "
         buttonText="Book your DevOps Health Check"
+        activeTab={activeTab}
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        heroImage={img}
       />
       <WhyItMatters id="why-it-matters" />
       <WhatWeOffer
@@ -35,9 +40,13 @@ const Page = () => {
         description="We deliver production-grade DevOps & SRE services that fit your team, stack, and scale ambition."
         id="what-we-offer"
       />
-      <UseCases CTACopy="Speed up release cycles by 60% using SRE practices." id="use-cases" BussinessId="business-value"/>
+      <UseCases
+        CTACopy="Speed up release cycles by 60% using SRE practices."
+        id="use-cases"
+        BussinessId="business-value"
+      />
       <HowToStart
-      id="how-to-start"
+        id="how-to-start"
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:
