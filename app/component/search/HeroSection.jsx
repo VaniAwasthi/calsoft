@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import img from "@/app/assets/infra/Hero_bg.webp";
 
 export function HeroSection({ initialSearchQuery }) {
   const [displayedSearchQuery, setDisplayedSearchQuery] =
@@ -20,7 +21,9 @@ export function HeroSection({ initialSearchQuery }) {
     <div
       className="relative h-96 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Aspect_ratio_-_16x9.svg/320px-Aspect_ratio_-_16x9.svg.png?20071120015352')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('${img.src}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
