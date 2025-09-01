@@ -498,74 +498,23 @@ export const navItems = [
       {
         title: "Hi-tech",
         href: "/industries/hitech",
-        section: [
-          {
-            title: "Software and product engineering",
-            href: "#",
-          },
-          {
-            title: "Cloud and platform engineering",
-            href: "#",
-          },
-          {
-            title: "AI-powered modernization",
-            href: "#",
-          },
-        ],
+        description:"Driving product innovation with next-gen engineering, AI-led modernization, and scalable software solutions."
       },
       {
         title: "Retail",
         href: "/industries/retail",
-        section: [
-          {
-            title: "Enhance shopping experiences with AI",
-            href: "#",
-          },
-          {
-            title: "Improve efficiency and boost product availability",
-            href: "#",
-          },
-          {
-            title: "Prevent fraud and secure transactions",
-            href: "#",
-          },
-        ],
+        description:"Transforming connectivity with AI, edge, and cloud solutions for faster, reliable, and secure networks."
+
       },
       {
         title: "Telecom",
         href: "/industries/telecom",
-        section: [
-          {
-            title: "Automate network operations and orchestration",
-            href: "#",
-          },
-          {
-            title: "Build agile and low-latency telecom networks",
-            href: "#",
-          },
-          {
-            title: "Enhance service assurance and cybersecurity",
-            href: "#",
-          },
-        ],
+       description:"Enabling smarter shopping experiences through data-driven insights, automation, and cloud-powered platforms."
       },
       {
         title: "Manufacturing",
         href: "/industries/manufacturing",
-        section: [
-          {
-            title: "Scale with real-time monitoring and automation",
-            href: "#",
-          },
-          {
-            title: "Strengthen predictive maintenance strategies",
-            href: "#",
-          },
-          {
-            title: "Enhance visibility, agility, and demand forecasting",
-            href: "#",
-          },
-        ],
+        description:"Powering Industry 4.0 with intelligent automation, predictive analytics, and digital modernization."
       },
     ],
   },
@@ -573,7 +522,7 @@ export const navItems = [
     title: "INSIGHTS",
     href: "/insights",
     submenu: [
-      { title: "Blogs", href: "/insights/blogs" },
+      { title: "Blogs", href: "/insights/blogs" , description:"Fresh perspectives and expert insights on technology and innovation"},
       {
         title: "Resources",
         href: "/insights",
@@ -589,20 +538,20 @@ export const navItems = [
           { title: "Videos", href: "/insights/videos" },
         ],
       },
-      { title: "Press Releases", href: "/insights/press-releases" },
-      { title: "Webinars", href: "/insights/webinars" },
-      { title: "Workshop", href: "/insights/workshops" },
-      { title: "Podcasts", href: "/insights/podcasts" },
+      { title: "Press Releases", href: "/insights/press-releases"  ,description:"Official announcements and updates from Calsoft."},
+      { title: "Webinars", href: "/insights/webinars", description:"Interactive sessions with experts on industry trends and solutions." },
+      { title: "Workshop", href: "/insights/workshops" , description:"Hands-on learning and deep dives into emerging technologies." },
+      { title: "Podcasts", href: "/insights/podcasts", description:"Conversations with leaders on technology, business, and innovation." },
     ],
   },
   {
     title: "ABOUT",
     href: "/about-us",
     submenu: [
-      { title: "Career", href: "/career" },
-      { title: "Leadership", href: "/leadership" },
-      { title: "CSR", href: "/csr" },
-      { title: "Contact Us", href: "/contact-us" },
+      { title: "Career", href: "/career" ,description:"Building rewarding careers through innovation, learning, and growth opportunities." },
+      { title: "Leadership", href: "/leadership", description:"Guided by vision and expertise to drive Calsoft’s technology-first journey." },
+      { title: "CSR", href: "/csr" , description:"Committed to creating social impact through education, empowerment, and sustainability initiatives." },
+      { title: "Contact Us", href: "/contact-us" , description:"Connect with us to explore solutions, partnerships, and opportunities." },
     ],
   },
 ];
