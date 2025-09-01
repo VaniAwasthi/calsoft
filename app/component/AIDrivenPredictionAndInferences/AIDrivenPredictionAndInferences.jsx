@@ -103,7 +103,7 @@ export const PredictiveSec = () => {
         title="Predictive modeling"
         description="Anticipate events, mitigate risks, and unlock
         data-driven foresight."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Train models to forecast key outcomes",
@@ -133,7 +133,7 @@ export const PatternSec = () => {
         description="Reveal hidden signals
         and uncover emerging
         opportunities with intelligent models."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Use ML to reveal hidden patterns",
@@ -162,7 +162,7 @@ export const InferentialSec = () => {
         title="Inferential analytics"
         description="Move beyond observation to confident, data-backed
         decision pathways."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Recommend actions based on data",
@@ -191,7 +191,7 @@ export const ModelSec = () => {
         adaptability"
         description="Ensure AI models evolve alongside your business
         and data landscapes."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Retrain models as new data flows in",

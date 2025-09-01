@@ -103,7 +103,7 @@ export const DashboardSec = () => {
         title="Dashboard and KPI visualization"
         description="Deliver operational and strategic clarity through
         real-time visual insights."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Build dashboards with custom KPIs",
@@ -131,7 +131,7 @@ export const BusinessSec = () => {
       <DataInfoSection
         title="Business Intelligence (BI) integration"
         description="Empower analytics through unified business intelligence ecosystems."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Connect BI to cloud data platforms",
@@ -160,7 +160,7 @@ export const CustomSec = () => {
         title="Custom
         reporting"
         description="On-hand and real-time insights aligned to dynamic business priorities."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Configure reports by role or KPI",
@@ -187,7 +187,7 @@ export const RealSec = () => {
       <DataInfoSection
         title="Real-time business insights streaming"
         description="Harness live data flows to drive instant operational intelligence."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Set up streams for live KPIs",
