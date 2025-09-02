@@ -4,7 +4,7 @@ import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
-import BackgroundImage from "../../assets/DigitalEngineering/future/banner.webp";
+import BackgroundImage from "@/app/assets/DigitalEngineering/mordernization/Modernization & Ecosystem 2.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import WhyItMatters from "../utilities/WhyItMatters";
 import bgshape1 from "../../assets/DigitalEngineering/maturity/shape1.svg";

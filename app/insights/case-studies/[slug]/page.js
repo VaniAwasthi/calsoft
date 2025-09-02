@@ -99,6 +99,8 @@ const Page = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         backgroundImage={BgImage}
+        scrollToId="DownloadSection"
+        
       />
 
       <ShareSection />

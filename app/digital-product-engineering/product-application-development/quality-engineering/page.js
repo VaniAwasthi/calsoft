@@ -9,7 +9,7 @@ import UseCases from "../../../component/product-application-development/UseCase
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
-import img from "@/app/assets/infra/Hero_bg.webp";
+import img from "@/app/assets/DigitalEngineering/product-app/Quality-Engineering.webp";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");

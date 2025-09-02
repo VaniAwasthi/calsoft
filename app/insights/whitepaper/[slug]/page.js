@@ -99,6 +99,7 @@ const { slug } = useParams();
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         backgroundImage={BgImage}
+        scrollToId="DownloadSection"
       />
       <ShareSection />
       <InfoWithFormSectionWhitePaper

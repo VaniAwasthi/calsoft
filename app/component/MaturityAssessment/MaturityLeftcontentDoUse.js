@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Submenu from "../utilities/Submenu";
-import BackgroundImage from "../../assets/DigitalEngineering/mordernization/Banner.webp";
+import BackgroundImage from "@/app/assets/DigitalEngineering/mordernization/Modernization & Ecosystem 1.webp";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { FaArrowRight } from "react-icons/fa6";

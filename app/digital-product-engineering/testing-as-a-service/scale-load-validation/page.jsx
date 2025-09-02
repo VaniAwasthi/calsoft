@@ -11,6 +11,7 @@ import Agility from "../../../component/infra/Agility";
 
 import LoadValidationMatter from "../../../component/testing/LoadValidationMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_3.webp"
 
 const Page = () => {
     const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -32,6 +33,7 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         navItems={navItems}
+        heroImage={Img}
       />
       <WhyItMatters
         title="Every Missed Test Case Is a Revenue Risk."

@@ -4,54 +4,72 @@ import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Industry1 from "../../assets/Infographic/Industry1.webp";
-
-import Link from "next/link";
+import ButtonImage from "../../assets/home/buttonImg.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
 import FilterPanel from "../utilities/FilterPannel";
+import { useRouter } from "next/navigation";
+import { setSelectedIndustryReportId } from "@/app/store/reducers/industryReportReducer";
+import { fetchIndustryReportList } from "@/app/store/actions/industryReportActions";
+import { baseUrl } from "@/config";
+import { slugify } from "../utilities/helper/SlugGenerator";
+import ButtonLayout from "../utilities/ButtonLayout";
 
 export const IndustryReportCard = () => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
+    const listData = useSelector((state) => state.industryreport.list);
+    const router = useRouter();
+  
+    const [copiedId, setCopiedId] = useState(null);
+    const [openDropdown, setOpenDropdown] = useState("");
+    const FilterIndustry = useSelector(
+      (state) => state.blogs.filterIndustry || []
+    );
+    const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+    const [activeFilters, setActiveFilters] = useState({
+      Industry: "All",
+      Topics: [],
+    });
+  
+    const filters = {
+      Industry: ["All", ...FilterIndustry],
+      Topics: ["All", ...FilterTopic],
+    };
+    const [currentPage, setCurrentPage] = useState(0);
+  
+    useEffect(() => {
+      dispatch(fetchBlogFilterList());
+      dispatch(fetchIndustryReportList());
+    }, [dispatch]);
+  
+   const resources = Array.isArray(listData)
+  ? listData.map((item) => {
+      const slug = slugify(item.hero_title1 || "untitled", { lower: true });
 
-  const [copiedId, setCopiedId] = useState(null);
-  const [openDropdown, setOpenDropdown] = useState("");
+      const origin = typeof window !== "undefined" ? window.location.origin : "";
 
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-  }, [dispatch]);
+      return {
+        id: item?._id,
+        title: item?.hero_title1 || "Untitled",
+        description: item?.hero_title2 || "Untitled",
+        image: `${baseUrl}/${item?.featured_image}`,
+        slug,
+        link: `${origin}/insights/industry-report/${slug}`,
+        author: item?.author || "Unknown",
+        tags: item.tags?.split(",") || ["General"],
+        industry: item.industry || "Tech",
+      };
+    })
+  : [];
+  
 
-  const FilterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
-  );
-  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
-  const [activeFilters, setActiveFilters] = useState({
-    Industry: "All",
-    Topics: [],
-  });
-
-  const filters = {
-    Industry: ["All", ...FilterIndustry],
-    Topics: ["All", ...FilterTopic],
+  
+const handleClick = (item) => {
+    const slug = slugify(item.title, { lower: true });
+    dispatch(setSelectedIndustryReportId(item.id));
+    localStorage.setItem("selectedIndustryReportId", item.id);
+    router.push(`/insights/industry-report/${slug}`);
   };
-
-  const [currentPage, setCurrentPage] = useState(0);
-
-  const images = [Industry1];
-
-  const cardData = new Array(18).fill(0).map((_, i) => ({
-    id: i + 1,
-    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Example ${
-      i + 1
-    }`,
-    image: images[i % images.length],
-    link: `https://yourdomain.com/card/${i + 1}`,
-    author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    tags: ["AI", "Security"],
-    industry: i % 2 === 0 ? "Tech" : "Healthcare",
-  }));
-
-  const [resources] = useState([...cardData]);
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -72,6 +90,7 @@ export const IndustryReportCard = () => {
       console.error("Copy failed:", error);
     }
   };
+
   const filteredResources = resources.filter((item) => {
     const industryMatch =
       activeFilters.Industry === "All" ||
@@ -115,6 +134,7 @@ export const IndustryReportCard = () => {
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
               <motion.div
+                
                 key={item.id}
                 initial={{ opacity: 0, y: 30 }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
@@ -139,6 +159,7 @@ export const IndustryReportCard = () => {
                     <h3 className="text-sm md:text-[18px] font-semibold break-words whitespace-normal text-[#28272D]">
                       {item.title}
                     </h3>
+                    <p className="text-sm p-1">{item.description}</p>
                     <div className="flex flex-wrap gap-2 my-2">
                       {item.tags.map((tag) => (
                         <span
@@ -150,12 +171,10 @@ export const IndustryReportCard = () => {
                       ))}
                     </div>
                     <div className="flex justify-between w-full items-center py-5 mt-2">
-                      <Link
-                        href="#"
-                        className="px-9 py-3 rounded-4xl border border-[#2E3092]"
-                      >
-                        Read More
-                      </Link>
+                     <ButtonLayout onClick={() => handleClick(item)}
+                       text="Read More"
+                      hoverImage={ButtonImage}
+                      className="!h-[40px] !w-[150px]"/>
                       <button
                         onClick={() => handleCopy(item.link, item.id)}
                         className="text-gray-500 hover:text-black"
