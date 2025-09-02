@@ -165,7 +165,7 @@ export default function WorkWithUs() {
 function BenefitComps({ ele }) {
   return (
     <div className="relative h-40 shadow-xl w-full rounded-xl bg-[#f8f8f8] p-6 flex items-end justify-center">
-      <div className="text-black absolute -top-7 bg-[#2E3092] p-[1.125rem] rounded-full">
+      <div className="text-black absolute -top-11 bg-[#2E3092] p-[1.125rem] aspect-square rounded-full flex justify-center items-center">
         <div>{ele.icons}</div>
       </div>
       <p className="text-center font-medium">{ele.title}</p>

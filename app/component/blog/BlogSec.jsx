@@ -18,7 +18,7 @@ import {
 } from "../../store/actions/blogAction.js";
 import { setSelectedBlogId } from "../../store/reducers/blogReducer.js";
 import blogexpanImage from "../../assets/blog/blog-2.webp";
-import FilterPanel from "../utilities/FilterPannel";
+import { FilterSec } from "../utilities/FilterSec";
 
 export default function ResourceGrid() {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -51,8 +51,8 @@ export default function ResourceGrid() {
   const [topicLimitWarning, setTopicLimitWarning] = useState(false);
 
   const [activeFilters, setActiveFilters] = useState({
-    Author: null,
-    Industry: null,
+    Author: "All",
+    Industry: "All",
     Topics: [], // Array of topic objects or IDs
   });
   const [openDropdown, setOpenDropdown] = useState("");
@@ -144,13 +144,15 @@ export default function ResourceGrid() {
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto  px-4 sm:px-6 lg:px-8">
         {/* Filters */}
-        <FilterPanel
+        <FilterSec
           filters={filters}
           activeFilters={activeFilters}
+          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
-          setActiveFilters={setActiveFilters}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
         {topicLimitWarning && (
           <div className="text-red-600 text-sm mb-4">

@@ -10,7 +10,6 @@ import { FilterSec } from "../utilities/FilterSec";
 import ReactPlayer from "react-player";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
-import FilterPanel from "../utilities/FilterPannel";
 
 export const VideoCards = () => {
   const dispatch = useDispatch();
@@ -100,13 +99,15 @@ export const VideoCards = () => {
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterPanel
+        <FilterSec
           filters={filters}
-          activeFilters={activeFilters}
-          openDropdown={openDropdown}
-          toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
+          activeFilters={activeFilters}
           setActiveFilters={setActiveFilters}
+          openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
+          toggleDropdown={toggleDropdown}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
         {/* Grid Display with animation */}

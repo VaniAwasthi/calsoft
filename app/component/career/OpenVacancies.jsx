@@ -6,9 +6,13 @@ import JobBoard from "../career/JobBoard";
 
 export default function OpenVacancies() {
   const filters = {
-    Location: ["All", "Tech", "Healthcare"],
-    Role: ["All", "Security", "AI"],
-    Experience: ["All", "Anton Frank", "John Doe"],
+    Location: ["All", { id: 2, name: "Tech" }, { id: 3, name: "Healthcare" }],
+    Role: ["All", { id: 2, name: "Security" }, { id: 3, name: "AI" }],
+    Experience: [
+      "All",
+      { id: 2, name: "Anton Frank" },
+      { id: 3, name: "John Doe" },
+    ],
   };
   const [activeFilters, setActiveFilters] = useState({
     Location: "All",

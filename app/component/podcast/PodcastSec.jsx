@@ -9,9 +9,9 @@ import Info2 from "../../assets/Infographic/Info2.webp";
 import ReactPlayer from "react-player";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
-import FilterPanel from "../utilities/FilterPannel";
 import ButtonLayout from "../utilities/ButtonLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
+import { FilterSec } from "../utilities/FilterSec";
 
 export const PostcastSec = () => {
   const dispatch = useDispatch();
@@ -103,13 +103,15 @@ export const PostcastSec = () => {
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterPanel
+        <FilterSec
           filters={filters}
           activeFilters={activeFilters}
+          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
-          setActiveFilters={setActiveFilters}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
