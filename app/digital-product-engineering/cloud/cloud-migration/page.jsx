@@ -12,6 +12,7 @@ import Agility from "../../../component/infra/Agility";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import CloudMigration from "../../../component/infra/CloudMigrationMatters";
+import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Migration-01.webp"
 
 const Page = () => {
   return (
@@ -20,6 +21,7 @@ const Page = () => {
         title="Migrate with Certainty. Modernize without Disruption."
         description="Accelerate cloud adoption through risk-aware, business-aligned migration strategies — backed by automation, security, and predictable ROI."
         buttonText="Access Readiness"
+        Hero_bg={Img}
       />
       <WhyItMatters
         title="Cloud Migration Mistakes You Can’t Afford"

@@ -12,7 +12,7 @@ import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
-import Img from "@/app/assets/sustenance/Sustenance_BG.webp";
+import Img from "@/app/assets/DigitalEngineering/Sustaine/Sustenance_Banner_1.webp";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");

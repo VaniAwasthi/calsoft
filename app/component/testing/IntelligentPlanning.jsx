@@ -172,7 +172,8 @@ export default function IntelligentPlanning({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
-              className={`p-6 space-y-4 text-center shadow-[0_10px_10px_-5px_#ba0007,_0_10px_10px_-5px_#ba0007] hover:bg-[linear-gradient(to_bottom,#2E3092_60%,#ED1C24_105%)] hover:text-white bg-[#f9f9f9] rounded-lg transition-all`}
+              className={`p-6 space-y-4 text-center shadow-[0_10px_10px_-5px_#ba0007,_0_10px_10px_-5px_#ba0007] hover:bg-[linear-gradient(to_bottom,#2E3092_60%,#ED1C24_105%)] hover:text-white bg-[#f9f9f9] transition-all
+              ${ele.curved === true ? "rounded-lg rounded-tr-[4rem]" : "rounded-lg"}`}
             >
               {ele.title && <p className="text-2xl font-bold">{ele.title}</p>}
               {ele.subTitle && <p className="text-lg">{ele.subTitle}</p>}

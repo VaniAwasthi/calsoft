@@ -10,6 +10,7 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import RegressionTestingMatter from "../../../component/testing/Regression-Testing-Matter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_2.webp"
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -31,6 +32,7 @@ const Page = () => {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        heroImage={Img}
       />
       <WhyItMatters
         title="Outdated Regression = Delayed Releases."

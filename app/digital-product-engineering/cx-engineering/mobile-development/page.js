@@ -8,7 +8,7 @@ import HowToStart from "../../../component/product-application-development/HowTo
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import MobileDevelpmentMatters from "@/app/component/cx-engineering/MobileDevelpmentMatters";
-import img from "@/app/assets/infra/Hero_bg.webp";
+import img from "@/app/assets/DigitalEngineering/CX/CX Engineering 5.webp";
 
 const Page = () => {
   const navItems = [

@@ -10,6 +10,7 @@ import Agility from "../../../component/infra/Agility";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import CloudNative from "../../../component/infra/CloudNativeMatters";
+import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Native-Enablement.webp"
 
 const Page = () => {
   return (
@@ -18,6 +19,7 @@ const Page = () => {
         title="Modernize with Confidence. Operate with Agility."
         description="Accelerate your shift to cloud-native with engineered platforms, DevSecOps, container orchestration, and scalable microservices — not hype."
         buttonText="Assess Cloud-Native Maturity"
+        Hero_bg={Img}
       />
       {/* <WhyItMatters /> */}
       <WhyItMatters

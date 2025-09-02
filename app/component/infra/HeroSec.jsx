@@ -3,13 +3,14 @@
 import React, { useState } from "react";
 import BannerLayout from "../utilities/BannerLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
-import Hero_bg from "../../assets/infra/Hero_bg.webp";
+// import Hero_bg from "@/app/assets/DigitalEngineering/cloud-service/Infrastructure-Roadmap.webp";
 import Submenu from "../utilities/Submenu";
 
 export default function HeroSec({
   title = "Future-Proof Your Infrastructure with a Strategic Roadmap.",
   description = "Build an actionable infrastructure roadmap aligned to your growth, resilience, and cost objectives. No guesswork. Just clarity, performance, and ROI.",
   buttonText = "Request your custom roadmap",
+  Hero_bg
 }) {
   const [activeTab, setActiveTab] = useState("why-it-matters");
 

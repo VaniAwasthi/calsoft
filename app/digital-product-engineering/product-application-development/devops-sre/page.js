@@ -9,7 +9,7 @@ import HowToStart from "../../../component/product-application-development/HowTo
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
-import img from "@/app/assets/infra/Hero_bg.webp";
+import img from "@/app/assets/DigitalEngineering/product-app/DevOps-and-SRE.webp";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -65,4 +65,4 @@ const Page = () => {
 };
 
 export default Page;
-z;
+
