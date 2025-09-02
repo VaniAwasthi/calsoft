@@ -1,101 +1,86 @@
 "use client";
-
 import BgImage from "../../../assets/caseStudies/whitepaperBg.webp";
 import ToKnowMoreBg from "../../../assets/caseStudies/knowmorebg.webp";
-import { ToKnowMoreSection } from "../../../component/caseStudies/HeroSecLanding.jsx";
+import { BusinessValueSection, ToKnowMoreSection } from "../../../component/caseStudies/HeroSecLanding.jsx";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
+import BusinessValueBg from "../../../assets/caseStudies/BusinessValueBg.webp";
+
 import {
-  AccordionSection,
+
   HeroSectionWhitePaper,
   InfoWithFormSectionWhitePaper,
   ShareSection,
 } from "../../../component/whitepaper/expanPage/WhitepaperReadMore.jsx";
-import { fetchWhitepaperById, fetchWhitepaperList } from "../../../store/actions/whitepaperAction";
 import { slugify } from "@/app/component/utilities/helper/SlugGenerator";
+import { fetchIndustryReportById, fetchIndustryReportList } from "@/app/store/actions/industryReportActions";
+import { baseUrl } from "@/config";
 
 const Page = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+
   const dispatch = useDispatch();
 const { slug } = useParams();
 
   // Redux state
-  const { list, data: whitepapers, isLoading, error, selectedId } = useSelector(
-    (state) => state.whitepaper
+  const { list, data: industryReport, isLoading, error, selectedId } = useSelector(
+    (state) => state.industryreport
   );
   const [matchedId, setMatchedId] = useState(null);
-  const whitepaperData = useSelector((state) => state.whitepaper.data);
-  //  fetch case study list if empty
+  const industryreportData = useSelector((state) => state.industryreport.data);
+  //  fetch industry report list if empty
     useEffect(() => {
       if (!list.length) {
-        dispatch(fetchWhitepaperList());
+        dispatch(fetchIndustryReportList());
       }
     }, [dispatch, list.length]);
   
     //once list or slug is ready → find match and fetch by ID
     useEffect(() => {
-      const idToFetch = selectedId || localStorage.getItem("selectedWhitepaperId");
+      const idToFetch = selectedId || localStorage.getItem("selectedIndustryReportId");
   
       if (idToFetch) {
-        dispatch(fetchWhitepaperById(idToFetch));
+        dispatch(fetchIndustryReportById(idToFetch));
       } else if (slug && list.length) {
         const match = list.find((cs) => slugify(cs.hero_title1) === slug);
         if (match) {
           setMatchedId(match._id);
           console.log(match._id,"matched")
-          dispatch(fetchWhitepaperById(match._id));
+          dispatch(fetchIndustryReportById(match._id));
         } else {
-          console.error("No whitepaper found for slug:", slug);
+          console.error("No industry report found for slug:", slug);
         }
       }
     }, [dispatch, selectedId, slug, list]);
   if (!matchedId && !selectedId && !localStorage.getItem("selectedWhitepaperId")) {
-    return <div className="text-red-500 p-8">Missing Whitepaper ID.</div>;
+    return <div className="text-red-500 p-8">Missing Industry report ID.</div>;
   }
 
   if (isLoading) return <div className="p-8">Loading whitepaper...</div>;
   if (error) return <div className="text-red-500 p-8">Error: {error}</div>;
-  if (!whitepaperData) return null;
-  console.log(whitepaperData, "data");
-  const heroImage = `${baseUrl}${whitepaperData?.card_one}`;
+  if (!industryreportData) return null;
+
 
   // Extract Hubspot form data
-  const hubspotFormString = whitepaperData?.hubspot_form || "";
+  const hubspotFormString = industryreportData?.hubspot_form || "";
 
   const portalId =
     hubspotFormString.match(/portalId:\s*["'](.+?)["']/)?.[1] || "";
   const formId = hubspotFormString.match(/formId:\s*["'](.+?)["']/)?.[1] || "";
   const region =
     hubspotFormString.match(/region:\s*["'](.+?)["']/)?.[1] || "na1";
-
-  const items = [
-    {
-      title: "Understand the technical comparisons",
-      content:
-        "Learn how StreamNative and AWS MSK perform under distinct conditions and workloads.",
-    },
-    {
-      title: "Data-Driven Decision Making",
-      content:
-        "Use our performance metrics and analysis to opt the best solution for your unique business needs.",
-    },
-    {
-      title: "Competitive Edge",
-      content:
-        "Stay informed on how top cloud-native streaming platforms compare in real-world scenarios.",
-    },
-  ];
+ const businessValueData2 = industryreportData?.data?.business_cards;
+ 
   return (
     <>
       <HeroSectionWhitePaper
-        image2={`${baseUrl}${whitepaperData?.card_one}`}
-        image1={`${baseUrl}${whitepaperData?.card_two}`}
-        title={whitepaperData?.hero_title1}
-        subtitle={whitepaperData?.hero_title2}
-        description={whitepaperData?.hero_content}
-        buttonLabel={whitepaperData?.herobtn_text}
+        image2={`${baseUrl}${industryreportData?.card_one}`}
+        image1={`${baseUrl}${industryreportData?.card_two}`}
+        title={industryreportData?.hero_title1}
+        subtitle={industryreportData?.hero_title2}
+        description={industryreportData?.hero_content}
+        buttonLabel={industryreportData?.herobtn_text}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         backgroundImage={BgImage}
@@ -103,15 +88,20 @@ const { slug } = useParams();
       />
       <ShareSection />
       <InfoWithFormSectionWhitePaper
-        heading={whitepaperData?.calsoftinfocus_title || "Whitepaper Title"}
-        description1={whitepaperData?.calsoftinfocus_text}
+        heading={industryreportData?.calsoftinfocus_title || "Whitepaper Title"}
+        description1={industryreportData?.calsoftinfocus_text}
         buttonLabel="Submit"
         isforLayout={true}
         portalId={portalId}
         formId={formId}
         region={region}
       />
-      <AccordionSection items={items} />
+      <BusinessValueSection
+      isDivider={false}
+        backgroundImage={BusinessValueBg}
+        values={businessValueData2}
+        title={industryreportData?.businessinvalue_title}
+      />
       <ToKnowMoreSection
         backgroundImage={ToKnowMoreBg}
         title="To Know More"
@@ -119,9 +109,7 @@ const { slug } = useParams();
         buttonLabel="Contact Us"
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
-        onButtonClick={() => {
-          console.log("submit");
-        }}
+        
       />
     </>
   );
