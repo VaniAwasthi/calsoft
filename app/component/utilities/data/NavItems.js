@@ -408,93 +408,96 @@ export const navItems = [
       {
         title: "Virtualization ",
         href: "/digital-product-engineering/virtualization",
-        section: [
-          {
-            title: "Lifecycle Governance",
-            href: "/digital-product-engineering/virtualization/lifecycle-governance",
-          },
-          {
-            title: "Containerization and orchestration",
-            href: "/digital-product-engineering/virtualization/containerization-and-orchestration",
-          },
-          {
-            title: "Hypervisor Optimization",
-            href: "/digital-product-engineering/virtualization/hypervisor-optimization",
-          },
-          {
-            title: "OpenStack environment configuration",
-            href: "/digital-product-engineering/virtualization/openStack-environment-configuration",
-          },
-          {
-            title: "Infrastructure as Code (IaC)",
-            href: "/digital-product-engineering/virtualization/infrastructure-as-code",
-          },
-          {
-            title: "Intelligent Migration",
-            href: "/digital-product-engineering/virtualization/intelligent-migration",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Lifecycle Governance",
+        //     href: "/digital-product-engineering/virtualization/lifecycle-governance",
+        //   },
+        //   {
+        //     title: "Containerization and orchestration",
+        //     href: "/digital-product-engineering/virtualization/containerization-and-orchestration",
+        //   },
+        //   {
+        //     title: "Hypervisor Optimization",
+        //     href: "/digital-product-engineering/virtualization/hypervisor-optimization",
+        //   },
+        //   {
+        //     title: "OpenStack environment configuration",
+        //     href: "/digital-product-engineering/virtualization/openStack-environment-configuration",
+        //   },
+        //   {
+        //     title: "Infrastructure as Code (IaC)",
+        //     href: "/digital-product-engineering/virtualization/infrastructure-as-code",
+        //   },
+        //   {
+        //     title: "Intelligent Migration",
+        //     href: "/digital-product-engineering/virtualization/intelligent-migration",
+        //   },
+        // ],
+        description:"Enabling agile infrastructure through software-defined virtualization for optimized performance and scalability."
       },
 
       {
         title: "Storage Networking",
         href: "/digital-product-engineering/storage-networking",
-        section: [
-          {
-            title: "Defined Storage Solutions",
-            href: "/digital-product-engineering/storage-networking/defined-storage-solutions",
-          },
-          {
-            title: "SDN Architecture",
-            href: "/digital-product-engineering/storage-networking/sdn-architecture",
-          },
-          {
-            title: "Hyperconverged infrastructure (HCI) integration",
-            href: "/digital-product-engineering/storage-networking/hyperconverged-infrastructure-integration",
-          },
-          {
-            title: "Storage gateway engineering",
-            href: "/digital-product-engineering/storage-networking/storage-gateway-engineering",
-          },
-          {
-            title: "Intelligent Network Control",
-            href: "/digital-product-engineering/storage-networking/intelligent-network-control",
-          },
-          {
-            title: "Network function virtualization (NFV) services",
-            href: "/digital-product-engineering/storage-networking/network-function-virtualization-services",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Defined Storage Solutions",
+        //     href: "/digital-product-engineering/storage-networking/defined-storage-solutions",
+        //   },
+        //   {
+        //     title: "SDN Architecture",
+        //     href: "/digital-product-engineering/storage-networking/sdn-architecture",
+        //   },
+        //   {
+        //     title: "Hyperconverged infrastructure (HCI) integration",
+        //     href: "/digital-product-engineering/storage-networking/hyperconverged-infrastructure-integration",
+        //   },
+        //   {
+        //     title: "Storage gateway engineering",
+        //     href: "/digital-product-engineering/storage-networking/storage-gateway-engineering",
+        //   },
+        //   {
+        //     title: "Intelligent Network Control",
+        //     href: "/digital-product-engineering/storage-networking/intelligent-network-control",
+        //   },
+        //   {
+        //     title: "Network function virtualization (NFV) services",
+        //     href: "/digital-product-engineering/storage-networking/network-function-virtualization-services",
+        //   },
+        // ],
+        description:"Delivering efficient, high-performance storage networking solutions for seamless data access and management."
       },
       {
         title: "Security Services",
         href: "/digital-product-engineering/security",
-        section: [
-          {
-            title: "Endpoint and perimeter security enablement",
-            href: "/digital-product-engineering/security/endpoint-and-perimeter-security-enablement",
-          },
-          {
-            title: "Identity and access management (IAM)",
-            href: "/digital-product-engineering/security/identity-and-access-management",
-          },
-          {
-            title: "Vulnerability and penetration testing",
-            href: "/digital-product-engineering/security/vulnerability-and-penetration-testing",
-          },
-          {
-            title: "DevSecOps",
-            href: "/digital-product-engineering/security/dev-sec-ops",
-          },
-          {
-            title: "Zero Trust architecture enablement",
-            href: "/digital-product-engineering/security/zero-trust-architecture-enablement",
-          },
-          {
-            title: "Service continuity and backup automation",
-            href: "/digital-product-engineering/security/service-continuity-and-backup-automation",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Endpoint and perimeter security enablement",
+        //     href: "/digital-product-engineering/security/endpoint-and-perimeter-security-enablement",
+        //   },
+        //   {
+        //     title: "Identity and access management (IAM)",
+        //     href: "/digital-product-engineering/security/identity-and-access-management",
+        //   },
+        //   {
+        //     title: "Vulnerability and penetration testing",
+        //     href: "/digital-product-engineering/security/vulnerability-and-penetration-testing",
+        //   },
+        //   {
+        //     title: "DevSecOps",
+        //     href: "/digital-product-engineering/security/dev-sec-ops",
+        //   },
+        //   {
+        //     title: "Zero Trust architecture enablement",
+        //     href: "/digital-product-engineering/security/zero-trust-architecture-enablement",
+        //   },
+        //   {
+        //     title: "Service continuity and backup automation",
+        //     href: "/digital-product-engineering/security/service-continuity-and-backup-automation",
+        //   },
+        // ],
+        description:"Protecting digital assets with end-to-end security, compliance, and threat management solutions."
       },
     ],
   },
