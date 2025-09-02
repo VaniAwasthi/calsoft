@@ -14,12 +14,12 @@ import {
   fetchBlogFilterList,
   fetchFilteredBlogs,
 } from "../../store/actions/blogAction";
-import FilterPanel from "../utilities/FilterPannel";
 import ButtonLayout from "../utilities/ButtonLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
+import { FilterSec } from "../utilities/FilterSec";
 
 export const PressReleaseCard = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [openDropdown, setOpenDropdown] = useState("");
   const [topicLimitWarning, setTopicLimitWarning] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
@@ -30,89 +30,87 @@ export const PressReleaseCard = () => {
   const [visibleCount, setVisibleCount] = useState(6);
   const [copiedId, setCopiedId] = useState(null);
   const loadMoreRef = useRef(null);
- 
+
   useEffect(() => {
     dispatch(fetchBlogFilterList());
   }, [dispatch]);
 
-  
   const FilterIndustry = useSelector(
     (state) => state.blogs.filterIndustry || []
   );
   const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
 
   const filters = {
-    Industry: [...FilterIndustry],
-    Topics: [...FilterTopic],
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
   };
 
-const resources = [
+  const resources = [
     {
-    id: 1,
-    image: img01,
-     date:"12/03/2025",
-    title: "Calsoft Partners with IBM WatsonX to deliver AI-driven Solutions",
-    description:
-      "Maximize enterprise AI investments with IBM WatsonX & Calsoft",
-    link: "https://www.calsoftinc.com/calsoft-partners-with-ibm-watsonx",
-    imageTitle: "Corporate & Leadership Updates",
-  },
-  {
-    id: 2,
-    image: img04,
-     date:"12/03/2025",
-    title:
-      "Calsoft & StreamNative Partner to Cut Streaming Costs, Boost Performance",
-    description:
-      "Discover how enterprises can reduce Kafka costs by up to 50% without compromising on real-time performance",
-    link: "https://www.einpresswire.com/press-releases/report/5147172",
-    imageTitle: " Partnerships & Ecosystem ",
-  },
-  {
-    id: 3,
-    image: img03,
-     date:"12/03/2025",
-    title: "Calsoft x Segmind: AI-Powered Visuals for Smarter E-Commerce",
-    description:
-      "Transforming product imagery with speed, scale, and creativity.",
-    link: "https://www.einpresswire.com/press-releases/report/u0YVj93WNWxZB3Mm?n=2",
-    imageTitle: "Innovation, Products & Platforms",
-  },
-  {
-    id: 4,
-    image: img02,
-     date:"12/03/2025",
-    title: "Calsoft x SmartHub.ai: Advancing AI at the Edge",
-    description:
-      "Delivering intelligent automation and security for next-gen connected infrastructure",
-    link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
-    imageTitle: "Customer Impact & Case Studies",
-  },
-  {
-    id: 5,
-     date:"12/03/2025",
-    image: img05,
-    title: "Accelerate high-quality software products.",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
-    imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
-    imageTitle: "Thought Leadership & Industry Insights",
-  },
-  {
-    id: 6,
-     date:"12/03/2025",
-    image: img06,
-    title: "Enhance Your Development Process",
-    description:
-      "Discover innovative solutions for modern software development.",
-    link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
-    imageTitle: "People, Culture & Responsibility",
-  },
-  
+      id: 1,
+      image: img01,
+      date: "12/03/2025",
+      title: "Calsoft Partners with IBM WatsonX to deliver AI-driven Solutions",
+      description:
+        "Maximize enterprise AI investments with IBM WatsonX & Calsoft",
+      link: "https://www.calsoftinc.com/calsoft-partners-with-ibm-watsonx",
+      imageTitle: "Corporate & Leadership Updates",
+    },
+    {
+      id: 2,
+      image: img04,
+      date: "12/03/2025",
+      title:
+        "Calsoft & StreamNative Partner to Cut Streaming Costs, Boost Performance",
+      description:
+        "Discover how enterprises can reduce Kafka costs by up to 50% without compromising on real-time performance",
+      link: "https://www.einpresswire.com/press-releases/report/5147172",
+      imageTitle: " Partnerships & Ecosystem ",
+    },
+    {
+      id: 3,
+      image: img03,
+      date: "12/03/2025",
+      title: "Calsoft x Segmind: AI-Powered Visuals for Smarter E-Commerce",
+      description:
+        "Transforming product imagery with speed, scale, and creativity.",
+      link: "https://www.einpresswire.com/press-releases/report/u0YVj93WNWxZB3Mm?n=2",
+      imageTitle: "Innovation, Products & Platforms",
+    },
+    {
+      id: 4,
+      image: img02,
+      date: "12/03/2025",
+      title: "Calsoft x SmartHub.ai: Advancing AI at the Edge",
+      description:
+        "Delivering intelligent automation and security for next-gen connected infrastructure",
+      link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
+      imageTitle: "Customer Impact & Case Studies",
+    },
+    {
+      id: 5,
+      date: "12/03/2025",
+      image: img05,
+      title: "Accelerate high-quality software products.",
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
+      imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
+      imageTitle: "Thought Leadership & Industry Insights",
+    },
+    {
+      id: 6,
+      date: "12/03/2025",
+      image: img06,
+      title: "Enhance Your Development Process",
+      description:
+        "Discover innovative solutions for modern software development.",
+      link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
+      imageTitle: "People, Culture & Responsibility",
+    },
   ];
 
-   const handleCopy = (link, id) => {
+  const handleCopy = (link, id) => {
     navigator.clipboard.writeText(link);
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
@@ -122,7 +120,6 @@ const resources = [
     window.open(item.link, "_blank"); // ✅ open link in new tab
   };
   const filteredResources = resources;
-
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -197,13 +194,15 @@ const resources = [
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterPanel
+        <FilterSec
           filters={filters}
           activeFilters={activeFilters}
+          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
-          setActiveFilters={setActiveFilters}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
         {topicLimitWarning && (
@@ -224,32 +223,35 @@ const resources = [
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
-               
                 className="relative flex flex-col h-[350px] md:h-[350px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg hover:scale-3d transition duration-300 group cursor-pointer"
               >
                 <div className="w-full h-[55%] relative">
-                 <Image
-  src={item.image || Info1}   
-  alt={item.title || "Press Release"}
-  className="w-full h-full object-cover"
-  width={400}
-  height={400}
-/>
-
+                  <Image
+                    src={item.image || Info1}
+                    alt={item.title || "Press Release"}
+                    className="w-full h-full object-cover"
+                    width={400}
+                    height={400}
+                  />
                 </div>
                 {/*content */}
                 <div className="w-full px-4 py-3 flex flex-col justify-between  duration-300">
-                <span className="text-[10px]  font-medium text-[#2E3092] h-1/4"> {item.date}</span>
-                <h3 className="text-sm md:text-[15px] font-semibold w-10/12 break-words h-2/4">
-                      {item.title}
-                </h3>
-                <div  className="flex items-center justify-between my-2 h-1/4">
-                   
-                        
-                        <ButtonLayout text="Read More" hoverImage={ButtonImage} className="!h-[40px] !w-[150px]"  onClick={() => handleClick(item)}/>
-                       
+                  <span className="text-[10px]  font-medium text-[#2E3092] h-1/4">
+                    {" "}
+                    {item.date}
+                  </span>
+                  <h3 className="text-sm md:text-[15px] font-semibold w-10/12 break-words h-2/4">
+                    {item.title}
+                  </h3>
+                  <div className="flex items-center justify-between my-2 h-1/4">
+                    <ButtonLayout
+                      text="Read More"
+                      hoverImage={ButtonImage}
+                      className="!h-[40px] !w-[150px]"
+                      onClick={() => handleClick(item)}
+                    />
 
-                <div className="flex flex-col ">
+                    <div className="flex flex-col ">
                       <button
                         onClick={(e) => {
                           e.stopPropagation(); // ✅ prevent grid click
@@ -266,8 +268,7 @@ const resources = [
                         </span>
                       )}
                     </div>
-                </div>
-                
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -278,6 +279,5 @@ const resources = [
         <div ref={loadMoreRef} className="h-1"></div>
       </div>
     </section>
-  
   );
 };
