@@ -10,12 +10,12 @@ import {
   fetchBlogFilterList,
   fetchFilteredBlogs,
 } from "../../store/actions/blogAction";
-import FilterPanel from "../utilities/FilterPannel";
 import { setSelectedDatasheetsId } from "../../store/reducers/datasheetReducer";
 import { useRouter } from "next/navigation";
 import { fetchWebinarsList } from "../../store/actions/webinarAction";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import ButtonLayout from "../utilities/ButtonLayout";
+import { FilterSec } from "../utilities/FilterSec";
 
 export const WebinarList = () => {
   const dispatch = useDispatch();
@@ -47,37 +47,35 @@ export const WebinarList = () => {
   const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
 
   const filters = {
-    Industry: [...FilterIndustry],
-    Topics: [...FilterTopic],
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
   };
-const resources = WebinarsData?.map((item) => {
-  const slug = item.hero_title1
-    ? item.hero_title1
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/(^-|-$)/g, "")
-    : "untitled";
+  const resources = WebinarsData?.map((item) => {
+    const slug = item.hero_title1
+      ? item.hero_title1
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/(^-|-$)/g, "")
+      : "untitled";
 
-  return {
-    ...item,
-    id: item._id,
-    title: item.hero_title1,
-    image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
-    tags: ["AI"],
-    slug,
-    link: `/insights/webinars/${slug}`, // ✅ updated here
-  };
-});
-
+    return {
+      ...item,
+      id: item._id,
+      title: item.hero_title1,
+      image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
+      tags: ["AI"],
+      slug,
+      link: `/insights/webinars/${slug}`, // ✅ updated here
+    };
+  });
 
   const filteredResources = resources;
 
-const handleCopy = (link, id) => {
-  navigator.clipboard.writeText(`${window.location.origin}${link}`);
-  setCopiedId(id);
-  setTimeout(() => setCopiedId(null), 2000);
-};
-
+  const handleCopy = (link, id) => {
+    navigator.clipboard.writeText(`${window.location.origin}${link}`);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -152,13 +150,15 @@ const handleCopy = (link, id) => {
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterPanel
+        <FilterSec
           filters={filters}
           activeFilters={activeFilters}
+          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
-          setActiveFilters={setActiveFilters}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
         {topicLimitWarning && (
@@ -170,79 +170,78 @@ const handleCopy = (link, id) => {
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
         {/* Grid Display */}
-       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-  <AnimatePresence>
-    {currentPageData.map((item, idx) => (
-      <motion.div
-        key={item.id}
-        initial={{ opacity: 0, y: 30 }}
-        transition={{ duration: 0.4, delay: idx * 0.1 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: false, amount: 0.3 }}
-        className="flex flex-col h-[350px] md:h-[400px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition duration-300"
-      >
-        {/* Image */}
-        <div className="w-full h-[55%] relative">
-          <Image
-            src={item.image}
-            alt={item.title}
-            className="w-full h-full object-cover"
-            width={400}
-            height={400}
-          />
-        </div>
-
-        {/* Content */}
-        <div className="flex flex-col flex-grow p-4">
-          {/* Title */}
-          <h3 className="text-sm md:text-[16px] font-semibold mb-2 text-[#28272D]">
-            {item.title}
-          </h3>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {item.tags.map((tag) => (
-              <span
-                key={tag}
-                className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <AnimatePresence>
+            {currentPageData.map((item, idx) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="flex flex-col h-[350px] md:h-[400px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition duration-300"
               >
-                {tag}
-              </span>
+                {/* Image */}
+                <div className="w-full h-[55%] relative">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="flex flex-col flex-grow p-4">
+                  {/* Title */}
+                  <h3 className="text-sm md:text-[16px] font-semibold mb-2 text-[#28272D]">
+                    {item.title}
+                  </h3>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Buttons row */}
+                  <div className="flex items-center justify-between mt-auto">
+                    <ButtonLayout
+                      text="Read More"
+                      onClick={() => handleClick(item)}
+                      hoverImage={ButtonImage}
+                      className="!h-[40px] !w-[150px]"
+                    />
+                    <div className="flex flex-col items-center">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCopy(item.link, item.id);
+                        }}
+                        className="text-[#2E3092] hover:text-black"
+                        title="Copy link"
+                      >
+                        <FaShareAlt className="w-6 h-6" />
+                      </button>
+                      {copiedId === item.id && (
+                        <span className="text-green-500 text-xs mt-1">
+                          Link copied!
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             ))}
-          </div>
-
-          {/* Buttons row */}
-          <div className="flex items-center justify-between mt-auto">
-            <ButtonLayout
-              text="Read More"
-              onClick={() => handleClick(item)}
-              hoverImage={ButtonImage}
-              className="!h-[40px] !w-[150px]"
-            />
-            <div className="flex flex-col items-center">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleCopy(item.link, item.id);
-                }}
-                className="text-[#2E3092] hover:text-black"
-                title="Copy link"
-              >
-                <FaShareAlt className="w-6 h-6" />
-              </button>
-              {copiedId === item.id && (
-                <span className="text-green-500 text-xs mt-1">
-                  Link copied!
-                </span>
-              )}
-            </div>
-          </div>
+          </AnimatePresence>
         </div>
-      </motion.div>
-    ))}
-  </AnimatePresence>
-</div>
-
 
         {/* Pagination */}
         <div className="flex justify-center items-center">

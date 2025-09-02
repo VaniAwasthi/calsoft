@@ -2,7 +2,7 @@
 
 import { IoIosArrowDown } from "react-icons/io";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const FilterSec = ({
   filters,
@@ -15,6 +15,15 @@ export const FilterSec = ({
   mainClass,
 }) => {
   const dropdownRef = useRef(null);
+  const [isSearchExpanded, setIsSearchExpanded] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const searchInputRef = useRef(null);
+  const filterCount = Object.keys(filters).length;
+  const getGridCols = () => {
+    if (filterCount >= 3) return "md:grid-cols-3";
+    if (filterCount === 2) return "md:grid-cols-2";
+    return "md:grid-cols-1";
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -32,6 +41,23 @@ export const FilterSec = ({
     };
   }, [openDropdown, setOpenDropdown]);
 
+  useEffect(() => {
+    if (searchValue.trim() === "") return;
+
+    const timeoutId = setTimeout(() => {
+      console.log("[v0] Search executed with value:", searchValue);
+      // Your search function will go here
+    }, 800);
+
+    return () => clearTimeout(timeoutId);
+  }, [searchValue]);
+
+  useEffect(() => {
+    if (isSearchExpanded && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isSearchExpanded]);
+
   const handleSelect = (filterName, option) => {
     const isMultiSelect = Array.isArray(activeFilters[filterName]);
 
@@ -43,22 +69,27 @@ export const FilterSec = ({
         // If "All" is selected, clear all selections
         setActiveFilters((prev) => ({ ...prev, [filterName]: [] }));
       } else {
-        // Toggle the option in the array
-        const isSelected = currentSelections.includes(option);
+        // Toggle the option in the array using ID
+        const optionId = option._id;
+        const isSelected = currentSelections.includes(optionId);
         let newSelections;
 
         if (isSelected) {
-          // Remove the option
-          newSelections = currentSelections.filter((item) => item !== option);
+          // Remove the option ID
+          newSelections = currentSelections.filter((item) => item !== optionId);
         } else {
-          newSelections = [...currentSelections, option];
+          if (currentSelections.length >= 3) {
+            return; // Don't add more if already at limit
+          }
+          newSelections = [...currentSelections, optionId];
         }
 
         setActiveFilters((prev) => ({ ...prev, [filterName]: newSelections }));
       }
     } else {
-      // Handle single-select logic (for Industry)
-      selectFilter(filterName, option);
+      // Handle single-select logic (for Industry) - store ID instead of name
+      const valueToStore = option === "All" ? "All" : option._id;
+      selectFilter(filterName, valueToStore);
       setOpenDropdown("");
     }
   };
@@ -69,14 +100,30 @@ export const FilterSec = ({
     if (Array.isArray(value)) {
       if (value.length === 0) {
         return "All";
-      } else if (value.length <= 2) {
-        return value.join(", ");
       } else {
-        return `${value.slice(0, 2).join(", ")} +${value.length - 2}`;
+        // Convert IDs back to names for display
+        const names = value
+          .map((id) => {
+            const option = filters[filterType].find((opt) => opt._id === id);
+            return option ? option.name : id;
+          })
+          .filter(Boolean);
+
+        if (names.length <= 2) {
+          return names.join(", ");
+        } else {
+          return `${names.slice(0, 2).join(", ")} +${names.length - 2}`;
+        }
       }
     }
 
-    return value || "All";
+    // For single select, convert ID back to name for display
+    if (value === "All") {
+      return "All";
+    } else {
+      const option = filters[filterType].find((opt) => opt._id === value);
+      return option ? option.name : value;
+    }
   };
 
   const handleReset = () => {
@@ -87,6 +134,22 @@ export const FilterSec = ({
         : "All";
     });
     setActiveFilters(resetFilters);
+    setSearchValue("");
+    setIsSearchExpanded(false);
+  };
+
+  const handleSearchClick = () => {
+    setIsSearchExpanded(true);
+  };
+
+  const handleSearchBlur = () => {
+    if (searchValue.trim() === "") {
+      setIsSearchExpanded(false);
+    }
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchValue(e.target.value);
   };
 
   return (
@@ -96,7 +159,7 @@ export const FilterSec = ({
           {/* Dropdown filters */}
           <div
             ref={dropdownRef}
-            className="col-span-12 md:col-span-9 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"
+            className={`col-span-12 md:col-span-9 grid grid-cols-1 sm:grid-cols-2 ${getGridCols()} gap-4`}
           >
             {Object.keys(filters).map((filterType) => {
               const isMultiSelect = Array.isArray(activeFilters[filterType]);
@@ -142,20 +205,38 @@ export const FilterSec = ({
                       >
                         {filters[filterType].map((option) => {
                           const isSelected = isMultiSelect
-                            ? activeFilters[filterType]?.includes(option)
-                            : activeFilters[filterType] === option;
+                            ? activeFilters[filterType]?.includes(
+                                option === "All" ? "All" : option._id
+                              )
+                            : activeFilters[filterType] ===
+                              (option === "All" ? "All" : option._id);
+
+                          const isDisabled =
+                            isMultiSelect &&
+                            !isSelected &&
+                            option !== "All" &&
+                            (activeFilters[filterType]?.length || 0) >= 3;
+
+                          const displayName =
+                            option === "All" ? "All" : option.name;
 
                           return (
                             <div
-                              key={option}
-                              onClick={() => handleSelect(filterType, option)}
+                              key={option === "All" ? "All" : option._id}
+                              onClick={() =>
+                                !isDisabled && handleSelect(filterType, option)
+                              }
                               className={`px-4 py-2 text-sm cursor-pointer hover:bg-gray-100 flex items-center justify-between ${
                                 isSelected
                                   ? "bg-blue-50 text-blue-700 font-medium"
                                   : ""
+                              } ${
+                                isDisabled
+                                  ? "opacity-50 cursor-not-allowed hover:bg-white"
+                                  : ""
                               }`}
                             >
-                              <span>{option}</span>
+                              <span>{displayName}</span>
                               {isMultiSelect &&
                                 isSelected &&
                                 option !== "All" && (
@@ -164,6 +245,12 @@ export const FilterSec = ({
                             </div>
                           );
                         })}
+
+                        {isMultiSelect && selectedCount > 0 && (
+                          <div className="px-4 py-2 text-xs text-gray-500 border-t bg-gray-50">
+                            {selectedCount}/3 selected
+                          </div>
+                        )}
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -174,22 +261,66 @@ export const FilterSec = ({
 
           {/* Search and Reset buttons */}
           <div className="col-span-12 md:col-span-3 flex gap-2">
-            <button className="w-14 h-14 p-2 rounded-lg bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex flex-col justify-center items-center">
-              <svg
-                className="w-5 h-5 text-[#2E3092]"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              <span className="text-[10px] text-[#2E3092] ">Search</span>
-            </button>
+            <motion.div
+              initial={false}
+              animate={{
+                width: isSearchExpanded ? "200px" : "56px",
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 30,
+              }}
+              className="relative"
+            >
+              {!isSearchExpanded ? (
+                <button
+                  onClick={handleSearchClick}
+                  className="w-14 h-14 p-2 rounded-lg bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex flex-col justify-center items-center"
+                >
+                  <svg
+                    className="w-5 h-5 text-[#2E3092]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                  <span className="text-[10px] text-[#2E3092]">Search</span>
+                </button>
+              ) : (
+                <div className="relative h-14 flex items-center">
+                  <input
+                    ref={searchInputRef}
+                    type="text"
+                    value={searchValue}
+                    onChange={handleSearchChange}
+                    onBlur={handleSearchBlur}
+                    placeholder="Search..."
+                    className="w-full h-full pl-12 pr-4 rounded-lg bg-[#EFEFEF] border border-[#2E3092] text-[#2E3092] placeholder-[#2E3092]/60 focus:outline-none focus:ring-2 focus:ring-[#2E3092]/20"
+                  />
+                  <svg
+                    className="absolute left-3 w-5 h-5 text-[#2E3092] pointer-events-none"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </div>
+              )}
+            </motion.div>
+
             <button
               className="w-14 h-14 p-2 rounded-lg bg-[#EFEFEF] hover:bg-[#ddd] border border-[#2E3092] flex flex-col justify-center items-center"
               onClick={handleReset}
@@ -207,7 +338,7 @@ export const FilterSec = ({
                   d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                 />
               </svg>
-              <span className="text-[10px] text-[#2E3092] ">Clear</span>
+              <span className="text-[10px] text-[#2E3092]">Clear</span>
             </button>
           </div>
         </div>

@@ -26,7 +26,6 @@ import { fetchCaseStudiesList } from "../../store/actions/caseStudyActions.js";
 import { setSelectedCaseStudyId } from "../../store/reducers/caseStudyReducer.js";
 import { slugify } from "../utilities/helper/SlugGenerator";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
-import FilterPanel from "../utilities/FilterPannel";
 import { FilterSec } from "../utilities/FilterSec";
 
 export const CaseStudiesCard = () => {
@@ -49,8 +48,8 @@ export const CaseStudiesCard = () => {
   });
 
   const filters = {
-    Industry: ["All", ...FilterIndustry.map((ele) => ele.name)],
-    Topics: ["All", ...FilterTopic.map((ele) => ele.name)],
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
   };
 
   useEffect(() => {
