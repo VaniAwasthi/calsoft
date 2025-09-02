@@ -10,6 +10,7 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import ImpactAnalysisMatter from "../../../component/testing/ImpactAnalysisMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_4.webp"
 
 const Page = () => {
     const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -31,6 +32,7 @@ const Page = () => {
         navItems={navItems}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
+        heroImage={Img}
         
       />
       <WhyItMatters

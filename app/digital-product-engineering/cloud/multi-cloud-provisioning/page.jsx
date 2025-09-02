@@ -9,6 +9,7 @@ import WhyCalsoft from "../../../component/infra/WhyCalsoft";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import MultiCloudMatters from "../../../component/infra/MultiCloudMatters";
 import Agility from "../../../component/infra/Agility";
+import Img from "@/app/assets/DigitalEngineering/cloud-service/Multi-Cloud-Provisioning.webp"
 
 const Page = () => {
   return (
@@ -18,6 +19,7 @@ const Page = () => {
         description="Unify your infrastructure operations with a secure, policy-driven
 multi-cloud provisioning approach — minimizing shadow IT and maximizing agility."
         buttonText="Request Readiness Check"
+        Hero_bg={Img}
       />
       <WhyItMatters
       id="why-it-matters"

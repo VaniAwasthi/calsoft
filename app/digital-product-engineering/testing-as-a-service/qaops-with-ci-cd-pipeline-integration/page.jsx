@@ -11,6 +11,7 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import IntegrationMatter from "../../../component/testing/Integration-Matter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_5.webp"
 
 const Page = () => {
     const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -32,6 +33,7 @@ const Page = () => {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        heroImage={Img}
       />
       <WhyItMatters
         title="The Missing Link in DevOps? Continuous Quality."

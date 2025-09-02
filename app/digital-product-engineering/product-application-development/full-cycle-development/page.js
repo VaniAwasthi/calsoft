@@ -14,7 +14,7 @@ import line3 from "../../../assets/DigitalEngineering/maturity/line3.svg";
 
 import mobile2 from "../../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../../assets/DigitalEngineering/maturity/mobile3.svg";
-import img from "@/app/assets/infra/Hero_bg.webp";
+import img from "@/app/assets/DigitalEngineering/product-app/Full-Cycle-Development.webp";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");

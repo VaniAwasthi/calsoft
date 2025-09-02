@@ -11,6 +11,7 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import BenchmarkingMatter from "../../../component/testing/BenchmarkingMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_6.webp"
 
 const Page = () => {
     const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -30,6 +31,7 @@ const Page = () => {
         description="Establish performance, scalability, and quality baselines before your next release, migration, or modernization effort — with Calsoft’s Benchmarking Readiness service."
         buttonText="Request Free Assessment"activeTab={activeTab}
         setActiveTab={setActiveTab}navItems={navItems}
+        heroImage={Img}
       />
       <WhyItMatters
         title="Measure What Matters — Before You Deploy."
