@@ -1,8 +1,9 @@
 "use client";
+
 import Image from "next/image";
 import { FaCalendarAlt, FaClock, FaHourglassHalf } from "react-icons/fa";
 import { motion } from "framer-motion";
-
+import React, { useState } from "react";
 import bgImage from "../../assets/workshop/workshopBg.webp";
 import rightImage from "../../assets/workshop/workshopImg.webp";
 import ButtonLayout from "../utilities/ButtonLayout";
@@ -149,8 +150,9 @@ export const RegressionSection = () => {
           engaging communities, and creating meaningful local impact.
         </motion.p>
 
+        <WorkshopInterface />
         {/* Event List */}
-        <div className="mt-10 space-y-6">
+        {/* <div className="mt-10 space-y-6">
           {events.map((event, index) => (
             <motion.div
               initial={{ x: -50, opacity: 0 }}
@@ -160,7 +162,6 @@ export const RegressionSection = () => {
               key={index}
               className="border border-dashed border-[#2E3092] rounded-lg px-4 py-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
             >
-              {/* Date and Title */}
               <div className="flex items-start  gap-10">
                 <div className="flex gap-2  text-center text-[#2E3092]">
                   <motion.div
@@ -203,8 +204,6 @@ export const RegressionSection = () => {
                   {event.title}
                 </motion.div>
               </div>
-
-              {/* Time and Button */}
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -231,11 +230,158 @@ export const RegressionSection = () => {
               </motion.div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
 };
+
+export function WorkshopInterface() {
+  const sessionsData = [
+    {
+      id: 1,
+      time: "9:00-9:05 PM",
+      minutes: "5 mins.",
+      session: "Welcome & Workshop Flow Overview",
+      description: "Introduction to the workshop and overview of the agenda",
+    },
+    {
+      id: 2,
+      time: "9:05-9:20 PM",
+      minutes: "15 mins.",
+      session: "The Regression Bottleneck - What's Broken",
+      description: "Understanding current challenges in regression testing",
+    },
+    {
+      id: 3,
+      time: "9:20-9:30 PM",
+      minutes: "10 mins.",
+      session: "Meet CalTIA-AI-Powered Test Analyzer",
+      description: "Introduction to AI-powered testing solutions",
+    },
+    {
+      id: 4,
+      time: "9:30-10:15 PM",
+      minutes: "40 mins.",
+      session: "Live Demo - Reducing Test Debt & Accelerating",
+      description: "Hands-on demonstration of test optimization techniques",
+    },
+    {
+      id: 5,
+      time: "10:15-10:25 PM",
+      minutes: "15 mins.",
+      session: "Expert Q&A - Ask, Explore, Challenge",
+      description: "Interactive Q&A session with industry experts",
+    },
+    {
+      id: 6,
+      time: "10:25-10:30 PM",
+      minutes: "5 mins.",
+      session: "1:1 Workshop Invitation + Free Trial version",
+      description: "Personal consultation and trial access information",
+    },
+  ];
+  const [selectedSession, setSelectedSession] = useState(sessionsData[0]);
+
+  return (
+    <div className="flex lg:flex-row flex-col gap-8 mt-8">
+      {/* Left Side - Event Details */}
+      <div className="space-y-6 w-[70%]">
+        <div>
+          <h1 className="text-[#2e3092] text-5xl font-medium mb-6">
+            {new Date(Date.now()).toLocaleDateString("en-GB", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+          </h1>
+
+          <h2 className="text-[#000000] text-2xl font-medium leading-tight mb-6">
+            {selectedSession.session}
+          </h2>
+
+          <div className="flex items-center gap-2 text-[#2e3092] text-xl mb-8">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
+              <polyline
+                points="12,6 12,12 16,14"
+                stroke="currentColor"
+                strokeWidth="2"
+              />
+            </svg>
+            {selectedSession.time}
+          </div>
+
+          <button className="bg-[#ba0007] text-white px-8 py-3 rounded-full flex items-center gap-3 text-lg font-medium hover:bg-[#a00006] transition-colors">
+            Book Now
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 12h14M12 5l7 7-7 7"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Right Side - Sessions Table */}
+      <div className="bg-white">
+        <div className="overflow-hidden rounded-lg border border-[#d9d9d9]">
+          {/* Table Header */}
+          <div className="bg-[#2e3092] text-white">
+            <div className="grid grid-cols-3 gap-4 px-6 py-4">
+              <div className="font-medium">Time (IST)</div>
+              <div className="font-medium">Minutes</div>
+              <div className="font-medium">Session</div>
+            </div>
+          </div>
+
+          {/* Table Body */}
+          <div className="divide-y divide-[#d9d9d9]">
+            {sessionsData.map((session, index) => (
+              <div
+                key={session.id}
+                className={`grid grid-cols-3 gap-4 px-6 py-4 cursor-pointer hover:bg-[#d9d9d9] transition-colors text-[#7c7c7c] text-lg font-medium ${
+                  selectedSession?.id === session.id
+                    ? "bg-[#d9d9d9]"
+                    : index % 2 === 0
+                    ? "bg-white"
+                    : "bg-[#f8f8f8]"
+                }`}
+                onClick={() => setSelectedSession(session)}
+              >
+                <div>{session.time}</div>
+                <div>{session.minutes}</div>
+                <div>{session.session}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export const CaseStudySection = ({ recommendedData }) => {
   return (

@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function ButtonLayout({
   text,
   onClick,
+  disabled = false,
   buttonImage,
   hoverImage,
   className = "",
@@ -63,6 +64,7 @@ export default function ButtonLayout({
   return (
     <button
       type="button"
+      disabled={disabled}
       onClick={onClick}
       className={`relative group h-[40px] md:h-[48px] rounded-full flex items-center justify-center gap-4 transition-all duration-500 ease-out overflow-hidden transform hover:scale-105 px-4 ${className}`}
       style={{

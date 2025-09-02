@@ -143,7 +143,7 @@ export default function WorkWithUs() {
         <p className="text-4xl sm:text-5xl font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">
           Some benefits for clients with Calsoft
         </p>
-        <div className="gap-8 gap-y-20 md:gap-6 grid sm:grid-cols-3 grid-cols-2 lg:grid-cols-6">
+        <div className="gap-8 gap-y-20 md:gap-y-14 gap-x-8 grid sm:grid-cols-3 2xs:grid-cols-2 lg:grid-cols-6">
           {data.map((ele, idx) => (
             <motion.div
               key={idx}
