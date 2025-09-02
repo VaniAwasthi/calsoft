@@ -9,6 +9,7 @@ import whitepaperReducer from "./reducers/whitepaperReducer";
 import datasheetsReducer from "./reducers/datasheetReducer";
 import webinarsReducer from "./reducers/webinarsReducer";
 import useCasesReducer from "./reducers/useCasesReducer";
+import podcastReducer from "./reducers/podcastReducer";
 
 // Helper function for persist configs
 const persistConfig = (key) => ({
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   datasheets: persistReducer(persistConfig("datasheets"), datasheetsReducer),
   webinars: persistReducer(persistConfig("webinars"), webinarsReducer),
   usecases: persistReducer(persistConfig("usecases"), useCasesReducer),
+  podcast: persistReducer(persistConfig("podcasts"), podcastReducer),
 });
 
 export const store = configureStore({
