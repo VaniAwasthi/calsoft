@@ -51,7 +51,7 @@ export const IndustryReportCard = () => {
     industry: i % 2 === 0 ? "Tech" : "Healthcare",
   }));
 
-  const [resources] = useState([...cardData]);
+  const [resources, setResources] = useState([...cardData]);
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -96,6 +96,16 @@ export const IndustryReportCard = () => {
     setCurrentPage(index);
   };
 
+  function search(value) {
+    if (value === "") setResources([...cardData]);
+    else
+      setResources(
+        cardData.filter((blog) =>
+          blog.title.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
@@ -107,6 +117,7 @@ export const IndustryReportCard = () => {
           setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
+          searchDebouncing={search}
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 

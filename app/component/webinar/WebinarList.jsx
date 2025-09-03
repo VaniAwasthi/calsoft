@@ -16,7 +16,6 @@ import { fetchWebinarsList } from "../../store/actions/webinarAction";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import ButtonLayout from "../utilities/ButtonLayout";
 import { FilterSec } from "../utilities/FilterSec";
-import FilterPanel from "../utilities/FilterPannel";
 
 export const WebinarList = () => {
   const dispatch = useDispatch();
@@ -70,7 +69,7 @@ export const WebinarList = () => {
     };
   });
 
-  const filteredResources = resources;
+  const [filteredResources, setFilteredResources] = useState(resources);
 
   const handleCopy = (link, id) => {
     navigator.clipboard.writeText(`${window.location.origin}${link}`);
@@ -148,18 +147,29 @@ export const WebinarList = () => {
     setCurrentPage(index);
   };
 
+  function search(value) {
+    if (value === "") setFilteredResources(resources);
+    else
+      setFilteredResources(
+        resources.filter((blog) =>
+          blog.title.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterPanel
+        <FilterSec
           filters={filters}
           activeFilters={activeFilters}
           setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
-          // setOpenDropdown={setOpenDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
-          // mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
+          searchDebouncing={search}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
         {topicLimitWarning && (

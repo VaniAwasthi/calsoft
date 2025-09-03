@@ -36,7 +36,7 @@ export const CaseStudiesCard = () => {
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-
+  const [filteredListData, setFilteredListData] = useState([]);
   const listData = useSelector((state) => state.caseStudy.list);
   const FilterIndustry = useSelector(
     (state) => state.blogs.filterIndustry || []
@@ -52,12 +52,6 @@ export const CaseStudiesCard = () => {
     Topics: ["All", ...FilterTopic],
   };
 
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-
-    dispatch(fetchCaseStudiesList());
-  }, [dispatch]);
-
   const handleClick = (item) => {
     const safeTitle = item.title || "untitled";
     const slug = slugify(safeTitle, { lower: true });
@@ -68,7 +62,7 @@ export const CaseStudiesCard = () => {
 
   const images = [Info1, Info2];
 
-  const resources = listData.map((item) => {
+  const resources = filteredListData.map((item) => {
     const safeTitle = item?.hero_title1 || "Untitled"; // fallback
     return {
       ...item,
@@ -141,6 +135,26 @@ export const CaseStudiesCard = () => {
       { count: "36%", text: "lower infrastructure costs" },
     ],
   };
+
+  function search(value) {
+    if (value === "") setFilteredListData(listData);
+    else
+      setFilteredListData(
+        listData.filter((caseStudy) =>
+          caseStudy.hero_title1.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
+  useEffect(() => {
+    setFilteredListData(listData);
+  }, [listData]);
+
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(fetchCaseStudiesList());
+  }, [dispatch]);
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full sm:px-6 lg:px-8">
@@ -152,6 +166,7 @@ export const CaseStudiesCard = () => {
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
           setActiveFilters={setActiveFilters}
+          searchDebouncing={search}
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
@@ -202,7 +217,7 @@ export const CaseStudiesCard = () => {
                 </div> */}
             </motion.div>
 
-            <div className=" w-full flex flex-col justify-between">
+            <div className="w-full flex flex-col justify-between">
               <div>
                 {caseStudyData.description.map((desc, index) => (
                   <>

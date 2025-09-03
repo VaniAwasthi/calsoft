@@ -13,6 +13,7 @@ export const FilterSec = ({
   selectFilter,
   setOpenDropdown,
   mainClass,
+  searchDebouncing = (value) => {},
 }) => {
   const dropdownRef = useRef(null);
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
@@ -42,11 +43,10 @@ export const FilterSec = ({
   }, [openDropdown, setOpenDropdown]);
 
   useEffect(() => {
-    if (searchValue.trim() === "") return;
+    // if (searchValue.trim() === "") return;
 
     const timeoutId = setTimeout(() => {
-      console.log("[v0] Search executed with value:", searchValue);
-      // Your search function will go here
+      searchDebouncing(searchValue);
     }, 800);
 
     return () => clearTimeout(timeoutId);
@@ -309,6 +309,7 @@ export const FilterSec = ({
                     viewBox="0 0 29 29"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className="absolute left-3 w-5 h-5 pointer-events-none"
                   >
                     <path
                       d="M11.014 0.214386C5.18125 0.214386 0.452148 4.96901 0.452148 10.8312C0.452148 16.6934 5.18125 21.4472 11.014 21.4472C16.8469 21.4472 21.5767 16.6934 21.5767 10.8312C21.5767 4.96901 16.8469 0.214386 11.014 0.214386ZM11.014 2.86821C15.3823 2.86821 18.9357 6.44052 18.9357 10.8312C18.9357 15.2214 15.3823 18.7927 11.014 18.7927C6.64576 18.7927 3.09244 15.2214 3.09244 10.8312C3.09244 6.44052 6.64576 2.86821 11.014 2.86821ZM11.014 4.63768C7.61729 4.63768 4.85288 7.41599 4.85288 10.8312H6.61332C6.61332 8.39199 8.58779 6.40791 11.014 6.40791V4.63768ZM21.382 17.498C20.4192 19.0037 19.1458 20.2846 17.6483 21.2523L24.1106 27.747C25.1419 28.7836 26.815 28.7836 27.8443 27.747C28.8756 26.7125 28.8756 25.0318 27.8443 23.9942L21.382 17.498Z"
