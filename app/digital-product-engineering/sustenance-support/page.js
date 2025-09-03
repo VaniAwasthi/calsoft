@@ -36,7 +36,6 @@ export default function Page() {
       <UptimeSec />
       <ContactSecData
         BoldContent="Extend platform life, maintain stability, and deliver continuous user satisfaction"
-        link="#"
       />
     </>
   );

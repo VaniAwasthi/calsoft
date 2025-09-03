@@ -235,7 +235,7 @@ export const AccelerateSec = () => {
     <InfraSection
       title="Accelerate with Calsoft’s Mozaic"
       description="Fast-track product engineering using proven frameworks and ready assets."
-      buttonText="Learn More"
+      // buttonText="Learn More"
       link="#"
       whatWeDo={[
         "Use starter kits and templates",

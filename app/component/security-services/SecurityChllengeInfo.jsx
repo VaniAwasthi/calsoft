@@ -247,7 +247,7 @@ export const SreSec = () => {
       <InfraSection
         title="SRE (Site Reliability Engineering)"
         description="Balance development velocity with system stability through proactive operations management."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Define service-level indicators (SLIs) and service-level objectives (SLOs)",

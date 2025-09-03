@@ -106,7 +106,7 @@ export const VirtualizationSec = () => {
       <InfraSection
         title="Virtualization lifecycle management (Day 0–N)"
         description="Handle the complete virtualization lifecycle from setup through scaling and optimization."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/virtualization/lifecycle-governance"
         whatWeDo={[
           "Design virtual infra for flexibility",
@@ -134,7 +134,7 @@ export const Containerization = () => {
       <InfraSection
         title="Containerization and orchestration"
         description="Accelerate application portability, scalability, and resilience with containerization strategies."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/virtualization/containerization-and-orchestration"
         whatWeDo={[
           "Build container stacks with Kubernetes",
@@ -162,7 +162,7 @@ export const HypervisorSec = () => {
       <InfraSection
         title="Hypervisor: Optimizing foundations"
         description="Streamline hypervisor environments for performance, scalability, and operational efficiency."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/virtualization/hypervisor-optimization"
         whatWeDo={[
           "Tune VM density and resources",
@@ -189,7 +189,7 @@ export const MigrateSec = () => {
       <InfraSection
         title="Migrate seamlessly across platforms"
         description="Transition virtual environments with minimal downtime and operational risk."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/virtualization/intelligent-migration"
         whatWeDo={[
           "Shift workloads across setups",
@@ -216,7 +216,7 @@ export const OpenSec = () => {
       <InfraSection
         title="OpenStack environment configuration"
         description="Design, deploy, and optimize OpenStack environments for scalable, cost-effective cloud operations."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/virtualization/openStack-environment-configuration"
         whatWeDo={[
           "Deploy OpenStack infra layers",

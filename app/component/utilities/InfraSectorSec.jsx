@@ -56,7 +56,7 @@ export const InfraSection = ({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:mt-6 md:grid-cols-2 gap-x-6 items-start md:items-center justify-center"
+            className={`grid grid-cols-1 md:mt-6 ${buttonText?"md:grid-cols-2":"md:grid-cols-1"} gap-x-6 items-start md:items-center justify-center`}
           >
             {/* Description */}
             <motion.p
@@ -230,7 +230,7 @@ export const BannerSection = ({
   );
 };
 
-export const ContactSecData = ({ BoldContent, lightContent, link }) => {
+export const ContactSecData = ({ BoldContent, lightContent, link , buttonClicked=() => showHubSpotForm("contact-us-popup")}) => {
   return (
     <>
       <section>
@@ -264,6 +264,7 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
                   image={ButtonImage}
                   hoverImage={ButtonImage}
                   className="!w-[170px] sm:w-[200px] h-8 md:h-10 px-6"
+                  onClick={buttonClicked}
                 />
               </motion.div>
             </div>

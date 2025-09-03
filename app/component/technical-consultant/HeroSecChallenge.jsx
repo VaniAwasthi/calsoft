@@ -213,7 +213,7 @@ export const CostOptimizedSecTechnicalConsulting = () => {
 //       <DataInfoSection
 //         title="Data Protection and Privacy"
 //         description="Protecting your data against internal and external threats."
-        buttonText="Learn More"
+        // buttonText="Learn More"
 //         link="#"
 //         whatWeDo={[
 //           "Apply role-based access and encryption",
@@ -241,7 +241,7 @@ export const CostOptimizedSecTechnicalConsulting = () => {
 //       <DataInfoSection
 //         title="Effortless and Faultless Data Migration"
 //         description="Seamless migration with zero compromise on data integrity."
-        buttonText="Learn More"
+        // buttonText="Learn More"
 //         link="#"
 //         whatWeDo={[
 //           "Plan and execute phased migrations",

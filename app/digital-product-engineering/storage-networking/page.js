@@ -41,7 +41,7 @@ export default function Page() {
       <ContactSecData
         BoldContent="Modernize your storage and networking backbone for agility, resilience, and growth."
         lightContent="How? We can help"
-        link="#"
+        // link="#"
       />
     </>
   );
