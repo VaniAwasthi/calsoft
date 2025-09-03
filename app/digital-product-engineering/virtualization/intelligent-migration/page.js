@@ -11,7 +11,7 @@ import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
-import Img from "@/app/assets/sustenance/Sustenance_BG.webp"
+import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_5.webp"
 import Agility from "@/app/component/infra/Agility";
 
 

@@ -10,11 +10,14 @@ import WhyCalsoft from "../../../component/infra/WhyCalsoft";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import InfraRoadmap from "../../../component/infra/InfraRoadmapMatters";
 import Agility from "../../../component/infra/Agility";
+import Img from "@/app/assets/DigitalEngineering/cloud-service/Infrastructure-Roadmap.webp"
 
 const Page = () => {
   return (
     <>
-      <HeroSec />
+      <HeroSec 
+      Hero_bg={Img}
+      />
       <WhyItMatters
       id="why-it-matters"
         title="Problem + Solution Fit"

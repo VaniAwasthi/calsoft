@@ -8,10 +8,10 @@ import { useRouter } from "next/navigation";
 import { setSelectedWhitepaperId } from "../../store/reducers/whitepaperReducer";
 import { slugify } from "../utilities/helper/SlugGenerator";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
+import { baseUrl } from "@/config";
 import { FilterSec } from "../utilities/FilterSec";
 
 export const WhitepaperCards = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
   const listData = useSelector((state) => state.whitepaper.list);
   const [filteredList, setFilteredList] = useState(listData);
@@ -51,13 +51,6 @@ export const WhitepaperCards = () => {
         industry: item.industry || "Tech",
       }))
     : [];
-
-  const heading =
-    "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool";
-  const description = `A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....
-<br><br>
-
-A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....`;
 
   const handleClick = (item) => {
     const slug = slugify(item.title, { lower: true });
