@@ -311,14 +311,16 @@ export default function OpenVacancies() {
     setOpenDropdown("");
     // setCurrentPage(0);
   };
+
+  // The is not occuring when I comment out the below function
   function search(value) {
-    // if (value === "") setJobData(mainJobData);
-    // else
-    //   setJobData(
-    //     mainJobData.filter((blog) =>
-    //       blog.position.toLowerCase().includes(value.toLowerCase())
-    //     )
-    //   );
+    if (value === "") setJobData(mainJobData);
+    else
+      setJobData(
+        mainJobData.filter((blog) =>
+          blog.position.toLowerCase().includes(value.toLowerCase())
+        )
+      );
   }
   return (
     <div className="">
@@ -333,6 +335,7 @@ export default function OpenVacancies() {
           activeFilters={activeFilters}
           setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
           searchDebouncing={search}
