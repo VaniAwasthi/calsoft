@@ -314,13 +314,13 @@ export default function OpenVacancies() {
 
   // The is not occuring when I comment out the below function
   function search(value) {
-    if (value === "") setJobData(mainJobData);
-    else
-      setJobData(
-        mainJobData.filter((blog) =>
-          blog.position.toLowerCase().includes(value.toLowerCase())
-        )
-      );
+    // if (value === "") setJobData(mainJobData);
+    // else
+    //   setJobData(
+    //     mainJobData.filter((blog) =>
+    //       blog.position.toLowerCase().includes(value.toLowerCase())
+    //     )
+    //   );
   }
   return (
     <div className="">
