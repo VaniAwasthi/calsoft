@@ -30,7 +30,7 @@ export default function Page() {
         backgroundImage={BannerwithButtonBg}
         title="Lower infra footprint 30 % via virtualization efficiency."
         buttonText="Book a Meeting"
-        buttonLink="#"
+       
         onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <MigrateSec />
@@ -38,7 +38,7 @@ export default function Page() {
       <ContactSecData
         BoldContent="Virtualize, optimize, and scale your infrastructure with confidence"
         lightContent="Talk to us"
-        link="#"
+       
       />
     </>
   );

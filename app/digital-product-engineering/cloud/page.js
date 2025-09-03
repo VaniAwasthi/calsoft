@@ -39,7 +39,6 @@ const Page = () => {
         BoldContent="Engineer cloud environments "
         lightContent="with us that are scalable, resilient,
         and cost - efficient "
-        link="#"
       />
     </>
   );

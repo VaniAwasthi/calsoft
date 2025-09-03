@@ -39,7 +39,6 @@ export default function Page() {
       <ProductSec />
       <ContactSecData
         BoldContent="Accelerate releases with automated, ML-driven, and QAOps-integrated testing strategies"
-        link="#"
       />
     </>
   );

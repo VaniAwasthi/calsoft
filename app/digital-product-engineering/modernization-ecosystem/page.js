@@ -38,7 +38,6 @@ const page = () => {
       <ContactSecData
         BoldContent="Modernize and build ecosystems ready for tomorrow’s growth "
         lightContent="- take the next step"
-        link="#"
       />
     </>
   );
