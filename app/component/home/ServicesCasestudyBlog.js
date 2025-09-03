@@ -51,30 +51,30 @@ export const Services = () => {
     },
     {
       icon: service3,
-      title: "Cloud-Native Product Engineering",
+      title: "Cloud-Native Enablement",
       description:
-        "Build and scale modern apps with microservices & agile delivery.",
+        "Modernize your application stack with microservices, containers, and agile DevOps practices.",
       link: "/",
     },
     {
       icon: service4,
-      title: "AI & ML Integration",
+      title: "Agentic AI Planning & Development",
       description:
-        "Deploy and operationalize AI/ML models with enterprise-grade readiness.",
+        "Design and deploy autonomous AI agents to supercharge decision-making and business agility.",
       link: "/",
     },
     {
       icon: service5,
-      title: "Edge & IoT Security Automation",
+      title: "Product & Application Development",
       description:
-        "Automate threat detection & control at the edge with AI-driven tools.",
+        "Engineer scalable, secure, and high-performing software products with a future-ready architecture.",
       link: "/",
     },
     {
       icon: service6,
-      title: "Storage & Data Lifecycle Management",
+      title: "DataOps & Governance",
       description:
-        "Modernize storage for performance, cost-efficiency and compliance.",
+        "Streamline data pipelines and ensure compliance with enterprise-grade DataOps and governance.",
       link: "/",
     },
   ];

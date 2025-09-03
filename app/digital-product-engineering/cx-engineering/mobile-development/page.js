@@ -62,29 +62,29 @@ const Page = () => {
         ]}
         data={{
           leftSideContent: {
-            title: "Beyond Tech- Real Business Outcomes.",
+            title: "Apps That Work Harder for Your Business.",
             subTitle:
-              "Enterprises with a documented infrastructure roadmap have:",
+              null,
             description:
-              "Calsoft quantifies ROI for each roadmap milestone —from VM consolidation to cloud-native transitions —and ensures you get board-level buy-in with real data.",
+              "Our mobile solutions deliver more than access—they deliver ROI.",
           },
           rightSideContent: [
             {
-              title: "35%",
-              subTitle: "faster cloud migration cycles",
+              title: "50%",
+              subTitle: "faster task completion for field teams",
             },
             {
-              title: "18-25%",
-              subTitle: "reduction in OpEx via optimized resource usage",
+              title: "$200K+",
+              subTitle: "saved annually via legacy-to-mobile migration",
             },
             {
               title: "2X",
               subTitle:
-                "better incident response through standardized observability stack",
+                "user engagement on well-optimized mobile flows",
             },
             {
-              title: "Faster",
-              subTitle: "innovation cycles with modular, decoupled infra",
+              title: "100%",
+              subTitle: "compliance with audit-ready mobile security policies",
             },
           ],
         }}

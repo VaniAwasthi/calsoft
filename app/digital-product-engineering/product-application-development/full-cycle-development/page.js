@@ -178,29 +178,29 @@ const Page = () => {
         ]}
         data={{
           leftSideContent: {
-            title: "Deliver Better. Scale Smarter. Win Faster.",
+            title: "Faster MVP. Lower Costs. Zero Rework.",
             subTitle:
-              "Here’s what our clients gained with Calsoft's full-cycle approach:",
+              null,
             description:
-              "Calsoft quantifies ROI for each roadmap milestone —from VM consolidation to cloud-native transitions —and ensures you get board-level buy-in with real data.",
+              "Our approach de-risks the early phases by up to 40%. You get:",
           },
           rightSideContent: [
             {
-              title: "35%",
-              subTitle: "faster MVP launches",
+              title: "30%",
+              subTitle: "faster time-to-MVP",
             },
             {
-              title: "40%",
-              subTitle: "fewer post-release defects due to shift-left QA",
+              title: "Up to 25%",
+              subTitle: "cost saving through right-stack decisions",
             },
             {
-              title: "50%",
-              subTitle: "more sprint efficiency using cross-functional pods",
+              title: "100%",
+              subTitle: "cloud readiness with reusable components",
             },
             {
-              title: "Up to $400K",
+              title: "3X",
               subTitle:
-                "saved/year by choosing optimal infra stack & code reuse",
+                "faster onboarding of dev teams with clean blueprints",
             },
           ],
         }}

@@ -16,7 +16,7 @@ import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utilit
 export const HeroSectionProduct = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
-    title: "Cloud | Grow with cloud-induced efficiency",
+    title: "Grow with cloud-induced efficiency",
     description: `Engineer scalable, secure, and cost-efficient<br/>
 cloud solutions aligned to your business goals.`,
     buttonText: "Download Datasheet",

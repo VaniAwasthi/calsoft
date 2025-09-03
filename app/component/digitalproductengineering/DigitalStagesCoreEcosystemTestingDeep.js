@@ -23,7 +23,7 @@ import deep from "../../assets/digital/deep.webp";
 export const Digital = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
-    title: "Calsoft’s Digital Product Engineering",
+    title: "Digital Product Engineering",
 
     description: `Full-stack digital product engineering, modernization, cloud, and QA services for software-driven enterprises.`,
     buttonText: "Get in touch",

@@ -25,8 +25,7 @@ const Page = () => {
     <>
       <HeroSection
         title="Turn Ideas into Intelligent Products"
-        description="De-risk early decisions with the right architecture,
-built for scale, speed, and ROI."
+        description="De-risk early decisions with the right architecture, built for scale, speed, and ROI."
         buttonText="Get Architecture Readiness Score"
         navItems={navItems}
         setActiveTab={setActiveTab}
@@ -46,6 +45,34 @@ built for scale, speed, and ROI."
         CTACopy="Ensure 98% defect-free releases with automation."
         id="use-cases"
         BussinessId="business-value"
+        data={{
+          leftSideContent: {
+            title: "Deliver Better. Scale Smarter. Win Faster.",
+            subTitle:
+              null,
+            description:
+              "Here’s what our clients gained with Calsoft's full-cycle approach:",
+          },
+          rightSideContent: [
+            {
+              title: "35%",
+              subTitle: "faster MVP launches (vs multi-vendor setups)",
+            },
+            {
+              title: "40%",
+              subTitle: "fewer post-release defects due to shift-left QA",
+            },
+            {
+              title: "500%",
+              subTitle: "more sprint efficiency using cross-functional pods",
+            },
+            {
+              title: "Up to $400K",
+              subTitle:
+                "saved/year by choosing optimal infra stack & code reuse",
+            },
+          ],
+        }}
       />
       <HowToStart
         id="how-to-start"

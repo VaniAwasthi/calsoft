@@ -39,7 +39,7 @@ const Page = () => {
         buttonText="Download"
         MainComponenent={ArchitectureIdeation}
         id="why-it-matters"
-        // contentClass="w-[90%]"
+      // contentClass="w-[90%]"
       />
       <WhatWeOffer
         description="Our architecture-led ideation workshops deliver clarity in just 7–10 working days. You walk away with:"
@@ -49,6 +49,33 @@ const Page = () => {
         CTACopy="Reduce design cycle by 30% via architecture-led ideation."
         id="use-cases"
         BussinessId="business-value"
+        data={{
+          leftSideContent: {
+            title: "Faster MVP. Lower Costs. Zero Rework.",
+            subTitle: null,
+            description:
+              "Our approach de-risks the early phases by up to 40%. You get:",
+          },
+          rightSideContent: [
+            {
+              title: "30%",
+              subTitle: "faster time-to-MVP",
+            },
+            {
+              title: "Up to 25%",
+              subTitle: "cost saving through right-stack decisions",
+            },
+            {
+              title: "100%",
+              subTitle:
+                "cloud readiness with reusable components",
+            },
+            {
+              title: "3X",
+              subTitle: "faster onboarding of dev teams with clean blueprints",
+            },
+          ],
+        }}
       />
       <HowToStart
         headerContent={{

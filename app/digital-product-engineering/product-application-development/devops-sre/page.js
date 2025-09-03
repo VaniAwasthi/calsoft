@@ -44,6 +44,33 @@ const Page = () => {
         CTACopy="Speed up release cycles by 60% using SRE practices."
         id="use-cases"
         BussinessId="business-value"
+        data={{
+          leftSideContent: {
+            title: "Release Velocity Up. Infra Costs Down. Uptime Locked.",
+            subTitle: null,
+            description:
+              "Here’s what decision-makers achieved with Calsoft’s DevOps & SRE programs:",
+          },
+          rightSideContent: [
+            {
+              title: "50%",
+              subTitle: "faster releases without adding headcount",
+            },
+            {
+              title: "30%",
+              subTitle: "lower infra spend via better auto-scaling & resource utilization",
+            },
+            {
+              title: "70%",
+              subTitle:
+                "fewer incidents via automated monitoring & alert routing",
+            },
+            {
+              title: "2X",
+              subTitle: "increase in developer productivity (less fire-fighting, more building)",
+            },
+          ],
+        }}
       />
       <HowToStart
         id="how-to-start"

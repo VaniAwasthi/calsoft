@@ -43,7 +43,36 @@ Can’t Ship Reliably."
         id="why-it-matters"
       />
       <WhatWeOffer />
-      <UseCases CTACopy="Cut deployment time by 50% through automation." />
+      <UseCases CTACopy="Cut deployment time by 50% through automation." 
+      data={{
+          leftSideContent: {
+            title: "Faster Shipping. Fewer Incidents. Lower Spend.",
+            subTitle:
+              null,
+            description:
+              "Here's what our clients gained by deploying the smart way:",
+          },
+          rightSideContent: [
+            {
+              title: "2X",
+              subTitle: "release frequency with canary-based automation",
+            },
+            {
+              title: "Up to 35%",
+              subTitle: "reduction in cloud infra spend",
+            },
+            {
+              title: "Zero",
+              subTitle: "major downtime events during updates",
+            },
+            {
+              title: "50%",
+              subTitle:
+                "faster rollback times with pre-baked strategies",
+            },
+          ],
+        }}
+      />
       <HowToStart
         id="how-to-start"
         headerContent={{

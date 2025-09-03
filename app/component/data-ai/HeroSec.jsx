@@ -13,7 +13,7 @@ export const DataAiBanner = () => {
     title: "Calsoft’s Data and AI services",
 
     description: `Full-lifecycle data engineering, AI/ML development, and GenAI integration services to amp up intelligence and automation.`,
-    buttonText: "Contact Us",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [
