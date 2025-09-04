@@ -39,7 +39,6 @@ const Page = () => {
         BoldContent="Reimagine your digital
 experiences for faster growth."
         lightContent="Let’s talk..."
-        link="#"
       />
     </>
   );

@@ -14,7 +14,6 @@ import {
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { ShareSection } from "../../../component/whitepaper/expanPage/WhitepaperReadMore";
 import { fetchDatasheetById, fetchDatasheetList } from "../../../store/actions/datasheetAction";
 
@@ -75,7 +74,6 @@ const { slug } = useParams();
 
   const DatasheetCardData = datasheets.data;
   const businessValueData2 = datasheets?.data?.business_cards;
-  const Heroimage1 = `${baseUrl}${DatasheetCardData?.card_one}`;
 
   // Extract from hubspot_form string
   const hubspotFormString = DatasheetCardData?.hubspot_form || "";
@@ -100,6 +98,7 @@ const { slug } = useParams();
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         backgroundImage={BgImage}
+        scrollToId="DownloadSection"
       />
       <ShareSection />
 
@@ -116,7 +115,7 @@ const { slug } = useParams();
       <BusinessValueSection
         backgroundImage={BusinessValueBg}
         values={businessValueData2}
-        title="Business Value"
+        title={DatasheetCardData?.businessinvalue_title}
       />
       <ToKnowMoreSection
         backgroundImage={ToKnowMoreBg}

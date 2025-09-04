@@ -93,7 +93,7 @@ export const ReleaseSec = () => {
         title="Release management"
         description="Deliver updates and enhancements smoothly
                 without disrupting operational continuity."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/sustenance-support/release-orchestration"
         whatWeDo={[
           "Plan updates with minimal downtime",
@@ -121,7 +121,7 @@ export const StreamlineSec = () => {
       <InfraSection
         title="Streamline technical documentation"
         description="Keep operational and technical information accurate, accessible, and actionable."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/sustenance-support/documentation-support"
         whatWeDo={[
           "Keep docs accurate and easy to use",
@@ -149,7 +149,7 @@ export const MultiSec = () => {
       <InfraSection
         title="Multi-tier support (L1, L2, and L3)"
         description="Validate application performance and resilience under real-world and extreme load conditions."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/sustenance-support/muti-tier-support"
         whatWeDo={[
           "Solve common issues and questions",
@@ -176,7 +176,7 @@ export const UptimeSec = () => {
       <InfraSection
         title="Uptime continuity"
         description="Proactively monitor, manage, and optimize system availability and performance."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/sustenance-support/uptime-continuity"
         whatWeDo={[
           "Monitor systems 24x7 with alerts",

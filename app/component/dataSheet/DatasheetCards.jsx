@@ -10,10 +10,10 @@ import {
   fetchBlogFilterList,
   fetchFilteredBlogs,
 } from "../../store/actions/blogAction";
-import FilterPanel from "../utilities/FilterPannel";
 import { setSelectedDatasheetsId } from "../../store/reducers/datasheetReducer";
 import { useRouter } from "next/navigation";
 import { generateSlug } from "../utilities/helper/SlugGenerator";
+import { FilterSec } from "../utilities/FilterSec";
 
 export const DataSheetCards = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export const DataSheetCards = () => {
   const [openDropdown, setOpenDropdown] = useState("");
   const [topicLimitWarning, setTopicLimitWarning] = useState(false);
   const [activeFilters, setActiveFilters] = useState({
-    Industry: null,
+    Industry: "All",
     Topics: [],
   });
   const [currentPage, setCurrentPage] = useState(0);
@@ -46,9 +46,13 @@ export const DataSheetCards = () => {
   const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
 
   const filters = {
-    Industry: [...FilterIndustry],
-    Topics: [...FilterTopic],
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
   };
+
+  useEffect(() => {
+    console.log(filters);
+  }, [filters]);
 
   const resources = datasheetData?.map((item) => ({
     ...item,
@@ -146,13 +150,15 @@ export const DataSheetCards = () => {
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterPanel
+        <FilterSec
           filters={filters}
           activeFilters={activeFilters}
+          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
-          setActiveFilters={setActiveFilters}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
         {topicLimitWarning && (

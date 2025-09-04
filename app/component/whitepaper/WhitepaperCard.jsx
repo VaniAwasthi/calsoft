@@ -7,11 +7,11 @@ import { fetchWhitepaperList } from "../../store/actions/whitepaperAction";
 import { useRouter } from "next/navigation";
 import { setSelectedWhitepaperId } from "../../store/reducers/whitepaperReducer";
 import { slugify } from "../utilities/helper/SlugGenerator";
-import FilterPanel from "../utilities/FilterPannel";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
+import { baseUrl } from "@/config";
+import { FilterSec } from "../utilities/FilterSec";
 
 export const WhitepaperCards = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
   const listData = useSelector((state) => state.whitepaper.list);
   const router = useRouter();
@@ -55,13 +55,6 @@ export const WhitepaperCards = () => {
         industry: item.industry || "Tech",
       }))
     : [];
-
-  const heading =
-    "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool";
-  const description = `A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....
-<br><br>
-
-A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....`;
 
   const handleClick = (item) => {
     const slug = slugify(item.title, { lower: true });
@@ -117,13 +110,15 @@ A leading computing and edge cloud provider needed a robust, self-service migrat
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterPanel
+        <FilterSec
           filters={filters}
           activeFilters={activeFilters}
+          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
-          setActiveFilters={setActiveFilters}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>

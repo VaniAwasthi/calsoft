@@ -232,7 +232,7 @@ export const CostInfraSec = () => {
       <InfraSection
         title="Cost and usage optimization"
         description="Control costs, optimize usage, and drive sustainable cloud operations."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Continuously monitor resource utilization and spending patterns",

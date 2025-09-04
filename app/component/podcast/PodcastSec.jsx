@@ -9,9 +9,11 @@ import Info2 from "../../assets/Infographic/Info2.webp";
 import ReactPlayer from "react-player";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
-import FilterPanel from "../utilities/FilterPannel";
 import ButtonLayout from "../utilities/ButtonLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
+import { fetchPodcastsList } from "@/app/store/actions/podcastAction";
+import { baseUrl } from "@/config";
+import { FilterSec } from "../utilities/FilterSec";
 
 export const PostcastSec = () => {
   const dispatch = useDispatch();
@@ -24,14 +26,51 @@ export const PostcastSec = () => {
   const [pausedAt30, setPausedAt30] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [resumeTime, setResumeTime] = useState(0);
+const [completedForms, setCompletedForms] = useState({});
 
   useEffect(() => {
     dispatch(fetchBlogFilterList());
+    dispatch(fetchPodcastsList())
   }, [dispatch]);
+
+useEffect(() => {
+  if (showForm) {
+    const script = document.createElement("script");
+    script.src = "//js.hsforms.net/forms/embed/v2.js";
+    script.charset = "utf-8";
+    script.type = "text/javascript";
+    script.onload = () => {
+      if (window.hbspt) {
+       window.hbspt.forms.create({
+  portalId: "9496305",
+  formId: "ca67631d-f3ac-4ec6-bada-d1d97d6656ee",
+  region: "na1",
+  target: "#hubspot-form-container",
+  onFormSubmit: () => {
+    // ✅ Mark this video as completed
+    setCompletedForms((prev) => ({
+      ...prev,
+      [selectedVideo]: true,
+    }));
+
+    // ✅ Hide form and resume video at last time
+    setShowForm(false);
+    setPlaying(true);
+  },
+});
+
+      }
+    };
+    document.body.appendChild(script);
+  }
+}, [showForm]);
+
 
   const FilterIndustry = useSelector(
     (state) => state.blogs.filterIndustry || []
   );
+  const PodcastDataList=useSelector((state)=>state?.podcast?.list)
+  console.log(PodcastDataList,"podcastData")
   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
@@ -46,17 +85,14 @@ export const PostcastSec = () => {
 
   const images = [Info1, Info2];
 
-  const cardData = new Array(18).fill(0).map((_, i) => ({
-    id: i + 1,
-    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry number ${
-      i + 1
-    }`,
-    image: images[i % images.length],
-    link: `https://yourdomain.com/card/${i + 1}`,
-    author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    industry: i % 2 === 0 ? "Tech" : "Healthcare",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  }));
+ const cardData = PodcastDataList?.map((data, i) => ({
+  id: data?._id,
+  title: data?.title,
+  image: `${baseUrl}${data?.podcast_image}`,
+  link: `https://yourdomain.com/card/${i + 1}`,
+  speaker: data?.speaker?.name,
+  videoUrl: data?.url,
+})) || [];
 
   const [resources] = useState([...cardData]);
 
@@ -80,13 +116,13 @@ export const PostcastSec = () => {
     }
   };
 
-  const filteredResources = resources.filter((item) => {
-    const industryMatch =
-      activeFilters.Industry === "All" ||
-      item.industry === activeFilters.Industry;
+  const filteredResources = cardData.filter((item) => {
+  const industryMatch =
+    activeFilters.Industry === "All" ||
+    item.industry === activeFilters.Industry;
 
-    return industryMatch; // (Topics logic can be added later)
-  });
+  return industryMatch;
+});
 
   const itemsPerPage = 6;
   const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
@@ -103,20 +139,22 @@ export const PostcastSec = () => {
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterPanel
+        <FilterSec
           filters={filters}
           activeFilters={activeFilters}
+          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
-          setActiveFilters={setActiveFilters}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <AnimatePresence>
-            {currentPageData.map((item, idx) => (
+{currentPageData?.map((item, idx) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -153,6 +191,7 @@ export const PostcastSec = () => {
                   <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
                     {item.title}
                   </h3>
+                  <p>{item.speaker}</p>
                   <div className="flex items-center justify-between my-2 h-1/4">
                     <ButtonLayout
                       text="Read More"
@@ -214,71 +253,52 @@ export const PostcastSec = () => {
 
                 {/* Video or Form */}
                 <div className="relative pt-[56.25%]">
-                  {!showForm ? (
-                    <ReactPlayer
-                      url={selectedVideo}
-                      playing={playing}
-                      controls
-                      width="100%"
-                      height="100%"
-                      className="absolute top-0 left-0"
-                      onProgress={(state) => {
-                        if (state.playedSeconds >= 30 && !pausedAt30) {
-                          setPlaying(false);
-                          setPausedAt30(true);
-                          setResumeTime(state.playedSeconds);
-                        }
-                      }}
-                      config={{
-                        youtube: { playerVars: { start: resumeTime } },
-                      }}
-                    />
-                  ) : (
-                    <div className="absolute top-0 left-0 w-full h-full bg-white flex flex-col justify-center items-center p-6">
-                      <h2 className="text-lg font-semibold mb-4">
-                        Please Fill the Form
-                      </h2>
-                      <form
-                        onSubmit={(e) => {
-                          e.preventDefault();
-                          setShowForm(false);
-                          setPlaying(true);
-                        }}
-                        className="flex flex-col gap-3 w-3/4"
-                      >
-                        <input
-                          type="text"
-                          placeholder="Your Name"
-                          className="border p-2 rounded"
-                          required
-                        />
-                        <input
-                          type="email"
-                          placeholder="Your Email"
-                          className="border p-2 rounded"
-                          required
-                        />
-                        <ButtonLayout
-                          text="Submit & Continue"
-                          hoverImage={ButtonImage}
-                          className="!h-[40px] !w-[200px] self-center"
-                        />
-                      </form>
-                    </div>
-                  )}
+          {!showForm ? (
+  <ReactPlayer
+    url={selectedVideo}
+    playing={playing}
+    controls
+    width="100%"
+    height="100%"
+    className="absolute top-0 left-0"
+  onProgress={(state) => {
+  if (
+    state.playedSeconds >= 30 &&
+    !pausedAt30 &&
+    !completedForms[selectedVideo] 
+  ) {
+    setPlaying(false);
+    setPausedAt30(true);
+    setResumeTime(state.playedSeconds);
+  }
+}}
+
+    config={{
+      youtube: { playerVars: { start: resumeTime } },
+    }}
+  />
+) : (
+  <div
+    id="hubspot-form-container"
+    className="absolute top-0 left-0 w-full h-full bg-white flex justify-center items-center p-6"
+  />
+)}
+
+
                 </div>
 
                 {/* Tap to Continue button */}
-                {pausedAt30 && !showForm && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <button
-                      onClick={() => setShowForm(true)}
-                      className="bg-[#2E3092] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#1e2170] transition"
-                    >
-                      Tap to Continue
-                    </button>
-                  </div>
-                )}
+          {pausedAt30 && !showForm && !completedForms[selectedVideo] && (
+  <div className="absolute inset-0 flex items-center justify-center">
+    <button
+      onClick={() => setShowForm(true)}
+      className="bg-[#2E3092] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-[#1e2170] transition"
+    >
+      Tap to Continue
+    </button>
+  </div>
+)}
+
               </motion.div>
             </motion.div>
           )}

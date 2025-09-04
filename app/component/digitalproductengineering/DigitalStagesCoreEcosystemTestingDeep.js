@@ -19,6 +19,8 @@ import image7 from "../../assets/digital/image7.webp";
 import image8 from "../../assets/digital/image8.webp";
 import image9 from "../../assets/digital/image9.webp";
 import deep from "../../assets/digital/deep.webp";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
+import { useRouter } from "next/navigation";
 
 export const Digital = () => {
   const [activeTab, setActiveTab] = useState("benefits");
@@ -52,6 +54,7 @@ export const Digital = () => {
           hoverImage={ButtonImage}
           rightSec={false}
           buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("get-in-touch")}
         />
       </div>
       <Submenu
@@ -204,9 +207,13 @@ export const Testing = () => {
 };
 
 export const Deep = () => {
+  const router=useRouter()
   const buttonImage = ButtonImage;
   const hoverImage = ButtonImage;
   const buttonText = "Know More";
+  const knowMoreClick=()=>{
+    router.push("/industries")
+  }
   return (
     <>
       <section className=" pb-6 md:pb-10 md:pt-20 pt-12   bg-white">
@@ -233,6 +240,7 @@ export const Deep = () => {
                   image={buttonImage}
                   hoverImage={hoverImage}
                   className="!w-[200px] md:ml-auto"
+                  onClick={knowMoreClick}
                 />
               </motion.div>
             </div>

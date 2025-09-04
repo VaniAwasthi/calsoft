@@ -6,6 +6,7 @@ import BackgroundImage from "../../assets/Data-Ai/mainPage/AIBg.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export const DataAiBanner = () => {
   const [activeTab, setActiveTab] = useState("benefits");
@@ -37,6 +38,7 @@ export const DataAiBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("get-in-touch")}
       />
       <Submenu
         navItems={navItems}

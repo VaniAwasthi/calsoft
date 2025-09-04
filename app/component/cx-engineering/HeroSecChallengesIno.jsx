@@ -41,8 +41,8 @@ that drive adoption and engagement.`,
   hoverImage={ButtonImage}
   rightSec={false}
   buttonWidth="!w-[250px]"
-  className="modernization-ecosystem-download-datasheet"
-  onButtonClick={() => showHubSpotForm("modernization-ecosystem-download-datasheet")}
+  className="cx-engineering-datasheet"
+  onButtonClick={() => showHubSpotForm("cx-engineering-datasheet")}
 />
       <Submenu
         navItems={navItems}
@@ -164,7 +164,7 @@ export const IntelligentUISec = () => {
       <InfraSection
         title="Intelligent UI: Make interfaces adaptive"
         description="Design intelligent user interfaces that personalize workflows and automate decisions."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Use AI to adapt UIs by behavior",
