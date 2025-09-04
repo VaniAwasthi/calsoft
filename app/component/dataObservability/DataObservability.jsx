@@ -13,13 +13,13 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 export const DataJounery = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
-    title: "Data observability",
+    title: "Data Modernization That  Moves the Business Forward",
 
-    description: `Monitor, analyze, and safeguard data
-    ecosystems with continuous visibility.`,
+    description: `Turn legacy data into agile, cloud-first, AI-ready assets-securely and without disruption`,
     buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
@@ -42,6 +42,8 @@ export const DataJounery = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={()=>showHubSpotForm("data-observability-datasheet")}
+        
       />
       <Submenu
         navItems={navItems}
@@ -55,37 +57,49 @@ export const DataJounery = () => {
 export const DataSolutionSec = () => {
   const data = [
     {
-      tag: "Unified  monitoring",
+      tag: "Legacy Platforms",
       challenge:
-        "Struggling to track data health across distributed environments?",
+        "Aging data warehouses limit scale and flexibility",
       solution:
-        "Centralized observability frameworks across hybrid and multicloud data systems",
+        "We replatform monoliths to modern, cloud-native data stacks for agility and cost savings.",
     },
     {
-      tag: "Real-time insights",
-      challenge: "Finding anomalies too late in streaming data pipelines?",
+      tag: "Schema Chaos",
+      challenge: "Lack of standardization slows innovation",
       solution:
-        "Implement realtime telemetry and anomaly detection across ingestion and processing layers",
+        "We implement governed, interoperable data models across the enterprise.",
     },
     {
-      tag: "Lineage visibility",
+      tag: "Modernization Debt",
       challenge:
-        "Lacking transparency over data movement and transformation journeys?",
+        "Complex tech debt blocks cloud and AI adoption",
       solution:
-        "Map complete data lineage and audit trails from source to consumption",
+        "We decouple and refactor workloads for phased modernization—without disruption.",
     },
     {
-      tag: "Proactive risk alerts",
-      challenge: "Reacting only after data issues impact downstream analytics?",
+      tag: "Access Gaps",
+      challenge: "Business teams can’t access or trust the data",
       solution:
-        "Deploy predictive monitoring and early warning systems for data quality risks.",
+        "We democratize access through catalogs, quality checks, and self-serve analytics.",
+    },
+    {
+      tag: "Uncoordinated Shifts",
+      challenge: "Siloed migrations lead to fragmented architectures",
+      solution:
+        "We drive modernization through an orchestrated, enterprise-wide roadmap.",
+    },
+    {
+      tag: "Compliance Bottlenecks",
+      challenge: "Compliance requirements stall modernization efforts",
+      solution:
+       "We ensure every modernization step aligns with data privacy and governance needs.",
     },
   ];
   return (
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Monitor, Predict, and Fortify Data Ecosystems"
+        BlackHeading="Legacy to Leadership"
         GradientHeading=" Challenge to solutions:"
         secId="benefits"
       />

@@ -11,6 +11,7 @@ export default function BookMeeting({
   desc = null,
   buttonText = "Book a Meeting",
   titleClass = "",
+  buttonClicked
 }) {
   return (
     <div className="w-full h-72 2xs:h-60 md:h-40 relative rounded-xl overflow-hidden mt-10">
@@ -33,6 +34,7 @@ export default function BookMeeting({
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: false, amount: 0.3 }}
             className="text-lg md:text-xl font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg whitespace-nowrap"
+            onClick={buttonClicked}
           >
             {buttonText}
           </motion.button>

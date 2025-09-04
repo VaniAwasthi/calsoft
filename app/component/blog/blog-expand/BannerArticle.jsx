@@ -8,6 +8,7 @@ import { useState } from "react";
 import blogexpanImage from "../../../assets/blog/blogexpanImage.webp";
 import sanitizeHtml from "sanitize-html";
 import ProfileDummy from "../../../assets/caseStudies/Profile.webp";
+import { baseUrl } from "@/config";
 export const Banner = ({ blog }) => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
 
@@ -146,47 +147,76 @@ export const ArticleContent = ({ blog }) => {
             {/* Profile Section */}
 
             <div className="w-[320px] h-[350px] bg-[#2E3092] manrope text-white rounded-2xl p-4 shadow-lg text-left">
-              <div className="flex justify-start  mb-4">
-                <div className="rounded-xl overflow-hidden">
-                  <Image
-                    src={ProfileDummy}
-                    alt="Profile Image"
-                    width={150}
-                    height={200}
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              {Array.isArray(blog?.authorData) ? (
-                blog.authorData.map((auth, idx) => (
-                  <div key={idx}>
-                    <h3 className="text-[20px] font-bold mb-2">{auth.name}</h3>
-                    <p className="text-[15px] leading-relaxed">
-                      Lorem ipsum is a dummy or placeholder text commonly used
-                      in graphic design, publishing, and web development.
-                    </p>
-                  </div>
-                ))
-              ) : blog?.authorData ? (
-                <div>
-                  <h3 className="text-[20px] font-bold mb-2">
-                    {blog.authorData.name}
-                  </h3>
-                  <p className="text-[15px] leading-relaxed">
-                    Lorem ipsum is a dummy or placeholder text commonly used in
-                    graphic design, publishing, and web development.
-                  </p>
-                </div>
-              ) : (
-                <div>
-                  <h3 className="text-[20px] font-bold mb-2">Tom Neaves</h3>
-                  <p className="text-[15px] leading-relaxed">
-                    Lorem ipsum is a dummy or placeholder text commonly used in
-                    graphic design, publishing, and web development.
-                  </p>
-                </div>
-              )}
-            </div>
+  <div className="flex justify-start mb-4">
+    <div className="rounded-xl overflow-hidden">
+      {Array.isArray(blog?.authorData) ? (
+        blog.authorData[0]?.image ? (
+          <Image
+            src={`${baseUrl}${blog.authorData.image}`}
+            alt="Profile Image"
+            width={150}
+            height={200}
+            className="object-cover"
+          />
+        ) : (
+          <Image
+            src={blogexpanImage}
+            alt="Default Profile Image"
+            width={150}
+            height={200}
+            className="object-cover"
+          />
+        )
+      ) : blog?.authorData?.image ? (
+        <Image
+          src={`${baseUrl}${blog.authorData.image}`}
+          alt="Profile Image"
+          width={150}
+          height={200}
+          className="object-cover"
+        />
+      ) : (
+        <Image
+          src={blogexpanImage}
+          alt="Default Profile Image"
+          width={150}
+          height={200}
+          className="object-cover"
+        />
+      )}
+    </div>
+  </div>
+
+  {/* Handle authorData */}
+  {Array.isArray(blog?.authorData) ? (
+    blog.authorData.map((auth, idx) => (
+      <div key={idx}>
+        <h3 className="text-[15px] font-bold mb-2">{auth.name}</h3>
+        <p
+          className="text-[12px] leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: auth.about }}
+        />
+      </div>
+    ))
+  ) : blog?.authorData ? (
+    <div>
+      <h3 className="text-[15px] font-bold mb-2">{blog.authorData.name}</h3>
+      <p
+        className="text-[12px] leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: blog.authorData.about }}
+      />
+    </div>
+  ) : (
+    <div>
+      <h3 className="text-[20px] font-bold mb-2">Tom Neaves</h3>
+      <p className="text-[15px] leading-relaxed">
+        Lorem ipsum is a dummy or placeholder text commonly used in
+        graphic design, publishing, and web development.
+      </p>
+    </div>
+  )}
+</div>
+
             {/* Share Icons */}
             <div className="flex flex-wrap gap-8  items-center">
               <h3 className="text-[15px] font-normal mb-3">Share:</h3>

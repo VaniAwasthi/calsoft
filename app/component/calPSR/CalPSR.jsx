@@ -13,6 +13,7 @@ import ContactImg from "@/app/assets/Data-Ai/PipeLine/ConnectBg.webp";
 import Seamless from "@/app/assets/ai-accelerators/vmware/Seamless.webp";
 import Workload from "@/app/assets/ai-accelerators/vmware/Workload.webp";
 import Image from "next/image";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 const SystemTest = ({
   title = " All the features for full-set system tests\n - no complications, no confusion",
@@ -818,6 +819,8 @@ const BookaMeeting = () => {
           title="To know more about how we can align our expertise to your requirements, reach out to us."
           titleClass="text-[32px] font-bold"
           buttonText="Contact Us"
+          buttonClicked={()=>showHubSpotForm("contact-us-popup")}
+          
         />
       </div>
     </div>
@@ -1203,7 +1206,7 @@ const ManufacturingEcosystem = ({
         ContactImg={ContactImg}
         ButtonImage={ButtonImage}
         lightContent={text}
-        link="#"
+        onClick={()=>showHubSpotForm("contact-us-popup")}
       />
     </div>
   );

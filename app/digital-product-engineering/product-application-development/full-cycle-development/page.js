@@ -15,6 +15,7 @@ import line3 from "../../../assets/DigitalEngineering/maturity/line3.svg";
 import mobile2 from "../../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../../assets/DigitalEngineering/maturity/mobile3.svg";
 import img from "@/app/assets/DigitalEngineering/product-app/Full-Cycle-Development.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -36,6 +37,7 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
+        buttonClicked={()=>showHubSpotForm("Get-Architechure-Rediness-Score")}
       />
       <WhyItMatters
         title="90% of Product Delays Are Self-Inflicted. Avoid Them."
@@ -44,6 +46,7 @@ const Page = () => {
         MainComponenent={DevelopmentCycle}
         contentClass="w-[90%]"
         id="why-it-matters"
+        buttonClicked={()=>showHubSpotForm("full-cycle-development-download-case-study")}
       />
       <WhatWeOffer
         id="what-we-offer"

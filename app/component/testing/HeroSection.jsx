@@ -7,6 +7,7 @@ import Submenu from "../utilities/Submenu";
 
 export default function HeroSection({
   navItems,
+  buttonClicked,
   activeTab,setActiveTab,
   title = "Technology-first partner",
   description = "Accelerate cloud adoption through risk-aware, business-aligned migration strategies — backed by automation, security, and predictable ROI.",
@@ -29,6 +30,7 @@ export default function HeroSection({
         titleTwoClass="text-[28px] md:text-5xl md:mt-4"
         descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[200px] md:w-full"
         BgClassname="object-cover w-full h-full object-center"
+        buttonClicked={buttonClicked}
       />
         <Submenu
         navItems={navItems}

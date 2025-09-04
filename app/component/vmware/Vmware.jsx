@@ -15,6 +15,7 @@ import Workload from "@/app/assets/ai-accelerators/vmware/Workload.webp";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "@/app/assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 const PrefferedPlatform = ({
   title = "Choose your preferred platform:",
@@ -403,7 +404,8 @@ const VmwareMigration = ({
         "Budget-aligned workload planning",
       ],
       buttonText: "Download Solution Report",
-      buttonAction: () => console.log("Download Report clicked"),
+    
+      buttonAction: () => showHubSpotForm("download-vmware-solution-report"),
       imageUrl: Workload,
       imageAlt: "Hands with cloud and building interface showing upward growth",
       defaultHighlightWords: [
@@ -539,6 +541,7 @@ function MigrationSection({
             image={buttonImage}
             hoverImage={buttonImage}
             className={"w-fit"}
+            onClick={buttonAction}
           />
         </div>
       </motion.div>
@@ -547,6 +550,7 @@ function MigrationSection({
 }
 
 const CheckIn = ({
+  onClick,
   title = "We’ll take care of your migration.\nCheck in!",
   buttonText = "Request POC",
   data = [
@@ -601,6 +605,7 @@ const CheckIn = ({
             image={buttonImage}
             hoverImage={buttonImage}
             className={"w-fit"}
+            onClick={onClick}
           />
         </motion.div>
       </div>

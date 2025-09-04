@@ -560,6 +560,7 @@ export const SprintTimeline = ({
   buttonText,
   link,
   ButtonImage,
+  onClick
 }) => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -687,6 +688,7 @@ export const SprintTimeline = ({
                     text={buttonText}
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    onClick={onClick}
                   />
                 </motion.div>
               </div>
@@ -698,7 +700,7 @@ export const SprintTimeline = ({
   );
 };
 
-export const FooterBg = ({ lightContent, link, ContactImg, ButtonImage }) => {
+export const FooterBg = ({ lightContent, link, ContactImg, ButtonImage , onClick}) => {
   return (
     <>
       <section>
@@ -728,6 +730,7 @@ export const FooterBg = ({ lightContent, link, ContactImg, ButtonImage }) => {
                     text="Start Today"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    onClick={onClick}
                   />
                 </motion.div>
               </div>

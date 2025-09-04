@@ -8,7 +8,7 @@ import { IoPlayOutline } from "react-icons/io5";
 const BannerLayout = ({
   image,
   logo,
-  logoClass,
+buttonClicked,
   title,
   title2,
   description,
@@ -96,12 +96,14 @@ const BannerLayout = ({
               transition={{ duration: 0.5, delay: 0.8 }}
               viewport={{ once: false, amount: 0.3 }}
               className="mt-9"
+              
             >
               <ButtonLayout
                 text={buttonText}
                 image={buttonImage}
                 hoverImage={hoverImage}
                 className={buttonClass}
+                onClick={buttonClicked}
               />
             </motion.div>
           )}
