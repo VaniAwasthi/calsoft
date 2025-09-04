@@ -43,6 +43,14 @@ export const IndustryReportCard = () => {
     dispatch(fetchBlogFilterList());
     dispatch(fetchIndustryReportList());
   }, [dispatch]);
+useEffect(() => {
+  dispatch(fetchBlogFilterList());
+  dispatch(fetchIndustryReportList());
+}, [dispatch]);
+
+useEffect(() => {
+  setFilteredList(listData);
+}, [listData]);
 
   const resources = Array.isArray(filteredList)
     ? filteredList.map((item) => {

@@ -194,16 +194,21 @@ export default function ResourceGrid() {
               <div className="p-4 h-[50%]">
                 <div className="">
                   <div className="flex">
-                    <p className="text-[12px] font-medium text-[#2E3092]  px-1">
-                      {item?.categoryData.name}
-                    </p>
+                   
+                   
+                   {item?.categoryData?.map((i, idx) => (
+  <p key={idx} className="text-[12px] font-medium text-[#2E3092] px-1">
+    {i.name}
+  </p>
+))}
+
                     <span className="text-[12px] font-medium text-[#939393] uppercase px-1">
                       |
                     </span>
                     {item.authorData ? (
                       <>
                         <span className="text-[12px] font-medium text-[#939393]  px-1">
-                          {new Date(item.authorData.createdAt).toLocaleString(
+                          {new Date(item.date).toLocaleString(
                             "en-IN",
                             {
                               timeZone: "Asia/Kolkata",

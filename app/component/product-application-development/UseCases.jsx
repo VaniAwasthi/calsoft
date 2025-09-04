@@ -56,6 +56,7 @@ export default function Component({
     ],
   },
   buttonClick=()=>showHubSpotForm("book-a-meeting"),
+  buttonClick2,
   bookMeetingData = {
     title: "Reduce design cycle by 30% via architecture-led ideation.",
     buttontext: "Book a Meeting",
@@ -215,7 +216,7 @@ export default function Component({
                   >
                     <ButtonLayout
                       text={"Download One Pager"}
-                      onClick={buttonClick}
+                      onClick={buttonClick2}
                       image={buttonImage}
                       hoverImage={buttonImage}
                       className={"w-fit mt-3"}

@@ -7,6 +7,7 @@ export const fetchIndustryReportList = () => async (dispatch) => {
   try {
     const response = await axiosInstance.get("/industry_reports");
     dispatch(setIndustryReportList(response.data));
+    
   } catch (error) {
     dispatch(setError(error));
   }
