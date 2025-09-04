@@ -18,6 +18,7 @@ const InfoImageSection = ({
   bgColor = "",
   link = "",
   rounded = "",
+  buttonClicked
 }) => {
   const isImageLeft = imagePosition === "left";
 
@@ -108,6 +109,7 @@ const InfoImageSection = ({
               image={ButtonImage}
               hoverImage={ButtonImage}
               className="!w-[150px] !h-[55px]"
+              onClick={buttonClicked}
             />
           </div>
         </motion.div>

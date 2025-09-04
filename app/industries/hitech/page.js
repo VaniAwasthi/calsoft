@@ -22,6 +22,7 @@ import {
   ServicesSec,
   TopPartners,
 } from "../../../app/component/industries/hitech/BlogSection.jsx";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm.js";
 
 const Page = () => {
   const slide = {
@@ -202,23 +203,26 @@ const Page = () => {
         {...softwareEngineeringSection}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
+        buttonClicked={()=>showHubSpotForm("software-product-engineering-case-study")}
       />
       <InfoImageSection
         {...CloudEngineeringSec}
         rounded="rounded-r-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%] bg-[#F8F9FA] "
+        buttonClicked={()=>showHubSpotForm("cloud-platform-engineering-case-study")}
       />
       <InfoImageSection
         {...AIPoweredSection}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2] "
+        link="/insights/case-studies/ai-powered-predictive-operations-for-enterprise-data-centers"
       />
       <BlogSection />
       <TopPartners />
       <ServicesSec />
       <ContactSec
         lightContent="Get the edge in Hi-tech with Calsoft "
-        link="#"
+        buttonClicked={()=>showHubSpotForm("contact-us-popup")}
       />
     </>
   );

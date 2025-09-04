@@ -31,6 +31,9 @@ export default function HeroSection({
   navItems,
   setActiveTab,
   activeTab,
+  link,
+  onClick,
+  buttonClicked2
 }) {
   return (
     <>
@@ -89,6 +92,8 @@ export default function HeroSection({
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit"}
+              link={link}
+              onClick={onClick}
             />
             {button2Text && (
               <ButtonLayout
@@ -100,6 +105,7 @@ export default function HeroSection({
                 textColor="#000000"
                 hoverBgColor="#BA0007"
                 hoverTextColor="#ffffff"
+                onClick={buttonClicked2}
               />
             )}
           </div>

@@ -10,6 +10,7 @@ import {
   SystemTest,
   TestAll,
 } from "@/app/component/calPSR/CalPSR";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -32,6 +33,9 @@ const Page = () => {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        onClick={()=>showHubSpotForm("check-your-readiness")}
+        buttonClicked2={()=>showHubSpotForm("download-vmware-whitepaper")}
+        
       />
       <SystemTest />
       <RealWorldBenefits />

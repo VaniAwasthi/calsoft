@@ -13,6 +13,7 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 export const AgenticBanner = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {

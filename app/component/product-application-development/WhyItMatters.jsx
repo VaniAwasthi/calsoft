@@ -16,7 +16,8 @@ export default function WhyItMatters({
   contentClass = "",
   mainComponenentClass = "",
   gridClass = "",
-  id=""
+  id="",
+  buttonClicked
 }) {
   return (
     <>
@@ -71,6 +72,7 @@ export default function WhyItMatters({
                 image={buttonImage}
                 hoverImage={buttonImage}
                 className={"w-fit shadow-2xl"}
+                onClick={buttonClicked}
               />
             </div>
           </div>

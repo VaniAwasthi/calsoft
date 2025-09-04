@@ -4,8 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function FeatureCards({
+  buttonClicked = () => showHubSpotForm("request-architecture-blueprint"),
   id="",
   features = [
     {
@@ -115,6 +117,7 @@ export default function FeatureCards({
   heading = "From Vision to Viable Blueprint",
   description = "Cloud modernization isn't about a one-size-fits-all blueprint. It's about aligning infra to your business needs. Calsoft brings:",
   buttonText = "Request Architecture Blueprint",
+  
 }) {
   return (
     <div className="bg-[#F5F5F5]" id={id}>
@@ -189,6 +192,7 @@ export default function FeatureCards({
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit"}
+              onClick={buttonClicked}
             />
           </motion.div>
         </div>

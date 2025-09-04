@@ -9,7 +9,7 @@ import ClientCaseStudy from "@/app/component/caltia/CaseStudy";
 export default function Page() {
   return (
     <>
-      <HeroSection />
+      <HeroSection  link="/insights/case-studies"/>
       <OnePlatform />
       <TestCase />
       <Integration />
