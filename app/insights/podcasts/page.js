@@ -1,16 +1,19 @@
-"use client"
-import { BannerInfo } from '@/app/component/infographic/BannerTabsFilter'
-import React from 'react'
-import Banner from "../../assets/insights/industry-report.webp"
-import { PostcastSec } from '@/app/component/podcast/PodcastSec'
+"use client";
+import { BannerInfo } from "@/app/component/infographic/BannerTabsFilter";
+import React from "react";
+import Banner from "../../assets/insights/industry-report.webp";
+import { PostcastSec } from "@/app/component/podcast/PodcastSec";
 
 const Page = () => {
   return (
     <>
-     <BannerInfo heading="Conversations with leaders on technology, business, and innovation." BannerBg={Banner} />
-    <PostcastSec/> 
+      <BannerInfo
+        heading="Conversations with leaders on technology, business, and innovation."
+        BannerBg={Banner}
+      />
+      <PostcastSec />
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

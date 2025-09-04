@@ -14,6 +14,7 @@ import { FilterSec } from "../utilities/FilterSec";
 export const WhitepaperCards = () => {
   const dispatch = useDispatch();
   const listData = useSelector((state) => state.whitepaper.list);
+  const [filteredList, setFilteredList] = useState(listData);
   const router = useRouter();
 
   const [copiedId, setCopiedId] = useState(null);
@@ -33,13 +34,8 @@ export const WhitepaperCards = () => {
   };
   const [currentPage, setCurrentPage] = useState(0);
 
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-    dispatch(fetchWhitepaperList());
-  }, [dispatch]);
-
-  const resources = Array.isArray(listData)
-    ? listData.map((item, idx) => ({
+  const resources = Array.isArray(filteredList)
+    ? filteredList.map((item, idx) => ({
         id: item._id,
         title: item.hero_title1 || "Untitled",
         image: `${baseUrl}/${item.featured_image}`,
@@ -107,6 +103,25 @@ export const WhitepaperCards = () => {
     setCurrentPage(index);
   };
 
+  function search(value) {
+    if (value === "") setFilteredList(listData);
+    else
+      setFilteredList(
+        listData.filter((blog) =>
+          blog.hero_title1.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
+  useEffect(() => {
+    setFilteredList(listData);
+  }, [listData]);
+
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(fetchWhitepaperList());
+  }, [dispatch]);
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
@@ -118,6 +133,7 @@ export const WhitepaperCards = () => {
           setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
+          searchDebouncing={search}
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 

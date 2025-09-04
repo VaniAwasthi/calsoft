@@ -17,55 +17,55 @@ import ButtonLayout from "../utilities/ButtonLayout";
 import { FilterSec } from "../utilities/FilterSec";
 
 export const IndustryReportCard = () => {
-    const dispatch = useDispatch();
-    const listData = useSelector((state) => state.industryreport.list);
-    const router = useRouter();
-  
-    const [copiedId, setCopiedId] = useState(null);
-    const [openDropdown, setOpenDropdown] = useState("");
-    const FilterIndustry = useSelector(
-      (state) => state.blogs.filterIndustry || []
-    );
-    const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
-    const [activeFilters, setActiveFilters] = useState({
-      Industry: "All",
-      Topics: [],
-    });
-  
-    const filters = {
-      Industry: ["All", ...FilterIndustry],
-      Topics: ["All", ...FilterTopic],
-    };
-    const [currentPage, setCurrentPage] = useState(0);
-  
-    useEffect(() => {
-      dispatch(fetchBlogFilterList());
-      dispatch(fetchIndustryReportList());
-    }, [dispatch]);
-  
-   const resources = Array.isArray(listData)
-  ? listData.map((item) => {
-      const slug = slugify(item.hero_title1 || "untitled", { lower: true });
+  const dispatch = useDispatch();
+  const listData = useSelector((state) => state.industryreport.list);
+  const [filteredList, setFilteredList] = useState(listData);
+  const router = useRouter();
 
-      const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const [copiedId, setCopiedId] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState("");
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+  const [activeFilters, setActiveFilters] = useState({
+    Industry: "All",
+    Topics: [],
+  });
 
-      return {
-        id: item?._id,
-        title: item?.hero_title1 || "Untitled",
-        description: item?.hero_title2 || "Untitled",
-        image: `${baseUrl}/${item?.featured_image}`,
-        slug,
-        link: `${origin}/insights/industry-report/${slug}`,
-        author: item?.author || "Unknown",
-        tags: item.tags?.split(",") || ["General"],
-        industry: item.industry || "Tech",
-      };
-    })
-  : [];
-  
+  const filters = {
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
+  };
+  const [currentPage, setCurrentPage] = useState(0);
 
-  
-const handleClick = (item) => {
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(fetchIndustryReportList());
+  }, [dispatch]);
+
+  const resources = Array.isArray(filteredList)
+    ? filteredList.map((item) => {
+        const slug = slugify(item.hero_title1 || "untitled", { lower: true });
+
+        const origin =
+          typeof window !== "undefined" ? window.location.origin : "";
+
+        return {
+          id: item?._id,
+          title: item?.hero_title1 || "Untitled",
+          description: item?.hero_title2 || "Untitled",
+          image: `${baseUrl}/${item?.featured_image}`,
+          slug,
+          link: `${origin}/insights/industry-report/${slug}`,
+          author: item?.author || "Unknown",
+          tags: item.tags?.split(",") || ["General"],
+          industry: item.industry || "Tech",
+        };
+      })
+    : [];
+
+  const handleClick = (item) => {
     const slug = slugify(item.title, { lower: true });
     dispatch(setSelectedIndustryReportId(item.id));
     localStorage.setItem("selectedIndustryReportId", item.id);
@@ -116,6 +116,16 @@ const handleClick = (item) => {
     setCurrentPage(index);
   };
 
+  function search(value) {
+    if (value === "") setFilteredList(listData);
+    else
+      setFilteredList(
+        listData.filter((blog) =>
+          blog.hero_title1.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
@@ -127,6 +137,7 @@ const handleClick = (item) => {
           setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
+          searchDebouncing={search}
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
@@ -137,7 +148,6 @@ const handleClick = (item) => {
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
               <motion.div
-                
                 key={item.id}
                 initial={{ opacity: 0, y: 30 }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
@@ -174,10 +184,12 @@ const handleClick = (item) => {
                       ))}
                     </div>
                     <div className="flex justify-between w-full items-center py-5 mt-2">
-                     <ButtonLayout onClick={() => handleClick(item)}
-                       text="Read More"
-                      hoverImage={ButtonImage}
-                      className="!h-[40px] !w-[150px]"/>
+                      <ButtonLayout
+                        onClick={() => handleClick(item)}
+                        text="Read More"
+                        hoverImage={ButtonImage}
+                        className="!h-[40px] !w-[150px]"
+                      />
                       <button
                         onClick={() => handleCopy(item.link, item.id)}
                         className="text-gray-500 hover:text-black"

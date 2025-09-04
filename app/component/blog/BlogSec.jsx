@@ -22,12 +22,12 @@ import { FilterSec } from "../utilities/FilterSec";
 
 export default function ResourceGrid() {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBlogList());
     dispatch(fetchBlogFilterList());
   }, []);
+  const [filteredBlogs, setFilteredBlogs] = useState([]);
   const BlogsList = useSelector((state) => state.blogs.list);
   const FilterAuthr = useSelector((state) => state.blogs.filterAuthor || []);
   const FilterIndustry = useSelector(
@@ -41,12 +41,6 @@ export default function ResourceGrid() {
     Author: [...FilterAuthr],
   };
 
-  const slugify = (text) => {
-    return text
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
-  };
   const [visibleCount, setVisibleCount] = useState(6);
   const [topicLimitWarning, setTopicLimitWarning] = useState(false);
 
@@ -58,6 +52,18 @@ export default function ResourceGrid() {
   const [openDropdown, setOpenDropdown] = useState("");
   const loadMoreRef = useRef(null);
   const router = useRouter();
+
+  useEffect(() => {
+    setFilteredBlogs(BlogsList);
+  }, [BlogsList]);
+
+  const slugify = (text) => {
+    return text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  };
+
   const handleBlogClick = (item) => {
     const slug = slugify(item.title, { lower: true });
     dispatch(setSelectedBlogId(item._id));
@@ -120,6 +126,16 @@ export default function ResourceGrid() {
     }
   };
 
+  function search(value) {
+    if (value === "") setFilteredBlogs(BlogsList);
+    else
+      setFilteredBlogs(
+        BlogsList.filter((blog) =>
+          blog.title.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -153,6 +169,7 @@ export default function ResourceGrid() {
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
+          searchDebouncing={search}
         />
         {topicLimitWarning && (
           <div className="text-red-600 text-sm mb-4">
@@ -164,7 +181,7 @@ export default function ResourceGrid() {
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {BlogsList.slice(0, visibleCount).map((item, idx) => (
+          {filteredBlogs.slice(0, visibleCount).map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
@@ -290,3 +307,22 @@ export default function ResourceGrid() {
     </section>
   );
 }
+
+const BlogsList = [
+  {
+    _id: "686f94a1fae153339b2f1c6d",
+    title: "Robotic Process Automation in Digital Transformation",
+  },
+  {
+    _id: "686f4cccfae153339b2f1c52",
+    title: "Top Generative AI Use Cases in Customer Service Across Industries",
+  },
+  {
+    _id: "686f515efae153339b2f1c55",
+    title: "Top Generative AI Trends Shaping 2025",
+  },
+  {
+    _id: "686f532dfae153339b2f1c57",
+    title: "Calsoft Joins IBM in Delivering AI-driven Enterprise Solutions",
+  },
+];
