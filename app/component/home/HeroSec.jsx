@@ -157,6 +157,7 @@ const HeroSec = () => {
               descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[200px] md:w-full"
               BgClassname="object-cover w-full h-full object-center"
               height="h-[37.5rem]"
+              link={slide.link}
               onButtonClick={() => handleButtonClick(slide)} // pass click handler
             />
           )}

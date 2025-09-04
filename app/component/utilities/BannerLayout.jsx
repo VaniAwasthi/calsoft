@@ -22,6 +22,7 @@ const BannerLayout = ({
   overlayOpacity,
   zIndex,
   titleOneClass,
+  link,
   titleTwoClass,
   descriptionClass,
   buttonClass = "",
@@ -105,6 +106,7 @@ const BannerLayout = ({
                   hoverImage={hoverImage}
                   className={buttonClass}
                   onClick={buttonClicked}
+                  link={link}
                 />
               </motion.div>
             )}
