@@ -18,13 +18,13 @@ export const Banner = ({ blog }) => {
         <Image
           width={500}
           height={100}
-          src={blog.image ? `${baseUrl}${blog.image}` : blogexpanImage}
+          src={blog?.image ? `${baseUrl}${blog?.image}` : blogexpanImage}
           alt="Vlog-expan-image"
           className="w-full"
         />
         <div className="grid  grid-cols-12 items-center gap-6">
           <h1 className="col-span-12 md:col-span-9  text-3xl md:text-5xl font-bold leading-tight my-4">
-            {blog.title}
+            {blog?.title}
           </h1>
           {/* <div className="relative col-span-12 md:col-span-3 w-full h-48 md:h-64">
             <Image
@@ -44,7 +44,7 @@ export const ArticleContent = ({ blog }) => {
   const currentUrl = typeof window !== "undefined" ? window.location.href : "";
   const [copied, setCopied] = useState(false);
 
-  const cleanHtml = sanitizeHtml(blog.content, {
+  const cleanHtml = sanitizeHtml(blog?.content, {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat([
       "h1",
       "h2",
@@ -94,9 +94,9 @@ export const ArticleContent = ({ blog }) => {
     )}`,
     twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
       currentUrl
-    )}&text=${encodeURIComponent(blog.title)}`,
+    )}&text=${encodeURIComponent(blog?.title)}`,
     email: `mailto:?subject=${encodeURIComponent(
-      blog.title
+      blog?.title
     )}&body=${encodeURIComponent(currentUrl)}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
       currentUrl
@@ -112,7 +112,7 @@ export const ArticleContent = ({ blog }) => {
             {/* Date, Read Time, Author */}
             <div className="text-sm text-gray-500 flex gap-3">
               <span className="text-[#939393]">
-                {new Date(blog.date).toLocaleString("en-IN", {
+                {new Date(blog?.date).toLocaleString("en-IN", {
                   timeZone: "Asia/Kolkata",
                   day: "numeric",
                   month: "short",
@@ -120,11 +120,11 @@ export const ArticleContent = ({ blog }) => {
                 })}
               </span>
               <span>|</span>
-              <span>{blog.read_time} min read</span>
+              <span>{blog?.read_time} min read</span>
               <span>|</span>
-              {blog.authorData ? (
+              {blog?.authorData ? (
                 <>
-                  <span className="text-[#E36C0A]">{blog.authorData.name}</span>
+                  <span className="text-[#E36C0A]">{blog?.authorData?.name}</span>
                 </>
               ) : (
                 <span className="text-gray-400">Unknown Author</span>
@@ -169,7 +169,7 @@ export const ArticleContent = ({ blog }) => {
         )
       ) : blog?.authorData?.image ? (
         <Image
-          src={`${baseUrl}${blog.authorData.image}`}
+          src={`${baseUrl}${blog?.authorData?.image}`}
           alt="Profile Image"
           width={150}
           height={200}

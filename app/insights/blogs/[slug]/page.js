@@ -73,12 +73,12 @@ if ( !matchedId && !selectedId && !localStorage.getItem("selectedCaseStudyId")) 
   }
   return (
     <>
-      {blogDetails && (
+     
         <>
           <Banner blog={blogDetails} />
           <ArticleContent blog={blogDetails} />
         </>
-      )}
+     
       <BlogSection />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
