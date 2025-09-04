@@ -41,7 +41,7 @@ const Nextgen = () => {
   return (
     <>
       <div
-        className="w-full bg-[#021553] md:rounded-b-xl py-4 md:py-0 xl:min-h-screen hidden md:block"
+        className="w-full bg-[#021553] py-4 md:py-0 hidden md:block"
         id="industries"
       >
         <div className="container mx-auto px-4 xl:px-20">
@@ -100,9 +100,9 @@ const Nextgen = () => {
                   <Image
                     src={activeIndustry.image}
                     alt={activeIndustry.title}
-                    className="rounded-lg shadow-lg"
+                    className="rounded-lg shadow-lg h-[30rem] lg:h-[24.8rem]"
                     width={400}
-                    height={300}
+                    height={100}
                   />
                 </motion.div>
               )}

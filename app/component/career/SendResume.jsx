@@ -50,6 +50,7 @@ export default function SendResume() {
             <JobApplicationModal
               isOpen={isModalOpen}
               onClose={() => setIsModalOpen(false)}
+              jobTitle={""}
             />
           </div>
         </div>

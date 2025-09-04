@@ -4,8 +4,12 @@ import React, { useState } from "react";
 import { X, ChevronDown, Phone, RefreshCw } from "lucide-react";
 import ButtonLayout from "../utilities/ButtonLayout";
 import ButtonImage from "@/app/assets/home/buttonImg.webp";
+import axiosInstance from "@/app/store/api-config/axiosInstance";
+import { toast } from "sonner";
+import { submitResume } from "@/app/store/actions/resumeFormSubmit";
 
 export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
+  const [captchaCode, setCaptchaCode] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,8 +19,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
     expectedCTC: "",
     noticePeriod: "",
     currentLocation: "",
-    jobDetails: "",
-    captchaCode: "",
+    details: "",
     designation: jobTitle,
   });
 
@@ -29,7 +32,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
     expectedCTC: false,
     noticePeriod: false,
     currentLocation: false,
-    jobDetails: false,
+    details: false,
     captchaCode: false,
     designation: false,
   });
@@ -57,8 +60,21 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
   const handleFileChange = (event) => {
     const file = event.target.files?.[0];
     if (file) {
+      const maxSize = 5 * 1024 * 1024;
+      if (file.size > maxSize) {
+        toast.error("File size should not exceed 5MB", {
+          duration: 3000,
+        });
+        event.target.value = ""; // clear the input
+        return;
+      }
+
+      // ✅ valid file
+      toast.success("File uploaded successfully", {
+        duration: 3000,
+      });
       setSelectedFile(file);
-    }
+    } else toast.error("File not uploaded. Something went wrong!!");
   };
 
   const handleRemoveFile = () => {
@@ -70,16 +86,39 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  function clearForm() {
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      experience: "0-1", // Set default experience value to "0-1" to match the first option
+      currentCTC: "",
+      expectedCTC: "",
+      noticePeriod: "",
+      currentLocation: "",
+      details: "",
+      designation: jobTitle,
+    });
+    setSelectedFile(null);
+    setCaptchaCode("");
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Handle form submission
-    console.log("Form submitted:", formData);
     // Simulate submission delay
-    setTimeout(() => {
-      setIsSubmitting(false);
-      onClose();
-    }, 2000);
+    const response = await submitResume({
+      ...formData,
+      resume: selectedFile,
+    });
+    if (response.data.success == true)
+      toast.success("Your application submitted successfully", {
+        duration: 3000,
+      });
+
+    setIsSubmitting(false);
+    onClose();
+    clearForm();
   };
 
   if (!isOpen) return null;
@@ -87,14 +126,23 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
   return (
     <div className="fixed inset-0 z-[99] flex items-center justify-center">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+      <div
+        className="absolute inset-0 bg-black/50"
+        onClick={() => {
+          clearForm();
+          onClose();
+        }}
+      />
 
       {/* Modal */}
       <div className="relative bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto mx-4 rounded-lg shadow-2xl">
         {/* Header with gradient background */}
         <div className="relative bg-gradient-to-r from-[#1a1a5c] to-[#72388d] px-8 py-8 text-white">
           <button
-            onClick={onClose}
+            onClick={() => {
+              clearForm();
+              onClose();
+            }}
             className="absolute top-4 right-4 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
           >
             <X className="w-5 h-5" />
@@ -124,7 +172,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 onChange={(e) => handleInputChange("name", e.target.value)}
                 onFocus={() => handleFocus("name")}
                 onBlur={() => handleBlur("name")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer"
+                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer text-black"
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -145,7 +193,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 onChange={(e) => handleInputChange("email", e.target.value)}
                 onFocus={() => handleFocus("email")}
                 onBlur={() => handleBlur("email")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer"
+                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer text-black"
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -175,7 +223,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                   onChange={(e) => handleInputChange("phone", e.target.value)}
                   onFocus={() => handleFocus("phone")}
                   onBlur={() => handleBlur("phone")}
-                  className="flex-1 bg-transparent border-0 outline-none text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 bg-transparent border-0 outline-none text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
                 />
               </div>
               <label
@@ -199,7 +247,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                   }
                   onFocus={() => handleFocus("experience")}
                   onBlur={() => handleBlur("experience")}
-                  className="w-full bg-transparent border-0 outline-none text-lg appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed pr-8"
+                  className="w-full bg-transparent border-0 outline-none text-lg appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed pr-8 text-black"
                 >
                   <option value="0-1">0-1 years</option>
                   <option value="1-3">1-3 years</option>
@@ -234,7 +282,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 }
                 onFocus={() => handleFocus("currentCTC")}
                 onBlur={() => handleBlur("currentCTC")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -257,7 +305,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 }
                 onFocus={() => handleFocus("expectedCTC")}
                 onBlur={() => handleBlur("expectedCTC")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -284,7 +332,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 }
                 onFocus={() => handleFocus("noticePeriod")}
                 onBlur={() => handleBlur("noticePeriod")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 pr-16 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 pr-16 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -310,7 +358,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 }
                 onFocus={() => handleFocus("currentLocation")}
                 onBlur={() => handleBlur("currentLocation")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -334,7 +382,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                   }
                   onFocus={() => handleFocus("designation")}
                   onBlur={() => handleBlur("designation")}
-                  className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer"
+                  className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer text-black"
                 />
                 <label
                   className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -354,16 +402,16 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
             <textarea
               required
               disabled={isSubmitting}
-              value={formData.jobDetails}
-              onChange={(e) => handleInputChange("jobDetails", e.target.value)}
-              onFocus={() => handleFocus("jobDetails")}
-              onBlur={() => handleBlur("jobDetails")}
+              value={formData.details}
+              onChange={(e) => handleInputChange("details", e.target.value)}
+              onFocus={() => handleFocus("details")}
+              onBlur={() => handleBlur("details")}
               rows={6}
-              className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-8 text-lg resize-none disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-8 text-lg resize-none disabled:opacity-50 disabled:cursor-not-allowed text-black"
             />
             <label
               className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                shouldLabelFloat("jobDetails")
+                shouldLabelFloat("details")
                   ? "top-0 text-sm text-gray-600"
                   : "top-3 text-lg text-gray-500"
               }`}
@@ -410,7 +458,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                         type="button"
                         onClick={handleRemoveFile}
                         disabled={isSubmitting}
-                        className="w-5 h-5 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center text-xs flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-5 h-5 bg-red-600 hover:bg-red-700 text-white rounded-full flex items-center justify-center text-xs flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         ×
                       </button>
@@ -425,13 +473,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                   type="text"
                   required
                   disabled={isSubmitting}
-                  value={formData.captchaCode}
-                  onChange={(e) =>
-                    handleInputChange("captchaCode", e.target.value)
-                  }
+                  value={captchaCode}
+                  onChange={(e) => setCaptchaCode(e.target.value)}
                   onFocus={() => handleFocus("captchaCode")}
                   onBlur={() => handleBlur("captchaCode")}
-                  className="flex-1 bg-transparent border-0 outline-none text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 bg-transparent border-0 outline-none text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
                 />
                 <div className="bg-black text-white px-3 py-1 font-mono text-lg min-w-[60px] text-center">
                   {captchaText}
@@ -459,7 +505,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
           {/* Submit Button */}
           <div className="flex justify-center pt-8">
             <ButtonLayout
-              link="#"
+              onClick={handleSubmit}
               disabled={isSubmitting}
               text={isSubmitting ? "Submitting..." : "Submit"}
               image={ButtonImage}

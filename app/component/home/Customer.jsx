@@ -33,7 +33,6 @@ const itemVariants = {
 const Customer = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  const swiperRef = useRef(null);
   const customerData = [
     {
       id: 1,
@@ -100,7 +99,7 @@ const Customer = () => {
             </div>
 
             {/* Right: Arrows */}
-            <div className="flex gap-2 items-center flex justify-center">
+            <div className="flex gap-2 items-center justify-center">
               <div ref={prevRef} className="items-center flex justify-center">
                 <button className="bg-gray-200 p-2 rounded-full hover:bg-gray-300 w-8 h-8 text-center items-center flex justify-center">
                   <FaChevronLeft size={12} className="text-center" />
