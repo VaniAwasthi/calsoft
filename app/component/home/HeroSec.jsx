@@ -41,7 +41,7 @@ const slides = [
     description:
       "Secure Migration with 50% lower TCO, near-zero downtime, 40% post-migration savings",
     buttonText: "Read More",
-    link: "#",
+    link: "/data-ai/ai-powered-accelerators/vmware-migration",
   },
   {
     type: "banner",
@@ -51,7 +51,7 @@ const slides = [
     description:
       "Transform Your Testing with AI-Powered Test Intelligence Platform and Accelerate Your GTM Timeline",
     buttonText: "Read More",
-    link: "/data-ai/ai-powered-accelerators",
+    link: "/data-ai/ai-powered-accelerators/test-impact-analyzer-caltia",
   },
   ,
 ];
