@@ -26,13 +26,13 @@ const Page = () => {
   };
 
   const navItems = [
-    "Journey",
-    "Customers",
-    "Industries",
-    "What's New",
-    "Partners",
-    "Services",
-    "Case Study",
+    "Industry solution",
+    "Success stories",
+    "High Tech",
+    "Telecom",
+    "Retail",
+    "Manufacturing",
+    "Industry Partners",
   ];
   const SectionOne = {
     heading: "Hi-Tech",
