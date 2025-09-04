@@ -4,6 +4,8 @@ import React, { useRef, useState, useEffect } from "react";
 import ButtonLayout from "../../utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
 
 export default function IntelligentPlanning({
   data = {
@@ -127,51 +129,8 @@ export default function IntelligentPlanning({
     ],
   },
 }) {
-  const scrollContainerRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScrollPosition = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } =
-        scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
-    }
-  };
-
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      const cardWidth = 320; // Approximate card width + gap
-      scrollContainerRef.current.scrollBy({
-        left: -cardWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      const cardWidth = 320; // Approximate card width + gap
-      scrollContainerRef.current.scrollBy({
-        left: cardWidth,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener("scroll", checkScrollPosition);
-      // Check initial position
-      checkScrollPosition();
-
-      return () => {
-        container.removeEventListener("scroll", checkScrollPosition);
-      };
-    }
-  }, []);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
 
   return (
     <div id="intelligent-planning" className="bg-[#f2f0f5]">
@@ -193,13 +152,8 @@ export default function IntelligentPlanning({
             </div>
             <div className="flex justify-center items-center gap-5">
               <button
-                onClick={scrollLeft}
-                disabled={!canScrollLeft}
-                className={`transition-opacity duration-200 ${
-                  !canScrollLeft
-                    ? "opacity-50 cursor-not-allowed"
-                    : "hover:opacity-80"
-                }`}
+                ref={prevRef}
+                className={`transition-opacity duration-200 hover:opacity-80`}
               >
                 <svg
                   width="55"
@@ -219,13 +173,8 @@ export default function IntelligentPlanning({
                 </svg>
               </button>
               <button
-                onClick={scrollRight}
-                disabled={!canScrollRight}
-                className={`transition-opacity duration-200 ${
-                  !canScrollRight
-                    ? "opacity-50 cursor-not-allowed"
-                    : "hover:opacity-80"
-                }`}
+                ref={nextRef}
+                className={`transition-opacity duration-200 hover:opacity-80`}
               >
                 <svg
                   width="55"
@@ -248,35 +197,57 @@ export default function IntelligentPlanning({
           </div>
 
           {/* Feature Cards Grid */}
-          <div
-            // ref={scrollContainerRef}
-            // className="flex gap-10 overflow-x-auto scrollbar-hide pb-4"
-            // style={{
-            //   scrollbarWidth: "none",
-            //   msOverflowStyle: "none",
-            // }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16 z-50"
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={20}
+            loop={true}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[Navigation, Autoplay]}
+            autoplay={{ delay: 6000 }}
+            className="w-full z-0"
           >
-            {/* Card 1 - Gradient Background */}
             {data.cardData.map((ele, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: idx * 0.1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="relative bg-white hover:bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 hover:text-white min-h-[280px] hover:border-none border-2 border-[#2e3092] transition-all"
-              >
-                <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#2e3092] border-[1px] border-white rounded-full flex items-center justify-center">
-                  {ele.icon}
-                </div>
-                <div className="mt-16">
-                  <h3 className="text-xl font-bold mb-2">{ele.title}</h3>
-                  <p className="text-white/90 text-sm">{ele.subTitle}</p>
-                </div>
-              </motion.div>
+              <SwiperSlide key={idx} className="z-10">
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: idx * 0.1 }}
+                  viewport={{ once: false, amount: 0.3 }}
+                  className="relative bg-white hover:bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 hover:text-white min-h-[280px] hover:border-none border-2 border-[#2e3092] transition-all"
+                >
+                  <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#2e3092] border-[1px] border-white rounded-full flex items-center justify-center z-50">
+                    {ele.icon}
+                  </div>
+                  <div className="mt-16">
+                    <h3 className="text-xl font-bold mb-2">{ele.title}</h3>
+                    <p className="text-white/90 text-sm">{ele.subTitle}</p>
+                  </div>
+                </motion.div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
 
           {/* Result Section */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
