@@ -38,32 +38,38 @@ const Customer = () => {
     {
       id: 1,
       image: Experience,
-      value: "27+",
-      label: "Years of Experience",
+      value: "6x ",
+      label: "Faster MVPs",
     },
     {
       id: 2,
       image: Inovators,
-      value: "1500+",
-      label: "Innovators",
+      value: "70% ",
+      label: "AI Adoption Readiness",
     },
     {
       id: 3,
       image: Partnership,
-      value: "20+",
-      label: "Partnerships",
+      value: "$500Ks",
+      label: "Infra Savings",
     },
     {
       id: 4,
       image: HappyCustomer,
-      value: "300+",
-      label: "Happy Customers",
+      value: "40%",
+      label: "Reusability Boost",
     },
     {
       id: 5,
       image: Fortunecustomers,
-      value: "21+ ",
-      label: "Fortune  500 customers",
+      value: "95%",
+      label: "Test Automation",
+    },
+    {
+      id: 6,
+      image: Fortunecustomers,
+      value: "99.99%",
+      label: "Uptime Delivered",
     },
   ];
   // const logos = [
@@ -81,7 +87,7 @@ const Customer = () => {
         style={{
           background: `url(${bgimg.src}) center center/ cover no-repeat`,
         }}
-        id="customers"
+        id="value-proposition"
       >
         <div className="container mx-auto px-4 xl:px-20">
           <div className="flex justify-between items-center mb-2 md:mb-6">
@@ -90,7 +96,7 @@ const Customer = () => {
               <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
                 <Image src={icon} alt="icon" width={16} height={16} />
               </div>
-              <p className="font-light text-sm md:text-base">Customers</p>
+              <p className="font-light text-sm md:text-base">Value Proposition</p>
             </div>
 
             {/* Right: Arrows */}
@@ -123,11 +129,10 @@ const Customer = () => {
                   className="text-2xl md:text-[38px] font-normal "
                 >
                   <span className="font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">
-                    Proven.
-                  </span>
-                  Trusted
+Sustainable                   </span>
+                  future-ready growth.
                 </motion.h2>
-                <motion.h2
+                {/* <motion.h2
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 1, delay: 0.2 }}
@@ -135,7 +140,7 @@ const Customer = () => {
                   className="text-2xl md:text-[38px] font-regular"
                 >
                   by industry leaders.
-                </motion.h2>
+                </motion.h2> */}
 
                 <motion.div
                   initial={{ y: 10, opacity: 0 }}
@@ -144,8 +149,7 @@ const Customer = () => {
                   viewport={{ once: false, amount: 0.3 }}
                 >
                   <p className="mt-4 w-full md:mt-[3rem] text-[13px] md:text-base mb-8 text-[#7E7E7E] md:w-[300px]">
-                    Powering 21+ Fortune 500 customers, fast-growing start-ups,
-                    and digital innovators in their transformation journey.
+                    Trusted by 100+ global ISVs and enterprises to accelerate digital innovation with up to 40% faster product delivery, 35% lower infra cost, and 60% reduced technical debt.
                   </p>
                 </motion.div>
               </div>

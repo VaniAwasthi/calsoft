@@ -82,6 +82,7 @@ const Page = () => {
             },
           ],
         }}
+        buttonClick2={()=>showHubSpotForm("architecture-ideation-download-one-pager")}
       />
       <HowToStart
         headerContent={{

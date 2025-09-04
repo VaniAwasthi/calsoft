@@ -68,10 +68,12 @@ export default function LifeAtCalsoft() {
                 className="pt-4"
               >
                 <ButtonLayout
-                  link=""
+                  link="https://www.calsoftinc.com/blogs/the-coded-rhythm-of-life-at-calsoft.html"
                   text="Learn More"
                   image={ButtonImage}
                   hoverImage={ButtonImage}
+                  className="!w-[250px]"
+
                 />
               </motion.div>
             </div>
