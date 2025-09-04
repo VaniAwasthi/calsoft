@@ -225,7 +225,7 @@ export const ContactSec = ({ lightContent, link, buttonClicked }) => {
                 >
                   <ButtonLayout
                     link={link}
-                    text="Learn More"
+                    text="Contact Us"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
                     onClick={buttonClicked}

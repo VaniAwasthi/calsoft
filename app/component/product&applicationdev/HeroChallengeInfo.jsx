@@ -62,7 +62,7 @@ export const ProdandAppChallengeSec = () => {
   const challengesData = [
     {
       title: "Ideation and architecture",
-      description: "lifecycle processes slowing down product delivery",
+      description: "Lifecycle processes slowing down product delivery",
       solution:
         "Integrate ideation, architecture, development, and DevOps seamlessly",
     },

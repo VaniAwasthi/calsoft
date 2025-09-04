@@ -30,8 +30,8 @@ const Page = () => {
   return (
     <>
       <HeroSection
-        title="From First Line to Full Launch—We Build to Deliver"
-        description="Build intelligent, cloud-native products—from MVP to enterprise scale—without vendor lock-in."
+        title="From First Line to Full Launch -We Build to Deliver"
+        description="Build intelligent, cloud-native products-from MVP to enterprise scale-without vendor lock-in."
         buttonText="Download Datasheet"
         navItems={navItems}
         setActiveTab={setActiveTab}
@@ -41,7 +41,7 @@ const Page = () => {
       />
       <WhyItMatters
         title="90% of Product Delays Are Self-Inflicted. Avoid Them."
-        desc="Fragmented vendors, unclear scope, or a dev team that only understands code—not your business. That’s where most software projects bleed time and money. Calsoft’s full-cycle development model eliminates the guesswork with one integrated team accountable across the entire lifecycle—from ideation to post-deployment refinement."
+        desc="Fragmented vendors, unclear scope, or a dev team that only undrstands code-not your business. That's where most software projects bleed time and money. Calsoft's full-cycle development model eliminates the guesswork with one integrated team accountable accross the entire lifecycle-from ideationto post-deployment refinement."
         buttonText="Download Case Study"
         MainComponenent={DevelopmentCycle}
         contentClass="w-[90%]"
@@ -181,29 +181,29 @@ const Page = () => {
         ]}
         data={{
           leftSideContent: {
-            title: "Deliver Better. Scale Smarter. Win Faster.",
+            title: "Faster MVP. Lower Costs. Zero Rework.",
             subTitle:
-              "Here’s what our clients gained with Calsoft's full-cycle approach:",
+              null,
             description:
-              "Calsoft quantifies ROI for each roadmap milestone —from VM consolidation to cloud-native transitions —and ensures you get board-level buy-in with real data.",
+              "Our approach de-risks the early phases by up to 40%. You get:",
           },
           rightSideContent: [
             {
-              title: "35%",
-              subTitle: "faster MVP launches",
+              title: "30%",
+              subTitle: "faster time-to-MVP",
             },
             {
-              title: "40%",
-              subTitle: "fewer post-release defects due to shift-left QA",
+              title: "Up to 25%",
+              subTitle: "cost saving through right-stack decisions",
             },
             {
-              title: "50%",
-              subTitle: "more sprint efficiency using cross-functional pods",
+              title: "100%",
+              subTitle: "cloud readiness with reusable components",
             },
             {
-              title: "Up to $400K",
+              title: "3X",
               subTitle:
-                "saved/year by choosing optimal infra stack & code reuse",
+                "faster onboarding of dev teams with clean blueprints",
             },
           ],
         }}
@@ -246,7 +246,7 @@ const Page = () => {
             arrowMobile: mobile3,
           },
           {
-            day: "Day 6-10",
+            day: "Days 6–10",
             title: "Feature Development",
             points: [
               "Core functionality built",
@@ -257,7 +257,7 @@ const Page = () => {
             arrowMobile: mobile2,
           },
           {
-            day: "Day 11-14",
+            day: "Days 11–14",
             title: "QA & Refinement",
             points: [
               "Automated tests + UAT testing",
@@ -268,9 +268,12 @@ const Page = () => {
             arrowMobile: mobile3,
           },
           {
-            day: "Day 9-10",
+            day: "Day 15",
             title: "Sprint Demo & Plan Next Phase",
-            points: ["Final walkthrough", "Deployment advisory + roadmap"],
+            points: [
+              "Final walkthrough",
+              "Deployment advisory + roadmap",              
+            ],
             output: "Demo Build + Sprint Summary Report",
             arrowDesktop: null,
             arrowMobile: null,

@@ -52,7 +52,36 @@ const Page = () => {
       <UseCases
         CTACopy="Reduce design cycle by 30% via architecture-led ideation."
         id="use-cases"
+        title="Where We Add the Most Value"
+        description="Whether you're starting from scratch or modernizing legacy platforms, our Architecture & Ideation services plug in at the right time."
         BussinessId="business-value"
+        data={{
+          leftSideContent: {
+            title: "Faster MVP. Lower Costs. Zero Rework.",
+            subTitle: null,
+            description:
+              "Our approach de-risks the early phases by up to 40%. You get:",
+          },
+          rightSideContent: [
+            {
+              title: "30%",
+              subTitle: "faster time-to-MVP",
+            },
+            {
+              title: "Up to 25%",
+              subTitle: "cost saving through right-stack decisions",
+            },
+            {
+              title: "100%",
+              subTitle:
+                "cloud readiness with reusable components",
+            },
+            {
+              title: "3X",
+              subTitle: "faster onboarding of dev teams with clean blueprints",
+            },
+          ],
+        }}
       />
       <HowToStart
         headerContent={{
