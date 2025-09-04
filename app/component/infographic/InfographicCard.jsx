@@ -14,6 +14,7 @@ export const InfographicCard = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
   const listData = useSelector((state) => state.usecases.list);
+  const [filteredList, setFilteredList] = useState(listData);
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -33,13 +34,8 @@ export const InfographicCard = () => {
     Topics: ["All", ...FilterTopic],
   };
 
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-    dispatch(fetchUsecasesList());
-  }, [dispatch]);
-
-  const cardData = Array.isArray(listData)
-    ? listData.map((item) => ({
+  const cardData = Array.isArray(filteredList)
+    ? filteredList.map((item) => ({
         id: item._id,
         title: item.title || "Untitled",
         image: `${baseUrl}/${item.usecase_image}`,
@@ -57,7 +53,6 @@ export const InfographicCard = () => {
         industry: item.industry || "Tech",
       }))
     : [];
-
   const resources = cardData; // ✅ re-renders when Redux listData updates
 
   const toggleDropdown = (filter) => {
@@ -104,6 +99,27 @@ export const InfographicCard = () => {
     setCurrentPage(index);
   };
 
+  function search(value) {
+    console.log(value);
+    console.log(filteredList);
+    if (value === "") setFilteredList(listData);
+    else
+      setFilteredList(
+        listData.filter((blog) =>
+          blog.title.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
+  useEffect(() => {
+    setFilteredList(listData);
+  }, [listData]);
+
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(fetchUsecasesList());
+  }, [dispatch]);
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
@@ -115,6 +131,7 @@ export const InfographicCard = () => {
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
           setActiveFilters={setActiveFilters}
+          searchDebouncing={search}
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
