@@ -48,6 +48,8 @@ const Page = () => {
       <UseCases
         CTACopy="Reduce design cycle by 30% via architecture-led ideation."
         id="use-cases"
+        title="Where We Add the Most Value"
+        description="Whether you're starting from scratch or modernizing legacy platforms, our Architecture & Ideation services plug in at the right time."
         BussinessId="business-value"
         data={{
           leftSideContent: {

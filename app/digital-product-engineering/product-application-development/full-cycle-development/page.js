@@ -29,8 +29,8 @@ const Page = () => {
   return (
     <>
       <HeroSection
-        title="From First Line to Full Launch—We Build to Deliver"
-        description="Build intelligent, cloud-native products—from MVP to enterprise scale—without vendor lock-in."
+        title="From First Line to Full Launch -We Build to Deliver"
+        description="Build intelligent, cloud-native products-from MVP to enterprise scale-without vendor lock-in."
         buttonText="Download Datasheet"
         navItems={navItems}
         setActiveTab={setActiveTab}
@@ -39,7 +39,7 @@ const Page = () => {
       />
       <WhyItMatters
         title="90% of Product Delays Are Self-Inflicted. Avoid Them."
-        desc="Fragmented vendors, unclear scope, or a dev team that only understands code—not your business. That’s where most software projects bleed time and money. Calsoft’s full-cycle development model eliminates the guesswork with one integrated team accountable across the entire lifecycle—from ideation to post-deployment refinement."
+        desc="Fragmented vendors, unclear scope, or a dev team that only undrstands code-not your business. That's where most software projects bleed time and money. Calsoft's full-cycle development model eliminates the guesswork with one integrated team accountable accross the entire lifecycle-from ideationto post-deployment refinement."
         buttonText="Download Case Study"
         MainComponenent={DevelopmentCycle}
         contentClass="w-[90%]"
@@ -243,7 +243,7 @@ const Page = () => {
             arrowMobile: mobile3,
           },
           {
-            day: "Day 6-10",
+            day: "Days 6–10",
             title: "Feature Development",
             points: [
               "Core functionality built",
@@ -254,7 +254,7 @@ const Page = () => {
             arrowMobile: mobile2,
           },
           {
-            day: "Day 11-14",
+            day: "Days 11–14",
             title: "QA & Refinement",
             points: [
               "Automated tests + UAT testing",
@@ -265,9 +265,12 @@ const Page = () => {
             arrowMobile: mobile3,
           },
           {
-            day: "Day 9-10",
+            day: "Day 15",
             title: "Sprint Demo & Plan Next Phase",
-            points: ["Final walkthrough", "Deployment advisory + roadmap"],
+            points: [
+              "Final walkthrough",
+              "Deployment advisory + roadmap",              
+            ],
             output: "Demo Build + Sprint Summary Report",
             arrowDesktop: null,
             arrowMobile: null,
