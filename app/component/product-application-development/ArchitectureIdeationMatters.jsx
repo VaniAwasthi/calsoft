@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ArchitectureIdeationMatters() {
   return (
-    <div className="w-full h-[23rem] flex justify-center items-start">
+    <div className="w-full h-[23rem] flex justify-start xl:justify-center items-start">
       <div className="relative flex justify-center items-center">
         <div className="relative">
           {/* w-265; h-285 */}
