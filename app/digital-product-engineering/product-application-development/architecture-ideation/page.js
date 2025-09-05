@@ -33,15 +33,16 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
+        buttonText2=""
         buttonClicked={()=>showHubSpotForm("Get-Architechure-Rediness-Score")}
       />
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
         desc="75% of digital product failures stem from poor early decisions—wrong tech stack, unclear user flows, or over-engineered features. Calsoft helps you cut through ambiguity and shape a scalable, cloud-first, cost-efficient architecture that aligns with your business goals from Day 1."
-        buttonText="Download"
+        buttonText="Get in Touch"
         MainComponenent={ArchitectureIdeation}
         id="why-it-matters"
-        buttonClicked={()=>showHubSpotForm("architecture-ideation-download-one-pager")}
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
         // contentClass="w-[90%]"
       />
       <WhatWeOffer
@@ -91,12 +92,13 @@ const Page = () => {
             "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
         }}
         id="how-to-start"
+        buttonClick2={()=>showHubSpotForm("quality-engineering-download-one-pager")}
       />
       <Steps />
-      <ArchitectureSprint />
+      {/* <ArchitectureSprint /> */}
       <ContactSecDataAi
         BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+        lightContent="Design innovative solutions with future-ready architectures. "
         link="#"
       />
     </>

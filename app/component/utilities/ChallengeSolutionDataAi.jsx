@@ -292,7 +292,7 @@ export const ContactSecDataAi = ({
   BoldContent,
   lightContent,
   link,
-  buttonText = "Learn More",
+  buttonText = "Contact Us",
 }) => {
   return (
     <>
