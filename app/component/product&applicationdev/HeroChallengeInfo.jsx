@@ -20,7 +20,7 @@ export const HeroSectionProductandApplicationDev = () => {
     title: "Product and application development",
     description: `Engineer ideas into robust, scalable solutions
 with speed and precision.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
 
@@ -62,7 +62,7 @@ export const ProdandAppChallengeSec = () => {
   const challengesData = [
     {
       title: "Ideation and architecture",
-      description: "Lifecycle processes slowing down product delivery",
+      description: "Fragmented lifecycle processes slowing down product delivery",
       solution:
         "Integrate ideation, architecture, development, and DevOps seamlessly",
     },

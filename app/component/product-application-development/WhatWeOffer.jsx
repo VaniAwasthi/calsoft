@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
+import { title } from "process";
 
 export default function FeatureCards({
   id="",
@@ -115,6 +116,7 @@ export default function FeatureCards({
   heading = "From Vision to Viable Blueprint",
   description = "Cloud modernization isn't about a one-size-fits-all blueprint. It's about aligning infra to your business needs. Calsoft brings:",
   buttonText = "Request Architecture Blueprint",
+  ScorecardComponent = Scorecard,
 }) {
   return (
     <div className="bg-[#F5F5F5]" id={id}>
@@ -163,7 +165,22 @@ export default function FeatureCards({
             </motion.div>
           ))}
         </div>
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <ScorecardComponent 
+        buttonText={buttonText}
+        />
+      </div>
+      <div className="h-8" />
+    </div>
+  );
+}
+
+export function Scorecard(
+  {buttonText},
+  title= "Feasibility Scorecard Calculator",
+  description= "Upload your business case and get an auto-generated score on feasibility across tech, team, timeline, and budget."
+){  
+  return(
+       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -171,11 +188,10 @@ export default function FeatureCards({
             viewport={{ once: false, amount: 0.3 }}
           >
             <h3 className="text-black text-3xl font-bold mb-4">
-              Feasibility Scorecard Calculator
+              {title}
             </h3>
             <p className="text-black text-xl max-w-2xl">
-              Upload your business case and get an auto-generated score on
-              feasibility across tech, team, timeline, and budget.
+              {description}
             </p>
           </motion.div>
           <motion.div
@@ -192,8 +208,46 @@ export default function FeatureCards({
             />
           </motion.div>
         </div>
-      </div>
-      <div className="h-8" />
-    </div>
-  );
+  )
+}
+
+export function RequestDemo(
+{  title1= "Average delivery time for MVPs: 6–10 weeks",
+  title2="Code quality audit: 95%+ static analysis pass rate",
+  desc= "Release velocity: Bi-weekly sprints | CI-ready",
+  buttonText= "Request a Demo" } 
+){
+ return(
+       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <p className="text-black text-xl">
+              {title1}
+            </p>
+            <p className="text-black text-xl max-w-2xl">
+              {title2}
+            </p>
+            <p className="text-black text-xl max-w-2xl">
+              {desc}
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <ButtonLayout
+              text={buttonText}
+              image={buttonImage}
+              hoverImage={buttonImage}
+              className={"w-fit"}
+            />
+          </motion.div>
+        </div>
+  )
 }

@@ -13,16 +13,15 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
-export const DataJounery = () => {
-  const [activeTab, setActiveTab] = useState("benefits");
-  const slide = {
-    title: "Data observability",
+export const DataJounery = ({ slide = {
+  title: "Data observability",
 
-    description: `Monitor, analyze, and safeguard data
+  description: `Monitor, analyze, and safeguard data
     ecosystems with continuous visibility.`,
-    buttonText: "Download Datasheet",
-    image: BackgroundImage,
-  };
+  buttonText: "Download Datasheet",
+  image: BackgroundImage,
+} }) => {
+  const [activeTab, setActiveTab] = useState("benefits");
   const navItems = [
     "Benefits",
     "Streaming",
@@ -52,40 +51,39 @@ export const DataJounery = () => {
   );
 };
 
-export const DataSolutionSec = () => {
-  const data = [
-    {
-      tag: "Unified  monitoring",
-      challenge:
-        "Struggling to track data health across distributed environments?",
-      solution:
-        "Centralized observability frameworks across hybrid and multicloud data systems",
-    },
-    {
-      tag: "Real-time insights",
-      challenge: "Finding anomalies too late in streaming data pipelines?",
-      solution:
-        "Implement realtime telemetry and anomaly detection across ingestion and processing layers",
-    },
-    {
-      tag: "Lineage visibility",
-      challenge:
-        "Lacking transparency over data movement and transformation journeys?",
-      solution:
-        "Map complete data lineage and audit trails from source to consumption",
-    },
-    {
-      tag: "Proactive risk alerts",
-      challenge: "Reacting only after data issues impact downstream analytics?",
-      solution:
-        "Deploy predictive monitoring and early warning systems for data quality risks.",
-    },
-  ];
+export const DataSolutionSec = ({ data = [
+  {
+    tag: "Unified  monitoring",
+    challenge:
+      "Struggling to track data health across distributed environments?",
+    solution:
+      "Centralized observability frameworks across hybrid and multicloud data systems",
+  },
+  {
+    tag: "Real-time insights",
+    challenge: "Finding anomalies too late in streaming data pipelines?",
+    solution:
+      "Implement realtime telemetry and anomaly detection across ingestion and processing layers",
+  },
+  {
+    tag: "Lineage visibility",
+    challenge:
+      "Lacking transparency over data movement and transformation journeys?",
+    solution:
+      "Map complete data lineage and audit trails from source to consumption",
+  },
+  {
+    tag: "Proactive risk alerts",
+    challenge: "Reacting only after data issues impact downstream analytics?",
+    solution:
+      "Deploy predictive monitoring and early warning systems for data quality risks.",
+  },
+] }) => {
   return (
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Monitor, Predict, and Fortify Data Ecosystems"
+        BlackHeading="– Legacy to Leadership"
         GradientHeading=" Challenge to solutions:"
         secId="benefits"
       />
@@ -97,20 +95,19 @@ export const RealSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Real-time data streaming
-                analytics"
-        description="Boost agility and efficiency as you capture, analyze, and act on live data flows."
+        title="Event-ready Data Frameworks"
+        description="Architected for real-time decisions and streaming intelligence."
         // buttonText="Learn More"
         link="#"
         whatWeDo={[
-          "Set up live data pipeline monitors",
-          "Auto-scale streams with fault control",
-          "Build alerting tied to live KPIs",
+          "Design event-driven data pipelines",
+          "Enable Kafka, Flink, or equivalent integration",
+          "Build fault-tolerant, high-throughput ingestion layers",
         ]}
         businessImpact={[
-          "Spot pipeline issues immediately",
-          "Respond faster with real-time views",
-          "Reduce delays and data loss risks",
+          "Reduced latency in decision-making",
+          "Real-time insights across critical ops",
+          "Future-ready for AI/ML and RAG use cases",
         ]}
         imageSrc={InfoSec1}
         imageAlt="Infrastructure globe"
@@ -126,19 +123,19 @@ export const ComplianceSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Compliance tracking"
-        description="Embed governance to strengthen observability, risk mitigation, and audit readiness."
+        title="Data & Storage Optimization"
+        description="Lean data architectures without compromising performance."
         // buttonText="Learn More"
         link="#"
         whatWeDo={[
-          "Add compliance checks at each step",
-          "Capture lineage, tag with policies",
-          "Match rules with frameworks like GDPR",
+          "Apply storage tiering and deduplication",
+          "Optimize file formats (Parquet, ORC, Delta)",
+          "Rationalize redundant datasets and unused pipelines",
         ]}
         businessImpact={[
-          "Audit trails always up to date",
-          "Fewer policy violations at scale",
-          "Stakeholders trust verified data",
+          "Up to 30% reduction in storage costs",
+          "Better query performance with smaller data footprint",
+          "Sustainable scalability as data grows",
         ]}
         imageSrc={InfoSec2}
         imageAlt="Image"
@@ -154,19 +151,19 @@ export const Real2Sec = () => {
   return (
     <>
       <DataInfoSection
-        title="Real-time data workflow synchronization"
-        description="Coordinate data flows across platforms with precision and agility."
+        title="Data Warehouse Modernization"
+        description="From legacy monoliths to cloud-native warehouses."
         // buttonText="Learn More"
         link="#"
         whatWeDo={[
-          "Sync flows across systems in real-time",
-          "Trigger processing via events",
-          "Use one view for all data motion",
+          "Assess existing DW architecture",
+          "Migrate to Snowflake, BigQuery, Redshift, etc.",
+          "Implement ELT models with performance tuning",
         ]}
         businessImpact={[
-          "Bottlenecks resolved more quickly",
-          "Live sync keeps analytics on time",
-          "Visibility across platforms grows",
+          "Faster analytics and reporting cycles",
+          "Lower infrastructure and license cost",
+          "Elastic scaling aligned with usage",
         ]}
         imageSrc={InfoSec3}
         imageAlt="Infrastructure globe"
@@ -181,19 +178,19 @@ export const ProactiveSec = () => {
   return (
     <>
       <DataInfoSection
-        title="Proactive risk alerts"
-        description="Detect anomalies early and safeguard data integrity proactively."
+        title="Analytics Engine (BI) Updates"
+        description="Analytics pipelines re-engineered for business velocity."
         // buttonText="Learn More"
         link="#"
         whatWeDo={[
-          "Predict issues before they disrupt",
-          "Score risks to sort alert urgency",
-          "Send smart alerts to fix issues fast",
+          "Upgrade or migrate BI tools (Power BI, Tableau, Looker)",
+          "Refresh dashboards with actionable KPIs",
+          "Optimize queries and materialized views",
         ]}
         businessImpact={[
-          "Stop issues before impact spreads",
-          "Faster triage of high-risk events",
-          "Keep systems stable and trusted",
+          "Reduced dashboard load times",
+          "Better visualization relevance and adoption",
+          "Increased self-service for business teams",
         ]}
         imageSrc={InfoSec4}
         imageAlt="Infrastructure globe"

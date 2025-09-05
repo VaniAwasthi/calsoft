@@ -20,7 +20,7 @@ export const AnalyticsBanner = () => {
     title: "Data analytics and reporting",
     description: `Enable smarter decisions with real-time
     analytics and intuitive visualizations.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [

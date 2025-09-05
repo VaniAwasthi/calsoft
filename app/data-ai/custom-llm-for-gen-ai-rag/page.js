@@ -36,8 +36,8 @@ export default function Page() {
       <EnterpriseSec />
       <SystemSec />
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+        BoldContent=""
+        lightContent="Move beyond generic AI. Deploy domain-aware, explainable systems with Calsoft"
         link="#"
       />
     </>
