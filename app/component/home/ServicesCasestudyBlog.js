@@ -40,42 +40,42 @@ export const Services = () => {
       title: "AI-Powered Test Automation",
       description:
         "Accelerate releases with intelligent, self-healing automation frameworks.",
-      link: "/",
+      link: "/data-ai/ai-powered-accelerators/test-impact-analyzer-caltia",
     },
     {
       icon: service2,
       title: "VMware Migration Services",
       description:
         "Seamlessly shift from VMware to OpenStack, Nutanix, Azure or AWS.",
-      link: "/",
+      link: "/data-ai/ai-powered-accelerators/vmware-migration",
     },
     {
       icon: service3,
       title: "Cloud-Native Enablement",
       description:
         "Modernize your application stack with microservices, containers, and agile DevOps practices.",
-      link: "/",
+      link: "/digital-product-engineering/cloud/cloud-native-enablement",
     },
     {
       icon: service4,
       title: "Agentic AI Planning & Development",
       description:
         "Design and deploy autonomous AI agents to supercharge decision-making and business agility.",
-      link: "/",
+      link: "/data-ai/agentic-ai-development",
     },
     {
       icon: service5,
       title: "Product & Application Development",
       description:
         "Engineer scalable, secure, and high-performing software products with a future-ready architecture.",
-      link: "/",
+      link: "/digital-product-engineering/product-application-development",
     },
     {
       icon: service6,
       title: "DataOps & Governance",
       description:
         "Streamline data pipelines and ensure compliance with enterprise-grade DataOps and governance.",
-      link: "/",
+      link: "/data-ai/data-ops-governance",
     },
   ];
   return (
@@ -224,7 +224,6 @@ export const Casestudy = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-               
                 {/* <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem]">
                   {caseStudyData.title}
                 </h2> */}

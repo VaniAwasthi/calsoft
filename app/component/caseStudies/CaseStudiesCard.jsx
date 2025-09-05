@@ -170,7 +170,7 @@ export const CaseStudiesCard = () => {
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
-        <p className="mb-4 text-sm">{filteredResources.length} Results</p>
+        <p className="mb-4 text-sm">{filteredListData.length} Results</p>
         {/* recent */}
         <motion.div
           initial={{ opacity: 0, y: -100 }}
