@@ -9,6 +9,7 @@ import blogexpanImage from "../../../assets/blog/blogexpanImage.webp";
 import sanitizeHtml from "sanitize-html";
 import ProfileDummy from "../../../assets/caseStudies/Profile.webp";
 import { baseUrl } from "@/config";
+import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 export const Banner = ({ blog }) => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
 
@@ -264,12 +265,12 @@ export const ArticleContent = ({ blog }) => {
                 Sign up to receive the latest security news and threat insights
                 in your inbox from Threatsense.
               </p>
-              <input
+              {/* <input
                 type="email"
                 placeholder="Business Email*"
                 className="w-[250px] lg:w-3/4 px-3 py-2 border border-gray-300 rounded-xl text-sm mb-[2rem]"
-              />
-              <button className="w-[200px] xl:w-1/3 bg-[#BA0007] text-white py-2  hover:bg-[#BA0007] transition text-sm font-semibold rounded-xl">
+              /> */}
+              <button onClick={()=>showHubSpotForm("subscribe")} className="w-[200px] xl:w-1/3 bg-[#BA0007] text-white py-2  hover:bg-[#BA0007] transition text-sm font-semibold rounded-xl">
                 Subscribe
               </button>
             </div>
@@ -279,12 +280,25 @@ export const ArticleContent = ({ blog }) => {
               <div className="flex  flex-wrap gap-2 my-2">
                 {Array.isArray(blog?.tagData) &&
                   blog.tagData.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-[#2E3092] text-white w-[40%] text-center rounded-3xl text-sm px-4 py-4"
-                    >
-                      {tag.name}
-                    </span>
+                    <>
+                     <span
+                        key={idx}
+                        className="text-[#E36C0A] font-semibold text-[18px]  rounded flex items-center"
+                      >
+                        {tag.name}
+                        {idx !== blog.tagData.length - 1 && (
+                          <span className="mx-2 text-[#E36C0A]">|</span>
+                        )}
+                      </span>
+                    
+                    </>
+                    // <span
+                    //   key={idx}
+                    //   className="bg-[#2E3092] text-white w-[40%] text-center rounded-3xl text-sm px-4 py-4"
+                    // >
+                    //   {tag.name}
+                    // </span>
+                   
                   ))}
               </div>
             </div>

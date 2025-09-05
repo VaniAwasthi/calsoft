@@ -46,9 +46,10 @@ const Page = () => {
         id="why-it-matters"
       />
       <WhatWeOffer id="what-we-offer"
-      heading="Your Complete QA Arsenal, Built for Today"
-      description="Quality Engineering suite ensures speed without sacrificing stability. Fully DevOps-aligned. Scalable. Predictable." 
-      features={[
+        heading="Your Complete QA Arsenal, Built for Today"
+        description="Quality Engineering suite ensures speed without sacrificing stability. Fully DevOps-aligned. Scalable. Predictable."
+        buttonText="Download Case Study"
+        features={[
           {
             icon: (
               <svg
@@ -203,6 +204,10 @@ const Page = () => {
             },
           ],
         }}
+        bookMeetingData={{
+          title: "Is Your Product Development Strategy Scalable?",
+          buttontext: "Book a Meeting",
+        }}
       />
       <HowToStart
         id="how-to-start"
@@ -212,8 +217,8 @@ const Page = () => {
             "A 3-week working prototype. That’s how we begin. No lock-in. No over-commitment. Just delivery.",
         }}
       />
-      <Steps 
-      heading="3-Week Build Sprint: Step-by-Step"
+      <Steps
+        heading="3-Week Build Sprint: Step-by-Step"
         steps={[
           {
             day: "Day 0",
@@ -264,7 +269,7 @@ const Page = () => {
             title: "Sprint Demo & Plan Next Phase",
             points: [
               "Final walkthrough",
-              "Deployment advisory + roadmap",                            
+              "Deployment advisory + roadmap",
             ],
             output: "Demo Build + Sprint Summary Report",
             arrowDesktop: null,

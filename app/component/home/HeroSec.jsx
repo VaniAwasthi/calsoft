@@ -6,13 +6,10 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import BackgroundImage1 from "../../assets/home/VMwareBanner.webp";
 import BackgroundImage2 from "../../assets/home/CalTIA-Banner.webp";
-import BackgroundImage3 from "../../assets/CEOBanner.png";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import BannerLayout from "../utilities/BannerLayout";
-import ButtonLayout from "../utilities/ButtonLayout";
 import { showHubSpotForm } from "../utilities/showHubSpotForm"; // <-- import your util
 
-const backgroundVideo = "/BannerGif.mp4";
 const backgroundVideo2 = "/HomeVideo.mp4";
 
 const slides = [
@@ -41,7 +38,7 @@ const slides = [
     description:
       "Secure Migration with 50% lower TCO, near-zero downtime, 40% post-migration savings",
     buttonText: "Read More",
-    link: "#",
+    link: "/data-ai/ai-powered-accelerators/vmware-migration",
   },
   {
     type: "banner",
@@ -51,7 +48,7 @@ const slides = [
     description:
       "Transform Your Testing with AI-Powered Test Intelligence Platform and Accelerate Your GTM Timeline",
     buttonText: "Read More",
-    link: "/data-ai/ai-powered-accelerators",
+    link: "/data-ai/ai-powered-accelerators/test-impact-analyzer-caltia",
   },
   ,
 ];
@@ -157,6 +154,7 @@ const HeroSec = () => {
               descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[200px] md:w-full"
               BgClassname="object-cover w-full h-full object-center"
               height="h-[37.5rem]"
+              link={slide.link}
               onButtonClick={() => handleButtonClick(slide)} // pass click handler
             />
           )}

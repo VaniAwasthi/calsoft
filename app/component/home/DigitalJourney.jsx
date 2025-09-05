@@ -20,7 +20,7 @@ const DigitalJounery = () => {
 
   const navItems = [
     "Journey",
-    "Customers",
+    "Value Proposition",
     "Industries",
     "What's New",
     "Partners",
