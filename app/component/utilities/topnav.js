@@ -19,6 +19,7 @@ export default function Navbar() {
   const [searchInput, setSearchInput] = useState("");
   const router = useRouter();
   const pathname = usePathname();
+const [activeParent, setActiveParent] = useState(null);
 
   const toggleMenu = (index) => {
     setOpenMenus((prev) => ({
@@ -65,7 +66,21 @@ export default function Navbar() {
       setSelectedSubmenu(null);
     }
   }, [activeMenu, pathname]);
+const isParentActive = (title) => {
+  const parent = navItems.find((item) => item.title === title);
+  if (!parent?.submenu) return pathname.startsWith(parent?.href);
 
+  // check all submenu + inner submenu
+  return (
+    parent.submenu.some(
+      (sub) =>
+        pathname.startsWith(sub.href) ||
+        sub.inersubmenu?.some((inner) =>
+          pathname.startsWith(inner.href)
+        )
+    ) || pathname.startsWith(parent.href)
+  );
+};
   return (
     <header className="w-full sticky top-0 z-[90]">
       {/* Top Bar */}
@@ -115,19 +130,17 @@ export default function Navbar() {
                         href={href}
                         className="flex items-center space-x-1 text-white"
                       >
-                        <span
-                          className={`${
-                            navItems
-                              .find((item) => item.title === title)
-                              ?.submenu?.some((sub) =>
-                                pathname.startsWith(sub.href)
-                              )
-                              ? "font-bold text-[#fffff] text-[16px]"
-                              : "font-normal text-sm"
-                          } hover:font-bold`}
-                        >
-                          {title}
-                        </span>
+                      <span
+  className={`${
+    isParentActive(title)
+      ? "font-bold text-white text-[16px]"
+      : "font-normal text-sm"
+  } hover:font-bold`}
+>
+  {title}
+</span>
+
+
                         {submenu && (
                           <IoIosArrowDown
                             className={`transition-transform ${
@@ -187,90 +200,95 @@ export default function Navbar() {
               >
                 <div className="max-w-[1200px] mx-auto bg-white text-black rounded-xl shadow-xl flex ">
                   {/* Left Column */}
-                  <div className="w-[30%]  p-6">
-                    {navItems
-                      .find((item) => item.title === activeMenu)
-                      ?.submenu?.map((sub, idx) => {
-                        // ✅ allowed resource paths
-                        const resourcePaths = [
-                          "/insights/case-studies",
-                          "/insights/whitepaper",
-                          "/insights/datesheets",
-                          "/insights/usecases",
-                          "/industry-report",
-                          "/insights/videos",
-                        ];
+                 <div className="w-[30%] p-6">
+  {navItems
+    .find((item) => item.title === activeMenu)
+    ?.submenu?.map((sub, idx) => {
+      // ✅ allowed resource paths
+      const resourcePaths = [
+        "/insights/case-studies",
+        "/insights/whitepaper",
+        "/insights/datesheets",
+        "/insights/usecases",
+        "/industry-report",
+        "/insights/videos",
+      ];
 
-                        // check if current submenu is "Resources"
-                        const isResourcesMenu =
-                          sub.title.toLowerCase() === "resources";
+      // check if current submenu is "Resources"
+      const isResourcesMenu = sub.title.toLowerCase() === "resources";
 
-                        // normal submenu active logic (without `/insights`)
-                        const normalActive =
-                          pathname === sub.href ||
-                          sub.inersubmenu?.some((inner) =>
-                            pathname.startsWith(inner.href)
-                          );
+      // normal submenu active logic (href + inner submenu)
+      const normalActive =
+        pathname === sub.href ||
+        sub.inersubmenu?.some((inner) =>
+          pathname.startsWith(inner.href)
+        );
 
-                        // resource submenu active logic
-                        const resourceActive =
-                          isResourcesMenu &&
-                          resourcePaths.some((p) => pathname.startsWith(p));
+      // ✅ section active logic
+      const sectionActive = sub.section?.some((sec) =>
+        pathname.startsWith(sec.href)
+      );
 
-                        const isActive = resourceActive || normalActive;
+      // resource submenu active logic
+      const resourceActive =
+        isResourcesMenu &&
+        resourcePaths.some((p) => pathname.startsWith(p));
 
-                        return (
-                          <Link
-                            href={sub.href}
-                            key={idx}
-                            className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${
-                              isActive
-                                ? "text-[#2E3092] font-semibold"
-                                : "text-[#1A1A1A]"
-                            }`}
-                            onMouseEnter={() => setSelectedSubmenu(sub)}
-                            onClick={() => setActiveMenu(null)}
-                          >
-                            <span>{sub.title}</span>
-                            {isActive && (
-                              <IoMdArrowDropright
-                                size={25}
-                                className="text-[#2E3092]"
-                              />
-                            )}
-                          </Link>
-                        );
-                      })}
-                  </div>
+      const isActive =
+        resourceActive || normalActive || sectionActive;
+
+      return (
+        <Link
+          href={sub.href}
+          key={idx}
+          className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${
+            isActive
+              ? "text-[#2E3092] font-semibold"
+              : "text-[#1A1A1A]"
+          }`}
+          onMouseEnter={() => setSelectedSubmenu(sub)}
+          onClick={() => setActiveMenu(null)}
+        >
+          <span>{sub.title}</span>
+          {isActive && (
+            <IoMdArrowDropright
+              size={25}
+              className="text-[#2E3092]"
+            />
+          )}
+        </Link>
+      );
+    })}
+</div>
+
                   <div className="w-px h-64 bg-[#CECECE] mx-6 mt-6"></div>
                   {/* Center Column */}
-                  <div className="w-[30%] p-6">
-                    {selectedSubmenu?.section &&
-                    selectedSubmenu.section.length > 0 ? (
-                      selectedSubmenu.section.map((s, idx) => {
-                        const isActive = pathname.startsWith(s.href);
+                <div className="w-[30%] p-6">
+  {selectedSubmenu?.section && selectedSubmenu.section.length > 0 ? (
+    selectedSubmenu.section.map((s, idx) => {
+      const isActive = pathname.startsWith(s.href);
 
-                        return (
-                          <Link
-                            key={idx}
-                            href={s.href}
-                            className={`block text-sm py-1 hover:text-[#2E3092] ${
-                              isActive
-                                ? "text-[#2E3092] font-semibold"
-                                : "text-[#1A1A1A]"
-                            }`}
-                          >
-                            {s.title}
-                          </Link>
-                        );
-                      })
-                    ) : (
-                      <div className="text-md text-black">
-                        {selectedSubmenu?.description ||
-                          "No description available."}
-                      </div>
-                    )}
-                  </div>
+      return (
+        <Link
+          key={idx}
+          href={s.href}
+          className={`block text-sm py-1 hover:text-[#2E3092] ${
+            isActive
+              ? "text-[#2E3092] font-semibold"
+              : "text-[#1A1A1A]"
+          }`}
+        >
+          {s.title}
+        </Link>
+      );
+    })
+  ) : (
+    <div className="text-md text-black">
+      {selectedSubmenu?.description || "No description available."}
+    </div>
+  )}
+</div>
+
 
                   {/* Right Column */}
 
