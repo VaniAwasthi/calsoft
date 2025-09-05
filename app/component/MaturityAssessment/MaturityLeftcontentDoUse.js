@@ -34,6 +34,7 @@ import line3 from "../../assets/DigitalEngineering/maturity/line3.svg";
 
 import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export const Maturity = () => {
   const [activeTab, setActiveTab] = useState("benefits");
@@ -65,7 +66,8 @@ export const Maturity = () => {
           buttonImage={ButtonImage}
           hoverImage={ButtonImage}
           rightSec={false}
-          buttonWidth="!w-[250px]"
+          buttonWidth="!w-[300px]"
+          onButtonClick={()=>showHubSpotForm("maturity-assessment-and-planning-modernization-roadmap")}
         />
       </div>
       <Submenu
@@ -86,8 +88,8 @@ export const Matters = () => {
       "Only 28% of enterprises have a documented modernization roadmap. The rest? They're reacting—replat forming without readiness, adding tools without integration, and creating tech debt faster than value. <br><br>Calsoft’s Maturity Assessment fixes that.",
     highlight:
       "We benchmark your current state across Infrastructure, App Stack, Data, Automation, and UX—then give you a clear path forward with quantified priorities, dependencies, and cost projections.",
-    buttonText: "Download Best Practices",
-    link: "#",
+    buttonText: "Get In Touch",
+    // link: "#",
 
     cards: [
       {
@@ -116,6 +118,7 @@ export const Matters = () => {
         {...whyItMattersData}
         ButtonImage={ButtonImage}
         secId="why-it-matters"
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
     </>
   );
@@ -128,8 +131,8 @@ export const DoUs = () => {
     "Calsoft’s 360° Maturity Assessment is diagnostic, data-driven, and actionable—covering not just tech, but processes, people, and dependencies. Our Offerings:";
 
   const offeringsData = {
-    buttonText: "Download Best Practices",
-    link: "#",
+    buttonText: "Talk to Expert",
+    // link: "#",
     offerings: [
       {
         icon: icon1,
@@ -176,6 +179,7 @@ export const DoUs = () => {
         offeringsData
         {...offeringsData}
         heading={heading}
+        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
         subtitle={subtitle}
         desc={desc}
         ButtonImage={ButtonImage}
@@ -193,7 +197,7 @@ export const Use = () => {
     description:
       "Calsoft’s Assessment framework adapts to your business context—whether you’re cloud-first, hybrid, or legacy-heavy.",
     buttonText: "Download One Pager",
-    link: "#",
+    
     cards: [
       {
         title: "Cloud Migration Readiness",
@@ -212,7 +216,7 @@ export const Use = () => {
   };
   return (
     <>
-      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases" />
+      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases"  onButtonClick={()=>showHubSpotForm("maturity-assessment-and-planning-download-one-pager")}/>
     </>
   );
 };
@@ -224,7 +228,6 @@ export const Business = () => {
     description:
       "A maturity assessment isn’t just a technical deep dive—it’s a strategic enabler. Here’s the value our clients have seen:",
     buttonText: "Request a custom ROI Projection",
-    link: "#",
     backgroundImage: businessimg,
     valueItems: [
       {
@@ -251,6 +254,7 @@ export const Business = () => {
         {...businessValueData}
         ButtonImage={ButtonImage}
         secId="business-value"
+        onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}
       />
     </>
   );
@@ -307,6 +311,7 @@ export const Howstart = () => {
       "One week is all it takes to gain a full-spectrum view of your enterprise readiness—and a phased plan to act on.",
     image: start,
     alt: "Maturity Sprint Image",
+
   };
   return (
     <>
@@ -317,7 +322,9 @@ export const Howstart = () => {
 
 export const Sprint = () => {
   const buttonText = "Start Today";
-  const link = "#";
+  const onButtonClick=()=>{
+    showHubSpotForm("start-today")
+  }
   const steps = [
     {
       day: "Day 0",
@@ -382,8 +389,9 @@ export const Sprint = () => {
         steps={steps}
         heading="7-Day Maturity Sprint: Step-by-Step"
         buttonText={buttonText}
-        link={link}
         ButtonImage={ButtonImage}
+        onClick={onButtonClick}
+
       />
     </>
   );
