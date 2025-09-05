@@ -6,13 +6,10 @@ import { Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import BackgroundImage1 from "../../assets/home/VMwareBanner.webp";
 import BackgroundImage2 from "../../assets/home/CalTIA-Banner.webp";
-import BackgroundImage3 from "../../assets/CEOBanner.png";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import BannerLayout from "../utilities/BannerLayout";
-import ButtonLayout from "../utilities/ButtonLayout";
 import { showHubSpotForm } from "../utilities/showHubSpotForm"; // <-- import your util
 
-const backgroundVideo = "/BannerGif.mp4";
 const backgroundVideo2 = "/HomeVideo.mp4";
 
 const slides = [

@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "../../store/actions/blogAction";
 import { fetchUsecasesList } from "@/app/store/actions/useCases";
 import { FilterSec } from "../utilities/FilterSec";
+import { HubspotModal } from "./HubspotModal";
 
 export const InfographicCard = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
@@ -17,7 +18,15 @@ export const InfographicCard = () => {
   const [filteredList, setFilteredList] = useState(listData);
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(0);
+  // hubspot
+const [isOpen, setIsOpen] = useState(false);
+const [formScript, setFormScript] = useState("");
 
+const openForm = (script) => {
+  setFormScript(script);
+  setIsOpen(true);
+};
+//end
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
   const FilterIndustry = useSelector(
@@ -51,6 +60,7 @@ export const InfographicCard = () => {
             ? item.tags.map((tag) => tag.name)
             : ["General"],
         industry: item.industry || "Tech",
+        hubspot_form:item?.hubspot_form
       }))
     : [];
   const resources = cardData; // ✅ re-renders when Redux listData updates
@@ -147,6 +157,10 @@ export const InfographicCard = () => {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
+onClick={() => {
+  openForm(item.hubspot_form);
+}}
+
                 className="flex flex-col h-[400px] md:h-[380px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 {/* Image */}
@@ -250,6 +264,13 @@ export const InfographicCard = () => {
               <FaGreaterThan className="w-3 h-3" />
             </motion.button>
           </div>
+          <HubspotModal
+  isOpen={isOpen}
+  onClose={() => setIsOpen(false)}
+  hubspotScript={formScript}
+/>
+
+
         </div>
       </div>
     </section>
