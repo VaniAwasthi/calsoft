@@ -43,8 +43,6 @@ export const FilterSec = ({
   }, [openDropdown, setOpenDropdown]);
 
   useEffect(() => {
-    // if (searchValue.trim() === "") return;
-
     const timeoutId = setTimeout(() => {
       searchDebouncing(searchValue);
     }, 800);
@@ -53,9 +51,8 @@ export const FilterSec = ({
   }, [searchValue]);
 
   useEffect(() => {
-    if (isSearchExpanded && searchInputRef.current) {
+    if (isSearchExpanded && searchInputRef.current)
       searchInputRef.current.focus();
-    }
   }, [isSearchExpanded]);
 
   const handleSelect = (filterName, option) => {

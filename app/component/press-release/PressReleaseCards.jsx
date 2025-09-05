@@ -179,17 +179,17 @@ export const PressReleaseCard = () => {
     return () => observer.disconnect();
   }, [filteredResources]);
 
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
-  const currentPageData = filteredResources.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+  // const itemsPerPage = 6;
+  // const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
+  // const currentPageData = filteredResources.slice(
+  //   currentPage * itemsPerPage,
+  //   (currentPage + 1) * itemsPerPage
+  // );
 
-  const goToPage = (index) => {
-    if (index < 0 || index >= totalPages) return;
-    setCurrentPage(index);
-  };
+  // const goToPage = (index) => {
+  //   if (index < 0 || index >= totalPages) return;
+  //   setCurrentPage(index);
+  // };
 
   function search(value) {
     if (value === "") setFilteredResources(resources);
@@ -227,7 +227,7 @@ export const PressReleaseCard = () => {
         {/* Grid Display */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <AnimatePresence>
-            {resources.slice(0, visibleCount).map((item, idx) => (
+            {filteredResources.slice(0, visibleCount).map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
