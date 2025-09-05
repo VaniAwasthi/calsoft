@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <>
       <BannerInfo heading="Visual Insights at a Glance" BannerBg={Banner} />
-      <TabsInfo defaultTab="infographics" />
+      <TabsInfo defaultTab="usecases" />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
         link="#"

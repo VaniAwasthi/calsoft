@@ -190,7 +190,7 @@ export const TopPartners = () => {
     </>
   );
 };
-export const ContactSec = ({ lightContent, link }) => {
+export const ContactSec = ({ lightContent, link, buttonClicked }) => {
   return (
     <>
       <section>
@@ -228,6 +228,7 @@ export const ContactSec = ({ lightContent, link }) => {
                     text="Contact Us"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    onClick={buttonClicked}
                   />
                 </motion.div>
               

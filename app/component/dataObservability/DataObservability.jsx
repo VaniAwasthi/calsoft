@@ -41,6 +41,8 @@ export const DataJounery = ({ slide = {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={()=>showHubSpotForm("data-observability-datasheet")}
+        
       />
       <Submenu
         navItems={navItems}

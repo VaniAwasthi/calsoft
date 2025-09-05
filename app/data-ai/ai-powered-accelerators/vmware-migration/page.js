@@ -11,6 +11,7 @@ import {
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import meeting from "@/app/assets/caltia/meeting.webp";
 import { ManufacturingEcosystem } from "@/app/component/calPSR/CalPSR";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -33,6 +34,8 @@ const Page = () => {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+         onClick={()=>showHubSpotForm("check-your-readiness")}
+                buttonClicked2={()=>showHubSpotForm("download-vmware-whitepaper")}
       />
       <PrefferedPlatform />
       <WhyMigrate />
@@ -44,11 +47,12 @@ const Page = () => {
             titleClass="text-[32px] font-bold"
             desc="Calsoft developed a CLI-based migration tool designed to simplify and standardize the VM migration process."
             buttonText="Download Case Study"
+            buttonClicked={()=>showHubSpotForm("download-vmware-case-study")}
           />
         </div>
       </div>
       <VmwareMigration />
-      <CheckIn />
+      <CheckIn  onClick={()=>showHubSpotForm("request-vmware-poc")}/>
       <ManufacturingEcosystem />
     </>
   );

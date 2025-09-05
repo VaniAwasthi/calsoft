@@ -7,6 +7,7 @@ import buttonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
 import img from "../../assets/infra/agility.webp";
 import predict from "../../assets/infra/predictibility.webp";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function Component({
   title = "Where It Works Best.",
@@ -54,6 +55,8 @@ export default function Component({
       },
     ],
   },
+  buttonClick=()=>showHubSpotForm("book-a-meeting"),
+  buttonClick2,
   bookMeetingData = {
     title: "Reduce design cycle by 30% via architecture-led ideation.",
     buttontext: "Book a Meeting",
@@ -154,6 +157,7 @@ export default function Component({
                 {bookMeetingData.title}
               </motion.p>
               <motion.button
+              onClick={buttonClick}
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -212,6 +216,7 @@ export default function Component({
                   >
                     <ButtonLayout
                       text={"Download One Pager"}
+                      onClick={buttonClick2}
                       image={buttonImage}
                       hoverImage={buttonImage}
                       className={"w-fit mt-3"}

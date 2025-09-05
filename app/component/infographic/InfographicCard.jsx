@@ -9,14 +9,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "../../store/actions/blogAction";
 import { fetchUsecasesList } from "@/app/store/actions/useCases";
 import { FilterSec } from "../utilities/FilterSec";
+import { HubspotModal } from "./HubspotModal";
 
 export const InfographicCard = () => {
   const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
   const listData = useSelector((state) => state.usecases.list);
+  const [filteredList, setFilteredList] = useState(listData);
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(0);
+  // hubspot
+const [isOpen, setIsOpen] = useState(false);
+const [formScript, setFormScript] = useState("");
 
+const openForm = (script) => {
+  setFormScript(script);
+  setIsOpen(true);
+};
+//end
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
   const FilterIndustry = useSelector(
@@ -33,13 +43,8 @@ export const InfographicCard = () => {
     Topics: ["All", ...FilterTopic],
   };
 
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-    dispatch(fetchUsecasesList());
-  }, [dispatch]);
-
-  const cardData = Array.isArray(listData)
-    ? listData.map((item) => ({
+  const cardData = Array.isArray(filteredList)
+    ? filteredList.map((item) => ({
         id: item._id,
         title: item.title || "Untitled",
         image: `${baseUrl}/${item.usecase_image}`,
@@ -55,9 +60,9 @@ export const InfographicCard = () => {
             ? item.tags.map((tag) => tag.name)
             : ["General"],
         industry: item.industry || "Tech",
+        hubspot_form:item?.hubspot_form
       }))
     : [];
-
   const resources = cardData; // ✅ re-renders when Redux listData updates
 
   const toggleDropdown = (filter) => {
@@ -104,6 +109,27 @@ export const InfographicCard = () => {
     setCurrentPage(index);
   };
 
+  function search(value) {
+    console.log(value);
+    console.log(filteredList);
+    if (value === "") setFilteredList(listData);
+    else
+      setFilteredList(
+        listData.filter((blog) =>
+          blog.title.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
+  useEffect(() => {
+    setFilteredList(listData);
+  }, [listData]);
+
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(fetchUsecasesList());
+  }, [dispatch]);
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
@@ -115,6 +141,7 @@ export const InfographicCard = () => {
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
           setActiveFilters={setActiveFilters}
+          searchDebouncing={search}
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
@@ -130,6 +157,10 @@ export const InfographicCard = () => {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
+onClick={() => {
+  openForm(item.hubspot_form);
+}}
+
                 className="flex flex-col h-[400px] md:h-[380px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 {/* Image */}
@@ -233,6 +264,13 @@ export const InfographicCard = () => {
               <FaGreaterThan className="w-3 h-3" />
             </motion.button>
           </div>
+          <HubspotModal
+  isOpen={isOpen}
+  onClose={() => setIsOpen(false)}
+  hubspotScript={formScript}
+/>
+
+
         </div>
       </div>
     </section>

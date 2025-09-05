@@ -4,9 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
-import { title } from "process";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function FeatureCards({
+  buttonClicked = () => showHubSpotForm("request-architecture-blueprint"),
   id="",
   features = [
     {
@@ -205,6 +206,7 @@ export function Scorecard(
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit"}
+              onClick={buttonClicked}
             />
           </motion.div>
         </div>

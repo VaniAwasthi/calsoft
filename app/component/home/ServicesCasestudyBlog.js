@@ -324,6 +324,12 @@ export const Casestudy = () => {
             </motion.div>
           </motion.div>
           <div className="relative w-full py-8">
+            <motion.h2
+             
+              className="px-4 text-xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+            >
+             Latest Case Study
+            </motion.h2>
             <Swiper
               modules={[Navigation]}
               slidesPerView={1}

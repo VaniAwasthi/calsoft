@@ -1,3 +1,4 @@
+"use client"
 import {
   ComplianceSec,
   DataJounery,
@@ -11,6 +12,7 @@ import React from "react";
 import BannerwithButtonBg from "../../assets/Data-Ai/data-observibility/KnowMoreBg.webp";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 import BackgroundImage from "../../assets/Data-Ai/data-observibility/oberservabilityBanner.svg";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm.js";
 
 export default function Page() {
   return (
@@ -65,7 +67,7 @@ export default function Page() {
           </p>
         }
         buttonText="Book a Meeting"
-        buttonLink="#"
+        onButtonClick={()=>showHubSpotForm("book-a-meeting")}
       />
       <Real2Sec />
       <ProactiveSec />

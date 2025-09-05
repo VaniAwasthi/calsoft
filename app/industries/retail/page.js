@@ -21,6 +21,7 @@ import Incon3 from "../../assets/industries/retail/retailIcon3.svg";
 import Incon4 from "../../assets/industries/retail/retailIcon4.svg";
 import Incon5 from "../../assets/industries/retail/retailIcon5.svg";
 import Intellegence from "../../assets/industries/retail/RetailMobile.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm.js";
 
 const Page = () => {
   const slide = {
@@ -206,7 +207,7 @@ const Page = () => {
       <ServicesSec />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        link="#"
+        buttonClicked={()=>showHubSpotForm("contact-us-popup")}
       />
     </>
   );

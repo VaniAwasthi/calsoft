@@ -98,7 +98,7 @@ export const CalTiaSec = () => {
         and reduce QA fatigue with
         AI-driven prioritization."
         buttonText="Learn More"
-        link="#"
+        link="/data-ai/ai-powered-accelerators/test-impact-analyzer-caltia"
         whatWeDo={[
           "Analyze test logs to spot redundancies",
           "Recommend test sets by risk and scope",
@@ -126,7 +126,7 @@ export const CalPsrSec = () => {
         title="CalPSR – Calsoft Performance, Scalability, and Resilience"
         description="Validate release readiness with real-world fault simulation and pre-GA testing."
         buttonText="Learn More"
-        link="#"
+        link="/data-ai/ai-powered-accelerators/calsoft-performance-scalability-and-resilience-calpsr"
         whatWeDo={[
           "Simulate faults and latency delays",
           "Benchmark releases on failure data",
@@ -154,7 +154,7 @@ export const ECalsoftSec = () => {
         title="Calsoft’s migration accelerator"
         description="Simplify workload transitions with guided, dependency-aware migration flows."
         buttonText="Learn More"
-        link="#"
+        link="/data-ai/ai-powered-accelerators/vmware-migration"
         whatWeDo={[
           "Discover app and infra dependencies",
           "Recommend migration flows by logic",

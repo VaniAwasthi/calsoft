@@ -25,6 +25,7 @@ export const DataSheetCards = () => {
     Industry: "All",
     Topics: [],
   });
+  const [filteredResources, setFilteredResources] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [visibleCount, setVisibleCount] = useState(6);
   const loadMoreRef = useRef(null);
@@ -50,10 +51,6 @@ export const DataSheetCards = () => {
     Topics: ["All", ...FilterTopic],
   };
 
-  useEffect(() => {
-    console.log(filters);
-  }, [filters]);
-
   const resources = datasheetData?.map((item) => ({
     ...item,
     id: item._id,
@@ -68,8 +65,6 @@ export const DataSheetCards = () => {
       : "untitled",
     link: `/${item._id}`,
   }));
-
-  const filteredResources = resources;
 
   const handleCopy = (link, id) => {
     navigator.clipboard.writeText(`${window.location.origin}${link}`);
@@ -115,6 +110,47 @@ export const DataSheetCards = () => {
     );
   };
 
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
+  const currentPageData = filteredResources.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
+  const goToPage = (index) => {
+    if (index < 0 || index >= totalPages) return;
+    setCurrentPage(index);
+  };
+
+  function search(value) {
+    if (value === "") setFilteredResources(resources);
+    else
+      setFilteredResources(
+        resources.filter((blog) =>
+          blog.title.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
+  useEffect(() => {
+    setFilteredResources(
+      datasheetData?.map((item) => ({
+        ...item,
+        id: item._id,
+        title: item.hero_title1,
+        image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
+        tags: ["AI"],
+        slug: item.hero_title1
+          ? item.hero_title1
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")
+              .replace(/(^-|-$)/g, "")
+          : "untitled",
+        link: `/${item._id}`,
+      }))
+    );
+  }, [datasheetData]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -135,18 +171,6 @@ export const DataSheetCards = () => {
     return () => observer.disconnect();
   }, [filteredResources]);
 
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
-  const currentPageData = filteredResources.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
-
-  const goToPage = (index) => {
-    if (index < 0 || index >= totalPages) return;
-    setCurrentPage(index);
-  };
-
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
@@ -158,6 +182,7 @@ export const DataSheetCards = () => {
           setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
+          searchDebouncing={search}
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 

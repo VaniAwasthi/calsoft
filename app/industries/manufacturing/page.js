@@ -19,6 +19,7 @@ import Incon2 from "../../assets/industries/manufacturing/manufacturIcon4.svg";
 import Incon1 from "../../assets/industries/manufacturing/manufacturIcon5.svg";
 import Intellegence from "../../assets/industries/manufacturing/ManufacturingMobile.webp";
 import Info4 from "../../assets/DigitalEngineering/mordernization/Info-4.svg";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm.js";
 
 const Page = () => {
   const slide = {
@@ -226,7 +227,7 @@ const Page = () => {
       <ServicesSec />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        link="#"
+        buttonClicked={()=>showHubSpotForm("contact-us-popup")}
       />
     </>
   );

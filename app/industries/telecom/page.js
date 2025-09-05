@@ -22,6 +22,7 @@ import Incon3 from "../../assets/industries/telecom/TelecomIcon3.svg";
 import Incon4 from "../../assets/industries/telecom/TelecomIcon4.svg";
 import Incon5 from "../../assets/industries/telecom/TelecomIcon5.svg";
 import Intellegence from "../../assets/industries/telecom/telecomMobile.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm.js";
 
 const Page = () => {
   const slide = {
@@ -206,7 +207,7 @@ We help you get ahead of such threats with real-time risk mitigation, powered by
       <ServicesSec />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        link="#"
+        buttonClicked={()=>showHubSpotForm("contact-us-popup")}
       />
     </>
   );

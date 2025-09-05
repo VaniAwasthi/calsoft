@@ -2,11 +2,12 @@
 import React, { useRef } from "react";
 import bgimg from "../../assets/home/pattern.svg";
 import icon from "../../assets/home/customerIcon.svg";
-import Experience from "../../assets/home/experience.webp";
-import Inovators from "../../assets/home/Innovator.webp";
-import HappyCustomer from "../../assets/home/happycustomer.webp";
-import Fortunecustomers from "../../assets/home/Fortunecustomers.svg";
-import Partnership from "../../assets/home/partners.webp";
+import Value1 from "../../assets/home/FasterMVPs.webp"
+import Value2 from "../../assets/home/AIAdoptionReadiness.webp"
+import Value3 from "../../assets/home/InfraSavings.webp"
+import Value4 from "../../assets/home/ReusabilityBoost.webp"
+import Value5 from "../../assets/home/TestAutomation.webp"
+import Value6 from "../../assets/home/UptimeDelivered.webp"
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -33,37 +34,42 @@ const itemVariants = {
 const Customer = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  const swiperRef = useRef(null);
   const customerData = [
     {
       id: 1,
-      image: Experience,
-      value: "27+",
-      label: "Years of Experience",
+      image: Value1,
+      value: "6x ",
+      label: "Faster MVPs",
     },
     {
       id: 2,
-      image: Inovators,
-      value: "1500+",
-      label: "Innovators",
+      image: Value2,
+      value: "70% ",
+      label: "AI Adoption Readiness",
     },
     {
       id: 3,
-      image: Partnership,
-      value: "20+",
-      label: "Partnerships",
+      image: Value3,
+      value: "$500Ks",
+      label: "Infra Savings",
     },
     {
       id: 4,
-      image: HappyCustomer,
-      value: "300+",
-      label: "Happy Customers",
+      image: Value4,
+      value: "40%",
+      label: "Reusability Boost",
     },
     {
       id: 5,
-      image: Fortunecustomers,
-      value: "21+ ",
-      label: "Fortune  500 customers",
+      image: Value5,
+      value: "95%",
+      label: "Test Automation",
+    },
+    {
+      id: 6,
+      image: Value6,
+      value: "99.99%",
+      label: "Uptime Delivered",
     },
   ];
   // const logos = [
@@ -81,7 +87,7 @@ const Customer = () => {
         style={{
           background: `url(${bgimg.src}) center center/ cover no-repeat`,
         }}
-        id="customers"
+        id="value-proposition"
       >
         <div className="container mx-auto px-4 xl:px-20">
           <div className="flex justify-between items-center mb-2 md:mb-6">
@@ -90,11 +96,11 @@ const Customer = () => {
               <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">
                 <Image src={icon} alt="icon" width={16} height={16} />
               </div>
-              <p className="font-light text-sm md:text-base">Customers</p>
+              <p className="font-light text-sm md:text-base">Value Proposition</p>
             </div>
 
             {/* Right: Arrows */}
-            <div className="flex gap-2 items-center flex justify-center">
+            <div className="flex gap-2 items-center justify-center">
               <div ref={prevRef} className="items-center flex justify-center">
                 <button className="bg-gray-200 p-2 rounded-full hover:bg-gray-300 w-8 h-8 text-center items-center flex justify-center">
                   <FaChevronLeft size={12} className="text-center" />
@@ -123,11 +129,10 @@ const Customer = () => {
                   className="text-2xl md:text-[38px] font-normal "
                 >
                   <span className="font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">
-                    Proven.
-                  </span>
-                  Trusted
+Sustainable                   </span>
+                  future-ready growth.
                 </motion.h2>
-                <motion.h2
+                {/* <motion.h2
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 1, delay: 0.2 }}
@@ -135,7 +140,7 @@ const Customer = () => {
                   className="text-2xl md:text-[38px] font-regular"
                 >
                   by industry leaders.
-                </motion.h2>
+                </motion.h2> */}
 
                 <motion.div
                   initial={{ y: 10, opacity: 0 }}
@@ -144,8 +149,7 @@ const Customer = () => {
                   viewport={{ once: false, amount: 0.3 }}
                 >
                   <p className="mt-4 w-full md:mt-[3rem] text-[13px] md:text-base mb-8 text-[#7E7E7E] md:w-[300px]">
-                    Powering 21+ Fortune 500 customers, fast-growing start-ups,
-                    and digital innovators in their transformation journey.
+                    Trusted by 100+ global ISVs and enterprises to accelerate digital innovation with up to 40% faster product delivery, 35% lower infra cost, and 60% reduced technical debt.
                   </p>
                 </motion.div>
               </div>
@@ -188,47 +192,49 @@ const Customer = () => {
                       transition={{ duration: 0.5, delay: 0.2 }}
                       className="hover:rounded-lg hover:scale-105 transition-transform duration-300 my-2 px-1"
                     >
-                      <div className="relative w-full mb-8  ">
-                        {/* Image */}
-                        <Image
-                          src={item.image}
-                          alt={item.label}
-                          className="w-full "
-                        />
+                    <div className="relative w-full mb-8">
+  {/* Image */}
+  <Image
+    src={item.image}
+    alt={item.label}
+    className="w-full object-cover rounded-xl"
+  />
 
-                        {/* Overlay */}
+  {/* Black Overlay */}
+  <div className="absolute inset-0 bg-black/10 bg-opacity-100 z-10 rounded-xl"  />
 
-                        {/* Text (Left-Aligned) */}
-                        <div className="absolute px-2 bottom-0 md:bottom-4 md:left-4 text-left text-white md:px-4 hover:cursor-pointer">
-                          <motion.p
-                            initial={{ y: -100, opacity: 0 }}
-                            transition={{
-                              duration: 1,
-                              ease: "easeOut",
-                              delay: 0.2,
-                            }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            viewport={{ once: false, amount: 0.3 }}
-                            className="text-[24px] lg:text-3xl !opacity-100 !translate-y-2 font-bold hover:scale-105"
-                          >
-                            {item.value}
-                          </motion.p>
+  {/* Text Content */}
+  <div className="absolute px-2 bottom-0 md:bottom-4 md:left-4 text-left text-white md:px-4 z-20 hover:cursor-pointer">
+    <motion.p
+      initial={{ y: -100, opacity: 0 }}
+      transition={{
+        duration: 1,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: false, amount: 0.3 }}
+      className="text-[24px] lg:text-3xl font-bold hover:scale-105"
+    >
+      {item.value}
+    </motion.p>
 
-                          <motion.p
-                            initial={{ y: -100, opacity: 0 }}
-                            transition={{
-                              duration: 0.8,
-                              ease: "easeOut",
-                              delay: 0.2,
-                            }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            viewport={{ once: false, amount: 0.3 }}
-                            className="text-sm md:text-xl py-2 font-normal hover:scale-105"
-                          >
-                            {item.label}
-                          </motion.p>
-                        </div>
-                      </div>
+    <motion.p
+      initial={{ y: -100, opacity: 0 }}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.2,
+      }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: false, amount: 0.3 }}
+      className="text-sm md:text-xl py-2 font-normal hover:scale-105"
+    >
+      {item.label}
+    </motion.p>
+  </div>
+</div>
+
                     </motion.div>
                   </SwiperSlide>
                 ))}

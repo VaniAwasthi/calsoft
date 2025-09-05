@@ -11,19 +11,19 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import IntegrationMatter from "../../../component/testing/Integration-Matter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
-import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_5.webp"
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_5.webp";
 
 const Page = () => {
-    const [activeTab, setActiveTab] = useState("why-it-matters");
-    
-      const navItems = [
-        "Why it Matters",
-        "Intelligent Planning",
-        "Business Value",
-        "Use Cases",
-        "Why Calsoft",
-        "How to Start",
-      ];
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
+  const navItems = [
+    "Why it Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -69,6 +69,9 @@ const Page = () => {
             subTitle: "and test thresholds per stage",
           },
         ]}
+        bottomContent={null}
+        arrow={true}
+        image={false}
       />
       <Agility
         data={{

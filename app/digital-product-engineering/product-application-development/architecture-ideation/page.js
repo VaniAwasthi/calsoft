@@ -10,6 +10,7 @@ import ArchitectureSprint from "../../../component/product-application-developme
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import ArchitectureIdeation from "../../../component/product-application-development/ArchitectureIdeationMatters";
 import img from "@/app/assets/DigitalEngineering/product-app/Architecture-and-Ideation.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -32,6 +33,7 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
+        buttonClicked={()=>showHubSpotForm("Get-Architechure-Rediness-Score")}
       />
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
@@ -39,11 +41,13 @@ const Page = () => {
         buttonText="Download"
         MainComponenent={ArchitectureIdeation}
         id="why-it-matters"
-      // contentClass="w-[90%]"
+        buttonClicked={()=>showHubSpotForm("architecture-ideation-download-one-pager")}
+        // contentClass="w-[90%]"
       />
       <WhatWeOffer
         description="Our architecture-led ideation workshops deliver clarity in just 7–10 working days. You walk away with:"
         id="what-we-offer"
+        buttonClicked={()=>showHubSpotForm("request-architecture-blueprint")}
       />
       <UseCases
         CTACopy="Reduce design cycle by 30% via architecture-led ideation."
@@ -78,6 +82,7 @@ const Page = () => {
             },
           ],
         }}
+        buttonClick2={()=>showHubSpotForm("architecture-ideation-download-one-pager")}
       />
       <HowToStart
         headerContent={{

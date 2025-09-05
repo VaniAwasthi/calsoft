@@ -6,6 +6,7 @@ import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg";
 import { SprintTimeline } from "../utilities/DoCases";
 import buttonImage from "../../assets/home/buttonImg.webp";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function Steps({
   steps = [
@@ -72,7 +73,7 @@ export default function Steps({
   ],
   heading = "Sprint Breakdown (10 Working Days)",
   buttonText = "Start Today",
-  link = "#",
+  buttonClicked=()=>showHubSpotForm("start-today")
 }) {
   return (
     <>
@@ -80,7 +81,7 @@ export default function Steps({
         steps={steps}
         heading={heading}
         buttonText={buttonText}
-        link={link}
+        onClick={buttonClicked}
         ButtonImage={buttonImage}
       />
     </>
