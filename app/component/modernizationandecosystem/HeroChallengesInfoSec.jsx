@@ -17,7 +17,7 @@ export const HeroSectionModernization = () => {
   const slide = {
     title: "Modernization and ecosystem management",
 
-    description: `Reengineer systems, integrate ecosystems, and
+    description: `Re-engineer systems, integrate ecosystems, and
 future-proof operations with agility and precision.`,
     buttonText: "Download Datasheet",
     image: BackgroundImage,
@@ -31,19 +31,21 @@ future-proof operations with agility and precision.`,
   ];
   return (
     <>
-     <BannerWithRightSec
-  heroBg={BackgroundImage}
-  title={slide.title}
-  description={slide.description}
-  rightImage={slide.rightImage}
-  buttonText={slide.buttonText}
-  buttonImage={ButtonImage}
-  hoverImage={ButtonImage}
-  rightSec={false}
-  buttonWidth="!w-[250px]"
-  className="modernization-ecosystem-download-datasheet"
-  onButtonClick={() => showHubSpotForm("modernization-ecosystem-download-datasheet")}
-/>
+      <BannerWithRightSec
+        heroBg={BackgroundImage}
+        title={slide.title}
+        description={slide.description}
+        rightImage={slide.rightImage}
+        buttonText={slide.buttonText}
+        buttonImage={ButtonImage}
+        hoverImage={ButtonImage}
+        rightSec={false}
+        buttonWidth="!w-[250px]"
+        className="modernization-ecosystem-download-datasheet"
+        onButtonClick={() =>
+          showHubSpotForm("modernization-ecosystem-download-datasheet")
+        }
+      />
       <Submenu
         navItems={navItems}
         activeTab={activeTab}

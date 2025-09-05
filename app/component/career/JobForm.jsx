@@ -1,12 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { X, ChevronDown, Phone, RefreshCw } from "lucide-react";
 import ButtonLayout from "../utilities/ButtonLayout";
 import ButtonImage from "@/app/assets/home/buttonImg.webp";
-import axiosInstance from "@/app/store/api-config/axiosInstance";
 import { toast } from "sonner";
 import { submitResume } from "@/app/store/actions/resumeFormSubmit";
+import {
+  loadCaptchaEnginge,
+  validateCaptcha,
+  LoadCanvasTemplateNoReload,
+} from "react-simple-captcha";
 
 export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
   const [captchaCode, setCaptchaCode] = useState("");
@@ -20,7 +24,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
     noticePeriod: "",
     currentLocation: "",
     details: "",
-    designation: jobTitle,
+    designation: jobTitle || "", // Always include designation in formData
   });
 
   const [focusStates, setFocusStates] = useState({
@@ -34,12 +38,18 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
     currentLocation: false,
     details: false,
     captchaCode: false,
-    designation: false,
+    designation: false, // Always include designation
   });
 
   const [selectedFile, setSelectedFile] = useState(null);
-  const [captchaText] = useState("Pg2E"); // Static captcha for demo
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaError, setCaptchaError] = useState("");
+
+  useEffect(() => {
+    if (isOpen) {
+      loadCaptchaEnginge(4);
+    }
+  }, [isOpen]);
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -56,6 +66,18 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
   const shouldLabelFloat = (field) => {
     return focusStates[field] || formData[field] !== "";
   };
+
+  const nameLabelFloat = shouldLabelFloat("name");
+  const emailLabelFloat = shouldLabelFloat("email");
+  const phoneLabelFloat = shouldLabelFloat("phone");
+  const experienceLabelFloat = shouldLabelFloat("experience");
+  const currentCTCLabelFloat = shouldLabelFloat("currentCTC");
+  const expectedCTCLabelFloat = shouldLabelFloat("expectedCTC");
+  const noticePeriodLabelFloat = shouldLabelFloat("noticePeriod");
+  const currentLocationLabelFloat = shouldLabelFloat("currentLocation");
+  const detailsLabelFloat = shouldLabelFloat("details");
+  const captchaCodeLabelFloat = shouldLabelFloat("captchaCode");
+  const designationLabelFloat = shouldLabelFloat("designation"); // Always calculate this
 
   const handleFileChange = (event) => {
     const file = event.target.files?.[0];
@@ -97,7 +119,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
       noticePeriod: "",
       currentLocation: "",
       details: "",
-      designation: jobTitle,
+      designation: jobTitle || "", // Always include designation in formData
     });
     setSelectedFile(null);
     setCaptchaCode("");
@@ -105,8 +127,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateCaptcha(captchaCode)) {
+      setCaptchaError("Captcha does not match. Please try again.");
+      return;
+    }
     setIsSubmitting(true);
-    // Simulate submission delay
     const response = await submitResume({
       ...formData,
       resume: selectedFile,
@@ -116,9 +141,13 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
         duration: 3000,
       });
 
-    setIsSubmitting(false);
-    onClose();
     clearForm();
+  };
+
+  const refreshCaptcha = () => {
+    loadCaptchaEnginge(4);
+    setCaptchaCode("");
+    setCaptchaError("");
   };
 
   if (!isOpen) return null;
@@ -176,7 +205,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                  shouldLabelFloat("name")
+                  nameLabelFloat
                     ? "top-0 text-sm text-gray-600"
                     : "top-3 text-lg text-gray-500"
                 }`}
@@ -197,7 +226,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                  shouldLabelFloat("email")
+                  emailLabelFloat
                     ? "top-0 text-sm text-gray-600"
                     : "top-3 text-lg text-gray-500"
                 }`}
@@ -228,7 +257,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               </div>
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                  shouldLabelFloat("phone")
+                  phoneLabelFloat
                     ? "top-0 text-sm text-gray-600"
                     : "top-6 text-lg left-12 text-gray-500"
                 }`}
@@ -259,7 +288,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               </div>
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                  shouldLabelFloat("experience")
+                  experienceLabelFloat
                     ? "top-0 text-sm text-gray-600"
                     : "top-3 text-lg text-gray-500"
                 }`}
@@ -286,7 +315,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                  shouldLabelFloat("currentCTC")
+                  currentCTCLabelFloat
                     ? "top-0 text-sm text-gray-600"
                     : "top-3 text-lg text-gray-500"
                 }`}
@@ -309,7 +338,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                  shouldLabelFloat("expectedCTC")
+                  expectedCTCLabelFloat
                     ? "top-0 text-sm text-gray-600"
                     : "top-3 text-lg text-gray-500"
                 }`}
@@ -336,7 +365,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                  shouldLabelFloat("noticePeriod")
+                  noticePeriodLabelFloat
                     ? "top-0 text-sm text-gray-600"
                     : "top-3 text-lg text-gray-500"
                 }`}
@@ -362,7 +391,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                  shouldLabelFloat("currentLocation")
+                  currentLocationLabelFloat
                     ? "top-0 text-sm text-gray-600"
                     : "top-3 text-lg text-gray-500"
                 }`}
@@ -370,7 +399,10 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 Current Location *
               </label>
             </div>
-            {!jobTitle && (
+          </div>
+
+          {!jobTitle && (
+            <div className="grid grid-cols-1 gap-8">
               <div className="relative">
                 <input
                   type="text"
@@ -386,7 +418,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 />
                 <label
                   className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                    shouldLabelFloat("designation")
+                    designationLabelFloat
                       ? "top-0 text-sm text-gray-600"
                       : "top-3 text-lg text-gray-500"
                   }`}
@@ -394,8 +426,8 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                   Designation*
                 </label>
               </div>
-            )}
-          </div>
+            </div>
+          )}
 
           {/* Job Details Textarea */}
           <div className="relative">
@@ -411,7 +443,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
             />
             <label
               className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                shouldLabelFloat("details")
+                detailsLabelFloat
                   ? "top-0 text-sm text-gray-600"
                   : "top-3 text-lg text-gray-500"
               }`}
@@ -422,7 +454,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
           </div>
 
           {/* File Upload and Captcha */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
             <div className="space-y-2">
               <label className="text-lg font-medium text-gray-900">
                 Upload CV/Resume *
@@ -468,37 +500,44 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               </div>
             </div>
             <div className="relative">
-              <div className="flex items-center gap-4 border-b-2 border-gray-300 focus-within:border-gray-600 pt-6 pb-2">
+              <div className="flex flex-col min-[500px]:flex-row min-[500px]:items-center gap-2 min-[500px]:gap-4 border-b-2 border-gray-300 focus-within:border-gray-600 pt-6 pb-2">
                 <input
                   type="text"
                   required
                   disabled={isSubmitting}
                   value={captchaCode}
-                  onChange={(e) => setCaptchaCode(e.target.value)}
+                  onChange={(e) => {
+                    setCaptchaCode(e.target.value);
+                    setCaptchaError("");
+                  }}
                   onFocus={() => handleFocus("captchaCode")}
                   onBlur={() => handleBlur("captchaCode")}
-                  className="flex-1 bg-transparent border-0 outline-none text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
+                  className="flex-1 bg-transparent border-0 outline-none text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black order-3 min-[500px]:order-1"
                 />
-                <div className="bg-black text-white px-3 py-1 font-mono text-lg min-w-[60px] text-center">
-                  {captchaText}
+                <div className="bg-black text-white px-3 py-1 font-mono text-lg w-fit xs:min-w-[60px] text-center order-1 min-[500px]:order-2">
+                  <LoadCanvasTemplateNoReload />
                 </div>
                 <button
                   type="button"
+                  onClick={refreshCaptcha}
                   disabled={isSubmitting}
-                  className="p-1 hover:bg-gray-100 rounded flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="p-1 hover:bg-gray-100 rounded flex-shrink-0 disabled:opacity-50 disabled:cursor-not-allowed self-start order-2 min-[500px]:order-3"
                 >
                   <RefreshCw className="w-4 h-4 text-gray-600" />
                 </button>
               </div>
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
-                  shouldLabelFloat("captchaCode")
+                  captchaCodeLabelFloat
                     ? "top-0 text-sm text-gray-600"
                     : "top-3 text-lg text-gray-500"
                 }`}
               >
                 Input this code
               </label>
+              {captchaError && (
+                <p className="text-red-500 text-sm mt-1">{captchaError}</p>
+              )}
             </div>
           </div>
 
