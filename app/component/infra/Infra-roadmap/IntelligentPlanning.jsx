@@ -4,6 +4,7 @@ import React from "react";
 import ButtonLayout from "../../utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
+import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 
 export default function IntelligentPlanning() {
   const data = [
@@ -166,7 +167,8 @@ export default function IntelligentPlanning() {
             viewport={{ once: false, amount: 0.3 }}
           >
             <ButtonLayout
-              text={"Talk to Infra Strategist"}
+              text={"Talk to Expert"}
+              onClick={()=>showHubSpotForm("Talk-to-Expert")}
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit"}

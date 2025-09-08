@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function WhyCalsoft({
   sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here’s how we stand apart:",
-  buttonText = "Download Case Study",
+  // buttonText = "Download Case Study",
   title  = "Competitive Edge",
   heading = "Why Calsoft",
   data = {
@@ -92,7 +92,7 @@ export default function WhyCalsoft({
               {sectionDescription}
             </p>
           </motion.div>
-          <motion.div
+          {/* <motion.div
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -104,7 +104,7 @@ export default function WhyCalsoft({
               hoverImage={buttonImage}
               className={"w-fit"}
             />
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
 

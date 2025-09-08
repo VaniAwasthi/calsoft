@@ -6,6 +6,7 @@ import buttonImage from "../../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 
 export default function IntelligentPlanning({
   data = {
@@ -225,17 +226,19 @@ export default function IntelligentPlanning({
             }}
             modules={[Navigation, Autoplay]}
             autoplay={{ delay: 6000 }}
-            className="w-full z-0"
+            className="w-full z-0 flex"
           >
             {data.cardData.map((ele, idx) => (
-              <SwiperSlide key={idx} className="z-10">
+              <SwiperSlide key={idx} className="z-10 !flex">
+               
+
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: idx * 0.1 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="relative bg-white hover:bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 hover:text-white min-h-[280px] hover:border-none border-2 border-[#2e3092] transition-all"
+                  className=" relative bg-white hover:bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 hover:text-white min-h-[280px] hover:border-none border-2 border-[#2e3092] transition-all"
                 >
                   <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#2e3092] border-[1px] border-white rounded-full flex items-center justify-center z-50">
                     {ele.icon}
@@ -245,6 +248,7 @@ export default function IntelligentPlanning({
                     <p className="text-white/90 text-sm">{ele.subTitle}</p>
                   </div>
                 </motion.div>
+                
               </SwiperSlide>
             ))}
           </Swiper>
@@ -270,10 +274,11 @@ export default function IntelligentPlanning({
               viewport={{ once: false, amount: 0.3 }}
             >
               <ButtonLayout
-                text={"Talk to Infra Strategist"}
+                text={"Talk to Expert"}
                 image={buttonImage}
                 hoverImage={buttonImage}
                 className={"w-fit"}
+                onClick={()=>showHubSpotForm("Talk_to_Expert")}
               />
             </motion.div>
           </div>
