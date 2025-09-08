@@ -135,7 +135,7 @@ export default function Agility({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-2xl font-medium"
+              className="text-[20px] font-medium"
             >
               {bookMeetingData.title}
             </motion.p>
