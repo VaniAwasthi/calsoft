@@ -26,8 +26,7 @@ export default function Page() {
         <FooterBg
           ContactImg={ContactImg}
           ButtonImage={ButtonImage}
-          lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?  "
-          link="#"
+          lightContent="Design intuitive interfaces that delight and engage users."
         />
       </div>
     </>
