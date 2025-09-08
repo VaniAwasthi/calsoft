@@ -12,6 +12,7 @@ import InfraRoadmap from "../../../component/infra/InfraRoadmapMatters";
 import Agility from "../../../component/infra/Agility";
 import Img from "@/app/assets/DigitalEngineering/cloud-service/Infrastructure-Roadmap.webp"
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
+import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
   return (
@@ -35,6 +36,12 @@ const Page = () => {
       <UseCases />
       <WhyCalsoft />
       <FirstStep />
+      <ContactSecDataAi
+                    lightContent={
+                      "Chart infrastructure roadmaps for scalable transformation."
+                    }
+                   
+                  />
     </>
   );
 };

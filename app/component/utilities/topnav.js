@@ -34,11 +34,13 @@ const [activeParent, setActiveParent] = useState(null);
       image: MegaMenuImg1,
       detail:
         "Strategic decision-makers in IT and operations are facing the impacts of rising infrastructure costs and vendor constraints.",
-    },
+    link:"/insights/whitepaper/business-overview-migration-from-vmware"
+      },
     {
       image: MegaMenuImg2,
       detail:
         "Enhancing legal accuracy, reducing manual effort, and ensuring compliance with Calsoft’s GenAI solution",
+        link:"/insights/case-studies/generative-ai-platform-for-contract-review-automation"
     },
   ];
   // Handle submenu default selection
@@ -303,6 +305,8 @@ const isParentActive = (title) => {
                             key={idx}
                             className="flex flex-col items-center space-x-2 p-6"
                           >
+                            <Link href={f.link}>
+
                             <Image
                               src={f.image}
                               alt="Insight"
@@ -310,9 +314,13 @@ const isParentActive = (title) => {
                               height={50}
                               className="w-[200px] h-44 rounded-3xl"
                             />
+                            </Link>
+                            <Link href={f.link}>
+
                             <p className="text-sm text-[#454545] leading-tight p-4">
                               {f.detail}
                             </p>
+                            </Link>
                           </div>
                         </>
                       ))}

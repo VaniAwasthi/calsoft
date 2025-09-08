@@ -12,6 +12,7 @@ import Agility from "../../../component/infra/Agility";
 import IntegrationMatter from "../../../component/testing/Integration-Matter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_5.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -34,19 +35,20 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={Img}
+        buttonClicked={()=>showHubSpotForm("request-free-assessment")}
+        buttonText2=""
       />
       <WhyItMatters
         title="The Missing Link in DevOps? Continuous Quality."
         desc="Agile and DevOps have accelerated releases, but quality is often treated as an afterthought — leading to defects in production and broken pipelines."
         desc2="Calsoft helps enterprises embed quality deep inside DevOps workflows through true QAOps enablement."
-        buttonText="Download Case Study"
+        buttonText="Get in touch"
         Component={IntegrationMatter}
         contentWidth="w-[80%]"
       />
       <IntelligentPlanning
         heading="Shift-Left Meets Shift-Smart"
         description="We help you embed continuous testing across your CI/CD ecosystem, aligned with release velocity, risk profile, and coverage requirements."
-        buttonText="Request POC"
         data={[
           {
             title: "Automated smoke,",
@@ -106,8 +108,10 @@ const Page = () => {
           title:
             "Want 24/7 quality checks built right into your CI/CD flow? Our demo shows how real-time QAOps ",
           buttonText: "Book a Meeting",
+          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
         }}
-        buttonText="Download ROI Sheet"
+        buttonText="Download One Pager"
+        onPagerButton={()=>showHubSpotForm("qaops-one-pg")}
       />
       <UseCases
         data={[
@@ -215,9 +219,8 @@ const Page = () => {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Integrate QAOps seamlessly into CI/CD pipelines."
         }
-        link={"#"}
       />
     </>
   );

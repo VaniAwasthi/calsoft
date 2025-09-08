@@ -11,6 +11,7 @@ import Agility from "../../../component/infra/Agility";
 import ImpactAnalysisMatter from "../../../component/testing/ImpactAnalysisMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_4.webp"
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
     const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -33,19 +34,20 @@ const Page = () => {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         heroImage={Img}
+        buttonClicked={()=>showHubSpotForm("try-free-load-test")}
+        buttonText2=""
         
       />
       <WhyItMatters
         title="The Missing Link in DevOps? Continuous Quality."
         desc="Modern software development generates thousands of tests. But not all changes impact every function. Without intelligent impact analysis, you face: "
         desc2="Calsoft bridges these gaps by combining business-aligned test scenarios with automated, scalable validation frameworks."
-        buttonText="Download Case Study"
+        buttonText="Get in touch"
         Component={ImpactAnalysisMatter}
       />
       <IntelligentPlanning
         heading="Targeted Testing. Faster Feedback. Fewer Misses."
         description="We enable real-time test impact analysis across your code base and pipelines — ensuring smart regression without sacrificing coverage."
-        buttonText="Request POC"
         data={[
           {
             title: "Change mapping at file/function level",
@@ -101,8 +103,11 @@ const Page = () => {
           title:
             "Want faster, leaner QA cycles? Let’s walk you through how our Test Impact Analysis",
           buttonText: "Book a Meeting",
+          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+          
         }}
-        buttonText="Download ROI Sheet"
+       buttonText="Download One Pager"
+      onPagerButton={()=>showHubSpotForm("test-impact-analysis-one-pg")}
       />
       <UseCases
         data={[

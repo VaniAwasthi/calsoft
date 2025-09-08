@@ -292,12 +292,12 @@ security, and operations — at scale."
           },
         ]}
       />
-      <ContactSecDataAi
-        lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        }
-        link={"#"}
-      />
+       <ContactSecDataAi
+              lightContent={
+                "Adopt cloud-native practices to accelerate innovation."
+              }
+             
+            />
     </>
   );
 };

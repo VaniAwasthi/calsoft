@@ -11,6 +11,7 @@ import MultiCloudMatters from "../../../component/infra/MultiCloudMatters";
 import Agility from "../../../component/infra/Agility";
 import Img from "@/app/assets/DigitalEngineering/cloud-service/Multi-Cloud-Provisioning.webp"
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
+import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
   return (
@@ -296,6 +297,12 @@ multi-cloud provisioning approach — minimizing shadow IT and maximizing agilit
           },
         ]}
       />
+        <ContactSecDataAi
+                          lightContent={
+                            "Provision multi-cloud environments with ease and control."
+                          }
+                         
+                        />
     </>
   );
 };
