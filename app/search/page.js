@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Suspense } from "react";
 import { SearchFilters } from "@/app/component/search/SearchFilters";
 import { SearchResultsGrid } from "@/app/component/search/SearchResultsGrid";
@@ -28,23 +28,24 @@ function SearchResults() {
 
   const filters = useSelector((state) => state.blogs);
 
-  const performSearch = async (query) => {
-    if (!query) {
-      return;
-    }
+  const performSearch = useCallback(
+    async (query) => {
+      if (!query) return;
 
-    setIsLoading(true);
-    try {
-      const response = await globalSearch(query, selectedFilters);
-      if (response?.data) {
-        setSearchResults(response.data.results);
+      setIsLoading(true);
+      try {
+        const response = await globalSearch(query, selectedFilters);
+        if (response?.data) {
+          setSearchResults(response.data.results);
+        }
+      } catch (error) {
+        console.error("Search failed:", error);
+      } finally {
+        setIsLoading(false);
       }
-    } catch (error) {
-      console.error("Search failed:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    },
+    [selectedFilters]
+  );
 
   function search(value) {
     if (value === "") SetfilteredResults(searchResults);
@@ -56,10 +57,16 @@ function SearchResults() {
       );
   }
 
+  // Move ALL useEffect calls to the top, before any conditional returns
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+  }, [dispatch]); // Add dispatch to dependency array
+
   useEffect(() => {
     performSearch(initialSearchQuery);
-  }, [initialSearchQuery, selectedFilters]);
+  }, [initialSearchQuery, selectedFilters, performSearch]);
 
+  // Early return AFTER all hooks
   if (!initialSearchQuery) {
     return (
       <div className="min-h-screen bg-gray-50">
@@ -72,10 +79,6 @@ function SearchResults() {
       </div>
     );
   }
-
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-  }, [dispatch]);
 
   return (
     <div className="min-h-screen bg-gray-50">
