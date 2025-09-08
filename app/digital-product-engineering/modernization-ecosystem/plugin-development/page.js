@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import {
   Business,
@@ -13,6 +14,7 @@ import BannerwithButtonBg from "../../../assets/DigitalEngineering/connected/bgb
 import ContactImg from "../../../assets/Data-Ai/PipeLine/ConnectBg.webp";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import { BannerSection } from "../../../component/utilities/InfraSectorSec";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 function Page() {
   return (
@@ -26,7 +28,7 @@ function Page() {
           backgroundImage={BannerwithButtonBg}
           title="We help SaaS and plaform companies turn partner needs into production-ready plugin-secure, scalable, and instantly deployable."
           buttonText="Request Checklist"
-          buttonLink="#"
+          onButtonClick={()=>showHubSpotForm("book-a-meeting")}
         />
       </section>
       <Business />
@@ -36,8 +38,7 @@ function Page() {
         <FooterBg
           ContactImg={ContactImg}
           ButtonImage={ButtonImage}
-          lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-          link="#"
+          lightContent="Extend capabilities with secure and efficient plugins."
         />
       </div>
     </>

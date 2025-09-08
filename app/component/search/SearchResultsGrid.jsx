@@ -42,16 +42,19 @@ export function SearchResultsGrid({ searchResults }) {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {searchResults.map((result) => (
             <div
-              key={result.id}
+              key={result._id}
               className="bg-white rounded-lg shadow-sm border-t-4 border-orange-500 card-hover transition-all duration-300"
             >
               <div className="p-6 card-content flex flex-col items-start justify-between h-full">
                 <div>
                   <div className="mb-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
-                      <span className="w-2 h-2 bg-gray-600 rounded-full mr-2"></span>
-                      {result.category}
-                    </span>
+                    {result.collection && (
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                        <span className="w-2 h-2 bg-gray-600 rounded-full mr-2 capitalize"></span>
+                        {result.collection.charAt(0).toUpperCase() +
+                          result.collection.slice(1)}
+                      </span>
+                    )}
                   </div>
 
                   <h3 className="text-xl font-bold text-gray-900 mb-3">

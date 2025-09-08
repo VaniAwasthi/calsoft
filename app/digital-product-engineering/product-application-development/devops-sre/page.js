@@ -15,6 +15,7 @@ import line3 from "@/app/assets/DigitalEngineering/maturity/line3.svg";
 
 import mobile2 from "@/app/assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "@/app/assets/DigitalEngineering/maturity/mobile3.svg";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 
 const Page = () => {
@@ -39,8 +40,12 @@ const Page = () => {
         navItems={navItems}
         setActiveTab={setActiveTab}
         heroImage={img}
+        buttonClicked={()=>showHubSpotForm("book-your-devops-health-check")}
+        buttonText2=""
       />
       <WhyItMatters id="why-it-matters"
+      buttonText="Get in Touch"
+      buttonClicked={()=>showHubSpotForm("Get in Touch")}
         title="Slow Releases Kill Momentum. Downtime Kills Trust."
         desc="Today’s users expect fast updates and zero downtime. But most engineering teams still rely on manual deployments, patchy monitoring, or firefighting mode. Calsoft integrates automation, observability, and resilience—so your team can focus on innovation, not infrastructure."
       />
@@ -48,6 +53,8 @@ const Page = () => {
         heading="Automation. Observability. Reliability. All in One Flow."
         description="We deliver production-grade DevOps & SRE services that fit your team, stack, and scale ambition."
         id="what-we-offer"
+                buttonClicked={()=>showHubSpotForm("request-architecture-blueprint")}
+        
         features={[
           {
             icon: (
@@ -201,6 +208,7 @@ const Page = () => {
             },
           ],
         }}
+        buttonClick2={()=>showHubSpotForm("devops-sre-download-one-pager")}
       />
       <HowToStart
         id="how-to-start"
@@ -270,14 +278,13 @@ const Page = () => {
           },
         ]}
       />
-      <ArchitectureSprint 
+      {/* <ArchitectureSprint 
       gradientText="Input current release frequency, of engineers, downtime cost → "
       buttonText="DevOps ROI Calculator"
-      />
+      /> */}
       <ContactSecDataAi
         BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Enable reliable operations with DevOps and SRE practices."
       />
     </>
   );

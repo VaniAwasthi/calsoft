@@ -11,6 +11,8 @@ import WhyItMatters from "../../../component/product-application-development/Why
 import InfraRoadmap from "../../../component/infra/InfraRoadmapMatters";
 import Agility from "../../../component/infra/Agility";
 import Img from "@/app/assets/DigitalEngineering/cloud-service/Infrastructure-Roadmap.webp"
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
+import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 
 const Page = () => {
   return (
@@ -25,14 +27,21 @@ const Page = () => {
                     on-prem, cloud-native, and edge setups running in silos.
                     This complexity leads to:"
         desc2="Calsoft's Roadmap Approach begins with mapping your existing ecosystem, identifying technical and business bottlenecks, and creating a data-backed transformation baseline."
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         MainComponenent={InfraRoadmap}
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning />
       <Agility />
       <UseCases />
       <WhyCalsoft />
       <FirstStep />
+      <ContactSecDataAi
+                    lightContent={
+                      "Chart infrastructure roadmaps for scalable transformation."
+                    }
+                   
+                  />
     </>
   );
 };

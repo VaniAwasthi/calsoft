@@ -15,6 +15,7 @@ import line3 from "@/app/assets/DigitalEngineering/maturity/line3.svg";
 
 import mobile2 from "@/app/assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "@/app/assets/DigitalEngineering/maturity/mobile3.svg";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -37,12 +38,15 @@ eliminate downtime with Calsoft’s intelligent deployment strategies."
         navItems={navItems}
         setActiveTab={setActiveTab}
         heroImage={img}
+        buttonClicked={()=>showHubSpotForm("smart-deployment-request-deployment-blueprint")}
+        buttonText2=""
       />
       <WhyItMatters
         title="Code That’s Ready Is Useless If It
 Can’t Ship Reliably."
         desc="Your releases shouldn’t break production. And they shouldn’t break the bank either. Yet, 40% of teams experience downtime during deployments and overspend on underutilized infrastructure. Calsoft brings automation, predictability, and flexibility—so you ship faster, with fewer resources, and zero surprises."
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
         MainComponenent={SmartDevelopmentMatters}
         contentClass="w-[90%]"
         id="why-it-matters"
@@ -50,7 +54,7 @@ Can’t Ship Reliably."
       <WhatWeOffer 
       heading="From Click to Rollout—Seamless, Secure, Scalable"
       description="Calsoft builds intelligent deployment pipelines optimized for performance, uptime, and control."
-      features={[
+        features={[
           {
             icon: (
               <svg
@@ -157,6 +161,8 @@ Can’t Ship Reliably."
           },
         ]}
         ScorecardComponent={RequestDemo}
+        buttonText="Automate my Deployment"
+        buttonClicked={()=>showHubSpotForm("automate-my-deployment-smart-deployment")}
       />
       <UseCases CTACopy="Cut deployment time by 50% through automation." 
       title="Optimized for Speed, Complexity, and Distribution"
@@ -203,6 +209,7 @@ Can’t Ship Reliably."
             },
           ],
         }}
+        buttonClick2={()=>showHubSpotForm("smart-deployment-download-one-pager")}
       />
       <HowToStart
         id="how-to-start"
@@ -272,11 +279,11 @@ Can’t Ship Reliably."
           },
         ]}
       />
-      <ArchitectureSprint />
+      {/* <ArchitectureSprint /> */}
       <ContactSecDataAi
         BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Deploy smarter, faster, and more efficiently."
+        // link="#"
       />
     </>
   );

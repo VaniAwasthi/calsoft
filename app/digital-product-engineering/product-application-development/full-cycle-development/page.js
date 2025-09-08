@@ -32,21 +32,22 @@ const Page = () => {
       <HeroSection
         title="From First Line to Full Launch -We Build to Deliver"
         description="Build intelligent, cloud-native products-from MVP to enterprise scale-without vendor lock-in."
-        buttonText="Download Datasheet"
+        buttonText="Get Architecture Rediness Score"
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
+        buttonText2=""
         buttonClicked={()=>showHubSpotForm("Get-Architechure-Rediness-Score")}
       />
       <WhyItMatters
         title="90% of Product Delays Are Self-Inflicted. Avoid Them."
         desc="Fragmented vendors, unclear scope, or a dev team that only undrstands code-not your business. That's where most software projects bleed time and money. Calsoft's full-cycle development model eliminates the guesswork with one integrated team accountable accross the entire lifecycle-from ideationto post-deployment refinement."
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         MainComponenent={DevelopmentCycle}
         contentClass="w-[90%]"
         id="why-it-matters"
-        buttonClicked={()=>showHubSpotForm("full-cycle-development-download-case-study")}
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
       <WhatWeOffer
         id="what-we-offer"
@@ -159,7 +160,8 @@ const Page = () => {
           },
         ]}
         buttonText="Request Demo"
-      ScorecardComponent={RequestDemo}
+        ScorecardComponent={RequestDemo}
+        buttonClicked={()=>showHubSpotForm("request-architecture-blueprint")}
       />
       <UseCases
         id="use-cases"
@@ -212,6 +214,8 @@ const Page = () => {
           title: "DevOps Maturity Self-Audit Template",
           buttontext: "Book a Meeting",
         }}
+                buttonClick2={()=>showHubSpotForm("full-cycle-development-download-one-pager")}
+        
       />
       <HowToStart
         id="how-to-start"
@@ -281,10 +285,10 @@ const Page = () => {
           },
         ]}
       />
-      <ArchitectureSprint />
+      {/* <ArchitectureSprint /> */}
       <ContactSecDataAi
         BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+        lightContent="Deliver end-to-end value with full-cycle development. "
         link="#"
       />
     </>

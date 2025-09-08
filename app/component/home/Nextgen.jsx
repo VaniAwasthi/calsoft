@@ -130,7 +130,8 @@ const Nextgen = () => {
                     </motion.p>
 
                     <div className="flex gap-2 md:gap-6 flex-col lg:flex-row mt-6">
-                      <button
+                      <Link
+                        href={"/insights/case-studies"}
                         className="relative flex gap-2 justify-between items-center px-2 md:px-8 py-2 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group"
                         style={{
                           boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
@@ -141,7 +142,7 @@ const Nextgen = () => {
                           <IoArrowForwardCircleSharp className="text-3xl tra" />
                         </span>
                         <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
-                      </button>
+                      </Link>
                       <Link
                         href={activeIndustry.Pagelink}
                         className="relative hidden md:flex gap-2 justify-between items-center bg-transparent border-1 border-white px-2 md:px-8 py-4 rounded-full shadow-md text-white transition-all duration-500 overflow-hidden group"

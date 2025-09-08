@@ -12,6 +12,7 @@ import Agility from "../../../component/infra/Agility";
 import BenchmarkingMatter from "../../../component/testing/BenchmarkingMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_6.webp"
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -32,12 +33,14 @@ const Page = () => {
         buttonText="Request Free Assessment" activeTab={activeTab}
         setActiveTab={setActiveTab} navItems={navItems}
         heroImage={Img}
+        onButtonClicked={()=>showHubSpotForm("request-free-assessment")}
+        buttonText2=""
       />
       <WhyItMatters
         title="Measure What Matters — Before You Deploy."
         desc="Most teams measure application performance reactively — post-deployment or after customer feedback. This leads to:"
         desc2="Calsoft enables structured, scenario-driven benchmarking that aligns with your architecture, release roadmap, and business KPIs."
-        buttonText="Download Case Study"
+        buttonText="Get in touch"
         Component={BenchmarkingMatter}
       />
       <IntelligentPlanning
@@ -105,8 +108,10 @@ const Page = () => {
           title:
             "Get a customized readiness scorecard aligned to your architecture and KPIs",
           buttonText: "Book a Meeting",
+          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
         }}
-        buttonText="Download ROI Sheet"
+        buttonText="Download One Pager"
+        onPagerButton={()=>showHubSpotForm("benchmarking-readiness-one-pg")}
       />
       <UseCases
       description="Calsoft’s Benchmarking Readiness service has been successfully applied across:"
@@ -215,9 +220,8 @@ const Page = () => {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Benchmark readiness to meet market and customer demands."
         }
-        link={"#"}
       />
     </>
   );

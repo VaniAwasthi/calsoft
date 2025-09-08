@@ -11,6 +11,7 @@ import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolution
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import CloudNative from "../../../component/infra/CloudNativeMatters";
 import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Native-Enablement.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   return (
@@ -20,6 +21,7 @@ const Page = () => {
         description="Accelerate your shift to cloud-native with engineered platforms, DevSecOps, container orchestration, and scalable microservices — not hype."
         buttonText="Assess Cloud-Native Maturity"
         Hero_bg={Img}
+        buttonClicked={()=>showHubSpotForm("cloud-native-assess-cloud-native-maturity")}
       />
       {/* <WhyItMatters /> */}
       <WhyItMatters
@@ -28,9 +30,10 @@ const Page = () => {
         desc="For most enterprises, “cloud-native” remains aspirational — often misunderstood as just container adoption. In reality, incomplete strategies lead to:"
         desc2="Calsoft ensures true cloud-native enablement by aligning architecture, engineering practices,
 security, and operations — at scale."
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         MainComponenent={CloudNative}
         contentClass="w-[80%]"
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
         data={{
@@ -188,8 +191,10 @@ security, and operations — at scale."
           title:
             "Book a 30-minute call to stop 80% of your cloud spend from going to waste.",
           buttonText: "Book a Meeting",
+          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
         }}
-        buttonText="Download ROI Sheet"
+        buttonText="Download One Pager"
+        onPagerButton={()=>showHubSpotForm("cloud-native-enablement-one-pg")}
       />
       <UseCases
       desc="Calsoft’s Cloud-Native Enablement has transformed operations across:"
@@ -289,12 +294,12 @@ security, and operations — at scale."
           },
         ]}
       />
-      <ContactSecDataAi
-        lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        }
-        link={"#"}
-      />
+       <ContactSecDataAi
+              lightContent={
+                "Adopt cloud-native practices to accelerate innovation."
+              }
+             
+            />
     </>
   );
 };

@@ -11,6 +11,7 @@ import Agility from "../../../component/infra/Agility";
 import RegressionTestingMatter from "../../../component/testing/Regression-Testing-Matter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_2.webp"
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -33,12 +34,14 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={Img}
+        buttonClicked={()=>showHubSpotForm("request-free-assessment")}
+        buttonText2=""
       />
       <WhyItMatters
         title="Outdated Regression = Delayed Releases."
         desc="Manual or partially automated regression testing often fails to keep pace with agile sprints and CI/CD pipelines, leading to:"
         desc2="Calsoft helps QA teams shift from script-heavy testing to impact-driven, maintainable regression automation aligned with release velocity."
-        buttonText="Download Case Study"
+        buttonText="Get in touch"
         Component={RegressionTestingMatter}
       />
       <IntelligentPlanning
@@ -109,8 +112,10 @@ const Page = () => {
           title:
             "Let’s talk about cutting your regression time by up to 60% — book a discovery call today.",
           buttonText: "Book a Meeting",
-        }}
-        buttonText="Download ROI Sheet"
+         onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+               }}
+               buttonText="Download One Pager"
+               onPagerButton={()=>showHubSpotForm("regression-testing-caltia-one-pg")}
       />
       <UseCases
       description="Calsoft’s Automated Regression Testing has accelerated QA maturity for:"
@@ -221,9 +226,8 @@ const Page = () => {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Streamline regression testing with CalTIA automation."
         }
-        link={"#"}
       />
     </>
   );

@@ -15,6 +15,7 @@ import line3 from "@/app/assets/DigitalEngineering/maturity/line3.svg";
 
 import mobile2 from "@/app/assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "@/app/assets/DigitalEngineering/maturity/mobile3.svg";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -36,19 +37,24 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
+        buttonClicked={()=>showHubSpotForm("request-qa-strategy-view")}
+        buttonText2=""
       />
       <WhyItMatters
         title="Testing Late Is Costly. Missing Bugs Is Worse."
         desc="Every hour of delay in detecting bugs can cost you $800+ in rework. Yet, 50% of product teams still treat QA as an afterthought. Calsoft integrates shift-left testing, AI-driven coverage, and real-world scenarios across the lifecycle—ensuring your releases are reliable, fast, and customer-proof."
-        buttonText="Download"
+        buttonText="Get in Touch"
         MainComponenent={QualityEngineering}
         contentClass="w-[90%]"
         id="why-it-matters"
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+
       />
       <WhatWeOffer id="what-we-offer"
         heading="Your Complete QA Arsenal, Built for Today"
         description="Quality Engineering suite ensures speed without sacrificing stability. Fully DevOps-aligned. Scalable. Predictable."
-        buttonText="Download Case Study"
+        buttonText="Request a custom ROI projection"
+        buttonClicked={()=>showHubSpotForm("request-a-custom-roi-projection")}
         features={[
           {
             icon: (
@@ -163,6 +169,7 @@ const Page = () => {
         title="Engineered for Complex Products & Continuous Delivery"
         description="We don’t offer cookie-cutter QA. Our frameworks flex to your domain, complexity, and release velocity."
         BussinessId="business-value"
+        buttonClick2={()=>showHubSpotForm("quality-engineering-download-one-pager")}
         useCaseData={[
           {
             title: "SaaS Platforms",
@@ -278,10 +285,10 @@ const Page = () => {
           },
         ]}
       />
-      <ArchitectureSprint />
+      {/* <ArchitectureSprint /> */}
       <ContactSecDataAi
         BoldContent=""
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+        lightContent="Engineer quality into every product lifecycle stage."
         link="#"
       />
     </>

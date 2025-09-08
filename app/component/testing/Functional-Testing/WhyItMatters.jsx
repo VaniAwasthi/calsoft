@@ -5,19 +5,21 @@ import ButtonLayout from "../../../component/utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
 import FunctionalTestingMatter from "../Functional-Testing-Matter";
 import { motion } from "framer-motion";
+import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 
 export default function WhyItMatters({
   title = "Cloud Migration Mistakes You Can’t Afford",
   desc = "Many enterprises begin cloud migration with limited visibility into interdependencies, business impact, or future scalability. This results in:",
   desc2 = "Calsoft brings a structured, zero-disruption approach to migration, tuned for enterprise-scale complexity and post-migration optimization.",
-  buttonText = "Download Case Study",
+  buttonText = "Get in touch",
   Component = FunctionalTestingMatter,
   contentWidth = "",
+  buttonClicked=()=>showHubSpotForm("get-in-touch")
 }) {
   return (
     <div id="why-it-matters" className="container">
       <div className="h-8" />
-      <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="flex flex-col items-center lg:grid lg:grid-cols-2 gap-x-16 gap-y-10 lg:items-start">
         {/* Left Content */}
         <div className={`space-y-10 ${contentWidth}`}>
           <motion.p
@@ -62,6 +64,7 @@ export default function WhyItMatters({
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit shadow-2xl"}
+              onClick={buttonClicked}
             />
           </motion.div>
         </div>

@@ -11,6 +11,7 @@ import Agility from "../../../component/infra/Agility";
 import ImpactAnalysisMatter from "../../../component/testing/ImpactAnalysisMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_4.webp"
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -33,7 +34,9 @@ const Page = () => {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         heroImage={Img}
-
+        buttonClicked={()=>showHubSpotForm("try-free-load-test")}
+        buttonText2=""
+        
       />
       <WhyItMatters
         title="The Missing Link in DevOps? Continuous Quality."
@@ -45,7 +48,6 @@ const Page = () => {
       <IntelligentPlanning
         heading="Targeted Testing. Faster Feedback. Fewer Misses."
         description="We enable real-time test impact analysis across your code base and pipelines — ensuring smart regression without sacrificing coverage."
-        buttonText="Request POC"
         data={[
           {
             title: "Change mapping at file/function level",
@@ -105,8 +107,11 @@ const Page = () => {
           title:
             "Want faster, leaner QA cycles? Let’s walk you through how our Test Impact Analysis",
           buttonText: "Book a Meeting",
+          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+          
         }}
-        buttonText="Download ROI Sheet"
+       buttonText="Download One Pager"
+      onPagerButton={()=>showHubSpotForm("test-impact-analysis-one-pg")}
       />
       <UseCases
       description="Test Impact Analysis is ideal for:"

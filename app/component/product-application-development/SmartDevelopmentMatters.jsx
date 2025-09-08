@@ -25,7 +25,7 @@ export default function SmartDevelopmentMatters() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="w-48 h-48 bg-blue-800 absolute top-12 left-[12.3rem] rotate-45 rounded-lg text-white"
+        className="w-48 h-48 bg-blue-800 absolute top-12 left-[12.3rem] rotate-45 rounded-lg text-white hover:scale-105 transition-all"
       >
         <div className="w-full h-full -rotate-45 text-center space-y-1.5 flex flex-col justify-center items-center p-5">
           <p className="text-3xl font-bold">70%</p>
@@ -37,7 +37,7 @@ export default function SmartDevelopmentMatters() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="w-48 h-48 bg-blue-800 absolute bottom-9 left-[3.6rem] rotate-45 rounded-lg text-white"
+        className="w-48 h-48 bg-blue-800 absolute bottom-9 left-[3.6rem] rotate-45 rounded-lg text-white hover:scale-105 transition-all"
       >
         <div className="w-full h-full -rotate-45 text-center space-y-1.5 flex flex-col justify-center items-center p-5">
           <p className="text-3xl font-bold">35%</p>
@@ -49,7 +49,7 @@ export default function SmartDevelopmentMatters() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="w-48 h-48 bg-blue-800 absolute bottom-9 right-[1.6rem] rotate-45 rounded-lg text-white"
+        className="w-48 h-48 bg-blue-800 absolute bottom-9 right-[1.6rem] rotate-45 rounded-lg text-white hover:scale-105 transition-all"
       >
         <div className="w-full h-full -rotate-45 text-center flex flex-col justify-center items-center p-6 ml-2.5 mt-1.5">
           <p className="text-[29px] font-bold">30%-50%</p>

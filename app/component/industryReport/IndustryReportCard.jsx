@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
-import FilterPanel from "../utilities/FilterPannel";
 import { useRouter } from "next/navigation";
 import { setSelectedIndustryReportId } from "@/app/store/reducers/industryReportReducer";
 import { fetchIndustryReportList } from "@/app/store/actions/industryReportActions";

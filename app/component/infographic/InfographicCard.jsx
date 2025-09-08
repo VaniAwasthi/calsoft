@@ -110,8 +110,6 @@ const openForm = (script) => {
   };
 
   function search(value) {
-    console.log(value);
-    console.log(filteredList);
     if (value === "") setFilteredList(listData);
     else
       setFilteredList(
@@ -145,7 +143,7 @@ const openForm = (script) => {
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
-        <p className="mb-4 text-sm">{filteredResources.length} Results</p>
+        <p className="mb-4 text-sm">{filteredList.length} Results</p>
 
         {/* Grid Display with animation */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

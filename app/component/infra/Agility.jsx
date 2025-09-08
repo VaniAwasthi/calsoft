@@ -7,6 +7,7 @@ import predict from "../../assets/infra/predictibility.webp";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function Agility({
   data = {
@@ -39,8 +40,10 @@ export default function Agility({
   bookMeetingData = {
     title: "Our roadmap-led cloud transformation for a global ISV reduced their cloud infra costs by 38% within 4 months, while improving scalability for 5x traffic.",
     buttonText: "Download Solution Report",
+    onButtonClicked:()=>showHubSpotForm("book-a-meeting")
   },
-  buttonText = "Try Now",
+  buttonText = "Download One Pager",
+  onPagerButton=()=>showHubSpotForm("infra-roadmap-one-pg")
 }) {
   return (
     <div id="business-value" className="container">
@@ -61,7 +64,7 @@ export default function Agility({
                   whileInView={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="text-3xl font-bold"
+                  className="text-2xl font-bold"
                 >
                   {data.leftSideContent.title}
                 </motion.p>
@@ -94,6 +97,7 @@ export default function Agility({
                     image={buttonImage}
                     hoverImage={buttonImage}
                     className={"w-fit mt-3"}
+                    onClick={onPagerButton}
                   />
                 </motion.div>
               </div>
@@ -131,7 +135,7 @@ export default function Agility({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-4xl font-medium"
+              className="text-[20px] font-medium"
             >
               {bookMeetingData.title}
             </motion.p>
@@ -140,7 +144,8 @@ export default function Agility({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-xl  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg"
+              className="text-lg  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg"
+              onClick={bookMeetingData.onButtonClicked}
             >
               {bookMeetingData.buttonText}
             </motion.button>
