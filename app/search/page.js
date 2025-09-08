@@ -1,13 +1,64 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Suspense } from "react";
 import { SearchFilters } from "@/app/component/search/SearchFilters";
 import { SearchResultsGrid } from "@/app/component/search/SearchResultsGrid";
 import { HeroSection } from "@/app/component/search/HeroSection";
+import { globalSearch } from "../store/actions/globalSearch";
+import { useSearchParams } from "next/navigation";
+import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
+import { useDispatch, useSelector } from "react-redux";
 
-async function SearchResults({ searchParams }) {
-  const resolvedSearchParams = await searchParams;
-  const initialSearchQuery = resolvedSearchParams.s || "";
+function SearchResults() {
+  const dispatch = useDispatch();
+  const searchParams = useSearchParams();
+  const initialSearchQuery = searchParams.get("s") || "";
 
-  const pageKey = `search-${initialSearchQuery}-${Date.now()}`;
+  const [searchResults, setSearchResults] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [filteredResults, SetfilteredResults] = useState(searchResults);
+
+  const [selectedFilters, setSelectedFilters] = useState({
+    categories: [],
+    services: [],
+    technology: [],
+    industry: [],
+  });
+
+  const filters = useSelector((state) => state.blogs);
+
+  const performSearch = async (query) => {
+    if (!query) {
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const response = await globalSearch(query, selectedFilters);
+      if (response?.data) {
+        setSearchResults(response.data.results);
+      }
+    } catch (error) {
+      console.error("Search failed:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  function search(value) {
+    if (value === "") SetfilteredResults(searchResults);
+    else
+      SetfilteredResults(
+        searchResults.filter((blog) =>
+          blog.title.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
+  useEffect(() => {
+    performSearch(initialSearchQuery);
+  }, [initialSearchQuery, selectedFilters]);
 
   if (!initialSearchQuery) {
     return (
@@ -22,137 +73,42 @@ async function SearchResults({ searchParams }) {
     );
   }
 
-  // const searchResults = await fetchSearchResults(initialSearchQuery)
-
-  const searchResults = [
-    {
-      id: 1,
-      title: "Calsoft Launches CalTIA: Intelligent Test Management Platform",
-      description:
-        "CalTIA: On-prem AI-driven solution to ensure faster testing, reliable deployments & optimize regression....",
-      category: "News",
-      link: "#",
-    },
-    {
-      id: 2,
-      title: "Calsoft Test Impact Analyzer (CalTIA)",
-      description:
-        "Learn how Calsoft's CalTIA optimizes testing with machine learning, reduces regression time, and integrates seamless....",
-      category: "Brochure",
-      link: "#",
-    },
-    {
-      id: 3,
-      title: "CalTIA – Optimize Testing Process",
-      description:
-        "AI-Driven Testing Solution Optimize Testing and Accelerate Your GTM with On-Prem AI-Driven Regression Testing and Te....",
-      category: "eBriefs",
-      link: "#",
-    },
-    {
-      id: 4,
-      title: "Master in Regression Testing with AI",
-      description:
-        "Learn advanced techniques for AI-powered regression testing and optimization strategies....",
-      category: "Webinars",
-      link: "#",
-    },
-    {
-      id: 5,
-      title: "Monthly Newsletter June 2025",
-      description:
-        "Stay updated with the latest developments in AI testing and automation technologies....",
-      category: "Hyphen-Newsletter",
-      link: "#",
-    },
-    {
-      id: 6,
-      title: "AI-Powered Test Optimization for Enterprise Engineering Teams",
-      description:
-        "Comprehensive guide to implementing AI-driven testing solutions in enterprise environments....",
-      category: "eBriefs",
-      link: "#",
-    },
-  ];
-
-  const filterData = {
-    categories: [
-      "Awards",
-      "Brochure",
-      "eBriefs",
-      "Hawkeye-articles",
-      "Hyphen-Newsletter",
-      "News",
-      "Podcast-webinar",
-      "Podcasts",
-      "Case Studies",
-      "White Papers",
-      "Research Reports",
-      "Technical Guides",
-    ],
-    services: [
-      "AI/ML Services",
-      "Cloud Migration",
-      "DevOps Consulting",
-      "Quality Assurance",
-      "Product Engineering",
-      "Data Analytics",
-      "Cybersecurity",
-      "Mobile Development",
-      "Web Development",
-      "API Development",
-    ],
-    technology: [
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Cloud Computing",
-      "Kubernetes",
-      "Docker",
-      "React",
-      "Node.js",
-      "Python",
-      "Java",
-      "AWS",
-      "Azure",
-      "Google Cloud",
-    ],
-    industry: [
-      "Healthcare",
-      "Finance",
-      "E-commerce",
-      "Manufacturing",
-      "Education",
-      "Retail",
-      "Automotive",
-      "Telecommunications",
-      "Media & Entertainment",
-      "Government",
-    ],
-  };
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+  }, [dispatch]);
 
   return (
-    <div key={pageKey} className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <HeroSection initialSearchQuery={initialSearchQuery} />
 
-      <div className="container">
+      <div className="container mx-auto px-4">
         <div className="py-12">
-          <div className="flex gap-8">
-            <SearchFilters
-              initialSearchQuery={initialSearchQuery}
-              filterData={filterData}
-            />
-            <SearchResultsGrid searchResults={searchResults} />
-          </div>
+          {isLoading ? (
+            <div className="text-center">
+              <p>Searching...</p>
+            </div>
+          ) : (
+            <div className="flex gap-8">
+              <SearchFilters
+                initialSearchQuery={initialSearchQuery}
+                filterData={filters}
+                selectedFilters={selectedFilters}
+                setSelectedFilters={setSelectedFilters}
+                debounceSearch={search}
+              />
+              <SearchResultsGrid searchResults={filteredResults} />
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-export default function SearchPage({ searchParams }) {
+export default function Page() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <SearchResults searchParams={searchParams} />
+      <SearchResults />
     </Suspense>
   );
 }
