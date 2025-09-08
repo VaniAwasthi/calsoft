@@ -27,7 +27,7 @@ export default function WhyItMatters({
             viewport={{ once: false, amount: 0.3 }}
             className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_50%)] bg-clip-text text-transparent"
           >
-            Why It Matters
+            Why This Matters
           </motion.p>
           <div className="space-y-6">
             <motion.p

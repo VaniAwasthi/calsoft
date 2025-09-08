@@ -4,7 +4,7 @@ import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import SmartDevelopmentMatters from "../../../component/product-application-development/SmartDevelopmentMatters";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
@@ -156,6 +156,7 @@ Can’t Ship Reliably."
             title: "Zero Downtime Upgrades & Rollbacks",
           },
         ]}
+        ScorecardComponent={RequestDemo}
       />
       <UseCases CTACopy="Cut deployment time by 50% through automation." 
       title="Optimized for Speed, Complexity, and Distribution"

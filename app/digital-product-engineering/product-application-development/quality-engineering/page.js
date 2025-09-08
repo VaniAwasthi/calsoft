@@ -4,7 +4,7 @@ import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import QualityEngineering from "../../../component/product-application-development/QualityEngineeringMatters";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
@@ -155,6 +155,7 @@ const Page = () => {
             title: "Cross-Browser & Mobile Testing",
           },
         ]}
+        ScorecardComponent={RequestDemo}
       />
       <UseCases
         CTACopy="Ensure 98% defect-free releases with automation."

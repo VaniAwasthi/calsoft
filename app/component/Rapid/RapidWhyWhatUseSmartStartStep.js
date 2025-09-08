@@ -48,7 +48,7 @@ export const Rapid = () => {
   };
   const navItems = [
     "Why it Matters",
-    "What We Do",
+    "What We Offer",
     "Use Cases",
     "Business Value",
     "How to Start",
@@ -91,14 +91,14 @@ export const Why = () => {
 
     cards: [
       {
-        percent: "70%",
-        text: "less rework occurs when companies validate early",
+        percent: "",
+        text: "Companies that validate early reduce rework by up to 70%",
         className: "shape1",
         bgshape: bgshape1,
       },
       {
-        percent: "80-90%",
-        text: "stakeholder alignment is confirmed by Calsoft clients within the first prototype  ",
+        percent: "",
+        text: "Calsoft clients confirm 80-90% stakeholder alignment within first prototype",
         className: "shape2",
         bgshape: bgshape2,
       },
@@ -119,7 +119,7 @@ export const Why = () => {
 };
 
 export const What = () => {
-  const heading = "What We Do";
+  const heading = "What We Offer";
   const subtitle = "Prototypes That Aren’t Just Pretty—They Work";
   const desc =
     "We don’t build throwaway wireframes. We engineer functional, interactive prototypes mapped to real workflows, use cases, and design logic. Our Capabilities:";

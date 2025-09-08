@@ -28,10 +28,12 @@ function Page() {
           backgroundImage={BannerwithButtonBg}
           title={
             <>
-              Reduce tech debt by 45% with maturity mapping.
+              Calsoft’s Modernization Maturity Assessment helps you pinpoint gaps across your tech ecosystem—and
+              build a roadmap aligned to real-world outcomes, not guesswork.
+
             </>
           }
-          buttonText="Book a meeting"
+          buttonText="Download Whitepaper"
           buttonLink="#"
         />
       </section>

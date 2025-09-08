@@ -13,32 +13,32 @@ import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolution
 import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_4.webp"
 
 const Page = () => {
-    const [activeTab, setActiveTab] = useState("why-it-matters");
-    
-      const navItems = [
-        "Why it Matters",
-        "Intelligent Planning",
-        "Business Value",
-        "Use Cases",
-        "Why Calsoft",
-        "How to Start",
-      ];
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
+  const navItems = [
+    "Why This Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
         title="Test Smarter, Not Slower — With Impact-Driven Validation"
         description="Accelerate quality cycles by identifying and executing only the tests that matter — powered by Calsoft’s Test Impact Analysis services."
-        buttonText="Try Free Load Test"
+        buttonText="Request Free Assesment"
         navItems={navItems}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         heroImage={Img}
-        
+
       />
       <WhyItMatters
         title="The Missing Link in DevOps? Continuous Quality."
         desc="Modern software development generates thousands of tests. But not all changes impact every function. Without intelligent impact analysis, you face: "
-        desc2="Calsoft bridges these gaps by combining business-aligned test scenarios with automated, scalable validation frameworks."
+        desc2="Calsoft introduces a data-driven test selection model — helping you validate what matters, when it matters."
         buttonText="Download Case Study"
         Component={ImpactAnalysisMatter}
       />
@@ -68,6 +68,10 @@ const Page = () => {
             subTitle: "with GitHub Actions, Jenkins, Azure DevOps",
           },
         ]}
+        bottomContent={{
+          text: "We tailor the impact model based on team velocity, repo architecture, and test suite complexity.",
+          btnText: "Request POC",
+        }}
       />
       <Agility
         data={{
@@ -105,6 +109,7 @@ const Page = () => {
         buttonText="Download ROI Sheet"
       />
       <UseCases
+      description="Test Impact Analysis is ideal for:"
         data={[
           {
             title: "Microservices architectures",
@@ -131,7 +136,7 @@ const Page = () => {
       <WhyCalsoft
         sectionDescription="Unlike basic test filtering plugins, Calsoft’s Test Impact Analysis service is engineered for scale, accuracy, and adaptability"
         data={{
-          tableHeadings: ["Capability", "Calsoft", "Standard Providers"],
+          tableHeadings: ["Capability", "Calsoft Impact Analysis", "Tool-Only Alternatives"],
           tableContent: [
             {
               name: "Multi-level Change Mapping",

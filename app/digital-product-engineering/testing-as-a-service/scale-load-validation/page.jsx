@@ -14,16 +14,16 @@ import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolution
 import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_3.webp"
 
 const Page = () => {
-    const [activeTab, setActiveTab] = useState("why-it-matters");
-    
-      const navItems = [
-        "Why it Matters",
-        "Intelligent Planning",
-        "Business Value",
-        "Use Cases",
-        "Why Calsoft",
-        "How to Start",
-      ];
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
+  const navItems = [
+    "Why it Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -69,6 +69,10 @@ const Page = () => {
             subTitle: "application, infra, network",
           },
         ]}
+        bottomContent={{
+          text: "We model tests against your current SLAs, compliance thresholds, and future scale targets.",
+          btnText: "Request POC",
+        }}
       />
       <Agility
         data={{
@@ -108,6 +112,7 @@ const Page = () => {
         buttonText="Download ROI Sheet"
       />
       <UseCases
+      description="We’ve enabled high-scale performance validation for:"
         data={[
           {
             title: "E-commerce platforms",
@@ -134,7 +139,7 @@ const Page = () => {
       <WhyCalsoft
         sectionDescription="Calsoft blends QA depth with infrastructure visibility — offering more than just a tool-based approach."
         data={{
-          tableHeadings: ["Capability", "Calsoft", "Standard Providers"],
+          tableHeadings: ["Capability", "Calsoft Performance Suite", "Typical Vendors"],
           tableContent: [
             {
               name: "SLA-Centric Load Planning",

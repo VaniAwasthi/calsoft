@@ -189,6 +189,7 @@ const Page = () => {
         buttonText="Download ROI Sheet"
       />
       <UseCases
+      desc=" Calsoft’s cloud migration services have empowered organizations across industries:"
         useCases={[
           "ISVs shifting legacy platforms to containerized microservices on AWS & Azure",
           "Healthcare & Life Sciences migrating workloads with PHI/HIPAA compliance",
@@ -199,6 +200,7 @@ const Page = () => {
       />
 
       <WhyCalsoft
+      sectionDescription="Cloud migration is not a copy-paste operation — it’s a strategic transformation. Calsoft is uniquely positioned to deliver:"
         data={{
           tableHeadings: ["Feature", "Calsoft", "Traditional Vendors"],
           tableContent: [

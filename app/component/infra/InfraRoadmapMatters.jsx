@@ -53,10 +53,10 @@ export default function InfraRoadmapMatters() {
               "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
           }}
         >
-          <div className="text-4xl font-bold mb-2">30%</div>
+          <div className="text-4xl font-bold mb-2">High TCO</div>
           <div className="text-sm leading-tight px-4">
             from redundant tools
-            <br />& inconsistent
+            <br />and inconsistent
             <br />
             provisioning
           </div>
@@ -81,7 +81,7 @@ export default function InfraRoadmapMatters() {
               "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
           }}
         >
-          <div className="text-4xl font-bold mb-2">Outage</div>
+          <div className="text-4xl font-bold mb-2">Downtime</div>
           <div className="text-sm leading-tight px-4">
             risks from aging
             <br />
@@ -110,11 +110,11 @@ export default function InfraRoadmapMatters() {
               "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
           }}
         >
-          <div className="text-4xl font-bold mb-2">30%</div>
+          <div className="text-4xl font-bold mb-2">Security blind spots</div>
           <div className="text-sm leading-tight px-4">
-            fail due to
+            due to
             <br />
-            wrong stack
+            patchy visible
           </div>
         </div>
       </motion.div>

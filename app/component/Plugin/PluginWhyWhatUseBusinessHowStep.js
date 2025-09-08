@@ -98,8 +98,8 @@ export const Why = () => {
         bgshape: bgshape2,
       },
       {
-        percent: "40%",
-        text: "reduction in time-to- market is achieved by Calsoft clients through our plugin frameworks.",
+        percent: "",
+        text: "Calsoft clients cut time-to-market by 40% with our plugin frameworks",
         className: "shape3",
         bgshape: bgshape3,
       },
@@ -117,7 +117,7 @@ export const Why = () => {
 };
 
 export const What = () => {
-  const heading = "What We Do";
+  const heading = "What We Offer";
   const subtitle = "Custom. Compliant. Compatible.";
   const desc =
     "We specialize in custom plugin development across leading platforms, enabling rapid feature extension and frictionless user experiences.";

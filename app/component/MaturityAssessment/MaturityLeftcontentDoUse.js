@@ -128,7 +128,7 @@ export const DoUs = () => {
     "Calsoft’s 360° Maturity Assessment is diagnostic, data-driven, and actionable—covering not just tech, but processes, people, and dependencies. Our Offerings:";
 
   const offeringsData = {
-    buttonText: "Download Best Practices",
+    buttonText: "Talk to Expert",
     link: "#",
     offerings: [
       {

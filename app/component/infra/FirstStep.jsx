@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 
 export default function FirstStep({
   headerContent = {
-    title1: "Take the First Step –",
-    title2: "Without the Guesswork",
+    title1: "How to  Start",
+    title2: "Take the First Step – Without the Guesswork",
     description:
       "We don’t ask you to commit to a massive overhaul. Instead, we guide you step-by-step — from discovery to deployment — with zero ambiguity and measurable outcomes.",
   },

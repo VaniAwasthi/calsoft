@@ -8,6 +8,8 @@ import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Component({
+  title = "Where It Works Best.",
+  desc = "Our Infrastructure Roadmap services have unlocked outcomes for:",
   useCases = [
     "ISVs migrating monoliths to containerized microservices",
     "Healthcare firms ensuring HIPAA-aligned infra blueprints",
@@ -37,11 +39,10 @@ export default function Component({
                   className="space-y-1"
                 >
                   <h3 className="text-3xl font-bold text-[#000000]">
-                    Where It Works Best.
+                    {title}
                   </h3>
                   <p className="text-lg text-[#000000] leading-relaxed">
-                    Our Infrastructure Roadmap services have unlocked outcomes
-                    for:
+                    {desc}
                   </p>
                 </motion.div>
               </div>
@@ -104,7 +105,7 @@ export default function Component({
                 className="pt-4"
               >
                 <ButtonLayout
-                  text={"Talk to Infra Strategist"}
+                  text={"Request Use Cases"}
                   image={buttonImage}
                   hoverImage={buttonImage}
                   className={"w-fit"}
