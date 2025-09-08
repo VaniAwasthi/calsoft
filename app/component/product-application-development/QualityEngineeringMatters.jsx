@@ -11,13 +11,13 @@ export default function SmartDevelopmentMatters() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="w-44 h-44 bg-blue-800 absolute top-7 left-52 rotate-45 rounded-4xl text-white"
+        className="w-44 h-44 bg-blue-800 absolute top-7 left-52 rotate-45 rounded-4xl text-white group hover:scale-[103%] transition-all"
       >
         <div className="w-full h-full -rotate-45 text-center space-y-1.5 flex flex-col justify-center items-center p-5">
           <p className="text-3xl font-bold">40%</p>
           <p>of critical bugs found post-release</p>
         </div>
-        <div className="-rotate-45 absolute -top-9 -left-[2.35rem] ">
+        <div className="-rotate-45 absolute -top-9 -left-[2.35rem] group-hover:scale-[97%] transition-all">
           <svg
             width="244"
             height="259"
@@ -37,13 +37,13 @@ export default function SmartDevelopmentMatters() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="w-44 h-44 bg-[linear-gradient(135deg,#2E3092_20%,#BA0007_115%)] absolute bottom-6 left-[3.65rem] rotate-45 rounded-4xl text-white"
+        className="w-44 h-44 bg-[linear-gradient(135deg,#2E3092_20%,#BA0007_115%)] absolute bottom-6 left-[3.65rem] rotate-45 rounded-4xl text-white hover:scale-[103%] group transition-all"
       >
         <div className="w-full h-full -rotate-45 text-center space-y-1.5 flex flex-col justify-center items-center p-5">
           <p className="text-3xl font-bold">35%</p>
           <p>drop in rework for Calsoft clients during the first 3 sprints.</p>
         </div>
-        <div className="-rotate-45 absolute bottom-4 -left-[2.6rem] ">
+        <div className="-rotate-45 absolute bottom-4 -left-[2.6rem] group-hover:scale-[97%] transition-all group-hover:bottom-[15px]">
           <svg
             width="392"
             height="206"
@@ -76,7 +76,7 @@ export default function SmartDevelopmentMatters() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="w-44 h-44 bg-[linear-gradient(135deg,#2E3092_30%,#BA0007_105%)] absolute bottom-6 right-[1rem] rotate-45 rounded-4xl text-white"
+        className="w-44 h-44 bg-[linear-gradient(135deg,#2E3092_30%,#BA0007_105%)] absolute bottom-6 right-[1rem] rotate-45 rounded-4xl text-white group hover:scale-[103%] transition-all"
       >
         <div className="w-full h-full -rotate-45 text-center flex flex-col justify-center items-center p-6">
           <p className="text-[29px] font-bold">60%</p>
@@ -84,7 +84,7 @@ export default function SmartDevelopmentMatters() {
             of QA time is wasted on repeated manual tests
           </p>
         </div>
-        <div className="-rotate-45 absolute -bottom-[2.35rem] -right-10 ">
+        <div className="-rotate-45 absolute -bottom-[2.35rem] -right-10 group hover:scale-[97%] transition-all">
           <svg
             width="243"
             height="260"

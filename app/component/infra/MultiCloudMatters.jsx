@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function MultiCloudMatters() {
   return (
-    <div className="relative w-full aspect-[5/4]">
+    <div className="relative w-[35rem] xl:w-full aspect-[5/4]">
       {/* Top Left Card - Redundant */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}

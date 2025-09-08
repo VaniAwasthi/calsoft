@@ -2,7 +2,6 @@
 
 import React from "react";
 import HeroSec from "../../../component/infra/HeroSec";
-// import WhyItMatters from "../../../component/infra/Cloud-Migration/WhyItMatters";
 import IntelligentPlanning from "../../../component/infra/Multi-Cloud-Provisioning/IntelligentPlanning";
 import UseCases from "../../../component/infra/UseCases";
 import FirstStep from "../../../component/infra/FirstStep";
@@ -12,7 +11,7 @@ import Agility from "../../../component/infra/Agility";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import CloudMigration from "../../../component/infra/CloudMigrationMatters";
-import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Migration-01.webp"
+import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Migration-01.webp";
 
 const Page = () => {
   return (

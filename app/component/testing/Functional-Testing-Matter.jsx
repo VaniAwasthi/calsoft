@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 export default function FunctionalTestingMatter() {
@@ -100,12 +101,13 @@ export default function FunctionalTestingMatter() {
   return (
     <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
       {data.map((ele, idx) => (
-        <div
+        <motion.div
           key={idx}
-          className={`relative bg-white border-2 border-[#2e3092] rounded-2xl rounded-br-none p-5 h-full flex items-end justify-center ${
-            idx == 0 &&
-            "bg-gradient-to-br from-[#2e3092] to-[#ba0007] text-white"
-          }`}
+          initial={{ opacity: 0, y: idx % 2 === 0 ? 30 : -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: idx * 0.1 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className={`relative bg-white border-2 border-[#2e3092] rounded-2xl rounded-br-none p-5 h-full flex items-end justify-center hover:bg-gradient-to-br from-[#2e3092] to-[#ba0007] hover:text-white`}
         >
           <div className="absolute -top-6 left-[calc(50%-2rem)] w-16 h-16 bg-[#2e3092] rounded-full flex items-center justify-center">
             {ele.icon}
@@ -114,7 +116,7 @@ export default function FunctionalTestingMatter() {
             <h3 className="font-bold mb-2">{ele.title}</h3>
             <p className="">{ele.subTitle}</p>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

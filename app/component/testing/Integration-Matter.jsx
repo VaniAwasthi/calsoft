@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function IntegrationMatter() {
   return (
     <div className="flex items-center justify-center">
-      <div className="relative w-full max-w-2xl aspect-square">
+      <div className="relative w-[34.5rem] aspect-square">
         {/* Bottom right diamond */}
         <motion.div
           initial={{ x: -50, y: 50, opacity: 0 }}

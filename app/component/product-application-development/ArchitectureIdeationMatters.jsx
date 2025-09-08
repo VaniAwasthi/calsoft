@@ -5,7 +5,7 @@ import React from "react";
 export default function ArchitectureIdeationMatters() {
   return (
     <div className="w-full h-[23rem] flex xl:justify-center">
-      <div className="relative">
+      <div className="relative w-full">
         <div className="relative hover:scale-105 transition-all">
           {/* w-265; h-285 */}
           <svg
