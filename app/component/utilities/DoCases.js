@@ -241,6 +241,8 @@ export const Do = ({
                         text={buttonText}
                         image={ButtonImage}
                         hoverImage={ButtonImage}
+                                                    onClick={onButtonClick}
+
                       />
                     </motion.div>
                   )}
@@ -759,7 +761,8 @@ export const InterfaceCard = ({
   stats = [],
   imageSrc,
   ButtonImage,
-  secId
+  secId,
+  onButtonClick
 }) => {
   return (
     <>
@@ -795,6 +798,7 @@ export const InterfaceCard = ({
                         text={buttonText}
                         image={ButtonImage}
                         hoverImage={ButtonImage}
+                        onClick={onButtonClick}
                       />
                     </motion.div>
                   </div>

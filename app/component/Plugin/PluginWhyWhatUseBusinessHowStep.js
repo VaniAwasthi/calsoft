@@ -33,6 +33,7 @@ import line3 from "../../assets/DigitalEngineering/maturity/line3.svg";
 
 import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export const Plugin = () => {
   const [activeTab, setActiveTab] = useState("benefits");
@@ -40,7 +41,7 @@ export const Plugin = () => {
     title: "Extend What You’ve Built. Expand What You Can Do.",
 
     description: `Build robust, enterprise-grade plugins and integrations that drive product adoption, reduce development cycles, and unlock new business models.`,
-    buttonText: "Download Solution Report",
+    buttonText: "Sample Modernization Roadmap",
     image: BackgroundImage,
   };
   const navItems = [
@@ -62,6 +63,8 @@ export const Plugin = () => {
           buttonImage={ButtonImage}
           hoverImage={ButtonImage}
           rightSec={false}
+          buttonWidth="!w-[300px]"
+          onButtonClick={()=>showHubSpotForm("maturity-assessment-and-planning-modernization-roadmap")}
         />
       </div>
       <Submenu
@@ -81,8 +84,7 @@ export const Why = () => {
     description:
       "With partner ecosystems growing and customers demanding seamless workflows, plugins are no longer optional—they’re a product strategy. But poorly built plugins can cause security risks, UX issues, or slow adoption. Calsoft helps you develop high-performance plugins that drive integration, automation, and business stickiness.",
 
-    buttonText: "Download Case Study",
-    link: "#",
+    buttonText: "Get in Touch",
 
     cards: [
       {
@@ -111,6 +113,7 @@ export const Why = () => {
         {...whyItMattersData}
         ButtonImage={ButtonImage}
         secId="why-it-matters"
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
     </>
   );
@@ -124,7 +127,6 @@ export const What = () => {
 
   const offeringsData = {
     buttonText: "Talk to Expert",
-    link: "#",
     offerings: [
       {
         icon: icon1,
@@ -178,6 +180,7 @@ export const What = () => {
         desc={desc}
         ButtonImage={ButtonImage}
         secId="what-we-do"
+        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
       />
     </>
   );
@@ -191,7 +194,6 @@ export const Use = () => {
     description:
       "Our plugin development services are built to support diverse product strategie —from internal extensibility to monetizable marketplace components.",
     buttonText: "Download One Pager",
-    link: "#",
     cards: [
       {
         title: "Salesforce Plugin for Case Automation",
@@ -211,7 +213,7 @@ export const Use = () => {
   };
   return (
     <>
-      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases" />
+      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases" onButtonClick={()=>showHubSpotForm("plugin-development-download-one-pager")}/>
     </>
   );
 };
@@ -223,7 +225,6 @@ export const Business = () => {
     description:
       "Our clients build once, scale everywhere. Here’s what plugin-driven extensibility delivers:",
     buttonText: "Request a custom ROI Projection",
-    link: "#",
     backgroundImage: businessimg,
     valueItems: [
       {
@@ -250,6 +251,7 @@ export const Business = () => {
         {...businessValueData}
         ButtonImage={ButtonImage}
         secId="business-value"
+        onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}
       />
     </>
   );
