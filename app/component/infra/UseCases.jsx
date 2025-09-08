@@ -6,6 +6,7 @@ import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function Component({
   useCases = [
@@ -104,7 +105,8 @@ export default function Component({
                 className="pt-4"
               >
                 <ButtonLayout
-                  text={"Talk to Infra Strategist"}
+                  text={"Talk to Expert"}
+                  onClick={()=>showHubSpotForm("Talk-to-Expert")}
                   image={buttonImage}
                   hoverImage={buttonImage}
                   className={"w-fit"}

@@ -5,12 +5,14 @@ import BannerLayout from "../utilities/BannerLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 // import Hero_bg from "@/app/assets/DigitalEngineering/cloud-service/Infrastructure-Roadmap.webp";
 import Submenu from "../utilities/Submenu";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function HeroSec({
   title = "Future-Proof Your Infrastructure with a Strategic Roadmap.",
   description = "Build an actionable infrastructure roadmap aligned to your growth, resilience, and cost objectives. No guesswork. Just clarity, performance, and ROI.",
   buttonText = "Request your custom roadmap",
-  Hero_bg
+  Hero_bg,
+  buttonClicked=()=>showHubSpotForm("custom-roadmap-infrastructure")
 }) {
   const [activeTab, setActiveTab] = useState("why-it-matters");
 
@@ -35,6 +37,7 @@ export default function HeroSec({
         titleTwoClass="text-[28px] md:text-5xl md:mt-4"
         descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[200px] md:w-full"
         BgClassname="object-cover w-full h-full object-center"
+        buttonClicked={buttonClicked}
       />
       <Submenu
         navItems={navItems}

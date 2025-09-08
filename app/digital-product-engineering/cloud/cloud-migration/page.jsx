@@ -13,6 +13,7 @@ import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolution
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import CloudMigration from "../../../component/infra/CloudMigrationMatters";
 import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Migration-01.webp"
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   return (
@@ -22,6 +23,7 @@ const Page = () => {
         description="Accelerate cloud adoption through risk-aware, business-aligned migration strategies — backed by automation, security, and predictable ROI."
         buttonText="Access Readiness"
         Hero_bg={Img}
+        buttonClicked={()=>showHubSpotForm("access-readiness")}
       />
       <WhyItMatters
         title="Cloud Migration Mistakes You Can’t Afford"
@@ -29,6 +31,8 @@ const Page = () => {
         desc2="Calsoft brings a structured, zero-disruption approach to migration, tuned for enterprise-scale complexity and post-migration optimization."
         MainComponenent={CloudMigration}
         id="why-it-matters"
+        buttonText="Get in touch"
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
         data={{
@@ -152,6 +156,8 @@ const Page = () => {
             // },
           ],
         }}
+        buttonClicked={()=>showHubSpotForm("Talk_to_Expert")}
+        buttonText="Talk to Expert"
       />
       <Agility
         data={{
@@ -185,8 +191,10 @@ const Page = () => {
           title:
             "Book a 30-minute call to stop 80% of your cloud spend from going to waste.",
           buttonText: "Book a Meeting",
+          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
         }}
-        buttonText="Download ROI Sheet"
+        buttonText="Download One Pager"
+        onPagerButton={()=>showHubSpotForm("cloud-migration-one-pg")}
       />
       <UseCases
         useCases={[

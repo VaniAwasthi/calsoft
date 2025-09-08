@@ -10,6 +10,7 @@ import WhyItMatters from "../../../component/product-application-development/Why
 import MultiCloudMatters from "../../../component/infra/MultiCloudMatters";
 import Agility from "../../../component/infra/Agility";
 import Img from "@/app/assets/DigitalEngineering/cloud-service/Multi-Cloud-Provisioning.webp"
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   return (
@@ -20,6 +21,7 @@ const Page = () => {
 multi-cloud provisioning approach — minimizing shadow IT and maximizing agility."
         buttonText="Request Readiness Check"
         Hero_bg={Img}
+        buttonClicked={()=>showHubSpotForm("multi-cloud-request-readiness-check")}
       />
       <WhyItMatters
       id="why-it-matters"
@@ -31,6 +33,8 @@ multi-cloud provisioning approach — minimizing shadow IT and maximizing agilit
         desc2="Calsoft’s approach ensures intentional, governed multi-cloud
                   provisioning — without slowing down innovation."
         MainComponenent={MultiCloudMatters}
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+        buttonText="Get in Touch"
       />
       <IntelligentPlanning
         data={{
@@ -189,8 +193,12 @@ multi-cloud provisioning approach — minimizing shadow IT and maximizing agilit
           title:
             "Book a 30-minute call to stop 80% of your cloud spend from going to waste.",
           buttonText: "Book a Meeting",
+              onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+          
         }}
-        buttonText="Try Now"
+        buttonText="Download One Pager"
+        onPagerButton={()=>showHubSpotForm("multi-cloud-prov-one-pg")}
+        
       />
       <UseCases
         useCases={[
