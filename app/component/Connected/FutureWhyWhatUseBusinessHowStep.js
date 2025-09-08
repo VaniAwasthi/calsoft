@@ -33,6 +33,7 @@ import line3 from "../../assets/DigitalEngineering/maturity/line3.svg";
 
 import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export const Future = () => {
   const [activeTab, setActiveTab] = useState("benefits");
@@ -40,7 +41,7 @@ export const Future = () => {
     title: "An Ecosystem That Speaks the Same Language",
 
     description: `Calsoft helps enterprises break silos, enable real-time interoperability, and drive business efficiency through a tightly integrated digital ecosystem—across apps, infra, data, cloud, and third-party tools.`,
-    buttonText: "Download Solution Report",
+    buttonText: "Sample Modernization Roadmap",
     image: BackgroundImage,
   };
   const navItems = [
@@ -61,7 +62,9 @@ export const Future = () => {
           buttonText={slide.buttonText}
           buttonImage={ButtonImage}
           hoverImage={ButtonImage}
+          buttonWidth="!w-[300px]"
           rightSec={false}
+          onButtonClick={()=>showHubSpotForm("maturity-assessment-and-planning-modernization-roadmap")}
         />
       </div>
       <Submenu
@@ -81,8 +84,7 @@ export const Why = () => {
     description:
       "When systems don’t talk, data doesn’t flow, teams waste time, and decisions lag. Over 60% of digital transformation delays are due to siloed apps, legacy connectors, and poor API governance. Calsoft builds connected ecosystems that ensure continuous workflows, real-time intelligence, and modular scale.",
 
-    buttonText: "Download Factsheet",
-    link: "#",
+    buttonText: "Get in Touch",
 
     cards: [
       {
@@ -111,6 +113,7 @@ export const Why = () => {
         {...whyItMattersData}
         ButtonImage={ButtonImage}
         secId="why-it-matters"
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
     </>
   );
@@ -124,7 +127,6 @@ export const What = () => {
 
   const offeringsData = {
     buttonText: "Talk to Expert",
-    link: "#",
     offerings: [
       {
         icon: icon1,
@@ -178,6 +180,7 @@ export const What = () => {
         desc={desc}
         ButtonImage={ButtonImage}
         secId="what-we-do"
+        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
       />
     </>
   );
@@ -191,7 +194,6 @@ export const Use = () => {
     description:
       "Calsoft connects platforms, clouds, and tools—regardless of industry or existing tech stack.",
     buttonText: "Download One Pager",
-    link: "#",
     cards: [
       {
         title: "Multi-Cloud App Ecosystem Integration",
@@ -212,7 +214,7 @@ export const Use = () => {
   };
   return (
     <>
-      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases" />
+      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases" onButtonClick={()=>showHubSpotForm("connected-ecosystem-download-one-pager")} />
     </>
   );
 };
@@ -253,6 +255,7 @@ export const Business = () => {
         {...businessValueData}
         ButtonImage={ButtonImage}
         secId="business-value"
+onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}
       />
     </>
   );
@@ -278,7 +281,6 @@ export const How = () => {
 
 export const Step = () => {
   const buttonText = "Start Today";
-  const link = "#";
   const steps = [
     {
       day: "Day 0",
@@ -343,7 +345,6 @@ export const Step = () => {
         steps={steps}
         heading="10-Day Connected Ecosystem Sprint: Step-by-Step"
         buttonText={buttonText}
-        link={link}
         ButtonImage={ButtonImage}
       />
     </>

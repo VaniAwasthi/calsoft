@@ -9,6 +9,7 @@ import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolution
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import MobileDevelpmentMatters from "@/app/component/cx-engineering/MobileDevelpmentMatters";
 import img from "@/app/assets/DigitalEngineering/CX/CX Engineering 5.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const navItems = [
@@ -26,23 +27,26 @@ const Page = () => {
         title="Turn Ideas into Intelligent Products."
         description="De-risk early decisions with the right architecture,
               built for scale, speed, and ROI."
-        buttonText="Get Architecture Readiness Score"
+        buttonText="Request CX Audit"
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
+        buttonClicked={()=>showHubSpotForm("")}
+        buttonText2=""
       />
       <WhyItMatters
         title="Mobile Isn’t a Channel. It’s the Frontline."
         desc="Mobile is where business happens—whether it’s a field rep capturing leads, a consumer placing an order, or a manager approving workflows. Yet 60% of enterprise apps fail user expectations due to poor UX, offline issues, or clunky performance. Calsoft solves this by engineering apps that align business goals with intuitive, dependable experiences."
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         MainComponenent={MobileDevelpmentMatters}
         // contentClass="h-[31.5rem]"
         gridClass="sm:h-[55rem] md:h-[53rem] xl:h-[31.5rem]"
         mainComponenentClass="justify-start"
         id="why-it-matters"
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
-      <WhatWeOffer id="what-we-offer" />
+      <WhatWeOffer id="what-we-offer" buttonText="Talk to Expert"  buttonClicked={()=>showHubSpotForm("Talk-to-Expert")}/>
       <UseCases
         id="use-cases"
         BussinessId="business-value"
@@ -92,6 +96,7 @@ const Page = () => {
           title: "Boost mobile adoption by 35% via native/hybrid apps.",
           buttontext: "Book a Meeting",
         }}
+        buttonClick2={()=>showHubSpotForm("mobile-development-one-pager")}
       />
       <HowToStart
         id="how-to-start"
@@ -100,12 +105,13 @@ const Page = () => {
           description:
             "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
         }}
+        
       />
       <Steps />
       <ContactSecDataAi
         BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Build mobile solutions that drive engagement everywhere."
+        // link="#"
       />
     </>
   );

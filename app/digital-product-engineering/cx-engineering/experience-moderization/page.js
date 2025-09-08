@@ -14,6 +14,7 @@ import line3 from "../../../assets/DigitalEngineering/maturity/line3.svg";
 import mobile2 from "../../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../../assets/DigitalEngineering/maturity/mobile3.svg";
 import img from "@/app/assets/DigitalEngineering/CX/CX Engineering 2.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const navItems = [
@@ -34,12 +35,15 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
+        buttonClicked={()=>showHubSpotForm("request-cx-audit-standard")}
+        buttonText2=""
       />
       <WhyItMatters
         title="Poor Interfaces Leak Business. We Fix That."
         desc="Enterprise applications lose more than 30% user engagement due to outdated, unintuitive interfaces. The cost? Slower adoption, longer onboarding, and missed conversions. Calsoft’s Smart Interface Design combines behavior analytics, task simplification, and AI-assisted interactions to drive clarity and speed across digital journeys."
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         MainComponenent={ModerizationMatters}
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
         // contentClass="h-[31.5rem]"
         gridClass="sm:h-[55rem] md:h-[53rem] xl:h-[31.5rem]"
         mainComponenentClass="justify-start"
@@ -242,8 +246,11 @@ const Page = () => {
             title: "UX Performance Benchmarking",
           },
         ]}
+        buttonClicked={()=>showHubSpotForm("Talk-to-Expert")}
+        buttonText="Talk to Expert"
       />
       <UseCases
+      buttonClick2={()=>showHubSpotForm("experience-modernization-one-pg")}
         id="use-cases"
         BussinessId="business-value"
         useCaseData={[
@@ -360,8 +367,7 @@ const Page = () => {
       />
       <ContactSecDataAi
         BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Modernize experiences to match evolving expectations. "
       />
     </>
   );

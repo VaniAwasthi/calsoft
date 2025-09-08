@@ -15,6 +15,7 @@ export const MatterTriangle = ({
   heading,
   ButtonImage,
   secId,
+  onButtonClick
 }) => {
   return (
     <>
@@ -55,6 +56,7 @@ export const MatterTriangle = ({
                     text={buttonText}
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    onClick={onButtonClick}
                   />
                 </motion.div>
               )}
@@ -217,6 +219,7 @@ export const MatterCircle = ({
   heading,
   ButtonImage,
   secId,
+  buttonClick
 }) => {
   return (
     <>
@@ -254,6 +257,7 @@ export const MatterCircle = ({
                 >
                   <ButtonLayout
                     link={link}
+                    onClick={buttonClick}
                     text={buttonText}
                     image={ButtonImage}
                     hoverImage={ButtonImage}

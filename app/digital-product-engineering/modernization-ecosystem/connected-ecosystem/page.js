@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import {
   Business,
@@ -13,6 +14,7 @@ import BannerwithButtonBg from "../../../assets/DigitalEngineering/connected/bgb
 import ContactImg from "../../../assets/Data-Ai/PipeLine/ConnectBg.webp";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import { BannerSection } from "../../../component/utilities/InfraSectorSec";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   return (
@@ -26,7 +28,7 @@ const Page = () => {
           backgroundImage={BannerwithButtonBg}
           title="Integrate apps 2x faster with open ecosystems."
           buttonText="Book a meeting"
-          buttonLink="#"
+          onButtonClick={()=>showHubSpotForm("book-a-meeting")}
         />
       </section>
       <Business />
@@ -36,10 +38,8 @@ const Page = () => {
         <FooterBg
           ContactImg={ContactImg}
           ButtonImage={ButtonImage}
-          lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?
-
-                "
-          link="#"
+          lightContent="Connect ecosystems to unlock seamless collaboration."
+        
         />
       </div>
     </>

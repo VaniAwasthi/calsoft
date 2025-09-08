@@ -1,3 +1,5 @@
+
+"use client"
 import React from "react";
 import {
   Rapid,
@@ -13,6 +15,7 @@ import ContactImg from "../../../assets/Data-Ai/PipeLine/ConnectBg.webp";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import { BannerSection } from "../../../component/utilities/InfraSectorSec";
 import BannerwithButtonBg from "../../../assets/DigitalEngineering/CX/bgimg.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   return (
@@ -30,8 +33,8 @@ export default function Page() {
               faster, context-aware experiences built for today’s users.
             </>
           }
-          buttonText="Download Solution Report"
-          buttonLink="#"
+          buttonText="Book a meeting"
+          onButtonClick={()=>showHubSpotForm("book-a-meeting")}
         />
       </section>
       <Smart />
@@ -41,8 +44,7 @@ export default function Page() {
         <FooterBg
           ContactImg={ContactImg}
           ButtonImage={ButtonImage}
-          lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?  "
-          link="#"
+          lightContent="Prototype rapidly and bring ideas to life faster."
         />
       </div>
     </>
