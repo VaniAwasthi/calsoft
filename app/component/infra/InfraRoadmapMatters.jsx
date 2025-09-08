@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function InfraRoadmapMatters() {
   return (
-    <div className="relative w-[30.6rem] h-[380px] flex justify-center items-center">
+    <div className="relative w-[30.6rem] h-[26rem] flex justify-center items-center">
       {/* Center hexagon - 2.4X */}
       {/* From left */}
       <motion.div
@@ -99,7 +99,7 @@ export default function InfraRoadmapMatters() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="absolute -bottom-[2rem] right-48 transform translate-x-8 hover:scale-105 transition-all"
+        className="absolute top-[13.4rem] right-48 transform translate-x-8 hover:scale-105 transition-all"
       >
         <div
           className="hexagon bg-gradient-to-b from-[#6b4fb8] to-[#ba0007] text-white flex flex-col items-center justify-center text-center"
