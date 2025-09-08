@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function CloudMigrationMatters() {
   return (
-    <div className="w-full mx-auto p-4 py-0">
+    <div className="w-[31rem] xl:w-full mx-auto p-4 py-0">
       <div className="grid grid-cols-2 gap-3">
         {/* Top Left - Lift-and-shift pitfalls */}
         <motion.div

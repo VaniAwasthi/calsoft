@@ -16,15 +16,15 @@ export default function WhyItMatters({
   contentClass = "",
   mainComponenentClass = "",
   gridClass = "",
-  id="",
-  buttonClicked
+  id = "",
+  buttonClicked,
 }) {
   return (
     <>
       <div className="container">
         <div className="h-12" id={id} />
         <div
-          className={`flex flex-col xl:grid xl:grid-cols-2 gap-10 xl:gap-16 items-start ${gridClass}`}
+          className={`flex flex-col xl:grid xl:grid-cols-2 gap-10 xl:gap-16 items-center xl:items-start ${gridClass}`}
         >
           {/* Left Content */}
           <div className={`space-y-10 ${contentClass}`}>
@@ -82,7 +82,7 @@ export default function WhyItMatters({
             <MainComponenent />
           </div>
         </div>
-        <div className="h-12" />
+        <div className="h-8 xl:h-12" />
       </div>
     </>
   );

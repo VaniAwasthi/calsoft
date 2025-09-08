@@ -1,10 +1,15 @@
 "use client";
 
 import React from "react";
-
 import { useState, useCallback, useRef, useEffect } from "react";
 
-export function SearchFilters({ initialSearchQuery, filterData }) {
+export function SearchFilters({
+  initialSearchQuery,
+  filterData,
+  selectedFilters,
+  setSelectedFilters,
+  debounceSearch = (value) => {},
+}) {
   const [searchInput, setSearchInput] = useState(initialSearchQuery);
   const inputRef = useRef(null);
 
@@ -19,34 +24,49 @@ export function SearchFilters({ initialSearchQuery, filterData }) {
     );
   }, []);
 
+  const handleFilterChange = useCallback((filterId, filterType, isChecked) => {
+    setSelectedFilters((prev) => ({
+      ...prev,
+      [filterType]: isChecked
+        ? [...prev[filterType], filterId]
+        : prev[filterType].filter((id) => id !== filterId),
+    }));
+  }, []);
+
   const FilterSection = useCallback(
-    ({ title, items }) => (
+    ({ title, items, filterType }) => (
       <div className="mb-8">
         <h3 className="text-lg font-semibold mb-4 text-gray-900">{title}</h3>
         <div className="max-h-48 overflow-y-auto custom-scrollbar">
           <div className="space-y-3 pr-2">
-            {items.map((item, index) => (
-              <label key={index} className="flex items-center cursor-pointer">
+            {items.map((item) => (
+              <label
+                key={item._id}
+                className="flex items-center cursor-pointer"
+              >
                 <input
                   type="checkbox"
+                  checked={selectedFilters[filterType].includes(item._id)}
+                  onChange={(e) =>
+                    handleFilterChange(item._id, filterType, e.target.checked)
+                  }
                   className="w-4 h-4 text-orange-500 border-gray-300 rounded focus:ring-orange-500"
                 />
-                <span className="ml-3 text-gray-700">{item}</span>
+                <span className="ml-3 text-gray-700">{item.name}</span>
               </label>
             ))}
           </div>
         </div>
       </div>
     ),
-    []
+    [selectedFilters, handleFilterChange]
   );
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // Here you can add logic to filter results based on searchInput
-      // This runs after 800ms of no typing
       if (inputRef.current && document.activeElement === inputRef.current) {
         inputRef.current.focus();
+        debounceSearch(searchInput);
       }
     }, 800);
 
@@ -89,10 +109,26 @@ export function SearchFilters({ initialSearchQuery, filterData }) {
             />
           </div>
 
-          <FilterSection title="Category" items={filterData.categories} />
-          <FilterSection title="Services" items={filterData.services} />
-          <FilterSection title="Technology" items={filterData.technology} />
-          <FilterSection title="Industry" items={filterData.industry} />
+          <FilterSection
+            title="Category"
+            items={filterData.filterCategories || []}
+            filterType="categories"
+          />
+          <FilterSection
+            title="Services"
+            items={filterData.filterTags || []}
+            filterType="services"
+          />
+          <FilterSection
+            title="Technology"
+            items={filterData.filterTopic || []}
+            filterType="technology"
+          />
+          <FilterSection
+            title="Industry"
+            items={filterData.filterIndustry || []}
+            filterType="industry"
+          />
         </div>
       </div>
     </>

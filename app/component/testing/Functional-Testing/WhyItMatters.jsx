@@ -17,7 +17,7 @@ export default function WhyItMatters({
   return (
     <div id="why-it-matters" className="container">
       <div className="h-8" />
-      <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="flex flex-col items-center lg:grid lg:grid-cols-2 gap-x-16 gap-y-10 lg:items-start">
         {/* Left Content */}
         <div className={`space-y-10 ${contentWidth}`}>
           <motion.p

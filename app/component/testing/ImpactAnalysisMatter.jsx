@@ -6,8 +6,8 @@ import bg_img_1 from "../../assets/testing/Group 1171278045 (1).png";
 
 export default function ImpactAnalysisMatter() {
   return (
-    <div className="flex justify-center items-center w-full h-full text-white text-center">
-      <div className="relative">
+    <div className="flex justify-center items-center w-[34.5rem] h-full text-white text-center">
+      <div className="relative w-full">
         <div className="absolute top-4 left-0 w-32  ">
           <p className="text-lg font-semibold">Running bloated test</p>
           <p className="font-light">suites for every small change</p>
