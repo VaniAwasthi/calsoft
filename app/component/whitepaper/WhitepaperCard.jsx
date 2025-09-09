@@ -38,7 +38,7 @@ export const WhitepaperCards = () => {
     ? filteredList.map((item, idx) => ({
         id: item._id,
         title: item.hero_title1 || "Untitled",
-        image: `${baseUrl}/${item.featured_image}`,
+image: `${baseUrl}${item?.featured_image}`,
         slug: item.hero_title1
           ? item.hero_title1
               .toLowerCase()

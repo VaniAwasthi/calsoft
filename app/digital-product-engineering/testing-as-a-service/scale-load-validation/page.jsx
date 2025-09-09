@@ -12,6 +12,7 @@ import Agility from "../../../component/infra/Agility";
 import LoadValidationMatter from "../../../component/testing/LoadValidationMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_3.webp"
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
     const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -34,19 +35,20 @@ const Page = () => {
         activeTab={activeTab}
         navItems={navItems}
         heroImage={Img}
+        buttonClicked={()=>showHubSpotForm("try-free-load-test")}
+        buttonText2=""
       />
       <WhyItMatters
         title="Every Missed Test Case Is a Revenue Risk."
         desc="Even with agile and DevOps practices in place, many enterprises struggle to validate releases across environments, devices, and user journeys. Common gaps include:"
         desc2="Calsoft bridges these gaps by combining business-aligned test scenarios with automated, scalable validation frameworks."
-        buttonText="Download Case Study"
+        buttonText="Get in touch"
         Component={LoadValidationMatter}
         contentWidth="w-[80%]"
       />
       <IntelligentPlanning
         heading="Test Limits Before Your Users Do"
         description="Calsoft builds contextual, metric-driven scale validation plans aligned with business-critical operations. We simulate:"
-        buttonText="Request POC"
         data={[
           {
             title: "Concurrent user load patterns",
@@ -104,8 +106,11 @@ const Page = () => {
           title:
             "On average, Calsoft clients detect 4x more performance bottlenecks before release.",
           buttonText: "Book a Meeting",
-        }}
-        buttonText="Download ROI Sheet"
+          buttonText: "Book a Meeting",
+          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+           }}
+          buttonText="Download One Pager"
+          onPagerButton={()=>showHubSpotForm("scale-load-valid-one-pg")}
       />
       <UseCases
         data={[
@@ -212,9 +217,9 @@ const Page = () => {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Validate scale and load for reliable performance."
         }
-        link={"#"}
+       
       />
     </>
   );

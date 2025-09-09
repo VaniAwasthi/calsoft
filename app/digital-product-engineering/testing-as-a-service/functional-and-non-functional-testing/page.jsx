@@ -11,6 +11,7 @@ import Agility from "../../../component/infra/Agility";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_1.webp"
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
     const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -33,6 +34,8 @@ const Page = () => {
         activeTab={activeTab}
         navItems={navItems}
         heroImage={Img}
+        buttonText2=""
+        buttonClicked={()=>showHubSpotForm("access-readiness")}
       />
       <WhyItMatters />
       <IntelligentPlanning
@@ -91,8 +94,10 @@ const Page = () => {
           title:
             "Book a 30-minute call to stop 80% of your cloud spend from going to waste.",
           buttonText: "Book a Meeting",
+          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
         }}
-        buttonText="Download ROI Sheet"
+        buttonText="Download One Pager"
+        onPagerButton={()=>showHubSpotForm("regression-testing-caltia-one-pg")}
       />
       <UseCases />
       <WhyCalsoft
@@ -140,9 +145,8 @@ const Page = () => {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Validate functionality with robust manual and automated testing."
         }
-        link={"#"}
       />
     </>
   );

@@ -8,6 +8,7 @@ import Image from "next/image";
 import img from "@/app/assets/sustenance/Intelligent_planning.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function IntelligentPlanning({
   data = [
@@ -39,10 +40,12 @@ export default function IntelligentPlanning({
   title = "Intelligent Planning",
   heading = "Move What Matters, Not Just What Exists",
   description = " We don’t just move workloads — we evaluate, prioritize, and engineer them for performance and ROI. Calsoft’s approach includes:",
-  buttonText = "Request POC",
+  buttonText = "Talk to Expert",
+  buttonClick=()=>showHubSpotForm("Talk_to_Expert"),
   bottomContent = {
     text: "We create docs that are version-controlled, searchable, modular, and traceable.",
-    btnText: "Request POC",
+    btnText: "Talk to Expert",
+  buttonClick:()=>showHubSpotForm("Talk_to_Expert"),
   },
   arrow = true,
   image = true,
@@ -111,6 +114,7 @@ export default function IntelligentPlanning({
                     image={buttonImage}
                     hoverImage={buttonImage}
                     className={"whitespace-nowrap"}
+                    onClick={buttonClick}
                   />
                   {arrow && (
                     <div className="flex justify-center items-center gap-5">
@@ -251,6 +255,7 @@ export default function IntelligentPlanning({
                 text={bottomContent.btnText}
                 image={buttonImage}
                 hoverImage={buttonImage}
+                onClick={bottomContent.buttonClick}
                 className={"whitespace-nowrap"}
               />
             </motion.div>

@@ -275,7 +275,6 @@ export const How = () => {
 
 export const Steps = () => {
   const buttonText = "Start Today";
-  const link = "#";
   const steps = [
     {
       day: "Day 0",
@@ -336,7 +335,6 @@ export const Steps = () => {
         steps={steps}
         heading="10-Day Future-Readiness Sprint: Step-by-Step"
         buttonText={buttonText}
-        link={link}
         ButtonImage={ButtonImage}
       />
     </>
