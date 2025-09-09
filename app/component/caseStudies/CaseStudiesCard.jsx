@@ -63,7 +63,7 @@ export const CaseStudiesCard = () => {
   const images = [Info1, Info2];
 
   const resources = filteredListData.map((item) => {
-    const safeTitle = item?.hero_title1 || "Untitled"; // fallback
+    const safeTitle = item?.hero_title1 || "Untitled"; 
     return {
       ...item,
       id: item._id,
