@@ -26,10 +26,9 @@ function Page() {
       <section className="banner_light padd_sec">
         <BannerSection
           backgroundImage={BannerwithButtonBg}
-          title="Launch extensions 3x faster with custom plugins."
-          buttonText="Book a meeting"
+          title="We help SaaS and plaform companies turn partner needs into production-ready plugin-secure, scalable, and instantly deployable."
+          buttonText="Request Checklist"
           onButtonClick={()=>showHubSpotForm("book-a-meeting")}
-          
         />
       </section>
       <Business />

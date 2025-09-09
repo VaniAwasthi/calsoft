@@ -20,7 +20,7 @@ export const GovernJounery = () => {
 
     description: `Establish control, compliance, and trust across
         your enterprise data landscape.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [

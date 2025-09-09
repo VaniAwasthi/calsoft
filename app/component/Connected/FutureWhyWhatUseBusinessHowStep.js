@@ -100,8 +100,8 @@ export const Why = () => {
         bgshape: bgshape2,
       },
       {
-        percent: "$1.2M",
-        text: "reduction in ops delays post integration reported by Calsoft customers ",
+        percent: "",
+        text: "Clasoft customers report 50% reduction in ops delays post integration",
         className: "shape3",
         bgshape: bgshape3,
       },
@@ -120,7 +120,7 @@ export const Why = () => {
 };
 
 export const What = () => {
-  const heading = "What We Do";
+  const heading = "What We Offer";
   const subtitle = "Integrate. Automate. Scale. Repeat.";
   const desc =
     "We architect digital ecosystems that are connected by design—not patched on demand. From legacy integration to API-first platforms, Calsoft drives data-driven harmony across your enterprise. Our Capabilities:";
@@ -268,7 +268,7 @@ export const How = () => {
     heading: "Ecosystem Sprint:",
     subheading: "Connect in 10 Working Days.",
     description:
-      "Ecosystem Sprint: Connect in 10 Working Days. Calsoft’s structured sprint benchmarks your current integration state, identifies disconnects, & delivers a plug-&-scale architecture.",
+      "Calsoft’s structured sprint benchmarks your current integration state, identifies disconnects, & delivers a plug-&-scale architecture.",
     image: start,
     alt: "Maturity Sprint Image",
   };

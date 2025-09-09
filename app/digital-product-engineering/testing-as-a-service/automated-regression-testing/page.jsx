@@ -15,15 +15,15 @@ import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
-  
-    const navItems = [
-      "Why it Matters",
-      "Intelligent Planning",
-      "Business Value",
-      "Use Cases",
-      "Why Calsoft",
-      "How to Start",
-    ];
+
+  const navItems = [
+    "Why This Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
@@ -47,6 +47,38 @@ const Page = () => {
       <IntelligentPlanning
         heading="Regression that Evolves with Your Codebase"
         description="Calsoft designs modular, reusable, and scalable regression test suites that fit your current and future SDLC needs."
+        buttonText="Request POC"
+        data={[
+          {
+            title: null,
+            subTitle: "Automated regression suites for UI, API, and business logic",
+          },
+          {
+            title: null,
+            subTitle: "Test data generation, version control, and environment isolation",
+          },
+          {
+            title: null,
+            subTitle: "Change-aware test triggers via Git-based automation",
+          },
+          {
+            title: null,
+            subTitle: "Test suite optimization with tagging, parallelization, and prioritization",
+          },
+          {
+            title: null,
+            subTitle: "Continuous regression validation as part of CI/CD workflows",
+          },
+          // {
+          //   title: "Map against SLAs,",
+          //   subTitle: "industry standards, or competitor data if available",
+          // },
+        ]}
+
+        bottomContent={{
+          text: "We use test impact analysis to avoid redundant test runs and maintain traceability to feature changes.",
+          btnText: "Request POC",
+        }}
       />
       <Agility
         data={{
@@ -86,6 +118,7 @@ const Page = () => {
                onPagerButton={()=>showHubSpotForm("regression-testing-caltia-one-pg")}
       />
       <UseCases
+      description="Calsoft’s Automated Regression Testing has accelerated QA maturity for:"
         data={[
           {
             title: "SaaS platforms",

@@ -58,18 +58,6 @@ const page = () => {
             solution:
               "We embed policy-driven protection, access control, and anomaly detection. ",
           },
-          {
-            tag: "Migration Risk",
-            challenge: "High switching costs block cloud/data migration",
-            solution:
-              "We plan and execute zero-downtime migrations with validation safeguards. ",
-          },
-          {
-            tag: "Privacy Compliance",
-            challenge: "Data privacy regulations are hard to keep up with",
-            solution:
-              "We align your systems with evolving mandates like GDPR, HIPAA, and CCPA. ",
-          },
         ]}
       />
       <StrategicSecTechnicalConsulting />
@@ -89,8 +77,6 @@ const page = () => {
       />
       <PlatformSecTechnicalConsulting />
       <CostOptimizedSecTechnicalConsulting />
-      {/* <DataProtectionSecTechnicalConsulting />
-      <EffortlessSecTechnicalConsulting /> */}
       <ContactSecDataAi
         BoldContent="Calsoft can show you how"
         lightContent="Innovate and grow with future-ready data pipelines"

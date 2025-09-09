@@ -202,6 +202,7 @@ multi-cloud provisioning approach — minimizing shadow IT and maximizing agilit
         
       />
       <UseCases
+      desc=" Calsoft’s multi-cloud provisioning solutions have driven impact across industries:"
         useCases={[
           "Product Engineering firms enabling per-sprint infra provisioning",
           "Banking & FinTechs enforcing encryption and cost controls across clouds",
@@ -211,6 +212,7 @@ multi-cloud provisioning approach — minimizing shadow IT and maximizing agilit
         ]}
       />
       <WhyCalsoft
+      sectionDescription="While others offer tools, Calsoft offers an engineered provisioning framework tailored to your cloud operating model. What makes us different?"
         data={{
           tableHeadings: ["Feature", "Calsoft", "Traditional Vendors"],
           tableContent: [

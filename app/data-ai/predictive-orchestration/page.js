@@ -36,8 +36,8 @@ export default function Page() {
       <InferentialSec />
       <ModelSec />
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+        BoldContent=""
+        lightContent="Let us help guide predictive insights into action with productive outcomes"
         link="#"
       />
     </>

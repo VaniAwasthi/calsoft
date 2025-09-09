@@ -18,7 +18,38 @@ export default function Page() {
   return (
     <>
       <AgenticBanner />
-      <AgenticChallengeSec />
+      <AgenticChallengeSec 
+      data={[
+          {
+            tag: "AIOps Design",
+            challenge:
+              "How to architect intelligent agents for IT operations and autonomy?",
+            solution:
+              "Collaborate to scope, model, and test agent roles aligned with specific enterprise goals",
+          },
+          {
+            tag: "Purpose built Agents",
+            challenge:
+              "Finding it difficult to define agent boundaries and business outcomes?",
+            solution:
+              "Modular, purpose-driven AI agents with embedded learning and monitoring logic",
+          },
+          {
+            tag: "Oversight and Safety",
+            challenge:
+              "Concerned about lack of visibility into autonomous agent behavior?",
+            solution:
+              "Supervision layers for real-time observation, intervention, and behaviour correction",
+          },
+          {
+            tag: "Lifecycle Management",
+            challenge:
+              "Struggling to maintain, evolve, or retire AI agents effectively and consistently?",
+            solution:
+              "Frameworks for continuous learning, feedback integration, and version governance",
+          },
+        ]}
+      />
       <AiOopsSec />
       <UseSec />
       <BannerSection
@@ -37,8 +68,8 @@ export default function Page() {
       <MonitorSec />
       <LifecycleSec />
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+        BoldContent=""
+        lightContent="Architect autonomy with accountability. Build smarter systems with Calsoft"
         link="#"
       />
     </>

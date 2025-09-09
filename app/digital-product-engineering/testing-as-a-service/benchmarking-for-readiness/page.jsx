@@ -15,23 +15,23 @@ import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_6.webp"
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
-    const [activeTab, setActiveTab] = useState("why-it-matters");
-    
-      const navItems = [
-        "Why it Matters",
-        "Intelligent Planning",
-        "Business Value",
-        "Use Cases",
-        "Why Calsoft",
-        "How to Start",
-      ];
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
+  const navItems = [
+    "Why This Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
         title="Know Before You Grow — Benchmark with Intent"
         description="Establish performance, scalability, and quality baselines before your next release, migration, or modernization effort — with Calsoft’s Benchmarking Readiness service."
-        buttonText="Request Free Assessment"activeTab={activeTab}
-        setActiveTab={setActiveTab}navItems={navItems}
+        buttonText="Request Free Assessment" activeTab={activeTab}
+        setActiveTab={setActiveTab} navItems={navItems}
         heroImage={Img}
         onButtonClicked={()=>showHubSpotForm("request-free-assessment")}
         buttonText2=""
@@ -69,6 +69,10 @@ const Page = () => {
             subTitle: "models to compare tech stacks or deployments",
           },
         ]}
+        bottomContent={{
+          text: "With Calsoft, benchmarking is not just about measurement — it’s about validation and risk mitigation.",
+          btnText: "Request POC",
+        }}
       />
       <Agility
         data={{
@@ -110,6 +114,7 @@ const Page = () => {
         onPagerButton={()=>showHubSpotForm("benchmarking-readiness-one-pg")}
       />
       <UseCases
+      description="Calsoft’s Benchmarking Readiness service has been successfully applied across:"
         data={[
           {
             title: "Cloud migration",
@@ -136,7 +141,7 @@ const Page = () => {
       <WhyCalsoft
         sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
         data={{
-          tableHeadings: ["Capability", "Calsoft", "Standard Providers"],
+          tableHeadings: ["Capability", "Calsoft Benchmarking Readiness", "Ad-Hoc Performance Tests"],
           tableContent: [
             {
               name: "Business-KPI-Driven Benchmark Design",

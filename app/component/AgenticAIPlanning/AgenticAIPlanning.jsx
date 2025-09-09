@@ -21,7 +21,7 @@ export const AgenticBanner = () => {
 
     description: `Design, deploy, and manage AI agents with
     precision and accountability.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Want a demo?",
     image: BackgroundImage,
   };
   const navItems = [
@@ -54,8 +54,7 @@ export const AgenticBanner = () => {
   );
 };
 
-export const AgenticChallengeSec = () => {
-  const data = [
+export const AgenticChallengeSec = ({data=[
     {
       tag: "AIOps Design",
       challenge:
@@ -84,12 +83,13 @@ export const AgenticChallengeSec = () => {
       solution:
         "Frameworks for continuous learning, feedback integration, and version governance",
     },
-  ];
+  ]}) => {
+  
   return (
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Proactive action with predictive insights"
+        BlackHeading="AI Agents that work at scale"
         GradientHeading="Challenge to solutions:"
         secId="benefits"
       />
@@ -104,7 +104,7 @@ export const AiOopsSec = () => {
         title="AIOps Planning"
         description="Enable intelligent operations through autonomous,
         purpose-built agents."
-        // buttonText=" Learn More"
+        buttonText=" Learn More"
         link="#"
         whatWeDo={[
           "Agents monitor systems, logs, and events",

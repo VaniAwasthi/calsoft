@@ -4,7 +4,7 @@ import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import SmartDevelopmentMatters from "../../../component/product-application-development/SmartDevelopmentMatters";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
@@ -54,7 +54,7 @@ Can’t Ship Reliably."
       <WhatWeOffer 
       heading="From Click to Rollout—Seamless, Secure, Scalable"
       description="Calsoft builds intelligent deployment pipelines optimized for performance, uptime, and control."
-      features={[
+        features={[
           {
             icon: (
               <svg
@@ -160,6 +160,7 @@ Can’t Ship Reliably."
             title: "Zero Downtime Upgrades & Rollbacks",
           },
         ]}
+        ScorecardComponent={RequestDemo}
         buttonText="Automate my Deployment"
         buttonClicked={()=>showHubSpotForm("automate-my-deployment-smart-deployment")}
       />

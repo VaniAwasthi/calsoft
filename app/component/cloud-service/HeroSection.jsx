@@ -19,7 +19,7 @@ export const HeroSectionProduct = () => {
     title: "Grow with cloud-induced efficiency",
     description: `Engineer scalable, secure, and cost-efficient<br/>
 cloud solutions aligned to your business goals.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [
@@ -121,17 +121,17 @@ export const ItInfraSec = () => {
       <InfraSection
         title="IT infrastructure assessment & road mapping"
         description="Assess infrastructure readiness and define clear, actionable migration roadmaps."
-        buttonText="Learn More"
+        buttonText="Case Study (or asset)"
         link="/digital-product-engineering/cloud/infrastructure-roadmap"
         whatWeDo={[
-          "Evaluate existing environments for cloud readiness",
-          "Define migration strategies aligned with performance",
-          "Prioritize infrastructure modernization based on business",
+          "Review infra readiness for the cloud",
+          "Define phased migration strategies",
+          "Prioritize updates by business value",
         ]}
         businessImpact={[
-          "Clear migration roadmap",
-          "Reduced implementation friction",
-          "Better long-term decision-making",
+          "Clear steps reduce migration risk",
+          "Gaps addressed before execution",
+          "Aligned plans for future growth",
         ]}
         imageSrc={Info1}
         imageAlt="Infrastructure globe"
@@ -149,17 +149,17 @@ export const MultiCloudInfraSec = () => {
       <InfraSection
         title="Multi-cloud infrastructure provisioning"
         description="Deploy and manage scalable, governed environments across multiple cloud platforms."
-        buttonText="Learn More"
+        buttonText="Case study (or asset)"
         link="/digital-product-engineering/cloud/multi-cloud-provisioning"
         whatWeDo={[
-          "Automate resource provisioning across hybrid & multi-cloud",
-          "Implement unified monitoring, access control, & policy",
-          "Cloud architectures that support flexible workload movement without lock-in",
+          "Automate cloud provisioning flows",
+          "Add shared control and governance",
+          "Enable flexible workload mobility",
         ]}
         businessImpact={[
-          "Improved service resilience",
-          "Unified resource visibility",
-          "Faster provisioning cycles",
+          "Fewer outages via cloud failover",
+          "Central control of all resources",
+          "Deploy faster across platforms",
         ]}
         imageSrc={Info2}
         imageAlt="MultiCloud"
@@ -178,17 +178,17 @@ export const CloudNativetInfraSec = () => {
       <InfraSection
         title="Cloud-native development enablement"
         description="Engineer resilient, scalable systems using microservices, containers, and serverless models."
-        buttonText="Learn More"
+        buttonText="Case study (or asset)"
         link="/digital-product-engineering/cloud/cloud-native-enablement"
         whatWeDo={[
-          "Architect distributed systems with microservices ",
-          "Implement containerization and orchestration frameworks ",
-          "Integrate cloud-native observability and automation toolchains",
+          "Design systems with microservices",
+          "Optimize containerization and orchestration",
+          "Add native tools for observability",
         ]}
         businessImpact={[
-          "Built-in scalability and fault tolerance",
-          "Faster release cycles",
-          "Easier feature experimentation",
+          "Built-in scale and fault control",
+          "CI/CD speeds up release cycles",
+          "Safer rollouts support innovation",
         ]}
         imageSrc={Info3}
         imageAlt="Infrastructure globe"
@@ -205,17 +205,17 @@ export const CloudMigrationInfraSec = () => {
       <InfraSection
         title="Cloud migration and scaling"
         description="Execute smooth cloud transitions and enable dynamic, on-demand scalability."
-        buttonText="Learn More"
+        buttonText="Case study (or asset)"
         link="/digital-product-engineering/cloud/cloud-migration"
         whatWeDo={[
-          "Plan and execute structured application and infrastructure migrations",
-          "Optimize workloads post-migration for scale & performance ",
-          "Validate performance, availability, and resilience across cloud targets",
+          "Plan app and infra migration steps",
+          "Tune workloads for cloud targets",
+          "Validate scale and availability",
         ]}
         businessImpact={[
-          "Minimal disruption to services",
-          "Improved workload performance",
-          "Simplified resource management",
+          "Migrate with minimal service gaps",
+          "Better performance post-move",
+          "Scale on demand, not by guesswork",
         ]}
         imageSrc={Info4}
         imageAlt="Infrastructure globe"
@@ -232,7 +232,7 @@ export const CostInfraSec = () => {
       <InfraSection
         title="Cost and usage optimization"
         description="Control costs, optimize usage, and drive sustainable cloud operations."
-        // buttonText="Learn More"
+        buttonText="Case study (or asset)"
         link="#"
         whatWeDo={[
           "Continuously monitor resource utilization and spending patterns",
@@ -259,17 +259,17 @@ export const SREInfraSec = () => {
       <InfraSection
         title="SRE (Site Reliability Engineering)"
         description="Balance development velocity with system stability through proactive operations management."
-        buttonText="Learn More"
+        buttonText="Case study (or asset)"
         link="#"
         whatWeDo={[
-          "Define service-level indicators (SLIs) and service-level objectives (SLOs)",
-          "Detect anomalies early, automate remediation, and improve response times",
-          "Analyze incidents, refine processes, and increase fault tolerance over time",
+          "Set SLOs and track SLIs live",
+          "Detect and fix issues early",
+          "Learn from incidents and refine",
         ]}
         businessImpact={[
-          "Predictable service behavior",
-          "Reduced incident response time",
-          "Balanced speed and stability",
+          "Predictable service performance",
+          "Less downtime, faster fixes",
+          "Stable ops with fast delivery",
         ]}
         imageSrc={Info7}
         imageAlt="Infrastructure globe"

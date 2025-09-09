@@ -39,8 +39,8 @@ export default function Page() {
       <PolicySec />
       <CollaborationSec />
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+        BoldContent=""
+        lightContent="Establish lasting data trust – ensure governance with Calsoft"
         link="#"
       />
     </>

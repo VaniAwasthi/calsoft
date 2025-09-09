@@ -21,7 +21,7 @@ export const DrivenBanner = () => {
 
     description: `Predict trends and infer actionable insights at
     enterprise speed.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [

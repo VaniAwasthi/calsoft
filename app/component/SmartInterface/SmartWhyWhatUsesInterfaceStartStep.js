@@ -87,7 +87,7 @@ export const Why = () => {
     description:
       "Enterprise applications lose more than <b>30% user engagement</b> due to outdated, unintuitive interfaces. The cost? Slower adoption, longer onboarding, and missed conversions. Calsoft’s Smart Interface Design combines behavior analytics, task simplification, and AI-assisted interactions to drive clarity and speed across digital journeys. ",
 
-    buttonText: "Get in Touch",
+    buttonText: "Download Case Study",
     // link: "#",
 
     cards: [
@@ -98,8 +98,8 @@ export const Why = () => {
         bgshape: bgshape1,
       },
       {
-        percent: "45%",
-        text: "more tasks can be completed with well-designed interfaces.",
+        percent: "",
+        text: "Well-designed interfaces increase task completion by up to 40%.",
         className: "shape2",
         bgshape: bgshape2,
       },
@@ -107,8 +107,8 @@ export const Why = () => {
         bgshape: bgshape,
       },
       {
-        percent: "20-35%",
-        text: "higher adoption is reported by Calsoft clients within 6 weeks after a redesign.",
+        percent: "",
+        text: "Calsoft clients report 20-35% higher adoption within 6 weeks post redesign.",
         className: "shape3",
         bgshape: bgshape3,
       },
@@ -122,10 +122,10 @@ export const Why = () => {
 };
 
 export const What = () => {
-  const heading = "What We Do";
-  const subtitle = "Assess Smart. Plan Right. Modernize with Confidence.";
+  const heading = "What We Offer";
+  const subtitle = "Design That Learns, Reacts, and Performs.";
   const desc =
-    "Calsoft’s 360° Maturity Assessment is diagnostic, data-driven, and actionable—covering not just tech, but processes, people, and dependencies. Our Offerings:";
+    "Our interface engineering is not static design work—it’s interaction strategy built for business scale, adaptability, and intelligence. Our Capabilities:";
 
   const offeringsData = {
     buttonText: "Talk to Expert",

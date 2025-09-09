@@ -116,7 +116,7 @@ export const Why = () => {
 };
 
 export const What = () => {
-  const heading = "What We Do";
+  const heading = "What We Offer";
   const subtitle = "We Engineer Digital Resilience";
   const desc =
     "Future readiness isn’t about chasing trends—it’s about designing ecosystems that evolve. Calsoft blends architecture foresight, modularity, and automation to deliver tech that scales and adapts. Our Future-Readiness Offerings:";

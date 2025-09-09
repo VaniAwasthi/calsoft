@@ -102,7 +102,7 @@ export const StrategicSecTechnicalConsulting = () => {
       <DataInfoSection
         title="Modern Data Architecture"
         description="Laying the foundation for scalable, AI-ready data systems. "
-        // buttonText="Learn More"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Architect centralized and federated data systems",
@@ -130,7 +130,7 @@ export const RiskMitigationSecTechnicalConsulting = () => {
       <DataInfoSection
         title="Data Sanity and Lineage Handling"
         description="Making your data trustworthy, auditable, and compliant. "
-        // buttonText="Learn More"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Capture end-to-end data lineage",
@@ -158,7 +158,7 @@ export const PlatformSecTechnicalConsulting = () => {
       <DataInfoSection
         title="Data Platform and Ecosystem Integration"
         description="Bringing your data tools, platforms, and pipelines into sync. "
-        // buttonText="Learn More"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Integrate diverse data tools (ETL, lakes, BI)",
@@ -185,7 +185,7 @@ export const CostOptimizedSecTechnicalConsulting = () => {
       <DataInfoSection
         title="Risk Mitigation and Recovery"
         description="Prepare for the worst with data protection by design. "
-        // buttonText="Learn More"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Implement backup and replication strategies",
