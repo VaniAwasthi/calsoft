@@ -31,6 +31,7 @@ import Link from "next/link";
 import { generateSlug } from "../utilities/helper/SlugGenerator";
 import { useRouter } from "next/navigation";
 import { setSelectedCaseStudyId } from "@/app/store/reducers/caseStudyReducer";
+import { baseUrl } from "@/config";
 export const Services = () => {
   const title = "Services";
   const heading = "Services | Expertise-infused and business-optimized.";
@@ -149,7 +150,6 @@ export const Services = () => {
 };
 
 export const Casestudy = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist/";
   const dispatch = useDispatch();
   const title = "Case Study";
   const router = useRouter();
