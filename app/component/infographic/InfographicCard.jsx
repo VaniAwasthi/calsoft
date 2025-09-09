@@ -10,9 +10,9 @@ import { fetchBlogFilterList } from "../../store/actions/blogAction";
 import { fetchUsecasesList } from "@/app/store/actions/useCases";
 import { FilterSec } from "../utilities/FilterSec";
 import { HubspotModal } from "./HubspotModal";
+import { baseUrl } from "@/config";
 
 export const InfographicCard = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
   const listData = useSelector((state) => state.usecases.list);
   const [filteredList, setFilteredList] = useState(listData);

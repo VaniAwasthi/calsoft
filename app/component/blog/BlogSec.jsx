@@ -14,14 +14,13 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchBlogFilterList,
   fetchBlogList,
-  fetchFilteredBlogs,
 } from "../../store/actions/blogAction.js";
 import { setSelectedBlogId } from "../../store/reducers/blogReducer.js";
 import blogexpanImage from "../../assets/blog/blog-2.webp";
 import { FilterSec } from "../utilities/FilterSec";
+import { baseUrl } from "@/config";
 
 export default function ResourceGrid() {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBlogList());

@@ -146,7 +146,7 @@ const Footer = () => {
                   <Link href="/insights/webinars">Press</Link>
                 </li>
                 <li>
-                  <Link href="#">Privacy Policy</Link>
+                  <Link href="privacy-policy">Privacy Policy</Link>
                 </li>
               </ul>
             </div>

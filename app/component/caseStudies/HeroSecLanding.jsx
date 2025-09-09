@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Icon from "../../assets/caseStudies/BusinessValueIcon1.svg";
 import { Router } from "next/router";
 import { useRouter } from "next/navigation";
+import { baseUrl } from "@/config";
 
 export const HeroSectionLanding = ({
   image1,
@@ -194,7 +195,6 @@ export const InfoWithFormSection = ({
 };
 
 export const BusinessValueSection = ({ title, values, backgroundImage ,isDivider=true}) => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
 
   return (
     <section className="w-full max-w-7xl mx-auto px-2 md:px-8 md:my-[3rem] my-10">

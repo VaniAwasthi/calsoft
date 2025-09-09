@@ -17,7 +17,6 @@ import { fetchWhitepaperById, fetchWhitepaperList } from "../../../store/actions
 import { slugify } from "@/app/component/utilities/helper/SlugGenerator";
 
 const Page = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
 const { slug } = useParams();
 
@@ -59,7 +58,9 @@ const { slug } = useParams();
   if (error) return <div className="text-red-500 p-8">Error: {error}</div>;
   if (!whitepaperData) return null;
   console.log(whitepaperData, "data");
-  const heroImage = `${baseUrl}${whitepaperData?.card_one}`;
+  const heroImage = `${baseUrl
+    
+  }${whitepaperData?.card_one}`;
 
   // Extract Hubspot form data
   const hubspotFormString = whitepaperData?.hubspot_form || "";
