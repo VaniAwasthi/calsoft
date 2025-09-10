@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchWhitepaperList } from "../../store/actions/whitepaperAction";
@@ -15,54 +15,63 @@ import { FilterSec } from "../utilities/FilterSec";
 
 export const WhitepaperCards = () => {
   const dispatch = useDispatch();
-  const listData = useSelector((state) => state.whitepaper.list);
-  const [filteredList, setFilteredList] = useState(listData);
   const router = useRouter();
 
-  const [copiedId, setCopiedId] = useState(null);
-  const [openDropdown, setOpenDropdown] = useState("");
-
+  const listData = useSelector((state) => state.whitepaper.list);
   const FilterIndustry = useSelector((state) => state.blogs.filterIndustry || []);
   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
 
-  const [activeFilters, setActiveFilters] = useState({
-    Industry: "All",
-    Topics: [],
-  });
-
-  const filters = {
-    Industry: ["All", ...FilterIndustry],
-    Topics: ["All", ...FilterTopic],
-  };
-
+  const [activeFilters, setActiveFilters] = useState({ Industry: "All", Topics: [] });
   const [currentPage, setCurrentPage] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [copiedId, setCopiedId] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState("");
 
-  const resources = Array.isArray(filteredList)
-    ? filteredList.map((item) => ({
+  const filters = { Industry: ["All", ...FilterIndustry], Topics: ["All", ...FilterTopic] };
+
+  // Filter + search + mapping
+  const filteredResources = useMemo(() => {
+    return listData
+      .filter((item) => {
+        const industryMatch =
+          activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
+
+        const tagMatch =
+          activeFilters.Topics.length === 0 ||
+          activeFilters.Topics.some((topic) => item.tags?.split(",").includes(topic));
+
+        const searchMatch =
+          searchTerm === "" ||
+          item.hero_title1?.toLowerCase().includes(searchTerm.toLowerCase());
+
+        return industryMatch && tagMatch && searchMatch;
+      })
+      .map((item) => ({
         id: item._id,
         title: item.hero_title1 || "Untitled",
-        image: `${baseUrl}${item?.featured_image}`,
-        slug: item.hero_title1
-          ? slugify(item.hero_title1, { lower: true })
-          : "untitled",
+        image: `${baseUrl}${item.featured_image}`,
+        slug: slugify(item.hero_title1 || "untitled", { lower: true }),
         link: `/insights/whitepaper/${item._id}`,
         author: item.author || "Unknown",
-        tags: item.tags ? item.tags.split(",") : ["General"],
+        tags: item.tags?.split(",") || ["General"],
         industry: item.industry || "Tech",
-      }))
-    : [];
+      }));
+  }, [listData, activeFilters, searchTerm]);
 
-  // Handlers
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
+  const currentPageData = filteredResources.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
   const handleClick = (item) => {
     dispatch(setSelectedWhitepaperId(item.id));
     localStorage.setItem("selectedWhitepaperId", item.id);
     router.push(`/insights/whitepaper/${item.slug}`);
   };
 
-  const toggleDropdown = (filter) => {
-    setOpenDropdown(openDropdown === filter ? "" : filter);
-  };
-
+  const toggleDropdown = (filter) => setOpenDropdown(openDropdown === filter ? "" : filter);
   const selectFilter = (type, value) => {
     setActiveFilters({ ...activeFilters, [type]: value });
     setOpenDropdown("");
@@ -79,58 +88,25 @@ export const WhitepaperCards = () => {
     }
   };
 
-  // Filtering
-  const filteredResources = resources.filter((item) => {
-    const industryMatch =
-      activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
-
-    const tagMatch =
-      activeFilters.Topics.length === 0 ||
-      activeFilters.Topics.some((topic) => item.tags.includes(topic));
-
-    return industryMatch && tagMatch;
-  });
-
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
-  const currentPageData = filteredResources.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+  const search = (value) => {
+    setSearchTerm(value);
+    setCurrentPage(0);
+  };
 
   const goToPage = (index) => {
     if (index < 0 || index >= totalPages) return;
     setCurrentPage(index);
   };
 
- function search(value) {
-  if (value === "") {
-    setFilteredList(listData);
-  } else {
-    setFilteredList(
-      listData.filter((blog) =>
-        blog.hero_title1?.toLowerCase().includes(value.toLowerCase())
-      )
-    );
-  }
-  setCurrentPage(0); // ✅ reset pagination
-}
-
-
-  useEffect(() => {
-    setFilteredList(listData);
-  }, [listData]);
-
   useEffect(() => {
     dispatch(fetchBlogFilterList());
     dispatch(fetchWhitepaperList());
   }, [dispatch]);
-useEffect(() => {
-  // whenever search/filter changes and reduces results
-  if (currentPage >= Math.ceil(filteredResources.length / itemsPerPage)) {
-    setCurrentPage(0); // reset to first page
-  }
-}, [filteredResources, currentPage]);
+
+  useEffect(() => {
+    if (currentPage >= totalPages) setCurrentPage(0);
+  }, [currentPage, totalPages]);
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
@@ -148,7 +124,6 @@ useEffect(() => {
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
-        {/* Grid Display */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-[2rem]">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
@@ -161,7 +136,6 @@ useEffect(() => {
                 className="flex flex-col h-[400px] md:h-[450px] overflow-hidden"
                 onClick={() => handleClick(item)}
               >
-                {/* Image */}
                 <div className="w-full h-3/5 border-2 border-[#2E3092] rounded-2xl">
                   <Image
                     src={item.image}
@@ -172,7 +146,6 @@ useEffect(() => {
                   />
                 </div>
 
-                {/* Content */}
                 <div className="w-full px-4 py-3 flex flex-col justify-between">
                   <div className="flex justify-between items-start">
                     <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words text-[#28272D]">
@@ -190,24 +163,19 @@ useEffect(() => {
                     </button>
                   </div>
 
-                  {/* Tags */}
                   <div className="flex flex-wrap gap-2 my-2">
-                    {Array.isArray(item.tags) &&
-                      item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    {item.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
 
-                  {/* Copy feedback */}
                   {copiedId === item.id && (
-                    <span className="text-green-500 text-xs mt-2">
-                      Link copied!
-                    </span>
+                    <span className="text-green-500 text-xs mt-2">Link copied!</span>
                   )}
                 </div>
               </motion.div>
@@ -215,25 +183,20 @@ useEffect(() => {
           </AnimatePresence>
         </div>
 
-        {/* Pagination */}
         <div className="flex justify-center items-center">
           <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Prev */}
             <motion.button
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 0}
               whileHover={{ scale: currentPage === 0 ? 1 : 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`px-4 py-3 bg-white border-r border-gray-300 ${
-                currentPage === 0
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "text-[#2E3092]"
+                currentPage === 0 ? "text-gray-400 cursor-not-allowed" : "text-[#2E3092]"
               }`}
             >
               <FaLessThan className="w-3 h-3" />
             </motion.button>
 
-            {/* Pages */}
             {Array.from({ length: totalPages }, (_, i) => (
               <motion.button
                 key={i}
@@ -241,27 +204,20 @@ useEffect(() => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-4 py-2 border-r border-gray-300 ${
-                  currentPage === i
-                    ? "text-[#2E3092] font-medium"
-                    : "text-gray-500 hover:bg-gray-100"
+                  currentPage === i ? "text-[#2E3092] font-medium" : "text-gray-500 hover:bg-gray-100"
                 } bg-white`}
               >
                 {i + 1}
               </motion.button>
             ))}
 
-            {/* Next */}
             <motion.button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages - 1}
-              whileHover={{
-                scale: currentPage === totalPages - 1 ? 1 : 1.05,
-              }}
+              whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`px-4 py-2 bg-white ${
-                currentPage === totalPages - 1
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "text-[#2E3092]"
+                currentPage === totalPages - 1 ? "text-gray-400 cursor-not-allowed" : "text-[#2E3092]"
               }`}
             >
               <FaGreaterThan className="w-3 h-3" />
