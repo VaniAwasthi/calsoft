@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "../../store/actions/blogAction";
 import { fetchUsecasesList } from "@/app/store/actions/useCases";
@@ -15,24 +14,25 @@ import { baseUrl } from "@/config";
 export const InfographicCard = () => {
   const dispatch = useDispatch();
   const listData = useSelector((state) => state.usecases.list);
-  const [filteredList, setFilteredList] = useState(listData);
-  const router = useRouter();
-  const [currentPage, setCurrentPage] = useState(0);
-  // hubspot
-const [isOpen, setIsOpen] = useState(false);
-const [formScript, setFormScript] = useState("");
 
-const openForm = (script) => {
-  setFormScript(script);
-  setIsOpen(true);
-};
-//end
+  const [currentPage, setCurrentPage] = useState(0);
+  const [searchText, setSearchText] = useState("");
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
+
+  // hubspot
+  const [isOpen, setIsOpen] = useState(false);
+  const [formScript, setFormScript] = useState("");
+  const openForm = (script) => {
+    setFormScript(script);
+    setIsOpen(true);
+  };
+
   const FilterIndustry = useSelector(
     (state) => state.blogs.filterIndustry || []
   );
   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
     Topics: [],
@@ -43,59 +43,46 @@ const openForm = (script) => {
     Topics: ["All", ...FilterTopic],
   };
 
-  const cardData = Array.isArray(filteredList)
-    ? filteredList.map((item) => ({
-        id: item._id,
-        title: item.title || "Untitled",
-        image: `${baseUrl}/${item.usecase_image}`,
-        slug: item.title
-          ? item.title
-              .toLowerCase()
-              .replace(/[^a-z0-9]+/g, "-")
-              .replace(/(^-|-$)/g, "")
-          : "untitled",
-        link: `/insights/whitepaper/${item._id}`,
-        tags:
-          item.tags?.length > 0
-            ? item.tags.map((tag) => tag.name)
-            : ["General"],
-        industry: item.industry || "Tech",
-        hubspot_form:item?.hubspot_form
-      }))
-    : [];
-  const resources = cardData; // ✅ re-renders when Redux listData updates
+  const cardData = useMemo(() => {
+    return Array.isArray(listData)
+      ? listData.map((item) => ({
+          id: item._id,
+          title: item.title || "Untitled",
+          image: `${baseUrl}/${item.usecase_image}`,
+          slug: item.title
+            ? item.title
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/(^-|-$)/g, "")
+            : "untitled",
+          link: `/insights/whitepaper/${item._id}`,
+          tags:
+            item.tags?.length > 0
+              ? item.tags.map((tag) => tag.name)
+              : ["General"],
+          industry: item.industry || "Tech",
+          hubspot_form: item?.hubspot_form,
+        }))
+      : [];
+  }, [listData]);
 
-  const toggleDropdown = (filter) => {
-    setOpenDropdown(openDropdown === filter ? "" : filter);
-  };
+  const filteredResources = useMemo(() => {
+    return cardData.filter((item) => {
+      const matchesSearch = item.title
+        .toLowerCase()
+        .includes(searchText.toLowerCase());
 
-  const selectFilter = (type, value) => {
-    setActiveFilters({ ...activeFilters, [type]: value });
-    setOpenDropdown("");
-    setCurrentPage(0);
-  };
+      const industryMatch =
+        activeFilters.Industry === "All" ||
+        item.industry === activeFilters.Industry;
 
-  const handleCopy = async (link, id) => {
-    try {
-      await navigator.clipboard.writeText(link);
-      setCopiedId(id);
-      setTimeout(() => setCopiedId(null), 1500);
-    } catch (error) {
-      console.error("Copy failed:", error);
-    }
-  };
+      const tagMatch =
+        activeFilters.Topics.length === 0 ||
+        activeFilters.Topics.some((topic) => item.tags.includes(topic));
 
-  const filteredResources = resources.filter((item) => {
-    const industryMatch =
-      activeFilters.Industry === "All" ||
-      item.industry === activeFilters.Industry;
-
-    const tagMatch =
-      activeFilters.Topics.length === 0 ||
-      activeFilters.Topics.some((topic) => item.tags.includes(topic));
-
-    return industryMatch && tagMatch;
-  });
+      return matchesSearch && industryMatch && tagMatch;
+    });
+  }, [cardData, activeFilters, searchText]);
 
   const itemsPerPage = 6;
   const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
@@ -109,20 +96,15 @@ const openForm = (script) => {
     setCurrentPage(index);
   };
 
-  function search(value) {
-    if (value === "") setFilteredList(listData);
-    else
-      setFilteredList(
-        listData.filter((blog) =>
-          blog.title.toLowerCase().includes(value.toLowerCase())
-        )
-      );
-      setCurrentPage(0)
-  }
-
-  useEffect(() => {
-    setFilteredList(listData);
-  }, [listData]);
+  const handleCopy = async (link, id) => {
+    try {
+      await navigator.clipboard.writeText(link);
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 1500);
+    } catch (error) {
+      console.error("Copy failed:", error);
+    }
+  };
 
   useEffect(() => {
     dispatch(fetchBlogFilterList());
@@ -137,14 +119,23 @@ const openForm = (script) => {
           activeFilters={activeFilters}
           openDropdown={openDropdown}
           setOpenDropdown={setOpenDropdown}
-          toggleDropdown={toggleDropdown}
-          selectFilter={selectFilter}
+          toggleDropdown={(filter) =>
+            setOpenDropdown(openDropdown === filter ? "" : filter)
+          }
+          selectFilter={(type, value) => {
+            setActiveFilters({ ...activeFilters, [type]: value });
+            setOpenDropdown("");
+            setCurrentPage(0);
+          }}
           setActiveFilters={setActiveFilters}
-          searchDebouncing={search}
-          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
+          searchDebouncing={(value) => {
+            setSearchText(value);
+            setCurrentPage(0);
+          }}
+          mainClass="p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"
         />
 
-        <p className="mb-4 text-sm">{filteredList.length} Results</p>
+        <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
         {/* Grid Display with animation */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -156,10 +147,7 @@ const openForm = (script) => {
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
-onClick={() => {
-  openForm(item.hubspot_form);
-}}
-
+                onClick={() => openForm(item.hubspot_form)}
                 className="flex flex-col h-[400px] md:h-[380px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 {/* Image */}
@@ -176,7 +164,6 @@ onClick={() => {
                 {/* Content */}
                 <div className="w-full h-2/5 p-4 flex flex-col justify-between">
                   <div className="flex flex-wrap gap-1 mt-1">
-                    {/* Container to hold tags */}
                     {item.tags.map((tag, index) => (
                       <span
                         key={index}
@@ -213,10 +200,9 @@ onClick={() => {
           </AnimatePresence>
         </div>
 
-        {/* Custom Pagination with animation */}
+        {/* Pagination */}
         <div className="flex justify-center items-center">
-          <div className="mt-8  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Previous Button */}
+          <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
             <motion.button
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 0}
@@ -231,7 +217,6 @@ onClick={() => {
               <FaLessThan className="w-3 h-3" />
             </motion.button>
 
-            {/* Page Numbers */}
             {Array.from({ length: totalPages }, (_, i) => (
               <motion.button
                 key={i}
@@ -248,11 +233,12 @@ onClick={() => {
               </motion.button>
             ))}
 
-            {/* Next Button */}
             <motion.button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages - 1}
-              whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
+              whileHover={{
+                scale: currentPage === totalPages - 1 ? 1 : 1.05,
+              }}
               whileTap={{ scale: 0.95 }}
               className={`px-4 py-2 bg-white ${
                 currentPage === totalPages - 1
@@ -263,13 +249,12 @@ onClick={() => {
               <FaGreaterThan className="w-3 h-3" />
             </motion.button>
           </div>
+
           <HubspotModal
-  isOpen={isOpen}
-  onClose={() => setIsOpen(false)}
-  hubspotScript={formScript}
-/>
-
-
+            isOpen={isOpen}
+            onClose={() => setIsOpen(false)}
+            hubspotScript={formScript}
+          />
         </div>
       </div>
     </section>
