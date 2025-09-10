@@ -109,8 +109,8 @@ export default function WhyItMatters({
       ),
     },
     {
-      title: "Industry standards",
-      desc: "unavailable for performance benchmarking.",
+      title: "Difficulty benchmarking against",
+      desc: "industry or peer standars",
       icon: (
         <svg
           width="47"

@@ -101,6 +101,10 @@ const Page = () => {
               title: "Improved",
               subTitle: "developer productivity via faster merge approvals",
             },
+            {
+              title: "Smarter triaging",
+              subTitle: "of failed or flaky tests",
+            },
           ],
         }}
         bookMeetingData={{

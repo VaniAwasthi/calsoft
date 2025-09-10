@@ -99,7 +99,7 @@ export const Matters = () => {
         bgshape: bgshape1,
       },
       {
-        percent: "47%",
+        percent: "48%",
         text: "of modernization efforts overshoot budgets by 30%",
         className: "shape2",
         bgshape: bgshape2,

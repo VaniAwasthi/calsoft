@@ -106,6 +106,10 @@ const Page = () => {
               title: "2X",
               subTitle: "faster developer feedback on code commits",
             },
+            {
+              title: "Improved release predictability",
+              subTitle: "with stable builds",
+            },
           ],
         }}
         bookMeetingData={{
@@ -146,7 +150,7 @@ const Page = () => {
       <WhyCalsoft
         sectionDescription="Most automation stops at scripts. Calsoft enables scalable regression intelligence that keeps pace with your releases."
         data={{
-          tableHeadings: ["Capability", "Calsoft", "Standard Providers"],
+          tableHeadings: ["Capability", "Calsoft Regression Suite", "Conventional Vendors"],
           tableContent: [
             {
               name: "Test Impact + Change Awareness",

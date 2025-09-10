@@ -70,6 +70,7 @@ const Page = () => {
             title: "Multi-layer monitoring",
             subTitle: "application, infra, network",
           },
+          
         ]}
         bottomContent={{
           text: "We model tests against your current SLAs, compliance thresholds, and future scale targets.",
@@ -104,6 +105,10 @@ const Page = () => {
               subTitle:
                 "compliance during seasonal, campaign, or product launches",
             },
+            {
+            title: "Improved NPS & retention",
+            subTitle: "through consistent performance",
+          },
           ],
         }}
         bookMeetingData={{

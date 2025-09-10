@@ -40,7 +40,7 @@ const Page = () => {
           cardData: [
             {
               title: "Workload Rationalization using 6R framework",
-              subTitle: null,
+              subTitle: "(Rehost, Refactor, Replatform, Repurchase, Retire, Retain)",
               icon: (
                 <svg
                   width="32"

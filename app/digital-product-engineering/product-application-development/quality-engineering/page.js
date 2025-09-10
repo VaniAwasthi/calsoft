@@ -160,6 +160,62 @@ const Page = () => {
             ),
             title: "Cross-Browser & Mobile Testing",
           },
+          {
+            icon: (
+              <svg
+                width="55"
+                height="42"
+                viewBox="0 0 55 42"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M26.9924 38L54 25.9065L38.5742 19L27.135 24.779C27.0916 24.8033 27.0434 24.8107 27 24.8107C26.9566 24.8107 26.9084 24.7985 26.865 24.779L15.4258 19L0 25.9065L27.0076 38H26.9924Z"
+                  fill="#2E3092"
+                />
+                <path d="M27 37.991L0 26V30.009L27 42V37.991Z" fill="#2E3092" />
+                <path d="M28 42L55 30.009V26L28 37.991V42Z" fill="#2E3092" />
+                <path
+                  d="M7 10.0024L27.5 20L48 10.0024L27.5 0L7 10.0024Z"
+                  fill="#2E3092"
+                />
+                <path d="M27 24V20.5674L6 10V13.4401L27 24Z" fill="#2E3092" />
+                <path
+                  d="M28 20.5674V24L48 13.4402V10L28 20.5674Z"
+                  fill="#2E3092"
+                />
+              </svg>
+            ),
+            title: "CI/CD Integrated Validation Pipelines",
+          },
+          {
+            icon: (
+              <svg
+                width="55"
+                height="42"
+                viewBox="0 0 55 42"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M26.9924 38L54 25.9065L38.5742 19L27.135 24.779C27.0916 24.8033 27.0434 24.8107 27 24.8107C26.9566 24.8107 26.9084 24.7985 26.865 24.779L15.4258 19L0 25.9065L27.0076 38H26.9924Z"
+                  fill="#2E3092"
+                />
+                <path d="M27 37.991L0 26V30.009L27 42V37.991Z" fill="#2E3092" />
+                <path d="M28 42L55 30.009V26L28 37.991V42Z" fill="#2E3092" />
+                <path
+                  d="M7 10.0024L27.5 20L48 10.0024L27.5 0L7 10.0024Z"
+                  fill="#2E3092"
+                />
+                <path d="M27 24V20.5674L6 10V13.4401L27 24Z" fill="#2E3092" />
+                <path
+                  d="M28 20.5674V24L48 13.4402V10L28 20.5674Z"
+                  fill="#2E3092"
+                />
+              </svg>
+            ),
+            title: "End-to-End Quality Metrics & Dashboards",
+          },
         ]}
         ScorecardComponent={RequestDemo}
       />

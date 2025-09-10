@@ -113,7 +113,7 @@ export default function StatsDisplay() {
         <div className="w-2/3 h-48">
           <StatShape
             title="45%"
-            subtitle="decrease in incident volume for Calsoft clients in 90 days."
+            subtitle="decrease in incident volume for Calsoft clients in 90 days"
             position="bottom"
             delay={0.6}
           />
