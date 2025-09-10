@@ -1,15 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Info1 from "../../assets/Infographic/whitepaper1.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDatasheetList } from "../../store/actions/datasheetAction";
 import { baseUrl } from "../../../config";
-import {
-  fetchBlogFilterList,
-  fetchFilteredBlogs,
-} from "../../store/actions/blogAction";
+import { fetchBlogFilterList } from "../../store/actions/blogAction";
 import { setSelectedDatasheetsId } from "../../store/reducers/datasheetReducer";
 import { useRouter } from "next/navigation";
 import { generateSlug } from "../utilities/helper/SlugGenerator";
@@ -39,30 +38,34 @@ export const DataSheetCards = () => {
   const FilterIndustry = useSelector((state) => state.blogs.filterIndustry || []);
   const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
 
-  // ✅ Transform resources directly from Redux
-  const resources = datasheetData.map((item) => ({
-    ...item,
-    id: item._id,
-    title: item.hero_title1,
-    image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
-    tags: ["AI"],
-    slug: item.hero_title1
-      ? item.hero_title1.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
-      : "untitled",
-    link: `/${item._id}`,
-  }));
+  // ✅ Memoize transformed resources
+  const resources = useMemo(() => {
+    return datasheetData.map((item) => ({
+      ...item,
+      id: item._id,
+      title: item.hero_title1,
+      image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
+      tags: item.tags?.length ? item.tags : ["AI"], // fallback tag
+      slug: item.hero_title1
+        ? item.hero_title1.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
+        : "untitled",
+      link: `/${item._id}`,
+    }));
+  }, [datasheetData]);
 
-  // ✅ Apply filters/search on resources
-  const filteredResources = resources.filter((item) => {
-    const industryMatch =
-      activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
+  // ✅ Apply filters
+  const filteredResources = useMemo(() => {
+    return resources.filter((item) => {
+      const industryMatch =
+        activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
 
-    const topicMatch =
-      activeFilters.Topics.length === 0 ||
-      activeFilters.Topics.some((t) => item.tags.includes(t.name || t));
+      const topicMatch =
+        activeFilters.Topics.length === 0 ||
+        activeFilters.Topics.some((t) => item.tags.includes(t.name || t));
 
-    return industryMatch && topicMatch;
-  });
+      return industryMatch && topicMatch;
+    });
+  }, [resources, activeFilters]);
 
   // ✅ Pagination
   const itemsPerPage = 6;
@@ -72,35 +75,44 @@ export const DataSheetCards = () => {
     (currentPage + 1) * itemsPerPage
   );
 
-  // ✅ Reset page when filter/search changes
+  // ✅ Reset page when filter changes
   useEffect(() => {
     setCurrentPage(0);
   }, [filteredResources.length]);
 
+  // ✅ Handlers
   const handleClick = (item) => {
     dispatch(setSelectedDatasheetsId(item._id));
-    localStorage.setItem("selectedDateSheetId", item._id);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("selectedDateSheetId", item._id);
+    }
     const slug = generateSlug(item.hero_title1, { lower: true });
     router.push(`/insights/datesheets/${slug}`);
   };
 
   const handleCopy = (link, id) => {
-    navigator.clipboard.writeText(`${window.location.origin}${link}`);
+    if (typeof window !== "undefined") {
+      navigator.clipboard.writeText(`${window.location.origin}${link}`);
+    }
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2000);
   };
+
+  const goToPage = (page) => {
+    if (page >= 0 && page < totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
         <FilterSec
-          filters={filters}
+          filters={{ Industry: FilterIndustry, Topics: FilterTopic }}
           activeFilters={activeFilters}
           setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
           setOpenDropdown={setOpenDropdown}
-          toggleDropdown={toggleDropdown}
-          selectFilter={selectFilter}
-          searchDebouncing={search}
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
@@ -143,7 +155,10 @@ export const DataSheetCards = () => {
                     </h3>
                     <div className="flex flex-col">
                       <button
-                        onClick={() => handleCopy(item.link, item.id)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCopy(item.link, item.id);
+                        }}
                         className="text-white hover:text-black"
                         title="Copy link"
                       >
@@ -177,56 +192,60 @@ export const DataSheetCards = () => {
         </div>
 
         {/* Pagination */}
-        <div className="flex justify-center items-center">
-          <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Previous */}
-            <motion.button
-              onClick={() => goToPage(currentPage - 1)}
-              disabled={currentPage === 0}
-              whileHover={{ scale: currentPage === 0 ? 1 : 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-4 py-3 bg-white border-r border-gray-300 ${
-                currentPage === 0
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "text-[#2E3092]"
-              }`}
-            >
-              <FaLessThan className="w-3 h-3" />
-            </motion.button>
-
-            {/* Pages */}
-            {Array.from({ length: totalPages }, (_, i) => (
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center">
+            <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
+              {/* Previous */}
               <motion.button
-                key={i}
-                onClick={() => goToPage(i)}
-                whileHover={{ scale: 1.05 }}
+                onClick={() => goToPage(currentPage - 1)}
+                disabled={currentPage === 0}
+                whileHover={{ scale: currentPage === 0 ? 1 : 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-4 py-2 border-r border-gray-300 ${
-                  currentPage === i
-                    ? "text-[#2E3092] font-medium"
-                    : "text-gray-500 hover:bg-gray-100"
-                } bg-white`}
+                className={`px-4 py-3 bg-white border-r border-gray-300 ${
+                  currentPage === 0
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-[#2E3092]"
+                }`}
               >
-                {i + 1}
+                <FaLessThan className="w-3 h-3" />
               </motion.button>
-            ))}
 
-            {/* Next */}
-            <motion.button
-              onClick={() => goToPage(currentPage + 1)}
-              disabled={currentPage === totalPages - 1}
-              whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 bg-white ${
-                currentPage === totalPages - 1
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "text-[#2E3092]"
-              }`}
-            >
-              <FaGreaterThan className="w-3 h-3" />
-            </motion.button>
+              {/* Pages */}
+              {Array.from({ length: totalPages }, (_, i) => (
+                <motion.button
+                  key={i}
+                  onClick={() => goToPage(i)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`px-4 py-2 border-r border-gray-300 ${
+                    currentPage === i
+                      ? "text-[#2E3092] font-medium"
+                      : "text-gray-500 hover:bg-gray-100"
+                  } bg-white`}
+                >
+                  {i + 1}
+                </motion.button>
+              ))}
+
+              {/* Next */}
+              <motion.button
+                onClick={() => goToPage(currentPage + 1)}
+                disabled={currentPage === totalPages - 1}
+                whileHover={{
+                  scale: currentPage === totalPages - 1 ? 1 : 1.05,
+                }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-4 py-2 bg-white ${
+                  currentPage === totalPages - 1
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-[#2E3092]"
+                }`}
+              >
+                <FaGreaterThan className="w-3 h-3" />
+              </motion.button>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Load More Trigger */}
         <div ref={loadMoreRef} className="h-1"></div>
