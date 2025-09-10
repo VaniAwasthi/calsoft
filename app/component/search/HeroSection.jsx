@@ -17,6 +17,11 @@ export function HeroSection({ initialSearchQuery }) {
       window.removeEventListener("searchQueryUpdate", handleSearchUpdate);
   }, []);
 
+  // Keep the displayed query in sync when the prop changes (e.g., URL updates)
+  useEffect(() => {
+    setDisplayedSearchQuery(initialSearchQuery);
+  }, [initialSearchQuery]);
+
   return (
     <div
       className="relative h-96 bg-cover bg-center bg-no-repeat"
