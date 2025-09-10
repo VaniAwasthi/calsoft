@@ -17,65 +17,60 @@ import { FilterSec } from "../utilities/FilterSec";
 
 export const IndustryReportCard = () => {
   const dispatch = useDispatch();
+  const listData = useSelector((state) => state.industryreport.list);
+  const [filteredList, setFilteredList] = useState(listData);
   const router = useRouter();
 
-  const listData = useSelector((state) => state.industryreport.list) || [];
-  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry) || [];
-  const FilterTopic = useSelector((state) => state.blogs.filterTopic) || [];
-
-  const [filteredList, setFilteredList] = useState([]);
-  const [activeFilters, setActiveFilters] = useState({ Industry: "All", Topics: [] });
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+  const [activeFilters, setActiveFilters] = useState({
+    Industry: "All",
+    Topics: [],
+  });
+
+  const filters = {
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
+  };
   const [currentPage, setCurrentPage] = useState(0);
 
-  const itemsPerPage = 6;
-
-  const filters = { Industry: ["All", ...FilterIndustry], Topics: ["All", ...FilterTopic] };
-
-  // Fetch data once
   useEffect(() => {
     dispatch(fetchBlogFilterList());
     dispatch(fetchIndustryReportList());
   }, [dispatch]);
+useEffect(() => {
+  dispatch(fetchBlogFilterList());
+  dispatch(fetchIndustryReportList());
+}, [dispatch]);
 
-  // Update filteredList when listData changes
-  useEffect(() => {
-    setFilteredList(listData);
-    setCurrentPage(0);
-  }, [listData]);
+useEffect(() => {
+  setFilteredList(listData);
+}, [listData]);
 
-  // Map listData into structured resources
-  const resources = filteredList.map((item) => {
-    const slug = slugify(item.hero_title1 || "untitled", { lower: true });
-    const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const resources = Array.isArray(filteredList)
+    ? filteredList.map((item) => {
+        const slug = slugify(item.hero_title1 || "untitled", { lower: true });
 
-    return {
-      id: item._id,
-      title: item.hero_title1 || "Untitled",
-      description: item.hero_title2 || "Untitled",
-      image: item.featured_image ? `${baseUrl}/${item.featured_image}` : "/placeholder.png",
-      slug,
-      link: `${origin}/insights/industry-report/${slug}`,
-      author: item.author || "Unknown",
-      tags: item.tags?.split(",") || ["General"],
-      industry: item.industry || "Tech",
-    };
-  });
+        const origin =
+          typeof window !== "undefined" ? window.location.origin : "";
 
-  // Filtering logic
-  const filteredResources = resources.filter((item) => {
-    const industryMatch = activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
-    const tagMatch =
-      activeFilters.Topics.length === 0 || activeFilters.Topics.some((topic) => item.tags.includes(topic));
-    return industryMatch && tagMatch;
-  });
-
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
-  const currentPageData = filteredResources.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+        return {
+          id: item?._id,
+          title: item?.hero_title1 || "Untitled",
+          description: item?.hero_title2 || "Untitled",
+          image: `${baseUrl}/${item?.featured_image}`,
+          slug,
+          link: `${origin}/insights/industry-report/${slug}`,
+          author: item?.author || "Unknown",
+          tags: item.tags?.split(",") || ["General"],
+          industry: item.industry || "Tech",
+        };
+      })
+    : [];
 
   const handleClick = (item) => {
     const slug = slugify(item.title, { lower: true });
@@ -84,18 +79,9 @@ export const IndustryReportCard = () => {
     router.push(`/insights/industry-report/${slug}`);
   };
 
-  const handleCopy = async (link, id, e) => {
-    e.stopPropagation(); // prevent unwanted clicks
-    try {
-      await navigator.clipboard.writeText(link);
-      setCopiedId(id);
-      setTimeout(() => setCopiedId(null), 1500);
-    } catch (err) {
-      console.error("Copy failed:", err);
-    }
+  const toggleDropdown = (filter) => {
+    setOpenDropdown(openDropdown === filter ? "" : filter);
   };
-
-  const toggleDropdown = (filter) => setOpenDropdown(openDropdown === filter ? "" : filter);
 
   const selectFilter = (type, value) => {
     setActiveFilters({ ...activeFilters, [type]: value });
@@ -103,21 +89,49 @@ export const IndustryReportCard = () => {
     setCurrentPage(0);
   };
 
-  const search = (value) => {
-    if (!value) setFilteredList(listData);
-    else
-      setFilteredList(
-        listData.filter((item) =>
-          (item.hero_title1 || "").toLowerCase().includes(value.toLowerCase())
-        )
-      );
-    setCurrentPage(0);
+  const handleCopy = async (link, id) => {
+    try {
+      await navigator.clipboard.writeText(link);
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 1500);
+    } catch (error) {
+      console.error("Copy failed:", error);
+    }
   };
+
+  const filteredResources = resources.filter((item) => {
+    const industryMatch =
+      activeFilters.Industry === "All" ||
+      item.industry === activeFilters.Industry;
+
+    const tagMatch =
+      activeFilters.Topics.length === 0 ||
+      activeFilters.Topics.some((topic) => item.tags.includes(topic));
+
+    return industryMatch && tagMatch;
+  });
+
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
+  const currentPageData = filteredResources.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
 
   const goToPage = (index) => {
     if (index < 0 || index >= totalPages) return;
     setCurrentPage(index);
   };
+
+  function search(value) {
+    if (value === "") setFilteredList(listData);
+    else
+      setFilteredList(
+        listData.filter((blog) =>
+          blog.hero_title1.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
@@ -136,26 +150,26 @@ export const IndustryReportCard = () => {
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
-        {/* Grid Display */}
+        {/* Grid Display with animation */}
         <div className="grid grid-cols-1 gap-8">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
               <motion.div
                 key={item.id}
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 30 }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="flex flex-col md:flex-row h-[450px] md:h-[250px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition cursor-pointer"
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="flex flex-col md:flex-row h-[450px] md:h-[250px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
               >
                 {/* Image */}
                 <div className="md:w-2/4 w-full h-full">
                   <Image
                     src={item.image}
                     alt={item.title}
+                    className="w-full h-full object-cover"
                     width={300}
                     height={200}
-                    className="w-full h-full object-cover"
                   />
                 </div>
 
@@ -184,7 +198,7 @@ export const IndustryReportCard = () => {
                         className="!h-[40px] !w-[150px]"
                       />
                       <button
-                        onClick={(e) => handleCopy(item.link, item.id, e)}
+                        onClick={() => handleCopy(item.link, item.id)}
                         className="text-gray-500 hover:text-black"
                         title="Copy link"
                       >
@@ -194,7 +208,9 @@ export const IndustryReportCard = () => {
                   </div>
 
                   {copiedId === item.id && (
-                    <span className="text-green-500 text-xs mt-2">Link copied!</span>
+                    <span className="text-green-500 text-xs mt-2">
+                      Link copied!
+                    </span>
                   )}
                 </div>
               </motion.div>
@@ -204,34 +220,54 @@ export const IndustryReportCard = () => {
 
         {/* Pagination */}
         <div className="flex justify-center items-center">
-
-        <div className=" mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-          <motion.button
-            onClick={() => goToPage(currentPage - 1)}
-            disabled={currentPage === 0}
-            className={`px-4 py-3 bg-white border-r border-gray-300 ${currentPage === 0 ? "text-gray-400 cursor-not-allowed" : "text-[#2E3092]"}`}
-          >
-            <FaLessThan className="w-3 h-3" />
-          </motion.button>
-
-          {Array.from({ length: totalPages }, (_, i) => (
+          <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
+            {/* Previous Button */}
             <motion.button
-              key={i}
-              onClick={() => goToPage(i)}
-              className={`px-4 py-2 border-r border-gray-300 ${currentPage === i ? "text-[#2E3092] font-medium" : "text-gray-500 hover:bg-gray-100"} bg-white`}
+              onClick={() => goToPage(currentPage - 1)}
+              disabled={currentPage === 0}
+              whileHover={{ scale: currentPage === 0 ? 1 : 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-4 py-3 bg-white border-r border-gray-300 ${
+                currentPage === 0
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-[#2E3092]"
+              }`}
             >
-              {i + 1}
+              <FaLessThan className="w-3 h-3" />
             </motion.button>
-          ))}
 
-          <motion.button
-            onClick={() => goToPage(currentPage + 1)}
-            disabled={currentPage === totalPages - 1}
-            className={`px-4 py-2 bg-white ${currentPage === totalPages - 1 ? "text-gray-400 cursor-not-allowed" : "text-[#2E3092]"}`}
-          >
-            <FaGreaterThan className="w-3 h-3" />
-          </motion.button>
-        </div>
+            {/* Page Numbers */}
+            {Array.from({ length: totalPages }, (_, i) => (
+              <motion.button
+                key={i}
+                onClick={() => goToPage(i)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-4 py-2 border-r border-gray-300 ${
+                  currentPage === i
+                    ? "text-[#2E3092] font-medium"
+                    : "text-gray-500 hover:bg-gray-100"
+                } bg-white`}
+              >
+                {i + 1}
+              </motion.button>
+            ))}
+
+            {/* Next Button */}
+            <motion.button
+              onClick={() => goToPage(currentPage + 1)}
+              disabled={currentPage === totalPages - 1}
+              whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-4 py-2 bg-white ${
+                currentPage === totalPages - 1
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-[#2E3092]"
+              }`}
+            >
+              <FaGreaterThan className="w-3 h-3" />
+            </motion.button>
+          </div>
         </div>
       </div>
     </section>
