@@ -225,7 +225,9 @@ export const PostcastSec = () => {
         </AnimatePresence>
 
         {/* Pagination */}
-        <div className="flex justify-center items-center mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
+        <div className="flex justify-center items-center">
+
+        <div className=" mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
           <motion.button onClick={() => goToPage(currentPage - 1)} disabled={currentPage === 0} whileHover={{ scale: currentPage === 0 ? 1 : 1.05 }} whileTap={{ scale: 0.95 }} className={`px-4 py-3 bg-white border-r border-gray-300 ${currentPage === 0 ? "text-gray-400 cursor-not-allowed" : "text-[#2E3092]"}`}>
             <FaLessThan className="w-3 h-3" />
           </motion.button>
@@ -239,6 +241,7 @@ export const PostcastSec = () => {
           <motion.button onClick={() => goToPage(currentPage + 1)} disabled={currentPage === totalPages - 1} whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }} whileTap={{ scale: 0.95 }} className={`px-4 py-2 bg-white ${currentPage === totalPages - 1 ? "text-gray-400 cursor-not-allowed" : "text-[#2E3092]"}`}>
             <FaGreaterThan className="w-3 h-3" />
           </motion.button>
+        </div>
         </div>
       </div>
     </section>
