@@ -25,91 +25,46 @@ export const DataSheetCards = () => {
     Industry: "All",
     Topics: [],
   });
-  const [filteredResources, setFilteredResources] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(6);
   const loadMoreRef = useRef(null);
-  const handleClick = (item) => {
-    dispatch(setSelectedDatasheetsId(item._id));
-    localStorage.setItem("selectedDateSheetId", item._id);
-    const slug = generateSlug(item.hero_title1, { lower: true });
-    router.push(`/insights/datesheets/${slug}`);
-  };
+
+  // ✅ Fetch data on mount
   useEffect(() => {
     dispatch(fetchDatasheetList());
     dispatch(fetchBlogFilterList());
   }, [dispatch]);
 
+  // ✅ Always read from Redux
   const datasheetData = useSelector((state) => state.datasheets?.list || []);
-  const FilterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
-  );
+  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry || []);
   const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
 
-  const filters = {
-    Industry: ["All", ...FilterIndustry],
-    Topics: ["All", ...FilterTopic],
-  };
-
-  const resources = datasheetData?.map((item) => ({
+  // ✅ Transform resources directly from Redux
+  const resources = datasheetData.map((item) => ({
     ...item,
     id: item._id,
     title: item.hero_title1,
     image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
     tags: ["AI"],
     slug: item.hero_title1
-      ? item.hero_title1
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/(^-|-$)/g, "")
+      ? item.hero_title1.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
       : "untitled",
     link: `/${item._id}`,
   }));
 
-  const handleCopy = (link, id) => {
-    navigator.clipboard.writeText(`${window.location.origin}${link}`);
-    setCopiedId(id);
-    setTimeout(() => setCopiedId(null), 2000);
-  };
+  // ✅ Apply filters/search on resources
+  const filteredResources = resources.filter((item) => {
+    const industryMatch =
+      activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
 
-  const toggleDropdown = (filter) => {
-    setOpenDropdown(openDropdown === filter ? "" : filter);
-  };
+    const topicMatch =
+      activeFilters.Topics.length === 0 ||
+      activeFilters.Topics.some((t) => item.tags.includes(t.name || t));
 
-  const selectFilter = (type, selected) => {
-    let updatedFilters = { ...activeFilters };
+    return industryMatch && topicMatch;
+  });
 
-    if (type === "Topics") {
-      const exists = updatedFilters.Topics.find((t) => t._id === selected._id);
-
-      if (exists) {
-        updatedFilters.Topics = updatedFilters.Topics.filter(
-          (t) => t._id !== selected._id
-        );
-        setTopicLimitWarning(false);
-      } else {
-        if (updatedFilters.Topics.length >= 3) {
-          setTopicLimitWarning(true);
-          setTimeout(() => setTopicLimitWarning(false), 3000);
-          return;
-        }
-        updatedFilters.Topics = [...updatedFilters.Topics, selected];
-      }
-    } else {
-      updatedFilters[type] = selected;
-    }
-
-    setActiveFilters(updatedFilters);
-    setOpenDropdown("");
-
-    dispatch(
-      fetchFilteredBlogs({
-        industry: updatedFilters.Industry?._id || null,
-        topics: updatedFilters.Topics.map((t) => t._id),
-      })
-    );
-  };
-
+  // ✅ Pagination
   const itemsPerPage = 6;
   const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
   const currentPageData = filteredResources.slice(
@@ -117,66 +72,23 @@ export const DataSheetCards = () => {
     (currentPage + 1) * itemsPerPage
   );
 
-  const goToPage = (index) => {
-    if (index < 0 || index >= totalPages) return;
-    setCurrentPage(index);
+  // ✅ Reset page when filter/search changes
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [filteredResources.length]);
+
+  const handleClick = (item) => {
+    dispatch(setSelectedDatasheetsId(item._id));
+    localStorage.setItem("selectedDateSheetId", item._id);
+    const slug = generateSlug(item.hero_title1, { lower: true });
+    router.push(`/insights/datesheets/${slug}`);
   };
 
-  function search(value) {
-    if (value === "") setFilteredResources(resources);
-    else
-      setFilteredResources(
-        resources.filter((blog) =>
-          blog.title.toLowerCase().includes(value.toLowerCase())
-        )
-      );
-      setCurrentPage(0)
-  }
-
-  useEffect(() => {
-    setFilteredResources(
-      datasheetData?.map((item) => ({
-        ...item,
-        id: item._id,
-        title: item.hero_title1,
-        image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
-        tags: ["AI"],
-        slug: item.hero_title1
-          ? item.hero_title1
-              .toLowerCase()
-              .replace(/[^a-z0-9]+/g, "-")
-              .replace(/(^-|-$)/g, "")
-          : "untitled",
-        link: `/${item._id}`,
-      }))
-    );
-  }, [datasheetData]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setVisibleCount((prev) => {
-            const next = prev + 6;
-            return Math.min(next, filteredResources.length);
-          });
-        }
-      },
-      { threshold: 1.0 }
-    );
-
-    if (loadMoreRef.current) {
-      observer.observe(loadMoreRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [filteredResources]);
-useEffect(() => {
-  // whenever search/filter changes and reduces results
-  if (currentPage >= Math.ceil(filteredResources.length / itemsPerPage)) {
-    setCurrentPage(0); // reset to first page
-  }
-}, [filteredResources, currentPage]);
+  const handleCopy = (link, id) => {
+    navigator.clipboard.writeText(`${window.location.origin}${link}`);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
