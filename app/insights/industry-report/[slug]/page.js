@@ -96,12 +96,12 @@ const { slug } = useParams();
         formId={formId}
         region={region}
       />
-      <BusinessValueSection
+      {/* <BusinessValueSection
       isDivider={false}
         backgroundImage={BusinessValueBg}
         values={businessValueData2}
         title={industryreportData?.businessinvalue_title}
-      />
+      /> */}
       <ToKnowMoreSection
         backgroundImage={ToKnowMoreBg}
         title="To Know More"
