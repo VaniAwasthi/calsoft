@@ -50,26 +50,33 @@ export const WebinarList = () => {
     Industry: ["All", ...FilterIndustry],
     Topics: ["All", ...FilterTopic],
   };
-  const resources = WebinarsData?.map((item) => {
-    const slug = item.hero_title1
-      ? item.hero_title1
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
-          .replace(/(^-|-$)/g, "")
-      : "untitled";
+const resources = Array.isArray(WebinarsData)
+  ? WebinarsData.map((item) => {
+      const slug = item.hero_title1
+        ? item.hero_title1
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "")
+        : "untitled";
 
-    return {
-      ...item,
-      id: item._id,
-      title: item.hero_title1,
-      image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
-      tags: ["AI"],
-      slug,
-      link: `/insights/webinars/${slug}`, // ✅ updated here
-    };
-  });
+      return {
+        ...item,
+        id: item._id,
+        title: item.hero_title1 || "Untitled",
+        image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
+        tags: item.tags ? item.tags.split(",") : ["AI"],
+        slug,
+        link: `/insights/webinars/${slug}`,
+      };
+    })
+  : [];
 
-  const [filteredResources, setFilteredResources] = useState(resources);
+const [filteredResources, setFilteredResources] = useState(resources);
+
+useEffect(() => {
+  setFilteredResources(resources);
+}, [WebinarsData]); 
+
 
   const handleCopy = (link, id) => {
     navigator.clipboard.writeText(`${window.location.origin}${link}`);

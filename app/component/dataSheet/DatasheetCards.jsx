@@ -130,6 +130,7 @@ export const DataSheetCards = () => {
           blog.title.toLowerCase().includes(value.toLowerCase())
         )
       );
+      setCurrentPage(0)
   }
 
   useEffect(() => {
@@ -170,7 +171,12 @@ export const DataSheetCards = () => {
 
     return () => observer.disconnect();
   }, [filteredResources]);
-
+useEffect(() => {
+  // whenever search/filter changes and reduces results
+  if (currentPage >= Math.ceil(filteredResources.length / itemsPerPage)) {
+    setCurrentPage(0); // reset to first page
+  }
+}, [filteredResources, currentPage]);
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">

@@ -81,18 +81,25 @@ export const PostcastSec = () => {
   const [currentPage, setCurrentPage] = useState(0);
 
   const images = [Info1, Info2];
+const cardData =
+  PodcastDataList?.map((data, i) => ({
+    id: data?._id,
+    title: data?.title || "Untitled",
+    image: data?.podcast_image ? `${baseUrl}${data?.podcast_image}` : "/placeholder.png",
+    link: `https://yourdomain.com/card/${i + 1}`,
+    speaker: data?.speaker?.name || "Unknown",
+    videoUrl: data?.url || "",
+  })) || [];
 
-  const cardData =
-    PodcastDataList?.map((data, i) => ({
-      id: data?._id,
-      title: data?.title,
-      image: `${baseUrl}${data?.podcast_image}`,
-      link: `https://yourdomain.com/card/${i + 1}`,
-      speaker: data?.speaker?.name,
-      videoUrl: data?.url,
-    })) || [];
+const [resources, setResources] = useState([]);
 
-  const [resources, setResources] = useState([...cardData]);
+useEffect(() => {
+  if (cardData.length > 0) {
+    setResources(cardData);
+  }
+}, [PodcastDataList]); 
+
+
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -135,7 +142,6 @@ export const PostcastSec = () => {
   };
 
   function search(value) {
-    console.log(value);
     if (value === "") setResources([...cardData]);
     else
       setResources(

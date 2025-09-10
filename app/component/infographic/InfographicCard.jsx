@@ -117,6 +117,7 @@ const openForm = (script) => {
           blog.title.toLowerCase().includes(value.toLowerCase())
         )
       );
+      setCurrentPage(0)
   }
 
   useEffect(() => {

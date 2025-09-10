@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -19,10 +21,10 @@ export const WhitepaperCards = () => {
 
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
-  const FilterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
-  );
+
+  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry || []);
   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
     Topics: [],
@@ -32,31 +34,29 @@ export const WhitepaperCards = () => {
     Industry: ["All", ...FilterIndustry],
     Topics: ["All", ...FilterTopic],
   };
+
   const [currentPage, setCurrentPage] = useState(0);
 
   const resources = Array.isArray(filteredList)
-    ? filteredList.map((item, idx) => ({
+    ? filteredList.map((item) => ({
         id: item._id,
         title: item.hero_title1 || "Untitled",
-image: `${baseUrl}${item?.featured_image}`,
+        image: `${baseUrl}${item?.featured_image}`,
         slug: item.hero_title1
-          ? item.hero_title1
-              .toLowerCase()
-              .replace(/[^a-z0-9]+/g, "-")
-              .replace(/(^-|-$)/g, "")
+          ? slugify(item.hero_title1, { lower: true })
           : "untitled",
         link: `/insights/whitepaper/${item._id}`,
         author: item.author || "Unknown",
-        tags: item.tags?.split(",") || ["General"],
+        tags: item.tags ? item.tags.split(",") : ["General"],
         industry: item.industry || "Tech",
       }))
     : [];
 
+  // Handlers
   const handleClick = (item) => {
-    const slug = slugify(item.title, { lower: true });
     dispatch(setSelectedWhitepaperId(item.id));
     localStorage.setItem("selectedWhitepaperId", item.id);
-    router.push(`/insights/whitepaper/${slug}`);
+    router.push(`/insights/whitepaper/${item.slug}`);
   };
 
   const toggleDropdown = (filter) => {
@@ -79,10 +79,10 @@ image: `${baseUrl}${item?.featured_image}`,
     }
   };
 
+  // Filtering
   const filteredResources = resources.filter((item) => {
     const industryMatch =
-      activeFilters.Industry === "All" ||
-      item.industry === activeFilters.Industry;
+      activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
 
     const tagMatch =
       activeFilters.Topics.length === 0 ||
@@ -103,15 +103,19 @@ image: `${baseUrl}${item?.featured_image}`,
     setCurrentPage(index);
   };
 
-  function search(value) {
-    if (value === "") setFilteredList(listData);
-    else
-      setFilteredList(
-        listData.filter((blog) =>
-          blog.hero_title1.toLowerCase().includes(value.toLowerCase())
-        )
-      );
+ function search(value) {
+  if (value === "") {
+    setFilteredList(listData);
+  } else {
+    setFilteredList(
+      listData.filter((blog) =>
+        blog.hero_title1?.toLowerCase().includes(value.toLowerCase())
+      )
+    );
   }
+  setCurrentPage(0); // ✅ reset pagination
+}
+
 
   useEffect(() => {
     setFilteredList(listData);
@@ -121,7 +125,12 @@ image: `${baseUrl}${item?.featured_image}`,
     dispatch(fetchBlogFilterList());
     dispatch(fetchWhitepaperList());
   }, [dispatch]);
-
+useEffect(() => {
+  // whenever search/filter changes and reduces results
+  if (currentPage >= Math.ceil(filteredResources.length / itemsPerPage)) {
+    setCurrentPage(0); // reset to first page
+  }
+}, [filteredResources, currentPage]);
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
@@ -134,15 +143,13 @@ image: `${baseUrl}${item?.featured_image}`,
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
           searchDebouncing={search}
-          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
+          mainClass={"p-0 mx-0"}
         />
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
-        {/* Content */}
-
-        {/* Grid Display with animation */}
-        <div className="grid grid-cols-1 sm:grid-cols-2  gap-8 mt-[2rem]">
+        {/* Grid Display */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-[2rem]">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
               <motion.div
@@ -151,7 +158,7 @@ image: `${baseUrl}${item?.featured_image}`,
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="flex flex-col h-[400px] md:h-[450px]   overflow-hidden"
+                className="flex flex-col h-[400px] md:h-[450px] overflow-hidden"
                 onClick={() => handleClick(item)}
               >
                 {/* Image */}
@@ -159,38 +166,44 @@ image: `${baseUrl}${item?.featured_image}`,
                   <Image
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover rounded-2xl "
+                    className="w-full h-full object-cover rounded-2xl"
                     width={400}
                     height={400}
-                    style={{ objectFit: "cover" }}
                   />
                 </div>
 
                 {/* Content */}
-                <div className="w-full  px-4 py-3 flex flex-col justify-between">
+                <div className="w-full px-4 py-3 flex flex-col justify-between">
                   <div className="flex justify-between items-start">
-                    <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
+                    <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words text-[#28272D]">
                       {item.title}
                     </h3>
                     <button
-                      onClick={() => handleCopy(item.link, item.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleCopy(item.link, item.id);
+                      }}
                       className="text-gray-500 hover:text-black"
                       title="Copy link"
                     >
                       <FaShareAlt color="#2E3092" className="w-6 h-6" />
                     </button>
                   </div>
-                  <div className="flex flex-wrap gap-2 my-2 ">
-                    {/* Container to hold tags */}
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 my-2">
+                    {Array.isArray(item.tags) &&
+                      item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                   </div>
+
+                  {/* Copy feedback */}
                   {copiedId === item.id && (
                     <span className="text-green-500 text-xs mt-2">
                       Link copied!
@@ -202,10 +215,10 @@ image: `${baseUrl}${item?.featured_image}`,
           </AnimatePresence>
         </div>
 
-        {/* Custom Pagination with animation */}
+        {/* Pagination */}
         <div className="flex justify-center items-center">
-          <div className="mt-8  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Previous Button */}
+          <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
+            {/* Prev */}
             <motion.button
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 0}
@@ -220,7 +233,7 @@ image: `${baseUrl}${item?.featured_image}`,
               <FaLessThan className="w-3 h-3" />
             </motion.button>
 
-            {/* Page Numbers */}
+            {/* Pages */}
             {Array.from({ length: totalPages }, (_, i) => (
               <motion.button
                 key={i}
@@ -237,11 +250,13 @@ image: `${baseUrl}${item?.featured_image}`,
               </motion.button>
             ))}
 
-            {/* Next Button */}
+            {/* Next */}
             <motion.button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages - 1}
-              whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
+              whileHover={{
+                scale: currentPage === totalPages - 1 ? 1 : 1.05,
+              }}
               whileTap={{ scale: 0.95 }}
               className={`px-4 py-2 bg-white ${
                 currentPage === totalPages - 1
