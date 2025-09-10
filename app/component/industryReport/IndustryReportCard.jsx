@@ -17,46 +17,31 @@ import { FilterSec } from "../utilities/FilterSec";
 
 export const IndustryReportCard = () => {
   const dispatch = useDispatch();
-  const listData = useSelector((state) => state.industryreport.list);
-  const [filteredList, setFilteredList] = useState(listData);
   const router = useRouter();
+
+  const listData = useSelector((state) => state.industryreport.list);
+  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry || []);
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
 
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
-  const FilterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
-  );
-  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
     Topics: [],
   });
-
-  const filters = {
-    Industry: ["All", ...FilterIndustry],
-    Topics: ["All", ...FilterTopic],
-  };
   const [currentPage, setCurrentPage] = useState(0);
 
+  // ✅ Fetch only once
   useEffect(() => {
     dispatch(fetchBlogFilterList());
     dispatch(fetchIndustryReportList());
   }, [dispatch]);
-useEffect(() => {
-  dispatch(fetchBlogFilterList());
-  dispatch(fetchIndustryReportList());
-}, [dispatch]);
 
-useEffect(() => {
-  setFilteredList(listData);
-}, [listData]);
-
-  const resources = Array.isArray(filteredList)
-    ? filteredList.map((item) => {
+  // Build resources directly from Redux listData
+  const resources = Array.isArray(listData)
+    ? listData.map((item) => {
         const slug = slugify(item.hero_title1 || "untitled", { lower: true });
-
-        const origin =
-          typeof window !== "undefined" ? window.location.origin : "";
+        const origin = typeof window !== "undefined" ? window.location.origin : "";
 
         return {
           id: item?._id,
@@ -72,6 +57,32 @@ useEffect(() => {
       })
     : [];
 
+  // Filtering
+  const filteredResources = resources.filter((item) => {
+    const industryMatch =
+      activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
+
+    const tagMatch =
+      activeFilters.Topics.length === 0 ||
+      activeFilters.Topics.some((topic) => item.tags.includes(topic));
+
+    return industryMatch && tagMatch;
+  });
+
+  // ✅ Reset to first page when filtered list changes
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [filteredResources.length]);
+
+  // Pagination
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
+  const currentPageData = filteredResources.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
+  // Handlers
   const handleClick = (item) => {
     const slug = slugify(item.title, { lower: true });
     dispatch(setSelectedIndustryReportId(item.id));
@@ -99,45 +110,19 @@ useEffect(() => {
     }
   };
 
-  const filteredResources = resources.filter((item) => {
-    const industryMatch =
-      activeFilters.Industry === "All" ||
-      item.industry === activeFilters.Industry;
-
-    const tagMatch =
-      activeFilters.Topics.length === 0 ||
-      activeFilters.Topics.some((topic) => item.tags.includes(topic));
-
-    return industryMatch && tagMatch;
-  });
-
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
-  const currentPageData = filteredResources.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
-
-  const goToPage = (index) => {
-    if (index < 0 || index >= totalPages) return;
-    setCurrentPage(index);
-  };
-
   function search(value) {
-    if (value === "") setFilteredList(listData);
-    else
-      setFilteredList(
-        listData.filter((blog) =>
-          blog.hero_title1.toLowerCase().includes(value.toLowerCase())
-        )
-      );
+    setActiveFilters((prev) => ({ ...prev, search: value.toLowerCase() }));
+    setCurrentPage(0);
   }
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
         <FilterSec
-          filters={filters}
+          filters={{
+            Industry: ["All", ...FilterIndustry],
+            Topics: ["All", ...FilterTopic],
+          }}
           activeFilters={activeFilters}
           setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
@@ -150,7 +135,7 @@ useEffect(() => {
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
-        {/* Grid Display with animation */}
+        {/* Grid Display */}
         <div className="grid grid-cols-1 gap-8">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
@@ -208,9 +193,7 @@ useEffect(() => {
                   </div>
 
                   {copiedId === item.id && (
-                    <span className="text-green-500 text-xs mt-2">
-                      Link copied!
-                    </span>
+                    <span className="text-green-500 text-xs mt-2">Link copied!</span>
                   )}
                 </div>
               </motion.div>
@@ -221,9 +204,9 @@ useEffect(() => {
         {/* Pagination */}
         <div className="flex justify-center items-center">
           <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Previous Button */}
+            {/* Prev */}
             <motion.button
-              onClick={() => goToPage(currentPage - 1)}
+              onClick={() => setCurrentPage((p) => Math.max(p - 1, 0))}
               disabled={currentPage === 0}
               whileHover={{ scale: currentPage === 0 ? 1 : 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -236,11 +219,11 @@ useEffect(() => {
               <FaLessThan className="w-3 h-3" />
             </motion.button>
 
-            {/* Page Numbers */}
+            {/* Page numbers */}
             {Array.from({ length: totalPages }, (_, i) => (
               <motion.button
                 key={i}
-                onClick={() => goToPage(i)}
+                onClick={() => setCurrentPage(i)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-4 py-2 border-r border-gray-300 ${
@@ -253,9 +236,9 @@ useEffect(() => {
               </motion.button>
             ))}
 
-            {/* Next Button */}
+            {/* Next */}
             <motion.button
-              onClick={() => goToPage(currentPage + 1)}
+              onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages - 1))}
               disabled={currentPage === totalPages - 1}
               whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
               whileTap={{ scale: 0.95 }}
