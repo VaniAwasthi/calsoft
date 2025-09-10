@@ -16,9 +16,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { ShareSection } from "../../../component/whitepaper/expanPage/WhitepaperReadMore";
 import { fetchDatasheetById, fetchDatasheetList } from "../../../store/actions/datasheetAction";
+import { baseUrl } from "@/config";
 
 const Page = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
 const { slug } = useParams();
 

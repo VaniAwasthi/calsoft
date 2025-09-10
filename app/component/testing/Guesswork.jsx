@@ -8,36 +8,36 @@ export default function Guesswork({
     {
       title: "Readiness Assessment",
       description:
-        "Evaluate infrastructure, workloads, compliance constraints, and cloud goals.",
-      output: "Output: Migration Feasibility Report + Risk Scorecard",
+        "Identify functional gaps, automation levels, test data issues, and performance SLAs.",
+      output: "Output: QA Heatmap + Coverage Scorecard",
       alignment: "left",
     },
     {
-      title: "Workload Discovery & Mapping",
+      title: "Test Strategy Design",
       description:
-        "Use automated tools to classify workloads, dependencies, and optimization opportunities.",
-      output: "Output: Cloud Suitability Map + Prioritized Backlog",
+        "Map user journeys, business workflows, and SLAs to functional and non-functional test plans.",
+      output: "Output: Unified Test Plan (Functional + Non-Functional)",
       alignment: "right",
     },
     {
-      title: "Migration Strategy Design",
+      title: "Tooling & Framework Setup",
       description:
-        "Choose the right approach — Rehost / Replatform / Refactor — based on impact and complexity.",
-      output: "Output: 6R Decision Plan + TCO Estimate",
+        "Establish automation, test data generation, performance test tools, and CI/CD hooks.",
+      output: "Output: Test Automation Stack + Environment Readiness",
       alignment: "left",
     },
     {
-      title: "Pilot Migration & Cutover Testing",
+      title: " Pilot Run + Baseline Establishment",
       description:
-        "Execute pilot migration, monitor cutover behavior, test rollback and audit workflows.",
-      output: "Output: Pilot Outcome Report + Security Validation",
+        "Run pilot on a representative module to validate time, coverage, and defects detected.",
+      output: "Output: QA Effectiveness Report",
       alignment: "right",
     },
     {
-      title: "Infra Readiness Review",
+      title: "Full-Scale Rollout + SLA Tracking",
       description:
-        "Kick off with a structured 60-minute discovery call. We assess your current infra stack across:",
-      output: "Output: Migration Feasibility Report + Risk Scorecard",
+        "Apply test strategy across releases and track KPIs like defect leakage, cycle time, and stability index.",
+      output: "Output: QA Dashboard + Executive Summary",
       alignment: "left",
     },
   ],

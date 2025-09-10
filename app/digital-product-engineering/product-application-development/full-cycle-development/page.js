@@ -4,7 +4,7 @@ import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import DevelopmentCycle from "../../../component/product-application-development/DevelopementCycleMatters";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
@@ -159,7 +159,8 @@ const Page = () => {
             title: "Integrated QA & CI/CD pipelines",
           },
         ]}
-        buttonText="Request Architecture Blueprint"
+        buttonText="Request Demo"
+        ScorecardComponent={RequestDemo}
         buttonClicked={()=>showHubSpotForm("request-architecture-blueprint")}
       />
       <UseCases
@@ -183,29 +184,29 @@ const Page = () => {
         ]}
         data={{
           leftSideContent: {
-            title: "Faster MVP. Lower Costs. Zero Rework.",
+            title: "Deliver Better. Scale Smarter. Win Faster.",
             subTitle:
               null,
             description:
-              "Our approach de-risks the early phases by up to 40%. You get:",
+              "Here’s what our clients gained with Calsoft's full-cycle approach:",
           },
           rightSideContent: [
             {
-              title: "30%",
-              subTitle: "faster time-to-MVP",
+              title: "35%",
+              subTitle: "faster MVP launches (vs multi-vendor setups)",
             },
             {
-              title: "Up to 25%",
-              subTitle: "cost saving through right-stack decisions",
+              title: "40%",
+              subTitle: "fewer post-release defects due to shift-left QA",
             },
             {
-              title: "100%",
-              subTitle: "cloud readiness with reusable components",
+              title: "50%",
+              subTitle: "more sprint efficiency using cross-functional pods",
             },
             {
-              title: "3X",
+              title: "Up to $400K ",
               subTitle:
-                "faster onboarding of dev teams with clean blueprints",
+                "saved/year by choosing optimal infra stack & code reuse",
             },
           ],
         }}

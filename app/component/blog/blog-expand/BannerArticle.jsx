@@ -11,7 +11,6 @@ import ProfileDummy from "../../../assets/caseStudies/Profile.webp";
 import { baseUrl } from "@/config";
 import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 export const Banner = ({ blog }) => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
 
   return (
     <section className="md:py-7 px-7 md:px-20">

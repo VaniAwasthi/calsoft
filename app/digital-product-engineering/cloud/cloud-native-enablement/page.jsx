@@ -197,6 +197,7 @@ security, and operations — at scale."
         onPagerButton={()=>showHubSpotForm("cloud-native-enablement-one-pg")}
       />
       <UseCases
+      desc="Calsoft’s Cloud-Native Enablement has transformed operations across:"
         useCases={[
           "ISVs & SaaS providers refactoring monoliths into resilient microservices",
           "Healthcare platforms shifting to HIPAA-compliant Kubernetes with audit trails",
@@ -206,8 +207,9 @@ security, and operations — at scale."
         ]}
       />
       <WhyCalsoft
+      sectionDescription="Cloud-native enablement isn’t a deployment checklist — it’s an engineering culture shift. Here’s why leaders choose Calsoft:"
         data={{
-          tableHeadings: ["Feature", "Calsoft", "Traditional Vendors"],
+          tableHeadings: ["Feature", "Calsoft", "General Cloud Vendors"],
           tableContent: [
             {
               name: "Platform Engineering Expertise",

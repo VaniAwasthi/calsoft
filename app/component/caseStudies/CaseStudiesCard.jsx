@@ -27,9 +27,9 @@ import { setSelectedCaseStudyId } from "../../store/reducers/caseStudyReducer.js
 import { slugify } from "../utilities/helper/SlugGenerator";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
 import { FilterSec } from "../utilities/FilterSec";
+import { baseUrl } from "@/config";
 
 export const CaseStudiesCard = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -63,7 +63,7 @@ export const CaseStudiesCard = () => {
   const images = [Info1, Info2];
 
   const resources = filteredListData.map((item) => {
-    const safeTitle = item?.hero_title1 || "Untitled"; // fallback
+    const safeTitle = item?.hero_title1 || "Untitled"; 
     return {
       ...item,
       id: item._id,

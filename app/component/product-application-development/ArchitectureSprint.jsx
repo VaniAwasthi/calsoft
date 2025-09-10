@@ -3,7 +3,7 @@ import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 
 export default function ArchitectureSprint({
-  gradientText = "Want to see if you qualify for a Free Architecture Sprint?”",
+  gradientText = "Want to see if you qualify for a Free Architecture Sprint?",
   buttonText = "See My Sprint Eligibility",
 }) {
   return (

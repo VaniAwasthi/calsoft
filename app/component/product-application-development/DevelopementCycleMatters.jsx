@@ -38,20 +38,20 @@ export default function DevelopementCycleMatters() {
       />
       <div className="size-52 rounded-full absolute top-2 left-[calc(50%-6.35rem)] p-1.5 bg-white hover:scale-105 transition-all">
         <div className="bg-[#2E3092] w-full h-full rounded-full flex flex-col items-center justify-center p-5 text-center text-white">
-          <p className="text-[38px] font-bold">30%</p>
-          <p className="text-lg">fail due to wrong stack</p>
+          <p className="text-[38px] font-bold">60%</p>
+          <p className="text-lg">miss timelines due to unclear handoffs</p>
         </div>
       </div>
       <div className="size-52 rounded-full absolute bottom-2.5 left-[3.6rem] p-1.5 bg-white hover:scale-105 transition-all">
         <div className="bg-[linear-gradient(180deg,#2E3092_50%,#ED1C24_105%)] w-full h-full rounded-full flex flex-col items-center justify-center p-5 text-center text-white">
-          <p className="text-[38px] font-bold">15%</p>
-          <p className="text-lg">overbudget due to bad infra decisions</p>
+          <p className="text-[38px] font-bold">40%</p>
+          <p className="text-lg">spend &gt; 30% on post-release fixes</p>
         </div>
       </div>
       <div className="size-52 rounded-full absolute bottom-2 right-[3.5rem] p-1.5 bg-white hover:scale-105 transition-all">
         <div className="bg-[linear-gradient(180deg,#2E3092_50%,#ED1C24_105%)] w-full h-full rounded-full flex flex-col items-center justify-center p-5 text-center text-white">
-          <p className="text-[38px] font-bold">22%</p>
-          <p className="text-lg">due to unclear MVP scope</p>
+          <p className="text-[38px] font-bold">35%</p>
+          <p className="text-lg">abandon MVPs due to poor market-fit validation</p>
         </div>
       </div>
     </div>

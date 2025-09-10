@@ -37,8 +37,8 @@ export default function Page() {
       <CustomSec />
       <RealSec />
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+        BoldContent=""
+        lightContent= "It’s about a conversation – how to structure data analytics just the right way"
         link="#"
       />
     </>

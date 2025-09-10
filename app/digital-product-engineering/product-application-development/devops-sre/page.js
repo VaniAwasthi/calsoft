@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
@@ -159,6 +159,7 @@ const Page = () => {
             title: "Auto-healing & Incident Management",
           },
         ]}
+        ScorecardComponent={RequestDemo}
       />
       <UseCases
         CTACopy="Speed up release cycles by 60% using SRE practices."
