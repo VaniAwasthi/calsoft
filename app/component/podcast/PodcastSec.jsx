@@ -4,71 +4,35 @@ import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaPlay, FaShareAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Info1 from "../../assets/Infographic/Info1.webp";
+import Info2 from "../../assets/Infographic/Info2.webp";
 import ReactPlayer from "react-player";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
-import { fetchPodcastsList } from "@/app/store/actions/podcastAction";
-import { FilterSec } from "../utilities/FilterSec";
 import ButtonLayout from "../utilities/ButtonLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
+import { fetchPodcastsList } from "@/app/store/actions/podcastAction";
 import { baseUrl } from "@/config";
+import { FilterSec } from "../utilities/FilterSec";
 
 export const PostcastSec = () => {
   const dispatch = useDispatch();
-
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
   const [selectedVideo, setSelectedVideo] = useState(null);
+
+  // --- NEW STATES for modal playback ---
   const [playing, setPlaying] = useState(true);
   const [pausedAt30, setPausedAt30] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [resumeTime, setResumeTime] = useState(0);
   const [completedForms, setCompletedForms] = useState({});
-  const [activeFilters, setActiveFilters] = useState({
-    Industry: "All",
-    Topics: [],
-  });
-  const [currentPage, setCurrentPage] = useState(0);
-  const [resources, setResources] = useState([]);
-  const [loading, setLoading] = useState(true); // ✅ Loading state
 
-  // --- Redux selectors ---
-  const PodcastDataList = useSelector((state) => state?.podcast?.list || []);
-  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry || []);
-  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
-
-  const filters = {
-    Industry: ["All", ...FilterIndustry],
-    Topics: ["All", ...FilterTopic],
-  };
-
-  // --- Fetch data on mount ---
   useEffect(() => {
     dispatch(fetchBlogFilterList());
     dispatch(fetchPodcastsList());
   }, [dispatch]);
 
-  // --- Update resources whenever PodcastDataList changes ---
-  useEffect(() => {
-    if (PodcastDataList?.length) {
-      const cardData = PodcastDataList.map((data, i) => ({
-        id: data._id,
-        title: data.title,
-        image: `${baseUrl}${data.podcast_image}`,
-        link: `https://yourdomain.com/card/${i + 1}`,
-        speaker: data.speaker?.name,
-        videoUrl: data.url,
-        industry: data.industry || "All",
-      }));
-      setResources(cardData);
-      setLoading(false); // ✅ Data loaded
-    } else {
-      setResources([]);
-      setLoading(true);
-    }
-  }, [PodcastDataList]);
-
-  // --- Hubspot Form Script ---
   useEffect(() => {
     if (showForm) {
       const script = document.createElement("script");
@@ -83,10 +47,13 @@ export const PostcastSec = () => {
             region: "na1",
             target: "#hubspot-form-container",
             onFormSubmit: () => {
+              // ✅ Mark this video as completed
               setCompletedForms((prev) => ({
                 ...prev,
                 [selectedVideo]: true,
               }));
+
+              // ✅ Hide form and resume video at last time
               setShowForm(false);
               setPlaying(true);
             },
@@ -95,9 +62,38 @@ export const PostcastSec = () => {
       };
       document.body.appendChild(script);
     }
-  }, [showForm, selectedVideo]);
+  }, [showForm]);
 
-  // --- Handlers ---
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const PodcastDataList = useSelector((state) => state?.podcast?.list);
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+  const [activeFilters, setActiveFilters] = useState({
+    Industry: "All",
+    Topics: [],
+  });
+
+  const filters = {
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
+  };
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const images = [Info1, Info2];
+
+  const cardData =
+    PodcastDataList?.map((data, i) => ({
+      id: data?._id,
+      title: data?.title,
+      image: `${baseUrl}${data?.podcast_image}`,
+      link: `https://yourdomain.com/card/${i + 1}`,
+      speaker: data?.speaker?.name,
+      videoUrl: data?.url,
+    })) || [];
+
+  const [resources, setResources] = useState([...cardData]);
+
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
   };
@@ -118,41 +114,11 @@ export const PostcastSec = () => {
     }
   };
 
-  const search = (value) => {
-    if (!value) {
-      setResources(
-        PodcastDataList.map((data, i) => ({
-          id: data._id,
-          title: data.title,
-          image: `${baseUrl}${data.podcast_image}`,
-          link: `https://yourdomain.com/card/${i + 1}`,
-          speaker: data.speaker?.name,
-          videoUrl: data.url,
-          industry: data.industry || "All",
-        }))
-      );
-    } else {
-      setResources(
-        PodcastDataList.filter((data) =>
-          data.title.toLowerCase().includes(value.toLowerCase())
-        ).map((data, i) => ({
-          id: data._id,
-          title: data.title,
-          image: `${baseUrl}${data.podcast_image}`,
-          link: `https://yourdomain.com/card/${i + 1}`,
-          speaker: data.speaker?.name,
-          videoUrl: data.url,
-          industry: data.industry || "All",
-        }))
-      );
-    }
-    setCurrentPage(0);
-  };
-
-  // --- Filter & Pagination ---
   const filteredResources = resources.filter((item) => {
     const industryMatch =
-      activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
+      activeFilters.Industry === "All" ||
+      item.industry === activeFilters.Industry;
+
     return industryMatch;
   });
 
@@ -168,7 +134,16 @@ export const PostcastSec = () => {
     setCurrentPage(index);
   };
 
-  if (loading) return <p className="text-center py-10">Loading podcasts...</p>;
+  function search(value) {
+    console.log(value);
+    if (value === "") setResources([...cardData]);
+    else
+      setResources(
+        cardData.filter((blog) =>
+          blog.title.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
@@ -184,7 +159,6 @@ export const PostcastSec = () => {
           searchDebouncing={search}
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
-
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
         {/* Grid */}
@@ -199,7 +173,7 @@ export const PostcastSec = () => {
                 viewport={{ once: false, amount: 0.3 }}
                 className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
               >
-                {/* Image */}
+                {/* Image with Play Button Overlay */}
                 <div className="relative w-full h-3/5">
                   <Image
                     src={item.image}
@@ -320,7 +294,7 @@ export const PostcastSec = () => {
                   )}
                 </div>
 
-                {/* Tap to Continue */}
+                {/* Tap to Continue button */}
                 {pausedAt30 && !showForm && !completedForms[selectedVideo] && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <button
@@ -337,8 +311,8 @@ export const PostcastSec = () => {
         </AnimatePresence>
 
         {/* Pagination */}
-        <div className="flex justify-center items-center mt-8">
-          <div className="gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none flex">
+        <div className="flex justify-center items-center">
+          <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
             <motion.button
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 0}
