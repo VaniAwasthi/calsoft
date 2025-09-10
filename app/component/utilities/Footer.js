@@ -77,7 +77,7 @@ const Footer = () => {
                     }}
                     className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0"
                   >
-                    <GoArrowRight /> Subscribe
+                    <GoArrowRight /> Subscribe to our Newsletter
                   </button>
                 </div>
               </div>

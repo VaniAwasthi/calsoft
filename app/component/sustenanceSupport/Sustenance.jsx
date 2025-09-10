@@ -125,13 +125,13 @@ export const StreamlineSec = () => {
         link="/digital-product-engineering/sustenance-support/documentation-support"
         whatWeDo={[
           "Keep docs accurate and easy to use",
-          "Build APIs to auto-manage traffic",
-          "Connect to edge and cloud stacks",
+          "Version control across all assets",
+          "Align updates with product changes",
         ]}
         businessImpact={[
-          "Shift network config on the fly",
-          "Less manual work, fewer errors",
-          "One setup for hybrid networking",
+          "Streamlined support with self-service docs",
+          "Quicker training for new users",
+          "Clear, current info for all teams",
         ]}
         imageSrc={Info2}
         imageAlt="Image"
