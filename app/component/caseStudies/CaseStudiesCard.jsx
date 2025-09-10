@@ -1,118 +1,70 @@
 "use client";
 
 import Image from "next/image";
-import {
-  FaArrowRight,
-  FaGreaterThan,
-  FaLessThan,
-  FaShareAlt,
-} from "react-icons/fa";
+import { FaArrowRight, FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Info1 from "../../assets/Infographic/Info1.webp";
-import Info2 from "../../assets/Infographic/Info2.webp";
-import logo2 from "../../assets/home/logo2.png";
-import Casestudybg from "../../assets/home/Insights.webp";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/scrollbar";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Link from "next/link";
-import { useDispatch, useSelector } from "react-redux";
-import { useRouter } from "next/navigation";
+import Info1 from "../../assets/Infographic/Info1.webp";
+import Casestudybg from "../../assets/home/Insights.webp";
 import { fetchCaseStudiesList } from "../../store/actions/caseStudyActions.js";
 import { setSelectedCaseStudyId } from "../../store/reducers/caseStudyReducer.js";
-import { slugify } from "../utilities/helper/SlugGenerator";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
 import { FilterSec } from "../utilities/FilterSec";
+import { slugify } from "../utilities/helper/SlugGenerator";
 import { baseUrl } from "@/config";
 
 export const CaseStudiesCard = () => {
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const [copiedId, setCopiedId] = useState(null);
-  const [openDropdown, setOpenDropdown] = useState("");
-  const [currentPage, setCurrentPage] = useState(0);
+  const listData = useSelector((state) => state.caseStudy.list) || [];
+  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry) || [];
+  const FilterTopic = useSelector((state) => state.blogs.filterTopic) || [];
+
   const [filteredListData, setFilteredListData] = useState([]);
-  const listData = useSelector((state) => state.caseStudy.list);
-  const FilterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
-  );
-  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
-  const [activeFilters, setActiveFilters] = useState({
-    Industry: "All",
-    Topics: [],
-  });
-
-  const filters = {
-    Industry: ["All", ...FilterIndustry],
-    Topics: ["All", ...FilterTopic],
-  };
-
-  const handleClick = (item) => {
-    const safeTitle = item.title || "untitled";
-    const slug = slugify(safeTitle, { lower: true });
-    dispatch(setSelectedCaseStudyId(item._id));
-    localStorage.setItem("selectedCaseStudyId", item._id);
-    router.push(`/insights/case-studies/${slug}`);
-  };
-
-  const images = [Info1, Info2];
-
-  const resources = filteredListData.map((item) => {
-    const safeTitle = item?.hero_title1 || "Untitled"; 
-    return {
-      ...item,
-      id: item._id,
-      title: safeTitle,
-      image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
-      slug: safeTitle
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/(^-|-$)/g, ""),
-      link: `https://yourdomain.com/card/${item._id}`,
-    };
-  });
-
-  const toggleDropdown = (filter) => {
-    setOpenDropdown(openDropdown === filter ? "" : filter);
-  };
-
-  const selectFilter = (type, value) => {
-    setActiveFilters({ ...activeFilters, [type]: value });
-    setOpenDropdown("");
-    setCurrentPage(0);
-  };
-
-  const handleCopy = async (link, id) => {
-    try {
-      await navigator.clipboard.writeText(link);
-      setCopiedId(id);
-      setTimeout(() => setCopiedId(null), 1500);
-    } catch (error) {
-      console.error("Copy failed:", error);
-    }
-  };
-  const filteredResources = resources.filter((item) => {
-    const industryMatch =
-      activeFilters.Industry === "All" ||
-      item.industry === activeFilters.Industry;
-
-    const tagMatch =
-      activeFilters.Topics.length === 0 ||
-      activeFilters.Topics.some(
-        (topic) =>
-          // <CHANGE> Added safety check for undefined tags
-          item.tags && item.tags.includes(topic)
-      );
-
-    return industryMatch && tagMatch;
-  });
+  const [activeFilters, setActiveFilters] = useState({ Industry: "All", Topics: [] });
+  const [openDropdown, setOpenDropdown] = useState("");
+  const [copiedId, setCopiedId] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const itemsPerPage = 6;
+
+  // Load initial data
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(fetchCaseStudiesList());
+  }, [dispatch]);
+
+  useEffect(() => {
+    setFilteredListData(listData);
+    setCurrentPage(0);
+  }, [listData]);
+
+  // Resources mapped safely
+  const resources = filteredListData.map((item) => ({
+    ...item,
+    id: item._id,
+    title: item?.hero_title1 || "Untitled",
+    image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
+    slug: slugify(item?.hero_title1 || "Untitled", { lower: true }),
+    link: `https://yourdomain.com/card/${item._id}`,
+  }));
+
+  // Filtered resources
+  const filteredResources = resources.filter((item) => {
+    const industryMatch = activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
+    const topicMatch =
+      activeFilters.Topics.length === 0 ||
+      (item.tags && activeFilters.Topics.some((topic) => item.tags.includes(topic)));
+    return industryMatch && topicMatch;
+  });
+
   const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
   const currentPageData = filteredResources.slice(
     currentPage * itemsPerPage,
@@ -124,36 +76,42 @@ export const CaseStudiesCard = () => {
     setCurrentPage(index);
   };
 
-  const caseStudyData = {
-    title:
-      "Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
-    description: [
-      "Discover how a cloud infrastructure leader enabled self-service, large-scale VM workload migrations with Calsoft’s CLI-powered solution.",
-    ],
-    stats: [
-      { count: "40%", text: "faster validation cycles" },
-      { count: "36%", text: "lower infrastructure costs" },
-    ],
+  const handleClick = (item) => {
+    dispatch(setSelectedCaseStudyId(item._id));
+    localStorage.setItem("selectedCaseStudyId", item._id);
+    router.push(`/insights/case-studies/${item.slug}`);
   };
 
-  function search(value) {
-    if (value === "") setFilteredListData(listData);
+  const handleCopy = async (link, id) => {
+    try {
+      await navigator.clipboard.writeText(link);
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 1500);
+    } catch (err) {
+      console.error("Copy failed:", err);
+    }
+  };
+
+  const toggleDropdown = (filter) => setOpenDropdown(openDropdown === filter ? "" : filter);
+
+  const selectFilter = (type, value) => {
+    setActiveFilters({ ...activeFilters, [type]: value });
+    setOpenDropdown("");
+    setCurrentPage(0);
+  };
+
+  const search = (value) => {
+    if (!value) setFilteredListData(listData);
     else
       setFilteredListData(
-        listData.filter((caseStudy) =>
-          caseStudy.hero_title1.toLowerCase().includes(value.toLowerCase())
+        listData.filter((item) =>
+          (item.hero_title1 || "").toLowerCase().includes(value.toLowerCase())
         )
       );
-  }
+    setCurrentPage(0);
+  };
 
-  useEffect(() => {
-    setFilteredListData(listData);
-  }, [listData]);
-
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-    dispatch(fetchCaseStudiesList());
-  }, [dispatch]);
+  const filters = { Industry: ["All", ...FilterIndustry], Topics: ["All", ...FilterTopic] };
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
@@ -170,254 +128,68 @@ export const CaseStudiesCard = () => {
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
-        <p className="mb-4 text-sm">{filteredListData.length} Results</p>
-        {/* recent */}
-        <motion.div
-          initial={{ opacity: 0, y: -100 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
-          className="pt-8 "
-        >
-          <motion.h2
-            key={caseStudyData.title}
-            className="text-xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
-          >
-            Cloud Provider Accelerates VMware Migration
-            <span className="text-black font-normal px-3">
-              with Calsoft’s CLI Tool
-            </span>
-          </motion.h2>
+        <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            viewport={{ once: false, amount: 0.3 }}
-            className="mt-8 flex flex-col md:flex-row gap-8 md:gap-12 items-stretch"
-          >
-            <motion.div
-              className=" text-white p-4 md:p-8 rounded-[20px] h-[350px]  md:w-2/3 flex flex-col justify-center bg-cover bg-center"
-              initial={{ opacity: 0, x: -50 }}
-              style={{
-                backgroundImage: `url(${Casestudybg.src})`,
-              }}
-              transition={{ duration: 0.5 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              {/* <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
-                  <Image
-                    src={logo2}
-                    className="w-full"
-                    alt="logo"
-                    width={100}
-                    height={100}
-                  />
-                </div> */}
-            </motion.div>
-
-            <div className="w-full flex flex-col justify-between">
-              <div>
-                {caseStudyData.description.map((desc, index) => (
-                  <>
-                    {/* <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem] py-2">
-                {caseStudyData.title}
-              </h2> */}
-                    <motion.p
-                      key={index}
-                      className="text-[#959595] text-sm md:text-[18px] font-light p-2"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.2 }}
-                      dangerouslySetInnerHTML={{ __html: desc }}
-                      whileInView={{ x: 0, opacity: 1 }}
-                      viewport={{ once: false, amount: 0.3 }}
-                    />
-                  </>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-          <div className="w-full md:w-full">
-            {/* Swiper for mobile */}
-            <div className="block md:hidden  mb-10">
-              <Swiper
-                modules={[Autoplay, Pagination]}
-                pagination={{ clickable: true }}
-                spaceBetween={10}
-                slidesPerView={2}
-                loop
-                autoplay={{ delay: 6000 }}
-              >
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-10 ">
-                  {caseStudyData.stats.map((stat, index) => (
-                    <SwiperSlide key={index}>
-                      <motion.div
-                        className="p-4 bg-white rounded-xl shadow-lg flex items-center space-x-2 my-2"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileHover={{ x: -30 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 0.2, delay: 0.2 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                        style={{ boxShadow: "0px 1px 9px 0px #D9DBF1" }}
-                      >
-                        <p className="text-lg font-semibold text-gray-700">
-                          {stat.count}
-                        </p>
-                        <div className="text-sm text-gray-500 leading-tight px-2">
-                          {stat.text}
-                        </div>
-                      </motion.div>
-                    </SwiperSlide>
-                  ))}
-                </div>
-              </Swiper>
-            </div>
-
-            {/* Original flex layout for md+ */}
-            <div className="hidden md:flex space-y-4 justify-evenly items-center">
-              {caseStudyData.stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="p-4 bg-white rounded-xl shadow-lg flex items-center space-x-7 space-y-2 my-[2rem]"
-                  initial={{ opacity: 0, x: 50 }}
-                  whileHover={{ x: -30 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.2, delay: 0.2 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  style={{ boxShadow: "0px 2px 9px #D9DBF1" }}
-                >
-                  <p className="text-2xl font-semibold text-gray-700">
-                    {stat.count}
-                  </p>
-                  <div className="text-sm text-gray-500 leading-tight">
-                    {stat.text}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-        {/* end */}
-        {/* Grid Display with animation */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <AnimatePresence>
-            {currentPageData.map((item, idx) => (
-              <div
+            {currentPageData.map((item) => (
+              <motion.div
+                key={item.id}
                 onClick={() => handleClick(item)}
-                key={idx}
-                className="cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 30 }}
+                transition={{ duration: 0.4 }}
+                className="cursor-pointer flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
               >
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 30 }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
-                >
-                  {/* Image */}
-                  <div className="w-full h-[65%] overflow-hidden">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-100 object-cover"
-                      width={400}
-                      height={400}
-                    />
+                <div className="w-full h-[65%] overflow-hidden">
+                  <Image src={item.image} alt={item.title} width={400} height={400} className="w-full h-full object-cover"/>
+                </div>
+                <div className="w-full h-[35%] p-4 flex flex-col justify-between">
+                  <h3 className="text-sm md:text-[16px] font-semibold text-[#28272D]">{item.title}</h3>
+                  <div className="flex justify-between items-center">
+                    <FaArrowRight color="#2E3092" className="w-6 h-6"/>
+                    <button onClick={() => handleCopy(item.link, item.id)} title="Copy link">
+                      <FaShareAlt color="#2E3092" className="w-6 h-6"/>
+                    </button>
                   </div>
-
-                  {/* Content */}
-                  <div className="w-full h-[35%] p-4 flex flex-col justify-between">
-                    <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
-                      {item.title}
-                    </h3>
-                    <div className="flex flex-wrap gap-2 my-2">
-                      {/* Container to hold tags */}
-
-                      {/* {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))} */}
-                    </div>
-                    <div className="flex justify-between items-start">
-                      <FaArrowRight color="#2E3092" className="w-6 h-6" />
-                      <button
-                        onClick={() => handleCopy(item.link, item.id)}
-                        className="text-gray-500 hover:text-black"
-                        title="Copy link"
-                      >
-                        <FaShareAlt color="#2E3092" className="w-6 h-6" />
-                      </button>
-                    </div>
-
-                    {copiedId === item.id && (
-                      <span className="text-green-500 text-xs mt-2">
-                        Link copied!
-                      </span>
-                    )}
-                  </div>
-                </motion.div>
-              </div>
+                  {copiedId === item.id && <span className="text-green-500 text-xs mt-2">Link copied!</span>}
+                </div>
+              </motion.div>
             ))}
           </AnimatePresence>
         </div>
 
-        {/* Custom Pagination with animation */}
+        {/* Pagination */}
         <div className="flex justify-center items-center">
-          <div className="mt-8  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Previous Button */}
-            <motion.button
-              onClick={() => goToPage(currentPage - 1)}
-              disabled={currentPage === 0}
-              whileHover={{ scale: currentPage === 0 ? 1 : 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-4 py-3 bg-white border-r border-gray-300 ${
-                currentPage === 0
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "text-[#2E3092]"
-              }`}
-            >
-              <FaLessThan className="w-3 h-3" />
-            </motion.button>
 
-            {/* Page Numbers */}
-            {Array.from({ length: totalPages }, (_, i) => (
-              <motion.button
-                key={i}
-                onClick={() => goToPage(i)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className={`px-4 py-2 border-r border-gray-300 ${
-                  currentPage === i
-                    ? "text-[#2E3092] font-medium"
-                    : "text-gray-500 hover:bg-gray-100"
-                } bg-white`}
-              >
-                {i + 1}
-              </motion.button>
-            ))}
+        <div className=" mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
+          <motion.button
+            onClick={() => goToPage(currentPage - 1)}
+            disabled={currentPage === 0}
+            className={`px-4 py-3 bg-white border-r border-gray-300 ${currentPage === 0 ? "text-gray-400 cursor-not-allowed" : "text-[#2E3092]"}`}
+          >
+            <FaLessThan className="w-3 h-3"/>
+          </motion.button>
 
-            {/* Next Button */}
+          {Array.from({ length: totalPages }, (_, i) => (
             <motion.button
-              onClick={() => goToPage(currentPage + 1)}
-              disabled={currentPage === totalPages - 1}
-              whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 bg-white ${
-                currentPage === totalPages - 1
-                  ? "text-gray-400 cursor-not-allowed"
-                  : "text-[#2E3092]"
-              }`}
+              key={i}
+              onClick={() => goToPage(i)}
+              className={`px-4 py-2 border-r border-gray-300 ${currentPage === i ? "text-[#2E3092] font-medium" : "text-gray-500 hover:bg-gray-100"} bg-white`}
             >
-              <FaGreaterThan className="w-3 h-3" />
+              {i + 1}
             </motion.button>
-          </div>
+          ))}
+
+          <motion.button
+            onClick={() => goToPage(currentPage + 1)}
+            disabled={currentPage === totalPages - 1}
+            className={`px-4 py-2 bg-white ${currentPage === totalPages - 1 ? "text-gray-400 cursor-not-allowed" : "text-[#2E3092]"}`}
+          >
+            <FaGreaterThan className="w-3 h-3"/>
+          </motion.button>
+        </div>
         </div>
       </div>
     </section>
