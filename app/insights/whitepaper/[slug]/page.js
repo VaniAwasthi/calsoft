@@ -15,6 +15,7 @@ import {
 } from "../../../component/whitepaper/expanPage/WhitepaperReadMore.jsx";
 import { fetchWhitepaperById, fetchWhitepaperList } from "../../../store/actions/whitepaperAction";
 import { slugify } from "@/app/component/utilities/helper/SlugGenerator";
+import { baseUrl } from "@/config";
 
 const Page = () => {
   const dispatch = useDispatch();

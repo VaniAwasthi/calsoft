@@ -98,6 +98,10 @@ const Page = () => {
               title: "Early detection of logic flaws",
               subTitle: "in critical workflows",
             },
+            {
+              title: "Higher CSAT scores",
+              subTitle: "due to fewer post-release issues",
+            },
           ],
         }}
         bookMeetingData={{

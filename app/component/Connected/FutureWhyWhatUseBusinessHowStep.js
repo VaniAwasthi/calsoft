@@ -152,6 +152,10 @@ export const What = () => {
         icon: icon6,
         title: "Identity & access federation the across ecosystem",
       },
+      {
+        icon: icon7,
+        title: "Low-code/no-code integration support",
+      },
     ],
 
     highlights: [

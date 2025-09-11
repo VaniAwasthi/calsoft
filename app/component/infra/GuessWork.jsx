@@ -128,7 +128,7 @@ export default function Component({
       id: 3,
       title: "Roadmap Design & Prioritization",
       description:
-        "Kick off with a structured 60-minute discovery call.\nWe assess your current infra stack across:",
+        "We co-create a 12–18 month roadmap focused on:",
       items: [
         "Architecture maturity",
         "Workload distribution",

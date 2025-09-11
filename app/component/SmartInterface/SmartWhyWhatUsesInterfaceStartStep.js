@@ -99,7 +99,7 @@ export const Why = () => {
       },
       {
         percent: "",
-        text: "Well-designed interfaces increase task completion by up to 40%.",
+        text: "Well-designed interfaces increase task completion by up to 40%",
         className: "shape2",
         bgshape: bgshape2,
       },
@@ -108,7 +108,7 @@ export const Why = () => {
       },
       {
         percent: "",
-        text: "Calsoft clients report 20-35% higher adoption within 6 weeks post redesign.",
+        text: "Calsoft clients report 20-35% higher adoption within 6 weeks post redesign",
         className: "shape3",
         bgshape: bgshape3,
       },
@@ -155,8 +155,8 @@ export const What = () => {
         title: "Microinteractions & Behavior Triggers",
       },
       {
-        icon: icon1,
-        title: "Task-Driven UI/UX Design",
+        icon: icon7,
+        title: "Adaptive Workflows Based on Role/User Context",
       },
     ],
 

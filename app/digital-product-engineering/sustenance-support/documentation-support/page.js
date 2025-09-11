@@ -188,15 +188,15 @@ export default function Page() {
             title: "Compliance packages",
             subTitle: "(SOC 2, HIPAA, ISO, FDA templates)",
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: "Internal knowledge bases,",
+            subTitle: "onboarding handbooks",
+          },
+          {
+            title:
+              "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
+            subTitle: null,
+          },
         ]}
       />
       <RealWorldImpact buttonText={null}

@@ -150,13 +150,13 @@ export const What = () => {
         title: "Integration readiness (APIs, external systems)",
       },
       {
-        icon: icon1,
-        title: "Modular architecture advisory",
+        icon: icon7,
+        title: "Business continuity alignment with IT strategy",
       },
-      {
-        icon: icon2,
-        title: "Resilience scoring & benchmarking",
-      },
+      // {
+      //   icon: icon2,
+      //   title: "Resilience scoring & benchmarking",
+      // },
     ],
 
     highlights: [

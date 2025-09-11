@@ -146,11 +146,15 @@ export const What = () => {
       },
       {
         icon: icon5,
-        title: "Auth, tokenized access & permissioning",
+        title: "OAuth, tokenized access & permissioning",
       },
       {
         icon: icon6,
         title: "Plugin store packaging & publishing",
+      },
+      {
+        icon: icon7,
+        title: "Marketplace certification compliance (Shopify, Atlassian, ServiceNow, etc.)",
       },
     ],
 
@@ -192,7 +196,7 @@ export const Use = () => {
     heading: "Use Cases",
     subheading: "From Feature Extension to Revenue Generation.",
     description:
-      "Our plugin development services are built to support diverse product strategie —from internal extensibility to monetizable marketplace components.",
+      "Our plugin development services are built to support diverse product strategies —from internal extensibility to monetizable marketplace components.",
     buttonText: "Download One Pager",
     cards: [
       {
