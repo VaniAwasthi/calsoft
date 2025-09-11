@@ -56,8 +56,9 @@ export const PostcastSec = () => {
       title: data?.title || "Untitled",
       image: data?.podcast_image ? `${baseUrl}${data?.podcast_image}` : Info1,
       link: `https://yourdomain.com/card/${i + 1}`,
-      speaker: data?.speaker?.name || "Unknown",
-      videoUrl: data?.url || "",
+ speaker: Array.isArray(data?.speakers) && data.speakers.length > 0
+      ? data.speakers.map((s) => s.name).join(", ")
+      : "Unknown",      videoUrl: data?.url || "",
       industry: data?.industry || "All",
     }));
   }, [PodcastDataList]);

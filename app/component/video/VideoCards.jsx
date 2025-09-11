@@ -2,64 +2,84 @@
 
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaPlay, FaShareAlt } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Info1 from "../../assets/Infographic/Info1.webp";
-import Info2 from "../../assets/Infographic/Info2.webp";
-import { FilterSec } from "../utilities/FilterSec";
-import ReactPlayer from "react-player";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
+import { baseUrl } from "@/config";
+import ButtonLayout from "../utilities/ButtonLayout";
+import ButtonImage from "../../assets/home/buttonImg.webp";
+import { FilterSec } from "../utilities/FilterSec";
+import { fetchVideosList } from "@/app/store/actions/videoAction";
 
 export const VideoCards = () => {
   const dispatch = useDispatch();
+
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-  }, [dispatch]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const FilterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
-  );
-  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
     Topics: [],
   });
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry || []);
+  const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
+  const VideosList = useSelector((state) => state.video?.list || []);
 
   const filters = {
     Industry: ["All", ...FilterIndustry],
     Topics: ["All", ...FilterTopic],
   };
-  const [currentPage, setCurrentPage] = useState(0);
 
-  const images = [Info1, Info2];
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(fetchVideosList());
+  }, [dispatch]);
 
-  const cardData = new Array(18).fill(0).map((_, i) => ({
-    id: i + 1,
-    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry number ${
-      i + 1
-    }`,
-    image: images[i % images.length],
-    link: `https://yourdomain.com/card/${i + 1}`,
-    author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    tags: ["AI", "Security"],
-    industry: i % 2 === 0 ? "Tech" : "Healthcare",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // or any valid video URL
-  }));
+  // ✅ Map API data
+  const resources = useMemo(() => {
+    return VideosList.map((data, i) => ({
+      id: data?._id,
+      title: data?.title || "Untitled",
+      image: data?.video_image ? `${baseUrl}${data?.video_image}` : Info1,
+      link: `https://yourdomain.com/card/${i + 1}`,
+      speaker: data?.speaker?.name || "Unknown",
+      youtubeScript: data?.youtube_script || "",
+      industry: data?.industry || "All",
+    }));
+  }, [VideosList]);
 
-  const [resources, setResources] = useState([...cardData]);
-  const [selectedVideo, setSelectedVideo] = useState(null);
+  const filteredResources = useMemo(() => {
+    return resources.filter(
+      (item) =>
+        activeFilters.Industry === "All" ||
+        item.industry === activeFilters.Industry
+    );
+  }, [resources, activeFilters]);
 
-  const toggleDropdown = (filter) => {
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
+  const currentPageData = filteredResources.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
+  const toggleDropdown = (filter) =>
     setOpenDropdown(openDropdown === filter ? "" : filter);
-  };
 
   const selectFilter = (type, value) => {
     setActiveFilters({ ...activeFilters, [type]: value });
     setOpenDropdown("");
     setCurrentPage(0);
+  };
+
+  const goToPage = (index) => {
+    if (index < 0 || index >= totalPages) return;
+    setCurrentPage(index);
   };
 
   const handleCopy = async (link, id) => {
@@ -72,166 +92,136 @@ export const VideoCards = () => {
     }
   };
 
-  const filteredResources = resources.filter((item) => {
-    const industryMatch =
-      activeFilters.Industry === "All" ||
-      item.industry === activeFilters.Industry;
-
-    const tagMatch =
-      activeFilters.Topics.length === 0 ||
-      activeFilters.Topics.some((topic) => item.tags.includes(topic));
-
-    return industryMatch && tagMatch;
-  });
-
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
-  const currentPageData = filteredResources.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
-
-  const goToPage = (index) => {
-    if (index < 0 || index >= totalPages) return;
-    setCurrentPage(index);
-  };
-
-  function search(value) {
-    if (value === "") setResources([...cardData]);
-    else
-      setResources(
-        cardData.filter((blog) =>
-          blog.title.toLowerCase().includes(value.toLowerCase())
+  const search = (value) => {
+    const filtered = value
+      ? resources.filter((r) =>
+          r.title.toLowerCase().includes(value.toLowerCase())
         )
-      );
-  }
+      : resources;
+    setCurrentPage(0);
+    return filtered;
+  };
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
         <FilterSec
           filters={filters}
-          selectFilter={selectFilter}
           activeFilters={activeFilters}
           setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
           setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
+          selectFilter={selectFilter}
           searchDebouncing={search}
-          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
+          mainClass="p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"
         />
-        <p className="mb-4 text-sm">{filteredResources.length} Results</p>
-        {/* Grid Display with animation */}
-        <>
-          {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <AnimatePresence>
-              {currentPageData.map((item, idx) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  transition={{ duration: 0.4, delay: idx * 0.1 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
-                >
-                  {/* Image with Play Button Overlay */}
-                  <div className="relative w-full h-3/5">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                      width={400}
-                      height={400}
-                    />
-                    <button
-                      onClick={() => setSelectedVideo(item.videoUrl)}
-                      className="absolute inset-0 flex items-center justify-center bg-black opacity-50 hover:bg-opacity-50 transition"
-                    >
-                      <FaPlay className="text-white text-4xl" />
-                    </button>
-                  </div>
 
-                  {/* Content */}
-                  <div className="w-full h-2/5 p-4 flex flex-col justify-between">
-                    <div className="flex flex-wrap gap-2 my-2">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="bg-[#FF9F56] text-black text-xs px-2 py-1 rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex justify-between items-start">
-                      <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
-                        {item.title}
-                      </h3>
+        <p className="mb-4 text-sm">{filteredResources.length} Results</p>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <AnimatePresence>
+            {currentPageData.map((item, idx) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="flex flex-col h-[400px] md:h-[450px] border border-[#2E3092] rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+              >
+                {/* Image with play overlay */}
+                <div className="relative w-full h-3/5">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                    width={400}
+                    height={400}
+                  />
+                  <button
+                    onClick={() => setSelectedVideo(item.youtubeScript)}
+                    className="absolute inset-0 flex items-center justify-center bg-black opacity-50 hover:bg-opacity-50 transition"
+                  >
+                    <FaPlay className="text-white text-4xl" />
+                  </button>
+                </div>
+
+                {/* Content */}
+                <div className="w-full h-2/5 p-4 flex flex-col justify-between">
+                  <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
+                    {item.title}
+                  </h3>
+                  <p>{item.speaker}</p>
+                  <div className="flex items-center justify-between my-2 h-1/4">
+                    <ButtonLayout
+                      text="Read More"
+                      hoverImage={ButtonImage}
+                      className="!h-[40px] !w-[150px]"
+                    />
+                    <div className="flex flex-col">
                       <button
-                        onClick={() => handleCopy(item.link, item.id)}
-                        className="text-gray-500 hover:text-black"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleCopy(item.link, item.id);
+                        }}
+                        className="text-[#2E3092] hover:text-black"
                         title="Copy link"
                       >
-                        <FaShareAlt color="#2E3092" className="w-6 h-6" />
+                        <FaShareAlt className="w-6 h-6" />
                       </button>
+                      {copiedId === item.id && (
+                        <span className="text-green-500 text-xs mt-2">
+                          Link copied!
+                        </span>
+                      )}
                     </div>
-                    {copiedId === item.id && (
-                      <span className="text-green-500 text-xs mt-2">
-                        Link copied!
-                      </span>
-                    )}
                   </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </div>
-
-          {/* Modal */}
-          <AnimatePresence>
-            {selectedVideo && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
-              >
-                <motion.div
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  exit={{ scale: 0.8 }}
-                  className="bg-white rounded-lg overflow-hidden w-11/12 max-w-3xl relative"
-                >
-                  {/* Close Button */}
-                  <button
-                    onClick={() => setSelectedVideo(null)}
-                    className="absolute top-2 right-2 text-gray-600 hover:text-black text-3xl z-10"
-                  >
-                    &times;
-                  </button>
-
-                  {/* Video Player */}
-                  <div className="relative pt-[56.25%]">
-                    {" "}
-                    {/* 16:9 Aspect Ratio */}
-                    <ReactPlayer
-                      url={selectedVideo}
-                      controls
-                      playing
-                      width="100%"
-                      height="100%"
-                      className="absolute top-0 left-0"
-                    />
-                  </div>
-                </motion.div>
+                </div>
               </motion.div>
-            )}
+            ))}
           </AnimatePresence>
-        </>
-        {/* Custom Pagination with animation */}
+        </div>
+
+        {/* Modal */}
+        <AnimatePresence>
+          {selectedVideo && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-md bg-black/60"
+              onClick={() => setSelectedVideo(null)} // 👈 close when clicking backdrop
+            >
+              <motion.div
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+                className="bg-white rounded-lg overflow-hidden w-11/12 max-w-3xl relative shadow-2xl"
+                onClick={(e) => e.stopPropagation()} // 👈 prevent close when clicking inside
+              >
+                <button
+                  onClick={() => setSelectedVideo(null)}
+                  className="absolute top-2 right-2 text-gray-600 hover:text-black text-3xl z-10"
+                >
+                  &times;
+                </button>
+
+                <div className="relative pt-[56.25%]">
+                  <div
+                    className="absolute top-0 left-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:top-0 [&>iframe]:left-0"
+                    dangerouslySetInnerHTML={{ __html: selectedVideo }}
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Pagination */}
         <div className="flex justify-center items-center">
-          <div className="mt-8  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Previous Button */}
+          <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
             <motion.button
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 0}
@@ -246,7 +236,6 @@ export const VideoCards = () => {
               <FaLessThan className="w-3 h-3" />
             </motion.button>
 
-            {/* Page Numbers */}
             {Array.from({ length: totalPages }, (_, i) => (
               <motion.button
                 key={i}
@@ -263,11 +252,12 @@ export const VideoCards = () => {
               </motion.button>
             ))}
 
-            {/* Next Button */}
             <motion.button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages - 1}
-              whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
+              whileHover={{
+                scale: currentPage === totalPages - 1 ? 1 : 1.05,
+              }}
               whileTap={{ scale: 0.95 }}
               className={`px-4 py-2 bg-white ${
                 currentPage === totalPages - 1
