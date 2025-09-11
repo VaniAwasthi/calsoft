@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FilterSec } from "../utilities/FilterSec";
 import JobBoard from "../career/JobBoard";
 import Atmosphere from "@/app/assets/career/Atmosphere.webp";
@@ -14,8 +14,10 @@ const mainJobData = [
   {
     id: 1,
     position: "Associate Director/Director of Sales - AIML",
-    location: "Pune (Maharashtra)",
+    location: "Pune",
     type: "Full Time or Part Time",
+    experience: "10",
+    role: "AI",
     companyDescription:
       "Calsoft is a leading technology-first partner providing digital and product engineering services with over 25 years of experience.",
     qualifications: [
@@ -48,8 +50,10 @@ const mainJobData = [
   {
     id: 2,
     position: "Cloud Sales Professional",
-    location: "Pune (Maharashtra)",
+    location: "Pune",
     type: "Full Time or Part Time",
+    experience: "5",
+    role: "DevOps",
     companyDescription:
       "Join our dynamic cloud solutions team and help businesses transform their infrastructure with cutting-edge cloud technologies.",
     qualifications: [
@@ -82,8 +86,10 @@ const mainJobData = [
   {
     id: 3,
     position: "Inside Sales & Business Development",
-    location: "Pune (Maharashtra)",
+    location: "Pune",
     type: "Full Time or Part Time",
+    experience: "2",
+    role: "Sales",
     companyDescription:
       "Be part of our fast-growing business development team focused on expanding our market presence in the technology sector.",
     qualifications: [
@@ -116,8 +122,10 @@ const mainJobData = [
   {
     id: 4,
     position: "Business Development Manager",
-    location: "Pune (Maharashtra)",
+    location: "Pune",
     type: "Full Time or Part Time",
+    experience: "5",
+    role: "Security",
     companyDescription:
       "Lead strategic business initiatives and drive growth for our expanding portfolio of technology solutions and services.",
     qualifications: [
@@ -151,8 +159,10 @@ const mainJobData = [
     id: 5,
     position:
       "Tech Lead/ Associate Architect/ Architect- Artificial Intelligence and Machine Learning",
-    location: "Pune (Maharashtra)",
+    location: "Pune",
     type: "Full Time or Part Time",
+    experience: "7",
+    role: "AI",
     companyDescription:
       "Join our AI/ML center of excellence and lead the development of next-generation artificial intelligence solutions for enterprise clients.",
     qualifications: [
@@ -185,8 +195,10 @@ const mainJobData = [
   {
     id: 6,
     position: "Senior Java Server Side Developer",
-    location: "Pune (Maharashtra)",
+    location: "Pune",
     type: "Full Time or Part Time",
+    experience: "5",
+    role: "Backend",
     companyDescription:
       "Work on enterprise-grade Java applications and contribute to our robust backend systems that serve millions of users worldwide.",
     qualifications: [
@@ -219,8 +231,10 @@ const mainJobData = [
   {
     id: 7,
     position: "Executive - Sales / Biz Dev / Marketing",
-    location: "Pune (Maharashtra)",
+    location: "Pune",
     type: "Full Time or Part Time",
+    experience: "3",
+    role: "Sales",
     companyDescription:
       "Drive our sales and marketing efforts across multiple channels and help establish our brand presence in competitive markets.",
     qualifications: [
@@ -253,8 +267,10 @@ const mainJobData = [
   {
     id: 8,
     position: "Senior UI Developer/UI Developer (React JS / Angular JS)",
-    location: "Pune (Maharashtra)",
+    location: "Pune",
     type: "Full Time or Part Time",
+    experience: "4",
+    role: "Frontend",
     companyDescription:
       "Create exceptional user experiences and build responsive web applications using modern frontend technologies and frameworks.",
     qualifications: [
@@ -284,16 +300,178 @@ const mainJobData = [
       { src: Atmosphere, title: "Great atmosphere" },
     ],
   },
+  {
+    id: 9,
+    position: "QA Engineer",
+    location: "Bengaluru",
+    type: "Full Time",
+    experience: "3",
+    role: "QA",
+    companyDescription:
+      "Join our quality assurance team and ensure the highest standards of software quality across our products.",
+    qualifications: [
+      "3+ years of QA testing experience",
+      "Strong knowledge of testing methodologies",
+      "Experience with automated testing tools",
+      "Attention to detail and analytical skills",
+    ],
+    roleDescription:
+      "As a QA Engineer, you will be responsible for testing software applications, identifying bugs, and ensuring quality standards are met.",
+    responsibilities: [
+      "Design and execute test cases",
+      "Identify and report bugs",
+      "Collaborate with development teams",
+      "Maintain test documentation",
+    ],
+    applyLink: "#",
+    images: [
+      { src: Team, title: "Team competitions" },
+      { src: Learning, title: "Constant learning" },
+      { src: Growth, title: "Focused growth" },
+      {
+        src: Innovate,
+        title: "Innovate + engineer",
+      },
+      { src: Global, title: "Global exposure" },
+      { src: Atmosphere, title: "Great atmosphere" },
+    ],
+  },
+  {
+    id: 10,
+    position: "Full Stack Developer",
+    location: "Hyderabad",
+    type: "Full Time",
+    experience: "4",
+    role: "Full Stack",
+    companyDescription:
+      "Work on both frontend and backend technologies to build comprehensive web applications.",
+    qualifications: [
+      "4+ years of full-stack development experience",
+      "Proficiency in React, Node.js, and databases",
+      "Experience with cloud platforms",
+      "Strong problem-solving skills",
+    ],
+    roleDescription:
+      "Develop end-to-end web applications using modern technologies and frameworks.",
+    responsibilities: [
+      "Develop frontend and backend components",
+      "Design database schemas",
+      "Deploy applications to cloud platforms",
+      "Collaborate with cross-functional teams",
+    ],
+    applyLink: "#",
+    images: [
+      { src: Team, title: "Team competitions" },
+      { src: Learning, title: "Constant learning" },
+      { src: Growth, title: "Focused growth" },
+      {
+        src: Innovate,
+        title: "Innovate + engineer",
+      },
+      { src: Global, title: "Global exposure" },
+      { src: Atmosphere, title: "Great atmosphere" },
+    ],
+  },
+  {
+    id: 11,
+    position: "DevOps Engineer",
+    location: "Indore",
+    type: "Full Time",
+    experience: "6",
+    role: "DevOps",
+    companyDescription:
+      "Join our DevOps team to streamline deployment processes and maintain our cloud infrastructure.",
+    qualifications: [
+      "6+ years of DevOps experience",
+      "Strong knowledge of AWS, Docker, Kubernetes",
+      "Experience with CI/CD pipelines",
+      "Scripting skills in Python/Bash",
+    ],
+    roleDescription:
+      "Manage and optimize our cloud infrastructure, automate deployment processes, and ensure system reliability.",
+    responsibilities: [
+      "Design and maintain CI/CD pipelines",
+      "Manage cloud infrastructure",
+      "Automate deployment processes",
+      "Monitor system performance",
+    ],
+    applyLink: "#",
+    images: [
+      { src: Team, title: "Team competitions" },
+      { src: Learning, title: "Constant learning" },
+      { src: Growth, title: "Focused growth" },
+      {
+        src: Innovate,
+        title: "Innovate + engineer",
+      },
+      { src: Global, title: "Global exposure" },
+      { src: Atmosphere, title: "Great atmosphere" },
+    ],
+  },
+  {
+    id: 12,
+    position: "Security Analyst",
+    location: "Bengaluru",
+    type: "Full Time",
+    experience: "2",
+    role: "Security",
+    companyDescription:
+      "Protect our systems and data by implementing security measures and monitoring for threats.",
+    qualifications: [
+      "2+ years of cybersecurity experience",
+      "Knowledge of security frameworks",
+      "Experience with security tools",
+      "Strong analytical skills",
+    ],
+    roleDescription:
+      "Monitor security systems, analyze threats, and implement security measures to protect our infrastructure.",
+    responsibilities: [
+      "Monitor security systems",
+      "Analyze security threats",
+      "Implement security measures",
+      "Conduct security audits",
+    ],
+    applyLink: "#",
+    images: [
+      { src: Team, title: "Team competitions" },
+      { src: Learning, title: "Constant learning" },
+      { src: Growth, title: "Focused growth" },
+      {
+        src: Innovate,
+        title: "Innovate + engineer",
+      },
+      { src: Global, title: "Global exposure" },
+      { src: Atmosphere, title: "Great atmosphere" },
+    ],
+  },
 ];
 
 export default function OpenVacancies() {
   const filters = {
-    Location: ["All", { _id: 2, name: "Tech" }, { _id: 3, name: "Healthcare" }],
-    Role: ["All", { _id: 2, name: "Security" }, { _id: 3, name: "AI" }],
+    Location: [
+      "All",
+      { _id: 2, name: "Pune" },
+      { _id: 3, name: "Hyderabad" },
+      { _id: 4, name: "Bengaluru" },
+      { _id: 5, name: "Indore" },
+    ],
+    Role: [
+      "All",
+      { _id: 2, name: "Security" },
+      { _id: 3, name: "AI" },
+      { _id: 4, name: "DevOps" },
+      { _id: 5, name: "QA" },
+      { _id: 6, name: "Backend" },
+      { _id: 7, name: "Frontend" },
+      { _id: 8, name: "Full Stack" },
+      { _id: 9, name: "Sales" },
+    ],
     Experience: [
       "All",
-      { _id: 2, name: "Anton Frank" },
-      { _id: 3, name: "John Doe" },
+      { _id: 2, name: "1-3" },
+      { _id: 3, name: "3-5" },
+      { _id: 4, name: "5-10" },
+      { _id: 5, name: "10+" },
     ],
   };
   const [jobData, setJobData] = useState(mainJobData);
@@ -313,15 +491,174 @@ export default function OpenVacancies() {
     // setCurrentPage(0);
   };
 
-  // The is not occuring when I comment out the below function
-  function search(value) {
-    if (value === "") setJobData(mainJobData);
-    else
-      setJobData(
-        mainJobData.filter((blog) =>
-          blog.position.toLowerCase().includes(value.toLowerCase())
-        )
+  // Apply filters when activeFilters change
+  useEffect(() => {
+    let filteredData = mainJobData;
+
+    // Filter by Location
+    if (activeFilters.Location !== "All") {
+      const locationFilter = filters.Location.find(
+        (loc) => loc._id === activeFilters.Location
       );
+      if (locationFilter) {
+        filteredData = filteredData.filter(
+          (job) => job.location === locationFilter.name
+        );
+      }
+    }
+
+    // Filter by Role
+    if (activeFilters.Role !== "All") {
+      const roleFilter = filters.Role.find(
+        (role) => role._id === activeFilters.Role
+      );
+      if (roleFilter) {
+        filteredData = filteredData.filter(
+          (job) => job.role === roleFilter.name
+        );
+      }
+    }
+
+    // Filter by Experience
+    if (activeFilters.Experience !== "All") {
+      const experienceFilter = filters.Experience.find(
+        (exp) => exp._id === activeFilters.Experience
+      );
+      if (experienceFilter) {
+        const expRange = experienceFilter.name;
+        filteredData = filteredData.filter((job) => {
+          const jobExp = parseInt(job.experience);
+          switch (expRange) {
+            case "1-3":
+              return jobExp >= 1 && jobExp <= 3;
+            case "3-5":
+              return jobExp >= 3 && jobExp <= 5;
+            case "5-10":
+              return jobExp >= 5 && jobExp <= 10;
+            case "10+":
+              return jobExp >= 10;
+            default:
+              return true;
+          }
+        });
+      }
+    }
+
+    setJobData(filteredData);
+  }, [activeFilters]);
+
+  // Search function for text-based filtering
+  function search(value) {
+    if (value === "") {
+      // If search is empty, apply current filters
+      let filteredData = mainJobData;
+
+      // Apply current filters
+      if (activeFilters.Location !== "All") {
+        const locationFilter = filters.Location.find(
+          (loc) => loc._id === activeFilters.Location
+        );
+        if (locationFilter) {
+          filteredData = filteredData.filter(
+            (job) => job.location === locationFilter.name
+          );
+        }
+      }
+
+      if (activeFilters.Role !== "All") {
+        const roleFilter = filters.Role.find(
+          (role) => role._id === activeFilters.Role
+        );
+        if (roleFilter) {
+          filteredData = filteredData.filter(
+            (job) => job.role === roleFilter.name
+          );
+        }
+      }
+
+      if (activeFilters.Experience !== "All") {
+        const experienceFilter = filters.Experience.find(
+          (exp) => exp._id === activeFilters.Experience
+        );
+        if (experienceFilter) {
+          const expRange = experienceFilter.name;
+          filteredData = filteredData.filter((job) => {
+            const jobExp = parseInt(job.experience);
+            switch (expRange) {
+              case "1-3":
+                return jobExp >= 1 && jobExp <= 3;
+              case "3-5":
+                return jobExp >= 3 && jobExp <= 5;
+              case "5-10":
+                return jobExp >= 5 && jobExp <= 10;
+              case "10+":
+                return jobExp >= 10;
+              default:
+                return true;
+            }
+          });
+        }
+      }
+
+      setJobData(filteredData);
+    } else {
+      // Apply search filter on top of current filters
+      let filteredData = mainJobData;
+
+      // Apply current filters first
+      if (activeFilters.Location !== "All") {
+        const locationFilter = filters.Location.find(
+          (loc) => loc._id === activeFilters.Location
+        );
+        if (locationFilter) {
+          filteredData = filteredData.filter(
+            (job) => job.location === locationFilter.name
+          );
+        }
+      }
+
+      if (activeFilters.Role !== "All") {
+        const roleFilter = filters.Role.find(
+          (role) => role._id === activeFilters.Role
+        );
+        if (roleFilter) {
+          filteredData = filteredData.filter(
+            (job) => job.role === roleFilter.name
+          );
+        }
+      }
+
+      if (activeFilters.Experience !== "All") {
+        const experienceFilter = filters.Experience.find(
+          (exp) => exp._id === activeFilters.Experience
+        );
+        if (experienceFilter) {
+          const expRange = experienceFilter.name;
+          filteredData = filteredData.filter((job) => {
+            const jobExp = parseInt(job.experience);
+            switch (expRange) {
+              case "1-3":
+                return jobExp >= 1 && jobExp <= 3;
+              case "3-5":
+                return jobExp >= 3 && jobExp <= 5;
+              case "5-10":
+                return jobExp >= 5 && jobExp <= 10;
+              case "10+":
+                return jobExp >= 10;
+              default:
+                return true;
+            }
+          });
+        }
+      }
+
+      // Then apply search filter
+      filteredData = filteredData.filter((job) =>
+        job.position.toLowerCase().includes(value.toLowerCase())
+      );
+
+      setJobData(filteredData);
+    }
   }
   return (
     <div className="">

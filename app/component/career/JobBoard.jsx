@@ -7,6 +7,7 @@ import JobApplicationModal from "./JobForm";
 
 export default function JobBoard({ jobData }) {
   const [expandedJob, setExpandedJob] = useState(null);
+  const [isModalOpenForJobId, setIsModalOpenForJobId] = useState(null);
 
   const toggleJob = (jobId) => {
     setExpandedJob(expandedJob === jobId ? null : jobId);
@@ -59,7 +60,6 @@ export default function JobBoard({ jobData }) {
       <div className="">
         {/* <div className="px-8"> */}
         {jobData.map((job, index) => {
-          const [isModalOpen, setIsModalOpen] = useState(false);
           return (
             <motion.div
               key={job.id}
@@ -236,7 +236,7 @@ export default function JobBoard({ jobData }) {
                             </div>
 
                             <motion.button
-                              onClick={() => setIsModalOpen(true)}
+                              onClick={() => setIsModalOpenForJobId(job.id)}
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
                               initial={{ opacity: 0, y: 10 }}
@@ -247,8 +247,8 @@ export default function JobBoard({ jobData }) {
                               Apply Now →
                             </motion.button>
                             <JobApplicationModal
-                              isOpen={isModalOpen}
-                              onClose={() => setIsModalOpen(false)}
+                              isOpen={isModalOpenForJobId === job.id}
+                              onClose={() => setIsModalOpenForJobId(null)}
                               jobTitle={job.position}
                             />
                           </motion.div>

@@ -1,11 +1,14 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import ButtonLayout from "../../utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 
 export default function IntelligentPlanning({
@@ -132,6 +135,22 @@ export default function IntelligentPlanning({
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+
+  useEffect(() => {
+    if (swiperInstance && prevRef.current && nextRef.current) {
+      // Destroy existing navigation
+      swiperInstance.navigation.destroy();
+
+      // Reassign elements
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+
+      // Reinitialize navigation
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
 
   return (
     <div id="intelligent-planning" className="bg-[#f2f0f5]">
@@ -154,42 +173,36 @@ export default function IntelligentPlanning({
             <div className="flex justify-center items-center gap-5">
               <button
                 ref={prevRef}
-                className={`transition-opacity duration-200 hover:opacity-80`}
+                className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
+                style={{ visibility: "visible", display: "flex", zIndex: 40 }}
               >
                 <svg
-                  width="55"
-                  height="55"
-                  viewBox="0 0 55 55"
+                  width="11"
+                  height="18"
+                  viewBox="0 0 11 18"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M27.0971 0.0014059C42.0386 0.00140685 54.1934 12.1556 54.1934 27.0964C54.1934 42.0372 42.0386 54.1914 27.0971 54.1914C12.1555 54.1914 0.000764324 42.0372 0.000766026 27.0964C0.000767728 12.1556 12.1555 0.00140495 27.0971 0.0014059ZM27.0971 52.3545C41.0246 52.3545 52.3563 41.0242 52.3563 27.0964C52.3563 13.1687 41.0246 1.83836 27.0971 1.83835C13.1696 1.83835 1.8378 13.1687 1.8378 27.0964C1.8378 41.0242 13.1696 52.3545 27.0971 52.3545Z"
-                    fill="#2E3092"
-                  />
-                  <path
-                    d="M30.446 18.4886L31.7429 19.7901L24.3911 27.1112L31.7549 34.7272L30.435 36.0039L21.811 27.0874L30.446 18.4886Z"
+                    d="M9.44893 0.488596L10.7459 1.79007L3.39405 9.11124L10.7578 16.7272L9.4379 18.0039L0.813932 9.08735L9.44893 0.488596Z"
                     fill="#2E3092"
                   />
                 </svg>
               </button>
               <button
                 ref={nextRef}
-                className={`transition-opacity duration-200 hover:opacity-80`}
+                className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
+                style={{ visibility: "visible", display: "flex", zIndex: 40 }}
               >
                 <svg
-                  width="55"
-                  height="55"
-                  viewBox="0 0 55 55"
+                  width="11"
+                  height="18"
+                  viewBox="0 0 11 18"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M27.9049 54.3814C12.9633 54.3814 0.808594 42.2272 0.808594 27.2864C0.808594 12.3456 12.9633 0.191406 27.9049 0.191406C42.8464 0.191406 55.0012 12.3456 55.0012 27.2864C55.0012 42.2272 42.8464 54.3814 27.9049 54.3814ZM27.9049 2.02836C13.9774 2.02836 2.64563 13.3587 2.64563 27.2864C2.64563 41.2142 13.9774 52.5445 27.9049 52.5445C41.8324 52.5445 53.1642 41.2142 53.1642 27.2864C53.1642 13.3587 41.8324 2.02836 27.9049 2.02836Z"
-                    fill="#2E3092"
-                  />
-                  <path
-                    d="M24.556 35.8981L23.259 34.5966L30.6108 27.2755L23.2471 19.6595L24.567 18.3828L33.191 27.2994L24.556 35.8981Z"
+                    d="M1.55108 17.8981L0.254129 16.5966L7.60595 9.27548L0.242188 1.65949L1.5621 0.382812L10.1861 9.29936L1.55108 17.8981Z"
                     fill="#2E3092"
                   />
                 </svg>
@@ -198,6 +211,66 @@ export default function IntelligentPlanning({
           </div>
 
           {/* Feature Cards Grid */}
+          <div className="relative overflow-visible">
+            <Swiper
+              onSwiper={setSwiperInstance}
+              slidesPerView={3}
+              spaceBetween={20}
+              loop={true}
+              navigation={{
+                prevEl: prevRef.current,
+                nextEl: nextRef.current,
+              }}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+              }}
+              modules={[Navigation, Autoplay]}
+              autoplay={{ delay: 6000 }}
+              className="w-full z-0"
+              style={{ overflow: "visible" }}
+            >
+              {data.cardData.map((ele, idx) => (
+                <SwiperSlide
+                  key={idx}
+                  className="z-10"
+                  style={{ overflow: "visible" }}
+                >
+                  <div className="pt-8 px-2">
+                    {" "}
+                    {/* Add padding to accommodate the icon */}
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: idx * 0.1 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      className="relative bg-white hover:bg-gradient-to-br from-[#2e3092] to-[#ba0007] rounded-2xl rounded-br-none p-8 hover:text-white min-h-[280px] hover:border-none border-2 border-[#2e3092] transition-all overflow-visible"
+                    >
+                      {/* Blue circle icon - Fixed positioning */}
+                      <div className="absolute -top-6 -left-6 w-16 h-16 bg-[#2e3092] border-2 border-white rounded-full flex items-center justify-center z-50">
+                        {ele.icon}
+                      </div>
+                      <div className="mt-16">
+                        <h3 className="text-xl font-bold mb-2">{ele.title}</h3>
+                        <p className="text-white/90 text-sm">{ele.subTitle}</p>
+                      </div>
+                    </motion.div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
           <Swiper
             slidesPerView={3}
             spaceBetween={20}
@@ -230,8 +303,6 @@ export default function IntelligentPlanning({
           >
             {data.cardData.map((ele, idx) => (
               <SwiperSlide key={idx} className="z-10 !flex">
-               
-
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
@@ -248,7 +319,6 @@ export default function IntelligentPlanning({
                     <p className="text-white/90 text-sm">{ele.subTitle}</p>
                   </div>
                 </motion.div>
-                
               </SwiperSlide>
             ))}
           </Swiper>
@@ -278,7 +348,7 @@ export default function IntelligentPlanning({
                 image={buttonImage}
                 hoverImage={buttonImage}
                 className={"w-fit"}
-                onClick={()=>showHubSpotForm("Talk_to_Expert")}
+                onClick={() => showHubSpotForm("Talk_to_Expert")}
               />
             </motion.div>
           </div>
