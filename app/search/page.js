@@ -13,7 +13,9 @@ import { useDispatch, useSelector } from "react-redux";
 function SearchResults() {
   const dispatch = useDispatch();
   const searchParams = useSearchParams();
-  const initialSearchQuery = searchParams.get("s") || "";
+  const [initialSearchQuery, setInitialSearchQuery] = useState(
+    searchParams.get("s") || ""
+  );
 
   const [searchResults, setSearchResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -37,6 +39,7 @@ function SearchResults() {
         const response = await globalSearch(query, selectedFilters);
         if (response?.data) {
           setSearchResults(response.data.results);
+          SetfilteredResults(response.data.results);
         }
       } catch (error) {
         console.error("Search failed:", error);
@@ -56,6 +59,10 @@ function SearchResults() {
         )
       );
   }
+
+  useEffect(() => {
+    setInitialSearchQuery(searchParams.get("s"));
+  }, [searchParams]);
 
   // Move ALL useEffect calls to the top, before any conditional returns
   useEffect(() => {
@@ -93,7 +100,6 @@ function SearchResults() {
           ) : (
             <div className="flex gap-8">
               <SearchFilters
-                initialSearchQuery={initialSearchQuery}
                 filterData={filters}
                 selectedFilters={selectedFilters}
                 setSelectedFilters={setSelectedFilters}

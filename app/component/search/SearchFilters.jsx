@@ -4,25 +4,13 @@ import React from "react";
 import { useState, useCallback, useRef, useEffect } from "react";
 
 export function SearchFilters({
-  initialSearchQuery,
   filterData,
   selectedFilters,
   setSelectedFilters,
   debounceSearch = (value) => {},
 }) {
-  const [searchInput, setSearchInput] = useState(initialSearchQuery);
+  const [searchInput, setSearchInput] = useState("");
   const inputRef = useRef(null);
-
-  const handleSearchInputChange = useCallback((e) => {
-    const value = e.target.value;
-    setSearchInput(value);
-
-    window.dispatchEvent(
-      new CustomEvent("searchQueryUpdate", {
-        detail: { searchQuery: value },
-      })
-    );
-  }, []);
 
   const handleFilterChange = useCallback((filterId, filterType, isChecked) => {
     setSelectedFilters((prev) => ({
@@ -103,7 +91,7 @@ export function SearchFilters({
               ref={inputRef}
               type="text"
               value={searchInput}
-              onChange={handleSearchInputChange}
+              onChange={(e) => setSearchInput(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
               placeholder="Search..."
             />
