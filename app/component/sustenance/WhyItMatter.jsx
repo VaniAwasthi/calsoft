@@ -11,6 +11,7 @@ export default function WhyItMatters({
   title = "Measure What Matters — Before You Deploy.",
   desc = "Most teams measure application performance reactively — post-deployment or after customer feedback. This leads to:",
   buttonText = "Download Case Study",
+  heading = "Why This Matters",
   data = [
     {
       title: "Lack of baseline performance",
@@ -150,7 +151,7 @@ export default function WhyItMatters({
             viewport={{ once: false, amount: 0.3 }}
             className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_20%)] bg-clip-text text-transparent"
           >
-            Why It Matters
+            {heading}
           </motion.p>
           <motion.div
             initial={{ x: -50, opacity: 0 }}

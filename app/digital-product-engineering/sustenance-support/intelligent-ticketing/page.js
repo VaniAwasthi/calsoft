@@ -17,10 +17,10 @@ import Img from "@/app/assets/DigitalEngineering/Sustaine/Sustenance_Banner_3.we
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
+    "Pulse Check",
+    "System First",
+    "Real-World Impact",
+    "Where It Fits",
     "Why Calsoft",
     "How to Start",
   ];
@@ -36,6 +36,7 @@ export default function Page() {
         activeTab={activeTab}
       />
       <WhyItMatters
+        heading="Pulse Check"
         title="What’s broken in traditional ticketing systems?"
         desc=" Support teams are overwhelmed with repetitive, poorly routed, or under-prioritized tickets. As product complexity grows, teams face:"
         buttonText="Download Case Study"
@@ -189,10 +190,10 @@ export default function Page() {
             subTitle:
               "with Jira ServiceNow, Zendesk, Freshdesk, Salesforce, etc.",
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
+          {
+            title: "Real-time dashboards",
+            subTitle: "for SLA, backlog, and RCA tracking",
+          },
           // {
           //   title:
           //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
@@ -207,7 +208,7 @@ export default function Page() {
       />
       <RealWorldImpact
         buttonText={null}
-        title="Across enterprise deployments, Calsoft has enabled:"
+        title="From ticket chaos to insight-led operations"
         desc="Across enterprise deployments, Calsoft has enabled:"
         cardData={[
           {
@@ -425,7 +426,7 @@ export default function Page() {
         // sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
         buttonText="Download One Pager"
         data={{
-          tableHeadings: ["Capability", "Calsoft", "DIY or Ad-hoc Teams"],
+          tableHeadings: ["Capability", "Calsoft Intelligent Ticketing", "Traditional Ticket Systems"],
           tableContent: [
             {
               name: "AI/ML-driven triage and tagging",

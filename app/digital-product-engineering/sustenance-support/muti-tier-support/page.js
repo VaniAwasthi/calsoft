@@ -17,10 +17,10 @@ import Img from "@/app/assets/DigitalEngineering/Sustaine/Sustenance_Banner_4.we
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
+    "Pulse Check",
+    "Layered By Device",
+    "Real-World Impact",
+    "Where It Fits",
     "Why Calsoft",
     "How to Start",
   ];
@@ -37,6 +37,7 @@ export default function Page() {
       />
       <WhyItMatters
         title="Why most support models break at scale"
+        heading="Pulse Check"
         desc="As product portfolios grow, teams struggle with unstructured support layers — leading to:"
         buttonText="Download Case Study"
         data={[
@@ -237,10 +238,7 @@ export default function Page() {
             desc: "via tight feedback loops between support & engineering",
           },
         ]}
-        bottomContent={{
-          text: "Intelligent ticketing turns support into a continuous improvement engine.",
-          btnText: "Download ROI Sheet",
-        }}
+        bottomContent={null}
       />
       <div className="container">
         <BookMeeting
@@ -431,10 +429,11 @@ export default function Page() {
         ]}
       />
       <WhyCalsoft
-        // sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
+        sectionDescription=""
         buttonText="Download One Pager"
+        title="Why our model works better"
         data={{
-          tableHeadings: ["Capability", "Calsoft", "DIY or Ad-hoc Teams"],
+          tableHeadings: ["Capability", "Calsoft Tiered Support Model", "Unstructured In-House Support"],
           tableContent: [
             {
               name: "Tier-Specific SLAs & Ownership",
