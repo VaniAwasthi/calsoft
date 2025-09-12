@@ -543,12 +543,12 @@ export default function Page() {
         buttonText="Request ROI"
       />
       <WhyCalsoft
-        sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
+        sectionDescription=""
         buttonText="Download One Pager"
-        title="Why enterprises prefer our IaC model"
+        title="Why Calsoft is trusted for OpenStack engineering"
         heading="How to Start"
         data={{
-          tableHeadings: ["Capability", "Calsoft Container Services", "DIY or Siloed Implementations"],
+          tableHeadings: ["Capability", "Calsoft OpenStack Services", "Generic OpenStack Integrators"],
           tableContent: [
             {
               name: "Architecture tailored to workloads",
