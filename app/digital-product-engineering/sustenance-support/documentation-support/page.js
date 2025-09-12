@@ -17,7 +17,7 @@ import Img from "@/app/assets/DigitalEngineering/Sustaine/Sustenance_Banner_2.we
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
+    "Why This Matters",
     "Intelligent Planning",
     "Business Value",
     "Use Cases",
@@ -411,35 +411,35 @@ export default function Page() {
         }}
       />
       <WhyCalsoft
-        sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
+        sectionDescription=""
         buttonText="Download One Pager"
         data={{
-          tableHeadings: ["Capability", "Calsoft", "DIY or Ad-hoc Teams"],
+          tableHeadings: ["Capability", "Calsoft Documentation Model", "DIY or Ad-hoc Teams"],
           tableContent: [
             {
               name: "Version-Controlled Content",
               calsoft: "Git/GitOps Friendly",
-              vendor: "Feature-Driven Only",
+              vendor: "Manual or Disconnected",
             },
             {
               name: "Cross-Tool Compatibility",
               calsoft: "Markdown, Confluence, Notion",
-              vendor: "One-Dimensional",
+              vendor: "Format Silos",
             },
             {
               name: "Sprint-Synced Updates",
               calsoft: "Linked to Releases",
-              vendor: "App-Focused Only",
+              vendor: "Post-Facto Updates",
             },
             {
               name: "Audit-Ready Compliance Docs",
               calsoft: "ISO/SOC/FDA Templates",
-              vendor: "Technical Only",
+              vendor: "Generic or Missing",
             },
             {
               name: "Reusable Modular Blocks",
               calsoft: "Structured + Tagged",
-              vendor: "No Industry Mapping",
+              vendor: "Wall of Text",
             },
           ],
         }}
