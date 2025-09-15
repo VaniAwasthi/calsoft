@@ -11,6 +11,7 @@ import webinarsReducer from "./reducers/webinarsReducer";
 import useCasesReducer from "./reducers/useCasesReducer";
 import podcastReducer from "./reducers/podcastReducer";
 import industryReportReducer from "./reducers/industryReportReducer"
+import videoReducer from "./reducers/videoReducer"
 
 // Helper function for persist configs
 const persistConfig = (key) => ({
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
   webinars: persistReducer(persistConfig("webinars"), webinarsReducer),
   usecases: persistReducer(persistConfig("usecases"), useCasesReducer),
   podcast: persistReducer(persistConfig("podcasts"), podcastReducer),
+  video: persistReducer(persistConfig("videos"), videoReducer),
   industryreport:persistReducer(persistConfig("industryreport"),industryReportReducer)
 });
 
