@@ -26,11 +26,11 @@ const Page = () => {
       <UXModernizationSec />
       <IntelligentUISec />
       <BannerSection
-  backgroundImage={BannerwithButtonBg}
-  title="Boost user retention by 50% through smart CX."
-  buttonText="Book a Meeting"
-  onButtonClick={() => showHubSpotForm("book-a-meeting")}
-/>
+        backgroundImage={BannerwithButtonBg}
+        title="Boost user retention by 50% through smart CX."
+        buttonText="Book a Meeting"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
+      />
 
       <RapidprototypingSec />
       <MobileEngineeringSec />

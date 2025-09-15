@@ -193,15 +193,22 @@ export default function Page() {
             subTitle: "encryption, and compression policies",
             curved: true,
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: "Integrate with cloud-native tools",
+            subTitle: "(Azure Blob, AWS S3, GCP Storage)",
+            curved: true,
+          },
+          {
+            title:
+              "Support multi-tenant gateways",
+            subTitle: "with policy isolation",
+            curved: true,
+          },
+          {
+            title: "Provide observability dashboards",
+            subTitle: "for access logs, latency, throughput",
+            curved: true,
+          },
         ]}
         title="What We Build"
         bottomContent={null}
@@ -232,6 +239,10 @@ export default function Page() {
             title: "Security",
             desc: "TLS/SSL encryption, WORM policies, IAM integration",
           },
+          {
+            title: "Monitoring",
+            desc: "TLS/SSL encryption, WORM policies, IAM integrationPrometheus, CloudWatch, Grafana",
+          },
         ]}
         bottomContent={null}
       />
@@ -246,8 +257,8 @@ export default function Page() {
         heading="Built to reduce friction and increase data agility"
         description=""
         bottomText={{
-          text: "Whether you run internal IT, SaaS support, or product operations — ",
-          bText: " intelligent ticketing is critical to scale.",
+          text: null,
+          bText: null,
         }}
         data={[
           {

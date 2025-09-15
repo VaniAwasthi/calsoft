@@ -227,7 +227,7 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Reduce version conflicts by 60%. Schedule a walkthrough. "
+          title="Improve product adoption by 40% via documentation."
           img={img}
         />
       </div>

@@ -113,9 +113,9 @@ const Page = () => {
         }}
         bookMeetingData={{
           title:
-            "On average, Calsoft clients detect 4x more performance bottlenecks before release.",
+            "Validate scalability under 10x load conditions.",
           buttonText: "Book a Meeting",
-          buttonText: "Book a Meeting",
+          // buttonText: "Book a Meeting",
           onButtonClicked:()=>showHubSpotForm("book-a-meeting")
            }}
           buttonText="Download One Pager"

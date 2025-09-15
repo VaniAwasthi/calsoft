@@ -816,7 +816,7 @@ const BookaMeeting = () => {
       <div className="container">
         <BookMeeting
           img={meeting}
-          title="To know more about how we can align our expertise to your requirements, reach out to us."
+          title="Automate post-release reporting by 80%."
           titleClass="text-[32px] font-bold"
           buttonText="Contact Us"
           buttonClicked={()=>showHubSpotForm("contact-us-popup")}

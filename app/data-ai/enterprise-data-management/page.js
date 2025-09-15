@@ -66,9 +66,8 @@ const page = () => {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Design intelligent data pipelines
-            <br className="hidden md:block px-1" /> that drive faster insights
-            and integration
+            Increase data integrity by 80% with automation.
+            <br className="hidden md:block px-1" />
           </>
         }
         buttonText="Book a Meeting"

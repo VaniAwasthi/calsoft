@@ -47,7 +47,7 @@ export default function Page() {
       <RealWorldImpact buttonText={null} />
       <div className="container">
         <BookMeeting
-          title="Get a customized readiness scorecard aligned to your architecture and KPIs "
+          title="Cut release time by 35% through orchestration."
           img={img}
         />
       </div>

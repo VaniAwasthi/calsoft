@@ -62,8 +62,7 @@ export default function Page() {
         backgroundImage={BannerwithButtonBg}
         title={
           <p className="px-1">
-            Protect your data integrity <br className="hidden md:block px-2" />{" "}
-            and build operational resilience
+            Cut data processing latency by 50% enterprise-wide. <br className="hidden md:block px-2" />
           </p>
         }
         buttonText="Book a Meeting"

@@ -269,7 +269,7 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title: "Is Your Product Development Strategy Scalable?",
+          title: "Ensure 98% defect-free releases with automation.",
           buttontext: "Book a Meeting",
         }}
       />

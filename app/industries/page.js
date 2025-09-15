@@ -35,8 +35,8 @@ const Page = () => {
     "Industry Partners",
   ];
   const SectionOne = {
-    heading: "Hi-Tech",
-    title: "| Engineering digital evolution",
+    heading: "Hi-Tech ",
+    title: " | Engineering digital evolution",
     description:
       "The demand for intelligent software solutions is growing. We help technology companies build, modernize, and optimize their products for speed, scale, and efficiency.",
     points: [
@@ -65,7 +65,7 @@ const Page = () => {
   };
   const SectionTwo = {
     heading: "Telecom",
-    title: "| Enabling the future of connectivity",
+    title: " | Enabling the future of connectivity",
     description:
       "From 5G adoption to AI-driven network automation, we enable telecom providers to enhance connectivity, reduce costs, and improve service delivery.",
     points: [
@@ -94,7 +94,7 @@ const Page = () => {
   };
   const SectionThree = {
     heading: "Retail",
-    title: "|  Intelligent commerce and supply chain optimization",
+    title: " |  Intelligent commerce and supply chain optimization",
     description:
       "Consumer expectations are evolving. We bring AI-driven insights to enhance personalization, streamline logistics, and optimize digital retail experiences.",
     points: [
@@ -123,7 +123,7 @@ const Page = () => {
   };
   const SectionFour = {
     heading: "Manufacturing ",
-    title: "| Smarter operations with AI and automation",
+    title: " | Smarter operations with AI and automation",
     description:
       "Industrial transformation requires automation and real-time monitoring. We help manufacturers enhance productivity, reduce downtime, and optimize production workflows.",
     points: [

@@ -239,7 +239,7 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Automate 35% of repetitive tickets and cut escalations by nearly half. Book a quick discovery call. "
+          title="Resolve 90% issues with AI-powered ticketing."
           img={img}
         />
       </div>

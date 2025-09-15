@@ -242,8 +242,7 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Optimize your support stack. Cut costs.
-          Improve CSAT. Talk to us. "
+          title="Ensure 24/7 uptime with tiered support systems."
           img={img}
         />
       </div>

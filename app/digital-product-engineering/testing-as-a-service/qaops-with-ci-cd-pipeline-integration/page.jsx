@@ -106,7 +106,7 @@ const Page = () => {
         }}
         bookMeetingData={{
           title:
-            "Want 24/7 quality checks built right into your CI/CD flow? Our demo shows how real-time QAOps ",
+            "Shift-left QA with 90% pipeline coverage.",
           buttonText: "Book a Meeting",
           onButtonClicked:()=>showHubSpotForm("book-a-meeting")
         }}

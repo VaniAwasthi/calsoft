@@ -27,7 +27,7 @@ const page = () => {
   backgroundImage={BannerwithButtonBg}
   title={
     <>
-      All future-readiness advantages are ready to unlock– let’s connect
+      Cut legacy costs by 40% via modernization strategy.
     </>
   }
   buttonText="Book a Meeting"

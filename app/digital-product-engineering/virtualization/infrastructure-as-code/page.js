@@ -243,7 +243,7 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Configure OpenStack 2x faster for scale."
+          title="Accelerate deployments by 60% with IaC scripts."
           img={img}
         />
       </div>

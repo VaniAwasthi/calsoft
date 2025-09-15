@@ -56,9 +56,8 @@ export default function Page() {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Deploy AI agents with built-in oversight,
+            Accelerate AI use-case delivery by 3x speed.
             <br className="hidden md:block" />
-            we help you scale responsibly
           </>
         }
         buttonText="Book a Meeting"

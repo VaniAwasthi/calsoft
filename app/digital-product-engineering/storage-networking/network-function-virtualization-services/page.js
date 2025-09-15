@@ -166,6 +166,7 @@ export default function Page() {
       <IntelligentPlanning
         heading="Your virtual network, engineered for performance"
         description="Calsoft builds and integrates:"
+        buttonText="Request POC"
         data={[
           {
             title: "VNF stacks",
@@ -192,21 +193,23 @@ export default function Page() {
             subTitle: "chaining of VNFs",
             curved: true,
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: "APIs for OSS/BSS,",
+            subTitle: "telemetry, and policy controls",
+            curved: true,
+          },
+          {
+            title:
+              "Integration with MEC,",
+            subTitle: "5G, or edge compute nodes",
+            curved: true,
+          },
         ]}
         title="What We Deliver"
         bottomContent={null}
       />
       <RealWorldImpact
-        buttonText={null}
+        buttonText="Request POC"
         heading="Integration-Ready"
         title="Open, programmable, and cloud-native"
         desc="We integrate NFV solutions with:"
@@ -231,6 +234,10 @@ export default function Page() {
             title: "Security",
             desc: "IPsec tunnels, Zero Trust NFs, policy-based segmentation",
           },
+          {
+            title: "Accelerators",
+            desc: "DPDK, SmartNIC, SR-IOV, FPGA",
+          },
         ]}
         bottomContent={null}
       />
@@ -245,8 +252,8 @@ export default function Page() {
         heading="Network agility with operational wins"
         description=""
         bottomText={{
-          text: "Whether you run internal IT, SaaS support, or product operations — ",
-          bText: " intelligent ticketing is critical to scale.",
+          text: null,
+          bText: null,
         }}
         data={[
           {

@@ -237,7 +237,7 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Reduce MTTR by 60%. Explore how in a quick call. "
+          title="Maintain 99.99% SLA-backed service continuity."
           img={img}
         />
       </div>

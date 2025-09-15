@@ -238,7 +238,7 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Streamline infra lifecycle by 50% with governance. "
+          title="Streamline infra lifecycle by 50% with governance."
           img={img}
         />
       </div>

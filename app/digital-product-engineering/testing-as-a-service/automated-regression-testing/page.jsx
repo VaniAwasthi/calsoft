@@ -114,7 +114,7 @@ const Page = () => {
         }}
         bookMeetingData={{
           title:
-            "Let’s talk about cutting your regression time by up to 60% — book a discovery call today.",
+            "Accelerate testing by 70% with CalTIA automation.",
           buttonText: "Book a Meeting",
          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
                }}

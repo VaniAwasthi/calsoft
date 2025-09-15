@@ -26,8 +26,8 @@ const Page = () => {
       <section className="banner_light padd_sec">
         <BannerSection
           backgroundImage={BannerwithButtonBg}
-          title="When Everything Connects, Everything Works."
-          buttonText="Read a Blog"
+          title="Integrate apps 2x faster with open ecosystems."
+          buttonText="Book a Meeting"
           buttonLink="#"
           onButtonClick={()=>showHubSpotForm("book-a-meeting")}
         />

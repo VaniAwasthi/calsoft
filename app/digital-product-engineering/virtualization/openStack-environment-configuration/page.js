@@ -248,7 +248,7 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Deploy Container 3x faster with orchestration tools."
+          title="Configure OpenStack 2x faster for scale."
           img={img}
         />
       </div>

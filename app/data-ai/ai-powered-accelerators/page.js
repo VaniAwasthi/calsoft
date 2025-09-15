@@ -24,9 +24,8 @@ export default function Page() {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Pre-built intelligence (accelerators)
+            Accelerate transformation by 40% using Calsoft IPs.
             <br className="hidden md:block" />
-            to fast-track impact
           </>
         }
         buttonText="Book a Meeting"
