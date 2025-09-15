@@ -29,13 +29,20 @@ export const DataSheetCards = () => {
 
   // ✅ Fetch data on mount
   useEffect(() => {
-    dispatch(fetchDatasheetList());
+    dispatch(
+      fetchDatasheetList({
+        Industry: "All",
+        Topics: [],
+      })
+    );
     dispatch(fetchBlogFilterList());
   }, [dispatch]);
 
   // ✅ Always read from Redux
   const datasheetData = useSelector((state) => state.datasheets?.list || []);
-  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry || []);
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
   const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
 
   // ✅ Memoize transformed resources
@@ -47,7 +54,10 @@ export const DataSheetCards = () => {
       image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
       tags: item.tags?.length ? item.tags : ["AI"], // fallback tag
       slug: item.hero_title1
-        ? item.hero_title1.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
+        ? item.hero_title1
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)/g, "")
         : "untitled",
       link: `/${item._id}`,
     }));
@@ -57,7 +67,8 @@ export const DataSheetCards = () => {
   const filteredResources = useMemo(() => {
     return resources.filter((item) => {
       const industryMatch =
-        activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
+        activeFilters.Industry === "All" ||
+        item.industry === activeFilters.Industry;
 
       const topicMatch =
         activeFilters.Topics.length === 0 ||
@@ -103,6 +114,14 @@ export const DataSheetCards = () => {
       setCurrentPage(page);
     }
   };
+
+  const performSearch = useCallback(() => {
+    dispatch(fetchDatasheetList(activeFilters));
+  }, [dispatch, activeFilters]);
+
+  useEffect(() => {
+    performSearch();
+  }, [performSearch]);
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">

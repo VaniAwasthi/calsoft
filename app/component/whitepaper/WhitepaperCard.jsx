@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchWhitepaperList } from "../../store/actions/whitepaperAction";
@@ -18,27 +18,38 @@ export const WhitepaperCards = () => {
   const router = useRouter();
 
   const listData = useSelector((state) => state.whitepaper.list);
-  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry || []);
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
 
-  const [activeFilters, setActiveFilters] = useState({ Industry: "All", Topics: [] });
+  const [activeFilters, setActiveFilters] = useState({
+    Industry: "All",
+    Topics: [],
+  });
   const [currentPage, setCurrentPage] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
 
-  const filters = { Industry: ["All", ...FilterIndustry], Topics: ["All", ...FilterTopic] };
+  const filters = {
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
+  };
 
   // Filter + search + mapping
   const filteredResources = useMemo(() => {
     return listData
       .filter((item) => {
         const industryMatch =
-          activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
+          activeFilters.Industry === "All" ||
+          item.industry === activeFilters.Industry;
 
         const tagMatch =
           activeFilters.Topics.length === 0 ||
-          activeFilters.Topics.some((topic) => item.tags?.split(",").includes(topic));
+          activeFilters.Topics.some((topic) =>
+            item.tags?.split(",").includes(topic)
+          );
 
         const searchMatch =
           searchTerm === "" ||
@@ -71,7 +82,8 @@ export const WhitepaperCards = () => {
     router.push(`/insights/whitepaper/${item.slug}`);
   };
 
-  const toggleDropdown = (filter) => setOpenDropdown(openDropdown === filter ? "" : filter);
+  const toggleDropdown = (filter) =>
+    setOpenDropdown(openDropdown === filter ? "" : filter);
   const selectFilter = (type, value) => {
     setActiveFilters({ ...activeFilters, [type]: value });
     setOpenDropdown("");
@@ -100,8 +112,21 @@ export const WhitepaperCards = () => {
 
   useEffect(() => {
     dispatch(fetchBlogFilterList());
-    dispatch(fetchWhitepaperList());
+    dispatch(
+      fetchWhitepaperList({
+        Industry: "All",
+        Topics: [],
+      })
+    );
   }, [dispatch]);
+
+  const performSearch = useCallback(() => {
+    dispatch(fetchWhitepaperList(activeFilters));
+  }, [dispatch, activeFilters]);
+
+  useEffect(() => {
+    performSearch();
+  }, [performSearch]);
 
   useEffect(() => {
     if (currentPage >= totalPages) setCurrentPage(0);
@@ -175,7 +200,9 @@ export const WhitepaperCards = () => {
                   </div>
 
                   {copiedId === item.id && (
-                    <span className="text-green-500 text-xs mt-2">Link copied!</span>
+                    <span className="text-green-500 text-xs mt-2">
+                      Link copied!
+                    </span>
                   )}
                 </div>
               </motion.div>
@@ -191,7 +218,9 @@ export const WhitepaperCards = () => {
               whileHover={{ scale: currentPage === 0 ? 1 : 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`px-4 py-3 bg-white border-r border-gray-300 ${
-                currentPage === 0 ? "text-gray-400 cursor-not-allowed" : "text-[#2E3092]"
+                currentPage === 0
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-[#2E3092]"
               }`}
             >
               <FaLessThan className="w-3 h-3" />
@@ -204,7 +233,9 @@ export const WhitepaperCards = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-4 py-2 border-r border-gray-300 ${
-                  currentPage === i ? "text-[#2E3092] font-medium" : "text-gray-500 hover:bg-gray-100"
+                  currentPage === i
+                    ? "text-[#2E3092] font-medium"
+                    : "text-gray-500 hover:bg-gray-100"
                 } bg-white`}
               >
                 {i + 1}
@@ -217,7 +248,9 @@ export const WhitepaperCards = () => {
               whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`px-4 py-2 bg-white ${
-                currentPage === totalPages - 1 ? "text-gray-400 cursor-not-allowed" : "text-[#2E3092]"
+                currentPage === totalPages - 1
+                  ? "text-gray-400 cursor-not-allowed"
+                  : "text-[#2E3092]"
               }`}
             >
               <FaGreaterThan className="w-3 h-3" />

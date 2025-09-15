@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "../../store/actions/blogAction";
@@ -108,8 +108,21 @@ export const InfographicCard = () => {
 
   useEffect(() => {
     dispatch(fetchBlogFilterList());
-    dispatch(fetchUsecasesList());
+    dispatch(
+      fetchUsecasesList({
+        Industry: "All",
+        Topics: [],
+      })
+    );
   }, [dispatch]);
+
+  const performSearch = useCallback(() => {
+    dispatch(fetchUsecasesList(activeFilters));
+  }, [dispatch, activeFilters]);
+
+  useEffect(() => {
+    performSearch();
+  }, [performSearch]);
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">

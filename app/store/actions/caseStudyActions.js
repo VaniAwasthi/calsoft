@@ -8,14 +8,47 @@ import {
 import axiosInstance from "../api-config/axiosInstance.js";
 
 // Fetch all Case Study list
-export const fetchCaseStudiesList = () => async (dispatch) => {
-  try {
-    const response = await axiosInstance.get("/casestudy");
-    dispatch(setCaseStudyList(response.data));
-  } catch (error) {
-    dispatch(setError(error.message));
-  }
-};
+export const fetchCaseStudiesList =
+  ({ Industry, Topics }) =>
+  async (dispatch) => {
+    try {
+      const params = new URLSearchParams();
+
+      const normalizeId = (value) => {
+        if (!value) return undefined;
+        if (typeof value === "string") return value;
+        if (typeof value === "object" && value._id) return value._id;
+        return undefined;
+      };
+
+      const industryId = Industry === "All" ? undefined : normalizeId(Industry);
+
+      const topicIds = Array.isArray(Topics)
+        ? Topics.map((t) => normalizeId(t)).filter(Boolean)
+        : [];
+
+      if (industryId) params.append("industry", industryId);
+      // Build query manually to avoid encoding commas between topic IDs
+      const queryParts = [];
+      if (industryId)
+        queryParts.push(`industry=${encodeURIComponent(industryId)}`);
+      if (topicIds.length > 0) {
+        const encodedTopics = topicIds
+          .map((id) => encodeURIComponent(id))
+          .join(",");
+        queryParts.push(`topic=${encodedTopics}`);
+      }
+
+      const url = queryParts.length
+        ? `/casestudy?${queryParts.join("&")}`
+        : "/casestudy";
+
+      const response = await axiosInstance.get(url);
+      dispatch(setCaseStudyList(response.data));
+    } catch (error) {
+      dispatch(setError(error.message));
+    }
+  };
 
 // Fetch one case study by ID
 export const fetchCaseStudyById = (id) => async (dispatch) => {
@@ -26,7 +59,6 @@ export const fetchCaseStudyById = (id) => async (dispatch) => {
     dispatch(setError(error.message));
   }
 };
-
 
 // fetch case study for limited
 export const fetchCaseStudyListLimit = () => async (dispatch) => {

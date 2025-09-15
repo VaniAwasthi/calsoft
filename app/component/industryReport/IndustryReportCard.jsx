@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,7 +20,9 @@ export const IndustryReportCard = () => {
   const router = useRouter();
 
   const listData = useSelector((state) => state.industryreport.list);
-  const FilterIndustry = useSelector((state) => state.blogs.filterIndustry || []);
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
 
   const [copiedId, setCopiedId] = useState(null);
@@ -34,14 +36,28 @@ export const IndustryReportCard = () => {
   // ✅ Fetch only once
   useEffect(() => {
     dispatch(fetchBlogFilterList());
-    dispatch(fetchIndustryReportList());
+    dispatch(
+      fetchIndustryReportList({
+        Industry: "All",
+        Topics: [],
+      })
+    );
   }, [dispatch]);
+
+  const performSearch = useCallback(() => {
+    dispatch(fetchIndustryReportList(activeFilters));
+  }, [dispatch, activeFilters]);
+
+  useEffect(() => {
+    performSearch();
+  }, [performSearch]);
 
   // Build resources directly from Redux listData
   const resources = Array.isArray(listData)
     ? listData.map((item) => {
         const slug = slugify(item.hero_title1 || "untitled", { lower: true });
-        const origin = typeof window !== "undefined" ? window.location.origin : "";
+        const origin =
+          typeof window !== "undefined" ? window.location.origin : "";
 
         return {
           id: item?._id,
@@ -60,7 +76,8 @@ export const IndustryReportCard = () => {
   // Filtering
   const filteredResources = resources.filter((item) => {
     const industryMatch =
-      activeFilters.Industry === "All" || item.industry === activeFilters.Industry;
+      activeFilters.Industry === "All" ||
+      item.industry === activeFilters.Industry;
 
     const tagMatch =
       activeFilters.Topics.length === 0 ||
@@ -193,7 +210,9 @@ export const IndustryReportCard = () => {
                   </div>
 
                   {copiedId === item.id && (
-                    <span className="text-green-500 text-xs mt-2">Link copied!</span>
+                    <span className="text-green-500 text-xs mt-2">
+                      Link copied!
+                    </span>
                   )}
                 </div>
               </motion.div>
@@ -238,7 +257,9 @@ export const IndustryReportCard = () => {
 
             {/* Next */}
             <motion.button
-              onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages - 1))}
+              onClick={() =>
+                setCurrentPage((p) => Math.min(p + 1, totalPages - 1))
+              }
               disabled={currentPage === totalPages - 1}
               whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
               whileTap={{ scale: 0.95 }}

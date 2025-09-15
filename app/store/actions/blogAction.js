@@ -16,6 +16,7 @@ export const fetchBlogList = () => async (dispatch) => {
     dispatch(setError(error));
   }
 };
+
 // Fetch all blogFilter list
 export const fetchBlogFilterList = () => async (dispatch) => {
   try {
@@ -27,16 +28,43 @@ export const fetchBlogFilterList = () => async (dispatch) => {
 };
 // Fetch filtered blog list
 export const fetchFilteredBlogs =
-  ({ author, industry, topics = [] }) =>
+  ({ Author, Industry, Topics }) =>
   async (dispatch) => {
     try {
       const params = new URLSearchParams();
 
-      if (author) params.append("author", author);
-      if (industry) params.append("industry", industry);
-      topics.forEach((topic) => params.append("topic", topic)); // Support multiple topics
+      const normalizeId = (value) => {
+        if (!value) return undefined;
+        if (typeof value === "string") return value;
+        if (typeof value === "object" && value._id) return value._id;
+        return undefined;
+      };
 
-      const response = await axiosInstance.get(`/blogs?${params.toString()}`);
+      const authorId = Author === "All" ? undefined : normalizeId(Author);
+      const industryId = Industry === "All" ? undefined : normalizeId(Industry);
+
+      const topicIds = Array.isArray(Topics)
+        ? Topics.map((t) => normalizeId(t)).filter(Boolean)
+        : [];
+
+      if (authorId) params.append("author", authorId);
+      if (industryId) params.append("industry", industryId);
+      // Build query manually to avoid encoding commas between topic IDs
+      const queryParts = [];
+      if (authorId) queryParts.push(`author=${encodeURIComponent(authorId)}`);
+      if (industryId)
+        queryParts.push(`industry=${encodeURIComponent(industryId)}`);
+      if (topicIds.length > 0) {
+        const encodedTopics = topicIds
+          .map((id) => encodeURIComponent(id))
+          .join(",");
+        queryParts.push(`topic=${encodedTopics}`);
+      }
+
+      const url = queryParts.length
+        ? `/blogs?${queryParts.join("&")}`
+        : "/blogs";
+      const response = await axiosInstance.get(url);
       dispatch(setBlogList(response.data));
     } catch (error) {
       dispatch(setError(error.message));
