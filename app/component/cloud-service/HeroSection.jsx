@@ -69,35 +69,35 @@ cloud solutions aligned to your business goals.`,
 export const ChallengeToSolutionSec = () => {
   const challengesData = [
     {
-      title: "INFRASTRUCTURE ASSESSMENT",
+      title: "Infrastructre Assessmnet",
       description:
         "Legacy environments lack cloud readiness and modernization alignment",
       solution:
         "Assess existing infrastructure for cloud adoption feasibility, gaps, and roadmap creation",
     },
     {
-      title: "CLOUD-NATIVE DEVELOPMENT",
+      title: "Cloud-Native Development",
       description:
         "Monolithic application designs restrict scalability, resilience, and agility",
       solution:
         "Cloud-native architectures with microservices, containerization, and serverless models",
     },
     {
-      title: "MIGRATION AND SCALING",
+      title: "Migration and Scaling",
       description:
         "Migrations are risky, disruptive, and often lead to bottlenecks",
       solution:
         "Execute structured workload migration, scaling optimization, and validation",
     },
     {
-      title: "COST AND USAGE OPTIMIZATION",
+      title: "Cost and Usage Optimization",
       description:
         "Cloud spending escalates due to inefficient resource management",
       solution:
         "Implement continuous cost optimization with right-sizing, tagging, and usage governance",
     },
     {
-      title: "SRE AND OPERATIONS",
+      title: "SRE and Operation",
       description:
         "Lack of proactive monitoring impacts uptime, reliability, and user experience",
       solution:

@@ -54,7 +54,7 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
 
             <motion.div
              
-              className="flex justify-between w-full text-sm md:text-base xl:ml-[2rem]"
+              className="flex justify-between w-full text-sm md:text-base xl:ml-[2rem] items-center"
             >
               {navItems.map((item, index) => (
                 <div key={index} className="flex items-center justify-center">

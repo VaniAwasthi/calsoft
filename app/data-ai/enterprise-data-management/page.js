@@ -78,7 +78,7 @@ const page = () => {
       <CostOptimizedSecTechnicalConsulting />
       <ContactSecDataAi
         BoldContent="Calsoft can show you how"
-        lightContent="Innovate and grow with future-ready data pipelines"
+        lightContent="Simplify complexity with end-to-end enterprise data management."
         link="#"
       />
     </>
