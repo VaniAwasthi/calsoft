@@ -3,6 +3,7 @@ import ButtonLayout from "./ButtonLayout";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ButtonImage from "../../assets/home/buttonImg.webp";
+import Link from "next/link";
 
 export const MatterTriangle = ({
   title,
@@ -14,6 +15,7 @@ export const MatterTriangle = ({
   heading,
   ButtonImage,
   secId,
+  onButtonClick
 }) => {
   return (
     <>
@@ -54,6 +56,7 @@ export const MatterTriangle = ({
                     text={buttonText}
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    onClick={onButtonClick}
                   />
                 </motion.div>
               )}
@@ -216,6 +219,7 @@ export const MatterCircle = ({
   heading,
   ButtonImage,
   secId,
+  buttonClick
 }) => {
   return (
     <>
@@ -253,6 +257,7 @@ export const MatterCircle = ({
                 >
                   <ButtonLayout
                     link={link}
+                    onClick={buttonClick}
                     text={buttonText}
                     image={ButtonImage}
                     hoverImage={ButtonImage}
@@ -447,6 +452,7 @@ export const Imagethree = ({
   gridStyle = "md:grid-cols-3",
   buttonText,
   isButton = false,
+  islearnMoreButton =false
 }) => {
   return (
     <section className="  md:pt-16 pt-8   bg-white">
@@ -474,6 +480,23 @@ export const Imagethree = ({
                 <p className="text-sm md:text-base text-black mt-2">
                   {item.description}
                 </p>
+                {
+                  islearnMoreButton && (
+<>
+<div
+                    initial={{ x: -50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="mt-6 md:mt-2 flex justify-left items-center text-[#BA0007] hover:text-[#2E3092]"
+                  >
+                    <Link href={item.link} className="text-lg font-bold">
+                      Learn More &gt; &gt;
+                    </Link>
+                  </div>
+</>
+                  )
+                }
                 {isButton && (
                   <div
                     initial={{ x: -50, opacity: 0 }}
@@ -483,10 +506,11 @@ export const Imagethree = ({
                     className="mt-6 md:mt-2 flex justify-center items-center"
                   >
                     <ButtonLayout
-                      text={buttonText}
+                      text={item.buttonText}
                       image={ButtonImage}
                       hoverImage={ButtonImage}
                       className="!w-[200px]"
+                      link={item.buttonLink}
                     />
                   </div>
                 )}

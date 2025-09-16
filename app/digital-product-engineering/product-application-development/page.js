@@ -6,6 +6,8 @@ import {
   ContactSecData,
 } from "../../component/utilities/InfraSectorSec.jsx";
 
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
+
 import {
   AccelerateSec,
   DeploymentSec,
@@ -25,15 +27,15 @@ const page = () => {
       <DevelopmentSec />
       <QualityengineeringSec />
       <BannerSection
-        backgroundImage={BannerwithButtonBg}
-        title={
-          <>
-           Reduce time-to-market by 35% with rapid development.
-          </>
-        }
-        buttonText="Book a Meeting"
-        buttonLink="#"
-      />
+  backgroundImage={BannerwithButtonBg}
+  title={
+    <>
+      Reduce time-to-market by 35% with rapid development.
+    </>
+  }
+  buttonText="Book a Meeting"
+  onButtonClick={() => showHubSpotForm("book-a-meeting")}
+/>
       <DevOpsSec />
       <DeploymentSec />
       <AccelerateSec />
@@ -41,7 +43,8 @@ const page = () => {
         BoldContent="Engineer your next product idea
 into a future-ready reality."
         lightContent="Get in touch"
-        link="#"
+        buttonClicked={() => showHubSpotForm("contact-us-popup")}
+       
       />
     </>
   );

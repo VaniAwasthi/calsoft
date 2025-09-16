@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AiSec,
   DefinedSec,
@@ -9,6 +11,7 @@ import {
   StorageChallenge,
   StorageTab,
 } from "../../component/storage-networking/StorageNetworking.jsx";
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; //
 import {
   BannerSection,
   ContactSecData,
@@ -16,7 +19,7 @@ import {
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 
-function page() {
+export default function Page() {
   return (
     <>
       <StorageTab />
@@ -29,6 +32,7 @@ function page() {
         title="Optimize storage ops with 99.9% availability assurance."
         buttonText="Book a Meeting"
         buttonLink="#"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <Gateway />
       <AiSec />
@@ -37,10 +41,8 @@ function page() {
       <ContactSecData
         BoldContent="Modernize your storage and networking backbone for agility, resilience, and growth."
         lightContent="How? We can help"
-        link="#"
+        // link="#"
       />
     </>
   );
 }
-
-export default page;

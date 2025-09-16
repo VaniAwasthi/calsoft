@@ -4,7 +4,7 @@ import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
-import BackgroundImage from "../../assets/DigitalEngineering/future/banner.webp";
+import BackgroundImage from "@/app/assets/DigitalEngineering/mordernization/Modernization & Ecosystem 2.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import WhyItMatters from "../utilities/WhyItMatters";
 import bgshape1 from "../../assets/DigitalEngineering/maturity/shape1.svg";
@@ -32,14 +32,15 @@ import line2 from "../../assets/DigitalEngineering/maturity/line2.svg";
 import line3 from "../../assets/DigitalEngineering/maturity/line3.svg";
 import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export const Future = () => {
-  const [activeTab, setActiveTab] = useState("benefits");
+  const [activeTab, setActiveTab] = useState("why-it-matters");
   const slide = {
     title: "Be Ready for Change Before It Hits You.",
 
     description: `Enterprise resilience depends on your tech ecosystem’s ability to evolve, scale, and self-optimize. Calsoft makes your digital backbone future-ready.`,
-    buttonText: "Download Solution Report",
+    buttonText: "Sample Modernization Roadmap",
     image: BackgroundImage,
   };
   const navItems = [
@@ -62,7 +63,8 @@ export const Future = () => {
           buttonImage={ButtonImage}
           hoverImage={ButtonImage}
           rightSec={false}
-          buttonWidth="!w-[250px]"
+          buttonWidth="!w-[300px]"
+          onButtonClick={()=>showHubSpotForm("maturity-assessment-and-planning-modernization-roadmap")}
         />
       </div>
       <Submenu
@@ -82,8 +84,8 @@ export const Why = () => {
     description:
       "Static architectures. Rigid processes. Expired platforms. Enterprises with outdated ecosystems find it harder to adopt AI, manage hybrid workforces, or meet new compliance demands. Calsoft helps you shift from “reactive modernization” to “predictive adaptation” <br> <b>so your systems grow with your business.</b> ",
 
-    buttonText: "Download One Pager",
-    link: "#",
+    buttonText: "Get in Touch",
+  
 
     cards: [
       {
@@ -108,20 +110,20 @@ export const Why = () => {
   };
   return (
     <>
-      <WhyItMatters {...whyItMattersData} ButtonImage={ButtonImage} />
+      <WhyItMatters {...whyItMattersData} ButtonImage={ButtonImage} secId="why-it-matters" buttonClicked={()=>showHubSpotForm("get-in-touch")}/>
     </>
   );
 };
 
 export const What = () => {
-  const heading = "What We Do";
+  const heading = "What We Offer";
   const subtitle = "We Engineer Digital Resilience";
   const desc =
     "Future readiness isn’t about chasing trends—it’s about designing ecosystems that evolve. Calsoft blends architecture foresight, modularity, and automation to deliver tech that scales and adapts. Our Future-Readiness Offerings:";
 
   const offeringsData = {
     buttonText: "Talk to Expert",
-    link: "#",
+  
     offerings: [
       {
         icon: icon1,
@@ -148,13 +150,13 @@ export const What = () => {
         title: "Integration readiness (APIs, external systems)",
       },
       {
-        icon: icon1,
-        title: "Modular architecture advisory",
+        icon: icon7,
+        title: "Business continuity alignment with IT strategy",
       },
-      {
-        icon: icon2,
-        title: "Resilience scoring & benchmarking",
-      },
+      // {
+      //   icon: icon2,
+      //   title: "Resilience scoring & benchmarking",
+      // },
     ],
 
     highlights: [
@@ -174,10 +176,12 @@ export const What = () => {
       <Do
         offeringsData
         {...offeringsData}
+        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
         heading={heading}
         subtitle={subtitle}
         desc={desc}
         ButtonImage={ButtonImage}
+        secId="what-we-do"
       />
     </>
   );
@@ -213,7 +217,7 @@ export const Use = () => {
   return (
     <>
       {" "}
-      <Cases {...useCasesData} ButtonImage={ButtonImage} />
+      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases" onButtonClick={()=>showHubSpotForm("Future-readiness-download-one-pager")}/>
     </>
   );
 };
@@ -224,7 +228,6 @@ export const Business = () => {
     subheading: "From Fragile to Future-Proof",
     description: "What our customers gained by preparing today for tomorrow:",
     buttonText: "Request a custom ROI Projection",
-    link: "#",
     backgroundImage: businessimg,
     valueItems: [
       {
@@ -248,7 +251,7 @@ export const Business = () => {
   };
   return (
     <>
-      <BusinessValue {...businessValueData} ButtonImage={ButtonImage} />
+      <BusinessValue {...businessValueData} ButtonImage={ButtonImage} secId="business-value"  onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}/>
     </>
   );
 };
@@ -265,14 +268,13 @@ export const How = () => {
   };
   return (
     <>
-      <StartSection data={startSectionData} />
+      <StartSection data={startSectionData} secId="how-to-start"/>
     </>
   );
 };
 
 export const Steps = () => {
   const buttonText = "Start Today";
-  const link = "#";
   const steps = [
     {
       day: "Day 0",
@@ -333,7 +335,6 @@ export const Steps = () => {
         steps={steps}
         heading="10-Day Future-Readiness Sprint: Step-by-Step"
         buttonText={buttonText}
-        link={link}
         ButtonImage={ButtonImage}
       />
     </>

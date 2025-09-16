@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function CloudMigrationMatters() {
   return (
-    <div className="w-full mx-auto p-4 py-0">
+    <div className="w-[31rem] xl:w-full mx-auto p-4 py-0">
       <div className="grid grid-cols-2 gap-3">
         {/* Top Left - Lift-and-shift pitfalls */}
         <motion.div
@@ -13,7 +13,7 @@ export default function CloudMigrationMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-full aspect-square"
+          className="relative w-full aspect-square hover:scale-105 transition-all"
         >
           {/* Red background shape */}
           <div
@@ -54,7 +54,7 @@ export default function CloudMigrationMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-full aspect-square"
+          className="relative w-full aspect-square hover:scale-105 transition-all"
         >
           {/* Red background shape */}
           <div
@@ -95,7 +95,7 @@ export default function CloudMigrationMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-full aspect-square"
+          className="relative w-full aspect-square hover:scale-105 transition-all"
         >
           {/* Red background shape */}
           <div
@@ -136,7 +136,7 @@ export default function CloudMigrationMatters() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="relative w-full aspect-square"
+          className="relative w-full aspect-square hover:scale-105 transition-all"
         >
           {/* Red background shape */}
           <div

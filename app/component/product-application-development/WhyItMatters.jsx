@@ -16,13 +16,15 @@ export default function WhyItMatters({
   contentClass = "",
   mainComponenentClass = "",
   gridClass = "",
+  id = "",
+  buttonClicked,
 }) {
   return (
     <>
       <div className="container">
-        <div className="h-12" />
+        <div className="h-12" id={id} />
         <div
-          className={`flex flex-col xl:grid xl:grid-cols-2 gap-10 xl:gap-16 items-start ${gridClass}`}
+          className={`flex flex-col xl:grid xl:grid-cols-2 gap-10 xl:gap-16 items-center xl:items-start ${gridClass}`}
         >
           {/* Left Content */}
           <div className={`space-y-10 ${contentClass}`}>
@@ -60,7 +62,7 @@ export default function WhyItMatters({
             {/* bug: When wrapped into motion.div the button is not visible */}
             <div
               initial={{ x: -50, opacity: 0 }}
-              whileinview={{ x: 0, opacity: 1 }}
+              whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               viewport={{ once: false, amount: 0.3 }}
               className="mt-9"
@@ -70,6 +72,7 @@ export default function WhyItMatters({
                 image={buttonImage}
                 hoverImage={buttonImage}
                 className={"w-fit shadow-2xl"}
+                onClick={buttonClicked}
               />
             </div>
           </div>
@@ -79,7 +82,7 @@ export default function WhyItMatters({
             <MainComponenent />
           </div>
         </div>
-        <div className="h-12" />
+        <div className="h-8 xl:h-12" />
       </div>
     </>
   );

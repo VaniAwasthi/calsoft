@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
@@ -10,99 +10,216 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import ImpactAnalysisMatter from "../../../component/testing/ImpactAnalysisMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_4.webp"
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
+  const navItems = [
+    "Why This Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
-        title="Never Re-Test Everything. Always Test What Matters"
-        description="Accelerate release cycles and improve test coverage with Calsoft’s Automated Regression Testing — engineered for speed, stability, and scalability."
-        buttonText="Request Free Assessment"
+        title="Test Smarter, Not Slower — With Impact-Driven Validation"
+        description="Accelerate quality cycles by identifying and executing only the tests that matter — powered by Calsoft’s Test Impact Analysis services."
+        buttonText="Request Free Assesment"
+        navItems={navItems}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        heroImage={Img}
+        buttonClicked={()=>showHubSpotForm("try-free-load-test")}
+        buttonText2=""
+        
       />
       <WhyItMatters
-        title="Outdated Regression = Delayed Releases."
-        desc="Manual or partially automated regression testing often fails to keep pace with agile sprints and CI/CD pipelines, leading to:"
-        desc2="Calsoft helps QA teams shift from script-heavy testing to impact-driven, maintainable regression automation aligned with release velocity."
+        title="The Missing Link in DevOps? Continuous Quality."
+        desc="Modern software development generates thousands of tests. But not all changes impact every function. Without intelligent impact analysis, you face: "
+        desc2="Calsoft introduces a data-driven test selection model — helping you validate what matters, when it matters."
         buttonText="Download Case Study"
         Component={ImpactAnalysisMatter}
       />
-      <IntelligentPlanning />
+      <IntelligentPlanning
+        heading="Targeted Testing. Faster Feedback. Fewer Misses."
+        description="We enable real-time test impact analysis across your code base and pipelines — ensuring smart regression without sacrificing coverage."
+        data={[
+          {
+            title: "Change mapping at file/function level",
+            subTitle: "using version control diffs",
+          },
+          {
+            title: "Dependency-based test impact mapping",
+            subTitle: null,
+          },
+          {
+            title: "Dynamic test selection",
+            subTitle: "based on history, flakiness, and risk",
+          },
+          {
+            title: "Static + runtime data correlation",
+            subTitle: "(test hit maps, code coverage)",
+          },
+          {
+            title: "CI/CD integration",
+            subTitle: "with GitHub Actions, Jenkins, Azure DevOps",
+          },
+        ]}
+        bottomContent={{
+          text: "We tailor the impact model based on team velocity, repo architecture, and test suite complexity.",
+          btnText: "Request POC",
+        }}
+      />
       <Agility
         data={{
           leftSideContent: {
-            title: "Faster, Safer, Smarter Cloud Transitions",
-            subTitle: "Cloud migration done right delivers real impact:",
+            title: "More Confidence. Less Rework. Same Coverage.",
+            subTitle:
+              "Test Impact Analysis offers measurable engineering and business gains:",
             description:
-              "Calsoft focuses on business-first outcomes — not just technical transition.",
+              "Calsoft’s approach eliminates noise and focuses testing where it protects releases the most.",
           },
           rightSideContent: [
             {
-              title: "Up to 40%",
-              subTitle: "reduction in infra costs via right-sized provisioning",
+              title: "60-80%",
+              subTitle: "fewer tests per commit with no loss of coverage",
             },
             {
-              title: "Zero-downtime",
-              subTitle: "cutovers for production-critical systems",
+              title: "2X Faster",
+              subTitle: "feedback loops in DevOps pipelines",
             },
             {
-              title: "50–70%",
-              subTitle: "faster migration through automation",
+              title: "40% Lower",
+              subTitle: "test execution costs on cloud/on-prem infra",
             },
             {
-              title: "90%",
-              subTitle: "improvement in post-migration application performance",
+              title: "Improved",
+              subTitle: "developer productivity via faster merge approvals",
+            },
+            {
+              title: "Smarter triaging",
+              subTitle: "of failed or flaky tests",
             },
           ],
         }}
         bookMeetingData={{
-          title: "Reduce test cycles by 40% with smart analysis.",
+          title:
+            "Reduce test cycles by 40% with smart analysis.",
           buttonText: "Book a Meeting",
+          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+          
         }}
-        buttonText="Download ROI Sheet"
+       buttonText="Download One Pager"
+      onPagerButton={()=>showHubSpotForm("test-impact-analysis-one-pg")}
       />
-      <UseCases />
+      <UseCases
+      description="Test Impact Analysis is ideal for:"
+        data={[
+          {
+            title: "Microservices architectures",
+            subTitle: "with modular dependencies",
+          },
+          {
+            title: "Large monoliths",
+            subTitle: "with extensive regression packs",
+          },
+          {
+            title: "Agile teams",
+            subTitle: "deploying daily via CI/CD",
+          },
+          {
+            title: "SaaS platforms",
+            subTitle: "with multi-tenant test variations",
+          },
+          {
+            title: "Enterprises with growing",
+            subTitle: "test debt and slow pipelines",
+          },
+        ]}
+      />
       <WhyCalsoft
-        sectionDescription="Cloud migration is not a copy-paste operation — it’s a strategic transformation. Calsoft is uniquely positioned to deliver:"
-        buttonText="Download One Pager"
+        sectionDescription="Unlike basic test filtering plugins, Calsoft’s Test Impact Analysis service is engineered for scale, accuracy, and adaptability"
         data={{
-          tableHeadings: ["Capability", "Calsoft", "Standard Providers"],
+          tableHeadings: ["Capability", "Calsoft Impact Analysis", "Tool-Only Alternatives"],
           tableContent: [
             {
-              name: "Engineering-Led Migration Design",
-              calsoft: "Deep Technical Depth",
-              vendor: "Generic Templates",
+              name: "Multi-level Change Mapping",
+              calsoft: "File + Function Level",
+              vendor: "File Level Only",
             },
             {
-              name: "Multi-Cloud Strategy Alignment",
-              calsoft: "Azure, AWS, GCP",
-              vendor: "Vendor Bias",
+              name: "Runtime + Static Coverage Correlation",
+              calsoft: "Combined Analysis",
+              vendor: "Static Only",
             },
             {
-              name: "Automated Dependency Discovery",
-              calsoft: "Yes",
-              vendor: "Manual Analysis",
+              name: "Test History & Flakiness Scoring",
+              calsoft: "Included",
+              vendor: "Manual",
             },
             {
-              name: "Security-First Cutover Planning",
-              calsoft: "Integrated Controls",
-              vendor: "Post-hoc Remediation",
+              name: "CI/CD Toolchain Integration",
+              calsoft: "Jenkins, GitHub, Azure",
+              vendor: " Limited",
             },
             {
-              name: "Post-Migration Optimization",
-              calsoft: "Built-In",
-              vendor: "Not Included",
+              name: "Customizable Risk Rules",
+              calsoft: "SLA-Aligned",
+              vendor: "Fixed Heuristics",
             },
           ],
         }}
       />
       <FirstStep
         headerContent={{
-          title1: "Migrate with Method,",
-          title2: "Not Momentum",
+          title1: "Validate the Right",
+          title2: "Tests — From Day One",
           description:
-            "We take you from readiness to run-state through a risk-mitigated, ROI-led framework. Here's how:",
+            "We implement test impact intelligence without disrupting your workflows. Here's the step-by-step path:",
         }}
         Component={Guesswork}
+        guessworkData={[
+          {
+            title: "Test Inventory & Change Audit",
+            description:
+              "Assess current test suite, execution time, version control usage, and code change patterns.",
+            output: "Output: TIA Readiness Report + Test Coverage Insights",
+            alignment: "left",
+          },
+          {
+            title: "TIA Model Design",
+            description:
+              "Configure test selection rules, change-to-test mapping strategy, and baseline coverage.",
+            output: "Output: Test Impact Mapping Rules + Confidence Thresholds",
+            alignment: "right",
+          },
+          {
+            title: "Validation & Rollout",
+            description:
+              "Compare full vs partial runs, validate missed detections, and tune the selection engine.",
+            output: "Output: Finalized TIA Workflow + Quality Gate Thresholds",
+            alignment: "left",
+          },
+          {
+            title: "Pilot Run & Benchmarking",
+            description:
+              "Run selected regression packs, monitor feedback, track flakiness, execution time, and false negatives.",
+            output: "Regression Pilot Report + Execution Time Savings",
+            alignment: "right",
+          },
+          {
+            title: "Enterprise Scale Deployment",
+            description:
+              "Roll out to all test environments with dashboards, training, and alerts for test coverage anomalies.",
+            output: "Output: Impact Dashboard + Optimization Toolkit",
+            alignment: "left",
+          },
+        ]}
       />
       <ContactSecDataAi
         lightContent={

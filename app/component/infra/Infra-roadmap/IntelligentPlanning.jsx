@@ -4,6 +4,7 @@ import React from "react";
 import ButtonLayout from "../../utilities/ButtonLayout";
 import buttonImage from "../../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
+import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 
 export default function IntelligentPlanning() {
   const data = [
@@ -103,7 +104,10 @@ export default function IntelligentPlanning() {
     },
   ];
   return (
-    <div className="bg-[#f2f0f5] min-h-screen pb-8 px-4">
+    <div
+      id="intelligent-planning"
+      className="bg-[#f2f0f5] min-h-screen pb-8 px-4"
+    >
       <div className="h-2" />
       <div className="container">
         {/* Header Section */}
@@ -124,6 +128,7 @@ export default function IntelligentPlanning() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {data.map((ele, idx) => (
             <motion.div
+              key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}
@@ -162,7 +167,8 @@ export default function IntelligentPlanning() {
             viewport={{ once: false, amount: 0.3 }}
           >
             <ButtonLayout
-              text={"Talk to Infra Strategist"}
+              text={"Talk to Expert"}
+              onClick={()=>showHubSpotForm("Talk-to-Expert")}
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit"}

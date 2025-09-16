@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,11 +13,16 @@ import { GoArrowRight } from "react-icons/go";
 
 import Logo from "../../assets/logo.png";
 import user from "../../assets/webinar.png";
-import IsoImg from "../../assets/isoImg.jpg";
-
-import { showHubSpotForm } from "./showHubSpotForm"; // <-- Utility import
+import IsoImg from "../../assets/isoLogo.png";
+import React, { useState } from "react";
+import { toast } from "sonner";
+// import { showHubSpotForm } from "./showHubSpotForm"; // <-- Utility import
 
 const Footer = () => {
+  const [subscribed, setSubscribed] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const isEmail = (str) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
   return (
     <>
       {/* Webinar Floating Button */}
@@ -26,7 +32,7 @@ const Footer = () => {
           boxShadow:
             "0px 2px 4px rgba(0, 0, 0, 0.53), 0px 7px 7px rgba(0, 0, 0, 0.46), 0px 16px 10px rgba(0, 0, 0, 0.27), 0px 29px 12px rgba(0, 0, 0, 0.08), 0px 46px 13px rgba(0, 0, 0, 0.01)",
         }}
-        onClick={() => showHubSpotForm("webinar")}
+        // onClick={() => showHubSpotForm("webinar")}
       >
         <Image
           src={user}
@@ -47,21 +53,37 @@ const Footer = () => {
             </div>
 
             {/* Email Subscription */}
-            <div className="mt-10 md:mt-0 w-full md:w-[400px]">
-              <div className="flex items-center relative bg-[#333333] rounded-full">
-                <input
-                  type="email"
-                  placeholder="Add your email*"
-                  className="w-full text-gray-300 px-4 py-3 pr-10 bg-transparent rounded-full focus:outline-none"
-                />
-                <button
-                  onClick={() => showHubSpotForm("subscribe")}
-                  className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0"
-                >
-                  <GoArrowRight /> Subscribe
-                </button>
+            {!subscribed ? (
+              <div className="mt-10 md:mt-0 w-full md:w-[400px]">
+                <div className="flex items-center relative bg-[#333333] rounded-full">
+                  <input
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Add your email*"
+                    className="w-full text-gray-300 px-4 py-3 pr-10 bg-transparent rounded-full focus:outline-none"
+                  />
+                  <button
+                    onClick={() => {
+                      if (email.length > 0) {
+                        if (isEmail(email)) setSubscribed(true);
+                        else
+                          toast.error("Email is invalid", {
+                            duration: 3000,
+                          });
+                      } else
+                        toast.error("Email field is empty", {
+                          duration: 3000,
+                        });
+                    }}
+                    className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0"
+                  >
+                    <GoArrowRight /> Subscribe to our Newsletter
+                  </button>
+                </div>
               </div>
-            </div>
+            ) : (
+              <p>You&apos;re subscribed</p>
+            )}
           </div>
 
           {/* Main Footer Grid */}
@@ -124,7 +146,7 @@ const Footer = () => {
                   <Link href="/insights/webinars">Press</Link>
                 </li>
                 <li>
-                  <Link href="#">Privacy Policy</Link>
+                  <Link href="privacy-policy">Privacy Policy</Link>
                 </li>
               </ul>
             </div>
@@ -143,7 +165,9 @@ const Footer = () => {
 
             {/* Social Presence */}
             <div>
-              <h3 className="text-[20px] font-semibold mb-4">Social Presence</h3>
+              <h3 className="text-[20px] font-semibold mb-4">
+                Social Presence
+              </h3>
               <div className="flex flex-wrap gap-3">
                 <a
                   href="https://www.linkedin.com/company/calsoft/"
@@ -180,8 +204,8 @@ const Footer = () => {
                 >
                   <FaInstagram size={20} />
                 </a>
-                <div className="rounded-full w-30 h-30 flex items-center justify-center p-2">
-                  <Image src={IsoImg} alt="isoImg" width={60} height={40} />
+                <div className="rounded-full w-10 h-10 flex items-center justify-center ">
+                  <Image src={IsoImg} alt="isoImg" width={30} height={20} />
                 </div>
               </div>
             </div>

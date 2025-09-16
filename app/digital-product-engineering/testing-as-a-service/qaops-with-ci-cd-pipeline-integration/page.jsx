@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 import IntelligentPlanning from "../../../component/testing/IntelligentPlanning";
@@ -10,106 +11,216 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import IntegrationMatter from "../../../component/testing/Integration-Matter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_5.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
+  const navItems = [
+    "Why it Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSection
-        title="Never Re-Test Everything. Always Test What Matters"
-        description="Accelerate release cycles and improve test coverage with Calsoft’s Automated Regression Testing — engineered for speed, stability, and scalability."
+        title="Integrate Quality into Every Commit, Build, and Deploy"
+        description="Enable fast, secure, and reliable releases with Calsoft’s CI/CD-driven QAOps — bridging the gap between speed and stability in modern SDLCs."
         buttonText="Request Free Assessment"
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
+        heroImage={Img}
+        buttonClicked={()=>showHubSpotForm("request-free-assessment")}
+        buttonText2=""
       />
       <WhyItMatters
-        title="Outdated Regression = Delayed Releases."
-        desc="Manual or partially automated regression testing often fails to keep pace with agile sprints and CI/CD pipelines, leading to:"
-        desc2="Calsoft helps QA teams shift from script-heavy testing to impact-driven, maintainable regression automation aligned with release velocity."
-        buttonText="Download Case Study"
+        title="The Missing Link in DevOps? Continuous Quality."
+        desc="Agile and DevOps have accelerated releases, but quality is often treated as an afterthought — leading to defects in production and broken pipelines."
+        desc2="Calsoft helps enterprises embed quality deep inside DevOps workflows through true QAOps enablement."
+        buttonText="Get in touch"
         Component={IntegrationMatter}
         contentWidth="w-[80%]"
       />
-      <IntelligentPlanning />
+      <IntelligentPlanning
+        heading="Shift-Left Meets Shift-Smart"
+        description="We help you embed continuous testing across your CI/CD ecosystem, aligned with release velocity, risk profile, and coverage requirements."
+        data={[
+          {
+            title: "Automated smoke,",
+            subTitle: "regression, API, & functional test packs",
+          },
+          {
+            title: "Hook integration with Jenkins,",
+            subTitle: "GitHub Actions, GitLab CI, Azure DevOps",
+          },
+          {
+            title: "Containerized test runners",
+            subTitle: "for consistent environments",
+          },
+          {
+            title: "GitOps integration",
+            subTitle: "for test-as-code and rollback",
+          },
+          {
+            title: "Quality gates",
+            subTitle: "and test thresholds per stage",
+          },
+        ]}
+        bottomContent={null}
+        arrow={true}
+        image={false}
+      />
       <Agility
         data={{
           leftSideContent: {
-            title: "Faster, Safer, Smarter Cloud Transitions",
-            subTitle: "Cloud migration done right delivers real impact:",
-            description:
-              "Calsoft focuses on business-first outcomes — not just technical transition.",
+            title: "Fewer Rollbacks. Faster Releases. Higher Confidence.",
+            subTitle: "QAOps enables fast and stable delivery cycles with:",
+            // description:
+            //   "Calsoft focuses on business-first outcomes — not just technical transition.",
           },
           rightSideContent: [
             {
-              title: "Up to 40%",
-              subTitle: "reduction in infra costs via right-sized provisioning",
-            },
-            {
-              title: "Zero-downtime",
-              subTitle: "cutovers for production-critical systems",
-            },
-            {
-              title: "50–70%",
-              subTitle: "faster migration through automation",
+              title: "50-70%",
+              subTitle:
+                "faster test execution via parallelization and orchestration",
             },
             {
               title: "90%",
-              subTitle: "improvement in post-migration application performance",
+              subTitle: "fewer production bugs through early-stage validations",
+            },
+            {
+              title: "30-40%",
+              subTitle: "reduction in cycle time from commit to deploy",
+            },
+            {
+              title: "Zero ",
+              subTitle:
+                "build to release gaps via quality gates and rollback triggers",
             },
           ],
         }}
         bookMeetingData={{
-          title: "Shift-left QA with 90% pipeline coverage.",
+          title:
+            "Shift-left QA with 90% pipeline coverage.",
           buttonText: "Book a Meeting",
+          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
         }}
-        buttonText="Download ROI Sheet"
-      />
-      <UseCases />
-      <WhyCalsoft
-        sectionDescription="Cloud migration is not a copy-paste operation — it’s a strategic transformation. Calsoft is uniquely positioned to deliver:"
         buttonText="Download One Pager"
+        onPagerButton={()=>showHubSpotForm("qaops-one-pg")}
+      />
+      <UseCases
+        data={[
+          {
+            title: "Product teams",
+            subTitle: "deploying multiple microservices daily via GitOps",
+          },
+          {
+            title: "SaaS platforms",
+            subTitle: "with CI/CD pipelines across multi-tenant builds",
+          },
+          {
+            title: "FinTech apps",
+            subTitle: "requiring automated security and compliance gates",
+          },
+          {
+            title: "ISVs",
+            subTitle:
+              "streamlining automated sanity and regression pre-release",
+          },
+          {
+            title: "Cloud-native DevOps teams",
+            subTitle: "embedding chaos and performance tests into release flow",
+          },
+        ]}
+      />
+      <WhyCalsoft
+        sectionDescription="QAOps is more than plugging in test automation — it’s about orchestrating quality as a service across SDLC."
         data={{
           tableHeadings: ["Capability", "Calsoft", "Standard Providers"],
           tableContent: [
             {
-              name: "Engineering-Led Migration Design",
-              calsoft: "Deep Technical Depth",
-              vendor: "Generic Templates",
+              name: "CI/CD Integration with Major Tools",
+              calsoft: "Jenkins, GitHub, Azure",
+              vendor: "Manual Triggering",
             },
             {
-              name: "Multi-Cloud Strategy Alignment",
-              calsoft: "Azure, AWS, GCP",
-              vendor: "Vendor Bias",
+              name: "Test as Code (Versioned & Reusable)",
+              calsoft: "GitOps Ready",
+              vendor: "Script Sprawl",
             },
             {
-              name: "Automated Dependency Discovery",
+              name: "Auto Quality Gates & Rollbacks",
+              calsoft: "Built-In Decision Hooks",
+              vendor: "Post-Facto Validation",
+            },
+            {
+              name: "End-to-End Pipeline Observability",
+              calsoft: "Real-Time Metrics",
+              vendor: "No Feedback Loop",
+            },
+            {
+              name: "Cloud-Native + On-Prem Compatibility",
               calsoft: "Yes",
-              vendor: "Manual Analysis",
-            },
-            {
-              name: "Security-First Cutover Planning",
-              calsoft: "Integrated Controls",
-              vendor: "Post-hoc Remediation",
-            },
-            {
-              name: "Post-Migration Optimization",
-              calsoft: "Built-In",
-              vendor: "Not Included",
+              vendor: "Toolchain Limitations",
             },
           ],
         }}
       />
       <FirstStep
         headerContent={{
-          title1: "Migrate with Method,",
-          title2: "Not Momentum",
+          title1: "QA That Moves at the",
+          title2: "Speed of DevOps",
           description:
-            "We take you from readiness to run-state through a risk-mitigated, ROI-led framework. Here's how:",
+            "Calsoft helps you define and embed QAOps — across every stage of your release lifecycle.",
         }}
         Component={Guesswork}
+        guessworkData={[
+          {
+            title: "Pipeline Assessment",
+            description:
+              "Analyze your current DevOps pipelines, test automation maturity, and tool gaps.",
+            output: "Output: QAOps Feasibility Report + Gaps Identified",
+            alignment: "left",
+          },
+          {
+            title: "Test Strategy Alignment",
+            description:
+              "Map tests to CI/CD stages — commit, build, pre-prod, deploy — and define quality gates.",
+            output: "Output: Test Orchestration Plan + Metrics Baselines",
+            alignment: "right",
+          },
+          {
+            title: "Toolchain Integration",
+            description:
+              "Set up test runners, configure build hooks, parallelize executions, integrate reporting.",
+            output: "Output: CI/CD Test Setup Dashboard + Alerts",
+            alignment: "left",
+          },
+          {
+            title: "Run Pilot Workflows",
+            description:
+              "Automate and run end-to-end CI/CD with integrated QA and rollback triggers.",
+            output: "Output: Pilot Validation Report + KPIs",
+            alignment: "right",
+          },
+          {
+            title: "Scale Across Pipelines",
+            description:
+              "Enable governance, dashboarding, change alerts, and modular suite extension.",
+            output: "Output: QAOps Playbook + Enterprise Rollout Tracker",
+            alignment: "left",
+          },
+        ]}
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Integrate QAOps seamlessly into CI/CD pipelines."
         }
-        link={"#"}
       />
     </>
   );

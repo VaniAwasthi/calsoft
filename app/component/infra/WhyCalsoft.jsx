@@ -7,7 +7,9 @@ import { motion } from "framer-motion";
 
 export default function WhyCalsoft({
   sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here’s how we stand apart:",
-  buttonText = "Download Case Study",
+  // buttonText = "Download Case Study",
+  title  = "Competitive Edge",
+  heading = "Why Calsoft",
   data = {
     tableHeadings: ["Feature", "Calsoft", "Traditional Vendors"],
     tableContent: [
@@ -67,12 +69,12 @@ export default function WhyCalsoft({
     </div>
   );
   return (
-    <div className="max-w-7xl mx-auto px-6 container">
+    <div id="why-calsoft" className="max-w-7xl mx-auto px-6 container">
       <div className="h-8" />
       {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-8 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent">
-          Why Calsoft
+         {heading}
         </h1>
 
         <div className="flex justify-between items-center mb-12">
@@ -84,26 +86,25 @@ export default function WhyCalsoft({
             className="max-w-2xl"
           >
             <h2 className="text-[#000000] text-3xl font-bold mb-4">
-              Competitive Edge
+              {title}
             </h2>
             <p className="text-[#000000] text-lg leading-relaxed">
-              Cloud migration is not a copy-paste operation — it’s a strategic
-              transformation. Calsoft is uniquely positioned to deliver:
+              {sectionDescription}
             </p>
           </motion.div>
-          <motion.div
+          {/* <motion.div
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: false, amount: 0.3 }}
           >
             <ButtonLayout
-              text={"Download Case Study"}
+              text={buttonText}
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit"}
             />
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
 

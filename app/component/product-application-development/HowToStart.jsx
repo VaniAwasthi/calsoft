@@ -7,13 +7,15 @@ import Image from "next/image";
 
 export default function HowToStart({
   headerContent = {
+   
     title: "Start Smart, Scale Fast",
     description:
       "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
   },
+   id="",
 }) {
   return (
-    <div className="container">
+    <div id={id} className="container">
       <div className="grid lg:grid-cols-2 gap-5 mb-10 mt-5 px-3">
         <motion.div
           initial={{ x: -50, opacity: 0 }}

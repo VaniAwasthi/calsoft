@@ -8,6 +8,8 @@ import Info1 from "../../assets/Data-Ai/dataDriven/Info1.svg";
 import Info2 from "../../assets/Data-Ai/dataDriven/Info2.svg";
 import Info3 from "../../assets/Data-Ai/dataDriven/Info3.svg";
 import Info4 from "../../assets/Data-Ai/dataDriven/Info4.svg";
+
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -19,7 +21,7 @@ export const DrivenBanner = () => {
 
     description: `Predict trends and infer actionable insights at
     enterprise speed.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [
@@ -41,6 +43,7 @@ export const DrivenBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+         onButtonClick={() => showHubSpotForm("ai-driven-prediction-datasheet")}
       />
       <Submenu
         navItems={navItems}
@@ -100,7 +103,7 @@ export const PredictiveSec = () => {
         title="Predictive modeling"
         description="Anticipate events, mitigate risks, and unlock
         data-driven foresight."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Train models to forecast key outcomes",
@@ -130,7 +133,7 @@ export const PatternSec = () => {
         description="Reveal hidden signals
         and uncover emerging
         opportunities with intelligent models."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Use ML to reveal hidden patterns",
@@ -159,7 +162,7 @@ export const InferentialSec = () => {
         title="Inferential analytics"
         description="Move beyond observation to confident, data-backed
         decision pathways."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Recommend actions based on data",
@@ -188,7 +191,7 @@ export const ModelSec = () => {
         adaptability"
         description="Ensure AI models evolve alongside your business
         and data landscapes."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Retrain models as new data flows in",

@@ -1,80 +1,89 @@
+"use client";
+
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchWhitepaperList } from "../../store/actions/whitepaperAction";
 import { useRouter } from "next/navigation";
 import { setSelectedWhitepaperId } from "../../store/reducers/whitepaperReducer";
 import { slugify } from "../utilities/helper/SlugGenerator";
-import FilterPanel from "../utilities/FilterPannel";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
+import { baseUrl } from "@/config";
+import { FilterSec } from "../utilities/FilterSec";
 
 export const WhitepaperCards = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
-  const listData = useSelector((state) => state.whitepaper.list);
   const router = useRouter();
 
-  const [copiedId, setCopiedId] = useState(null);
-  const [openDropdown, setOpenDropdown] = useState("");
+  const listData = useSelector((state) => state.whitepaper.list);
   const FilterIndustry = useSelector(
     (state) => state.blogs.filterIndustry || []
   );
   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
     Topics: [],
   });
+  const [currentPage, setCurrentPage] = useState(0);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [copiedId, setCopiedId] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState("");
 
   const filters = {
     Industry: ["All", ...FilterIndustry],
     Topics: ["All", ...FilterTopic],
   };
-  const [currentPage, setCurrentPage] = useState(0);
 
-  
-  useEffect(() => {
-     dispatch(fetchBlogFilterList());
-    dispatch(fetchWhitepaperList());
-  }, [dispatch]);
+  // Filter + search + mapping
+  const filteredResources = useMemo(() => {
+    return listData
+      .filter((item) => {
+        const industryMatch =
+          activeFilters.Industry === "All" ||
+          item.industry === activeFilters.Industry;
 
-  const resources = Array.isArray(listData)
-    ? listData.map((item, idx) => ({
+        const tagMatch =
+          activeFilters.Topics.length === 0 ||
+          activeFilters.Topics.some((topic) =>
+            item.tags?.split(",").includes(topic)
+          );
+
+        const searchMatch =
+          searchTerm === "" ||
+          item.hero_title1?.toLowerCase().includes(searchTerm.toLowerCase());
+
+        return industryMatch && tagMatch && searchMatch;
+      })
+      .map((item) => ({
         id: item._id,
         title: item.hero_title1 || "Untitled",
-        image: `${baseUrl}/${item.featured_image}`,
-        slug: item.hero_title1
-          ? item.hero_title1
-              .toLowerCase()
-              .replace(/[^a-z0-9]+/g, "-")
-              .replace(/(^-|-$)/g, "")
-          : "untitled",
+        image: `${baseUrl}${item.featured_image}`,
+        slug: slugify(item.hero_title1 || "untitled", { lower: true }),
         link: `/insights/whitepaper/${item._id}`,
         author: item.author || "Unknown",
         tags: item.tags?.split(",") || ["General"],
         industry: item.industry || "Tech",
-      }))
-    : [];
+      }));
+  }, [listData, activeFilters, searchTerm]);
 
-  const heading =
-    "Cloud Provider Accelerates VMware Migration with Calsoft’s CLI Tool";
-  const description = `A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....
-<br><br>
-
-A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud. Calsoft developed a lightweight, CLI-based migration tool that automated discovery, conversion, and validation-enabling fast, error-free virtual machine (VM) migrations at scale....`;
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
+  const currentPageData = filteredResources.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
 
   const handleClick = (item) => {
-      const slug = slugify(item.title, { lower: true });
     dispatch(setSelectedWhitepaperId(item.id));
-localStorage.setItem("selectedWhitepaperId", item.id);
-    router.push(`/insights/whitepaper/${slug}`);
+    localStorage.setItem("selectedWhitepaperId", item.id);
+    router.push(`/insights/whitepaper/${item.slug}`);
   };
 
-  const toggleDropdown = (filter) => {
+  const toggleDropdown = (filter) =>
     setOpenDropdown(openDropdown === filter ? "" : filter);
-  };
-
   const selectFilter = (type, value) => {
     setActiveFilters({ ...activeFilters, [type]: value });
     setOpenDropdown("");
@@ -91,63 +100,56 @@ localStorage.setItem("selectedWhitepaperId", item.id);
     }
   };
 
-  const filteredResources = resources.filter((item) => {
-    const industryMatch =
-      activeFilters.Industry === "All" ||
-      item.industry === activeFilters.Industry;
-
-    const tagMatch =
-      activeFilters.Topics.length === 0 ||
-      activeFilters.Topics.some((topic) => item.tags.includes(topic));
-
-    return industryMatch && tagMatch;
-  });
-
-
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
-  const currentPageData = filteredResources.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
+  const search = (value) => {
+    setSearchTerm(value);
+    setCurrentPage(0);
+  };
 
   const goToPage = (index) => {
     if (index < 0 || index >= totalPages) return;
     setCurrentPage(index);
   };
 
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(
+      fetchWhitepaperList({
+        Industry: "All",
+        Topics: [],
+      })
+    );
+  }, [dispatch]);
+
+  const performSearch = useCallback(() => {
+    dispatch(fetchWhitepaperList(activeFilters));
+  }, [dispatch, activeFilters]);
+
+  useEffect(() => {
+    performSearch();
+  }, [performSearch]);
+
+  useEffect(() => {
+    if (currentPage >= totalPages) setCurrentPage(0);
+  }, [currentPage, totalPages]);
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterPanel
-                  filters={filters}
-                  activeFilters={activeFilters}
-                  openDropdown={openDropdown}
-                  toggleDropdown={toggleDropdown}
-                  selectFilter={selectFilter}
-                  setActiveFilters={setActiveFilters}
-                />
+        <FilterSec
+          filters={filters}
+          activeFilters={activeFilters}
+          setActiveFilters={setActiveFilters}
+          openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
+          toggleDropdown={toggleDropdown}
+          selectFilter={selectFilter}
+          searchDebouncing={search}
+          mainClass={"p-0 mx-0"}
+        />
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
-        {/* Content */}
-        <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-3xl md:text-[34px] font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent"
-        >
-          {heading}
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-[12px] md:text-[13px] font-normal text-[#959595] my-4 py-4"
-          dangerouslySetInnerHTML={{ __html: description }}
-        ></motion.p>
-        {/* Grid Display with animation */}
-        <div className="grid grid-cols-1 sm:grid-cols-2  gap-8 mt-[2rem]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-[2rem]">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
               <motion.div
@@ -156,37 +158,37 @@ localStorage.setItem("selectedWhitepaperId", item.id);
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="flex flex-col h-[400px] md:h-[450px]   overflow-hidden"
+                className="flex flex-col h-[400px] md:h-[450px] overflow-hidden"
                 onClick={() => handleClick(item)}
               >
-                {/* Image */}
                 <div className="w-full h-3/5 border-2 border-[#2E3092] rounded-2xl">
                   <Image
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover rounded-2xl "
+                    className="w-full h-full object-cover rounded-2xl"
                     width={400}
                     height={400}
-                    style={{ objectFit: "cover" }}
                   />
                 </div>
 
-                {/* Content */}
-                <div className="w-full  px-4 py-3 flex flex-col justify-between">
+                <div className="w-full px-4 py-3 flex flex-col justify-between">
                   <div className="flex justify-between items-start">
-                    <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words whitespace-normal text-[#28272D]">
+                    <h3 className="text-sm md:text-[16px] font-semibold w-9/12 break-words text-[#28272D]">
                       {item.title}
                     </h3>
                     <button
-                      onClick={() => handleCopy(item.link, item.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleCopy(item.link, item.id);
+                      }}
                       className="text-gray-500 hover:text-black"
                       title="Copy link"
                     >
                       <FaShareAlt color="#2E3092" className="w-6 h-6" />
                     </button>
                   </div>
-                  <div className="flex flex-wrap gap-2 my-2 ">
-                    {/* Container to hold tags */}
+
+                  <div className="flex flex-wrap gap-2 my-2">
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
@@ -196,6 +198,7 @@ localStorage.setItem("selectedWhitepaperId", item.id);
                       </span>
                     ))}
                   </div>
+
                   {copiedId === item.id && (
                     <span className="text-green-500 text-xs mt-2">
                       Link copied!
@@ -207,10 +210,8 @@ localStorage.setItem("selectedWhitepaperId", item.id);
           </AnimatePresence>
         </div>
 
-        {/* Custom Pagination with animation */}
         <div className="flex justify-center items-center">
-          <div className="mt-8  gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Previous Button */}
+          <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
             <motion.button
               onClick={() => goToPage(currentPage - 1)}
               disabled={currentPage === 0}
@@ -225,7 +226,6 @@ localStorage.setItem("selectedWhitepaperId", item.id);
               <FaLessThan className="w-3 h-3" />
             </motion.button>
 
-            {/* Page Numbers */}
             {Array.from({ length: totalPages }, (_, i) => (
               <motion.button
                 key={i}
@@ -242,7 +242,6 @@ localStorage.setItem("selectedWhitepaperId", item.id);
               </motion.button>
             ))}
 
-            {/* Next Button */}
             <motion.button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages - 1}

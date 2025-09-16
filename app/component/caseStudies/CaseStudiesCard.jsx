@@ -7,12 +7,12 @@ import {
   FaLessThan,
   FaShareAlt,
 } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Info1 from "../../assets/Infographic/Info1.webp";
 import Info2 from "../../assets/Infographic/Info2.webp";
-import { FilterSec } from "../utilities/FilterSec";
-import Casestudybg from "../../assets/home/casestudybg.webp";
+import logo2 from "../../assets/home/logo2.png";
+import Casestudybg from "../../assets/home/Insights.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -26,65 +26,56 @@ import { fetchCaseStudiesList } from "../../store/actions/caseStudyActions.js";
 import { setSelectedCaseStudyId } from "../../store/reducers/caseStudyReducer.js";
 import { slugify } from "../utilities/helper/SlugGenerator";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
-import FilterPanel from "../utilities/FilterPannel";
+import { FilterSec } from "../utilities/FilterSec";
+import { baseUrl } from "@/config";
 
 export const CaseStudiesCard = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
-  const listData = useSelector((state) => state.caseStudy.list);
+  const router = useRouter();
 
   const [copiedId, setCopiedId] = useState(null);
   const [openDropdown, setOpenDropdown] = useState("");
-
   const [currentPage, setCurrentPage] = useState(0);
+  const [filteredListData, setFilteredListData] = useState([]);
+  const listData = useSelector((state) => state.caseStudy.list);
+  const FilterIndustry = useSelector(
+    (state) => state.blogs.filterIndustry || []
+  );
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+  const [activeFilters, setActiveFilters] = useState({
+    Industry: "All",
+    Topics: [],
+  });
 
-     const FilterIndustry = useSelector(
-     (state) => state.blogs.filterIndustry || []
-   );
-   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
-   const [activeFilters, setActiveFilters] = useState({
-     Industry: "All",
-     Topics: [],
-   });
- 
-   const filters = {
-     Industry: ["All", ...FilterIndustry],
-     Topics: ["All", ...FilterTopic],
-   };
-  const router = useRouter();
+  const filters = {
+    Industry: ["All", ...FilterIndustry],
+    Topics: ["All", ...FilterTopic],
+  };
 
-  useEffect(() => {
-          dispatch(fetchBlogFilterList());
-    
-    dispatch(fetchCaseStudiesList());
-  }, [dispatch]);
-
-const handleClick = (item) => {
-  const safeTitle = item.title || "untitled";
-  const slug = slugify(safeTitle, { lower: true });
-  dispatch(setSelectedCaseStudyId(item._id));
-  localStorage.setItem("selectedCaseStudyId", item._id);
-  router.push(`/insights/case-studies/${slug}`);
-};
+  const handleClick = (item) => {
+    const safeTitle = item.title || "untitled";
+    const slug = slugify(safeTitle, { lower: true });
+    dispatch(setSelectedCaseStudyId(item._id));
+    localStorage.setItem("selectedCaseStudyId", item._id);
+    router.push(`/insights/case-studies/${slug}`);
+  };
 
   const images = [Info1, Info2];
 
-  const resources = listData.map((item) => {
-  const safeTitle = item?.hero_title1 || "Untitled"; // fallback
-  return {
-    ...item,
-    id: item._id,
-    title: safeTitle,
-    image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
-    slug: safeTitle
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)/g, ""),
-    link: `https://yourdomain.com/card/${item._id}`,
-  };
-});
-
-
+  const resources = filteredListData.map((item) => {
+    const safeTitle = item?.hero_title1 || "Untitled";
+    return {
+      ...item,
+      id: item._id,
+      title: safeTitle,
+      image: item.featured_image ? `${baseUrl}${item.featured_image}` : Info1,
+      slug: safeTitle
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, ""),
+      link: `https://yourdomain.com/card/${item._id}`,
+    };
+  });
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -105,14 +96,18 @@ const handleClick = (item) => {
       console.error("Copy failed:", error);
     }
   };
- const filteredResources = resources.filter((item) => {
+  const filteredResources = resources.filter((item) => {
     const industryMatch =
       activeFilters.Industry === "All" ||
       item.industry === activeFilters.Industry;
 
     const tagMatch =
       activeFilters.Topics.length === 0 ||
-      activeFilters.Topics.some((topic) => item.tags.includes(topic));
+      activeFilters.Topics.some(
+        (topic) =>
+          // <CHANGE> Added safety check for undefined tags
+          item.tags && item.tags.includes(topic)
+      );
 
     return industryMatch && tagMatch;
   });
@@ -133,26 +128,62 @@ const handleClick = (item) => {
     title:
       "Accelerating Quality at Scale: How a Global Networking Giant Cut Test Time by 40% with CalTIA",
     description: [
-      "A leading computing and edge cloud provider needed a robust, self-service migration framework to help customers transition from VMware-based environments to its proprietary cloud...",
+      "Discover how a cloud infrastructure leader enabled self-service, large-scale VM workload migrations with Calsoft’s CLI-powered solution.",
     ],
     stats: [
       { count: "40%", text: "faster validation cycles" },
       { count: "36%", text: "lower infrastructure costs" },
     ],
   };
+
+  function search(value) {
+    if (value === "") setFilteredListData(listData);
+    else
+      setFilteredListData(
+        listData.filter((caseStudy) =>
+          caseStudy.hero_title1.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
+  useEffect(() => {
+    setFilteredListData(listData);
+  }, [listData]);
+
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(
+      fetchCaseStudiesList({
+        Industry: "All",
+        Topics: [],
+      })
+    );
+  }, [dispatch]);
+
+  const performSearch = useCallback(() => {
+    dispatch(fetchCaseStudiesList(activeFilters));
+  }, [dispatch, activeFilters]);
+
+  useEffect(() => {
+    performSearch();
+  }, [performSearch]);
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
-      <div className="container mx-auto w-full  sm:px-6 lg:px-8">
-        <FilterPanel
-                 filters={filters}
-                 activeFilters={activeFilters}
-                 openDropdown={openDropdown}
-                 toggleDropdown={toggleDropdown}
-                 selectFilter={selectFilter}
-                 setActiveFilters={setActiveFilters}
-               />
+      <div className="container mx-auto w-full sm:px-6 lg:px-8">
+        <FilterSec
+          filters={filters}
+          activeFilters={activeFilters}
+          openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
+          toggleDropdown={toggleDropdown}
+          selectFilter={selectFilter}
+          setActiveFilters={setActiveFilters}
+          searchDebouncing={search}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
+        />
 
-        <p className="mb-4 text-sm">{filteredResources.length} Results</p>
+        <p className="mb-4 text-sm">{filteredListData.length} Results</p>
         {/* recent */}
         <motion.div
           initial={{ opacity: 0, y: -100 }}
@@ -179,7 +210,7 @@ const handleClick = (item) => {
             className="mt-8 flex flex-col md:flex-row gap-8 md:gap-12 items-stretch"
           >
             <motion.div
-              className=" text-white p-4 md:p-8 rounded-[20px]  md:w-2/3 flex flex-col justify-center bg-cover bg-center"
+              className=" text-white p-4 md:p-8 rounded-[20px] h-[350px]  md:w-2/3 flex flex-col justify-center bg-cover bg-center"
               initial={{ opacity: 0, x: -50 }}
               style={{
                 backgroundImage: `url(${Casestudybg.src})`,
@@ -188,25 +219,35 @@ const handleClick = (item) => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2"></div>
-              <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem]">
-                {caseStudyData.title}
-              </h2>
+              {/* <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
+                  <Image
+                    src={logo2}
+                    className="w-full"
+                    alt="logo"
+                    width={100}
+                    height={100}
+                  />
+                </div> */}
             </motion.div>
 
-            <div className=" w-full flex flex-col justify-between">
+            <div className="w-full flex flex-col justify-between">
               <div>
                 {caseStudyData.description.map((desc, index) => (
-                  <motion.p
-                    key={index}
-                    className="text-[#959595] text-sm md:text-[15px] font-light p-2"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.2 }}
-                    dangerouslySetInnerHTML={{ __html: desc }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                  />
+                  <>
+                    {/* <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem] py-2">
+                {caseStudyData.title}
+              </h2> */}
+                    <motion.p
+                      key={index}
+                      className="text-[#959595] text-sm md:text-[18px] font-light p-2"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.2 }}
+                      dangerouslySetInnerHTML={{ __html: desc }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                    />
+                  </>
                 ))}
               </div>
             </div>

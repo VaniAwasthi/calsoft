@@ -22,6 +22,7 @@ import {
   ServicesSec,
   TopPartners,
 } from "../../../app/component/industries/hitech/BlogSection.jsx";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm.js";
 
 const Page = () => {
   const slide = {
@@ -34,7 +35,7 @@ const Page = () => {
         <br />
         Calsoft helps you build your ‘ideal’ products/ software from planning to
         deployment at lower costs, higher quality and faster go-to-market.`,
-    buttonText: "What We Do",
+    buttonText: "Talk to Our Experts",
     image: BackgroundImage,
   };
   const Gradientheading = " All our intelligence";
@@ -42,13 +43,13 @@ const Page = () => {
   const [activeTab, setActiveTab] = useState("Journey");
 
   const navItems = [
-    "Journey",
-    "Customers",
-    "Industries",
-    "What's New",
-    "Partners",
-    "Services",
-    "Case Study",
+    "Overview",
+    "Software & Product Engineering",
+    "Cloud & Platform Engineering",
+    "AI-Powered Modernization",
+    "Success Stories",
+    "Industry Partners",
+    "Key Services",
   ];
   const icons = [
     {
@@ -108,6 +109,7 @@ const Page = () => {
     },
   ];
   const softwareEngineeringSection = {
+    id: "product",
     title: "Software & product engineering",
     description:
       "Create market-leading and high-performance products, built within agile frameworks and secure environments, with go-to-market capabilities and scalability and at scale.",
@@ -124,7 +126,7 @@ const Page = () => {
       "Improve system performance with optimized workflows",
       "Enhance security and reliability with DevOps best practices",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     link: "#",
     image: SoftwareImg,
     imagePosition: "right",
@@ -132,6 +134,7 @@ const Page = () => {
     isgradientheading: false,
   };
   const CloudEngineeringSec = {
+    id: "platform",
     title: "Cloud & platform engineering",
     description:
       "Enabling cloud-first agility is key for high-tech businesses. We design, implement, and maintain cloud ecosystems - delivering resilient performance and cost efficiency.",
@@ -147,7 +150,7 @@ const Page = () => {
       "Reduce operational overhead with automated cloud workflows",
       "Ensure seamless scaling with optimized infrastructure",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     link: "#",
     image: CloudImage,
     imagePosition: "left",
@@ -155,6 +158,7 @@ const Page = () => {
     isgradientheading: true,
   };
   const AIPoweredSection = {
+    id: "modernization",
     title: "AI-powered modernization",
     description:
       "Gain AI-powered automation, predictive analytics, and intelligent architecture to enhance software functionality, efficiency, and adaptability.",
@@ -170,7 +174,7 @@ const Page = () => {
       "Enhance user experience with intelligent process flows",
       "Ensure long-term product adaptability with modular architectures",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     link: "#",
     image: AIImage,
     imagePosition: "right",
@@ -195,28 +199,31 @@ const Page = () => {
         headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-14 line-clamp-4 "
         contentClass=" md:h-40 lg:h-64 "
       />
-      <TopClients />
+      {/* <TopClients /> */}
       <InfoImageSection
         {...softwareEngineeringSection}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
+        buttonClicked={()=>showHubSpotForm("software-product-engineering-case-study")}
       />
       <InfoImageSection
         {...CloudEngineeringSec}
         rounded="rounded-r-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%] bg-[#F8F9FA] "
+        buttonClicked={()=>showHubSpotForm("cloud-platform-engineering-case-study")}
       />
       <InfoImageSection
         {...AIPoweredSection}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2] "
+        link="/insights/case-studies/ai-powered-predictive-operations-for-enterprise-data-centers"
       />
       <BlogSection />
       <TopPartners />
       <ServicesSec />
       <ContactSec
         lightContent="Get the edge in Hi-tech with Calsoft "
-        link="#"
+        buttonClicked={()=>showHubSpotForm("contact-us-popup")}
       />
     </>
   );

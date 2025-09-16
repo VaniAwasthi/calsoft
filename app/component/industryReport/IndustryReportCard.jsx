@@ -2,56 +2,110 @@
 
 import Image from "next/image";
 import { FaGreaterThan, FaLessThan, FaShareAlt } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Industry1 from "../../assets/Infographic/Industry1.webp";
-
-import Link from "next/link";
+import ButtonImage from "../../assets/home/buttonImg.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
-import FilterPanel from "../utilities/FilterPannel";
+import { useRouter } from "next/navigation";
+import { setSelectedIndustryReportId } from "@/app/store/reducers/industryReportReducer";
+import { fetchIndustryReportList } from "@/app/store/actions/industryReportActions";
+import { baseUrl } from "@/config";
+import { slugify } from "../utilities/helper/SlugGenerator";
+import ButtonLayout from "../utilities/ButtonLayout";
+import { FilterSec } from "../utilities/FilterSec";
 
 export const IndustryReportCard = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
 
-  const [copiedId, setCopiedId] = useState(null);
-  const [openDropdown, setOpenDropdown] = useState("");
-
-  useEffect(() => {
-    dispatch(fetchBlogFilterList());
-  }, [dispatch]);
-
+  const listData = useSelector((state) => state.industryreport.list);
   const FilterIndustry = useSelector(
     (state) => state.blogs.filterIndustry || []
   );
   const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
+
+  const [copiedId, setCopiedId] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState("");
   const [activeFilters, setActiveFilters] = useState({
     Industry: "All",
     Topics: [],
   });
-
-  const filters = {
-    Industry: ["All", ...FilterIndustry],
-    Topics: ["All", ...FilterTopic],
-  };
-
   const [currentPage, setCurrentPage] = useState(0);
 
-  const images = [Industry1];
+  // ✅ Fetch only once
+  useEffect(() => {
+    dispatch(fetchBlogFilterList());
+    dispatch(
+      fetchIndustryReportList({
+        Industry: "All",
+        Topics: [],
+      })
+    );
+  }, [dispatch]);
 
-  const cardData = new Array(18).fill(0).map((_, i) => ({
-    id: i + 1,
-    title: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Example ${
-      i + 1
-    }`,
-    image: images[i % images.length],
-    link: `https://yourdomain.com/card/${i + 1}`,
-    author: i % 2 === 0 ? "Anton Frank" : "John Doe",
-    tags: ["AI", "Security"],
-    industry: i % 2 === 0 ? "Tech" : "Healthcare",
-  }));
+  const performSearch = useCallback(() => {
+    dispatch(fetchIndustryReportList(activeFilters));
+  }, [dispatch, activeFilters]);
 
-  const [resources] = useState([...cardData]);
+  useEffect(() => {
+    performSearch();
+  }, [performSearch]);
+
+  // Build resources directly from Redux listData
+  const resources = Array.isArray(listData)
+    ? listData.map((item) => {
+        const slug = slugify(item.hero_title1 || "untitled", { lower: true });
+        const origin =
+          typeof window !== "undefined" ? window.location.origin : "";
+
+        return {
+          id: item?._id,
+          title: item?.hero_title1 || "Untitled",
+          description: item?.hero_title2 || "Untitled",
+          image: `${baseUrl}/${item?.featured_image}`,
+          slug,
+          link: `${origin}/insights/industry-report/${slug}`,
+          author: item?.author || "Unknown",
+          tags: item.tags?.split(",") || ["General"],
+          industry: item.industry || "Tech",
+        };
+      })
+    : [];
+
+  // Filtering
+  const filteredResources = resources.filter((item) => {
+    const industryMatch =
+      activeFilters.Industry === "All" ||
+      item.industry === activeFilters.Industry;
+
+    const tagMatch =
+      activeFilters.Topics.length === 0 ||
+      activeFilters.Topics.some((topic) => item.tags.includes(topic));
+
+    return industryMatch && tagMatch;
+  });
+
+  // ✅ Reset to first page when filtered list changes
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [filteredResources.length]);
+
+  // Pagination
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
+  const currentPageData = filteredResources.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
+
+  // Handlers
+  const handleClick = (item) => {
+    const slug = slugify(item.title, { lower: true });
+    dispatch(setSelectedIndustryReportId(item.id));
+    localStorage.setItem("selectedIndustryReportId", item.id);
+    router.push(`/insights/industry-report/${slug}`);
+  };
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -72,45 +126,33 @@ export const IndustryReportCard = () => {
       console.error("Copy failed:", error);
     }
   };
-  const filteredResources = resources.filter((item) => {
-    const industryMatch =
-      activeFilters.Industry === "All" ||
-      item.industry === activeFilters.Industry;
 
-    const tagMatch =
-      activeFilters.Topics.length === 0 ||
-      activeFilters.Topics.some((topic) => item.tags.includes(topic));
-
-    return industryMatch && tagMatch;
-  });
-
-  const itemsPerPage = 6;
-  const totalPages = Math.ceil(filteredResources.length / itemsPerPage);
-  const currentPageData = filteredResources.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
-
-  const goToPage = (index) => {
-    if (index < 0 || index >= totalPages) return;
-    setCurrentPage(index);
-  };
+  function search(value) {
+    setActiveFilters((prev) => ({ ...prev, search: value.toLowerCase() }));
+    setCurrentPage(0);
+  }
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <FilterPanel
-          filters={filters}
+        <FilterSec
+          filters={{
+            Industry: ["All", ...FilterIndustry],
+            Topics: ["All", ...FilterTopic],
+          }}
           activeFilters={activeFilters}
+          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
-          setActiveFilters={setActiveFilters}
+          searchDebouncing={search}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
         />
 
         <p className="mb-4 text-sm">{filteredResources.length} Results</p>
 
-        {/* Grid Display with animation */}
+        {/* Grid Display */}
         <div className="grid grid-cols-1 gap-8">
           <AnimatePresence>
             {currentPageData.map((item, idx) => (
@@ -139,6 +181,7 @@ export const IndustryReportCard = () => {
                     <h3 className="text-sm md:text-[18px] font-semibold break-words whitespace-normal text-[#28272D]">
                       {item.title}
                     </h3>
+                    <p className="text-sm p-1">{item.description}</p>
                     <div className="flex flex-wrap gap-2 my-2">
                       {item.tags.map((tag) => (
                         <span
@@ -150,12 +193,12 @@ export const IndustryReportCard = () => {
                       ))}
                     </div>
                     <div className="flex justify-between w-full items-center py-5 mt-2">
-                      <Link
-                        href="#"
-                        className="px-9 py-3 rounded-4xl border border-[#2E3092]"
-                      >
-                        Read More
-                      </Link>
+                      <ButtonLayout
+                        onClick={() => handleClick(item)}
+                        text="Read More"
+                        hoverImage={ButtonImage}
+                        className="!h-[40px] !w-[150px]"
+                      />
                       <button
                         onClick={() => handleCopy(item.link, item.id)}
                         className="text-gray-500 hover:text-black"
@@ -180,9 +223,9 @@ export const IndustryReportCard = () => {
         {/* Pagination */}
         <div className="flex justify-center items-center">
           <div className="mt-8 gap-[2px] rounded-2xl border border-gray-300 overflow-hidden select-none">
-            {/* Previous Button */}
+            {/* Prev */}
             <motion.button
-              onClick={() => goToPage(currentPage - 1)}
+              onClick={() => setCurrentPage((p) => Math.max(p - 1, 0))}
               disabled={currentPage === 0}
               whileHover={{ scale: currentPage === 0 ? 1 : 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -195,11 +238,11 @@ export const IndustryReportCard = () => {
               <FaLessThan className="w-3 h-3" />
             </motion.button>
 
-            {/* Page Numbers */}
+            {/* Page numbers */}
             {Array.from({ length: totalPages }, (_, i) => (
               <motion.button
                 key={i}
-                onClick={() => goToPage(i)}
+                onClick={() => setCurrentPage(i)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-4 py-2 border-r border-gray-300 ${
@@ -212,9 +255,11 @@ export const IndustryReportCard = () => {
               </motion.button>
             ))}
 
-            {/* Next Button */}
+            {/* Next */}
             <motion.button
-              onClick={() => goToPage(currentPage + 1)}
+              onClick={() =>
+                setCurrentPage((p) => Math.min(p + 1, totalPages - 1))
+              }
               disabled={currentPage === totalPages - 1}
               whileHover={{ scale: currentPage === totalPages - 1 ? 1 : 1.05 }}
               whileTap={{ scale: 0.95 }}

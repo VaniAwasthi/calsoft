@@ -19,6 +19,7 @@ import Incon2 from "../../assets/industries/manufacturing/manufacturIcon4.svg";
 import Incon1 from "../../assets/industries/manufacturing/manufacturIcon5.svg";
 import Intellegence from "../../assets/industries/manufacturing/ManufacturingMobile.webp";
 import Info4 from "../../assets/DigitalEngineering/mordernization/Info-4.svg";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm.js";
 
 const Page = () => {
   const slide = {
@@ -113,7 +114,7 @@ const Page = () => {
       "Minimize operational costs through AI-driven process  improvements",
       "Increase equipment efficiency by identifying & resolving bottlenecks",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: ScaleImage,
     imagePosition: "right",
@@ -135,7 +136,7 @@ const Page = () => {
       "Reduce maintenance costs by optimizing service schedules",
       "Improve operational efficiency with proactive materials management",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: StrengthenImg,
     imagePosition: "left",
@@ -157,7 +158,7 @@ const Page = () => {
       "Improve delivery speed with AI-powered logistics planning",
       "Enhance supplier collaboration with integrated data systems",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: EnhanceImage,
     imagePosition: "right",
@@ -179,7 +180,7 @@ const Page = () => {
       "IoT scaling is simple and safe",
       "Better data, better decisions",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: Info4,
     imagePosition: "left",
@@ -226,7 +227,7 @@ const Page = () => {
       <ServicesSec />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        link="#"
+        buttonClicked={()=>showHubSpotForm("contact-us-popup")}
       />
     </>
   );

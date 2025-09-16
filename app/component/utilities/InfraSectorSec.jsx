@@ -8,6 +8,7 @@ import ContactImg from "../../assets/Data-Ai/PipeLine/ConnectBg.webp";
 import { useState } from "react";
 
 import CircleArrow from "../../assets/DigitalEngineering/Product/circleArrow.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 
 export const InfraSection = ({
   description,
@@ -55,7 +56,7 @@ export const InfraSection = ({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:mt-6 md:grid-cols-2 gap-x-6 items-start md:items-center justify-center"
+            className={`grid grid-cols-1 md:mt-6 ${buttonText?"md:grid-cols-2":"md:grid-cols-1"} gap-x-6 items-start md:items-center justify-center`}
           >
             {/* Description */}
             <motion.p
@@ -130,7 +131,7 @@ export const InfraSection = ({
               >
                 Business Impact:
               </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[14px] space-y-1 marker:text-[#ED1C24]">
+              <ul className="list-disc list-inside text-[#545353] text-[16px] space-y-1 marker:text-[#ED1C24]">
                 {businessImpact.map((item, index) => (
                   <motion.li
                     initial={{ x: -50, opacity: 0 }}
@@ -186,17 +187,13 @@ export const BannerSection = ({
   backgroundImage,
   title,
   buttonText = "Know More",
-  buttonLink = "#",
   height = "h-[200px] md:h-[150px]",
   link,
+  onButtonClick, // <-- add this
 }) => {
   return (
     <div className="container mx-auto py-15 px-4 md:px-16">
-      {/* Wrapper with Relative Position */}
-      <div
-        className={`relative w-full ${height} rounded-2xl overflow-hidden my-10`}
-      >
-        {/* Background Image */}
+      <div className={`relative w-full ${height} rounded-2xl overflow-hidden my-10`}>
         <Image
           src={backgroundImage}
           alt="Banner Background"
@@ -205,14 +202,11 @@ export const BannerSection = ({
           priority
         />
 
-        {/* Overlay */}
-        <div className="absolute inset-0  flex flex-col md:flex-row md:items-center md:justify-between px-6 md:px-12 text-white">
-          {/* Title */}
+        <div className="absolute inset-0 flex flex-col md:flex-row md:items-center md:justify-between px-6 md:px-12 text-white">
           <h2 className="text-base md:text-3xl font-medium max-w-2xl text-left md:text-left py-4 md:py-0">
             {title}
           </h2>
 
-          {/* Button */}
           {buttonText && (
             <motion.div
               initial={{ x: -50, opacity: 0 }}
@@ -223,6 +217,7 @@ export const BannerSection = ({
             >
               <ButtonLayout
                 link={link}
+                onClick={onButtonClick} // <-- pass it here
                 text={buttonText}
                 image={ButtonImage}
                 hoverImage={ButtonImage}
@@ -235,7 +230,7 @@ export const BannerSection = ({
   );
 };
 
-export const ContactSecData = ({ BoldContent, lightContent, link }) => {
+export const ContactSecData = ({ BoldContent, lightContent, link , buttonClicked=() => showHubSpotForm("contact-us-popup")}) => {
   return (
     <>
       <section>
@@ -256,28 +251,22 @@ export const ContactSecData = ({ BoldContent, lightContent, link }) => {
                 {lightContent}
               </h2>
 
-              <form className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your work email"
-                  className="w-[150px] sm:w-[200px] h-8 md:h-10 px-6 text-sm text-black bg-white placeholder-gray-500 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
-                />{" "}
-                <motion.div
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="flex flex-col md:flex-row gap-4"
-                >
-                  <ButtonLayout
-                    link={link}
-                    text="Learn More"
-                    image={ButtonImage}
-                    hoverImage={ButtonImage}
-                    className="!w-[170px] sm:w-[200px] h-8 md:h-10 px-6"
-                  />
-                </motion.div>
-              </form>
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="flex flex-col md:flex-row gap-4"
+              >
+                <ButtonLayout
+                  link={link}
+                  text="Contact Us" //add popup
+                  image={ButtonImage}
+                  hoverImage={ButtonImage}
+                  className="!w-[170px] sm:w-[200px] h-8 md:h-10 px-6"
+                  onClick={buttonClicked}
+                />
+              </motion.div>
             </div>
           </div>
         </div>
@@ -318,7 +307,7 @@ export const ChallengeToSolution = ({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-xl text-center md:text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text  text-transparent"
+            className="text-xl text-center md:text-[31px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text  text-transparent"
           >
             {title}
             <span className="text-black font-semibold px-1">{blackTitle}</span>

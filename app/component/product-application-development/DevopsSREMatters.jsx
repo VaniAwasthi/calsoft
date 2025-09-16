@@ -61,7 +61,7 @@ function StatShape({ title, subtitle, position, delay = 0 }) {
       className="w-full h-full"
     >
       <div
-        className={`w-full h-full ${getOuterGradient()} p-[2px] sm:p-[3px]`}
+        className={`w-full h-full ${getOuterGradient()} p-[2px] sm:p-[3px] hover:scale-105 transition-all`}
         style={shapeStyles}
       >
         <div
@@ -69,13 +69,13 @@ function StatShape({ title, subtitle, position, delay = 0 }) {
           style={shapeStyles}
         >
           <div
-            className={`w-full h-full ${getInnerGradient()} flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8`}
+            className={`w-full h-full ${getInnerGradient()} flex flex-col items-center justify-center text-center`}
             style={shapeStyles}
           >
             <h2 className="text-white text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold leading-tight mb-1 sm:mb-2">
               {title}
             </h2>
-            <p className="text-white text-sm sm:text-base lg:text-lg font-light leading-tight">
+            <p className="text-white text-sm sm:text-base lg:text-lg font-light leading-tight w-[80%]">
               {subtitle}
             </p>
           </div>
@@ -113,7 +113,7 @@ export default function StatsDisplay() {
         <div className="w-2/3 h-48">
           <StatShape
             title="45%"
-            subtitle="decrease in incident volume for Calsoft clients in 90 days."
+            subtitle="decrease in incident volume for Calsoft clients in 90 days"
             position="bottom"
             delay={0.6}
           />

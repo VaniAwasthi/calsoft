@@ -1,3 +1,5 @@
+"use client";
+
 import {
   DevSec,
   Endpoint,
@@ -14,8 +16,9 @@ import {
 } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/security/knowMore.svg";
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 
-function page() {
+export default function Page() {
   return (
     <>
       <SecurityTab />
@@ -28,17 +31,16 @@ function page() {
         title="Improve security posture by 70% with zero trust."
         buttonText="Book a Meeting"
         buttonLink="#"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <ZeroSec />
       <ServiceSec />
       <SreSec />
       <ContactSecData
         BoldContent="Protect endpoints, identities, and networks with multi-layered security strategies"
-        lightContent="Calsoft"
+        lightContent=""
         link="#"
       />
     </>
   );
 }
-
-export default page;

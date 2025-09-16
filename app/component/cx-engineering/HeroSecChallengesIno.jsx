@@ -10,6 +10,7 @@ import Info2 from "../../assets/DigitalEngineering/CX/Info-2.svg";
 import Info3 from "../../assets/DigitalEngineering/CX/Info-3.svg";
 import Info4 from "../../assets/DigitalEngineering/CX/Info-4.svg";
 import Info5 from "../../assets/DigitalEngineering/CX/Info-5.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 
 export const HeroSectionCXEngineering = () => {
   const [activeTab, setActiveTab] = useState("benefits");
@@ -17,7 +18,7 @@ export const HeroSectionCXEngineering = () => {
     title: "CX Engineering Elevate user experiences",
     description: `Intuitive, scalable, and intelligent interfaces
 that drive adoption and engagement.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [
@@ -31,16 +32,18 @@ that drive adoption and engagement.`,
   return (
     <>
       <BannerWithRightSec
-        heroBg={BackgroundImage}
-        title={slide.title}
-        description={slide.description}
-        rightImage={slide.rightImage}
-        buttonText={slide.buttonText}
-        buttonImage={ButtonImage}
-        hoverImage={ButtonImage}
-        rightSec={false}
-        buttonWidth="!w-[250px]"
-      />
+  heroBg={BackgroundImage}
+  title={slide.title}
+  description={slide.description}
+  rightImage={slide.rightImage}
+  buttonText={slide.buttonText}
+  buttonImage={ButtonImage}
+  hoverImage={ButtonImage}
+  rightSec={false}
+  buttonWidth="!w-[250px]"
+  className="cx-engineering-datasheet"
+  onButtonClick={() => showHubSpotForm("cx-engineering-datasheet")}
+/>
       <Submenu
         navItems={navItems}
         activeTab={activeTab}
@@ -105,8 +108,8 @@ export const FrontEndSec = () => {
       <InfraSection
         title="Front-end development"
         description="Deliver fast, responsive, and accessible digital experiences across all devices."
-        buttonText="Learn More"
-        link="#"
+        buttonText="Case study (or asset)"
+        link="/digital-product-engineering/cx-engineering/smart-interface-design"
         whatWeDo={[
           "Build device-agnostic front-end apps",
           "Tune performance and accessibility",
@@ -133,7 +136,7 @@ export const UXModernizationSec = () => {
       <InfraSection
         title="UX modernization: Better user journeys"
         description="Modernize experiences to align with today’s usability and engagement standards."
-        buttonText="Learn More"
+        buttonText="Case study (or asset)"
         link="/digital-product-engineering/cx-engineering/experience-moderization"
         whatWeDo={[
           "Redesign legacy user journeys",
@@ -161,8 +164,8 @@ export const IntelligentUISec = () => {
       <InfraSection
         title="Intelligent UI: Make interfaces adaptive"
         description="Design intelligent user interfaces that personalize workflows and automate decisions."
-        buttonText="Learn More"
-        link="/digital-product-engineering/cx-engineering/smart-interface-design"
+        buttonText="Case study (or asset)"
+        link="#"
         whatWeDo={[
           "Use AI to adapt UIs by behavior",
           "Add rules for predictive flow shifts",
@@ -188,7 +191,7 @@ export const RapidprototypingSec = () => {
       <InfraSection
         title="Rapid prototyping"
         description="Bring ideas to life early and streamline decision-making with interactive prototypes."
-        buttonText="Learn More"
+        buttonText="Case study (or asset)"
         link="/digital-product-engineering/cx-engineering/rapid-prototyping"
         whatWeDo={[
           "Create clickable UI mockups early",
@@ -215,7 +218,7 @@ export const MobileEngineeringSec = () => {
       <InfraSection
         title="Mobile engineering & development"
         description="Create high-performance mobile applications optimized for usability, security, and scalability."
-        buttonText="Learn More"
+        buttonText="Case study (or asset)"
         link="/digital-product-engineering/cx-engineering/mobile-development"
         whatWeDo={[
           "Build native and hybrid mobile apps",

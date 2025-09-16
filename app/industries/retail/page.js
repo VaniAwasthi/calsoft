@@ -21,6 +21,7 @@ import Incon3 from "../../assets/industries/retail/retailIcon3.svg";
 import Incon4 from "../../assets/industries/retail/retailIcon4.svg";
 import Incon5 from "../../assets/industries/retail/retailIcon5.svg";
 import Intellegence from "../../assets/industries/retail/RetailMobile.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm.js";
 
 const Page = () => {
   const slide = {
@@ -33,12 +34,11 @@ const Page = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const navItems = [
     "Journey",
-    "Customers",
-    "Industries",
-    "What's New",
-    "Partners",
+    "Personalization",
+    "Forecasting",
+    "Security",
+    "Case Studies",
     "Services",
-    "Case Study",
   ];
   const Gradientheading = "";
   const BlackHeading = "Acquire and retain customers while increasing margins";
@@ -100,6 +100,7 @@ const Page = () => {
     },
   ];
   const SectionOne = {
+    id: "personalization",
     title: "Understand, predict, and enhance shopping experiences with AI",
     description: `Are you facing higher cart abandonment rates or in-store sales drops? This must be a call to improve shopper experiences and relevance across catalogs, design, layout, and more.
     <br/> Our industry-learned AI can help you anticipate customer needs, offer tailored recommendations, and create more intuitive (personal) experiences.`,
@@ -115,13 +116,14 @@ const Page = () => {
       "Increase customer retention through hyper-personalized experiences",
       "Enhance decision-making with deep customer analytics",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: Retailinfo1,
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
   };
   const SectionTwo = {
+    id: "forecasting",
     title: "Improve efficiency, reduce waste, and ensure product availability",
     description:
       "Retailers need real-time visibility into their inventory to avoid overstocking, stockouts, and logistical inefficiencies. Our data-driven supply chain automation helps ensure the right products are available at the right time – so you don’t worry.",
@@ -137,13 +139,14 @@ const Page = () => {
       "Optimize supply chain flow to minimize delivery delays",
       "Enhance operational efficiency with automated inventory control",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: Retailinfo2,
     imagePosition: "left",
     bgColor: "bg-[#F8F9FA]",
   };
   const SectionThree = {
+    id: "security",
     title: "Protect customers, prevent fraud, and secure transactions",
     description: `As retail transactions shift online, security concerns grow. One must have real-time fraud detection and secure digital payments to protect customer trust.
 <br/>We have this covered with intelligent security solutions to prevent all such fraud and mitigate risks.`,
@@ -159,7 +162,7 @@ const Page = () => {
       "Improve transaction security for both online and in-store purchases",
       "Enhance customer confidence with seamless and safe digital payments",
     ],
-    buttonText: "Learn More",
+    buttonText: "Case Study",
     buttonLink: "#",
     image: Retailinfo3,
     imagePosition: "right",
@@ -184,7 +187,7 @@ const Page = () => {
         headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-10 line-clamp-4"
         contentClass=" md:h-64 lg:h-64 "
       />
-      <TopClients />
+      {/* <TopClients /> */}
       <InfoImageSection
         {...SectionOne}
         rounded="rounded-l-[30px]"
@@ -204,7 +207,7 @@ const Page = () => {
       <ServicesSec />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        link="#"
+        buttonClicked={()=>showHubSpotForm("contact-us-popup")}
       />
     </>
   );

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
-export const BlogsBanner = ({ cards ,onCardClick}) => {
+export const BlogsBanner = ({ cards, onCardClick }) => {
   return (
     <section className="bg-[#2b2eae] text-white py-15 px-4 sm:px-6 lg:px-16">
       <div className="container mx-auto px-4 md:px-6 w-full">
@@ -15,7 +15,7 @@ export const BlogsBanner = ({ cards ,onCardClick}) => {
           viewport={{ once: false, amount: 0.3 }}
           className="Inter text-3xl md:text-5xl font-light inline-block py-5 mb-8"
         >
-          Resource Library
+          Latest Blogs
         </motion.h2>
 
         {/* Cards */}
@@ -51,16 +51,16 @@ export const BlogsBanner = ({ cards ,onCardClick}) => {
                     className="Inter text-sm text-white mt-3 max-w-md"
                     dangerouslySetInnerHTML={{ __html: card.description }}
                   ></motion.p>
-                 <motion.button
-  initial={{ y: 30, opacity: 0 }}
-  whileInView={{ y: 0, opacity: 1 }}
-  transition={{ duration: 0.2, delay: 0.2 }}
-  viewport={{ once: false, amount: 0.3 }}
-  onClick={() => onCardClick(card)}  
-  className="Inter text-sm text-white hover:underline flex items-center gap-1 mt-4"
->
-  Read Now <span>→</span>
-</motion.button>
+                  <motion.button
+                    initial={{ y: 30, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.2, delay: 0.2 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    onClick={() => onCardClick(card)}
+                    className="Inter text-sm text-white hover:underline flex items-center gap-1 mt-4"
+                  >
+                    Read Now <span>→</span>
+                  </motion.button>
                 </div>
 
                 {/* Image */}

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { BannerSection } from "../../../component/utilities/InfraSectorSec";
 import {
@@ -15,6 +16,7 @@ import modernizationImg from "../../../assets/DigitalEngineering/maturity/leftim
 import { FooterBg } from "../../../component/utilities/DoCases";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import ContactImg from "../../../assets/Data-Ai/PipeLine/ConnectBg.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 function Page() {
   return (
@@ -31,8 +33,9 @@ function Page() {
               Reduce tech debt by 45% with maturity mapping.
             </>
           }
-          buttonText="Book a meeting"
+          buttonText="Book a Meeting"
           buttonLink="#"
+          onButtonClick={()=>showHubSpotForm("book-a-meeting")}
         />
       </section>
       <Business />
@@ -42,9 +45,9 @@ function Page() {
         <FooterBg
           ContactImg={ContactImg}
           ButtonImage={ButtonImage}
-          lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?
+          lightContent="Assess maturity and plan transformation with confidence.
                 "
-          link="#"
+              
         />
       </div>
     </>

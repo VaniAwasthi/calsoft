@@ -204,7 +204,7 @@ export default function TabsComponent({
         <div className="container">
           <BookMeeting
             img={meeting}
-            title="Explore how CalTIA™ streamline workflows with smart testing solutions"
+            title="Cut testing time by 60% with CalTIA."
           />
         </div>
       </div>

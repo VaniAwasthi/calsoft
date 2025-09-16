@@ -20,9 +20,9 @@ import {
 } from "../../../component/caseStudies/HeroSecLanding.jsx";
 import ButtonImage from "../../../assets/home/buttonImg.webp";
 import { ShareSection } from "../../../component/whitepaper/expanPage/WhitepaperReadMore";
+import { baseUrl } from "@/config.js";
 
 const Page = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
   const dispatch = useDispatch();
   const { slug } = useParams();
 
@@ -99,6 +99,8 @@ const Page = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         backgroundImage={BgImage}
+        scrollToId="DownloadSection"
+        
       />
 
       <ShareSection />

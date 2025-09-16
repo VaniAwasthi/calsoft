@@ -12,6 +12,7 @@ const WhyItMatters = ({
   heading,
   ButtonImage,
   secId,
+  buttonClicked
 }) => {
   return (
     <section className={`md:pb-12 pb-0 md:pt-12 pt-6   bg-white`} id={secId}>
@@ -51,6 +52,7 @@ const WhyItMatters = ({
                   text={buttonText}
                   image={ButtonImage}
                   hoverImage={ButtonImage}
+                  onClick={buttonClicked}
                 />
               </motion.div>
             )}

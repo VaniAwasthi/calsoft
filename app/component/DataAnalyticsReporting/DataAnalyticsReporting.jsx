@@ -8,6 +8,8 @@ import Info1 from "../../assets/Data-Ai/analytics/Info-1.svg";
 import Info2 from "../../assets/Data-Ai/analytics/Info-2.svg";
 import Info3 from "../../assets/Data-Ai/analytics/Info-3.svg";
 import Info4 from "../../assets/Data-Ai/analytics/Info-4.svg";
+
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -18,7 +20,7 @@ export const AnalyticsBanner = () => {
     title: "Data analytics and reporting",
     description: `Enable smarter decisions with real-time
     analytics and intuitive visualizations.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [
@@ -40,6 +42,7 @@ export const AnalyticsBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("data-analytics-reporting-datasheet")}
       />
       <Submenu
         navItems={navItems}
@@ -100,7 +103,7 @@ export const DashboardSec = () => {
         title="Dashboard and KPI visualization"
         description="Deliver operational and strategic clarity through
         real-time visual insights."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Build dashboards with custom KPIs",
@@ -128,7 +131,7 @@ export const BusinessSec = () => {
       <DataInfoSection
         title="Business Intelligence (BI) integration"
         description="Empower analytics through unified business intelligence ecosystems."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Connect BI to cloud data platforms",
@@ -157,7 +160,7 @@ export const CustomSec = () => {
         title="Custom
         reporting"
         description="On-hand and real-time insights aligned to dynamic business priorities."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Configure reports by role or KPI",
@@ -184,7 +187,7 @@ export const RealSec = () => {
       <DataInfoSection
         title="Real-time business insights streaming"
         description="Harness live data flows to drive instant operational intelligence."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Set up streams for live KPIs",

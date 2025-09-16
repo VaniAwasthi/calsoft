@@ -4,6 +4,9 @@ import Image from "next/image";
 import ButtonLayout from "../utilities/ButtonLayout";
 import { useEffect } from "react";
 import Icon from "../../assets/caseStudies/BusinessValueIcon1.svg";
+import { Router } from "next/router";
+import { useRouter } from "next/navigation";
+import { baseUrl } from "@/config";
 
 export const HeroSectionLanding = ({
   image1,
@@ -16,8 +19,16 @@ export const HeroSectionLanding = ({
   hoverImage,
   backgroundImage,
   backgroundMain = "",
-  ImageClassname = "",
+  scrollToId,
 }) => {
+  const handleScroll = () => {
+    if (scrollToId) {
+      const element = document.getElementById(scrollToId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
   return (
     <div
       className={`relative w-full h-[700px] md:min-h-screen ${backgroundMain}`}
@@ -105,7 +116,8 @@ export const HeroSectionLanding = ({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.3 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="mt-6"
+                className="mt-6 cursor-pointer"
+                 onClick={handleScroll} 
               >
                 <ButtonLayout
                   text={buttonLabel}
@@ -129,7 +141,7 @@ export const InfoWithFormSection = ({
   buttonLabel,
   portalId,
   formId,
-  region = "na1", // default fallback
+  region = "na1", 
   isforLayout = false,
 }) => {
   useEffect(() => {
@@ -182,12 +194,11 @@ export const InfoWithFormSection = ({
   );
 };
 
-export const BusinessValueSection = ({ title, values, backgroundImage }) => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
+export const BusinessValueSection = ({ title, values, backgroundImage ,isDivider=true}) => {
 
   return (
     <section className="w-full max-w-7xl mx-auto px-2 md:px-8 md:my-[3rem] my-10">
-      <div className="bg-[#1E1E1E] w-full h-[1px] my-6" />
+      {isDivider &&<div className="bg-[#1E1E1E] w-full h-[1px] my-6" />}
       <motion.h2
         initial={{ x: -50, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
@@ -195,7 +206,7 @@ export const BusinessValueSection = ({ title, values, backgroundImage }) => {
         viewport={{ once: false, amount: 0.3 }}
         className="text-3xl md:text-[40px] font-bold text-[#2E3092] text-center my-10 md:text-left"
       >
-        Business {" "}
+        Business{" "}
         <span className="bg-gradient-to-r from-[#2E3092] via-[#6A329F] to-[#ED1C24] bg-clip-text text-transparent">
           Value
         </span>
@@ -270,11 +281,16 @@ export const ToKnowMoreSection = ({
   title = "To Know More",
   description = "About how we can align our expertise to your requirements, reach out to us.",
   buttonLabel = "Contact Us",
-  onButtonClick = () => {},
+ 
   backgroundImage,
   buttonImage,
   hoverImage,
 }) => {
+    const router = useRouter();
+  
+  const ButtonClick=()=>{
+      router.push(`/contact-us`);
+  }
   return (
     <div className="relative w-full h-[300px] sm:h-[400px] ">
       <div className="w-full h-full bg-[linear-gradient(90deg,_rgba(0,0,0,1)_0%,_rgba(0,0,0,0.5)_50%,_rgba(0,0,0,0)_100%)] absolute z-10" />
@@ -318,6 +334,7 @@ export const ToKnowMoreSection = ({
               text={buttonLabel}
               image={buttonImage}
               hoverImage={hoverImage}
+              onClick={ButtonClick}
               className="!w-[210px] !h-[40px] md:!w-[220px] md:!h-[48px]"
             />
           </motion.div>

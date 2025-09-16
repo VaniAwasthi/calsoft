@@ -1,3 +1,5 @@
+"use client";
+
 import {
   MultiSec,
   ReleaseSec,
@@ -7,6 +9,7 @@ import {
   Technical,
   UptimeSec,
 } from "../../component/sustenanceSupport/Sustenance.jsx";
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 import {
   BannerSection,
   ContactSecData,
@@ -14,7 +17,7 @@ import {
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/Sustaine/Knowmore.svg";
 
-function page() {
+export default function Page() {
   return (
     <>
       <SustenanceTab />
@@ -27,15 +30,13 @@ function page() {
         title="Reduce downtime by 45% with proactive support."
         buttonText="Book a Meeting"
         buttonLink="#"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <MultiSec />
       <UptimeSec />
       <ContactSecData
         BoldContent="Extend platform life, maintain stability, and deliver continuous user satisfaction"
-        link="#"
       />
     </>
   );
 }
-
-export default page;

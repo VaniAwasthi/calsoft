@@ -11,13 +11,7 @@ const Nextgen = () => {
   const [activeTab, setActiveTab] = useState("Hi-Tech");
   const [selectedCard, setSelectedCard] = useState(null);
 
-  const navItems = [
-    "Hi-Tech",
-    "Telecom",
-    "Retail",
-    "Manufacturing",
-   
-  ];
+  const navItems = ["Hi-Tech", "Telecom", "Retail", "Manufacturing"];
 
   const activeIndustry = IndustryData.find(
     (industry) => industry.category === activeTab
@@ -32,22 +26,22 @@ const Nextgen = () => {
   }, []);
 
   if (!activeIndustry?.iconData) return null;
-const [flippedCard, setFlippedCard] = useState(
-  activeIndustry?.iconData?.[0]?.id || null // first card flipped initially
-);
+  const [flippedCard, setFlippedCard] = useState(
+    activeIndustry?.iconData?.[0]?.id || null // first card flipped initially
+  );
 
-const handleHover = (id) => {
-  setFlippedCard(id); // flip the hovered card
-};
+  const handleHover = (id) => {
+    setFlippedCard(id); // flip the hovered card
+  };
 
-const handleLeave = () => {
-  // revert back to first card
-  setFlippedCard(activeIndustry?.iconData?.[0]?.id || null);
-};
+  const handleLeave = () => {
+    // revert back to first card
+    setFlippedCard(activeIndustry?.iconData?.[0]?.id || null);
+  };
   return (
     <>
       <div
-        className="w-full bg-[#021553] md:rounded-b-xl py-4 md:py-0 xl:min-h-screen hidden md:block"
+        className="w-full bg-[#021553] py-4 md:py-0 hidden md:block"
         id="industries"
       >
         <div className="container mx-auto px-4 xl:px-20">
@@ -106,9 +100,9 @@ const handleLeave = () => {
                   <Image
                     src={activeIndustry.image}
                     alt={activeIndustry.title}
-                    className="rounded-lg shadow-lg"
+                    className="rounded-lg shadow-lg h-[30rem] lg:h-[24.8rem]"
                     width={400}
-                    height={300}
+                    height={100}
                   />
                 </motion.div>
               )}
@@ -136,7 +130,8 @@ const handleLeave = () => {
                     </motion.p>
 
                     <div className="flex gap-2 md:gap-6 flex-col lg:flex-row mt-6">
-                      <button
+                      <Link
+                        href={"/insights/case-studies"}
                         className="relative flex gap-2 justify-between items-center px-2 md:px-8 py-2 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group"
                         style={{
                           boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25",
@@ -147,7 +142,7 @@ const handleLeave = () => {
                           <IoArrowForwardCircleSharp className="text-3xl tra" />
                         </span>
                         <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
-                      </button>
+                      </Link>
                       <Link
                         href={activeIndustry.Pagelink}
                         className="relative hidden md:flex gap-2 justify-between items-center bg-transparent border-1 border-white px-2 md:px-8 py-4 rounded-full shadow-md text-white transition-all duration-500 overflow-hidden group"
@@ -175,48 +170,55 @@ const handleLeave = () => {
                   >
                     <div className="flex overflow-x-auto md:overflow-visible gap-6 px-2 pb-2 scroll-smooth">
                       {activeIndustry.iconData.map((card, index) => (
-  <motion.div
-    key={card.id}
-    initial={{ y: 0, opacity: 0 }}
-    whileInView={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.1, delay: index * 0.2 }}
-    viewport={{ once: false, amount: 0.3 }}
-    onMouseEnter={() => handleHover(card.id)}
-    onMouseLeave={handleLeave}
-    className="card-hover flex-shrink-0 min-w-[70px] min-h-[80px] 
+                        <motion.div
+                          key={card.id}
+                          initial={{ y: 0, opacity: 0 }}
+                          whileInView={{ y: 0, opacity: 1 }}
+                          transition={{ duration: 0.1, delay: index * 0.2 }}
+                          viewport={{ once: false, amount: 0.3 }}
+                          onMouseEnter={() => handleHover(card.id)}
+                          onMouseLeave={handleLeave}
+                          className="card-hover flex-shrink-0 min-w-[70px] min-h-[80px] 
                md:w-[90px] md:h-[100px] xl:w-[100px] xl:h-[90px] 
                transition-transform duration-500 hover:scale-110 
                perspective cursor-pointer"
-  >
-    <div
-      className={`card-inner relative w-full h-full transition-transform duration-500 transform ${
-        flippedCard === card.id ? "rotate-y-180 scale-130" : ""
-      }`}
-    >
-      {/* Front */}
-      <div className="absolute inset-0 flex items-center justify-center 
+                        >
+                          <div
+                            className={`card-inner relative w-full h-full transition-transform duration-500 transform ${
+                              flippedCard === card.id
+                                ? "rotate-y-180 scale-130"
+                                : ""
+                            }`}
+                          >
+                            {/* Front */}
+                            <div
+                              className="absolute inset-0 flex items-center justify-center 
                       bg-white text-black border border-white rounded-lg 
-                      shadow-md backface-hidden">
-        <Image src={card.icon} alt={card.title} width={40} height={40} />
-      </div>
+                      shadow-md backface-hidden"
+                            >
+                              <Image
+                                src={card.icon}
+                                alt={card.title}
+                                width={40}
+                                height={40}
+                              />
+                            </div>
 
-      {/* Back */}
-      <div className="absolute inset-0 flex items-center justify-center 
+                            {/* Back */}
+                            <div
+                              className="absolute inset-0 flex items-center justify-center 
                       bg-[#BA0007] text-white rounded-lg rotate-y-180 
-                      backface-hidden">
-        {flippedCard === card.id && (
-          <p
-           
-            className="text-[6px] md:text-[8px] xl:text-[10px] font-semibold text-center px-1"
-          >
-            {card.title}
-          </p>
-        )}
-      </div>
-    </div>
-  </motion.div>
-))}
-
+                      backface-hidden"
+                            >
+                              {flippedCard === card.id && (
+                                <p className="text-[6px] md:text-[8px] xl:text-[10px] font-semibold text-center px-1">
+                                  {card.title}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
                     </div>
                   </motion.div>
                 ) : (

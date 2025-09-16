@@ -24,13 +24,14 @@ import blogimg1 from "../../assets/home/blog1.webp";
 import blogimg2 from "../../assets/home/blog2.webp";
 import blogimg3 from "../../assets/home/blog3.webp";
 import { LuArrowUpRight } from "react-icons/lu";
-import Casestudybg from "../../assets/home/casestudybg.webp";
+import Casestudybg from "../../assets/home/caseStudy.webp";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCaseStudyListLimit } from "../../store/actions/caseStudyActions";
 import Link from "next/link";
 import { generateSlug } from "../utilities/helper/SlugGenerator";
 import { useRouter } from "next/navigation";
 import { setSelectedCaseStudyId } from "@/app/store/reducers/caseStudyReducer";
+import { baseUrl } from "@/config";
 export const Services = () => {
   const title = "Services";
   const heading = "Services | Expertise-infused and business-optimized.";
@@ -40,42 +41,42 @@ export const Services = () => {
       title: "AI-Powered Test Automation",
       description:
         "Accelerate releases with intelligent, self-healing automation frameworks.",
-      link: "/",
+      link: "/data-ai/ai-powered-accelerators/test-impact-analyzer-caltia",
     },
     {
       icon: service2,
       title: "VMware Migration Services",
       description:
         "Seamlessly shift from VMware to OpenStack, Nutanix, Azure or AWS.",
-      link: "/",
+      link: "/data-ai/ai-powered-accelerators/vmware-migration",
     },
     {
       icon: service3,
-      title: "Cloud-Native Product Engineering",
+      title: "Cloud-Native Enablement",
       description:
-        "Build and scale modern apps with microservices & agile delivery.",
-      link: "/",
+        "Modernize your application stack with microservices, containers, and agile DevOps practices.",
+      link: "/digital-product-engineering/cloud/cloud-native-enablement",
     },
     {
       icon: service4,
-      title: "AI & ML Integration",
+      title: "Agentic AI Planning & Development",
       description:
-        "Deploy and operationalize AI/ML models with enterprise-grade readiness.",
-      link: "/",
+        "Design and deploy autonomous AI agents to supercharge decision-making and business agility.",
+      link: "/data-ai/agentic-ai-development",
     },
     {
       icon: service5,
-      title: "Edge & IoT Security Automation",
+      title: "Product & Application Development",
       description:
-        "Automate threat detection & control at the edge with AI-driven tools.",
-      link: "/",
+        "Engineer scalable, secure, and high-performing software products with a future-ready architecture.",
+      link: "/digital-product-engineering/product-application-development",
     },
     {
       icon: service6,
-      title: "Storage & Data Lifecycle Management",
+      title: "DataOps & Governance",
       description:
-        "Modernize storage for performance, cost-efficiency and compliance.",
-      link: "/",
+        "Streamline data pipelines and ensure compliance with enterprise-grade DataOps and governance.",
+      link: "/data-ai/data-ops-governance",
     },
   ];
   return (
@@ -149,10 +150,9 @@ export const Services = () => {
 };
 
 export const Casestudy = () => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist/";
   const dispatch = useDispatch();
   const title = "Case Study";
-  const router=useRouter()
+  const router = useRouter();
   const heading = `Cloud Provider Accelerates VMware Migration <span className="text-black font-normal"> with Calsoft’s CLI Tool</span>`;
   // data for Case Study
   useEffect(() => {
@@ -161,12 +161,12 @@ export const Casestudy = () => {
   const casStudiesDatalist = useSelector(
     (state) => state.caseStudy?.limitedList
   );
-const handleClick = (item) => {
-  dispatch(setSelectedCaseStudyId(item._id));
-  localStorage.setItem("selectedCaseStudyId", item._id);
-  const slug = generateSlug(item.hero_title1, { lower: true });
-  router.push(`/insights/case-studies/${slug}`);
-};
+  const handleClick = (item) => {
+    dispatch(setSelectedCaseStudyId(item._id));
+    localStorage.setItem("selectedCaseStudyId", item._id);
+    const slug = generateSlug(item.hero_title1, { lower: true });
+    router.push(`/insights/case-studies/${slug}`);
+  };
   const caseStudyDataArray = {
     id: 1,
     title:
@@ -224,18 +224,9 @@ const handleClick = (item) => {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
-                <div className="w-36 h-32 mb-6 bg-white rounded-2xl flex justify-center items-center p-2">
-                  <Image
-                    src={logo2}
-                    className="w-full"
-                    alt="logo"
-                    width={100}
-                    height={100}
-                  />
-                </div>
-                <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem]">
+                {/* <h2 className="text-[15px] font-medium md:text-2xl md:font-semibold mt-[4rem]">
                   {caseStudyData.title}
-                </h2>
+                </h2> */}
               </motion.div>
 
               <div className="  md:w-2/3 flex flex-col justify-between">
@@ -269,7 +260,7 @@ const handleClick = (item) => {
                   </motion.a>
                 </div>
               </div>
-{/* for stats */}
+              {/* for stats */}
               <div className="w-full md:w-1/3">
                 {/* Swiper for mobile */}
                 <div className="block md:hidden ">
@@ -332,6 +323,12 @@ const handleClick = (item) => {
             </motion.div>
           </motion.div>
           <div className="relative w-full py-8">
+            <motion.h2
+             
+              className="px-4 text-xl md:text-[36px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text text-transparent"
+            >
+             Latest Case Study
+            </motion.h2>
             <Swiper
               modules={[Navigation]}
               slidesPerView={1}
@@ -353,10 +350,7 @@ const handleClick = (item) => {
                     whileInView={{ x: 0, opacity: 1 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
-                    <div
-                      onClick={() => handleClick(item)}
-                      
-                    >
+                    <div onClick={() => handleClick(item)}>
                       <div className="relative w-full h-44 md:h-56 rounded-xl overflow-hidden">
                         <Image
                           src={

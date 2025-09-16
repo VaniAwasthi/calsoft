@@ -10,6 +10,8 @@ import Info2 from "../../assets/DigitalEngineering/virtualisation/Info2.svg";
 import Info3 from "../../assets/DigitalEngineering/virtualisation/Info3.svg";
 import Info4 from "../../assets/DigitalEngineering/virtualisation/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/virtualisation/Info5.svg";
+
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 export const VirtualizationTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -37,6 +39,7 @@ export const VirtualizationTab = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
+          onButtonClick={() => showHubSpotForm("virtualization-datasheet")}
       />
       <Submenu
         navItems={navItems}
@@ -103,8 +106,8 @@ export const VirtualizationSec = () => {
       <InfraSection
         title="Virtualization lifecycle management (Day 0–N)"
         description="Handle the complete virtualization lifecycle from setup through scaling and optimization."
-        buttonText="Learn More"
-        link="#"
+        // buttonText="Learn More"
+        link="/digital-product-engineering/virtualization/lifecycle-governance"
         whatWeDo={[
           "Design virtual infra for flexibility",
           "Maintain system health over time",
@@ -131,8 +134,8 @@ export const Containerization = () => {
       <InfraSection
         title="Containerization and orchestration"
         description="Accelerate application portability, scalability, and resilience with containerization strategies."
-        buttonText="Learn More"
-        link="#"
+        // buttonText="Learn More"
+        link="/digital-product-engineering/virtualization/containerization-and-orchestration"
         whatWeDo={[
           "Build container stacks with Kubernetes",
           "Add autoscale and self-healing",
@@ -159,8 +162,8 @@ export const HypervisorSec = () => {
       <InfraSection
         title="Hypervisor: Optimizing foundations"
         description="Streamline hypervisor environments for performance, scalability, and operational efficiency."
-        buttonText="Learn More"
-        link="#"
+        // buttonText="Learn More"
+        link="/digital-product-engineering/virtualization/hypervisor-optimization"
         whatWeDo={[
           "Tune VM density and resources",
           "Automate VM scale and setup",
@@ -186,8 +189,8 @@ export const MigrateSec = () => {
       <InfraSection
         title="Migrate seamlessly across platforms"
         description="Transition virtual environments with minimal downtime and operational risk."
-        buttonText="Learn More"
-        link="#"
+        // buttonText="Learn More"
+        link="/digital-product-engineering/virtualization/intelligent-migration"
         whatWeDo={[
           "Shift workloads across setups",
           "Map risk paths before moving",
@@ -213,8 +216,8 @@ export const OpenSec = () => {
       <InfraSection
         title="OpenStack environment configuration"
         description="Design, deploy, and optimize OpenStack environments for scalable, cost-effective cloud operations."
-        buttonText="Learn More"
-        link="#"
+        // buttonText="Learn More"
+        link="/digital-product-engineering/virtualization/openStack-environment-configuration"
         whatWeDo={[
           "Deploy OpenStack infra layers",
           "Link to hybrid cloud systems",

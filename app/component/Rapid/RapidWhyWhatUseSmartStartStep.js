@@ -4,7 +4,7 @@ import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
-import BackgroundImage from "../../assets/DigitalEngineering/CX/banner2.webp";
+import BackgroundImage from "@/app/assets/DigitalEngineering/CX/CX Engineering 4.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import WhyItMatters from "../utilities/WhyItMatters";
 import bgshape1 from "../../assets/DigitalEngineering/CX/circle1.svg";
@@ -35,20 +35,21 @@ import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg";
 import imginter from "../../assets/DigitalEngineering/smart/imginter.webp";
 import { MatterCircle, MatterTriangle } from "../utilities/Shape";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export const Rapid = () => {
-  const [activeTab, setActiveTab] = useState("benefits");
+  const [activeTab, setActiveTab] = useState("why-it-matters");
   const slide = {
     title: "Prototype in Days Decide with Confidence",
 
     description: `Accelerate your product validation with interactive, stakeholder-ready
         prototypes built on real workflows and data logic.`,
-    buttonText: "Watch Demo",
+    buttonText: "Request CX Audit",
     image: BackgroundImage,
   };
   const navItems = [
     "Why it Matters",
-    "What We Do",
+    "What We Offer",
     "Use Cases",
     "Business Value",
     "How to Start",
@@ -67,6 +68,7 @@ export const Rapid = () => {
           hoverImage={ButtonImage}
           rightSec={false}
           buttonWidth="!w-[250px]"
+          onButtonClick={()=>showHubSpotForm("request-cx-audit-standard")}
         />
       </div>
       <Submenu
@@ -86,19 +88,18 @@ export const Why = () => {
     description:
       "40% of digital product features are rarely used. Teams waste months building functions users don’t want—simply because they skip validation. Calsoft helps you prototype fast, test early, and reduce product risk by 50%—<b>before investing in full development.</b> ",
 
-    buttonText: "Download One Pager",
-    link: "#",
+    buttonText: "Get in Touch",
 
     cards: [
       {
-        percent: "70%",
-        text: "less rework occurs when companies validate early",
+        percent: "",
+        text: "Companies that validate early reduce rework by up to 70%",
         className: "shape1",
         bgshape: bgshape1,
       },
       {
-        percent: "80-90%",
-        text: "stakeholder alignment is confirmed by Calsoft clients within the first prototype  ",
+        percent: "",
+        text: "Calsoft clients confirm 80-90% stakeholder alignment within first prototype",
         className: "shape2",
         bgshape: bgshape2,
       },
@@ -113,20 +114,19 @@ export const Why = () => {
   };
   return (
     <>
-      <MatterCircle {...whyItMattersData} ButtonImage={ButtonImage} />
+      <MatterCircle {...whyItMattersData} ButtonImage={ButtonImage} secId="why-it-matters" buttonClick={()=>showHubSpotForm("get-in-touch")}/>
     </>
   );
 };
 
 export const What = () => {
-  const heading = "What We Do";
+  const heading = "What We Offer";
   const subtitle = "Prototypes That Aren’t Just Pretty—They Work";
   const desc =
     "We don’t build throwaway wireframes. We engineer functional, interactive prototypes mapped to real workflows, use cases, and design logic. Our Capabilities:";
 
   const offeringsData = {
     buttonText: "Talk to Expert",
-    link: "#",
     offerings: [
       {
         icon: icon1,
@@ -183,6 +183,8 @@ export const What = () => {
         subtitle={subtitle}
         desc={desc}
         ButtonImage={ButtonImage}
+        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
+        secId="what-we-do"
       />
     </>
   );
@@ -196,7 +198,6 @@ export const Use = () => {
     description:
       "Our rapid prototypes have helped startups get funding, enterprises get buy-in, and engineering teams accelerate build cycles.",
     buttonText: "Download One Pager",
-    link: "#",
     cards: [
       {
         title: "MVP Flow Prototype for SaaS Platform",
@@ -222,6 +223,9 @@ export const Use = () => {
         {...useCasesData}
         ButtonImage={ButtonImage}
         direction="change_direction"
+        secId="use-cases"
+        onButtonClick={()=>showHubSpotForm("rapid-prototyping-one-pg")}
+
       />
     </>
   );
@@ -243,10 +247,12 @@ export const Smart = () => {
         title="Smarter Decisions. Shorter Timelines. Bigger Wins."
         description="Rapid prototyping improves alignment, reduces risk, and accelerates product clarity. Here’s what teams gained:"
         buttonText="Request a custom ROI Projection"
-        link="#"
+        // link="#"
         stats={stats}
         imageSrc={imginter}
         ButtonImage={ButtonImage}
+        secId="business-value"
+        onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}
       />
     </>
   );
@@ -264,7 +270,7 @@ export const Start = () => {
   };
   return (
     <>
-      <StartSection data={startSectionData} />
+      <StartSection data={startSectionData} secId="how-to-start" />
     </>
   );
 };

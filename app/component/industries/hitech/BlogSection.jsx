@@ -1,6 +1,6 @@
 "use client";
+
 import React, { useEffect } from "react";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,6 +32,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogListLimit } from "../../../store/actions/blogAction";
 import { baseUrl } from "../../../../config";
 import Link from "next/link";
+
 export const BlogSection = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -55,8 +56,9 @@ export const BlogSection = () => {
 
   return (
     <>
-      <section className="md:py-10">
+      <section id="case-studies" className="md:py-10">
         <div className="container mx-auto px-4 xl:px-20">
+          <h1 className="text-4xl font-bold">Latest Case Studies</h1>
           <div className="relative w-full py-8">
             <Swiper
               className="custom-blog-swiper"
@@ -189,7 +191,7 @@ export const TopPartners = () => {
     </>
   );
 };
-export const ContactSec = ({ lightContent, link }) => {
+export const ContactSec = ({ lightContent, link, buttonClicked }) => {
   return (
     <>
       <section>
@@ -209,12 +211,12 @@ export const ContactSec = ({ lightContent, link }) => {
                 <span className="font-bold">let’s talk!</span>
               </h2>
 
-              <form className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
+              {/* <form className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
                 <input
                   type="email"
                   placeholder="Enter your work email"
                   className="w-full sm:w-[300px] h-10 px-6 text-sm text-black bg-white placeholder-gray-500 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
-                />{" "}
+                />{" "} */}
                 <motion.div
                   initial={{ x: -50, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -224,12 +226,13 @@ export const ContactSec = ({ lightContent, link }) => {
                 >
                   <ButtonLayout
                     link={link}
-                    text="Learn More"
+                    text="Contact Us"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    onClick={buttonClicked}
                   />
                 </motion.div>
-              </form>
+              
             </div>
           </div>
         </div>
@@ -244,7 +247,7 @@ export const ServicesSec = () => {
       style={{
         background: `url(${bgimg.src}) center center/ cover no-repeat`,
       }}
-      id="customers"
+      id="services"
     >
       <div className="container mx-auto px-4 xl:px-20">
         <motion.h2

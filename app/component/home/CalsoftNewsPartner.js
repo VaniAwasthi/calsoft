@@ -9,7 +9,7 @@ import { Autoplay, Scrollbar } from "swiper/modules";
 
 import img01 from "../../assets/home/news/Corporate.webp";
 import img02 from "../../assets/home/news/Customer.webp";
-import img03 from "../../assets/home/news/Innovation.webp"
+import img03 from "../../assets/home/news/Innovation.webp";
 import img04 from "../../assets/home/news/Partnerships.webp";
 import img05 from "../../assets/home/news/Thoughts.webp";
 import img06 from "../../assets/home/news/People.webp";
@@ -52,7 +52,7 @@ const data = [
     title: "Calsoft Partners with IBM WatsonX to deliver AI-driven Solutions",
     description:
       "Maximize enterprise AI investments with IBM WatsonX & Calsoft",
-    link: "https://www.calsoftinc.com/calsoft-partners-with-ibm-watsonx/",
+    link: "https://www.calsoftinc.com/calsoft-partners-with-ibm-watsonx",
     imageTitle: "Corporate & Leadership Updates",
   },
   {
@@ -62,7 +62,7 @@ const data = [
       "Calsoft & StreamNative Partner to Cut Streaming Costs, Boost Performance",
     description:
       "Discover how enterprises can reduce Kafka costs by up to 50% without compromising on real-time performance",
-    link: "https://www.californiaentertainmentpress.com/article/800036888-calsoft-and-streamnative-join-forces-to-optimize-cost-and-performance-in-real-time-data-streaming",
+    link: "https://www.einpresswire.com/press-releases/report/5147172",
     imageTitle: " Partnerships & Ecosystem ",
   },
   {
@@ -71,7 +71,7 @@ const data = [
     title: "Calsoft x Segmind: AI-Powered Visuals for Smarter E-Commerce",
     description:
       "Transforming product imagery with speed, scale, and creativity.",
-    link: "https://www.americanbusinesstimes.com/article/779940243-calsoft-partners-with-segmind-for-ai-driven-visual-asset-creation-in-e-commerce",
+    link: "https://www.einpresswire.com/press-releases/report/u0YVj93WNWxZB3Mm?n=2",
     imageTitle: "Innovation, Products & Platforms",
   },
   {
@@ -81,7 +81,7 @@ const data = [
     description:
       "Delivering intelligent automation and security for next-gen connected infrastructure",
     link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
-  imageTitle:"Customer Impact & Case Studies"
+    imageTitle: "Customer Impact & Case Studies",
   },
   {
     id: 5,
@@ -91,7 +91,7 @@ const data = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     link: "https://www.calsoftinc.com/news/calsoft-partners-with-smarthub-ai-to-advance-ai-ml-based-edge-automation-security-solutions/",
     imageTitle: "Lorem Ipsum is simply dummy text of the printing ",
-    imageTitle:"Thought Leadership & Industry Insights"
+    imageTitle: "Thought Leadership & Industry Insights",
   },
   {
     id: 6,
@@ -163,8 +163,9 @@ export const CalsoftNews = () => {
                   {selected.description}
                 </motion.p>
 
-                <Link
+                <a
                   href={selected.link}
+                  target="_blank"
                   className="relative flex w-[180px] md:w-[220px] gap-2 md:justify-between items-center py-3 justify-center px-4 md:px-8 md:py-4 rounded-full shadow-md bg-[#BA0007] text-white transition-all duration-500 overflow-hidden group"
                   style={{ boxShadow: "0px 12px 16px rgba(0, 54, 19, 0.25" }}
                 >
@@ -173,7 +174,7 @@ export const CalsoftNews = () => {
                     <IoArrowForwardCircleSharp className="text-3xl tra" />
                   </span>
                   <span className="absolute inset-0 bg-white w-full h-full left-0 -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"></span>
-                </Link>
+                </a>
               </div>
             </motion.div>
           </div>
@@ -224,107 +225,107 @@ export const CalsoftNews = () => {
 
             <div className="md:block hidden md:col-span-8">
               {!isMobile ? (
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          <Swiper
-            spaceBetween={10}
-            slidesPerView={3}
-            breakpoints={{
-              640: { slidesPerView: 3, spaceBetween: 10 },
-              768: { slidesPerView: 3, spaceBetween: 10 },
-              1024: { slidesPerView: 3, spaceBetween: 10 },
-            }}
-            scrollbar={{ hide: false }}
-            autoplay={{
-              delay: 3000, // 3s autoplay
-              disableOnInteraction: false, // keep autoplay even after clicks
-            }}
-            modules={[Scrollbar, Autoplay]}
-            className="w-full"
-          >
-            {data.map((item) => (
-              <SwiperSlide key={item.id} className="items-center">
                 <motion.div
-                  className={`cursor-pointer relative rounded-lg mb-6 transition-all duration-500 ${
-                    selected.id === item.id ? "scale-105" : "scale-90"
-                  }`}
-                  onClick={() => setSelected(item)}
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1 }}
+                  viewport={{ once: true }}
                 >
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    width={300}
-                    height={200}
-                    className="object-cover rounded-lg"
-                  />
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={3}
+                    breakpoints={{
+                      640: { slidesPerView: 3, spaceBetween: 10 },
+                      768: { slidesPerView: 3, spaceBetween: 10 },
+                      1024: { slidesPerView: 3, spaceBetween: 10 },
+                    }}
+                    scrollbar={{ hide: false }}
+                    autoplay={{
+                      delay: 3000, // 3s autoplay
+                      disableOnInteraction: false, // keep autoplay even after clicks
+                    }}
+                    modules={[Scrollbar, Autoplay]}
+                    className="w-full"
+                  >
+                    {data.map((item) => (
+                      <SwiperSlide key={item.id} className="items-center">
+                        <motion.div
+                          className={`cursor-pointer relative rounded-lg mb-6 transition-all duration-500 ${
+                            selected.id === item.id ? "scale-105" : "scale-90"
+                          }`}
+                          onClick={() => setSelected(item)}
+                        >
+                          <Image
+                            src={item.img}
+                            alt={item.title}
+                            width={300}
+                            height={200}
+                            className="object-cover rounded-lg"
+                          />
 
-                  {/* Title Overlay */}
-                  <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white text-center py-2 rounded-b-lg">
-                    <p className="text-sm md:text-base font-medium">
-                      {item.imageTitle}
-                    </p>
-                  </div>
+                          {/* Title Overlay */}
+                          <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white text-center py-2 rounded-b-lg">
+                            <p className="text-sm md:text-base font-medium">
+                              {item.imageTitle}
+                            </p>
+                          </div>
+                        </motion.div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
-      ) : (
-        <div>
-          <Swiper
-            spaceBetween={10}
-            slidesPerView={3}
-            breakpoints={{
-              640: { slidesPerView: 3, spaceBetween: 10 },
-              768: { slidesPerView: 3, spaceBetween: 10 },
-              1024: { slidesPerView: 3, spaceBetween: 10 },
-            }}
-            scrollbar={{ hide: false }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-            }}
-            modules={[Scrollbar, Autoplay]}
-            className="w-full"
-          >
-            {data.map((item) => (
-              <SwiperSlide key={item.id} className="items-center">
-                <div
-                  className={`cursor-pointer relative rounded-lg mb-6 transition-all duration-500 ${
-                    selected.id === item.id ? "scale-105" : "scale-90"
-                  }`}
-                  onClick={() => setSelected(item)}
-                >
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    width={300}
-                    height={300}
-                    className="object-cover rounded-lg h-full"
-                  />
+              ) : (
+                <div>
+                  <Swiper
+                    spaceBetween={10}
+                    slidesPerView={3}
+                    breakpoints={{
+                      640: { slidesPerView: 3, spaceBetween: 10 },
+                      768: { slidesPerView: 3, spaceBetween: 10 },
+                      1024: { slidesPerView: 3, spaceBetween: 10 },
+                    }}
+                    scrollbar={{ hide: false }}
+                    autoplay={{
+                      delay: 3000,
+                      disableOnInteraction: false,
+                    }}
+                    modules={[Scrollbar, Autoplay]}
+                    className="w-full"
+                  >
+                    {data.map((item) => (
+                      <SwiperSlide key={item.id} className="items-center">
+                        <div
+                          className={`cursor-pointer relative rounded-lg mb-6 transition-all duration-500 ${
+                            selected.id === item.id ? "scale-105" : "scale-90"
+                          }`}
+                          onClick={() => setSelected(item)}
+                        >
+                          <Image
+                            src={item.img}
+                            alt={item.title}
+                            width={300}
+                            height={300}
+                            className="object-cover rounded-lg h-full"
+                          />
 
-                  {/* Title Overlay */}
-                  <div className="absolute bottom-0 left-0 w-full bg-black/10 text-white text-center py-2 rounded-b-lg">
-                    <p
-                      className={`${
-                        selected.id === item.id
-                          ? "font-semibold"
-                          : "font-normal"
-                      } text-[12px]`}
-                    >
-                      {item.imageTitle}
-                    </p>
-                  </div>
+                          {/* Title Overlay */}
+                          <div className="absolute bottom-0 left-0 w-full bg-black/10 text-white text-center py-2 rounded-b-lg">
+                            <p
+                              className={`${
+                                selected.id === item.id
+                                  ? "font-semibold"
+                                  : "font-normal"
+                              } text-[12px]`}
+                            >
+                              {item.imageTitle}
+                            </p>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      )}
+              )}
             </div>
           </div>
         </div>
@@ -382,17 +383,17 @@ export const CalsoftPartner = () => {
       logos: [logo20, logo21],
     },
   ];
-const Mobilelogos = [
-  { src: logo1, alt: "Google Cloud Partner" },
-  { src: logo2, alt: "Azure" },
-  { src: logo3, alt: "AWS" },
-  { src: logo5, alt: "Octopai" },
-  { src: logo4, alt: "Snowflake" },
-  { src: logo20, alt: "NASSCOM" },
-  { src: logo8, alt: "Memo" },
-  { src: logo6, alt: "LlamaIndex" },
-  { src: logo7, alt: "Portkey" },
-];
+  const Mobilelogos = [
+    { src: logo1, alt: "Google Cloud Partner" },
+    { src: logo2, alt: "Azure" },
+    { src: logo3, alt: "AWS" },
+    { src: logo5, alt: "Octopai" },
+    { src: logo4, alt: "Snowflake" },
+    { src: logo20, alt: "NASSCOM" },
+    { src: logo8, alt: "Memo" },
+    { src: logo6, alt: "LlamaIndex" },
+    { src: logo7, alt: "Portkey" },
+  ];
 
   return (
     <section
@@ -600,27 +601,27 @@ const Mobilelogos = [
             </div>
           </div>
           <div className="w-full py-10 flex justify-center">
-      <div className="grid grid-cols-3  md:hidden gap-6 max-w-5xl w-full">
-        {Mobilelogos.map((logo, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="flex justify-center items-center bg-gray-50 rounded-xl shadow-sm p-6 hover:shadow-md transition"
-          >
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={100}
-              height={100}
-              className="max-h-80 object-contain"
-            />
-          </motion.div>
-        ))}
-      </div>
-    </div>
+            <div className="grid grid-cols-3  md:hidden gap-6 max-w-5xl w-full">
+              {Mobilelogos.map((logo, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="flex justify-center items-center bg-gray-50 rounded-xl shadow-sm p-6 hover:shadow-md transition"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={100}
+                    height={100}
+                    className="max-h-80 object-contain"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

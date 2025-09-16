@@ -34,8 +34,8 @@ const tabs = [
     component: DataSheetCards,
   },
   {
-    id: "infographics",
-    name: "Infographics",
+    id: "usecases",
+    name: "Use Cases",
     icon: InfoIcon,
     component: InfographicCard,
   },

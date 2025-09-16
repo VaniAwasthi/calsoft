@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import {
   Business,
@@ -13,6 +14,7 @@ import { BannerSection } from "../../../component/utilities/InfraSectorSec";
 import BannerwithButtonBg from "../../../assets/DigitalEngineering/Product/BannerwithButton.webp";
 import { FooterBg } from "../../../component/utilities/DoCases";
 import ContactImg from "../../../assets/Data-Ai/PipeLine/ConnectBg.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
   return (
@@ -25,8 +27,9 @@ const Page = () => {
         <BannerSection
           backgroundImage={BannerwithButtonBg}
           title="Enable 100% cloud-native readiness for tomorrow."
-          buttonText="Book a meeting"
+          buttonText="Book a Meeting"
           buttonLink="#"
+          onButtonClick={()=>showHubSpotForm("book-a-meeting")}
         />
       </section>
       <Business />

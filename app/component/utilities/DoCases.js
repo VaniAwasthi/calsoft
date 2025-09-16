@@ -11,6 +11,7 @@ import line1 from "../../assets/DigitalEngineering/maturity/line1.svg";
 import "swiper/css/pagination";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import "swiper/css/navigation";
+import { showHubSpotForm } from "./showHubSpotForm";
 
 export const Do = ({
   offerings,
@@ -23,6 +24,7 @@ export const Do = ({
   buttonText,
   link,
   secId,
+  onButtonClick
 }) => {
   return (
     <>
@@ -168,10 +170,11 @@ export const Do = ({
                           className="flex flex-col md:flex-row gap-4 increse_btn shadow_btn mt-10"
                         >
                           <ButtonLayout
-                            link={link}
+                            // link={link}
                             text={buttonText}
                             image={ButtonImage}
                             hoverImage={ButtonImage}
+                            onClick={onButtonClick}
                           />
                         </motion.div>
                       )}
@@ -238,6 +241,8 @@ export const Do = ({
                         text={buttonText}
                         image={ButtonImage}
                         hoverImage={ButtonImage}
+                                                    onClick={onButtonClick}
+
                       />
                     </motion.div>
                   )}
@@ -262,6 +267,7 @@ export const Cases = ({
   ButtonImage,
   secId,
   direction,
+  onButtonClick
 }) => {
   return (
     <>
@@ -326,6 +332,7 @@ export const Cases = ({
                   text={buttonText}
                   image={ButtonImage}
                   hoverImage={ButtonImage}
+                  onClick={onButtonClick}
                 />
               </motion.div>
             )}
@@ -428,6 +435,7 @@ export const BusinessValue = ({
   valueItems,
   ButtonImage,
   secId,
+  onButtonClick
 }) => {
   return (
     <>
@@ -474,6 +482,7 @@ export const BusinessValue = ({
                     text={buttonText}
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    onClick={onButtonClick}
                   />
                 </motion.div>
               </div>
@@ -504,7 +513,7 @@ export const BusinessValue = ({
   );
 };
 
-export const StartSection = ({ data, secId }) => {
+export const StartSection = ({ data, secId ,}) => {
   return (
     <>
       <section
@@ -558,13 +567,16 @@ export const SprintTimeline = ({
   steps,
   heading,
   buttonText,
-  link,
   ButtonImage,
+  onClick
 }) => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
   };
+  const onButtonClick=()=>{
+      showHubSpotForm("start-today")
+    }
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
@@ -683,10 +695,11 @@ export const SprintTimeline = ({
                   className="flex flex-col md:flex-row gap-4 justify-center"
                 >
                   <ButtonLayout
-                    link={link}
+                    // link={link}
                     text={buttonText}
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    onClick={onButtonClick}
                   />
                 </motion.div>
               </div>
@@ -698,7 +711,7 @@ export const SprintTimeline = ({
   );
 };
 
-export const FooterBg = ({ lightContent, link, ContactImg, ButtonImage }) => {
+export const FooterBg = ({ lightContent, link, ContactImg, ButtonImage , onClick}) => {
   return (
     <>
       <section>
@@ -724,10 +737,11 @@ export const FooterBg = ({ lightContent, link, ContactImg, ButtonImage }) => {
                   className="flex flex-col md:flex-row gap-4"
                 >
                   <ButtonLayout
-                    link={link}
-                    text="Start Today"
+                    // link={link}
+                    text="Connect With Us"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                     onClick={()=>showHubSpotForm("contact-us-popup")}
                   />
                 </motion.div>
               </div>
@@ -747,10 +761,12 @@ export const InterfaceCard = ({
   stats = [],
   imageSrc,
   ButtonImage,
+  secId,
+  onButtonClick
 }) => {
   return (
     <>
-      <section className="relative container mx-auto !px-0 md:px-4 md:!my-14 !my-8">
+      <section className="relative container mx-auto !px-0 md:px-4 md:!my-14 !my-8" id={secId}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -782,6 +798,7 @@ export const InterfaceCard = ({
                         text={buttonText}
                         image={ButtonImage}
                         hoverImage={ButtonImage}
+                        onClick={onButtonClick}
                       />
                     </motion.div>
                   </div>

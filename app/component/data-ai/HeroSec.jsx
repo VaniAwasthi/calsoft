@@ -5,6 +5,8 @@ import Submenu from "../utilities/Submenu";
 import BackgroundImage from "../../assets/Data-Ai/mainPage/AIBg.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export const DataAiBanner = () => {
   const [activeTab, setActiveTab] = useState("benefits");
@@ -12,7 +14,7 @@ export const DataAiBanner = () => {
     title: "Calsoft’s Data and AI services",
 
     description: `Full-lifecycle data engineering, AI/ML development, and GenAI integration services to amp up intelligence and automation.`,
-    buttonText: "Contact Us",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [
@@ -36,6 +38,7 @@ export const DataAiBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("get-in-touch")}
       />
       <Submenu
         navItems={navItems}
@@ -78,7 +81,9 @@ export const MultiFeatureGrid = ({ sections, heading }) => {
           {/* Grid of Cards */}
           <div className="relative grid grid-cols-1 sm:grid-cols-2  gap-6">
             {section.items.map((item, idx) => (
-              <Card key={idx} title={item.title} desc={item.desc} />
+              <Link key={idx} href={item.link}>
+                <Card title={item.title} desc={item.desc} />
+              </Link>
             ))}
 
             {/* Purple Center Label (Desktop only) */}
@@ -101,13 +106,13 @@ export const MultiFeatureGrid = ({ sections, heading }) => {
 };
 
 const Card = ({ title, desc }) => (
-  <div className="bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition py-10 px-[4rem]">
+  <div className="group bg-white border border-gray-200 rounded-lg shadow hover:shadow-md transition py-10 px-[4rem] hover:bg-[#2e2f92]">
     <motion.h3
       initial={{ x: -50, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}
       viewport={{ once: false, amount: 0.3 }}
-      className="font-semibold text-2xl mb-2 text-[#2c2c2c] px-3"
+      className="font-semibold text-2xl mb-2 text-[#2c2c2c] px-3 group-hover:text-white"
     >
       {title}
     </motion.h3>
@@ -116,7 +121,7 @@ const Card = ({ title, desc }) => (
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}
       viewport={{ once: false, amount: 0.3 }}
-      className="text-gray-600 text-lg px-3"
+      className="text-gray-600 text-lg px-3 group-hover:text-white"
     >
       {desc}
     </motion.p>

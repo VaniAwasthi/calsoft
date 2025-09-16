@@ -6,6 +6,7 @@ import {
 } from "../../component/utilities/InfraSectorSec.jsx";
 import React from "react";
 import BannerwithButtonBg from "../../assets/DigitalEngineering/CX/BannerKnow.svg";
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 import {
   ChallengeToSolutionSec,
   FrontEndSec,
@@ -28,7 +29,7 @@ const Page = () => {
         backgroundImage={BannerwithButtonBg}
         title="Boost user retention by 50% through smart CX."
         buttonText="Book a Meeting"
-        buttonLink="#"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
 
       <RapidprototypingSec />
@@ -38,7 +39,6 @@ const Page = () => {
         BoldContent="Reimagine your digital
 experiences for faster growth."
         lightContent="Let’s talk..."
-        link="#"
       />
     </>
   );

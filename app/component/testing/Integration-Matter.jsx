@@ -1,9 +1,41 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function IntegrationMatter() {
   return (
     <div className="flex items-center justify-center">
-      <div className="relative w-full max-w-2xl aspect-square">
+      <div className="relative w-[34.5rem] aspect-square">
+        {/* Bottom right diamond */}
+        <motion.div
+          initial={{ x: -50, y: 50, opacity: 0 }}
+          whileInView={{ x: 0, y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="absolute bottom-[10.2rem] -left-[37%] transform translate-x-1/2"
+        >
+          <div
+            className="rotate-45 w-40 h-40 md:w-44 md:h-44 rounded-xl p-1 flex items-center justify-center"
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(46, 48, 146, 1) 0%, rgba(186, 0, 7, 1) 100%)",
+            }}
+          >
+            <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
+              <div className="transform -rotate-45 text-white text-center px-4">
+                <div className="text-xl font-medium leading-tight">
+                  Manual QA
+                  <br />
+                  cycles outside
+                  <br />
+                  CI/CD pipelines
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Top diamond --> Missed */}
         <div className="absolute top-[5.5rem] left-[67%] transform -translate-x-1/2">
           <div
@@ -16,13 +48,15 @@ export default function IntegrationMatter() {
             <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
                 <div className="text-xl font-medium leading-tight">
-                  Missed
+                  Security
                   <br />
-                  defects in
+                  performance
                   <br />
-                  reused code
+                  or UX validations
                   <br />
-                  paths
+                  left for
+                  <br />
+                  staging
                 </div>
               </div>
             </div>
@@ -39,40 +73,15 @@ export default function IntegrationMatter() {
             }}
           >
             <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
-              <div className="transform -rotate-45 text-white text-center px-4">
+              <div className="transform -rotate-45 text-white text-center px-4 pt-6">
                 <div className="text-xl font-medium leading-tight">
-                  Long
+                  Unversioned
                   <br />
-                  execution times,
+                  or environment-
                   <br />
-                  delaying
+                  dependent test
                   <br />
-                  deployments
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right diamond */}
-        <div className="absolute top-[55%] -right-[7%] transform -translate-y-1/2">
-          <div
-            className="rotate-45 w-40 h-40 md:w-44 md:h-44 rounded-xl p-1 flex items-center justify-center"
-            style={{
-              background:
-                "linear-gradient(0deg, rgba(46, 48, 146, 1) 0%, rgba(186, 0, 7, 1) 100%)",
-            }}
-          >
-            <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
-              <div className="transform -rotate-45 text-white text-center px-4">
-                <div className="text-xl font-medium leading-tight">
-                  Lack of
-                  <br />
-                  traceability to
-                  <br />
-                  user stories or
-                  <br />
-                  features
+                  scripts
                 </div>
               </div>
             </div>
@@ -91,21 +100,27 @@ export default function IntegrationMatter() {
             <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
                 <div className="text-xl font-medium leading-tight">
-                  Test
+                  Flaky tests
                   <br />
-                  suite bloat
+                  delaying
                   <br />
-                  without
-                  <br />
-                  prioritization
+                  deployments
+                  {/* <br />
+                  prioritization */}
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom right diamond */}
-        <div className="absolute bottom-[10.2rem] -left-[37%] transform translate-x-1/2">
+        {/* Right diamond */}
+        <motion.div
+          initial={{ x: 50, y: -50, opacity: 0 }}
+          whileInView={{ x: 0, y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="absolute top-[55%] -right-[7%] transform -translate-y-1/2"
+        >
           <div
             className="rotate-45 w-40 h-40 md:w-44 md:h-44 rounded-xl p-1 flex items-center justify-center"
             style={{
@@ -116,18 +131,20 @@ export default function IntegrationMatter() {
             <div className="w-full h-full bg-[#2e3092] rounded-xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
                 <div className="text-xl font-medium leading-tight">
-                  Ineffective
+                  Lack of
                   <br />
-                  reuse of
+                  real-time
                   <br />
-                  automation
+                  feedback loops
                   <br />
-                  across builds
+                  for failed
+                  <br />
+                  builds
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

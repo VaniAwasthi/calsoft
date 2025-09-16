@@ -12,6 +12,7 @@ import {
   MultiCloudInfraSec,
   SREInfraSec,
 } from "../../component/cloud-service/HeroSection.jsx";
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
 import {
   BannerSection,
   ContactSecData,
@@ -29,7 +30,7 @@ const Page = () => {
         backgroundImage={BannerwithButtonBg}
         title="Accelerate cloud provisioning by 60% across environments."
         buttonText="Book a Meeting"
-        buttonLink="#"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <CloudMigrationInfraSec />
       <CostInfraSec />
@@ -38,7 +39,6 @@ const Page = () => {
         BoldContent="Engineer cloud environments "
         lightContent="with us that are scalable, resilient,
         and cost - efficient "
-        link="#"
       />
     </>
   );

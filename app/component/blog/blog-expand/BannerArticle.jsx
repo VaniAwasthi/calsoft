@@ -8,8 +8,9 @@ import { useState } from "react";
 import blogexpanImage from "../../../assets/blog/blogexpanImage.webp";
 import sanitizeHtml from "sanitize-html";
 import ProfileDummy from "../../../assets/caseStudies/Profile.webp";
+import { baseUrl } from "@/config";
+import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 export const Banner = ({ blog }) => {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
 
   return (
     <section className="md:py-7 px-7 md:px-20">
@@ -17,13 +18,13 @@ export const Banner = ({ blog }) => {
         <Image
           width={500}
           height={100}
-          src={blog.image ? `${baseUrl}${blog.image}` : blogexpanImage}
+          src={blog?.image ? `${baseUrl}${blog?.image}` : blogexpanImage}
           alt="Vlog-expan-image"
           className="w-full"
         />
         <div className="grid  grid-cols-12 items-center gap-6">
           <h1 className="col-span-12 md:col-span-9  text-3xl md:text-5xl font-bold leading-tight my-4">
-            {blog.title}
+            {blog?.title}
           </h1>
           {/* <div className="relative col-span-12 md:col-span-3 w-full h-48 md:h-64">
             <Image
@@ -43,7 +44,7 @@ export const ArticleContent = ({ blog }) => {
   const currentUrl = typeof window !== "undefined" ? window.location.href : "";
   const [copied, setCopied] = useState(false);
 
-  const cleanHtml = sanitizeHtml(blog.content, {
+  const cleanHtml = sanitizeHtml(blog?.content, {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat([
       "h1",
       "h2",
@@ -93,9 +94,9 @@ export const ArticleContent = ({ blog }) => {
     )}`,
     twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
       currentUrl
-    )}&text=${encodeURIComponent(blog.title)}`,
+    )}&text=${encodeURIComponent(blog?.title)}`,
     email: `mailto:?subject=${encodeURIComponent(
-      blog.title
+      blog?.title
     )}&body=${encodeURIComponent(currentUrl)}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
       currentUrl
@@ -111,7 +112,7 @@ export const ArticleContent = ({ blog }) => {
             {/* Date, Read Time, Author */}
             <div className="text-sm text-gray-500 flex gap-3">
               <span className="text-[#939393]">
-                {new Date(blog.date).toLocaleString("en-IN", {
+                {new Date(blog?.date).toLocaleString("en-IN", {
                   timeZone: "Asia/Kolkata",
                   day: "numeric",
                   month: "short",
@@ -119,11 +120,11 @@ export const ArticleContent = ({ blog }) => {
                 })}
               </span>
               <span>|</span>
-              <span>{blog.read_time} min read</span>
+              <span>{blog?.read_time} min read</span>
               <span>|</span>
-              {blog.authorData ? (
+              {blog?.authorData ? (
                 <>
-                  <span className="text-[#E36C0A]">{blog.authorData.name}</span>
+                  <span className="text-[#E36C0A]">{blog?.authorData?.name}</span>
                 </>
               ) : (
                 <span className="text-gray-400">Unknown Author</span>
@@ -146,47 +147,76 @@ export const ArticleContent = ({ blog }) => {
             {/* Profile Section */}
 
             <div className="w-[320px] h-[350px] bg-[#2E3092] manrope text-white rounded-2xl p-4 shadow-lg text-left">
-              <div className="flex justify-start  mb-4">
-                <div className="rounded-xl overflow-hidden">
-                  <Image
-                    src={ProfileDummy}
-                    alt="Profile Image"
-                    width={150}
-                    height={200}
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              {Array.isArray(blog?.authorData) ? (
-                blog.authorData.map((auth, idx) => (
-                  <div key={idx}>
-                    <h3 className="text-[20px] font-bold mb-2">{auth.name}</h3>
-                    <p className="text-[15px] leading-relaxed">
-                      Lorem ipsum is a dummy or placeholder text commonly used
-                      in graphic design, publishing, and web development.
-                    </p>
-                  </div>
-                ))
-              ) : blog?.authorData ? (
-                <div>
-                  <h3 className="text-[20px] font-bold mb-2">
-                    {blog.authorData.name}
-                  </h3>
-                  <p className="text-[15px] leading-relaxed">
-                    Lorem ipsum is a dummy or placeholder text commonly used in
-                    graphic design, publishing, and web development.
-                  </p>
-                </div>
-              ) : (
-                <div>
-                  <h3 className="text-[20px] font-bold mb-2">Tom Neaves</h3>
-                  <p className="text-[15px] leading-relaxed">
-                    Lorem ipsum is a dummy or placeholder text commonly used in
-                    graphic design, publishing, and web development.
-                  </p>
-                </div>
-              )}
-            </div>
+  <div className="flex justify-start mb-4">
+    <div className="rounded-xl overflow-hidden">
+      {Array.isArray(blog?.authorData) ? (
+        blog.authorData[0]?.image ? (
+          <Image
+            src={`${baseUrl}${blog.authorData.image}`}
+            alt="Profile Image"
+            width={150}
+            height={200}
+            className="object-cover"
+          />
+        ) : (
+          <Image
+            src={blogexpanImage}
+            alt="Default Profile Image"
+            width={150}
+            height={200}
+            className="object-cover"
+          />
+        )
+      ) : blog?.authorData?.image ? (
+        <Image
+          src={`${baseUrl}${blog?.authorData?.image}`}
+          alt="Profile Image"
+          width={150}
+          height={200}
+          className="object-cover"
+        />
+      ) : (
+        <Image
+          src={blogexpanImage}
+          alt="Default Profile Image"
+          width={150}
+          height={200}
+          className="object-cover"
+        />
+      )}
+    </div>
+  </div>
+
+  {/* Handle authorData */}
+  {Array.isArray(blog?.authorData) ? (
+    blog.authorData.map((auth, idx) => (
+      <div key={idx}>
+        <h3 className="text-[15px] font-bold mb-2">{auth.name}</h3>
+        <p
+          className="text-[12px] leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: auth.about }}
+        />
+      </div>
+    ))
+  ) : blog?.authorData ? (
+    <div>
+      <h3 className="text-[15px] font-bold mb-2">{blog.authorData.name}</h3>
+      <p
+        className="text-[12px] leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: blog.authorData.about }}
+      />
+    </div>
+  ) : (
+    <div>
+      <h3 className="text-[20px] font-bold mb-2">Tom Neaves</h3>
+      <p className="text-[15px] leading-relaxed">
+        Lorem ipsum is a dummy or placeholder text commonly used in
+        graphic design, publishing, and web development.
+      </p>
+    </div>
+  )}
+</div>
+
             {/* Share Icons */}
             <div className="flex flex-wrap gap-8  items-center">
               <h3 className="text-[15px] font-normal mb-3">Share:</h3>
@@ -234,12 +264,12 @@ export const ArticleContent = ({ blog }) => {
                 Sign up to receive the latest security news and threat insights
                 in your inbox from Threatsense.
               </p>
-              <input
+              {/* <input
                 type="email"
                 placeholder="Business Email*"
                 className="w-[250px] lg:w-3/4 px-3 py-2 border border-gray-300 rounded-xl text-sm mb-[2rem]"
-              />
-              <button className="w-[200px] xl:w-1/3 bg-[#BA0007] text-white py-2  hover:bg-[#BA0007] transition text-sm font-semibold rounded-xl">
+              /> */}
+              <button onClick={()=>showHubSpotForm("subscribe")} className="w-[200px] xl:w-1/3 bg-[#BA0007] text-white py-2  hover:bg-[#BA0007] transition text-sm font-semibold rounded-xl">
                 Subscribe
               </button>
             </div>
@@ -249,12 +279,25 @@ export const ArticleContent = ({ blog }) => {
               <div className="flex  flex-wrap gap-2 my-2">
                 {Array.isArray(blog?.tagData) &&
                   blog.tagData.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-[#2E3092] text-white w-[40%] text-center rounded-3xl text-sm px-4 py-4"
-                    >
-                      {tag.name}
-                    </span>
+                    <>
+                     <span
+                        key={idx}
+                        className="text-[#E36C0A] font-semibold text-[18px]  rounded flex items-center"
+                      >
+                        {tag.name}
+                        {idx !== blog.tagData.length - 1 && (
+                          <span className="mx-2 text-[#E36C0A]">|</span>
+                        )}
+                      </span>
+                    
+                    </>
+                    // <span
+                    //   key={idx}
+                    //   className="bg-[#2E3092] text-white w-[40%] text-center rounded-3xl text-sm px-4 py-4"
+                    // >
+                    //   {tag.name}
+                    // </span>
+                   
                   ))}
               </div>
             </div>

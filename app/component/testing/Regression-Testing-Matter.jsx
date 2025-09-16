@@ -2,10 +2,10 @@ import React from "react";
 
 export default function RegressionTestingMatter() {
   return (
-    <div className="flex items-center justify-center">
-      <div className="relative w-full max-w-2xl aspect-square">
+    <div className="flex items-center justify-center mb-5">
+      <div className="relative w-full h-[28.5rem] text-lg md:text-xl">
         {/* Top diamond */}
-        <div className="absolute top-2 left-[60.5%] transform -translate-x-1/2">
+        <div className="absolute top-2 left-[24.5rem] transform -translate-x-1/2">
           <div
             className="rotate-45 w-40 h-40 md:w-44 md:h-44 rounded-tl-4xl p-1 flex items-center justify-center"
             style={{
@@ -15,7 +15,7 @@ export default function RegressionTestingMatter() {
           >
             <div className="w-full h-full bg-[#2e3092] rounded-tl-4xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
-                <div className="text-xl font-medium leading-tight">
+                <div className="font-medium leading-tight">
                   Missed
                   <br />
                   defects in
@@ -30,7 +30,7 @@ export default function RegressionTestingMatter() {
         </div>
 
         {/* Left diamond */}
-        <div className="absolute top-[41%] left-[20.5%] transform -translate-y-1/2">
+        <div className="absolute top-[14.5rem] left-[10.8rem] transform -translate-y-1/2">
           <div
             className="rotate-45 w-40 h-40 md:w-44 md:h-44 p-1 flex items-center justify-center"
             style={{
@@ -40,7 +40,7 @@ export default function RegressionTestingMatter() {
           >
             <div className="w-full h-full bg-[#2e3092] flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
-                <div className="text-xl font-medium leading-tight">
+                <div className="font-medium leading-tight">
                   Long
                   <br />
                   execution times,
@@ -55,7 +55,7 @@ export default function RegressionTestingMatter() {
         </div>
 
         {/* Right diamond */}
-        <div className="absolute top-[40.9%] right-0 transform -translate-y-1/2">
+        <div className="absolute top-[14.5rem] left-[27.2rem] transform -translate-y-1/2">
           <div
             className="rotate-45 w-40 h-40 md:w-44 md:h-44 rounded-tr-4xl p-1 flex items-center justify-center"
             style={{
@@ -65,7 +65,7 @@ export default function RegressionTestingMatter() {
           >
             <div className="w-full h-full bg-[#2e3092] rounded-tr-4xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
-                <div className="text-xl font-medium leading-tight">
+                <div className="font-medium leading-tight">
                   Lack of
                   <br />
                   traceability to
@@ -80,7 +80,7 @@ export default function RegressionTestingMatter() {
         </div>
 
         {/* Bottom left diamond */}
-        <div className="absolute bottom-[6.6rem] left-[13%] transform -translate-x-1/2">
+        <div className="absolute bottom-0 left-[8rem] transform -translate-x-1/2">
           <div
             className="rotate-45 w-40 h-40 md:w-44 md:h-44 rounded-br-4xl p-1 flex items-center justify-center"
             style={{
@@ -90,7 +90,7 @@ export default function RegressionTestingMatter() {
           >
             <div className="w-full h-full bg-[#2e3092] rounded-br-4xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
-                <div className="text-xl font-medium leading-tight">
+                <div className="font-medium leading-tight">
                   Test
                   <br />
                   suite bloat
@@ -105,7 +105,7 @@ export default function RegressionTestingMatter() {
         </div>
 
         {/* Bottom right diamond */}
-        <div className="absolute bottom-[6.8rem] right-[40%] transform translate-x-1/2">
+        <div className="absolute bottom-0 left-[13.5rem] transform translate-x-1/2">
           <div
             className="rotate-45 w-40 h-40 md:w-44 md:h-44 rounded-br-4xl p-1 flex items-center justify-center"
             style={{
@@ -115,7 +115,7 @@ export default function RegressionTestingMatter() {
           >
             <div className="w-full h-full bg-[#2e3092] rounded-br-4xl flex items-center justify-center">
               <div className="transform -rotate-45 text-white text-center px-4">
-                <div className="text-xl font-medium leading-tight">
+                <div className="font-medium leading-tight">
                   Ineffective
                   <br />
                   reuse of

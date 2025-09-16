@@ -19,9 +19,18 @@ export const HeroSectionWhitePaper = ({
   buttonImage,
   hoverImage,
   backgroundImage,
-  backgroundMain = "",
-  ImageClassname = "",
+
+  scrollToId,
 }) => {
+  const handleScroll = () => {
+    if (scrollToId) {
+      const element = document.getElementById(scrollToId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   return (
     <div className="relative w-full h-[600px] sm:h-[400px] md:h-[600px]">
       <Image
@@ -36,21 +45,21 @@ export const HeroSectionWhitePaper = ({
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto px-4 md:px-20 w-full">
           <div className="flex flex-col md:flex-row items-center justify-between w-full gap-10">
-            {/* Left Section: Two Images */}
-
+            
+            {/* Left Section */}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-white lg:w-[50%] md:w-[45%]  max-w-2xl mb-3 ml-3 px-5"
+              className="text-white lg:w-[50%] md:w-[45%] max-w-2xl mb-3 ml-3 px-5"
             >
               <motion.h2
                 initial={{ x: 30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.3 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="text-3xl xl:text-[40px]  w-full font-bold leading-tight"
+                className="text-3xl xl:text-[40px] w-full font-bold leading-tight"
               >
                 {title}
               </motion.h2>
@@ -66,6 +75,7 @@ export const HeroSectionWhitePaper = ({
                   {subtitle}
                 </motion.p>
               )}
+
               <motion.p
                 initial={{ x: 30, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
@@ -83,35 +93,38 @@ export const HeroSectionWhitePaper = ({
                 viewport={{ once: false, amount: 0.3 }}
                 className="mt-6"
               >
-                <ButtonLayout
-                  text={buttonLabel}
-                  image={buttonImage}
-                  hoverImage={hoverImage}
-                  className="!w-[210px] !h-[40px] md:!w-[220px] md:!h-[48px]"
-                />
+                <div onClick={handleScroll} className="cursor-pointer">
+                  <ButtonLayout
+                    text={buttonLabel}
+                    image={buttonImage}
+                    hoverImage={hoverImage}
+                    className="!w-[210px] !h-[40px] md:!w-[220px] md:!h-[48px]"
+                  />
+                </div>
               </motion.div>
             </motion.div>
-            {/* Right Section: Text and Button */}
+
+            {/* Right Section */}
             <motion.div
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.2, delay: 0.3 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="flex  gap-4 md:gap-5 lg:w-[40%] md:w-[50%] flex-row md:items-end"
+              className="flex gap-4 md:gap-5 lg:w-[40%] md:w-[50%] flex-row md:items-end"
             >
               <Image
                 src={image2}
                 alt="Card 1"
                 width={200}
                 height={200}
-                className="h-full w-full  rounded-lg"
+                className="h-full w-full rounded-lg"
               />
               <Image
                 src={image1}
                 width={200}
                 height={200}
                 alt="Card 2"
-                className="w-full  h-full  rounded-lg"
+                className="w-full h-full rounded-lg"
               />
             </motion.div>
           </div>
@@ -120,6 +133,7 @@ export const HeroSectionWhitePaper = ({
     </div>
   );
 };
+
 
 export const AccordionSection = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -152,7 +166,7 @@ export const AccordionSection = ({ items }) => {
           >
             <div className="flex items-start gap-3">
               <motion.div
-                animate={{ rotate: activeIndex === index ? 90 : 0 }}
+                
                 transition={{ duration: 0.3 }}
                 className="mt-2 cursor-pointer "
               >
@@ -166,19 +180,7 @@ export const AccordionSection = ({ items }) => {
                 <p className="text-[#4C4C4C] text-[14px] md:text-[16px]">
                   {item.content}
                 </p>
-                <AnimatePresence>
-                  {activeIndex === index && (
-                    <motion.p
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="text-gray-700 mt-1 text-sm overflow-hidden"
-                    >
-                      {item.content}
-                    </motion.p>
-                  )}
-                </AnimatePresence>
+             
               </div>
             </div>
           </div>
@@ -187,16 +189,17 @@ export const AccordionSection = ({ items }) => {
     </section>
   );
 };
-export const ShareSection = ({ title, description, url }) => {
-  const encodedUrl = encodeURIComponent(url);
+export const ShareSection = ({ title, description }) => {
+  if (typeof window === "undefined") return null; // ✅ avoid SSR issue
+
+  const currentUrl = encodeURIComponent(window.location.href);
   const encodedText = encodeURIComponent(`${title} - ${description}`);
 
   const shareLinks = {
-    email: `mailto:?subject=${encodedText}&body=${encodedUrl}`,
-    whatsapp: `https://api.whatsapp.com/send?text=${encodedText} ${encodedUrl}`,
-    twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedText}`,
-    linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedText}`,
-    // YouTube doesn't support direct link sharing — use a channel/video link instead
+    email: `mailto:?subject=${encodedText}&body=${currentUrl}`,
+    whatsapp: `https://api.whatsapp.com/send?text=${encodedText}%20${currentUrl}`,
+    twitter: `https://twitter.com/intent/tweet?url=${currentUrl}&text=${encodedText}`,
+    linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${encodedText}`,
   };
 
   return (
@@ -206,53 +209,48 @@ export const ShareSection = ({ title, description, url }) => {
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
         >
           Share on:
         </motion.p>
+
+        {/* Email */}
         <motion.a
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
+          whileHover={{ scale: 1.1 }}
           href={shareLinks.email}
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image src={EmailIcon} alt="email" width={30} height={30} />
         </motion.a>
+
+        {/* Twitter */}
         <motion.a
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
+          whileHover={{ scale: 1.1 }}
           href={shareLinks.twitter}
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image src={TwitterIcon} alt="twitter" width={30} height={30} />
         </motion.a>
+
+        {/* WhatsApp */}
         <motion.a
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
+          whileHover={{ scale: 1.1 }}
           href={shareLinks.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
         >
           <Image src={WhatsappIcon} alt="whatsapp" width={30} height={30} />
         </motion.a>
+
+        {/* LinkedIn */}
         <motion.a
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: false, amount: 0.3 }}
+          whileHover={{ scale: 1.1 }}
           href={shareLinks.linkedin}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src={LinkedInIcon} alt="linkdin" width={30} height={30} />
+          <Image src={LinkedInIcon} alt="linkedin" width={30} height={30} />
         </motion.a>
       </div>
     </div>

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
 import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
@@ -7,27 +8,48 @@ import HowToStart from "../../../component/product-application-development/HowTo
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import MobileDevelpmentMatters from "@/app/component/cx-engineering/MobileDevelpmentMatters";
+import img from "@/app/assets/DigitalEngineering/CX/CX Engineering 5.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
+  const navItems = [
+    "Why it Matters",
+    "What We Offer",
+    "Use Cases",
+    "Business Value",
+    "How to Start",
+  ];
+  const [activeTab, setActiveTab] = useState("why-it-matters");
+
   return (
     <>
       <HeroSection
         title="Turn Ideas into Intelligent Products."
         description="De-risk early decisions with the right architecture,
               built for scale, speed, and ROI."
-        buttonText="Get Architecture Readiness Score"
+        buttonText="Request CX Audit"
+        navItems={navItems}
+        setActiveTab={setActiveTab}
+        activeTab={activeTab}
+        heroImage={img}
+        buttonClicked={()=>showHubSpotForm("")}
+        buttonText2=""
       />
       <WhyItMatters
         title="Mobile Isn’t a Channel. It’s the Frontline."
         desc="Mobile is where business happens—whether it’s a field rep capturing leads, a consumer placing an order, or a manager approving workflows. Yet 60% of enterprise apps fail user expectations due to poor UX, offline issues, or clunky performance. Calsoft solves this by engineering apps that align business goals with intuitive, dependable experiences."
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         MainComponenent={MobileDevelpmentMatters}
         // contentClass="h-[31.5rem]"
         gridClass="sm:h-[55rem] md:h-[53rem] xl:h-[31.5rem]"
         mainComponenentClass="justify-start"
+        id="why-it-matters"
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
-      <WhatWeOffer />
+      <WhatWeOffer id="what-we-offer" buttonText="Talk to Expert"  buttonClicked={()=>showHubSpotForm("Talk-to-Expert")}/>
       <UseCases
+        id="use-cases"
+        BussinessId="business-value"
         useCaseData={[
           {
             title: "New Product Launch",
@@ -44,29 +66,29 @@ const Page = () => {
         ]}
         data={{
           leftSideContent: {
-            title: "Beyond Tech- Real Business Outcomes.",
+            title: "Apps That Work Harder for Your Business.",
             subTitle:
-              "Enterprises with a documented infrastructure roadmap have:",
+              null,
             description:
-              "Calsoft quantifies ROI for each roadmap milestone —from VM consolidation to cloud-native transitions —and ensures you get board-level buy-in with real data.",
+              "Our mobile solutions deliver more than access—they deliver ROI.",
           },
           rightSideContent: [
             {
-              title: "35%",
-              subTitle: "faster cloud migration cycles",
+              title: "50%",
+              subTitle: "faster task completion for field teams",
             },
             {
-              title: "18-25%",
-              subTitle: "reduction in OpEx via optimized resource usage",
+              title: "$200K+",
+              subTitle: "saved annually via legacy-to-mobile migration",
             },
             {
               title: "2X",
               subTitle:
-                "better incident response through standardized observability stack",
+                "user engagement on well-optimized mobile flows",
             },
             {
-              title: "Faster",
-              subTitle: "innovation cycles with modular, decoupled infra",
+              title: "100%",
+              subTitle: "compliance with audit-ready mobile security policies",
             },
           ],
         }}
@@ -74,19 +96,22 @@ const Page = () => {
           title: "Boost mobile adoption by 35% via native/hybrid apps.",
           buttontext: "Book a Meeting",
         }}
+        buttonClick2={()=>showHubSpotForm("mobile-development-one-pager")}
       />
       <HowToStart
+        id="how-to-start"
         headerContent={{
           title: "Start Smart, Scale Fast",
           description:
             "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
         }}
+        
       />
       <Steps />
       <ContactSecDataAi
         BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Build mobile solutions that drive engagement everywhere."
+        // link="#"
       />
     </>
   );

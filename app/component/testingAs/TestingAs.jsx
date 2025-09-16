@@ -11,12 +11,14 @@ import Info3 from "../../assets/DigitalEngineering/testing/Info3.svg";
 import Info4 from "../../assets/DigitalEngineering/testing/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/testing/Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/testing/Info6.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
+
 export const TestingTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
     title: "Testing as a Service",
     description: `Deliver reliable, scalable products with comprehensive testing across the development lifecycle.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [
@@ -40,6 +42,7 @@ export const TestingTab = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("testing-as-a-service-datasheet")}
       />
       <Submenu
         navItems={navItems}
@@ -105,7 +108,7 @@ export const FunctionalSec = () => {
         title="Functional and non-functional testing"
         description="Ensure functionality, security, and usability
                 across every stage of product development."
-        buttonText="Learn More"
+        buttonText="Case study (or asset)"
         link="/digital-product-engineering/testing-as-a-service/functional-and-non-functional-testing"
         whatWeDo={[
           "Test all modules for expected use",

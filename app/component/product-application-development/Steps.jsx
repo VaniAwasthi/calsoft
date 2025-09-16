@@ -6,11 +6,10 @@ import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg";
 import { SprintTimeline } from "../utilities/DoCases";
 import buttonImage from "../../assets/home/buttonImg.webp";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
-export default function Steps() {
-  const buttonText = "Start Today";
-  const link = "#";
-  const steps = [
+export default function Steps({
+  steps = [
     {
       day: "Day 0",
       title: "Kickoff & Alignment",
@@ -71,15 +70,18 @@ export default function Steps() {
       arrowDesktop: null,
       arrowMobile: null,
     },
-  ];
-
+  ],
+  heading = "Sprint Breakdown (10 Working Days)",
+  buttonText = "Start Today",
+  buttonClicked=()=>showHubSpotForm("start-today")
+}) {
   return (
     <>
       <SprintTimeline
         steps={steps}
-        heading="Sprint Breakdown (10 Working Days)"
+        heading={heading}
         buttonText={buttonText}
-        link={link}
+        onClick={buttonClicked}
         ButtonImage={buttonImage}
       />
     </>

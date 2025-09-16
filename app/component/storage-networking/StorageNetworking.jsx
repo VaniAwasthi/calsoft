@@ -1,17 +1,20 @@
 "use client";
+
 import React, { useState } from "react";
 import BackgroundImage from "../../assets/DigitalEngineering/storage-net/Banner.svg";
 import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import { ChallengeToSolution, InfraSection } from "../utilities/InfraSectorSec";
-import Info1 from "../../assets/DigitalEngineering/storage-net/Info1.svg";
+import Info1 from "@/app/assets/DigitalEngineering/storage-net/Info1.svg?url";
 import Info2 from "../../assets/DigitalEngineering/storage-net/Info2.svg";
 import Info3 from "../../assets/DigitalEngineering/storage-net/Info3.svg";
 import Info4 from "../../assets/DigitalEngineering/storage-net/Info4.svg";
 import Info5 from "../../assets/DigitalEngineering/storage-net/i=Info5.svg";
 import Info6 from "../../assets/DigitalEngineering/storage-net/Info6.svg";
 import Info7 from "../../assets/DigitalEngineering/storage-net/Info7.svg";
+
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 export const StorageTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -43,6 +46,7 @@ export const StorageTab = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+          onButtonClick={() => showHubSpotForm("storage-and-networking-datasheet")}
       />
       <Submenu
         navItems={navItems}
@@ -108,7 +112,7 @@ export const SoftwareSec = () => {
       <InfraSection
         title="Software-defined storage (SDS) development"
         description="Modernize data management with software defined, flexible, and scalable storage solutions."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Detach control from storage hardware",
@@ -137,7 +141,7 @@ export const DefinedSec = () => {
         title="Software Defined Networking (SDN) controller
                 & engineering"
         description="Transform network operations with programmable, automated, and scalable SDN architectures."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Centralize control via SDN layers",
@@ -165,8 +169,8 @@ export const Hyperconverged = () => {
       <InfraSection
         title="Hyperconverged infrastructure (HCI) integration"
         description="Unify compute, storage, and networking into streamlined, scalable operational platforms."
-        buttonText="Learn More"
-        link="#"
+        // buttonText="Learn More"
+        link="/digital-product-engineering/storage-networking/hyperconverged-infrastructure-integration"
         whatWeDo={[
           "Merge compute, storage, network stacks",
           "Simplify ops with unified control",
@@ -186,14 +190,15 @@ export const Hyperconverged = () => {
     </>
   );
 };
+
 export const Gateway = () => {
   return (
     <>
       <InfraSection
         title="Storage gateway engineering"
         description="Enable smooth interoperability across cloud, on-premises, and hybrid storage environments."
-        buttonText="Learn More"
-        link="#"
+        // buttonText="Learn More"
+        link="/digital-product-engineering/storage-networking/storage-gateway-engineering"
         whatWeDo={[
           "Bridge cloud and on-prem storage",
           "Sync across formats and systems",
@@ -213,13 +218,14 @@ export const Gateway = () => {
     </>
   );
 };
+
 export const AiSec = () => {
   return (
     <>
       <InfraSection
         title="AI-driven network automation"
         description="Enhance network performance, resilience, and management with AI-enabled automation."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Use AI to spot and fix issues fast",
@@ -240,6 +246,7 @@ export const AiSec = () => {
     </>
   );
 };
+
 export const NetworkSec = () => {
   return (
     <>
@@ -247,8 +254,8 @@ export const NetworkSec = () => {
         title="Network function virtualization (NFV) services"
         description="Modernize networking with flexible, scalable,
                 and software-driven NFV architectures."
-        buttonText="Learn More"
-        link="#"
+        // buttonText="Learn More"
+        link="/digital-product-engineering/storage-networking/network-function-virtualization-services"
         whatWeDo={[
           "Replace devices with VNFs in code",
           "Automate scaling and provisioning",
@@ -268,13 +275,14 @@ export const NetworkSec = () => {
     </>
   );
 };
+
 export const EdgeSec = () => {
   return (
     <>
       <InfraSection
         title="Edge computing"
         description="Deploy localized compute, storage, and analytics capabilities for real-time decision-making."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Run processing close to devices",

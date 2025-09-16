@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 
 export default function MultiCloudMatters() {
   return (
-    <div className="relative w-full aspect-[5/4]">
+    <div className="relative w-[35rem] xl:w-full aspect-[5/4]">
       {/* Top Left Card - Redundant */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="absolute top-3.5 left-2.5 w-[47%] h-[45%]"
+        className="absolute top-3.5 left-2.5 w-[47%] h-[45%] hover:scale-105 transition-all"
       >
         <div className="relative w-full h-full">
           {/* Outer gradient border */}
@@ -65,7 +65,7 @@ export default function MultiCloudMatters() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="absolute top-3.5 right-2.5 w-[47%] h-[45%]"
+        className="absolute top-3.5 right-2.5 w-[47%] h-[45%] hover:scale-105 transition-all"
       >
         <div className="relative w-full h-full">
           {/* Outer gradient border */}
@@ -120,7 +120,7 @@ export default function MultiCloudMatters() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="absolute bottom-3.5 left-2.5 w-[47%] h-[45%]"
+        className="absolute bottom-3.5 left-2.5 w-[47%] h-[45%] hover:scale-105 transition-all"
       >
         <div className="relative w-full h-full">
           {/* Outer gradient border */}
@@ -177,7 +177,7 @@ export default function MultiCloudMatters() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="absolute bottom-3.5 right-2.5 w-[47%] h-[45%]"
+        className="absolute bottom-3.5 right-2.5 w-[47%] h-[45%] hover:scale-105 transition-all"
       >
         <div className="relative w-full h-full">
           {/* Outer gradient border */}

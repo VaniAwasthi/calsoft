@@ -7,16 +7,19 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../assets/logo.png";
 import barmenu from "../../assets/menu-bar.svg";
-import MegaMenuImg1 from "../../assets/home/megamenu1.webp";
-import MegaMenuImg2 from "../../assets/home/megamenu2.webp";
-import { usePathname } from "next/navigation";
+import MegaMenuImg1 from "../../assets/feature1.webp";
+import MegaMenuImg2 from "../../assets/feature2.webp";
+import { usePathname, useRouter } from "next/navigation";
 import { navItems } from "./data/NavItems";
 
 export default function Navbar() {
   const [openMenus, setOpenMenus] = useState({});
   const [activeMenu, setActiveMenu] = useState(null);
   const [selectedSubmenu, setSelectedSubmenu] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
+  const router = useRouter();
   const pathname = usePathname();
+const [activeParent, setActiveParent] = useState(null);
 
   const toggleMenu = (index) => {
     setOpenMenus((prev) => ({
@@ -30,12 +33,14 @@ export default function Navbar() {
     {
       image: MegaMenuImg1,
       detail:
-        "Strategic decision-makers in IT and operations are facing the impacts of rising infrastructure costs and vendor constraints."
-    },
+        "Strategic decision-makers in IT and operations are facing the impacts of rising infrastructure costs and vendor constraints.",
+    link:"/insights/whitepaper/business-overview-migration-from-vmware"
+      },
     {
       image: MegaMenuImg2,
       detail:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "Enhancing legal accuracy, reducing manual effort, and ensuring compliance with Calsoft’s GenAI solution",
+        link:"/insights/case-studies/generative-ai-platform-for-contract-review-automation"
     },
   ];
   // Handle submenu default selection
@@ -63,7 +68,21 @@ export default function Navbar() {
       setSelectedSubmenu(null);
     }
   }, [activeMenu, pathname]);
+const isParentActive = (title) => {
+  const parent = navItems.find((item) => item.title === title);
+  if (!parent?.submenu) return pathname.startsWith(parent?.href);
 
+  // check all submenu + inner submenu
+  return (
+    parent.submenu.some(
+      (sub) =>
+        pathname.startsWith(sub.href) ||
+        sub.inersubmenu?.some((inner) =>
+          pathname.startsWith(inner.href)
+        )
+    ) || pathname.startsWith(parent.href)
+  );
+};
   return (
     <header className="w-full sticky top-0 z-[90]">
       {/* Top Bar */}
@@ -113,19 +132,17 @@ export default function Navbar() {
                         href={href}
                         className="flex items-center space-x-1 text-white"
                       >
-                        <span
-                          className={`${
-                            navItems
-                              .find((item) => item.title === title)
-                              ?.submenu?.some((sub) =>
-                                pathname.startsWith(sub.href)
-                              )
-                              ? "font-bold text-[#fffff] text-[16px]"
-                              : "font-normal text-sm"
-                          } hover:font-bold`}
-                        >
-                          {title}
-                        </span>
+                      <span
+  className={`${
+    isParentActive(title)
+      ? "font-bold text-white text-[16px]"
+      : "font-normal text-sm"
+  } hover:font-bold`}
+>
+  {title}
+</span>
+
+
                         {submenu && (
                           <IoIosArrowDown
                             className={`transition-transform ${
@@ -149,9 +166,21 @@ export default function Navbar() {
                     <input
                       type="text"
                       placeholder="Search"
+                      onChange={(e) => setSearchInput(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.code.toLowerCase() === "enter") {
+                          router.push(`/search/?s=${searchInput}`);
+                        }
+                      }}
                       className="px-3 py-1 border border-red-500 rounded-full bg-black text-white w-40 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500"
                     />
-                    <button className="absolute right-2 top-1/2 -translate-y-1/2 text-white bg-red-600 p-1 rounded-full">
+                    <button
+                      onClick={() => {
+                        router.push(`/search/?s=${searchInput}`);
+                        console.log(searchInput);
+                      }}
+                      className="absolute right-2 top-1/2 -translate-y-1/2 text-white bg-red-600 p-1 rounded-full"
+                    >
                       <FaSearch />
                     </button>
                   </div>
@@ -173,65 +202,95 @@ export default function Navbar() {
               >
                 <div className="max-w-[1200px] mx-auto bg-white text-black rounded-xl shadow-xl flex ">
                   {/* Left Column */}
-                  <div className="w-[30%]  p-6">
-                    {navItems
-                      .find((item) => item.title === activeMenu)
-                      ?.submenu?.map((sub, idx) => {
-                        const isActive = pathname === sub.href;
+                 <div className="w-[30%] p-6">
+  {navItems
+    .find((item) => item.title === activeMenu)
+    ?.submenu?.map((sub, idx) => {
+      // ✅ allowed resource paths
+      const resourcePaths = [
+        "/insights/case-studies",
+        "/insights/whitepaper",
+        "/insights/datesheets",
+        "/insights/usecases",
+        "/industry-report",
+        "/insights/videos",
+      ];
 
-                        return (
-                          <Link
-                            href={sub.href}
-                            key={idx}
-                            className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${
-                              pathname.startsWith(sub.href) ||
-                              sub.inersubmenu?.some((inner) =>
-                                pathname.startsWith(inner.href)
-                              )
-                                ? "text-[#2E3092] font-semibold"
-                                : "text-[#1A1A1A]"
-                            }`}
-                            onMouseEnter={() => setSelectedSubmenu(sub)}
-                            onClick={() => setActiveMenu(null)}
-                          >
-                            <span>{sub.title}</span>
-                            {(pathname.startsWith(sub.href) ||
-                              sub.inersubmenu?.some((inner) =>
-                                pathname.startsWith(inner.href)
-                              )) && (
-                              <IoMdArrowDropright
-                                size={25}
-                                className="text-[#2E3092]"
-                              />
-                            )}
-                          </Link>
-                        );
-                      })}
-                  </div>
+      // check if current submenu is "Resources"
+      const isResourcesMenu = sub.title.toLowerCase() === "resources";
+
+      // normal submenu active logic (href + inner submenu)
+      const normalActive =
+        pathname === sub.href ||
+        sub.inersubmenu?.some((inner) =>
+          pathname.startsWith(inner.href)
+        );
+
+      // ✅ section active logic
+      const sectionActive = sub.section?.some((sec) =>
+        pathname.startsWith(sec.href)
+      );
+
+      // resource submenu active logic
+      const resourceActive =
+        isResourcesMenu &&
+        resourcePaths.some((p) => pathname.startsWith(p));
+
+      const isActive =
+        resourceActive || normalActive || sectionActive;
+
+      return (
+        <Link
+          href={sub.href}
+          key={idx}
+          className={`group flex items-center justify-between text-sm py-1 w-full hover:text-[#2E3092] text-left ${
+            isActive
+              ? "text-[#2E3092] font-semibold"
+              : "text-[#1A1A1A]"
+          }`}
+          onMouseEnter={() => setSelectedSubmenu(sub)}
+          onClick={() => setActiveMenu(null)}
+        >
+          <span>{sub.title}</span>
+          {isActive && (
+            <IoMdArrowDropright
+              size={25}
+              className="text-[#2E3092]"
+            />
+          )}
+        </Link>
+      );
+    })}
+</div>
+
                   <div className="w-px h-64 bg-[#CECECE] mx-6 mt-6"></div>
                   {/* Center Column */}
-                  <div className="w-[30%] p-6">
-                    {selectedSubmenu?.section ? (
-                      selectedSubmenu.section.map((s, idx) => {
-                        // Convert section title to ID-friendly format
+                <div className="w-[30%] p-6">
+  {selectedSubmenu?.section && selectedSubmenu.section.length > 0 ? (
+    selectedSubmenu.section.map((s, idx) => {
+      const isActive = pathname.startsWith(s.href);
 
-                        return (
-                          <Link
-                            key={idx}
-                            href={s.href}
-                            className="block text-sm py-1 hover:text-[#2E3092]"
-                          >
-                            {s.title}
-                          </Link>
-                        );
-                      })
-                    ) : (
-                      // )
-                      <div className="text-sm italic text-gray-500">
-                        No details available.
-                      </div>
-                    )}
-                  </div>
+      return (
+        <Link
+          key={idx}
+          href={s.href}
+          className={`block text-sm py-1 hover:text-[#2E3092] ${
+            isActive
+              ? "text-[#2E3092] font-semibold"
+              : "text-[#1A1A1A]"
+          }`}
+        >
+          {s.title}
+        </Link>
+      );
+    })
+  ) : (
+    <div className="text-md text-black">
+      {selectedSubmenu?.description || "No description available."}
+    </div>
+  )}
+</div>
+
 
                   {/* Right Column */}
 
@@ -246,16 +305,22 @@ export default function Navbar() {
                             key={idx}
                             className="flex flex-col items-center space-x-2 p-6"
                           >
+                            <Link href={f.link}>
+
                             <Image
                               src={f.image}
                               alt="Insight"
                               width={250}
                               height={50}
-                              className="w-[200px] h-44"
+                              className="w-[200px] h-44 rounded-3xl"
                             />
+                            </Link>
+                            <Link href={f.link}>
+
                             <p className="text-sm text-[#454545] leading-tight p-4">
                               {f.detail}
                             </p>
+                            </Link>
                           </div>
                         </>
                       ))}

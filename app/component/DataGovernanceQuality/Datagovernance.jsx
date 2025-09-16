@@ -8,6 +8,7 @@ import Info1 from "../../assets/Data-Ai/dataGovernance/InfoSec-1.svg";
 import Info2 from "../../assets/Data-Ai/dataGovernance/InfoSec-2.svg";
 import Info3 from "../../assets/Data-Ai/dataGovernance/InfoSec-3.svg";
 import Info4 from "../../assets/Data-Ai/dataGovernance/InfoSec-4.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 import {
   ChallengeSolutionComp,
   DataInfoSection,
@@ -19,7 +20,7 @@ export const GovernJounery = () => {
 
     description: `Establish control, compliance, and trust across
         your enterprise data landscape.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = [
@@ -41,6 +42,7 @@ export const GovernJounery = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+          onButtonClick={() => showHubSpotForm("data-governance-datasheet")}
       />
       <Submenu
         navItems={navItems}
@@ -100,7 +102,7 @@ export const ProfilingSec = () => {
       <DataInfoSection
         title="Data profiling and cataloging"
         description="Discover, assess, and  organize your enterprise data for better control."
-        buttonText="Learn More "
+        // buttonText="Learn More "
         link="#"
         whatWeDo={[
           "Scan and profile datasets for structure",
@@ -129,7 +131,7 @@ export const CleansingSec = () => {
         title="Data cleansing
                 and deduplication"
         description="Elevate data integrity through intelligent correction and consolidation."
-        buttonText="Learn More "
+        // buttonText="Learn More "
         link="#"
         whatWeDo={[
           "Detect and fix issues using AI tools",
@@ -157,7 +159,7 @@ export const PolicySec = () => {
       <DataInfoSection
         title="Policy governance"
         description="Enforce data compliance and protect assets through automated controls."
-        buttonText="Learn More "
+        // buttonText="Learn More "
         link="#"
         whatWeDo={[
           "Apply access, use, and retention rules",
@@ -184,7 +186,7 @@ export const CollaborationSec = () => {
       <DataInfoSection
         title="Data collaboration & orchestration"
         description="Align teams and policies to drive enterprise-wide data responsibility."
-        buttonText="Learn More "
+        // buttonText="Learn More "
         link="#"
         whatWeDo={[
           "Set up hubs for cross-team oversight",

@@ -7,8 +7,13 @@ import buttonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
 import img from "../../assets/infra/agility.webp";
 import predict from "../../assets/infra/predictibility.webp";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function Component({
+  title = "Where It Works Best.",
+  id="",
+  BussinessId="",
+  description = "Our Infrastructure Roadmap services have unlocked outcomes for:",
   useCaseData = [
     {
       title: "New Product Launch",
@@ -50,13 +55,15 @@ export default function Component({
       },
     ],
   },
+  buttonClick=()=>showHubSpotForm("book-a-meeting"),
+  buttonClick2,
   bookMeetingData = {
     title: "Reduce design cycle by 30% via architecture-led ideation.",
     buttontext: "Book a Meeting",
   },
 }) {
   return (
-    <div className="bg-[#ffffff] px-6">
+    <div className="bg-[#ffffff] px-6" >
       <div className="h-8" />
       <div className="container space-y-8">
         <div className="max-w-7xl mx-auto">
@@ -64,7 +71,7 @@ export default function Component({
             {/* Left Content */}
             <div className="space-y-2 w-[100%]">
               {/* Header */}
-              <div className=" mb-5">
+              <div className=" mb-5" id={id}>
                 <h2 className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-5">
                   Use Cases
                 </h2>
@@ -75,12 +82,9 @@ export default function Component({
                   viewport={{ once: false, amount: 0.3 }}
                   className="space-y-1"
                 >
-                  <h3 className="text-3xl font-bold text-[#000000]">
-                    Where It Works Best.
-                  </h3>
+                  <h3 className="text-3xl font-bold text-[#000000]">{title}</h3>
                   <p className="text-lg text-[#000000] leading-relaxed">
-                    Our Infrastructure Roadmap services have unlocked outcomes
-                    for:
+                    {description}
                   </p>
                 </motion.div>
               </div>
@@ -89,7 +93,7 @@ export default function Component({
                 {useCaseData.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    className="relative w-full h-52 p-0.5 bg-[linear-gradient(180deg,#2E3092_0%,#ED1C24_100%)] [clip-path:polygon(100%_0,100%_66%,82%_100%,0_100%,0_0)]"
+                    className="relative w-full h-full p-0.5 bg-[linear-gradient(180deg,#2E3092_0%,#ED1C24_100%)] [clip-path:polygon(100%_0,100%_66%,82%_100%,0_100%,0_0)]"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: idx * 0.1 }}
@@ -132,7 +136,10 @@ export default function Component({
           </div>
         </div>
         {/* Book a meeting */}
-        <div className="w-full h-60 sm:h-40 relative rounded-xl overflow-hidden mt-12">
+        <div
+          id="business-value"
+          className="w-full h-60 sm:h-40 relative rounded-xl overflow-hidden mt-12"
+        >
           <Image
             src={predict}
             alt={"book a meeting"}
@@ -150,6 +157,7 @@ export default function Component({
                 {bookMeetingData.title}
               </motion.p>
               <motion.button
+              onClick={buttonClick}
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -162,14 +170,14 @@ export default function Component({
           </div>
         </div>
         {/* Download one pager */}
-        <div className="w-full h-full relative rounded-xl overflow-hidden">
+        <div className="w-full h-full relative rounded-xl overflow-hidden" id={BussinessId}>
           <Image
             src={img}
             alt="agile work culture"
             className="w-full object-cover"
           />
           <div className="absolute top-0 w-full h-full bg-[linear-gradient(90deg,rgba(46,48,146,0.95)_0%,rgba(46,48,146,0.9)_35%,rgba(255,255,255,0.0)_100%)] flex justify-between items-center">
-            <div className="w-[65%] h-full text-white">
+            <div className="w-[65%] h-full text-white" >
               <div className="h-full flex gap-8 items-center justify-between">
                 {/* Left content */}
                 <div className="flex-1 p-10 h-full flex flex-col gap-6 justify-center">
@@ -208,6 +216,7 @@ export default function Component({
                   >
                     <ButtonLayout
                       text={"Download One Pager"}
+                      onClick={buttonClick2}
                       image={buttonImage}
                       hoverImage={buttonImage}
                       className={"w-fit mt-3"}

@@ -9,6 +9,7 @@ import Info1 from "../../assets/DigitalEngineering/Sustaine/Info-1.svg";
 import Info2 from "../../assets/DigitalEngineering/Sustaine/Info-2.svg";
 import Info3 from "../../assets/DigitalEngineering/Sustaine/Info-3.svg";
 import Info4 from "../../assets/DigitalEngineering/Sustaine/Info-4.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 
 export const SustenanceTab = () => {
   const [activeTab, setActiveTab] = useState("benefits");
@@ -31,6 +32,7 @@ export const SustenanceTab = () => {
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
         rightSec={false}
+         onButtonClick={() => showHubSpotForm("sustenance-and-support-datasheet")}
       />
       <Submenu
         navItems={navItems}
@@ -91,7 +93,7 @@ export const ReleaseSec = () => {
         title="Release management"
         description="Deliver updates and enhancements smoothly
                 without disrupting operational continuity."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/sustenance-support/release-orchestration"
         whatWeDo={[
           "Plan updates with minimal downtime",
@@ -119,17 +121,17 @@ export const StreamlineSec = () => {
       <InfraSection
         title="Streamline technical documentation"
         description="Keep operational and technical information accurate, accessible, and actionable."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/sustenance-support/documentation-support"
         whatWeDo={[
           "Keep docs accurate and easy to use",
-          "Build APIs to auto-manage traffic",
-          "Connect to edge and cloud stacks",
+          "Version control across all assets",
+          "Align updates with product changes",
         ]}
         businessImpact={[
-          "Shift network config on the fly",
-          "Less manual work, fewer errors",
-          "One setup for hybrid networking",
+          "Streamlined support with self-service docs",
+          "Quicker training for new users",
+          "Clear, current info for all teams",
         ]}
         imageSrc={Info2}
         imageAlt="Image"
@@ -147,7 +149,7 @@ export const MultiSec = () => {
       <InfraSection
         title="Multi-tier support (L1, L2, and L3)"
         description="Validate application performance and resilience under real-world and extreme load conditions."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/sustenance-support/muti-tier-support"
         whatWeDo={[
           "Solve common issues and questions",
@@ -174,7 +176,7 @@ export const UptimeSec = () => {
       <InfraSection
         title="Uptime continuity"
         description="Proactively monitor, manage, and optimize system availability and performance."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="/digital-product-engineering/sustenance-support/uptime-continuity"
         whatWeDo={[
           "Monitor systems 24x7 with alerts",

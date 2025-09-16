@@ -9,6 +9,7 @@ import Arrow from "../../assets/Data-Ai/arrowupward.svg";
 import ButtonLayout from "./ButtonLayout";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import ContactImg from "../../assets/Data-Ai/PipeLine/ConnectBg.webp";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 
 export const ChallengeSolutionComp = ({
   data,
@@ -287,7 +288,12 @@ export const DataInfoSection = ({
   );
 };
 
-export const ContactSecDataAi = ({ BoldContent, lightContent, link }) => {
+export const ContactSecDataAi = ({
+  BoldContent,
+  lightContent,
+  link,
+  buttonText = "Contact Us",
+}) => {
   return (
     <>
       <section>
@@ -307,27 +313,21 @@ export const ContactSecDataAi = ({ BoldContent, lightContent, link }) => {
                 <span className="font-bold">{BoldContent}</span>
               </h2>
 
-              <form className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
-                <input
-                  type="email"
-                  placeholder="Enter your work email"
-                  className="w-full sm:w-[300px] h-10 px-6 text-sm text-black bg-white placeholder-gray-500 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-inner"
-                />{" "}
-                <motion.div
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="flex flex-col md:flex-row gap-4"
-                >
-                  <ButtonLayout
-                    link={link}
-                    text="Learn More"
-                    image={ButtonImage}
-                    hoverImage={ButtonImage}
-                  />
-                </motion.div>
-              </form>
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="flex flex-col md:flex-row gap-4"
+              >
+                <ButtonLayout
+                  // link={link}
+                  text={buttonText}
+                  image={ButtonImage}
+                  hoverImage={ButtonImage}
+                  onClick={() => showHubSpotForm("contact-us-popup")}
+                />
+              </motion.div>
             </div>
           </div>
         </div>

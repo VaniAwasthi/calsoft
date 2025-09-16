@@ -4,7 +4,7 @@ import BannerWithRightSec from "../utilities/BannerWithRightsec";
 import Submenu from "../utilities/Submenu";
 import { FaArrowRight } from "react-icons/fa6";
 import Image from "next/image";
-import BackgroundImage from "../../assets/DigitalEngineering/smart/banner.webp";
+import BackgroundImage from "@/app/assets/DigitalEngineering/CX/CX Engineering 1.webp";
 import ButtonImage from "../../assets/home/buttonImg.webp";
 import WhyItMatters from "../utilities/WhyItMatters";
 import bgshape1 from "../../assets/DigitalEngineering/CX/triangle1.svg";
@@ -35,9 +35,10 @@ import mobile2 from "../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../assets/DigitalEngineering/maturity/mobile3.svg";
 import imginter from "../../assets/DigitalEngineering/smart/imginter.webp";
 import { MatterTriangle } from "../utilities/Shape";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export const Smart = () => {
-  const [activeTab, setActiveTab] = useState("benefits");
+  const [activeTab, setActiveTab] = useState("why-it-matters");
   const slide = {
     title: "Interfaces That Think, Learn, and Convert.",
 
@@ -66,6 +67,7 @@ export const Smart = () => {
           hoverImage={ButtonImage}
           rightSec={false}
           buttonWidth="!w-[250px]"
+          onButtonClick={()=>showHubSpotForm("request-cx-audit")}
         />
       </div>
       <Submenu
@@ -85,8 +87,8 @@ export const Why = () => {
     description:
       "Enterprise applications lose more than <b>30% user engagement</b> due to outdated, unintuitive interfaces. The cost? Slower adoption, longer onboarding, and missed conversions. Calsoft’s Smart Interface Design combines behavior analytics, task simplification, and AI-assisted interactions to drive clarity and speed across digital journeys. ",
 
-    buttonText: "Download One Pager",
-    link: "#",
+    buttonText: "Download Case Study",
+    // link: "#",
 
     cards: [
       {
@@ -96,8 +98,8 @@ export const Why = () => {
         bgshape: bgshape1,
       },
       {
-        percent: "45%",
-        text: "more tasks can be completed with well-designed interfaces.",
+        percent: "",
+        text: "Well-designed interfaces increase task completion by up to 40%",
         className: "shape2",
         bgshape: bgshape2,
       },
@@ -105,8 +107,8 @@ export const Why = () => {
         bgshape: bgshape,
       },
       {
-        percent: "20-35%",
-        text: "higher adoption is reported by Calsoft clients within 6 weeks after a redesign.",
+        percent: "",
+        text: "Calsoft clients report 20-35% higher adoption within 6 weeks post redesign",
         className: "shape3",
         bgshape: bgshape3,
       },
@@ -114,20 +116,19 @@ export const Why = () => {
   };
   return (
     <>
-      <MatterTriangle {...whyItMattersData} ButtonImage={ButtonImage} />
+      <MatterTriangle {...whyItMattersData} ButtonImage={ButtonImage} secId="why-it-matters" onButtonClick={()=>showHubSpotForm("get-in-touch")}/>
     </>
   );
 };
 
 export const What = () => {
-  const heading = "What We Do";
-  const subtitle = "Assess Smart. Plan Right. Modernize with Confidence.";
+  const heading = "What We Offer";
+  const subtitle = "Design That Learns, Reacts, and Performs.";
   const desc =
-    "Calsoft’s 360° Maturity Assessment is diagnostic, data-driven, and actionable—covering not just tech, but processes, people, and dependencies. Our Offerings:";
+    "Our interface engineering is not static design work—it’s interaction strategy built for business scale, adaptability, and intelligence. Our Capabilities:";
 
   const offeringsData = {
     buttonText: "Talk to Expert",
-    link: "#",
     offerings: [
       {
         icon: icon1,
@@ -154,8 +155,8 @@ export const What = () => {
         title: "Microinteractions & Behavior Triggers",
       },
       {
-        icon: icon1,
-        title: "Task-Driven UI/UX Design",
+        icon: icon7,
+        title: "Adaptive Workflows Based on Role/User Context",
       },
     ],
 
@@ -184,6 +185,8 @@ export const What = () => {
         subtitle={subtitle}
         desc={desc}
         ButtonImage={ButtonImage}
+        secId="what-we-do"
+        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
       />
     </>
   );
@@ -197,7 +200,6 @@ export const Uses = () => {
     description:
       "We design interfaces for mission-critical platforms—where every click impacts revenue, trust, or retention.",
     buttonText: "Download One Pager",
-    link: "#",
     cards: [
       {
         title: "B2B SaaS Admin Dashboard",
@@ -223,6 +225,8 @@ export const Uses = () => {
         {...useCasesData}
         ButtonImage={ButtonImage}
         direction="change_direction"
+        secId="use-cases"
+        onButtonClick={()=>showHubSpotForm("smart-interface-design-one-pg")}
       />
     </>
   );
@@ -247,10 +251,11 @@ export const Interface = () => {
         title="Interfaces That Deliver More Than Screens."
         description="Calsoft-designed interfaces don’t just look good—they deliver:"
         buttonText="Request a custom ROI Projection"
-        link="#"
         stats={stats}
         imageSrc={imginter}
         ButtonImage={ButtonImage}
+        secId="business-value"
+        onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}
       />
     </>
   );
@@ -269,7 +274,7 @@ export const Start = () => {
   };
   return (
     <>
-      <StartSection data={startSectionData} />
+      <StartSection data={startSectionData} secId="how-to-start" />
     </>
   );
 };

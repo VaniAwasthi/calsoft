@@ -6,18 +6,21 @@ import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
-export default function Component({useCases=[
+export default function Component({
+  title = "Where It Works Best.",
+  desc = "Our Infrastructure Roadmap services have unlocked outcomes for:",
+  useCases = [
     "ISVs migrating monoliths to containerized microservices",
     "Healthcare firms ensuring HIPAA-aligned infra blueprints",
     "FinTechs building cloud DR strategy with 99.99% uptime SLAs",
     "Retail giants integrating edge & cloud workloads across geos",
     "Product companies needing DevOps-first infra planning",
-  ]}) {
-  
-
+  ],
+}) {
   return (
-    <div className="bg-[#ffffff] px-6">
+    <div id="use-cases" className="bg-[#ffffff] px-6">
       <div className="container">
         <div className="h-8" />
         <div className="max-w-7xl mx-auto">
@@ -37,11 +40,10 @@ export default function Component({useCases=[
                   className="space-y-1"
                 >
                   <h3 className="text-3xl font-bold text-[#000000]">
-                    Where It Works Best.
+                    {title}
                   </h3>
                   <p className="text-lg text-[#000000] leading-relaxed">
-                    Our Infrastructure Roadmap services have unlocked outcomes
-                    for:
+                    {desc}
                   </p>
                 </motion.div>
               </div>
@@ -57,7 +59,7 @@ export default function Component({useCases=[
                       whileInView={{ x: 0, opacity: 1 }}
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
                       viewport={{ once: false, amount: 0.3 }}
-                      className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092]"
+                      className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092] hover:scale-105 transition-all"
                     >
                       <div className="bg-[#ffffff] rounded-[calc(0.5rem-2px)] p-6 h-full space-y-4">
                         <div className="w-8 h-8 bg-[#2e3092] rounded-full flex items-center justify-center">
@@ -80,7 +82,7 @@ export default function Component({useCases=[
                       whileInView={{ x: 0, opacity: 1 }}
                       transition={{ duration: 0.5, delay: idx * 0.1 }}
                       viewport={{ once: false, amount: 0.3 }}
-                      className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092]"
+                      className="p-0.5 rounded-lg bg-gradient-to-t from-[#ba0007] to-[#2e3092] hover:scale-105 transition-all"
                     >
                       <div className="bg-[#ffffff] rounded-[calc(0.5rem-2px)] p-6 h-full space-y-4">
                         <div className="w-8 h-8 bg-[#2e3092] rounded-full flex items-center justify-center">
@@ -104,7 +106,8 @@ export default function Component({useCases=[
                 className="pt-4"
               >
                 <ButtonLayout
-                  text={"Talk to Infra Strategist"}
+                  text={"Request Use Cases"}
+                  onClick={()=>showHubSpotForm("Talk-to-Expert")}
                   image={buttonImage}
                   hoverImage={buttonImage}
                   className={"w-fit"}

@@ -5,116 +5,246 @@ export const navItems = [
 
     submenu: [
       {
-        title: "Technical consulting",
-        href: "/data-ai/technical-consulting",
-        section: [
-          { title: "Strategic architecture advisory", href: "#" },
-          { title: "Risk mitigation and recovery planning", href: "#" },
-          { title: "Platform interoperability consulting", href: "#" },
-          { title: "Cost-optimized orchestration planning", href: "#" },
-        ],
-      },
-      {
-        title: "End-to-end data pipeline implementation",
-        href: "/data-ai/end-to-end-data-pipeline-implementation",
-        section: [
-          { title: "Data architecture enhancement", href: "#" },
-          { title: "Data platform and ecosystem integration", href: "#" },
-          { title: "Effortless and faultless data migration", href: "#" },
-          { title: "Data sanity and lineage handling", href: "#" },
-        ],
+        title: "Enterprise Data Management",
+        href: "/data-ai/enterprise-data-management",
+        // section: [
+        //   {
+        //     title: "Modern data architecture",
+        //     href: "data-ai/enterprise-data-management/modern-data-architecture",
+        //   },
+        //   {
+        //     title: "Data Quality & Lineage",
+        //     href: "/data-ai/enterprise-data-management/data-quality-lineage",
+        //   },
+        //   {
+        //     title: "Data Quality & Lineage",
+        //     href: "/data-ai/enterprise-data-management/data-platform-ecosystem",
+        //   },
+        //   {
+        //     title: "Risk mitigation and recovery ",
+        //     href: "/data-ai/enterprise-data-management/risk-mitigation-recovery",
+        //   },
+        //   {
+        //     title: "Data protection and privacy",
+        //     href: "data-ai/enterprise-data-management/data-protection-privacy",
+        //   },
+        //   {
+        //     title: "Effortless and faultless data migration",
+        //     href: "/data-ai/enterprise-data-management/data-migration",
+        //   },
+        // ],
+        description:"Driving modern data architecture with governance, quality, and protection to ensure trusted, secure, and actionable enterprise data."
       },
 
       {
-        title: "Data observability",
-        href: "/data-ai/data-observability",
-        section: [
-          { title: "Real-time data streaming analytics", href: "#" },
-          { title: "Compliance tracking", href: "#" },
-          { title: "Real-time data workflow synchronization", href: "#" },
-          { title: "Proactive risk alerts", href: "#" },
-        ],
+        title: "Agentic AI Development",
+        href: "/data-ai/agentic-ai-development",
+        // section: [
+        //   {
+        //     title: "AIOps Planning",
+        //     href: "/data-ai/agentic-ai-development/aiops-planning",
+        //   },
+        //   {
+        //     title: "Use-case specific AI agents",
+        //     href: "/data-ai/agentic-ai-development/ai-agents",
+        //   },
+        //   {
+        //     title: "Monitor and control",
+        //     href: "/data-ai/agentic-ai-development/monitor-control",
+        //   },
+        //   {
+        //     title: "Regression alignment",
+        //     href: "/data-ai/agentic-ai-development/regression-alignment",
+        //   },
+        //   {
+        //     title: "Scale and support",
+        //     href: "/data-ai/agentic-ai-development/scale-support",
+        //   },
+        // ],
+        description:"Building autonomous AI systems that reason, adapt, and act to deliver intelligent business outcomes."
       },
       {
-        title: "Data governance and quality",
-        href: "/data-ai/data-governance-quality",
-        section: [
-          { title: "Data profiling & cataloging", href: "#" },
-          { title: "Data cleansing and deduplication", href: "#" },
-          { title: "Data lake creation (and warehouse)", href: "#" },
-          {
-            title:
-              "Seamless Data streaming (Real-time anlaytics) (Data analytics and data pipeline)",
-            href: "#",
-          },
-          { title: "Governance protocols and implementation", href: "#" },
-          { title: "Data collaboration & orchestration", href: "#" },
-        ],
+        title: "DataOps & Governance",
+        href: "/data-ai/data-ops-governance",
+        // section: [
+        //   {
+        //     title: "Data profiling & cataloging",
+        //     href: "/data-ai/data-ops-governance/data-profiling-cataloging",
+        //   },
+        //   {
+        //     title: "Data cleansing and deduplication",
+        //     href: "/data-ai/data-ops-governance/data-cleansing-deduplication",
+        //   },
+        //   {
+        //     title: "Data lake creation and warehouse",
+        //     href: "/data-ai/data-ops-governance/data-lake-creation",
+        //   },
+        //   {
+        //     title: "Seamless Data streaming",
+        //     href: "/data-ai/data-ops-governance/data-streaming",
+        //   },
+        //   {
+        //     title: "Governance protocols and implementation",
+        //     href: "/data-ai/data-ops-governance/governance-protocols-implementation",
+        //   },
+        //   {
+        //     title: "Data collaboration & orchestration",
+        //     href: "/data-ai/data-ops-governance/data-collaboration-orchestration",
+        //   },
+        // ],
+        description:"Streamlining data pipelines with strong governance to ensure accuracy, compliance, and reliability at scale."
       },
+      // {
+      //   title: "Data observability",
+      //   href: "/data-ai/data-observability",
+      //   section: [
+      //     { title: "Real-time data streaming analytics", href: "#" },
+      //     { title: "Compliance tracking", href: "#" },
+      //     { title: "Real-time data workflow synchronization", href: "#" },
+      //     { title: "Proactive risk alerts", href: "#" },
+      //   ],
+      // },
       {
-        title: "Data analytics and reporting",
-        href: "/data-ai/data-analytics-reporting",
-        section: [
-          { title: "Data pipeline and transformation", href: "#" },
-          { title: "Dashboard and KPI visualization", href: "#" },
-          { title: "Real-time streaming analytics", href: "#" },
-          {
-            title: "Time-series data analysis & pattern recognition",
-            href: "#",
-          },
-          { title: "Business intelligence integration", href: "#" },
-          { title: "Custom reporting and notifications", href: "#" },
-        ],
-      },
-      {
-        title: "AI-driven prediction and inferences",
-        href: "/data-ai/ai-driven-prediction-inferences",
-        section: [
-          { title: "Telemetry-driven closed-loop automation", href: "#" },
-          { title: "Predictive maintenance models", href: "#" },
-          { title: "AIOps for infrastructure performance", href: "#" },
-          { title: "Workflow optimization with ML", href: "#" },
-          { title: "Event correlation and root cause prediction", href: "#" },
-          { title: "Intelligent resource scheduling", href: "#" },
-        ],
-      },
-      {
-        title: "Agentic AI planning & development",
-        href: "/data-ai/agentic-ai-planning-development",
-        section: [
-          { title: "AIOps Planning", href: "#" },
-          { title: "Use-case specific AI agents", href: "#" },
-          { title: "Monitor and control", href: "#" },
-          { title: "Regression alignment", href: "#" },
-          { title: "Data protection and privacy", href: "#" },
-          { title: "Scale and support", href: "#" },
-        ],
+        title: "Data Modernization",
+        href: "/data-ai/data-modernization",
+        // section: [
+        //   {
+        //     title: "Event-ready data frameworks",
+        //     href: "/data-ai/data-modernization/data-frameworks",
+        //   },
+        //   {
+        //     title: "Data & storage optimization",
+        //     href: "/data-ai/data-modernization/data-storage-optimization",
+        //   },
+        //   {
+        //     title: "Data warehouse modernization",
+        //     href: "/data-ai/data-modernization/data-warehouse-modernization",
+        //   },
+        //   {
+        //     title: "Analytics engine (BI) updates",
+        //     href: "/data-ai/data-modernization/analytics-engine-bi",
+        //   },
+        //   {
+        //     title: "Real-time compliance tracking",
+        //     href: "/data-ai/data-modernization/compliance-tracking",
+        //   },
+        //   {
+        //     title: "Cost-optimized data orchestration",
+        //     href: "/data-ai/data-modernization/orchestration-planning",
+        //   },
+        // ],
+        description:"Transforming legacy systems with cloud-first, AI-powered platforms for agility and performance."
       },
       {
         title: "Custom-LLM for Gen AI and RAG",
         href: "/data-ai/custom-llm-for-gen-ai-rag",
-        section: [
-          { title: "LLM fine-tuning on proprietary data", href: "#" },
-          { title: "RAG-based application development", href: "#" },
-          { title: "Prompt engineering and optimization", href: "#" },
-          { title: "Open-source model integration", href: "#" },
-          { title: "Domain-specific chatbot development", href: "#" },
-          { title: "On-premise LLM deployment", href: "#" },
-        ],
+        // section: [
+        //   {
+        //     title: "LLM fine-tuning on proprietary data",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/llm-fine-tuning",
+        //   },
+        //   {
+        //     title: "RAG-based application development",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/rag-based-application-development",
+        //   },
+        //   {
+        //     title: "Prompt engineering and optimization",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/prompt-engineering-optimization",
+        //   },
+        //   {
+        //     title: "Open-source model integration",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/open-source-model-integration",
+        //   },
+        //   {
+        //     title: "Domain-specific chatbot development",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/chatbot-development",
+        //   },
+        //   {
+        //     title: "On-premise LLM deployment",
+        //     href: "/data-ai/custom-llm-for-gen-ai-rag/llm-deployment",
+        //   },
+        // ],
+        description:"Designing domain-specific large language models and retrieval-augmented generation tailored to enterprise needs."
       },
+      {
+        title: "Analytics & Visualization",
+        href: "/data-ai/data-analytics-visualization",
+        // section: [
+        //   {
+        //     title: "Data pipeline and transformation",
+        //     href: "/data-ai/data-analytics-visualization/data-pipeline-transformation",
+        //   },
+        //   {
+        //     title: "Dashboard and KPI visualization",
+        //     href: "/data-ai/data-analytics-visualization/dashboard-kpi-visualization",
+        //   },
+        //   {
+        //     title: "Real-time streaming analytics",
+        //     href: "/data-ai/data-analytics-visualization/streaming-analytics",
+        //   },
+        //   {
+        //     title: "Time-Series Intelligence",
+        //     href: "/data-ai/data-analytics-visualization/time-series-intelligence",
+        //   },
+        //   {
+        //     title: "Business intelligence integration",
+        //     href: "/data-ai/data-analytics-visualization/business-intelligence-integration",
+        //   },
+        //   {
+        //     title: "Custom reporting and notifications",
+        //     href: "/data-ai/data-analytics-visualization/custom-reporting-notifications",
+        //   },
+        // ],
+        description:"Enabling smarter decisions with advanced analytics and intuitive data visualization."
+      },
+      {
+        title: "AI-driven Predictive Orchestration",
+        href: "/data-ai/predictive-orchestration",
+        // section: [
+        //   {
+        //     title: "Telemetry-Driven Automation",
+        //     href: "/data-ai/predictive-orchestration/telemetry-driven-automation",
+        //   },
+        //   {
+        //     title: "Predictive maintenance models",
+        //     href: "/data-ai/predictive-orchestration/predictive-maintenance-models",
+        //   },
+        //   {
+        //     title: "AIOps for infrastructure performance",
+        //     href: "/data-ai/predictive-orchestration/aiops-infrastrucuture-performance",
+        //   },
+        //   {
+        //     title: "Workflow optimization with ML",
+        //     href: "/data-ai/predictive-orchestration/workflow-optimization",
+        //   },
+        //   {
+        //     title: "Smart Incident Detection",
+        //     href: "/data-ai/predictive-orchestration/smart-incident-detection",
+        //   },
+        //   {
+        //     title: "Intelligent resource scheduling",
+        //     href: "/data-ai/predictive-orchestration/intelligent-resource-scheduling",
+        //   },
+        // ],
+        description:"Orchestrating IT and business processes with predictive AI to optimize efficiency and reduce risk."
+      },
+
       {
         title: "AI-powered accelerators",
         href: "/data-ai/ai-powered-accelerators",
         section: [
           {
             title: "CalTIA",
-            href: "/data-ai/ai-powered-accelerators/caltia",
+            href: "/data-ai/ai-powered-accelerators/test-impact-analyzer-caltia",
           },
           {
             title: "CalPSR – Calsoft Performance, Scalability, and Resilience",
-            href: "#",
+            href: "/data-ai/ai-powered-accelerators/calsoft-performance-scalability-and-resilience-calpsr",
           },
-          { title: "Automated migration tool", href: "#" },
+          {
+            title: "Automated migration tool",
+            href: "/data-ai/ai-powered-accelerators/vmware-migration",
+          },
         ],
       },
     ],
@@ -184,6 +314,10 @@ export const navItems = [
             href: "/digital-product-engineering/cx-engineering/experience-moderization",
           },
           {
+            title: "Intelligent UI",
+            href: "#",
+          },
+          {
             title: "Rapid Prototyping",
             href: "/digital-product-engineering/cx-engineering/rapid-prototyping",
           },
@@ -248,119 +382,123 @@ export const navItems = [
       {
         title: "Sustenance & Support",
         href: "/digital-product-engineering/sustenance-support",
-        section: [
-          {
-            title: "Release Orchestration",
-            href: "/digital-product-engineering/sustenance-support/release-orchestration",
-          },
-          {
-            title: "Documentation Support",
-            href: "/digital-product-engineering/sustenance-support/documentation-support",
-          },
-          {
-            title: "Intelligent Ticketing",
-            href: "/digital-product-engineering/sustenance-support/intelligent-ticketing",
-          },
-          {
-            title: "Muti-Tier Support",
-            href: "/digital-product-engineering/sustenance-support/muti-tier-support",
-          },
-          {
-            title: "Uptime Continuity",
-            href: "/digital-product-engineering/sustenance-support/uptime-continuity",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Release Orchestration",
+        //     href: "/digital-product-engineering/sustenance-support/release-orchestration",
+        //   },
+        //   {
+        //     title: "Documentation Support",
+        //     href: "/digital-product-engineering/sustenance-support/documentation-support",
+        //   },
+        //   {
+        //     title: "Intelligent Ticketing",
+        //     href: "/digital-product-engineering/sustenance-support/intelligent-ticketing",
+        //   },
+        //   {
+        //     title: "Muti-Tier Support",
+        //     href: "/digital-product-engineering/sustenance-support/muti-tier-support",
+        //   },
+        //   {
+        //     title: "Uptime Continuity",
+        //     href: "/digital-product-engineering/sustenance-support/uptime-continuity",
+        //   },
+        // ],
+        description:"Keeping products future-ready with reliable sustenance, stability, and cost-efficient support."
       },
       {
         title: "Virtualization ",
         href: "/digital-product-engineering/virtualization",
-        section: [
-          {
-            title: "Lifecycle Governance",
-            href: "#",
-          },
-          {
-            title: "Containerization and orchestration",
-            href: "#",
-          },
-          {
-            title: "Hypervisor Optimization",
-            href: "#",
-          },
-          {
-            title: "OpenStack environment configuration",
-            href: "#",
-          },
-          {
-            title: "Infrastructure as Code (IaC)",
-            href: "#",
-          },
-          {
-            title: "Intelligent Migration",
-            href: "#",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Lifecycle Governance",
+        //     href: "/digital-product-engineering/virtualization/lifecycle-governance",
+        //   },
+        //   {
+        //     title: "Containerization and orchestration",
+        //     href: "/digital-product-engineering/virtualization/containerization-and-orchestration",
+        //   },
+        //   {
+        //     title: "Hypervisor Optimization",
+        //     href: "/digital-product-engineering/virtualization/hypervisor-optimization",
+        //   },
+        //   {
+        //     title: "OpenStack environment configuration",
+        //     href: "/digital-product-engineering/virtualization/openStack-environment-configuration",
+        //   },
+        //   {
+        //     title: "Infrastructure as Code (IaC)",
+        //     href: "/digital-product-engineering/virtualization/infrastructure-as-code",
+        //   },
+        //   {
+        //     title: "Intelligent Migration",
+        //     href: "/digital-product-engineering/virtualization/intelligent-migration",
+        //   },
+        // ],
+        description:"Enabling agile infrastructure through software-defined virtualization for optimized performance and scalability."
       },
 
       {
         title: "Storage Networking",
         href: "/digital-product-engineering/storage-networking",
-        section: [
-          {
-            title: "Defined Storage Solutions",
-            href: "#",
-          },
-          {
-            title: "SDN Architecture",
-            href: "#",
-          },
-          {
-            title: "Hyperconverged infrastructure (HCI) integration",
-            href: "#",
-          },
-          {
-            title: "Storage gateway engineering",
-            href: "#",
-          },
-          {
-            title: "Intelligent Network Control",
-            href: "#",
-          },
-          {
-            title: "Network function virtualization (NFV) services",
-            href: "#",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Defined Storage Solutions",
+        //     href: "/digital-product-engineering/storage-networking/defined-storage-solutions",
+        //   },
+        //   {
+        //     title: "SDN Architecture",
+        //     href: "/digital-product-engineering/storage-networking/sdn-architecture",
+        //   },
+        //   {
+        //     title: "Hyperconverged infrastructure (HCI) integration",
+        //     href: "/digital-product-engineering/storage-networking/hyperconverged-infrastructure-integration",
+        //   },
+        //   {
+        //     title: "Storage gateway engineering",
+        //     href: "/digital-product-engineering/storage-networking/storage-gateway-engineering",
+        //   },
+        //   {
+        //     title: "Intelligent Network Control",
+        //     href: "/digital-product-engineering/storage-networking/intelligent-network-control",
+        //   },
+        //   {
+        //     title: "Network function virtualization (NFV) services",
+        //     href: "/digital-product-engineering/storage-networking/network-function-virtualization-services",
+        //   },
+        // ],
+        description:"Delivering efficient, high-performance storage networking solutions for seamless data access and management."
       },
       {
         title: "Security Services",
         href: "/digital-product-engineering/security",
-        section: [
-          {
-            title: "Endpoint and perimeter security enablement",
-            href: "#",
-          },
-          {
-            title: "Identity and access management (IAM)",
-            href: "#",
-          },
-          {
-            title: "Vulnerability and penetration testing",
-            href: "#",
-          },
-          {
-            title: "DevSecOps",
-            href: "#",
-          },
-          {
-            title: "Zero Trust architecture enablement ",
-            href: "#",
-          },
-          {
-            title: "Service continuity and backup automation",
-            href: "#",
-          },
-        ],
+        // section: [
+        //   {
+        //     title: "Endpoint and perimeter security enablement",
+        //     href: "/digital-product-engineering/security/endpoint-and-perimeter-security-enablement",
+        //   },
+        //   {
+        //     title: "Identity and access management (IAM)",
+        //     href: "/digital-product-engineering/security/identity-and-access-management",
+        //   },
+        //   {
+        //     title: "Vulnerability and penetration testing",
+        //     href: "/digital-product-engineering/security/vulnerability-and-penetration-testing",
+        //   },
+        //   {
+        //     title: "DevSecOps",
+        //     href: "/digital-product-engineering/security/dev-sec-ops",
+        //   },
+        //   {
+        //     title: "Zero Trust architecture enablement",
+        //     href: "/digital-product-engineering/security/zero-trust-architecture-enablement",
+        //   },
+        //   {
+        //     title: "Service continuity and backup automation",
+        //     href: "/digital-product-engineering/security/service-continuity-and-backup-automation",
+        //   },
+        // ],
+        description:"Protecting digital assets with end-to-end security, compliance, and threat management solutions."
       },
     ],
   },
@@ -371,74 +509,23 @@ export const navItems = [
       {
         title: "Hi-tech",
         href: "/industries/hitech",
-        section: [
-          {
-            title: "Software and product engineering",
-            href: "#",
-          },
-          {
-            title: "Cloud and platform engineering",
-            href: "#",
-          },
-          {
-            title: "AI-powered modernization",
-            href: "#",
-          },
-        ],
+        description:"Driving product innovation with next-gen engineering, AI-led modernization, and scalable software solutions."
       },
       {
         title: "Retail",
         href: "/industries/retail",
-        section: [
-          {
-            title: "Enhance shopping experiences with AI",
-            href: "#",
-          },
-          {
-            title: "Improve efficiency and boost product availability",
-            href: "#",
-          },
-          {
-            title: "Prevent fraud and secure transactions",
-            href: "#",
-          },
-        ],
+        description:"Transforming connectivity with AI, edge, and cloud solutions for faster, reliable, and secure networks."
+
       },
       {
         title: "Telecom",
         href: "/industries/telecom",
-        section: [
-          {
-            title: "Automate network operations and orchestration",
-            href: "#",
-          },
-          {
-            title: "Build agile and low-latency telecom networks",
-            href: "#",
-          },
-          {
-            title: "Enhance service assurance and cybersecurity",
-            href: "#",
-          },
-        ],
+       description:"Enabling smarter shopping experiences through data-driven insights, automation, and cloud-powered platforms."
       },
       {
         title: "Manufacturing",
         href: "/industries/manufacturing",
-        section: [
-          {
-            title: "Scale with real-time monitoring and automation",
-            href: "#",
-          },
-          {
-            title: "Strengthen predictive maintenance strategies",
-            href: "#",
-          },
-          {
-            title: "Enhance visibility, agility, and demand forecasting",
-            href: "#",
-          },
-        ],
+        description:"Powering Industry 4.0 with intelligent automation, predictive analytics, and digital modernization."
       },
     ],
   },
@@ -446,7 +533,7 @@ export const navItems = [
     title: "INSIGHTS",
     href: "/insights",
     submenu: [
-      { title: "Blogs", href: "/insights/blogs" },
+      { title: "Blogs", href: "/insights/blogs" , description:"Fresh perspectives and expert insights on technology and innovation"},
       {
         title: "Resources",
         href: "/insights",
@@ -462,18 +549,20 @@ export const navItems = [
           { title: "Videos", href: "/insights/videos" },
         ],
       },
-      { title: "Press Releases", href: "#" },
-      { title: "Events & Webinars", href: "/insights/webinars" },
-      { title: "Workshop", href: "/insights/workshops" },
+      { title: "Press Releases", href: "/insights/press-releases"  ,description:"Official announcements and updates from Calsoft."},
+      { title: "Webinars", href: "/insights/webinars", description:"Interactive sessions with experts on industry trends and solutions." },
+      { title: "Workshop", href: "/insights/workshops" , description:"Hands-on learning and deep dives into emerging technologies." },
+      { title: "Podcasts", href: "/insights/podcasts", description:"Conversations with leaders on technology, business, and innovation." },
     ],
   },
   {
     title: "ABOUT",
     href: "/about-us",
     submenu: [
-      { title: "Career", href: "/career" },
-      { title: "Leadership", href: "/leadership" },
-      { title: "CSR", href: "/csr" },
+      { title: "Career", href: "/career" ,description:"Building rewarding careers through innovation, learning, and growth opportunities." },
+      { title: "Leadership", href: "/leadership", description:"Guided by vision and expertise to drive Calsoft’s technology-first journey." },
+      { title: "CSR", href: "/csr" , description:"Committed to creating social impact through education, empowerment, and sustainability initiatives." },
+      { title: "Contact Us", href: "/contact-us" , description:"Connect with us to explore solutions, partnerships, and opportunities." },
     ],
   },
 ];

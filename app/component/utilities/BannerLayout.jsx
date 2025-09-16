@@ -8,28 +8,32 @@ import { IoPlayOutline } from "react-icons/io5";
 const BannerLayout = ({
   image,
   logo,
-  logoClass,
+  buttonClicked,
   title,
   title2,
   description,
   knowMoreAboutUs,
   buttonText,
+  buttonText2,
   buttonImage,
+  buttonImage2,
   hoverImage,
   bgColor,
   overlayOpacity,
   zIndex,
   titleOneClass,
+  link,
   titleTwoClass,
   descriptionClass,
   buttonClass = "",
+  height = "h-[37.5rem]",
 }) => {
   return (
     <div className=" relative">
       {/* Background Image */}
       <div className="h-fit w-full relative">
         <div className="absolute top-0 w-full h-full bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
-        <div className="h-[37.5rem] w-full relative">
+        <div className={`${height} w-full relative`}>
           <Image
             src={image}
             alt="Background Image"
@@ -86,25 +90,48 @@ const BannerLayout = ({
           >
             {description}
           </motion.p>
-
-          {/* Button */}
-          {buttonText && (
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="mt-9"
-            >
-              <ButtonLayout
-                text={buttonText}
-                image={buttonImage}
-                hoverImage={hoverImage}
-                className={buttonClass}
-              />
-            </motion.div>
-          )}
-
+          <div className="flex lg:flex-row flex-col gap-x-6 gap-y-4">
+            {/* Button */}
+            {buttonText && (
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="mt-9"
+              >
+                <ButtonLayout
+                  text={buttonText}
+                  image={buttonImage}
+                  hoverImage={hoverImage}
+                  className={buttonClass}
+                  onClick={buttonClicked}
+                  link={link}
+                />
+              </motion.div>
+            )}
+            {buttonText2 && (
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="mt-9"
+              >
+                <ButtonLayout
+                  text={buttonText2}
+                  image={buttonImage2}
+                  hoverImage={hoverImage}
+                  className={`${buttonClass}`}
+                  bgColor="#ffffff"
+                  textColor="#000000"
+                  hoverBgColor="#BA0007"
+                  hoverTextColor="#ffffff"
+                  onClick={buttonClicked}
+                />
+              </motion.div>
+            )}
+          </div>
           {knowMoreAboutUs && (
             <motion.div
               initial={{ x: -50, opacity: 0 }}

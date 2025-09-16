@@ -8,6 +8,7 @@ import Info1 from "../../assets/Data-Ai/ai-accelerate/Info-1.svg";
 import Info2 from "../../assets/Data-Ai/ai-accelerate/Info-2.svg";
 import Info3 from "../../assets/Data-Ai/ai-accelerate/Info-3.svg";
 import Info4 from "../../assets/Data-Ai/ai-accelerate/Info-4.svg";
+import { showHubSpotForm } from "../utilities/showHubSpotForm"; // import utility
 
 import {
   ChallengeSolutionComp,
@@ -35,6 +36,7 @@ export const AiBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
       />
       <Submenu
         navItems={navItems}
@@ -96,7 +98,7 @@ export const CalTiaSec = () => {
         and reduce QA fatigue with
         AI-driven prioritization."
         buttonText="Learn More"
-        link="#"
+        link="/data-ai/ai-powered-accelerators/test-impact-analyzer-caltia"
         whatWeDo={[
           "Analyze test logs to spot redundancies",
           "Recommend test sets by risk and scope",
@@ -124,7 +126,7 @@ export const CalPsrSec = () => {
         title="CalPSR – Calsoft Performance, Scalability, and Resilience"
         description="Validate release readiness with real-world fault simulation and pre-GA testing."
         buttonText="Learn More"
-        link="#"
+        link="/data-ai/ai-powered-accelerators/calsoft-performance-scalability-and-resilience-calpsr"
         whatWeDo={[
           "Simulate faults and latency delays",
           "Benchmark releases on failure data",
@@ -152,7 +154,7 @@ export const ECalsoftSec = () => {
         title="Calsoft’s migration accelerator"
         description="Simplify workload transitions with guided, dependency-aware migration flows."
         buttonText="Learn More"
-        link="#"
+        link="/data-ai/ai-powered-accelerators/vmware-migration"
         whatWeDo={[
           "Discover app and infra dependencies",
           "Recommend migration flows by logic",
@@ -178,7 +180,7 @@ export const CalsoftSec = () => {
       <DataInfoSection
         title="Calsoft Mozaic | Engineering intelligence framework"
         description="Accelerate solution delivery with reusable AI, platform, and process components."
-        buttonText="Learn More"
+        // buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Provide AI-ready modular toolkits",

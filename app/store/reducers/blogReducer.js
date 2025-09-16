@@ -29,6 +29,8 @@ const blogsSlice = createSlice({
       state.filterAuthor = action.payload.authors;
       state.filterIndustry = action.payload.industries;
       state.filterTopic = action.payload.topics;
+      state.filterCategories = action.payload.categories;
+      state.filterTags = action.payload.tags;
     },
     setSelectedBlogId: (state, action) => {
       state.selectedId = action.payload;

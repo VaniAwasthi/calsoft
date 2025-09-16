@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiShare2 } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,21 +13,26 @@ import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchBlogFilterList,
-  fetchBlogList,
   fetchFilteredBlogs,
 } from "../../store/actions/blogAction.js";
 import { setSelectedBlogId } from "../../store/reducers/blogReducer.js";
 import blogexpanImage from "../../assets/blog/blog-2.webp";
-import FilterPanel from "../utilities/FilterPannel";
+import { FilterSec } from "../utilities/FilterSec";
+import { baseUrl } from "@/config";
 
 export default function ResourceGrid() {
-  const baseUrl = "http://35.162.115.74/admin/assets/dist";
-
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchBlogList());
+    dispatch(
+      fetchFilteredBlogs({
+        Author: "All",
+        Industry: "All",
+        Topics: [], // Array of topic objects or IDs
+      })
+    );
     dispatch(fetchBlogFilterList());
   }, []);
+  const [filteredBlogs, setFilteredBlogs] = useState([]);
   const BlogsList = useSelector((state) => state.blogs.list);
   const FilterAuthr = useSelector((state) => state.blogs.filterAuthor || []);
   const FilterIndustry = useSelector(
@@ -41,28 +46,40 @@ export default function ResourceGrid() {
     Author: [...FilterAuthr],
   };
 
+  const [visibleCount, setVisibleCount] = useState(6);
+  const [topicLimitWarning, setTopicLimitWarning] = useState(false);
+
+  const [activeFilters, setActiveFilters] = useState({
+    Author: "All",
+    Industry: "All",
+    Topics: [], // Array of topic objects or IDs
+  });
+  const [openDropdown, setOpenDropdown] = useState("");
+  const loadMoreRef = useRef(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log(BlogsList);
+    if (Array.isArray(BlogsList)) setFilteredBlogs(BlogsList);
+    // } else if (Array.isArray(BlogsList.results)) {
+    //   setFilteredBlogs(BlogsList.results);
+    // } else {
+    //   setFilteredBlogs([]);
+    // }
+  }, [BlogsList]);
+
   const slugify = (text) => {
     return text
       .toLowerCase()
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "");
   };
-  const [visibleCount, setVisibleCount] = useState(6);
-  const [topicLimitWarning, setTopicLimitWarning] = useState(false);
 
-  const [activeFilters, setActiveFilters] = useState({
-    Author: null,
-    Industry: null,
-    Topics: [], // Array of topic objects or IDs
-  });
-  const [openDropdown, setOpenDropdown] = useState("");
-  const loadMoreRef = useRef(null);
-  const router = useRouter();
- const handleBlogClick = (item) => {
-   const slug = slugify(item.title, { lower: true });
-   dispatch(setSelectedBlogId(item._id)); 
-   router.push(`/insights/blogs/${slug}`);
- };
+  const handleBlogClick = (item) => {
+    const slug = slugify(item.title, { lower: true });
+    dispatch(setSelectedBlogId(item._id));
+    router.push(`/insights/blogs/${slug}`);
+  };
 
   const toggleDropdown = (filter) => {
     setOpenDropdown(openDropdown === filter ? "" : filter);
@@ -120,6 +137,20 @@ export default function ResourceGrid() {
     }
   };
 
+  function search(value) {
+    if (value === "") setFilteredBlogs(BlogsList);
+    else
+      setFilteredBlogs(
+        BlogsList.filter((blog) =>
+          blog.title.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+  }
+
+  const performSearch = useCallback(() => {
+    dispatch(fetchFilteredBlogs(activeFilters));
+  }, [dispatch, activeFilters]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -140,17 +171,24 @@ export default function ResourceGrid() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    performSearch();
+  }, [performSearch]);
+
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
       <div className="container mx-auto  px-4 sm:px-6 lg:px-8">
         {/* Filters */}
-        <FilterPanel
+        <FilterSec
           filters={filters}
           activeFilters={activeFilters}
+          setActiveFilters={setActiveFilters}
           openDropdown={openDropdown}
+          setOpenDropdown={setOpenDropdown}
           toggleDropdown={toggleDropdown}
           selectFilter={selectFilter}
-          setActiveFilters={setActiveFilters}
+          mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
+          searchDebouncing={search}
         />
         {topicLimitWarning && (
           <div className="text-red-600 text-sm mb-4">
@@ -158,11 +196,11 @@ export default function ResourceGrid() {
           </div>
         )}
         {/* Results Count */}
-        <p className="mb-4 text-sm">{BlogsList.length} Results</p>
+        <p className="mb-4 text-sm">{filteredBlogs.length} Results</p>
 
         {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {BlogsList.slice(0, visibleCount).map((item, idx) => (
+          {filteredBlogs.slice(0, visibleCount).map((item, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
@@ -175,24 +213,27 @@ export default function ResourceGrid() {
               <div className="p-4 h-[50%]">
                 <div className="">
                   <div className="flex">
-                    <p className="text-[12px] font-medium text-[#2E3092]  px-1">
-                      {item?.categoryData.name}
-                    </p>
+                    {item?.categoryData?.map((i, idx) => (
+                      <p
+                        key={idx}
+                        className="text-[12px] font-medium text-[#2E3092] px-1"
+                      >
+                        {i.name}
+                      </p>
+                    ))}
+
                     <span className="text-[12px] font-medium text-[#939393] uppercase px-1">
                       |
                     </span>
                     {item.authorData ? (
                       <>
                         <span className="text-[12px] font-medium text-[#939393]  px-1">
-                          {new Date(item.authorData.createdAt).toLocaleString(
-                            "en-IN",
-                            {
-                              timeZone: "Asia/Kolkata",
-                              day: "numeric",
-                              month: "short",
-                              year: "numeric",
-                            }
-                          )}
+                          {new Date(item.date).toLocaleString("en-IN", {
+                            timeZone: "Asia/Kolkata",
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          })}
                         </span>
                       </>
                     ) : null}
@@ -257,17 +298,17 @@ export default function ResourceGrid() {
         </div>
 
         {/* Load More */}
-        {BlogsList.length > 6 && (
+        {filteredBlogs.length > 6 && (
           <div className="flex justify-center mt-10">
             <button
               onClick={() =>
                 setVisibleCount((prev) =>
-                  prev >= BlogsList.length ? 6 : BlogsList.length
+                  prev >= filteredBlogs.length ? 6 : filteredBlogs.length
                 )
               }
               className="flex flex-col items-center gap-2 text-[#2b2eae] text-sm hover:underline"
             >
-              {visibleCount >= BlogsList.length ? null : (
+              {visibleCount >= filteredBlogs.length ? null : (
                 <motion.div
                   ref={loadMoreRef}
                   whileHover={{ scale: 1.2, rotate: 10 }}

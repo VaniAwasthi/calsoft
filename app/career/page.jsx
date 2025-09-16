@@ -8,7 +8,7 @@ import SendResume from "../component/career/SendResume";
 import ReferSomeone from "../component/career/ReferSomeone";
 import OpenVacancies from "../component/career/OpenVacancies";
 
-export default function page() {
+export default function Page() {
   return (
     <>
       <HeroSection />
@@ -18,7 +18,7 @@ export default function page() {
       <Promises />
       <LifeAtCalsoft />
       <SendResume />
-      <ReferSomeone />
+      {/* <ReferSomeone /> */}
     </>
   );
 }

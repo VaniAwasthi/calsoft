@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <>
 
-      <BannerInfo heading=""  BannerBg={Banner}/>
+      <BannerInfo heading="Knowledge Base"  BannerBg={Banner}/>
       <TabsInfo defaultTab="case-study" />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "

@@ -13,6 +13,7 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 export const AgenticBanner = () => {
   const [activeTab, setActiveTab] = useState("benefits");
   const slide = {
@@ -20,7 +21,7 @@ export const AgenticBanner = () => {
 
     description: `Design, deploy, and manage AI agents with
     precision and accountability.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Want a demo?",
     image: BackgroundImage,
   };
   const navItems = [
@@ -42,6 +43,7 @@ export const AgenticBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
+        onButtonClick={() => showHubSpotForm("agentic-ai-datasheet")}
       />
       <Submenu
         navItems={navItems}
@@ -52,8 +54,7 @@ export const AgenticBanner = () => {
   );
 };
 
-export const AgenticChallengeSec = () => {
-  const data = [
+export const AgenticChallengeSec = ({data=[
     {
       tag: "AIOps Design",
       challenge:
@@ -82,12 +83,13 @@ export const AgenticChallengeSec = () => {
       solution:
         "Frameworks for continuous learning, feedback integration, and version governance",
     },
-  ];
+  ]}) => {
+  
   return (
     <>
       <ChallengeSolutionComp
         data={data}
-        BlackHeading="Proactive action with predictive insights"
+        BlackHeading="AI Agents that work at scale"
         GradientHeading="Challenge to solutions:"
         secId="benefits"
       />
@@ -130,7 +132,7 @@ export const UseSec = () => {
       <DataInfoSection
         title="Use-case specific AI agents"
         description="Deploy configured agents that fulfill focused business and operational roles."
-        buttonText=" Learn More"
+        // buttonText=" Learn More"
         link="#"
         whatWeDo={[
           "Build agents for domain-specific tasks",
@@ -158,7 +160,7 @@ export const MonitorSec = () => {
       <DataInfoSection
         title="Monitor and control"
         description="Ensure transparency and oversight across autonomous agent behavior."
-        buttonText=" Learn More"
+        // buttonText=" Learn More"
         link="#"
         whatWeDo={[
           "Track agent behavior with telemetry",
@@ -185,7 +187,7 @@ export const LifecycleSec = () => {
       <DataInfoSection
         title="Lifecycle and adaptability"
         description="Manage agent evolution from deployment through continuous improvement."
-        buttonText=" Learn More"
+        // buttonText=" Learn More"
         link="#"
         whatWeDo={[
           "Define update and rollback protocols",
