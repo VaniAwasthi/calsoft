@@ -6,7 +6,7 @@ import Image from "next/image";
 import JobApplicationModal from "./JobForm";
 
 export default function JobBoard({ jobData }) {
-  const [expandedJob, setExpandedJob] = useState(null);
+  const [expandedJob, setExpandedJob] = useState(jobData[0].id);
   const [isModalOpenForJobId, setIsModalOpenForJobId] = useState(null);
 
   const toggleJob = (jobId) => {

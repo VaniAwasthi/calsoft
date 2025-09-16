@@ -353,6 +353,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
             <div className="relative">
               <input
                 type="number"
+                min={0}
                 required
                 disabled={isSubmitting}
                 value={formData.noticePeriod}

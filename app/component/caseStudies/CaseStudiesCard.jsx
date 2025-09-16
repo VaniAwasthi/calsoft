@@ -7,7 +7,7 @@ import {
   FaLessThan,
   FaShareAlt,
 } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Info1 from "../../assets/Infographic/Info1.webp";
 import Info2 from "../../assets/Infographic/Info2.webp";
@@ -63,7 +63,7 @@ export const CaseStudiesCard = () => {
   const images = [Info1, Info2];
 
   const resources = filteredListData.map((item) => {
-    const safeTitle = item?.hero_title1 || "Untitled"; 
+    const safeTitle = item?.hero_title1 || "Untitled";
     return {
       ...item,
       id: item._id,
@@ -152,8 +152,21 @@ export const CaseStudiesCard = () => {
 
   useEffect(() => {
     dispatch(fetchBlogFilterList());
-    dispatch(fetchCaseStudiesList());
+    dispatch(
+      fetchCaseStudiesList({
+        Industry: "All",
+        Topics: [],
+      })
+    );
   }, [dispatch]);
+
+  const performSearch = useCallback(() => {
+    dispatch(fetchCaseStudiesList(activeFilters));
+  }, [dispatch, activeFilters]);
+
+  useEffect(() => {
+    performSearch();
+  }, [performSearch]);
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">

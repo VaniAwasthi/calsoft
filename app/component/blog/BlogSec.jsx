@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useCallback, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiShare2 } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchBlogFilterList,
-  fetchBlogList,
+  fetchFilteredBlogs,
 } from "../../store/actions/blogAction.js";
 import { setSelectedBlogId } from "../../store/reducers/blogReducer.js";
 import blogexpanImage from "../../assets/blog/blog-2.webp";
@@ -23,7 +23,13 @@ import { baseUrl } from "@/config";
 export default function ResourceGrid() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchBlogList());
+    dispatch(
+      fetchFilteredBlogs({
+        Author: "All",
+        Industry: "All",
+        Topics: [], // Array of topic objects or IDs
+      })
+    );
     dispatch(fetchBlogFilterList());
   }, []);
   const [filteredBlogs, setFilteredBlogs] = useState([]);
@@ -53,7 +59,13 @@ export default function ResourceGrid() {
   const router = useRouter();
 
   useEffect(() => {
-    setFilteredBlogs(BlogsList);
+    console.log(BlogsList);
+    if (Array.isArray(BlogsList)) setFilteredBlogs(BlogsList);
+    // } else if (Array.isArray(BlogsList.results)) {
+    //   setFilteredBlogs(BlogsList.results);
+    // } else {
+    //   setFilteredBlogs([]);
+    // }
   }, [BlogsList]);
 
   const slugify = (text) => {
@@ -135,6 +147,10 @@ export default function ResourceGrid() {
       );
   }
 
+  const performSearch = useCallback(() => {
+    dispatch(fetchFilteredBlogs(activeFilters));
+  }, [dispatch, activeFilters]);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -154,6 +170,10 @@ export default function ResourceGrid() {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    performSearch();
+  }, [performSearch]);
 
   return (
     <section className="text-black px-4 py-10 bg-white min-h-screen overflow-x-hidden">
@@ -193,13 +213,14 @@ export default function ResourceGrid() {
               <div className="p-4 h-[50%]">
                 <div className="">
                   <div className="flex">
-                   
-                   
-                   {item?.categoryData?.map((i, idx) => (
-  <p key={idx} className="text-[12px] font-medium text-[#2E3092] px-1">
-    {i.name}
-  </p>
-))}
+                    {item?.categoryData?.map((i, idx) => (
+                      <p
+                        key={idx}
+                        className="text-[12px] font-medium text-[#2E3092] px-1"
+                      >
+                        {i.name}
+                      </p>
+                    ))}
 
                     <span className="text-[12px] font-medium text-[#939393] uppercase px-1">
                       |
@@ -207,15 +228,12 @@ export default function ResourceGrid() {
                     {item.authorData ? (
                       <>
                         <span className="text-[12px] font-medium text-[#939393]  px-1">
-                          {new Date(item.date).toLocaleString(
-                            "en-IN",
-                            {
-                              timeZone: "Asia/Kolkata",
-                              day: "numeric",
-                              month: "short",
-                              year: "numeric",
-                            }
-                          )}
+                          {new Date(item.date).toLocaleString("en-IN", {
+                            timeZone: "Asia/Kolkata",
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          })}
                         </span>
                       </>
                     ) : null}
@@ -280,17 +298,17 @@ export default function ResourceGrid() {
         </div>
 
         {/* Load More */}
-        {BlogsList.length > 6 && (
+        {filteredBlogs.length > 6 && (
           <div className="flex justify-center mt-10">
             <button
               onClick={() =>
                 setVisibleCount((prev) =>
-                  prev >= BlogsList.length ? 6 : BlogsList.length
+                  prev >= filteredBlogs.length ? 6 : filteredBlogs.length
                 )
               }
               className="flex flex-col items-center gap-2 text-[#2b2eae] text-sm hover:underline"
             >
-              {visibleCount >= BlogsList.length ? null : (
+              {visibleCount >= filteredBlogs.length ? null : (
                 <motion.div
                   ref={loadMoreRef}
                   whileHover={{ scale: 1.2, rotate: 10 }}
@@ -311,22 +329,3 @@ export default function ResourceGrid() {
     </section>
   );
 }
-
-const BlogsList = [
-  {
-    _id: "686f94a1fae153339b2f1c6d",
-    title: "Robotic Process Automation in Digital Transformation",
-  },
-  {
-    _id: "686f4cccfae153339b2f1c52",
-    title: "Top Generative AI Use Cases in Customer Service Across Industries",
-  },
-  {
-    _id: "686f515efae153339b2f1c55",
-    title: "Top Generative AI Trends Shaping 2025",
-  },
-  {
-    _id: "686f532dfae153339b2f1c57",
-    title: "Calsoft Joins IBM in Delivering AI-driven Enterprise Solutions",
-  },
-];

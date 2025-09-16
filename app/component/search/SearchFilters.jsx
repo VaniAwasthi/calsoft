@@ -103,12 +103,12 @@ export function SearchFilters({
             filterType="categories"
           />
           <FilterSection
-            title="Services"
+            title="Tags"
             items={filterData.filterTags || []}
             filterType="services"
           />
           <FilterSection
-            title="Technology"
+            title="Topics"
             items={filterData.filterTopic || []}
             filterType="technology"
           />

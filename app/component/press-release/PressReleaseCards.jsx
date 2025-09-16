@@ -152,10 +152,11 @@ export const PressReleaseCard = () => {
     setOpenDropdown("");
 
     dispatch(
-      fetchFilteredBlogs({
-        industry: updatedFilters.Industry?._id || null,
-        topics: updatedFilters.Topics.map((t) => t._id),
-      })
+      fetchFilteredBlogs({ ...activeFilters, Author: "All" })
+      // fetchFilteredBlogs({
+      //   industry: updatedFilters.Industry?._id || null,
+      //   topics: updatedFilters.Topics.map((t) => t._id),
+      // })
     );
   };
 
