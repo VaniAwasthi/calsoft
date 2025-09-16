@@ -60,7 +60,7 @@ export default function WhyItMatters({
               </motion.div>
             </div>
             {/* bug: When wrapped into motion.div the button is not visible */}
-            <div
+            <motion.div
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
@@ -74,7 +74,7 @@ export default function WhyItMatters({
                 className={"w-fit shadow-2xl"}
                 onClick={buttonClicked}
               />
-            </div>
+            </motion.div>
           </div>
           <div
             className={`sm:flex hidden justify-center items-center ${mainComponenentClass}`}

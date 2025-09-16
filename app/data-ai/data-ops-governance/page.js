@@ -12,7 +12,7 @@ import React from "react";
 import BannerwithButtonBg from "../../assets/Data-Ai/dataGovernance/KnowMore.webp";
 import { ContactSecDataAi } from "../../component/utilities/ChallengeSolutionDataAi.jsx";
 
-import { showHubSpotForm } from "../../component/utilities/showHubSpotForm"; // import utility
+import { showHubSpotForm } from "../../component/utilities/showHubSpotForm.js"; // import utility
 
 export default function Page() {
   return (
