@@ -10,7 +10,7 @@ import img2 from "@/app/assets/workshop/img2.webp";
 import { FilterSec } from "../utilities/FilterSec";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
-import { motion } from "@/app/store/actions/blogAction";
+import { motion } from "framer-motion";
 
 export function HeroSection({ title, subTitle, buttonText }) {
   return (
@@ -23,8 +23,14 @@ export function HeroSection({ title, subTitle, buttonText }) {
           width={1500}
           className="transform scale-x-[-1]"
         />
-        <div className="absolute top-0 w-full h-full bg-[#00000077] flex flex-col justify-start items-center gap-5 pt-20">
-          <div className="text-white text-center space-y-5 xl:w-1/2">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="absolute top-0 w-full h-full bg-[#00000077] flex flex-col justify-start items-center gap-5 xl:pt-20 pt-10"
+        >
+          <div className="text-white text-center space-y-5 lg:w-1/2">
             <p className="text-[55px] font-bold">{title}</p>
             <p className="text-xl">{subTitle}</p>
           </div>
@@ -35,7 +41,7 @@ export function HeroSection({ title, subTitle, buttonText }) {
             className={"w-fit shadow-2xl"}
             onClick={() => {}}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
@@ -191,17 +197,25 @@ export function CardSection({
   ],
 }) {
   return (
-    <div className="bg-[#edeeff] h-80">
-      <div className="container flex flex-col xl:flex-row justify-between items-center gap-14 p-20 relative bottom-[14rem]">
+    <div className="bg-[#edeeff] lg:h-96 xl:h-80 py-10">
+      <div className="container flex flex-col lg:flex-row justify-between items-center gap-14 p-20 relative lg:bottom-[14rem]">
         {data.map((ele, idx) => (
-          <Card
+          <motion.div
             key={idx}
-            breadcrumb={ele.breadcrumb}
-            title={ele.title}
-            date={ele.date}
-            duration={ele.duration}
-            speakers={ele.speakers}
-          />
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 * idx }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <Card
+              key={idx}
+              breadcrumb={ele.breadcrumb}
+              title={ele.title}
+              date={ele.date}
+              duration={ele.duration}
+              speakers={ele.speakers}
+            />
+          </motion.div>
         ))}
       </div>
     </div>
@@ -369,18 +383,26 @@ export function CardList({
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
           searchDebouncing={search}
         />
-        <div className="grid grid-cols-2 gap-8 ">
+        <div className="grid lg:grid-cols-2 gap-8 ">
           {filteredCards.map((ele, idx) => (
-            <Card
+            <motion.div
               key={idx}
-              breadcrumb={ele.breadcrumb}
-              title={ele.title}
-              date={ele.date}
-              duration={ele.duration}
-              speakers={ele.speakers}
-              topColor="bg-[#2e3092]"
-              textColor="text-white"
-            />
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 * idx }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <Card
+                key={idx}
+                breadcrumb={ele.breadcrumb}
+                title={ele.title}
+                date={ele.date}
+                duration={ele.duration}
+                speakers={ele.speakers}
+                topColor="bg-[#2e3092]"
+                textColor="text-white"
+              />
+            </motion.div>
           ))}
         </div>
       </div>
