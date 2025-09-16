@@ -29,6 +29,7 @@ export default function Page() {
       <HeroSection
         title="Smarter Networks. Stronger Control."
         description="Smarter, adaptive networks with AI-powered, policy-driven control."
+        buttonText="Request Workshop"
         heroImage={Img}
         navItems={navItems}
         setActiveTab={setActiveTab}
@@ -165,6 +166,7 @@ export default function Page() {
       />
       <IntelligentPlanning
         heading="Policy, telemetry, and AI — in action"
+        buttonText="Request POC"
         description="Calsoft builds intelligent network layers that include:"
         data={[
           {
@@ -192,21 +194,28 @@ export default function Page() {
             subTitle: "and bandwidth allocation",
             curved: true,
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: "Automated config",
+            subTitle: "management and rollback",
+            curved: true,
+          },
+          {
+            title:
+              "Self-healing workflows",
+            subTitle: "for predefined failure scenarios",
+            curved: true,
+          },
+          {
+            title: "Northbound API integrations",
+            subTitle: "into DevOps and AIOps ecosystems",
+            curved: true,
+          },
         ]}
         title="Core Capabilities"
         bottomContent={null}
       />
       <RealWorldImpact
-        buttonText={null}
+        buttonText="Request POC"
         heading="Where It Integrates"
         title="Not a rip-and-replace — but a smart extension"
         desc="We integrate into your existing tools and platforms:"
@@ -231,6 +240,10 @@ export default function Page() {
             title: "Security",
             desc: "Zero Trust models, microsegmentation, IDS/IPS alerts",
           },
+          {
+            title: "Fabric Management",
+            desc: "L2/L3 overlays, MPLS, EVPN, SRv6",
+          },
         ]}
         bottomContent={null}
       />
@@ -245,8 +258,8 @@ export default function Page() {
         heading="From reactive to predictive — with results"
         description=""
         bottomText={{
-          text: "Whether you run internal IT, SaaS support, or product operations — ",
-          bText: " intelligent ticketing is critical to scale.",
+          text: null,
+          bText: null,
         }}
         data={[
           {

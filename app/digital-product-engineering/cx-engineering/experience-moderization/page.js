@@ -296,7 +296,7 @@ const Page = () => {
         }}
         bookMeetingData={{
           title:
-            "We help SaaS & platform companies turn partner needs into production-ready plugins—secure,",
+            "Modernize legacy UIs 3x faster with low-code.",
           buttontext: "Book a Meeting",
         }}
       />

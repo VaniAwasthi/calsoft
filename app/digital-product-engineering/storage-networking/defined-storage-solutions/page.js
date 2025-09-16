@@ -193,15 +193,17 @@ export default function Page() {
             subTitle: null,
             curved: true,
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: null,
+            subTitle: "Tiered storage strategy for hot, warm, cold data",
+            curved: true,
+          },
+          {
+            title:
+              null,
+            subTitle: "Data redundancy (replication, erasure coding, snapshotting)",
+            curved: true,
+          },
         ]}
         title="Architecture Choices"
         bottomContent={null}
@@ -232,12 +234,16 @@ export default function Page() {
             title: "S3 gateways",
             desc: "for object store integration into apps",
           },
+          {
+            title: "Storage policies",
+            desc: "as code for consistent QoS",
+          },
         ]}
         bottomContent={null}
       />
       <div className="container">
         <BookMeeting
-          title="Configure OpenStack 2x faster for scale."
+          title="Boost storage efficiency by 45% with optimized design."
           img={img}
         />
       </div>
@@ -246,8 +252,8 @@ export default function Page() {
         heading="Storage outcomes that go beyond capacity"
         description=""
         bottomText={{
-          text: "Whether you run internal IT, SaaS support, or product operations — ",
-          bText: " intelligent ticketing is critical to scale.",
+          text: null,
+          bText: null,
         }}
         data={[
           {

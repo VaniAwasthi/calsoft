@@ -40,12 +40,12 @@ const Page = () => {
         navItems={navItems}
         setActiveTab={setActiveTab}
         heroImage={img}
-        buttonClicked={()=>showHubSpotForm("book-your-devops-health-check")}
+        buttonClicked={() => showHubSpotForm("book-your-devops-health-check")}
         buttonText2=""
       />
       <WhyItMatters id="why-it-matters"
-      buttonText="Get in Touch"
-      buttonClicked={()=>showHubSpotForm("Get in Touch")}
+        buttonText="Get in Touch"
+        buttonClicked={() => showHubSpotForm("Get in Touch")}
         title="Slow Releases Kill Momentum. Downtime Kills Trust."
         desc="Today’s users expect fast updates and zero downtime. But most engineering teams still rely on manual deployments, patchy monitoring, or firefighting mode. Calsoft integrates automation, observability, and resilience—so your team can focus on innovation, not infrastructure."
       />
@@ -53,8 +53,8 @@ const Page = () => {
         heading="Automation. Observability. Reliability. All in One Flow."
         description="We deliver production-grade DevOps & SRE services that fit your team, stack, and scale ambition."
         id="what-we-offer"
-                buttonClicked={()=>showHubSpotForm("request-architecture-blueprint")}
-        
+        buttonClicked={() => showHubSpotForm("request-architecture-blueprint")}
+
         features={[
           {
             icon: (
@@ -208,7 +208,11 @@ const Page = () => {
             },
           ],
         }}
-        buttonClick2={()=>showHubSpotForm("devops-sre-download-one-pager")}
+        buttonClick2={() => showHubSpotForm("devops-sre-download-one-pager")}
+        bookMeetingData={{
+          title: "Speed up release cycles by 60% using SRE practices.",
+          buttontext: "Book a Meeting",
+        }}
       />
       <HowToStart
         id="how-to-start"
@@ -219,7 +223,7 @@ const Page = () => {
         }}
       />{" "}
       <Steps
-      heading="10-Day DevOps Sprint: Step-by-Step"
+        heading="10-Day DevOps Sprint: Step-by-Step"
         steps={[
           {
             day: "Day 0",
@@ -270,7 +274,7 @@ const Page = () => {
             title: "Demo & Report",
             points: [
               "Present full findings",
-              "Deliver DevOps + SRE Readiness Pack",                            
+              "Deliver DevOps + SRE Readiness Pack",
             ],
             output: "PDF Report + ROI Calculator + Roadmap Deck",
             arrowDesktop: null,

@@ -23,6 +23,7 @@ export default function Page() {
     "Automation-Ready",
     "Real-World Impact",
     "Where It Fits",
+    "Why Calsoft",
     "How to Start",
   ];
   return (
@@ -165,9 +166,9 @@ export default function Page() {
           },
         ]}
       />
-      <IntelligentPlanning
-        heading="Abstract infra. Avoid duplication."
-        description="Calsoft helps define your infrastructure as composable, reusable, and secure code modules."
+      {/* <IntelligentPlanning
+        heading="Design for scale, not struggle"
+        description="Calsoft brings end-to-end OpenStack environment configuration from planning to deployment — aligned with your workloads and operational maturity."
         data={[
           {
             title: null,
@@ -204,7 +205,7 @@ export default function Page() {
           text: null,
           btnText: "Request POC",
         }}
-      />
+      /> */}
       <RealWorldImpact buttonText={null}
         title="Design for scale, not struggle"
         desc="Calsoft brings end-to-end OpenStack environment configuration from planning to deployment — aligned with your workloads and operational maturity."
@@ -230,15 +231,24 @@ export default function Page() {
             title: null,
             desc: "Hypervisor selection and tuning (KVM, QEMU)",
           },
+          {
+            title: null,
+            desc: "Node sizing for compute, controller, and storage",
+          },
+          {
+            title: null,
+            desc: "Role-based access (RBAC) and Keystone domain setup",
+          },
+          {
+            title: null,
+            desc: "Multi-tenant project isolation & policy control",
+          },
         ]}
-        bottomContent={{
-          text: null,
-          btnText: "Download ROI Sheet",
-        }}
+        bottomContent={null}
       />
       <div className="container">
         <BookMeeting
-          title="Streamline infra lifecycle by 50% with governance. "
+          title="Configure OpenStack 2x faster for scale."
           img={img}
         />
       </div>
@@ -414,6 +424,82 @@ export default function Page() {
               </svg>
             ),
           },
+          {
+            title: null,
+            subTitle: "API monitoring and endpoint tracing",
+            svg: (
+              <svg
+                width="61"
+                height="55"
+                viewBox="0 0 61 55"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M55.6782 0H5.31845C2.39043 0 0 2.37616 0 5.31845V12.9672C0 15.9095 2.39329 18.2856 5.31845 18.2856H55.6811C58.6091 18.2856 60.9995 15.9095 60.9995 12.9672V5.31845C60.9995 2.37616 58.6062 0 55.6811 0H55.6782ZM6.7971 9.14127C7.00584 2.74765 16.2729 2.76771 16.4764 9.14127C16.2705 15.5177 7.00572 15.532 6.7971 9.14127ZM19.31 9.14127C19.5187 2.74765 28.7858 2.76771 28.9893 9.14127C28.7834 15.5177 19.5186 15.532 19.31 9.14127ZM44.8672 11.7405C44.8672 10.8741 45.5763 10.1678 46.4398 10.1678H52.6247C53.4911 10.1678 54.1973 10.877 54.1973 11.7405C54.1973 12.6069 53.4882 13.3131 52.6247 13.3131H46.4398C45.5734 13.3131 44.8672 12.604 44.8672 11.7405ZM52.6279 8.12049H46.443C45.5766 8.12049 44.8704 7.41136 44.8704 6.54785C44.8704 5.68145 45.5795 4.97521 46.443 4.97521H52.6279C54.6924 5.01524 54.6952 8.08338 52.6279 8.12342V8.12049Z"
+                  fill="#2E3092"
+                />
+                <path
+                  d="M13.329 9.13645C13.2946 6.93188 9.98347 6.91467 9.94629 9.13645C9.98632 11.3582 13.2946 11.341 13.329 9.13645Z"
+                  fill="#2E3092"
+                />
+                <path
+                  d="M25.8407 9.13645C25.8064 6.93188 22.4952 6.91467 22.458 9.13645C22.498 11.3582 25.8063 11.341 25.8407 9.13645Z"
+                  fill="#2E3092"
+                />
+                <path
+                  d="M58.5301 22.5838C57.6179 22.8669 56.6743 23.0099 55.6821 23.0099L5.3195 23.007C3.88697 23.0013 2.54872 22.7154 1.25915 22.1406C0.472826 23.0528 0.000976562 24.2508 0.000976562 25.5548V33.2181C0.000976562 36.1461 2.39426 38.5366 5.31943 38.5366H28.9266V44.7529H26.2673C24.5203 44.7529 23.1191 46.1683 23.1191 47.9011C23.2192 48.0498 9.2967 47.904 9.29084 47.9526C7.23779 47.9783 7.20917 51.0664 9.29084 51.1008H23.1191C23.0963 52.8621 24.5059 54.2919 26.2673 54.2919H34.7337C36.498 54.2947 37.9076 52.8593 37.8819 51.0979H51.7153C53.7712 51.0693 53.797 47.9926 51.7153 47.9497H37.8819C37.9076 46.2026 36.498 44.7529 34.7337 44.7558H32.0745V38.5394H55.6816C58.6096 38.5394 61.0001 36.1461 61.0001 33.221V25.5576C61.0001 24.2509 60.5283 23.0556 59.7419 22.1435C59.3473 22.3322 58.9389 22.4752 58.5301 22.5838ZM46.4432 26.5956H52.6281C53.4945 26.5956 54.2007 27.3047 54.2007 28.1682C54.2007 29.0346 53.4916 29.7409 52.6281 29.7409H46.4432C44.3787 29.7008 44.3759 26.6327 46.4432 26.5927V26.5956ZM46.4432 31.8054H52.6281C54.6925 31.834 54.6982 34.9136 52.6281 34.9536H46.4432C44.3759 34.9164 44.3759 31.834 46.4432 31.8054ZM24.1398 25.9351C30.5391 26.1038 30.522 35.4512 24.1398 35.6144C17.7634 35.4085 17.749 26.1437 24.1398 25.9351ZM11.6298 25.9351C18.0291 26.1038 18.012 35.4512 11.6298 35.6144C5.2534 35.4085 5.23905 26.1437 11.6298 25.9351Z"
+                  fill="#2E3092"
+                />
+                <path
+                  d="M11.6296 32.4686C13.8571 32.4371 13.8742 29.1203 11.6296 29.0859C9.40784 29.126 9.42504 32.4343 11.6296 32.4686Z"
+                  fill="#2E3092"
+                />
+                <path
+                  d="M24.1394 32.4686C26.3669 32.4371 26.3811 29.1203 24.1394 29.0859C21.9176 29.126 21.9348 32.4343 24.1394 32.4686Z"
+                  fill="#2E3092"
+                />
+              </svg>
+            ),
+          },
+          {
+            title: null,
+            subTitle: "Backup & recovery workflows for control and compute layers",
+            svg: (
+              <svg
+                width="61"
+                height="55"
+                viewBox="0 0 61 55"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M55.6782 0H5.31845C2.39043 0 0 2.37616 0 5.31845V12.9672C0 15.9095 2.39329 18.2856 5.31845 18.2856H55.6811C58.6091 18.2856 60.9995 15.9095 60.9995 12.9672V5.31845C60.9995 2.37616 58.6062 0 55.6811 0H55.6782ZM6.7971 9.14127C7.00584 2.74765 16.2729 2.76771 16.4764 9.14127C16.2705 15.5177 7.00572 15.532 6.7971 9.14127ZM19.31 9.14127C19.5187 2.74765 28.7858 2.76771 28.9893 9.14127C28.7834 15.5177 19.5186 15.532 19.31 9.14127ZM44.8672 11.7405C44.8672 10.8741 45.5763 10.1678 46.4398 10.1678H52.6247C53.4911 10.1678 54.1973 10.877 54.1973 11.7405C54.1973 12.6069 53.4882 13.3131 52.6247 13.3131H46.4398C45.5734 13.3131 44.8672 12.604 44.8672 11.7405ZM52.6279 8.12049H46.443C45.5766 8.12049 44.8704 7.41136 44.8704 6.54785C44.8704 5.68145 45.5795 4.97521 46.443 4.97521H52.6279C54.6924 5.01524 54.6952 8.08338 52.6279 8.12342V8.12049Z"
+                  fill="#2E3092"
+                />
+                <path
+                  d="M13.329 9.13645C13.2946 6.93188 9.98347 6.91467 9.94629 9.13645C9.98632 11.3582 13.2946 11.341 13.329 9.13645Z"
+                  fill="#2E3092"
+                />
+                <path
+                  d="M25.8407 9.13645C25.8064 6.93188 22.4952 6.91467 22.458 9.13645C22.498 11.3582 25.8063 11.341 25.8407 9.13645Z"
+                  fill="#2E3092"
+                />
+                <path
+                  d="M58.5301 22.5838C57.6179 22.8669 56.6743 23.0099 55.6821 23.0099L5.3195 23.007C3.88697 23.0013 2.54872 22.7154 1.25915 22.1406C0.472826 23.0528 0.000976562 24.2508 0.000976562 25.5548V33.2181C0.000976562 36.1461 2.39426 38.5366 5.31943 38.5366H28.9266V44.7529H26.2673C24.5203 44.7529 23.1191 46.1683 23.1191 47.9011C23.2192 48.0498 9.2967 47.904 9.29084 47.9526C7.23779 47.9783 7.20917 51.0664 9.29084 51.1008H23.1191C23.0963 52.8621 24.5059 54.2919 26.2673 54.2919H34.7337C36.498 54.2947 37.9076 52.8593 37.8819 51.0979H51.7153C53.7712 51.0693 53.797 47.9926 51.7153 47.9497H37.8819C37.9076 46.2026 36.498 44.7529 34.7337 44.7558H32.0745V38.5394H55.6816C58.6096 38.5394 61.0001 36.1461 61.0001 33.221V25.5576C61.0001 24.2509 60.5283 23.0556 59.7419 22.1435C59.3473 22.3322 58.9389 22.4752 58.5301 22.5838ZM46.4432 26.5956H52.6281C53.4945 26.5956 54.2007 27.3047 54.2007 28.1682C54.2007 29.0346 53.4916 29.7409 52.6281 29.7409H46.4432C44.3787 29.7008 44.3759 26.6327 46.4432 26.5927V26.5956ZM46.4432 31.8054H52.6281C54.6925 31.834 54.6982 34.9136 52.6281 34.9536H46.4432C44.3759 34.9164 44.3759 31.834 46.4432 31.8054ZM24.1398 25.9351C30.5391 26.1038 30.522 35.4512 24.1398 35.6144C17.7634 35.4085 17.749 26.1437 24.1398 25.9351ZM11.6298 25.9351C18.0291 26.1038 18.012 35.4512 11.6298 35.6144C5.2534 35.4085 5.23905 26.1437 11.6298 25.9351Z"
+                  fill="#2E3092"
+                />
+                <path
+                  d="M11.6296 32.4686C13.8571 32.4371 13.8742 29.1203 11.6296 29.0859C9.40784 29.126 9.42504 32.4343 11.6296 32.4686Z"
+                  fill="#2E3092"
+                />
+                <path
+                  d="M24.1394 32.4686C26.3669 32.4371 26.3811 29.1203 24.1394 29.0859C21.9176 29.126 21.9348 32.4343 24.1394 32.4686Z"
+                  fill="#2E3092"
+                />
+              </svg>
+            ),
+          },
         ]}
         heading="Make Day-2 operations painless"
         description="Once deployed, OpenStack must scale, patch, and recover without complexity. Calsoft sets up your environment to support:"
@@ -444,12 +530,12 @@ export default function Page() {
               subTitle: "improvement in tenant-level isolation and policy control",
             },
             {
-              title: "Higher platform",
-              subTitle: "reliability through standardized, tested provisioning",
+              title: "3x better scalability",
+              subTitle: "via modular node design and autoscaling integrations",
             },
             {
-              title: "Audit-ready",
-              subTitle: "logs and rollback through Git-based version control",
+              title: "Significant TCO reduction",
+              subTitle: "compared to vendor-locked private cloud platforms",
             },
           ],
         }}
@@ -457,12 +543,12 @@ export default function Page() {
         buttonText="Request ROI"
       />
       <WhyCalsoft
-        sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
+        sectionDescription=""
         buttonText="Download One Pager"
-        title="Why enterprises prefer our IaC model"
+        title="Why Calsoft is trusted for OpenStack engineering"
         heading="How to Start"
         data={{
-          tableHeadings: ["Capability", "Calsoft Container Services", "DIY or Siloed Implementations"],
+          tableHeadings: ["Capability", "Calsoft OpenStack Services", "Generic OpenStack Integrators"],
           tableContent: [
             {
               name: "Architecture tailored to workloads",

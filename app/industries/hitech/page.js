@@ -35,7 +35,7 @@ const Page = () => {
         <br />
         Calsoft helps you build your ‘ideal’ products/ software from planning to
         deployment at lower costs, higher quality and faster go-to-market.`,
-    buttonText: "What We Do",
+    buttonText: "Talk to Our Experts",
     image: BackgroundImage,
   };
   const Gradientheading = " All our intelligence";
@@ -43,12 +43,13 @@ const Page = () => {
   const [activeTab, setActiveTab] = useState("Journey");
 
   const navItems = [
-    "Journey",
-    "Product",
-    "Platform",
-    "Modernization",
-    "Case Studies",
-    "Services",
+    "Overview",
+    "Software & Product Engineering",
+    "Cloud & Platform Engineering",
+    "AI-Powered Modernization",
+    "Success Stories",
+    "Industry Partners",
+    "Key Services",
   ];
   const icons = [
     {

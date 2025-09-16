@@ -19,10 +19,11 @@ export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
     "Pulse Check",
-    "Smart Packaging",
-    "Orchestration at Scale",
+    "Modular Foundation",
+    "CI/CD Integration",
     "Real-World Impact",
     "Where It Fits",
+    "Why Calsoft",
     "How to Start",
   ];
   return (
@@ -189,10 +190,10 @@ export default function Page() {
             title: null,
             subTitle: "Environment-specific parameterization and state management",
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
+          {
+            title: null,
+            subTitle: "Secure storage of secrets, backend states, and versioning",
+          },
           // {
           //   title:
           //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
@@ -230,6 +231,10 @@ export default function Page() {
             title: null,
             desc: "Drift detection and reconciliation",
           },
+                    {
+            title: null,
+            desc: "Automated plan and apply jobs on code merges",
+          },
         ]}
         bottomContent={{
           text: null,
@@ -238,7 +243,7 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Streamline infra lifecycle by 50% with governance. "
+          title="Accelerate deployments by 60% with IaC scripts."
           img={img}
         />
       </div>
@@ -253,24 +258,24 @@ export default function Page() {
           },
           rightSideContent: [
             {
+              title: "3x faster infra rollout cycles",
+              subTitle: "with reusable templates",
+            },
+            {
               title: "Zero-drift",
               subTitle: "across environments using automated state reconciliation",
             },
             {
-              title: "3x faster",
-              subTitle: "infra rollout cycles with reusable templates",
+              title: "50% fewer support tickets",
+              subTitle: "related to configuration mismatches",
             },
             {
-              title: "50% fewer",
-              subTitle: "support tickets related to configuration mismatches",
+              title: "Audit-ready logs and rollback",
+              subTitle: "through Git-based version control",
             },
             {
-              title: "Higher platform",
-              subTitle: "reliability through standardized, tested provisioning",
-            },
-            {
-              title: "Audit-ready",
-              subTitle: "logs and rollback through Git-based version control",
+              title: "Higher platform reliability",
+              subTitle: "through standardized, tested provisioning",
             },
           ],
         }}
@@ -458,12 +463,12 @@ export default function Page() {
       />
 
       <WhyCalsoft
-        sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
+        sectionDescription=""
         buttonText="Download One Pager"
         title="Why enterprises prefer our IaC model"
         heading="How to Start"
         data={{
-          tableHeadings: ["Capability", "Calsoft Container Services", "DIY or Siloed Implementations"],
+          tableHeadings: ["Capability", "Calsoft IaC Services", "Basic In-House Scripts"],
           tableContent: [
             {
               name: "Multi-cloud IaC Expertise",
@@ -495,10 +500,10 @@ export default function Page() {
       />
       <FirstStep
         headerContent={{
-          title1: "Where It Fits",
+          title1: "How to Start",
           title2: null,
           description:
-            "When containers become a necessity",
+            "Here’s how Calsoft enables IaC adoption and scale:",
         }}
         guessworkData={[
           {
@@ -528,6 +533,7 @@ export default function Page() {
           },
         ]}
         Component={Guesswork}
+        output = "IaC Blueprint + Module Library + GitOps Integration Guide"
       />
       <ContactSecDataAi
         lightContent={

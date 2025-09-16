@@ -131,7 +131,7 @@ export const InfraSection = ({
               >
                 Business Impact:
               </motion.h3>
-              <ul className="list-disc list-inside text-[#545353] text-[14px] space-y-1 marker:text-[#ED1C24]">
+              <ul className="list-disc list-inside text-[#545353] text-[16px] space-y-1 marker:text-[#ED1C24]">
                 {businessImpact.map((item, index) => (
                   <motion.li
                     initial={{ x: -50, opacity: 0 }}
@@ -307,7 +307,7 @@ export const ChallengeToSolution = ({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-xl text-center md:text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text  text-transparent"
+            className="text-xl text-center md:text-[31px] font-semibold bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_33%)] bg-clip-text  text-transparent"
           >
             {title}
             <span className="text-black font-semibold px-1">{blackTitle}</span>

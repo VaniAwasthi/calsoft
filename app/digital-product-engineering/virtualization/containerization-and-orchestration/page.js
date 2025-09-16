@@ -18,10 +18,11 @@ import Agility from "@/app/component/infra/Agility";
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
+    "Pulse Check",
+    "Smart Packaging",
+    "Orchestration at Scale",
+    "Real-World Impact",
+    "Where It Fits",
     "Why Calsoft",
     "How to Start",
   ];
@@ -37,13 +38,14 @@ export default function Page() {
         activeTab={activeTab}
       />
       <WhyItMatters
-        title="What’s broken in your current docs?"
-        desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
+        heading="Pulse Check"
+        title="Why legacy infra struggles in modern delivery"
+        desc="While container adoption has surged, many teams still face:"
         buttonText="Download Case Study"
         data={[
           {
-            title: "Disorganized knowledge base",
-            desc: "with versioning conflicts",
+            title: null,
+            desc: "Inconsistent environments between dev, test, and production",
             icon: (
               <svg
                 width="52"
@@ -60,8 +62,8 @@ export default function Page() {
             ),
           },
           {
-            title: "Outdated diagrams, configs, and API references",
-            desc: "post-release",
+            title: null,
+            desc: "Heavy reliance on monolithic applications",
             icon: (
               <svg
                 width="58"
@@ -80,8 +82,8 @@ export default function Page() {
             ),
           },
           {
-            title: "Scattered ownership",
-            desc: "between tech writers, engineers, and product teams",
+            title: null,
+            desc: "Inefficient CI/CD pipelines without container orchestration",
             icon: (
               <svg
                 width="59"
@@ -100,8 +102,8 @@ export default function Page() {
             ),
           },
           {
-            title: "Hard-to-maintain compliance documents",
-            desc: "for audits and certifications",
+            title: null,
+            desc: "Poor observability and debugging in microservice deployments",
             icon: (
               <svg
                 width="52"
@@ -138,8 +140,8 @@ export default function Page() {
             ),
           },
           {
-            title: "Zero searchability or modular reuse",
-            desc: "across platforms",
+            title: null,
+            desc: "Manual scaling and recovery challenges under load",
             icon: (
               <svg
                 width="47"
@@ -166,40 +168,41 @@ export default function Page() {
         ]}
       />
       <IntelligentPlanning
-        heading="Governance that starts at provisioning"
-        description="Calsoft designs end-to-end VM lifecycle controls — from request to retirement — backed by automation, tagging, and policy."
+        heading="Modular apps = faster delivery"
+        description="We help modernize your application estate through container-first design with tools and governance that match your environment."
         data={[
           {
             title: null,
-            subTitle: "VM creation approval workflows with owner tagging",
+            subTitle: "Containerization of monolithic and distributed workloads",
           },
           {
             title: null,
-            subTitle: "Policy-based provisioning aligned to cost center, region, or app",
+            subTitle: "Dockerfile standardization and image optimization",
           },
           {
             title: null,
-            subTitle: "Resource allocation controls (CPU, memory, IOPS thresholds)",
-          },
-          {
-            title: "Lifecycle tagging: ",
-            subTitle: "environment, owner, expiration, purpose",
+            subTitle: "Container security hardening (non-root users, image scanning)",
           },
           {
             title: null,
-            subTitle: "Idle, aged, or orphaned asset detection and clean-up automation",
+            subTitle: "CI/CD-integrated image pipelines",
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
+          {
+            title: null,
+            subTitle: "Internal registry setup and access controls",
+          },
+          {
+            title: null,
+            subTitle: "Hybrid & edge deployment container readiness",
+          },
           // {
           //   title:
           //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
           //   subTitle: null,
           // },
         ]}
-        title="Structured Lifecycle"
+        title="Smart Packaging"
+        bottomContent={null}
       />
       <RealWorldImpact buttonText={null}
         title="Modular apps = faster delivery"
@@ -233,7 +236,7 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Streamline infra lifecycle by 50% with governance. "
+          title="Deploy containers 3x faster with orchestration tools."
           img={img}
         />
       </div>

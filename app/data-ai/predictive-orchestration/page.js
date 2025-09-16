@@ -24,9 +24,8 @@ export default function Page() {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Harness artificial intelligence to {""}
+            Predict incidents 70% faster with AI observability.
             <br className="hidden md:block" />
-            anticipate, adapt, and boost business
           </>
         }
         buttonText="Book a Meeting"

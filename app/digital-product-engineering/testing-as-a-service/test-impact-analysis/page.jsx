@@ -109,7 +109,7 @@ const Page = () => {
         }}
         bookMeetingData={{
           title:
-            "Want faster, leaner QA cycles? Let’s walk you through how our Test Impact Analysis",
+            "Reduce test cycles by 40% with smart analysis.",
           buttonText: "Book a Meeting",
           onButtonClicked:()=>showHubSpotForm("book-a-meeting")
           

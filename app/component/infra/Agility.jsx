@@ -38,8 +38,8 @@ export default function Agility({
     ],
   },
   bookMeetingData = {
-    title: "Our roadmap-led cloud transformation for a global ISV reduced their cloud infra costs by 38% within 4 months, while improving scalability for 5x traffic.",
-    buttonText: "Download Solution Report",
+    title: "Build scalable infra plans with 40% cost predictability.",
+    buttonText: "Book a Meeting",
     onButtonClicked:()=>showHubSpotForm("book-a-meeting")
   },
   buttonText = "Download One Pager",

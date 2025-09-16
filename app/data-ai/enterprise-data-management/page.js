@@ -66,9 +66,8 @@ const page = () => {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Design intelligent data pipelines
-            <br className="hidden md:block px-1" /> that drive faster insights
-            and integration
+            Increase data integrity by 80% with automation.
+            <br className="hidden md:block px-1" />
           </>
         }
         buttonText="Book a Meeting"
@@ -79,7 +78,7 @@ const page = () => {
       <CostOptimizedSecTechnicalConsulting />
       <ContactSecDataAi
         BoldContent="Calsoft can show you how"
-        lightContent="Innovate and grow with future-ready data pipelines"
+        lightContent="Simplify complexity with end-to-end enterprise data management."
         link="#"
       />
     </>

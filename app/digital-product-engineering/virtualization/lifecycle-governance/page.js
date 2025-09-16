@@ -17,10 +17,10 @@ import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_B
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
+    "Pulse Check",
+    "Structured Lifecycle",
+    "Real-World Impact",
+    "Where It Fits",
     "Why Calsoft",
     "How to Start",
   ];
@@ -36,13 +36,14 @@ export default function Page() {
         activeTab={activeTab}
       />
       <WhyItMatters
-        title="What’s broken in your current docs?"
-        desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
+        title="Why virtual environments spiral out of control"
+        heading="Pulse Check"
+        desc="Without governance, virtual machines and assets multiply uncontrollably — resulting in:"
         buttonText="Download Case Study"
         data={[
           {
-            title: "Disorganized knowledge base",
-            desc: "with versioning conflicts",
+            title: "VM sprawl with no ownership or purpose",
+            desc: null,
             icon: (
               <svg
                 width="52"
@@ -59,8 +60,8 @@ export default function Page() {
             ),
           },
           {
-            title: "Outdated diagrams, configs, and API references",
-            desc: "post-release",
+            title: "Stale and unused resources",
+            desc: "consuming compute and budget",
             icon: (
               <svg
                 width="58"
@@ -79,8 +80,8 @@ export default function Page() {
             ),
           },
           {
-            title: "Scattered ownership",
-            desc: "between tech writers, engineers, and product teams",
+            title: "Shadow IT",
+            desc: "bypassing security and audit policies",
             icon: (
               <svg
                 width="59"
@@ -99,8 +100,8 @@ export default function Page() {
             ),
           },
           {
-            title: "Hard-to-maintain compliance documents",
-            desc: "for audits and certifications",
+            title: "Disconnected lifecycle processes",
+            desc: "between teams",
             icon: (
               <svg
                 width="52"
@@ -137,8 +138,8 @@ export default function Page() {
             ),
           },
           {
-            title: "Zero searchability or modular reuse",
-            desc: "across platforms",
+            title: "No centralized visibility into utilization, renewals, or expiry",
+            desc: null,
             icon: (
               <svg
                 width="47"
@@ -181,24 +182,29 @@ export default function Page() {
             subTitle: "Resource allocation controls (CPU, memory, IOPS thresholds)",
           },
           {
-            title: "Lifecycle tagging: ",
-            subTitle: "environment, owner, expiration, purpose",
+            title: null,
+            subTitle: "Lifecycle tagging: environment, owner, expiration, purpose",
           },
           {
             title: null,
             subTitle: "Idle, aged, or orphaned asset detection and clean-up automation",
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: null,
+            subTitle: "End-of-life tracking with alerts and escalation triggers",
+          },
+          {
+            title:
+              null,
+            subTitle: "Reporting integration with FinOps, GRC, and cloud-native tools",
+          },
         ]}
         title="Structured Lifecycle"
+        bottomContent={{
+          text: "We transform VM stacks from free-for-all deployments into controlled environments.",
+          btnText: "Request POC",
+          buttonClick: () => showHubSpotForm("Talk_to_Expert"),
+        }}
       />
       <RealWorldImpact buttonText={null}
         title="From virtual chaos to operational clarity"
@@ -232,11 +238,12 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Streamline infra lifecycle by 50% with governance. "
+          title="Streamline infra lifecycle by 50% with governance."
           img={img}
         />
       </div>
       <UseCases
+        title="Where It Fits"
         data={[
           {
             title: "You manage",
@@ -415,11 +422,11 @@ export default function Page() {
         }}
       />
       <WhyCalsoft
-        sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
+        sectionDescription=""
         buttonText="Download One Pager"
-        title="Competitive EdWhy Calsoft’s model works betterge"
+        title="Why Calsoft’s model works better"
         data={{
-          tableHeadings: ["Capability", "Calsoft", "Manual or Script-Only Models"],
+          tableHeadings: ["Capability", "Calsoft Lifecycle Governance", "Manual or Script-Only Models"],
           tableContent: [
             {
               name: "End-to-End VM Lifecycle Mapping",

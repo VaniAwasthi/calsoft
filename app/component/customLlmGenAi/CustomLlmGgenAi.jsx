@@ -24,7 +24,7 @@ export const CustomBanner = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "benefits",
+    "Benefits",
     "LLM tuning",
     "RAG design",
     "Deployment",

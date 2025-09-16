@@ -38,7 +38,7 @@ export default function Page() {
       <SreSec />
       <ContactSecData
         BoldContent="Protect endpoints, identities, and networks with multi-layered security strategies"
-        lightContent="Calsoft"
+        lightContent=""
         link="#"
       />
     </>

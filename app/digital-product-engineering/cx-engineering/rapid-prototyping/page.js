@@ -29,8 +29,7 @@ export default function Page() {
           backgroundImage={BannerwithButtonBg}
           title={
             <>
-              Drive conversions, adoption, and satisfaction with smarter,
-              faster, context-aware experiences built for today’s users.
+              Validate UX ideas in 48 hours with prototypes.
             </>
           }
           buttonText="Book a meeting"

@@ -58,6 +58,7 @@ export const BlogSection = () => {
     <>
       <section id="case-studies" className="md:py-10">
         <div className="container mx-auto px-4 xl:px-20">
+          <h1 className="text-4xl font-bold">Latest Case Studies</h1>
           <div className="relative w-full py-8">
             <Swiper
               className="custom-blog-swiper"

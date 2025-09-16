@@ -193,15 +193,15 @@ export default function Page() {
             subTitle: "segmentation with microsegmentation",
             curved: true,
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: "Dynamic QoS",
+            subTitle: "and traffic shaping based on workload patterns",
+          },
+          {
+            title:
+              "SD-WAN for branch",
+            subTitle: "or edge site control",
+          },
         ]}
         title="Network Blueprint"
         bottomContent={null}
@@ -232,6 +232,10 @@ export default function Page() {
             title: "Policy-based",
             desc: "access control linked with IAM/LDAP",
           },
+          {
+            title: "Network-as-Code",
+            desc: "enablement with GitOps workflows",
+          },
         ]}
         bottomContent={null}
       />
@@ -246,8 +250,8 @@ export default function Page() {
         heading="When SDN isn’t just a buzzword — but a backbone"
         description=""
         bottomText={{
-          text: "Whether you run internal IT, SaaS support, or product operations — ",
-          bText: " intelligent ticketing is critical to scale.",
+          text: null,
+          bText: null,
         }}
         data={[
           {
@@ -426,7 +430,7 @@ export default function Page() {
         heading="How to Start"
         title="What makes our SDN architecture different"
         data={{
-          tableHeadings: ["Capability", "Calsoft SDS Delivery", "Generic Network Setup"],
+          tableHeadings: ["Capability", "Calsoft SDN Architecture", "Generic Network Setup"],
           tableContent: [
             {
               name: "Controller-based network logic",
