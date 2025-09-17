@@ -27,9 +27,9 @@ environments.`,
   const navItems = [
     "Benefits",
     "Architecture",
-    "Mitigation",
-    "Connectivity",
-    "Cost-optimized",
+    "Sanity",
+    "Ecosystem",
+    "Recovery",
   ];
   return (
     <>

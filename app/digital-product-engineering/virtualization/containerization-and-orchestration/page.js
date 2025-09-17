@@ -20,10 +20,11 @@ import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFits";
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
+    "Pulse Check",
+    "Smart Packaging",
+    "Orchestration at Scale",
+    "Real-World Impact",
+    "Where It Fits",
     "Why Calsoft",
     "How to Start",
   ];
@@ -68,35 +69,34 @@ export default function Page() {
         Component={Containerization}
       />
       <IntelligentPlanning
-        heading="Governance that starts at provisioning"
-        description="Calsoft designs end-to-end VM lifecycle controls — from request to retirement — backed by automation, tagging, and policy."
+        heading="Modular apps = faster delivery"
+        description="We help modernize your application estate through container-first design with tools and governance that match your environment."
         data={[
           {
             title: null,
-            subTitle: "VM creation approval workflows with owner tagging",
+            subTitle:
+              "Containerization of monolithic and distributed workloads",
+          },
+          {
+            title: null,
+            subTitle: "Dockerfile standardization and image optimization",
           },
           {
             title: null,
             subTitle:
-              "Policy-based provisioning aligned to cost center, region, or app",
+              "Container security hardening (non-root users, image scanning)",
           },
           {
             title: null,
-            subTitle:
-              "Resource allocation controls (CPU, memory, IOPS thresholds)",
-          },
-          {
-            title: "Lifecycle tagging: ",
-            subTitle: "environment, owner, expiration, purpose",
+            subTitle: "CI/CD-integrated image pipelines",
           },
           {
             title: null,
-            subTitle:
-              "Idle, aged, or orphaned asset detection and clean-up automation",
+            subTitle: "Internal registry setup and access controls",
           },
           // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
+          //   title: null,
+          //   subTitle: "Hybrid & edge deployment container readiness",
           // },
           // {
           //   title:
@@ -104,7 +104,8 @@ export default function Page() {
           //   subTitle: null,
           // },
         ]}
-        title="Structured Lifecycle"
+        title="Smart Packaging"
+        bottomContent={null}
       />
       <RealWorldImpact
         buttonText={null}
@@ -139,7 +140,7 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Streamline infra lifecycle by 50% with governance. "
+          title="Deploy containers 3x faster with orchestration tools."
           img={img}
         />
       </div>

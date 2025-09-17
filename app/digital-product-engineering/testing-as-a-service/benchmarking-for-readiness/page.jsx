@@ -114,7 +114,7 @@ const Page = () => {
         }}
         bookMeetingData={{
           title:
-            "Get a customized readiness scorecard aligned to your architecture and KPIs",
+            "Achieve 100% release readiness through benchmarks.",
           buttonText: "Book a Meeting",
           onButtonClicked:()=>showHubSpotForm("book-a-meeting")
         }}

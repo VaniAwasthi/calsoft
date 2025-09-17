@@ -29,7 +29,7 @@ export default function Page() {
       <HeroSection
         title="Hyperconverged. Highly Capable."
         description="Streamlined HCI that merges compute, storage, and networking into one agile fabric."
-        buttonText="Request Workshop"
+        buttonText="Request Readiness Assessment"
         heroImage={Img}
         navItems={navItems}
         setActiveTab={setActiveTab}
@@ -193,17 +193,25 @@ export default function Page() {
             subTitle: "for distributed enterprises",
             curved: true,
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: "Data locality optimization",
+            subTitle: "and deduplication tuning",
+            curved: true,
+          },
+          {
+            title:
+              "Integration with container",
+            subTitle: "stacks (K8s/OpenShift) via CSI plugins",
+            curved: true,
+          },
+          {
+            title: "Centralized monitoring",
+            subTitle: "and self-healing automation",
+            curved: true,
+          },
         ]}
         title="Core Offerings"
+        buttonText="Request POC"
         bottomContent={null}
       />
       <RealWorldImpact
@@ -232,6 +240,14 @@ export default function Page() {
             title: "Real-time IOPS,",
             desc: " CPU, and memory observability",
           },
+          {
+            title: "Identity and access",
+            desc: "integration with LDAP, AD, or IAM",
+          },
+          {
+            title: "Optional GPU",
+            desc: "or high-performance compute (HPC) enablement",
+          },
         ]}
         bottomContent={null}
       />
@@ -246,8 +262,8 @@ export default function Page() {
         heading="Where cost, speed, and performance converge"
         description=""
         bottomText={{
-          text: "Whether you run internal IT, SaaS support, or product operations — ",
-          bText: " intelligent ticketing is critical to scale.",
+          text: null,
+          bText: null,
         }}
         data={[
           {

@@ -16,10 +16,10 @@ import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_B
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
+    "Pulse Check",
+    "Structured Lifecycle",
+    "Real-World Impact",
+    "Where It Fits",
     "Why Calsoft",
     "How to Start",
   ];
@@ -59,25 +59,32 @@ export default function Page() {
               "Resource allocation controls (CPU, memory, IOPS thresholds)",
           },
           {
-            title: "Lifecycle tagging: ",
-            subTitle: "environment, owner, expiration, purpose",
+            title: null,
+            subTitle:
+              "Lifecycle tagging: environment, owner, expiration, purpose",
           },
           {
             title: null,
             subTitle:
               "Idle, aged, or orphaned asset detection and clean-up automation",
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: null,
+            subTitle:
+              "End-of-life tracking with alerts and escalation triggers",
+          },
+          {
+            title: null,
+            subTitle:
+              "Reporting integration with FinOps, GRC, and cloud-native tools",
+          },
         ]}
         title="Structured Lifecycle"
+        bottomContent={{
+          text: "We transform VM stacks from free-for-all deployments into controlled environments.",
+          btnText: "Request POC",
+          buttonClick: () => showHubSpotForm("Talk_to_Expert"),
+        }}
       />
       <RealWorldImpact
         buttonText={null}
@@ -112,11 +119,12 @@ export default function Page() {
       />
       <div className="container">
         <BookMeeting
-          title="Streamline infra lifecycle by 50% with governance. "
+          title="Streamline infra lifecycle by 50% with governance."
           img={img}
         />
       </div>
       <UseCases
+        title="Where It Fits"
         data={[
           {
             title: "You manage",
@@ -295,9 +303,9 @@ export default function Page() {
         }}
       />
       <WhyCalsoft
-        sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
+        sectionDescription=""
         buttonText="Download One Pager"
-        title="Competitive EdWhy Calsoft’s model works betterge"
+        title="Why Calsoft’s model works better"
         data={{
           tableHeadings: [
             "Capability",

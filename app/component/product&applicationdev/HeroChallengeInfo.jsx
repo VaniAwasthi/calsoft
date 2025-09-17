@@ -37,18 +37,18 @@ with speed and precision.`,
   return (
     <>
       <BannerWithRightSec
-  heroBg={BackgroundImage}
-  title={slide.title}
-  description={slide.description}
-  rightImage={slide.rightImage}
-  buttonText={slide.buttonText}
-  buttonImage={ButtonImage}
-  hoverImage={ButtonImage}
-  rightSec={false}
-  buttonWidth="!w-[250px]"
-  buttonColor="#ED1C24"
-  onButtonClick={() => showHubSpotForm("product-and-application-development-download-datasheet")} // use correct class
-/>
+        heroBg={BackgroundImage}
+        title={slide.title}
+        description={slide.description}
+        rightImage={slide.rightImage}
+        buttonText={slide.buttonText}
+        buttonImage={ButtonImage}
+        hoverImage={ButtonImage}
+        rightSec={false}
+        buttonWidth="!w-[250px]"
+        buttonColor="#ED1C24"
+        onButtonClick={() => showHubSpotForm("product-and-application-development-download-datasheet")} // use correct class
+      />
       <Submenu
         navItems={navItems}
         activeTab={activeTab}

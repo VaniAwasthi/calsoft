@@ -6,10 +6,7 @@ import WhyItMatters, {
   HyperVision,
 } from "@/app/component/VirtualizationSolutions/WhyItMatters";
 import IntelligentPlanning from "@/app/component/testing/IntelligentPlanning";
-import UseCases from "@/app/component/sustenance/UseCases";
 import WhyCalsoft from "@/app/component/infra/WhyCalsoft";
-import FirstStep from "@/app/component/infra/FirstStep";
-import Guesswork from "@/app/component/sustenance/Guesswork";
 import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
@@ -23,10 +20,11 @@ export default function Page() {
   const navItems = [
     "Pulse Check",
     "Core-to-VM Licensing Efficiency",
-    "Automated Execution",
-    "Optimization-First",
+    "Licensing Efficiency",
     "Real-World Impact",
-    "Where It",
+    "Where It Fits",
+    "Why Calsoft",
+    "How to Start",
   ];
   return (
     <>
@@ -98,15 +96,14 @@ export default function Page() {
             title: null,
             subTitle: "VM placement hygiene to reduce fragmentation",
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: null,
+            subTitle: "Application-aware workload distribution",
+          },
+          {
+            title: null,
+            subTitle: "Automated rightsizing based on workload trends",
+          },
         ]}
         title="Core-to-VM"
         bottomContent={{
@@ -122,38 +119,42 @@ export default function Page() {
         cardData={[
           {
             title: null,
-            desc: "· Agentless discovery and migration tools (CloudEndure, Velostrata, Azure Migrate, etc.)",
+            desc: "Identify underused and unlicensed nodes",
           },
           {
             title: null,
-            desc: "· OS/Hypervisor-agnostic compatibility validation",
+            desc: "Consolidate VM sprawl onto fewer hosts",
           },
           {
             title: null,
-            desc: "· Storage migration with block-level sync",
+            desc: "Recommend migration plans to reduce socket/core-based licensing",
           },
           {
             title: null,
-            desc: " · Pre/post-migration performance benchmarking",
+            desc: "Compare open-source (KVM) or hybrid stack options",
           },
           {
             title: null,
-            desc: "· Rollback and fallback plans built into execution",
+            desc: "Validate usage per SKU against contracts",
+          },
+          {
+            title: null,
+            desc: "Assist with vSphere optimization and vCenter clean-up",
           },
         ]}
         bottomContent={{
-          text: null,
+          text: "We help you get more from what you already pay for — or transition smartly",
           btnText: "Download ROI Sheet",
         }}
       />
       <div className="container">
         <BookMeeting
-          title="Streamline infra lifecycle by 50% with governance. "
+          title="Improve virtualization performance by 35%."
           img={img}
         />
       </div>
 
-      <UseCases
+      {/* <UseCases
         title="Licensing Efficiency"
         data={[
           {
@@ -332,7 +333,7 @@ export default function Page() {
           text: null,
           bText: null,
         }}
-      />
+      /> */}
       <Agility
         data={{
           leftSideContent: {
@@ -370,7 +371,7 @@ export default function Page() {
       />
       <WhyCalsoft
         sectionDescription=""
-        title="What makes our approach intelligent"
+        title="Why Calsoft’s optimization model works"
         heading="How to Start"
         data={{
           tableHeadings: [

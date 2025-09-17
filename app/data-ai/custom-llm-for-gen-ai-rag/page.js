@@ -24,9 +24,8 @@ export default function Page() {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Customize, ground, and scale {""}
+            Deploy fine-tuned LLMs with 90% accuracy gains.
             <br className="hidden md:block px-1" />
-            enterprise-ready language models
           </>
         }
         buttonText="Book a Meeting"

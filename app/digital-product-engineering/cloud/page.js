@@ -26,13 +26,12 @@ const Page = () => {
       <ItInfraSec />
       <MultiCloudInfraSec />
       <CloudNativetInfraSec />
-    <BannerSection
-  backgroundImage={BannerwithButtonBg}
-  title="Become cloud-native for faster and collaborative DevOps + SRE – It’s
-time to adopt"
-  buttonText="Book a Meeting"
-  onButtonClick={() => showHubSpotForm("book-a-meeting")}
-/>
+      <BannerSection
+        backgroundImage={BannerwithButtonBg}
+        title="Accelerate cloud provisioning by 60% across environments."
+        buttonText="Book a Meeting"
+        onButtonClick={() => showHubSpotForm("book-a-meeting")}
+      />
       <CloudMigrationInfraSec />
       <CostInfraSec />
       <SREInfraSec />

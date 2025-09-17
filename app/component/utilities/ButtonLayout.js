@@ -24,7 +24,7 @@ export default function ButtonLayout({
         style={{ backgroundColor: hoverBgColor }}
       ></span>
 
-      <span className="relative z-10 font-redhat text-sm transition-colors duration-300 ease-in-out group-hover:text-[var(--hoverTextColor)]">
+      <span className="relative z-10 font-redhat text-base transition-colors duration-300 ease-in-out group-hover:text-[var(--hoverTextColor)]">
         {text}
       </span>
 

@@ -266,6 +266,10 @@ Can’t Ship Reliably."
           ],
         }}
         buttonClick2={()=>showHubSpotForm("smart-deployment-download-one-pager")}
+        bookMeetingData={{
+          title: "Enable deployment automation across hybrid environments.",
+          buttontext: "Book a Meeting",
+        }}
       />
       <HowToStart
         id="how-to-start"

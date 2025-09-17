@@ -17,10 +17,10 @@ import Img from "@/app/assets/DigitalEngineering/Sustaine/Sustenance_Banner_5.we
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
+    "Pulse Check",
+    "Engineered Approach",
+    "Real-World Impact",
+    "Where It Fits",
     "Why Calsoft",
     "How to Start",
   ];
@@ -188,10 +188,10 @@ export default function Page() {
             title: "High availability and DR planning",
             subTitle: "(active-active, failover, failback)",
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
+          {
+            title: "SLA-backed ops support",
+            subTitle: "integrated with your CI/CD and observability tools",
+          },
           // {
           //   title:
           //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
@@ -230,10 +230,14 @@ export default function Page() {
             desc: "due to predictable recovery behavior",
           },
         ]}
+        bottomContent={{
+          text: "We embed continuity into the system — not just into the SOP.",
+          btnText: "Download ROI Sheet",
+        }}
       />
       <div className="container">
         <BookMeeting
-          title="Reduce MTTR by 60%. Explore how in a quick call. "
+          title="Maintain 99.99% SLA-backed service continuity."
           img={img}
         />
       </div>
@@ -417,10 +421,11 @@ export default function Page() {
         ]}
       />
       <WhyCalsoft
-        sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
+        sectionDescription=""
+        title="Why choose Calsoft for uptime engineering"
         buttonText="Download One Pager"
         data={{
-          tableHeadings: ["Capability", "Calsoft", "DIY or Ad-hoc Teams"],
+          tableHeadings: ["Capability", "Calsoft Uptime Continuity", "Reactive Monitoring Models"],
           tableContent: [
             {
               name: "Automated Pre-Deployment Checks",

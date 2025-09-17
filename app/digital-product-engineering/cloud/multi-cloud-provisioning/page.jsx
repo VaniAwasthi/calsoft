@@ -192,7 +192,7 @@ multi-cloud provisioning approach — minimizing shadow IT and maximizing agilit
         }}
         bookMeetingData={{
           title:
-            "Book a 30-minute call to stop 80% of your cloud spend from going to waste.",
+            "Provision cloud across vendors 3x faster.",
           buttonText: "Book a Meeting",
               onButtonClicked:()=>showHubSpotForm("book-a-meeting")
           

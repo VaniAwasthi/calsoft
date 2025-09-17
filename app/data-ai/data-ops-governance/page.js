@@ -25,11 +25,11 @@ export default function Page() {
         backgroundImage={BannerwithButtonBg}
         title={
           <p className="px-1">
-            Turn compliance into a {""}
+            Improve data quality by 60% through governance.
             <br className="hidden md:block px-2" />
-            competitive advantage.
+           
             <br className="hidden md:block " />
-            <b> Let’s Talk!</b>
+            <b></b>
           </p>
         }
         buttonText="Book a Meeting"

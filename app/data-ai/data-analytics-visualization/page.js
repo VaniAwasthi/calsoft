@@ -25,9 +25,8 @@ export default function Page() {
         backgroundImage={BannerwithButtonBg}
         title={
           <>
-            Transform data into decisive {""}
+            Improve KPI visibility by 3x with live dashboards.
             <br className="hidden md:block" />
-            action – with us
           </>
         }
         buttonText="Book a Meeting"
