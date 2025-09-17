@@ -6,7 +6,6 @@ import WhatWeOffer, { RequestDemo } from "../../../component/product-application
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
-import ArchitectureSprint from "../../../component/product-application-development/ArchitectureSprint";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import ArchitectureIdeation from "../../../component/product-application-development/ArchitectureIdeationMatters";
 import img from "@/app/assets/DigitalEngineering/product-app/Architecture-and-Ideation.webp";
@@ -34,7 +33,7 @@ const Page = () => {
         activeTab={activeTab}
         heroImage={img}
         buttonText2=""
-        buttonClicked={()=>showHubSpotForm("Get-Architechure-Rediness-Score")}
+        buttonClicked={() => showHubSpotForm("Get-Architechure-Rediness-Score")}
       />
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
@@ -42,7 +41,7 @@ const Page = () => {
         buttonText="Get in Touch"
         MainComponenent={ArchitectureIdeation}
         id="why-it-matters"
-        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
         // contentClass="w-[90%]"
       />
       <WhatWeOffer
@@ -75,8 +74,7 @@ const Page = () => {
             },
             {
               title: "100%",
-              subTitle:
-                "cloud readiness with reusable components",
+              subTitle: "cloud readiness with reusable components",
             },
             {
               title: "3X",
@@ -84,7 +82,9 @@ const Page = () => {
             },
           ],
         }}
-        buttonClick2={()=>showHubSpotForm("architecture-ideation-download-one-pager")}
+        buttonClick2={() =>
+          showHubSpotForm("architecture-ideation-download-one-pager")
+        }
       />
       <HowToStart
         headerContent={{
@@ -93,7 +93,9 @@ const Page = () => {
             "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
         }}
         id="how-to-start"
-        buttonClick2={()=>showHubSpotForm("quality-engineering-download-one-pager")}
+        buttonClick2={() =>
+          showHubSpotForm("quality-engineering-download-one-pager")
+        }
       />
       <Steps />
       {/* <ArchitectureSprint /> */}

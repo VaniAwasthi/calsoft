@@ -64,8 +64,8 @@ export default function MobileDevelpmentMatters() {
                   y2="237.712"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0.346154" stop-color="#2E3092" />
-                  <stop offset="1" stop-color="#BA0007" />
+                  <stop offset="0.346154" stopColor="#2E3092" />
+                  <stop offset="1" stopColor="#BA0007" />
                 </linearGradient>
               </defs>
             </svg>
@@ -98,8 +98,8 @@ export default function MobileDevelpmentMatters() {
                   y2="0.777344"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#BA0007" />
-                  <stop offset="0.548077" stop-color="#2E3092" />
+                  <stop stopColor="#BA0007" />
+                  <stop offset="0.548077" stopColor="#2E3092" />
                 </linearGradient>
               </defs>
             </svg>
@@ -130,8 +130,8 @@ export default function MobileDevelpmentMatters() {
                   y2="246.796"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#2E3092" />
-                  <stop offset="1" stop-color="#BA0007" />
+                  <stop stopColor="#2E3092" />
+                  <stop offset="1" stopColor="#BA0007" />
                 </linearGradient>
               </defs>
             </svg>
@@ -165,8 +165,8 @@ export default function MobileDevelpmentMatters() {
                   y2="293.962"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#2E3092" />
-                  <stop offset="1" stop-color="#BA0007" />
+                  <stop stopColor="#2E3092" />
+                  <stop offset="1" stopColor="#BA0007" />
                 </linearGradient>
               </defs>
             </svg>

@@ -213,8 +213,8 @@ export function LifecycleGovernance({ data }) {
           y2="706.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.596154" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.596154" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_82_20"
@@ -224,8 +224,8 @@ export function LifecycleGovernance({ data }) {
           y2="693.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.596154" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.596154" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_82_20"
@@ -235,8 +235,8 @@ export function LifecycleGovernance({ data }) {
           y2="589.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.596154" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.596154" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_82_20"
@@ -246,8 +246,8 @@ export function LifecycleGovernance({ data }) {
           y2="576.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.596154" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.596154" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_82_20"
@@ -257,8 +257,8 @@ export function LifecycleGovernance({ data }) {
           y2="472.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.596154" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.596154" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_82_20"
@@ -268,8 +268,8 @@ export function LifecycleGovernance({ data }) {
           y2="459.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.596154" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.596154" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_82_20"
@@ -279,8 +279,8 @@ export function LifecycleGovernance({ data }) {
           y2="355.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.596154" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.596154" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_82_20"
@@ -290,8 +290,8 @@ export function LifecycleGovernance({ data }) {
           y2="342.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.596154" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.596154" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_82_20"
@@ -301,8 +301,8 @@ export function LifecycleGovernance({ data }) {
           y2="238.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.596154" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.596154" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_82_20"
@@ -312,8 +312,8 @@ export function LifecycleGovernance({ data }) {
           y2="225.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.596154" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.596154" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
       </defs>
     </svg>
@@ -2921,8 +2921,8 @@ export function Containerization({ data }) {
           y2="130.155"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#EBEAEA" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#EBEAEA" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_83_571"
@@ -2932,8 +2932,8 @@ export function Containerization({ data }) {
           y2="264.673"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#EBEAEA" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#EBEAEA" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_83_571"
@@ -2943,8 +2943,8 @@ export function Containerization({ data }) {
           y2="399.255"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#EBEAEA" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#EBEAEA" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_83_571"
@@ -2954,8 +2954,8 @@ export function Containerization({ data }) {
           y2="668.417"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#EBEAEA" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#EBEAEA" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_83_571"
@@ -2965,8 +2965,8 @@ export function Containerization({ data }) {
           y2="533.837"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#EBEAEA" />
-          <stop offset="1" stop-color="white" />
+          <stop stopColor="#EBEAEA" />
+          <stop offset="1" stopColor="white" />
         </linearGradient>
       </defs>
     </svg>
@@ -7104,12 +7104,12 @@ export function Infrastructure({ data }) {
           y2="500.781"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="0.4" stop-color="#FCFCFC" />
-          <stop offset="0.62" stop-color="#F4F4F4" />
-          <stop offset="0.8" stop-color="#E6E7E7" />
-          <stop offset="0.95" stop-color="#D3D5D5" />
-          <stop offset="1" stop-color="#CBCDCD" />
+          <stop stopColor="white" />
+          <stop offset="0.4" stopColor="#FCFCFC" />
+          <stop offset="0.62" stopColor="#F4F4F4" />
+          <stop offset="0.8" stopColor="#E6E7E7" />
+          <stop offset="0.95" stopColor="#D3D5D5" />
+          <stop offset="1" stopColor="#CBCDCD" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_87_1104"
@@ -7119,12 +7119,12 @@ export function Infrastructure({ data }) {
           y2="626.195"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="0.4" stop-color="#FCFCFC" />
-          <stop offset="0.62" stop-color="#F4F4F4" />
-          <stop offset="0.8" stop-color="#E6E7E7" />
-          <stop offset="0.95" stop-color="#D3D5D5" />
-          <stop offset="1" stop-color="#CBCDCD" />
+          <stop stopColor="white" />
+          <stop offset="0.4" stopColor="#FCFCFC" />
+          <stop offset="0.62" stopColor="#F4F4F4" />
+          <stop offset="0.8" stopColor="#E6E7E7" />
+          <stop offset="0.95" stopColor="#D3D5D5" />
+          <stop offset="1" stopColor="#CBCDCD" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_87_1104"
@@ -7134,12 +7134,12 @@ export function Infrastructure({ data }) {
           y2="375.012"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="0.4" stop-color="#FCFCFC" />
-          <stop offset="0.62" stop-color="#F4F4F4" />
-          <stop offset="0.8" stop-color="#E6E7E7" />
-          <stop offset="0.95" stop-color="#D3D5D5" />
-          <stop offset="1" stop-color="#CBCDCD" />
+          <stop stopColor="white" />
+          <stop offset="0.4" stopColor="#FCFCFC" />
+          <stop offset="0.62" stopColor="#F4F4F4" />
+          <stop offset="0.8" stopColor="#E6E7E7" />
+          <stop offset="0.95" stopColor="#D3D5D5" />
+          <stop offset="1" stopColor="#CBCDCD" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_87_1104"
@@ -7149,12 +7149,12 @@ export function Infrastructure({ data }) {
           y2="249.543"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="0.4" stop-color="#FCFCFC" />
-          <stop offset="0.62" stop-color="#F4F4F4" />
-          <stop offset="0.8" stop-color="#E6E7E7" />
-          <stop offset="0.95" stop-color="#D3D5D5" />
-          <stop offset="1" stop-color="#CBCDCD" />
+          <stop stopColor="white" />
+          <stop offset="0.4" stopColor="#FCFCFC" />
+          <stop offset="0.62" stopColor="#F4F4F4" />
+          <stop offset="0.8" stopColor="#E6E7E7" />
+          <stop offset="0.95" stopColor="#D3D5D5" />
+          <stop offset="1" stopColor="#CBCDCD" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_87_1104"
@@ -7164,12 +7164,12 @@ export function Infrastructure({ data }) {
           y2="123.826"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="0.4" stop-color="#FCFCFC" />
-          <stop offset="0.62" stop-color="#F4F4F4" />
-          <stop offset="0.8" stop-color="#E6E7E7" />
-          <stop offset="0.95" stop-color="#D3D5D5" />
-          <stop offset="1" stop-color="#CBCDCD" />
+          <stop stopColor="white" />
+          <stop offset="0.4" stopColor="#FCFCFC" />
+          <stop offset="0.62" stopColor="#F4F4F4" />
+          <stop offset="0.8" stopColor="#E6E7E7" />
+          <stop offset="0.95" stopColor="#D3D5D5" />
+          <stop offset="1" stopColor="#CBCDCD" />
         </linearGradient>
       </defs>
     </svg>
@@ -7235,8 +7235,8 @@ export function OpenStack({ data }) {
           y2="629.025"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.122826" stop-color="#2E3092" />
-          <stop offset="0.523275" stop-color="#BA0007" />
+          <stop offset="0.122826" stopColor="#2E3092" />
+          <stop offset="0.523275" stopColor="#BA0007" />
         </linearGradient>
       </defs>
     </svg>
@@ -9927,8 +9927,8 @@ export function HyperVision({ data }) {
           y2="739.594"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.6" stop-color="#2E3092" />
-          <stop offset="1" stop-color="#BA0007" />
+          <stop offset="0.6" stopColor="#2E3092" />
+          <stop offset="1" stopColor="#BA0007" />
         </linearGradient>
       </defs>
     </svg>

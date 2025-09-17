@@ -6,7 +6,7 @@ import {
 } from "@/app/component/workshop-listing-page/WorkshopListing";
 import Connect from "@/app/component/infra/Connect";
 
-export default function page() {
+export default function Page() {
   return (
     <>
       <HeroSection

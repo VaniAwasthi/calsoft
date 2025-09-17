@@ -35,7 +35,7 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
-        buttonClicked={()=>showHubSpotForm("request-cx-audit-standard")}
+        buttonClicked={() => showHubSpotForm("request-cx-audit-standard")}
         buttonText2=""
       />
       <WhyItMatters
@@ -43,7 +43,7 @@ const Page = () => {
         desc="Enterprise applications lose more than 30% user engagement due to outdated, unintuitive interfaces. The cost? Slower adoption, longer onboarding, and missed conversions. Calsoft’s Smart Interface Design combines behavior analytics, task simplification, and AI-assisted interactions to drive clarity and speed across digital journeys."
         buttonText="Get in Touch"
         MainComponenent={ModerizationMatters}
-        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
         // contentClass="h-[31.5rem]"
         gridClass="sm:h-[55rem] md:h-[53rem] xl:h-[31.5rem]"
         mainComponenentClass="justify-start"
@@ -237,7 +237,7 @@ const Page = () => {
               >
                 <path
                   fillRule="evenodd"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                   d="M15.2391 42.5391H4.80393C4.41057 42.5391 4.0918 42.2204 4.0918 41.827L4.08954 32.6894C4.08954 32.6374 4.04658 32.5944 3.99459 32.5944H2.06174C0.926899 32.5944 0 31.6675 0 30.5327V28.7129C0 27.578 0.926899 26.6511 2.06174 26.6511H3.99459C4.04658 26.6511 4.08954 26.6082 4.08954 26.5562V17.4163C4.08954 17.0229 4.40829 16.7041 4.80167 16.7041H9.37499C9.42698 16.7041 9.46993 16.6612 9.46993 16.6092V15.7072C9.46993 15.0131 10.0374 14.4434 10.7337 14.4434H18.1918C18.2438 14.4434 18.2867 14.4005 18.2867 14.3485V9.89948C18.2867 9.87235 18.2777 9.84974 18.2596 9.83166L13.7609 5.33293C13.7247 5.29676 13.7247 5.23572 13.7609 5.19955L18.9333 0.0271281C18.9695 -0.0090427 19.0305 -0.0090427 19.0667 0.0271281L24.2391 5.19955C24.2753 5.23572 24.2753 5.29676 24.2391 5.33293L19.7404 9.83166C19.7223 9.84974 19.7133 9.87235 19.7133 9.89948V14.3485C19.7133 14.4005 19.7562 14.4434 19.8082 14.4434H27.2663C27.9604 14.4434 28.5301 15.0109 28.5301 15.7072V16.6092C28.5301 16.6612 28.573 16.7041 28.625 16.7041H33.1983C33.5917 16.7041 33.9105 17.0229 33.9105 17.4163V26.5539C33.9105 26.6059 33.9534 26.6488 34.0054 26.6488H35.9383C37.0731 26.6488 38 27.5757 38 28.7105V30.5304C38 31.6652 37.0731 32.5921 35.9383 32.5921H30.4584C29.3235 32.5921 28.3966 31.6652 28.3966 30.5304V28.7105C28.3966 27.5757 29.3235 26.6488 30.4584 26.6488H32.3912C32.4432 26.6488 32.4862 26.6059 32.4862 26.5539V18.2253C32.4862 18.1733 32.4432 18.1304 32.3912 18.1304H28.6249C28.5729 18.1304 28.53 18.1733 28.53 18.2253V19.1273C28.53 19.8213 27.9626 20.3911 27.2663 20.3911L19.8081 20.3888C19.7561 20.3888 19.7132 20.4317 19.7132 20.4837V26.5535C19.7132 26.6055 19.7561 26.6484 19.8081 26.6484H21.741C22.8758 26.6484 23.8027 27.5753 23.8027 28.7102V30.53C23.8027 31.6648 22.8758 32.5917 21.741 32.5917H19.8081C19.7561 32.5917 19.7132 32.6347 19.7132 32.6867V38.0626C19.7132 38.1078 19.7448 38.1462 19.7878 38.1553C21.4765 38.5193 22.7515 40.0294 22.7515 41.8243C22.7515 43.8883 21.0628 45.5771 18.9988 45.5771C17.2061 45.5771 15.696 44.3021 15.3298 42.6133C15.323 42.5681 15.2843 42.5391 15.2391 42.5391ZM16.2609 26.6488H18.1937C18.2457 26.6488 18.2887 26.6059 18.2887 26.5539V20.4841C18.2887 20.4322 18.2457 20.3892 18.1937 20.3892H10.7356C10.0416 20.3892 9.47187 19.8218 9.47187 19.1255V18.2235C9.47187 18.1715 9.42892 18.1285 9.37692 18.1285H5.61065C5.55865 18.1285 5.5157 18.1715 5.5157 18.2235V26.552C5.5157 26.604 5.55865 26.647 5.61065 26.647H7.5435C8.67834 26.647 9.60524 27.5739 9.60524 28.7087V30.5285C9.60524 31.6634 8.67834 32.5903 7.5435 32.5903H5.61065C5.55865 32.5903 5.5157 32.6332 5.5157 32.6852V41.0138C5.5157 41.0658 5.55865 41.1087 5.61065 41.1087H15.239C15.2842 41.1087 15.3227 41.0771 15.3317 41.0341C15.6414 39.5985 16.7786 38.4637 18.2118 38.154C18.2571 38.1449 18.2864 38.1065 18.2864 38.0613V32.6854C18.2864 32.6334 18.2435 32.5904 18.1915 32.5904H16.2586C15.1238 32.5904 14.1969 31.6635 14.1969 30.5287V28.7089C14.1992 27.5785 15.126 26.6488 16.2609 26.6488Z"
                   fill="#2E3092"
                 />
@@ -246,11 +246,11 @@ const Page = () => {
             title: "UX Performance Benchmarking",
           },
         ]}
-        buttonClicked={()=>showHubSpotForm("Talk-to-Expert")}
+        buttonClicked={() => showHubSpotForm("Talk-to-Expert")}
         buttonText="Talk to Expert"
       />
       <UseCases
-      buttonClick2={()=>showHubSpotForm("experience-modernization-one-pg")}
+        buttonClick2={() => showHubSpotForm("experience-modernization-one-pg")}
         id="use-cases"
         BussinessId="business-value"
         useCaseData={[
@@ -295,8 +295,7 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title:
-            "Modernize legacy UIs 3x faster with low-code.",
+          title: "Modernize legacy UIs 3x faster with low-code.",
           buttontext: "Book a Meeting",
         }}
       />
