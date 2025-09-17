@@ -10,6 +10,7 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
+      // dev.calsoft.org - allow both http and https
       {
         protocol: "http",
         hostname: "dev.calsoft.org",
@@ -19,6 +20,13 @@ const nextConfig = {
         protocol: "https",
         hostname: "dev.calsoft.org",
         pathname: "/**",
+      },
+
+      // 35.162.115.74 - allow both http and https
+      {
+        protocol: "http",
+        hostname: "dev.calsoft.org",
+        pathname: "/**", // Allow all image paths from this host
       },
       {
         protocol: "http",
@@ -30,17 +38,14 @@ const nextConfig = {
         hostname: "35.162.115.74",
         pathname: "/**",
       },
+
+      // YouTube images
       {
         protocol: "https",
         hostname: "img.youtube.com",
         pathname: "/**",
       },
     ],
-  },
-  // ✅ Inject NEXT_PUBLIC_BASE_URL for client-side and server-side code
-  env: {
-    NEXT_PUBLIC_BASE_URL:
-      process.env.NEXT_PUBLIC_BASE_URL || "https://origin.calsoft.org/admin/assets/dist",
   },
 };
 
