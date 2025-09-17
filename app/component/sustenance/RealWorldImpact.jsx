@@ -11,10 +11,13 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
 export default function RealWorldImpact({
+  buttonClicked,
+  
+  onbuttonClicked,
   heading = "Real-World Impact",
   title = "Turn Unknowns Into Predictable Outcomes",
   desc = "Benchmarking before critical changes reduces risk and enhances decision-making:",
-  buttonText = "Download ROI Sheet",
+  buttonText = "Download One Pagert",
   cardData = [
     {
       title: "30-50%",
@@ -39,7 +42,8 @@ export default function RealWorldImpact({
   ],
   bottomContent = {
     text: "Documentation isn’t just about writing — it’s about engineering clarity.",
-    btnText: "Download ROI Sheet",
+    btnText: "Download One Pager",
+    
   },
   arrow = true
 }) {
@@ -103,6 +107,7 @@ export default function RealWorldImpact({
                   image={buttonImage}
                   hoverImage={buttonImage}
                   className={"whitespace-nowrap"}
+                  onClick={onbuttonClicked}
                 />
                 {arrow && (
                   <div className="flex justify-center items-center gap-5">
@@ -250,6 +255,7 @@ export default function RealWorldImpact({
                 image={buttonImage}
                 hoverImage={buttonImage}
                 className={"whitespace-nowrap"}
+                onClick={buttonClicked}
               />
             </motion.div>
           </div>

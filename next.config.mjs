@@ -10,6 +10,19 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
+      // dev.calsoft.org - allow both http and https
+      {
+        protocol: "http",
+        hostname: "dev.calsoft.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "dev.calsoft.org",
+        pathname: "/**",
+      },
+
+      // 35.162.115.74 - allow both http and https
       {
         protocol: "http",
         hostname: "dev.calsoft.org",
@@ -18,8 +31,15 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: "35.162.115.74",
-        pathname: "/**", // Allow all image paths from this host
+        pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "35.162.115.74",
+        pathname: "/**",
+      },
+
+      // YouTube images
       {
         protocol: "https",
         hostname: "img.youtube.com",
