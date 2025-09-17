@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
@@ -8,6 +8,9 @@ import Image from "next/image";
 import img from "@/app/assets/sustenance/Intelligent_planning.webp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function IntelligentPlanning({
@@ -32,10 +35,10 @@ export default function IntelligentPlanning({
       title: "Use A/B or pre-post models",
       subTitle: "to compare tech stacks or deployments",
     },
-    // {
-    //   title: "Map against SLAs,",
-    //   subTitle: "industry standards, or competitor data if available",
-    // },
+    {
+      title: "Map against SLAs,",
+      subTitle: "industry standards, or competitor data if available",
+    },
   ],
   title = "Intelligent Planning",
   heading = "Move What Matters, Not Just What Exists",
@@ -53,10 +56,28 @@ export default function IntelligentPlanning({
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  
+    useEffect(() => {
+      if (swiperInstance && prevRef.current && nextRef.current) {
+        // Destroy existing navigation
+        swiperInstance.navigation.destroy();
+  
+        // Reassign elements
+        swiperInstance.params.navigation.prevEl = prevRef.current;
+        swiperInstance.params.navigation.nextEl = nextRef.current;
+  
+        // Reinitialize navigation
+        swiperInstance.navigation.init();
+        swiperInstance.navigation.update();
+      }
+    }, [swiperInstance]);
+    
   return (
     <div
-      id={secId}
-      className={`w-full relative z-0 ${bottomContent && "bg-[#f9f9f9]"}`}
+      id="intelligent-planning"
+      className={`w-full relative z-0 ${bottomContent && "bg-[#f9f9f9]"} `}
     >
       <div className="h-8" />
       {image && (
@@ -168,7 +189,7 @@ export default function IntelligentPlanning({
             </motion.div>
           </div>
         </div>
-        {/* <Swiper
+        <Swiper
           slidesPerView={3}
           spaceBetween={20}
           loop={true}
@@ -219,9 +240,9 @@ export default function IntelligentPlanning({
               </motion.div>
             </SwiperSlide>
           ))}
-        </Swiper> */}
+        </Swiper>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 gap-y-9">
+        {/* <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 gap-y-9">
           {data.map((ele, idx) => (
             <motion.div
               key={idx}
@@ -240,7 +261,7 @@ export default function IntelligentPlanning({
               {ele.subTitle && <p className="text-lg">{ele.subTitle}</p>}
             </motion.div>
           ))}
-        </div>
+        </div> */}
         {bottomContent && (
           <div className="flex justify-center lg:items-center mt-10 lg:flex-row flex-col items-start">
             <p className="text-2xl font-semibold w-10/12">

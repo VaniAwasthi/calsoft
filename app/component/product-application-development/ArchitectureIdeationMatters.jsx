@@ -6,7 +6,7 @@ export default function ArchitectureIdeationMatters() {
   return (
     <div className="w-full h-[23rem] flex xl:justify-center">
       <div className="relative w-full">
-        <div className="relative hover:scale-105 transition-all">
+        <div className="absolute top-0 right-[6rem] hover:scale-105 transition-all">
           {/* w-265; h-285 */}
           <svg
             width="212"
@@ -25,7 +25,7 @@ export default function ArchitectureIdeationMatters() {
             <p className="text-lg">fail due to wrong stack</p>
           </div>
         </div>
-        <div className="absolute top-[10.4rem] right-[7.4rem] hover:scale-105 transition-all">
+        <div className="absolute top-[10.4rem] right-[13.4rem] hover:scale-105 transition-all">
           <svg
             width="188"
             height="194"
@@ -56,7 +56,7 @@ export default function ArchitectureIdeationMatters() {
             <p className="text-lg">due to unclear MVP scope</p>
           </div>
         </div>
-        <div className="absolute top-[10.4rem] -right-[6rem] hover:scale-105 transition-all">
+        <div className="absolute top-[10.4rem] right-0 hover:scale-105 transition-all">
           <svg
             width="188"
             height="194"

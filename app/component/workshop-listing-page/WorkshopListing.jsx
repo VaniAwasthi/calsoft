@@ -304,11 +304,11 @@ export function CardList({
 }) {
   const [filteredCards, setFilteredCards] = useState(data);
   const dispatch = useDispatch();
-  const FilterAuthr = useSelector((state) => state.blogs.filterAuthor || []);
+  const FilterAuthr = useSelector((state) => state.blogs?.filterAuthor || []);
   const FilterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
+    (state) => state.blogs?.filterIndustry || []
   );
-  const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
 
   const filters = {
     Industry: [...FilterIndustry],
@@ -373,6 +373,7 @@ export function CardList({
     <div className="bg-white container">
       <div className="space-y-8 py-14">
         <FilterSec
+        bgColor="bg-[#EFEFEF] text-[#2E3092]"
           filters={filters}
           activeFilters={activeFilters}
           setActiveFilters={setActiveFilters}
@@ -383,6 +384,8 @@ export function CardList({
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
           searchDebouncing={search}
         />
+                <p className="mb-4 text-sm px-4" >{filteredCards.length} Results</p>
+
         <div className="grid lg:grid-cols-2 gap-8 ">
           {filteredCards.map((ele, idx) => (
             <motion.div
