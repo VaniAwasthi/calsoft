@@ -18,9 +18,7 @@ const BannerLayout = ({
   buttonImage,
   buttonImage2,
   hoverImage,
-  bgColor,
-  overlayOpacity,
-  zIndex,
+  
   titleOneClass,
   link,
   titleTwoClass,

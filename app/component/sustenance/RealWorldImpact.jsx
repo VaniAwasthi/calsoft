@@ -6,10 +6,13 @@ import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "@/app/assets/home/buttonImg.webp";
 
 export default function RealWorldImpact({
+  buttonClicked,
+  
+  onbuttonClicked,
   heading = "Real-World Impact",
   title = "Turn Unknowns Into Predictable Outcomes",
   desc = "Benchmarking before critical changes reduces risk and enhances decision-making:",
-  buttonText = "Download ROI Sheet",
+  buttonText = "Download One Pagert",
   cardData = [
     {
       title: "30-50%",
@@ -34,7 +37,8 @@ export default function RealWorldImpact({
   ],
   bottomContent = {
     text: "Documentation isn’t just about writing — it’s about engineering clarity.",
-    btnText: "Download ROI Sheet",
+    btnText: "Download One Pager",
+    
   },
 }) {
   return (
@@ -78,6 +82,7 @@ export default function RealWorldImpact({
                   image={buttonImage}
                   hoverImage={buttonImage}
                   className={"whitespace-nowrap"}
+                  onClick={onbuttonClicked}
                 />
               </motion.div>
             )}
@@ -151,6 +156,7 @@ export default function RealWorldImpact({
                 image={buttonImage}
                 hoverImage={buttonImage}
                 className={"whitespace-nowrap"}
+                onClick={buttonClicked}
               />
             </motion.div>
           </div>

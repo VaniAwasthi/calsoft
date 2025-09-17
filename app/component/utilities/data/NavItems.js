@@ -382,29 +382,29 @@ export const navItems = [
       {
         title: "Sustenance & Support",
         href: "/digital-product-engineering/sustenance-support",
-        // section: [
-        //   {
-        //     title: "Release Orchestration",
-        //     href: "/digital-product-engineering/sustenance-support/release-orchestration",
-        //   },
-        //   {
-        //     title: "Documentation Support",
-        //     href: "/digital-product-engineering/sustenance-support/documentation-support",
-        //   },
-        //   {
-        //     title: "Intelligent Ticketing",
-        //     href: "/digital-product-engineering/sustenance-support/intelligent-ticketing",
-        //   },
-        //   {
-        //     title: "Muti-Tier Support",
-        //     href: "/digital-product-engineering/sustenance-support/muti-tier-support",
-        //   },
-        //   {
-        //     title: "Uptime Continuity",
-        //     href: "/digital-product-engineering/sustenance-support/uptime-continuity",
-        //   },
-        // ],
-        description:"Keeping products future-ready with reliable sustenance, stability, and cost-efficient support."
+        section: [
+          {
+            title: "Release Orchestration",
+            href: "/digital-product-engineering/sustenance-support/release-orchestration",
+          },
+          {
+            title: "Documentation Support",
+            href: "/digital-product-engineering/sustenance-support/documentation-support",
+          },
+          {
+            title: "Intelligent Ticketing",
+            href: "/digital-product-engineering/sustenance-support/intelligent-ticketing",
+          },
+          {
+            title: "Muti-Tier Support",
+            href: "/digital-product-engineering/sustenance-support/muti-tier-support",
+          },
+          {
+            title: "Uptime Continuity",
+            href: "/digital-product-engineering/sustenance-support/uptime-continuity",
+          },
+        ],
+      
       },
       {
         title: "Virtualization ",
