@@ -190,10 +190,10 @@ export default function Page() {
             subTitle:
               "with Jira ServiceNow, Zendesk, Freshdesk, Salesforce, etc.",
           },
-          {
-            title: "Real-time dashboards",
-            subTitle: "for SLA, backlog, and RCA tracking",
-          },
+          // {
+          //   title: "Real-time dashboards",
+          //   subTitle: "for SLA, backlog, and RCA tracking",
+          // },
           // {
           //   title:
           //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",

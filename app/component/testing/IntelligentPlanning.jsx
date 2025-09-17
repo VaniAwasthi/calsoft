@@ -32,10 +32,10 @@ export default function IntelligentPlanning({
       title: "Use A/B or pre-post models",
       subTitle: "to compare tech stacks or deployments",
     },
-    {
-      title: "Map against SLAs,",
-      subTitle: "industry standards, or competitor data if available",
-    },
+    // {
+    //   title: "Map against SLAs,",
+    //   subTitle: "industry standards, or competitor data if available",
+    // },
   ],
   title = "Intelligent Planning",
   heading = "Move What Matters, Not Just What Exists",
