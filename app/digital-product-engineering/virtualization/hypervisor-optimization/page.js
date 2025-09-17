@@ -106,16 +106,13 @@ export default function Page() {
           },
         ]}
         title="Core-to-VM"
-        bottomContent={{
-          text: null,
-          btnText: "Request POC",
-        }}
+        bottomContent={null}
+        arrow={true}
       />
-      <RealWorldImpact
-        buttonText={null}
-        title="Node utilization heat map: Before (spiky/inconsistent) → After (balanced, denser)"
-        desc=""
-        heading="Visual Suggestion"
+      <RealWorldImpact 
+        title="Cut hypervisor cost without compromise"
+        desc="Hypervisor licenses — especially for enterprise VMware — can drive up infra spend if not managed properly. Calsoft helps:"
+        heading="Licensing Efficiency"
         cardData={[
           {
             title: null,
@@ -142,10 +139,8 @@ export default function Page() {
             desc: "Assist with vSphere optimization and vCenter clean-up",
           },
         ]}
-        bottomContent={{
-          text: "We help you get more from what you already pay for — or transition smartly",
-          btnText: "Download ROI Sheet",
-        }}
+        bottomContent={null}
+        arrow={true}
       />
       <div className="container">
         <BookMeeting

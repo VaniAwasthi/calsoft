@@ -68,15 +68,14 @@ const Page = () => {
             title: "Use A/B or pre-post",
             subTitle: "models to compare tech stacks or deployments",
           },
-          // {
-          //   title: "Map against SLAs,",
-          //   subTitle: "industry standards, or competitor data if available",
-          // },
+          {
+            title: "Map against SLAs,",
+            subTitle: "industry standards, or competitor data if available",
+          },
         ]}
-        bottomContent={{
-          text: "With Calsoft, benchmarking is not just about measurement — it’s about validation and risk mitigation.",
-          btnText: "Request POC",
-        }}
+        bottomContent={null}
+        arrow={true}
+        image={false}
       />
       <Agility
         data={{

@@ -109,13 +109,10 @@ export default function Page() {
           // },
         ]}
         title="Modular Foundation"
-        bottomContent={{
-          text: null,
-          btnText: "Request POC",
-        }}
+        bottomContent={null}
+        arrow={true}
       />
-      <RealWorldImpact
-        buttonText={null}
+      <RealWorldImpact 
         title="Make infra changes part of release pipelines"
         desc="Calsoft connects your IaC with CI/CD and change management:"
         heading="CI/CD Integration"
@@ -145,10 +142,8 @@ export default function Page() {
             desc: "Automated plan and apply jobs on code merges",
           },
         ]}
-        bottomContent={{
-          text: null,
-          btnText: "Download ROI Sheet",
-        }}
+        bottomContent={null}
+        arrow={true}
       />
       <div className="container">
         <BookMeeting

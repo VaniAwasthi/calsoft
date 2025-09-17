@@ -106,13 +106,10 @@ export default function Page() {
           // },
         ]}
         title="Discovery & Planning"
-        bottomContent={{
-          text: null,
-          btnText: "Request POC",
-        }}
+        bottomContent={null}
+        arrow={true}
       />
-      <RealWorldImpact
-        buttonText={null}
+      <RealWorldImpact 
         title="Runbook-driven, tool-powered, low-touch migration"
         desc="We use purpose-fit automation to move workloads with minimal disruption:"
         heading="Automated Execution"
@@ -142,10 +139,8 @@ export default function Page() {
             desc: "Downtime-aware cutovers with validation playbooks",
           },
         ]}
-        bottomContent={{
-          text: null,
-          btnText: "Download ROI Sheet",
-        }}
+        bottomContent={null}
+        arrow={true}
       />
       <div className="container">
         <BookMeeting title="Reduce infra migration efforts by 50%." img={img} />

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
@@ -48,6 +48,7 @@ const Page = () => {
       <WhatWeOffer
         description="Our architecture-led ideation workshops deliver clarity in just 7–10 working days. You walk away with:"
         id="what-we-offer"
+        ScorecardComponent={RequestDemo}
         buttonClicked={()=>showHubSpotForm("request-architecture-blueprint")}
       />
       <UseCases

@@ -192,21 +192,21 @@ export default function Page() {
             title: "Compliance packages",
             subTitle: "(SOC 2, HIPAA, ISO, FDA templates)",
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: "Internal knowledge bases,",
+            subTitle: "onboarding handbooks",
+          },
+          {
+            title:
+              "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
+            subTitle: null,
+          },
         ]}
+        arrow={true}
         bottomContent={{
              btnText: "Request PoC",
             buttonClick:()=>showHubSpotForm("request-a-poc"),
         }}
-
       />
       <RealWorldImpact buttonText={null}
         title="Why invest in sustained documentation?"

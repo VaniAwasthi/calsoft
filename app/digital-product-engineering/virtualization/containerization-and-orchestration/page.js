@@ -107,8 +107,7 @@ export default function Page() {
         title="Smart Packaging"
         bottomContent={null}
       />
-      <RealWorldImpact
-        buttonText={null}
+      <RealWorldImpact 
         title="Modular apps = faster delivery"
         desc="We help modernize your application estate through container-first design with tools and governance that match your environment."
         cardData={[
@@ -132,11 +131,13 @@ export default function Page() {
             title: null,
             desc: "Internal registry setup and access controls",
           },
+          {
+            title: null,
+            desc: "Hybrid & edge deployment container readiness",
+          },
         ]}
-        bottomContent={{
-          text: null,
-          btnText: "Download ROI Sheet",
-        }}
+        bottomContent={null}
+        arrow={true}
       />
       <div className="container">
         <BookMeeting

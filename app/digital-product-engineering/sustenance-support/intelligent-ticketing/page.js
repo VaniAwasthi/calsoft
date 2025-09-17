@@ -191,10 +191,10 @@ export default function Page() {
             subTitle:
               "with Jira ServiceNow, Zendesk, Freshdesk, Salesforce, etc.",
           },
-          // {
-          //   title: "Real-time dashboards",
-          //   subTitle: "for SLA, backlog, and RCA tracking",
-          // },
+          {
+            title: "Real-time dashboards",
+            subTitle: "for SLA, backlog, and RCA tracking",
+          },
           // {
           //   title:
           //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
@@ -202,10 +202,8 @@ export default function Page() {
           // },
         ]}
         title="System First"
-        bottomContent={{
-          text: "We design support workflows to scale with product complexity and user growth.",
-          btnText: "Request POC",
-        }}
+        bottomContent={null}
+        arrow={true}
       />
       <RealWorldImpact
         buttonText={null}

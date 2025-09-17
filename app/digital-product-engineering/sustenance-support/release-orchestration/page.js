@@ -47,6 +47,7 @@ export default function Page() {
       <IntelligentPlanning bottomContent={null}
         heading="Measure What Matters — Precisely."
         description="We help enterprises define what to benchmark, how to measure it, and what to expect, based on application type, usage model, and business goals."
+        arrow={true}
       />
       <RealWorldImpact buttonText={null}  buttonClicked={()=>showHubSpotForm("release-orchestration-download-one-pager")}/>
       <div className="container">
