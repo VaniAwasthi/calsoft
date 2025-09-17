@@ -137,6 +137,7 @@ export default function WhyItMatters({
     },
   ],
   img = image,
+  buttonClicked
 }) {
   return (
     <div id="why-it-matters" className="container">
@@ -200,6 +201,7 @@ export default function WhyItMatters({
                 image={buttonImage}
                 hoverImage={buttonImage}
                 className={"w-fit shadow-2xl"}
+                onClick={buttonClicked}
               />
             </motion.div>
           </div>

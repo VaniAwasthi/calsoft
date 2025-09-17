@@ -70,6 +70,10 @@ const Page = () => {
             title: "Quality gates",
             subTitle: "and test thresholds per stage",
           },
+          {
+            title: "Test parallelization,",
+            subTitle: "reporting, and flakiness handling",
+          },
         ]}
         bottomContent={null}
         arrow={true}

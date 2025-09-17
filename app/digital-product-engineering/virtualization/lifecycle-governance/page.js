@@ -80,11 +80,8 @@ export default function Page() {
           },
         ]}
         title="Structured Lifecycle"
-        bottomContent={{
-          text: "We transform VM stacks from free-for-all deployments into controlled environments.",
-          btnText: "Request POC",
-          buttonClick: () => showHubSpotForm("Talk_to_Expert"),
-        }}
+        bottomContent={null}
+        arrow={true}
       />
       <RealWorldImpact
         buttonText={null}

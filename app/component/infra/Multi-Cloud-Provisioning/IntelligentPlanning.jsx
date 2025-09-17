@@ -211,7 +211,7 @@ export default function IntelligentPlanning({
           </div>
 
           {/* Feature Cards Grid */}
-          <div className="relative overflow-visible">
+          <div className="relative overflow-visible mb-4">
             <Swiper
               onSwiper={setSwiperInstance}
               slidesPerView={3}
@@ -271,7 +271,7 @@ export default function IntelligentPlanning({
               ))}
             </Swiper>
           </div>
-          <Swiper
+          {/* <Swiper
             slidesPerView={3}
             spaceBetween={20}
             loop={true}
@@ -321,7 +321,7 @@ export default function IntelligentPlanning({
                 </motion.div>
               </SwiperSlide>
             ))}
-          </Swiper>
+          </Swiper> */}
 
           {/* Result Section */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">

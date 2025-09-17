@@ -13,6 +13,7 @@ import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDat
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/Sustaine/Sustenance_Banner_2.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -34,11 +35,13 @@ export default function Page() {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={Img}
+        buttonText2=""
+        buttonClicked={()=>showHubSpotForm("Talk_to_Expert")}
       />
       <WhyItMatters
         title="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch "
         data={[
           {
             title: "Disorganized knowledge base",
@@ -163,6 +166,7 @@ export default function Page() {
             ),
           },
         ]}
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
         heading="How we structure documentation that scales"
@@ -188,16 +192,21 @@ export default function Page() {
             title: "Compliance packages",
             subTitle: "(SOC 2, HIPAA, ISO, FDA templates)",
           },
-          // {
-          //   title: "Internal knowledge bases,",
-          //   subTitle: "onboarding handbooks",
-          // },
-          // {
-          //   title:
-          //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
-          //   subTitle: null,
-          // },
+          {
+            title: "Internal knowledge bases,",
+            subTitle: "onboarding handbooks",
+          },
+          {
+            title:
+              "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
+            subTitle: null,
+          },
         ]}
+        arrow={true}
+        bottomContent={{
+             btnText: "Request PoC",
+            buttonClick:()=>showHubSpotForm("request-a-poc"),
+        }}
       />
       <RealWorldImpact
         buttonText={null}
@@ -225,11 +234,13 @@ export default function Page() {
             desc: "due to centralized knowledge base",
           },
         ]}
+        buttonClicked={()=>showHubSpotForm("intelligent-ticketing-download-one-pager")}
       />
       <div className="container">
         <BookMeeting
           title="Improve product adoption by 40% via documentation."
           img={img}
+          buttonClicked={()=>showHubSpotForm("book-a-meeting")}
         />
       </div>
       <UseCases
@@ -459,9 +470,8 @@ export default function Page() {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Support teams with clear and comprehensive documentation."
         }
-        link={"#"}
       />
     </>
   );
