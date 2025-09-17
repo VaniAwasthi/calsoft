@@ -21,16 +21,15 @@ export default function HeroSection({
     <>
       <BannerLayout
         image={heroImage}
-        title2={title}
+        title={title}
         description={description}
         buttonText={buttonText}
         buttonText2={buttonText2}
         buttonImage={ButtonImage}
         buttonImage2={ButtonImage2}
         hoverImage={ButtonImage}
-        titleOneClass="md:text-5xl text-[20px] mt-2"
-        titleTwoClass="text-[28px] md:text-5xl md:mt-4"
-        descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[200px] md:w-full"
+       titleOneClass="text-[20px] md:text-5xl mt-2 md:w-[550px]"
+        descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[250px] md:w-full"
         BgClassname="object-cover w-full h-full object-center"
         buttonClicked={buttonClicked}
       />

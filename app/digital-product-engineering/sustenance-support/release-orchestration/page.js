@@ -13,6 +13,7 @@ import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDat
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/Sustaine/Sustenance_Banner_1.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -29,26 +30,30 @@ export default function Page() {
       <HeroSection
         title="Know Before You Grow Benchmark with Intent"
         description="Establish performance, scalability, and quality baselines before your next release, migration, or modernization effort — with Calsoft’s Benchmarking Readiness service."
-        buttonText="Request Free Assesment"
+        buttonText="Access Readiness"
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={Img}
+        buttonClicked={()=>showHubSpotForm("access-readiness")}
+        buttonText2=""
       />
       <WhyItMatters
         title="Measure What Matters — Before You Deploy."
         desc="Most teams measure application performance reactively — post-deployment or after customer feedback. This leads to:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning bottomContent={null}
         heading="Measure What Matters — Precisely."
         description="We help enterprises define what to benchmark, how to measure it, and what to expect, based on application type, usage model, and business goals."
       />
-      <RealWorldImpact buttonText={null} />
+      <RealWorldImpact buttonText={null}  buttonClicked={()=>showHubSpotForm("release-orchestration-download-one-pager")}/>
       <div className="container">
         <BookMeeting
           title="Cut release time by 35% through orchestration."
           img={img}
+          buttonClicked={()=>showHubSpotForm("book-a-meeting")}
         />
       </div>
       <UseCases
@@ -307,9 +312,9 @@ export default function Page() {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Orchestrate releases smoothly for faster go-to-market."
         }
-        link={"#"}
+       
       />
     </>
   );
