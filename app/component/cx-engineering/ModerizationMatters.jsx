@@ -77,8 +77,8 @@ function ModerizationMatters() {
                   y2="229.499"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0.447115" stop-color="#2E3092" />
-                  <stop offset="1" stop-color="#BA0007" />
+                  <stop offset="0.447115" stopColor="#2E3092" />
+                  <stop offset="1" stopColor="#BA0007" />
                 </linearGradient>
               </defs>
             </svg>
@@ -105,8 +105,8 @@ function ModerizationMatters() {
                   y2="172.055"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0.447115" stop-color="#2E3092" />
-                  <stop offset="1" stop-color="#BA0007" />
+                  <stop offset="0.447115" stopColor="#2E3092" />
+                  <stop offset="1" stopColor="#BA0007" />
                 </linearGradient>
               </defs>
             </svg>
@@ -147,8 +147,8 @@ function ModerizationMatters() {
                   y2="343.503"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0.447115" stop-color="#2E3092" />
-                  <stop offset="1" stop-color="#BA0007" />
+                  <stop offset="0.447115" stopColor="#2E3092" />
+                  <stop offset="1" stopColor="#BA0007" />
                 </linearGradient>
               </defs>
             </svg>
@@ -175,8 +175,8 @@ function ModerizationMatters() {
                   y2="199.487"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0.447115" stop-color="#2E3092" />
-                  <stop offset="1" stop-color="#BA0007" />
+                  <stop offset="0.447115" stopColor="#2E3092" />
+                  <stop offset="1" stopColor="#BA0007" />
                 </linearGradient>
               </defs>
             </svg>
