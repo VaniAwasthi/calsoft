@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout code new test
+      # 1️⃣ Checkout repo
       - name: Checkout repo
         uses: actions/checkout@v3
 
@@ -19,18 +19,24 @@ jobs:
         with:
           node-version: '18.19'
 
-      # 3️⃣ Install deps and build
+      # 3️⃣ Create .env.local from secret
+      - name: Create .env.local
+        run: |
+          echo "NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}" > .env.local
+          cat .env.local # optional, remove later
+
+      # 4️⃣ Install deps and build
       - name: Build Next.js
         run: |
           npm ci
           npm run build
 
-      # 4️⃣ Package build artefacts
+      # 5️⃣ Package build artefacts
       - name: Package build
         run: |
           tar -czf app.tar.gz .next public package.json package-lock.json
 
-      # 5️⃣ Copy artefacts to Lightsail
+      # 6️⃣ Copy artefacts to Lightsail
       - name: Copy to server
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -40,7 +46,7 @@ jobs:
           source: "app.tar.gz"
           target: "/var/www/calsoft_frontend_build/"
 
-      # 6️⃣ Run deploy script on server
+      # 7️⃣ Run deploy script on server
       - name: Run deploy script
         uses: appleboy/ssh-action@v0.1.7
         with:
