@@ -34,6 +34,7 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        buttonText2=""
       />
       <WhyItMatters
         heading="Pulse Check"
