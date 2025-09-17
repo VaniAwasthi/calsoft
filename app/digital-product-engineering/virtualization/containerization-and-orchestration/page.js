@@ -7,8 +7,7 @@ import WhyItMatters, {
 import IntelligentPlanning from "@/app/component/testing/IntelligentPlanning";
 import UseCases from "@/app/component/sustenance/UseCases";
 import WhyCalsoft from "@/app/component/infra/WhyCalsoft";
-import FirstStep from "@/app/component/infra/FirstStep";
-import Guesswork from "@/app/component/sustenance/Guesswork";
+
 import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
@@ -16,34 +15,38 @@ import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_2.webp";
 import Agility from "@/app/component/infra/Agility";
 import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFits";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
-  const [activeTab, setActiveTab] = useState("why-it-matters");
+  const [activeTab, setActiveTab] = useState("pulse-check");
   const navItems = [
     "Pulse Check",
     "Smart Packaging",
-    "Orchestration at Scale",
     "Real-World Impact",
-    "Where It Fits",
+    "Use Cases",
     "Why Calsoft",
-    "How to Start",
+    "Where It Fits",
+    
   ];
   return (
     <>
       <HeroSection
         title="Package Once. Run Anywhere. Scale Intelligently."
         description="Speed up time-to-market with portable, resilient, and automated container workflows.."
-        buttonText="Request Workshop"
+        buttonText="Talk to Expert"
         heroImage={Img}
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        buttonClicked={()=>showHubSpotForm("Talk_to_Expert")}
+        buttonText2=""
       />
       <WhyItMatters
+      secId="pulse-check"
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         data={[
           {
             top: 7.4,
@@ -66,9 +69,11 @@ export default function Page() {
             text: "Manual scaling and recovery challenges under load",
           },
         ]}
+        buttonClick={()=>showHubSpotForm("get-in-touch")}
         Component={Containerization}
       />
       <IntelligentPlanning
+      secId="smart-packaging"
         heading="Modular apps = faster delivery"
         description="We help modernize your application estate through container-first design with tools and governance that match your environment."
         data={[
@@ -104,10 +109,13 @@ export default function Page() {
           //   subTitle: null,
           // },
         ]}
+        buttonText="Request a PoC"
+        buttonClick={()=>showHubSpotForm("request-a-poc")}
         title="Smart Packaging"
         bottomContent={null}
       />
       <RealWorldImpact
+      secId="real-world-impact"
         buttonText={null}
         title="Modular apps = faster delivery"
         desc="We help modernize your application estate through container-first design with tools and governance that match your environment."
@@ -133,15 +141,13 @@ export default function Page() {
             desc: "Internal registry setup and access controls",
           },
         ]}
-        bottomContent={{
-          text: null,
-          btnText: "Download ROI Sheet",
-        }}
+        bottomContent={null}
       />
       <div className="container">
         <BookMeeting
           title="Deploy containers 3x faster with orchestration tools."
           img={img}
+          buttonClicked={()=>showHubSpotForm("book-a-meeting")}
         />
       </div>
       <UseCases
@@ -359,7 +365,8 @@ export default function Page() {
           ],
         }}
         bookMeetingData={null}
-        buttonText="Request ROI"
+        buttonText="Download One Pager"
+        onPagerButton={()=>showHubSpotForm("lifecycle-governance-download-one-pager")}
       />
       <WhyCalsoft
         sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
@@ -400,7 +407,7 @@ export default function Page() {
           ],
         }}
       />
-      <WhereItFits />
+      <WhereItFits buttonText="Start Today" secId="where-it-fits"/>
       <ContactSecDataAi
         lightContent={
           "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"

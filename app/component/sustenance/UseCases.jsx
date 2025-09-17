@@ -183,9 +183,10 @@ export default function UseCases({
     text: "Each use case delivers ",
     bText: "clarity, evidence, and measurable direction.",
   },
+  secId="use-cases"
 }) {
   return (
-    <div id="use-cases" className="container">
+    <div id={secId} className="container">
       <div className="h-8" />
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-3 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent leading-16">

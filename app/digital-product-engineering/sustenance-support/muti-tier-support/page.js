@@ -13,6 +13,7 @@ import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDat
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/Sustaine/Sustenance_Banner_4.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -34,12 +35,14 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        buttonText2=""
+        buttonClicked={()=>showHubSpotForm("Talk_to_Expert")}
       />
       <WhyItMatters
         title="Why most support models break at scale"
         heading="Pulse Check"
         desc="As product portfolios grow, teams struggle with unstructured support layers — leading to:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         data={[
           {
             title:
@@ -166,6 +169,7 @@ export default function Page() {
             ),
           },
         ]}
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
         heading="Support by the right people at the right level"
@@ -210,6 +214,7 @@ export default function Page() {
         bottomContent={{
           text: "Each tier is trained, staffed, and monitored for efficiency, escalation hygiene, and customer satisfaction.",
           btnText: "Request POC",
+          onbuttonClick:()=>showHubSpotForm("request-a-poc")
         }}
       />
       <RealWorldImpact
@@ -244,6 +249,7 @@ export default function Page() {
         <BookMeeting
           title="Ensure 24/7 uptime with tiered support systems."
           img={img}
+          buttonClicked={()=>showHubSpotForm("book-a-meeting")}
         />
       </div>
       <UseCases
@@ -501,9 +507,9 @@ export default function Page() {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Provide multi-tier support to ensure continuity."
         }
-        link={"#"}
+       
       />
     </>
   );

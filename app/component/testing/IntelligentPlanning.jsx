@@ -45,8 +45,9 @@ export default function IntelligentPlanning({
   bottomContent = {
     text: "We create docs that are version-controlled, searchable, modular, and traceable.",
     btnText: "Talk to Expert",
-  buttonClick:()=>showHubSpotForm("Talk_to_Expert"),
+  onbuttonClick:()=>showHubSpotForm("Talk_to_Expert"),
   },
+  secId="intelligent-planning",
   arrow = true,
   image = true,
 }) {
@@ -54,7 +55,7 @@ export default function IntelligentPlanning({
   const nextRef = useRef(null);
   return (
     <div
-      id="intelligent-planning"
+      id={secId}
       className={`w-full relative z-0 ${bottomContent && "bg-[#f9f9f9]"}`}
     >
       <div className="h-8" />
@@ -255,7 +256,7 @@ export default function IntelligentPlanning({
                 text={bottomContent.btnText}
                 image={buttonImage}
                 hoverImage={buttonImage}
-                onClick={bottomContent.buttonClick}
+                onClick={bottomContent.onbuttonClick}
                 className={"whitespace-nowrap"}
               />
             </motion.div>

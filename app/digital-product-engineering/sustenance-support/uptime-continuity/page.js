@@ -13,6 +13,7 @@ import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDat
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/Sustaine/Sustenance_Banner_5.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -34,11 +35,13 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        buttonText2=""
+        buttonClicked={()=>showHubSpotForm("Talk_to_Expert")}
       />
       <WhyItMatters
         title="Where continuity often breaks down"
         desc="Many organizations rely on reactive monitoring or post-incident reviews, leading to costly downtime. Common failures include:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         data={[
           {
             title: "Siloed monitoring systems",
@@ -163,6 +166,7 @@ export default function Page() {
             ),
           },
         ]}
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
         heading="Continuity is not luck — it’s design"
@@ -202,6 +206,7 @@ export default function Page() {
         bottomContent={{
           text: "We ensure predictable uptime — even under stress, change, or failure.",
           btnText: "Request POC",
+          buttonClicked:()=>showHubSpotForm("request-a-poc")
         }}
       />
       <RealWorldImpact
@@ -232,13 +237,14 @@ export default function Page() {
         ]}
         bottomContent={{
           text: "We embed continuity into the system — not just into the SOP.",
-          btnText: "Download ROI Sheet",
+         
         }}
       />
       <div className="container">
         <BookMeeting
           title="Maintain 99.99% SLA-backed service continuity."
           img={img}
+          buttonClicked={()=>showHubSpotForm("book-a-meeting")}
         />
       </div>
       <UseCases
@@ -493,9 +499,9 @@ export default function Page() {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Maintain uptime and reliability through proactive measures."
         }
-        link={"#"}
+       
       />
     </>
   );

@@ -40,10 +40,11 @@ export default function RealWorldImpact({
     btnText: "Download One Pager",
     
   },
+  secId="business-value"
 }) {
   return (
     <div
-      id="business-value"
+      id={secId}
       className={`${buttonText && "bg-[#f9f9f9]"} py-10`}
     >
       <div className="container">

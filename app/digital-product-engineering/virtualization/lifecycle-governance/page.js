@@ -12,11 +12,12 @@ import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDat
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_1.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Pulse Check",
+    "Why It Matters",
     "Structured Lifecycle",
     "Real-World Impact",
     "Where It Fits",
@@ -33,14 +34,19 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        buttonText2=""
+        buttonClicked={()=>showHubSpotForm("request-governance-audit")}
       />
       <WhyItMatters
+      secId="why-it-matters"
         title="Why It Matters"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
+        buttonClick={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
+      secId="structured-lifecycle"
         heading="Governance that starts at provisioning"
         description="Calsoft designs end-to-end VM lifecycle controls — from request to retirement — backed by automation, tagging, and policy."
         data={[
@@ -83,10 +89,11 @@ export default function Page() {
         bottomContent={{
           text: "We transform VM stacks from free-for-all deployments into controlled environments.",
           btnText: "Request POC",
-          buttonClick: () => showHubSpotForm("Talk_to_Expert"),
+          onbuttonClick: () => showHubSpotForm("request-a-poc"),
         }}
       />
       <RealWorldImpact
+      secId="real-world-impact"
         buttonText={null}
         title="From virtual chaos to operational clarity"
         desc="Organizations leveraging Calsoft’s lifecycle governance have achieved:"
@@ -112,18 +119,17 @@ export default function Page() {
             desc: "enforcement aligned with policy and risk thresholds",
           },
         ]}
-        bottomContent={{
-          text: null,
-          btnText: "Download ROI Sheet",
-        }}
+        bottomContent={null}
       />
       <div className="container">
         <BookMeeting
           title="Streamline infra lifecycle by 50% with governance."
           img={img}
+          buttonClicked={()=>showHubSpotForm("book-a-meeting")}
         />
       </div>
       <UseCases
+      secId="where-it-fits"
         title="Where It Fits"
         data={[
           {
@@ -303,6 +309,7 @@ export default function Page() {
         }}
       />
       <WhyCalsoft
+      secId="why-calsoft"
         sectionDescription=""
         buttonText="Download One Pager"
         title="Why Calsoft’s model works better"
@@ -379,9 +386,9 @@ export default function Page() {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Govern lifecycles with clarity and accountability."
         }
-        link={"#"}
+      
       />
     </>
   );

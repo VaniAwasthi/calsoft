@@ -20,7 +20,7 @@ export default function Page() {
   const navItems = [
     "Pulse Check",
     "Core-to-VM Licensing Efficiency",
-    "Licensing Efficiency",
+    "Visual Suggestion",
     "Real-World Impact",
     "Where It Fits",
     "Why Calsoft",

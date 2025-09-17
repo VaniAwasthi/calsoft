@@ -409,33 +409,33 @@ export const navItems = [
       {
         title: "Virtualization ",
         href: "/digital-product-engineering/virtualization",
-        // section: [
-        //   {
-        //     title: "Lifecycle Governance",
-        //     href: "/digital-product-engineering/virtualization/lifecycle-governance",
-        //   },
-        //   {
-        //     title: "Containerization and orchestration",
-        //     href: "/digital-product-engineering/virtualization/containerization-and-orchestration",
-        //   },
-        //   {
-        //     title: "Hypervisor Optimization",
-        //     href: "/digital-product-engineering/virtualization/hypervisor-optimization",
-        //   },
-        //   {
-        //     title: "OpenStack environment configuration",
-        //     href: "/digital-product-engineering/virtualization/openStack-environment-configuration",
-        //   },
-        //   {
-        //     title: "Infrastructure as Code (IaC)",
-        //     href: "/digital-product-engineering/virtualization/infrastructure-as-code",
-        //   },
-        //   {
-        //     title: "Intelligent Migration",
-        //     href: "/digital-product-engineering/virtualization/intelligent-migration",
-        //   },
-        // ],
-        description:"Enabling agile infrastructure through software-defined virtualization for optimized performance and scalability."
+        section: [
+          {
+            title: "Lifecycle Governance",
+            href: "/digital-product-engineering/virtualization/lifecycle-governance",
+          },    
+          {
+            title: "Containerization and orchestration",
+            href: "/digital-product-engineering/virtualization/containerization-and-orchestration",
+          },
+          {
+            title: "Hypervisor Optimization",
+            href: "/digital-product-engineering/virtualization/hypervisor-optimization",
+          },
+          {
+            title: "OpenStack environment configuration",
+            href: "/digital-product-engineering/virtualization/openStack-environment-configuration",
+          },
+          {
+            title: "Infrastructure as Code (IaC)",
+            href: "/digital-product-engineering/virtualization/infrastructure-as-code",
+          },
+          {
+            title: "Intelligent Migration",
+            href: "/digital-product-engineering/virtualization/intelligent-migration",
+          },
+        ],
+        // description:"Enabling agile infrastructure through software-defined virtualization for optimized performance and scalability."
       },
 
       {
