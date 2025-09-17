@@ -206,7 +206,7 @@ export default function Page() {
           btnText: "Request POC",
         }}
       /> */}
-      <RealWorldImpact buttonText={null}
+      <RealWorldImpact 
         title="Design for scale, not struggle"
         desc="Calsoft brings end-to-end OpenStack environment configuration from planning to deployment — aligned with your workloads and operational maturity."
         heading="Core Setup"
@@ -245,6 +245,7 @@ export default function Page() {
           },
         ]}
         bottomContent={null}
+        arrow={true}
       />
       <div className="container">
         <BookMeeting

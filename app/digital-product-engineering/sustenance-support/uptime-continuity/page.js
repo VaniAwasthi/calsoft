@@ -188,10 +188,10 @@ export default function Page() {
             title: "High availability and DR planning",
             subTitle: "(active-active, failover, failback)",
           },
-          // {
-          //   title: "SLA-backed ops support",
-          //   subTitle: "integrated with your CI/CD and observability tools",
-          // },
+          {
+            title: "SLA-backed ops support",
+            subTitle: "integrated with your CI/CD and observability tools",
+          },
           // {
           //   title:
           //     "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
@@ -199,10 +199,8 @@ export default function Page() {
           // },
         ]}
         title="Engineered Approach"
-        bottomContent={{
-          text: "We ensure predictable uptime — even under stress, change, or failure.",
-          btnText: "Request POC",
-        }}
+        bottomContent={null}
+        arrow={true}
       />
       <RealWorldImpact
         buttonText={null}
