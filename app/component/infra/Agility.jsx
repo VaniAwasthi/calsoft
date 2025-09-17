@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function Agility({
+  id = "business-value",
   data = {
     leftSideContent: {
       title: "Beyond Tech- Real Business Outcomes.",
@@ -40,13 +41,13 @@ export default function Agility({
   bookMeetingData = {
     title: "Build scalable infra plans with 40% cost predictability.",
     buttonText: "Book a Meeting",
-    onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+    onButtonClicked: () => showHubSpotForm("book-a-meeting"),
   },
   buttonText = "Download One Pager",
-  onPagerButton=()=>showHubSpotForm("infra-roadmap-one-pg")
+  onPagerButton = () => showHubSpotForm("infra-roadmap-one-pg"),
 }) {
   return (
-    <div id="business-value" className="container">
+    <div id={id} className="container">
       <div className="h-6 lg:h-8" />
       <div className="w-full h-full relative rounded-xl overflow-hidden">
         <Image
@@ -55,7 +56,7 @@ export default function Agility({
           className="w-full object-cover"
         />
         <div className="absolute top-0 w-full h-full bg-[linear-gradient(90deg,rgba(46,48,146,0.95)_0%,rgba(46,48,146,0.9)_35%,rgba(255,255,255,0.0)_100%)] flex justify-between items-center">
-          <div className="w-[65%] h-full text-white">
+          <div className="w-[70%] h-full text-white">
             <div className="h-full flex gap-8 items-center justify-between">
               {/* Left content */}
               <div className="flex-1 p-10 h-full flex flex-col gap-6 justify-center">
@@ -122,36 +123,38 @@ export default function Agility({
           </div>
         </div>
       </div>
-     {bookMeetingData && <div className="w-full h-40 relative rounded-xl overflow-hidden mt-10">
-        <Image
-          src={predict}
-          alt="book a meeting"
-          className="w-full object-cover"
-        />
-        <div className="absolute top-0 w-full h-full bg-[#2e309293] bg-[linear-gradient(90deg,rgba(46,48,146,0.7)_0%,rgba(46,48,146,0.5)_60%,rgba(255,255,255,0)_100%)] text-white">
-          <div className="w-full h-full flex justify-between items-center gap-5 p-5">
-            <motion.p
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="text-[20px] font-medium"
-            >
-              {bookMeetingData.title}
-            </motion.p>
-            <motion.button
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="text-lg  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg"
-              onClick={bookMeetingData.onButtonClicked}
-            >
-              {bookMeetingData.buttonText}
-            </motion.button>
+      {bookMeetingData && (
+        <div className="w-full h-40 relative rounded-xl overflow-hidden mt-10">
+          <Image
+            src={predict}
+            alt="book a meeting"
+            className="w-full object-cover"
+          />
+          <div className="absolute top-0 w-full h-full bg-[#2e309293] bg-[linear-gradient(90deg,rgba(46,48,146,0.7)_0%,rgba(46,48,146,0.5)_60%,rgba(255,255,255,0)_100%)] text-white">
+            <div className="w-full h-full flex justify-between items-center gap-5 p-5">
+              <motion.p
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-[20px] font-medium"
+              >
+                {bookMeetingData.title}
+              </motion.p>
+              <motion.button
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-lg  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg"
+                onClick={bookMeetingData.onButtonClicked}
+              >
+                {bookMeetingData.buttonText}
+              </motion.button>
+            </div>
           </div>
         </div>
-      </div>}
+      )}
       <div className="h-4 lg:h-6" />
     </div>
   );

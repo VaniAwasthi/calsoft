@@ -8,16 +8,14 @@ import WhyItMatters, {
 import IntelligentPlanning from "@/app/component/testing/IntelligentPlanning";
 import UseCases from "@/app/component/sustenance/UseCases";
 import WhyCalsoft from "@/app/component/infra/WhyCalsoft";
-import FirstStep from "@/app/component/infra/FirstStep";
-import Guesswork from "@/app/component/sustenance/Guesswork";
 import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_5.webp";
 import Agility from "@/app/component/infra/Agility";
-import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFits";
 import HowToStart from "@/app/component/VirtualizationSolutions/HowToStart";
+import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFitsMiddle";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -27,7 +25,7 @@ export default function Page() {
     "Automated Execution",
     "Optimization-First",
     "Real-World Impact",
-    "Where It Fits Start",
+    "Where It Fits",
   ];
   return (
     <>
@@ -41,6 +39,7 @@ export default function Page() {
         activeTab={activeTab}
       />
       <WhyItMatters
+        id="pulse-check"
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
@@ -105,13 +104,15 @@ export default function Page() {
           //   subTitle: null,
           // },
         ]}
+        id="discovery-&-planning"
         title="Discovery & Planning"
         bottomContent={null}
         arrow={true}
       />
-      <RealWorldImpact 
+      <RealWorldImpact
         title="Runbook-driven, tool-powered, low-touch migration"
         desc="We use purpose-fit automation to move workloads with minimal disruption:"
+        id="automated-execution"
         heading="Automated Execution"
         cardData={[
           {
@@ -147,6 +148,7 @@ export default function Page() {
       </div>
 
       <UseCases
+        id="optimization-first"
         title="Optimization-First"
         data={[
           {
@@ -364,6 +366,7 @@ export default function Page() {
         }}
       />
       <Agility
+        id="real-world-impact"
         data={{
           leftSideContent: {
             title: "Real-World Impact",
@@ -392,6 +395,37 @@ export default function Page() {
         }}
         bookMeetingData={null}
         buttonText="Request ROI"
+      />
+      <WhereItFits
+        title1="When intelligent migration is your edge"
+        title2="Use Calsoft’s Intelligent Migration if:"
+        data={[
+          {
+            heading: null,
+            title: null,
+            desc: "You’re moving from VMware to KVM, AHV, Azure, or AWS",
+          },
+          {
+            heading: null,
+            title: null,
+            desc: "You want license rationalization and performance-tuned workloads",
+          },
+          {
+            heading: null,
+            title: null,
+            desc: "You’re consolidating infrastructure across global/regional DCs",
+          },
+          {
+            heading: null,
+            title: null,
+            desc: "You need compliance-backed, rollback-ready plans",
+          },
+          {
+            heading: null,
+            title: null,
+            desc: "You want container-first or cloud-native platforms post-migration",
+          },
+        ]}
       />
       <WhyCalsoft
         sectionDescription=""

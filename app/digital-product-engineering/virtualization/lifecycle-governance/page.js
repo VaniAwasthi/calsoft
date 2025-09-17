@@ -16,7 +16,7 @@ import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_B
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Pulse Check",
+    "Why It Matters",
     "Structured Lifecycle",
     "Real-World Impact",
     "Where It Fits",
@@ -41,6 +41,7 @@ export default function Page() {
         buttonText="Download Case Study"
       />
       <IntelligentPlanning
+        id="structured-lifecycle"
         heading="Governance that starts at provisioning"
         description="Calsoft designs end-to-end VM lifecycle controls — from request to retirement — backed by automation, tagging, and policy."
         data={[
@@ -84,7 +85,8 @@ export default function Page() {
         arrow={true}
       />
       <RealWorldImpact
-        buttonText={null}
+        id="real-world-impact"
+        buttonText={"Download ROI Sheet"}
         title="From virtual chaos to operational clarity"
         desc="Organizations leveraging Calsoft’s lifecycle governance have achieved:"
         cardData={[
@@ -109,10 +111,7 @@ export default function Page() {
             desc: "enforcement aligned with policy and risk thresholds",
           },
         ]}
-        bottomContent={{
-          text: null,
-          btnText: "Download ROI Sheet",
-        }}
+        bottomContent={null}
       />
       <div className="container">
         <BookMeeting
@@ -121,6 +120,7 @@ export default function Page() {
         />
       </div>
       <UseCases
+        id="where-it-fits"
         title="Where It Fits"
         data={[
           {
@@ -339,6 +339,7 @@ export default function Page() {
         }}
       />
       <FirstStep
+        buttonText={null}
         headerContent={{
           title1: "Gain control, visibility,",
           title2: "and savings — fast",

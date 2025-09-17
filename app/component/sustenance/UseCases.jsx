@@ -1,9 +1,14 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 export default function UseCases({
   data = [
@@ -176,6 +181,7 @@ export default function UseCases({
       ),
     },
   ],
+  id = "use-cases",
   title = "Use Cases",
   heading = "Where It Works Best",
   description = "Our Infrastructure Roadmap services have unlocked outcomes for:",
@@ -184,8 +190,27 @@ export default function UseCases({
     bText: "clarity, evidence, and measurable direction.",
   },
 }) {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  const [swiperInstance, setSwiperInstance] = useState(null);
+
+  useEffect(() => {
+    if (swiperInstance && prevRef.current && nextRef.current) {
+      // Destroy existing navigation
+      swiperInstance.navigation.destroy();
+
+      // Reassign elements
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+
+      // Reinitialize navigation
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
   return (
-    <div id="use-cases" className="container">
+    <div id={id} className="container">
       <div className="h-8" />
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-3 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent leading-16">
@@ -194,15 +219,17 @@ export default function UseCases({
 
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-5">
           <div className="max-w-2xl">
-            <motion.h2
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="text-[#000000] text-3xl font-bold mb-4"
-            >
-              {heading}
-            </motion.h2>
+            {heading && (
+              <motion.h2
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="text-[#000000] text-3xl font-bold mb-4"
+              >
+                {heading}
+              </motion.h2>
+            )}
             <motion.p
               initial={{ x: -50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -213,7 +240,7 @@ export default function UseCases({
               {description}
             </motion.p>
           </div>
-          {/* <motion.div
+          <motion.div
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -225,32 +252,106 @@ export default function UseCases({
               hoverImage={buttonImage}
               className={"whitespace-nowrap"}
             />
-          </motion.div> */}
+          </motion.div>
         </div>
       </div>
       <div className="space-y-12">
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
-          {data.map((ele, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: idx * 0.1 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="h-full text-center"
-            >
-              <div className="h-5 bg-[linear-gradient(to_right,#2E3092_30%,#ED1C24_100%)]" />
-              <div className="p-3 bg-white w-full h-full rounded-lg rounded-t-none border-2 border-[#2E3092]">
-                {ele.title && <p className="text-2xl font-bold">{ele.title}</p>}
-                {ele.subTitle && <p className="text-lg">{ele.subTitle}</p>}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        <div className="text-2xl">
-          <span className="font-light">{bottomText.text}</span>
-          <span className="font-semibold">{bottomText.bText}</span>
-        </div>
+        {data.length <= 5 ? (
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8">
+            {data.map((ele, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: idx * 0.1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="h-full text-center"
+              >
+                <div className="h-5 bg-[linear-gradient(to_right,#2E3092_30%,#ED1C24_100%)]" />
+                <div className="p-3 bg-white w-full h-full rounded-lg rounded-t-none border-2 border-[#2E3092] flex flex-col items-center justify-between">
+                  <div>
+                    {ele.title && (
+                      <p className="text-2xl font-bold">{ele.title}</p>
+                    )}
+                    {ele.subTitle && <p className="text-lg">{ele.subTitle}</p>}
+                  </div>
+                  <div className="mb-1">{ele.svg}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <Swiper
+            slidesPerView={3}
+            spaceBetween={20}
+            loop={true}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 5,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[Navigation, Autoplay]}
+            autoplay={{ delay: 6000 }}
+            className="w-full h-full z-0 mt-5"
+            style={{
+              height: "250px",
+              minHeight: "250px",
+              marginTop: "1rem",
+              marginBottom: "1rem",
+            }}
+          >
+            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8 ">
+              {data.map((ele, idx) => (
+                <SwiperSlide key={idx} className="z-10 !h-full mb-10">
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: idx * 0.1 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    className="h-full text-center"
+                  >
+                    <div className="h-5 bg-[linear-gradient(to_right,#2E3092_30%,#ED1C24_100%)]" />
+                    <div className="p-3 bg-white w-full h-full rounded-lg rounded-t-none border-2 border-[#2E3092] flex flex-col items-center justify-between">
+                      <div>
+                        {ele.title && (
+                          <p className="text-2xl font-bold">{ele.title}</p>
+                        )}
+                        {ele.subTitle && (
+                          <p className="text-lg">{ele.subTitle}</p>
+                        )}
+                      </div>
+                      <div className="mb-1">{ele.svg}</div>
+                    </div>
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </div>
+          </Swiper>
+        )}
+        {bottomText && (
+          <div className="text-2xl">
+            <span className="font-light">{bottomText.text}</span>
+            <span className="font-semibold">{bottomText.bText}</span>
+          </div>
+        )}
       </div>
       <div className="h-8" />
     </div>

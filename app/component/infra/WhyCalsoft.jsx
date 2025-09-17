@@ -8,7 +8,8 @@ import { motion } from "framer-motion";
 export default function WhyCalsoft({
   sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here’s how we stand apart:",
   // buttonText = "Download Case Study",
-  title  = "Competitive Edge",
+  title = "Competitive Edge",
+  id = "why-calsoft",
   heading = "Why Calsoft",
   data = {
     tableHeadings: ["Feature", "Calsoft", "Traditional Vendors"],
@@ -69,12 +70,12 @@ export default function WhyCalsoft({
     </div>
   );
   return (
-    <div id="why-calsoft" className="max-w-7xl mx-auto px-6 container">
+    <div id={id} className="max-w-7xl mx-auto px-6 container">
       <div className="h-8" />
       {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-8 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent">
-         {heading}
+          {heading}
         </h1>
 
         <div className="flex justify-between items-center mb-12">
@@ -85,12 +86,12 @@ export default function WhyCalsoft({
             viewport={{ once: false, amount: 0.3 }}
             className="max-w-2xl"
           >
-            <h2 className="text-[#000000] text-3xl font-bold mb-4">
-              {title}
-            </h2>
-            <p className="text-[#000000] text-lg leading-relaxed">
-              {sectionDescription}
-            </p>
+            <h2 className="text-black text-3xl font-bold mb-4">{title}</h2>
+            {sectionDescription && (
+              <p className="text-black text-lg leading-relaxed">
+                {sectionDescription}
+              </p>
+            )}
           </motion.div>
           {/* <motion.div
             initial={{ x: 50, opacity: 0 }}
@@ -132,14 +133,12 @@ export default function WhyCalsoft({
             }`}
           >
             {/* Feature Name */}
-            <div className="text-[#000000] text-xl font-medium">
-              {feature.name}
-            </div>
+            <div className="text-black text-xl font-medium">{feature.name}</div>
 
             {/* Calsoft Column */}
             <div className="flex items-center justify-start gap-3">
               <CheckIcon />
-              <span className="text-[#000000] text-xl font-medium">
+              <span className="text-black text-xl font-medium">
                 {feature.calsoft}
               </span>
             </div>
@@ -147,7 +146,7 @@ export default function WhyCalsoft({
             {/* Vendor Column */}
             <div className="flex items-center justify-start gap-3">
               <CrossIcon />
-              <span className="text-[#000000] text-xl font-medium">
+              <span className="text-black text-xl font-medium">
                 {feature.vendor}
               </span>
             </div>

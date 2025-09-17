@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import HeroSection from "@/app/component/testing/HeroSection";
 import WhyItMatters, {
@@ -7,15 +8,13 @@ import WhyItMatters, {
 import IntelligentPlanning from "@/app/component/testing/IntelligentPlanning";
 import UseCases from "@/app/component/sustenance/UseCases";
 import WhyCalsoft from "@/app/component/infra/WhyCalsoft";
-import FirstStep from "@/app/component/infra/FirstStep";
-import Guesswork from "@/app/component/sustenance/Guesswork";
 import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_2.webp";
 import Agility from "@/app/component/infra/Agility";
-import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFits";
+import HowToStart from "@/app/component/VirtualizationSolutions/HowToStart";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -24,7 +23,7 @@ export default function Page() {
     "Smart Packaging",
     "Orchestration at Scale",
     "Real-World Impact",
-    "Where It Fits",
+    // "Where It Fits",
     "Why Calsoft",
     "How to Start",
   ];
@@ -40,6 +39,7 @@ export default function Page() {
         activeTab={activeTab}
       />
       <WhyItMatters
+        id="pulse-check"
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
@@ -69,6 +69,7 @@ export default function Page() {
         Component={Containerization}
       />
       <IntelligentPlanning
+        id="smart-packaging"
         heading="Modular apps = faster delivery"
         description="We help modernize your application estate through container-first design with tools and governance that match your environment."
         data={[
@@ -107,7 +108,7 @@ export default function Page() {
         title="Smart Packaging"
         bottomContent={null}
       />
-      <RealWorldImpact 
+      <RealWorldImpact
         title="Modular apps = faster delivery"
         desc="We help modernize your application estate through container-first design with tools and governance that match your environment."
         cardData={[
@@ -146,9 +147,11 @@ export default function Page() {
         />
       </div>
       <UseCases
+        id="orchestration-at-scale"
+        title="Orchestration at Scale"
         data={[
           {
-            title: "Kubernetes(K8s)",
+            title: "Kubernetes (K8s)",
             subTitle: "architecture design and multi-cluster deployment",
             svg: (
               <svg
@@ -317,14 +320,15 @@ export default function Page() {
             ),
           },
         ]}
-        heading="Calsoft sets up and manages"
-        description="production-grade container orchestration with enterprise reliability and automation in mind."
+        heading={null}
+        description="Calsoft sets up and manages production-grade container orchestration with enterprise reliability and automation in mind."
         bottomText={{
           text: "Whether you run VMware, Hyper-V, KVM, OpenStack, or cloud VMs — ",
           bText: "we bring lifecycle order to complexity.",
         }}
       />
       <Agility
+        id="real-world-impact"
         data={{
           leftSideContent: {
             title: "Real-World Impact Modern delivery, measurable results",
@@ -347,11 +351,11 @@ export default function Page() {
               subTitle:
                 "rollback incidents through GitOps and staging pipelines",
             },
-            {
-              title: "Up to 40%",
-              subTitle:
-                "cost reduction in infrastructure spend via right-sizing",
-            },
+            // {
+            //   title: "Up to 40%",
+            //   subTitle:
+            //     "cost reduction in infrastructure spend via right-sizing",
+            // },
             {
               title: "Improved",
               subTitle:
@@ -363,14 +367,14 @@ export default function Page() {
         buttonText="Request ROI"
       />
       <WhyCalsoft
-        sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
+        sectionDescription={null}
         buttonText="Download One Pager"
         title="Why our model works"
         data={{
           tableHeadings: [
             "Capability",
-            "Calsoft",
-            "Manual or Script-Only Models",
+            "Calsoft Container Services",
+            "DIY or Siloed Implementations",
           ],
           tableContent: [
             {
@@ -401,7 +405,23 @@ export default function Page() {
           ],
         }}
       />
-      <WhereItFits />
+      {/* <WhereItFits /> */}
+      <HowToStart
+        headerContent={{
+          title1: "How to Start",
+          description: "From containers to continuous delivery — the right way",
+        }}
+        data={{
+          Assess: "Current workloads, deployment cycles, and infra usage",
+          Design:
+            "Container strategy (image, registry, platform, security model)",
+          Implement: "Container pipelines, K8s clusters, GitOps, observability",
+          Pilot:
+            "Deploy containerized app with scaling and rollback validation",
+          Scale:
+            "Enable full DevSecOps orchestration with audit controls and policy gates",
+        }}
+      />
       <ContactSecDataAi
         lightContent={
           "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"

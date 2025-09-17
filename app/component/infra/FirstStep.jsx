@@ -6,7 +6,7 @@ import img from "../../assets/infra/FirstStep.webp";
 import Guesswork from "./GuessWork";
 import { motion } from "framer-motion";
 import ButtonLayout from "../utilities/ButtonLayout";
-import ButtonImage from "../../assets/home/buttonImg.webp"
+import ButtonImage from "../../assets/home/buttonImg.webp";
 import { showHubSpotForm } from "../utilities/showHubSpotForm";
 export default function FirstStep({
   headerContent = {
@@ -18,8 +18,8 @@ export default function FirstStep({
   Component = Guesswork,
   guessworkData,
   output,
-  buttonText="Start Today",
-  onButtonClick=()=>showHubSpotForm("start-today")
+  buttonText = "Start Today",
+  onButtonClick = () => showHubSpotForm("start-today"),
 }) {
   return (
     <div id="how-to-start" className="container">
@@ -52,29 +52,29 @@ export default function FirstStep({
         </motion.div>
       </div>
       <Component stepsData={guessworkData} output={output} />
-       <div className="md:flex justify-center mb-12 -mt-[120px] hidden">
-                <div className="w-1/2 ml-auto">
-                  {buttonText && (
-                    <div className="text-center mt-10">
-                      <motion.div
-                        initial={{ x: -50, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 0.8 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                        className="flex flex-col md:flex-row gap-4 justify-center"
-                      >
-                        <ButtonLayout
-                          // link={link}
-                          text={buttonText}
-                          image={ButtonImage}
-                          hoverImage={ButtonImage}
-                          onClick={onButtonClick}
-                        />
-                      </motion.div>
-                    </div>
-                  )}
-                </div>
-              </div>
+      {buttonText && (
+        <div className="md:flex justify-center mb-12 -mt-[120px] hidden">
+          <div className="w-1/2 ml-auto">
+            <div className="text-center mt-10">
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="flex flex-col md:flex-row gap-4 justify-center"
+              >
+                <ButtonLayout
+                  // link={link}
+                  text={buttonText}
+                  image={ButtonImage}
+                  hoverImage={ButtonImage}
+                  onClick={onButtonClick}
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
