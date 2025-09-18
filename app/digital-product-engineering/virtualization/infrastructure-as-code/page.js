@@ -7,8 +7,6 @@ import WhyItMatters, {
 import IntelligentPlanning from "@/app/component/testing/IntelligentPlanning";
 import UseCases from "@/app/component/sustenance/UseCases";
 import WhyCalsoft from "@/app/component/infra/WhyCalsoft";
-import FirstStep from "@/app/component/infra/FirstStep";
-import Guesswork from "@/app/component/sustenance/Guesswork";
 import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
@@ -40,6 +38,7 @@ export default function Page() {
         activeTab={activeTab}
       />
       <WhyItMatters
+        id="pulse-check"
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
@@ -108,13 +107,15 @@ export default function Page() {
           //   subTitle: null,
           // },
         ]}
+        id="modular-foundation"
         title="Modular Foundation"
         bottomContent={null}
         arrow={true}
       />
-      <RealWorldImpact 
+      <RealWorldImpact
         title="Make infra changes part of release pipelines"
         desc="Calsoft connects your IaC with CI/CD and change management:"
+        id="ci/cd-integration"
         heading="CI/CD Integration"
         cardData={[
           {
@@ -152,6 +153,7 @@ export default function Page() {
         />
       </div>
       <Agility
+        id="real-world-impact"
         data={{
           leftSideContent: {
             title: "Real-World Impact",
@@ -159,10 +161,10 @@ export default function Page() {
             description: "What enterprises gain from Calsoft’s IaC framework",
           },
           rightSideContent: [
-            {
-              title: "3x faster infra rollout cycles",
-              subTitle: "with reusable templates",
-            },
+            // {
+            //   title: "3x faster infra rollout cycles",
+            //   subTitle: "with reusable templates",
+            // },
             {
               title: "Zero-drift",
               subTitle:
@@ -186,6 +188,7 @@ export default function Page() {
         buttonText="Request ROI"
       />
       <UseCases
+        id="where-it-fits"
         title="Where It Fits"
         data={[
           {

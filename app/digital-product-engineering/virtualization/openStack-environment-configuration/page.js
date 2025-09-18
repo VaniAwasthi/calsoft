@@ -16,6 +16,7 @@ import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_4.webp";
 import Agility from "@/app/component/infra/Agility";
 import HowToStart from "@/app/component/VirtualizationSolutions/HowToStart";
+import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFitsMiddle";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -40,6 +41,7 @@ export default function Page() {
         activeTab={activeTab}
       />
       <WhyItMatters
+        id="pulse-check"
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
@@ -113,7 +115,8 @@ export default function Page() {
           btnText: "Request POC",
         }}
       /> */}
-      <RealWorldImpact 
+      <RealWorldImpact
+        id="core-setup"
         title="Design for scale, not struggle"
         desc="Calsoft brings end-to-end OpenStack environment configuration from planning to deployment — aligned with your workloads and operational maturity."
         heading="Core Setup"
@@ -162,6 +165,7 @@ export default function Page() {
       </div>
 
       <UseCases
+        id="automation-ready"
         title="Automation-Ready"
         data={[
           {
@@ -414,12 +418,10 @@ export default function Page() {
         ]}
         heading="Make Day-2 operations painless"
         description="Once deployed, OpenStack must scale, patch, and recover without complexity. Calsoft sets up your environment to support:"
-        bottomText={{
-          text: null,
-          bText: null,
-        }}
+        bottomText={null}
       />
       <Agility
+        id="real-world-impact"
         data={{
           leftSideContent: {
             title: "Real-World Impact",
@@ -438,11 +440,11 @@ export default function Page() {
               subTitle:
                 "instance launch time through image optimization and network tuning",
             },
-            {
-              title: "40–60%",
-              subTitle:
-                "improvement in tenant-level isolation and policy control",
-            },
+            // {
+            //   title: "40–60%",
+            //   subTitle:
+            //     "improvement in tenant-level isolation and policy control",
+            // },
             {
               title: "3x better scalability",
               subTitle: "via modular node design and autoscaling integrations",
@@ -456,11 +458,13 @@ export default function Page() {
         bookMeetingData={null}
         buttonText="Request ROI"
       />
+      {/* Where it fits */}
+      <WhereItFits />
       <WhyCalsoft
-        sectionDescription=""
+        sectionDescription={null}
         buttonText="Download One Pager"
         title="Why Calsoft is trusted for OpenStack engineering"
-        heading="How to Start"
+        heading="Why Calsoft"
         data={{
           tableHeadings: [
             "Capability",

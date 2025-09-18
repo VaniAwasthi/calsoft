@@ -46,12 +46,12 @@ export default function Guesswork({
   );
 }
 
-function Card({ data, idx }) {
+export function Card({ data, idx }) {
   return (
     <div className="bg-[#ffffff] bg-[linear-gradient(60deg,rgba(255,255,255,1)_70%,rgba(0,0,0,0.3)_100%)] h-72 border-2 border-gray-300 rounded-3xl py-4 px-3 flex flex-col gap-1.5 relative">
-      <p className="text-2xl font-bold">{data.heading}</p>
+      {data.heading && <p className="text-2xl font-bold">{data.heading}</p>}
       <div>
-        <p className="text-lg font-medium">{data.title}</p>
+        {data.title && <p className="text-lg font-medium">{data.title}</p>}
         {data.desc && <p className="text-lg font-light">{data.desc}</p>}
       </div>
       <div className="absolute bottom-0 right-0">
