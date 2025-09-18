@@ -198,7 +198,7 @@ export function CardSection({
 }) {
   return (
     <div className="bg-[#edeeff] lg:h-96 xl:h-80 py-10">
-      <div className="container flex flex-col lg:flex-row justify-between items-center gap-14 p-20 relative lg:bottom-[14rem]">
+      <div className="container flex flex-col lg:flex-row justify-between items-center gap-14 p-20 relative lg:bottom-[14rem] xl:bottom-[16.5rem]">
         {data.map((ele, idx) => (
           <motion.div
             key={idx}
@@ -300,9 +300,49 @@ export function CardList({
         },
       ],
     },
+    {
+      breadcrumb: "AI | Security | Gaps",
+      title:
+        "People Soft Innovation Submit: Transforming higher Ed & Healthcare for 2026",
+      date: "Sept 12, 2025",
+      duration: "120 min",
+      speakers: [
+        {
+          name: "Jenna Oretga",
+          title: "Oracle ACE",
+          image: img1,
+        },
+        {
+          name: "Austin Miller",
+          title: "Oracle ACE",
+          image: img2,
+        },
+      ],
+    },
+    {
+      breadcrumb: "AI | Security | Gaps",
+      title:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eum Totam ut rem",
+      date: "Sept 12, 2025",
+      duration: "120 min",
+      speakers: [
+        {
+          name: "Jenna Oretga",
+          title: "Oracle ACE",
+          image: img1,
+        },
+        {
+          name: "Austin Miller",
+          title: "Oracle ACE",
+          image: img2,
+        },
+      ],
+    },
   ],
 }) {
   const [filteredCards, setFilteredCards] = useState(data);
+  const [currentPage, setCurrentPage] = useState(1);
+  const cardsPerPage = 4;
   const dispatch = useDispatch();
   const FilterAuthr = useSelector((state) => state.blogs.filterAuthor || []);
   const FilterIndustry = useSelector(
@@ -365,6 +405,26 @@ export function CardList({
       );
   }
 
+  const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
+  console.log(totalPages);
+  const startIndex = (currentPage - 1) * cardsPerPage;
+  const endIndex = startIndex + cardsPerPage;
+  const currentCards = filteredCards.slice(startIndex, endIndex);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filteredCards]);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePageClick = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   useEffect(() => {
     dispatch(fetchBlogFilterList());
   }, []);
@@ -383,8 +443,9 @@ export function CardList({
           mainClass={"p-0 mx-0 px-0 sm:px-0 lg:px-0 -px-1 -ml-4"}
           searchDebouncing={search}
         />
+        <p>{filteredCards.length} Results</p>
         <div className="grid lg:grid-cols-2 gap-8 ">
-          {filteredCards.map((ele, idx) => (
+          {currentCards.map((ele, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
@@ -404,6 +465,47 @@ export function CardList({
               />
             </motion.div>
           ))}
+        </div>
+        <div className="relative flex items-center justify-center mt-12">
+          <div className="flex items-center space-x-2">
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index + 1}
+                onClick={() => handlePageClick(index + 1)}
+                className={`w-2 h-2 rounded-full transition-colors duration-200 ${
+                  currentPage === index + 1
+                    ? "bg-[#2e3092]"
+                    : "bg-gray-300 hover:bg-gray-400"
+                }`}
+                aria-label={`Go to page ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage >= totalPages}
+            className={`absolute right-0 flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+              currentPage >= totalPages
+                ? "text-gray-400 cursor-not-allowed"
+                : "text-[#2e3092] hover:text-[#1e2082]"
+            }`}
+            aria-label="Go to next page"
+          >
+            <span>Next</span>
+            <svg
+              width="15"
+              height="13"
+              viewBox="0 0 15 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M-0.00374985 6H12.2463L6.99625 0.75L7.65625 0L14.1562 6.5L7.65625 13L6.99625 12.25L12.2463 7H-0.00374985V6Z"
+                fill="#2E3092"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
