@@ -117,7 +117,7 @@ export function HeroSection({ title, subTitle, desc }) {
                 alt="newspaper"
                 width={1600}
                 height={900}
-                className="w-full h-full object-cover object-[center_15%]"
+                className="w-full h-full object-cover object-[center_45%]"
               />
             </div>
           </div>
@@ -317,9 +317,14 @@ export function PreviousNewspaper({
           className="grid grid-cols-6 gap-4"
         >
           {data.map((ele) => (
-            <div className="bg-[#2E3092] px-2 py-3 rounded-lg text-white flex items-center justify-center">
+            <Link
+              href={`/insights/newspaper/monthly-newsletter-${ele
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
+              className="bg-[#2E3092] px-2 py-3 rounded-lg text-white flex items-center justify-center"
+            >
               {ele}
-            </div>
+            </Link>
           ))}
         </motion.div>
       </div>
