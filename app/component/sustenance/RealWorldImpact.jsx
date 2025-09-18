@@ -12,7 +12,7 @@ import "swiper/css/autoplay";
 
 export default function RealWorldImpact({
   buttonClicked,
-  
+  id = "business-value",
   onbuttonClicked,
   heading = "Real-World Impact",
   title = "Turn Unknowns Into Predictable Outcomes",
@@ -43,9 +43,7 @@ export default function RealWorldImpact({
   bottomContent = {
     text: "Documentation isn’t just about writing — it’s about engineering clarity.",
     btnText: "Download One Pager",
-    
   },
-  secId="business-value",
   arrow = true
 }) {
   const prevRef = useRef(null);
@@ -69,7 +67,7 @@ export default function RealWorldImpact({
   }, [swiperInstance]);
   return (
     <div
-      id={secId}
+      id="business-value"
       className={`${buttonText && "bg-[#f9f9f9]"} py-10`}
     >
       <div className="container">
@@ -102,6 +100,7 @@ export default function RealWorldImpact({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: false, amount: 0.3 }}
+                className="flex justify-center items-center gap-4"
               >
                 <ButtonLayout
                   text={buttonText}
@@ -115,7 +114,11 @@ export default function RealWorldImpact({
                     <button
                       ref={prevRef}
                       className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
-                      style={{ visibility: "visible", display: "flex", zIndex: 40 }}
+                      style={{
+                        visibility: "visible",
+                        display: "flex",
+                        zIndex: 40,
+                      }}
                     >
                       <svg
                         width="11"
@@ -133,7 +136,11 @@ export default function RealWorldImpact({
                     <button
                       ref={nextRef}
                       className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
-                      style={{ visibility: "visible", display: "flex", zIndex: 40 }}
+                      style={{
+                        visibility: "visible",
+                        display: "flex",
+                        zIndex: 40,
+                      }}
                     >
                       <svg
                         width="11"
@@ -182,7 +189,7 @@ export default function RealWorldImpact({
           }}
           modules={[Navigation, Autoplay]}
           autoplay={{ delay: 6000 }}
-          className="w-full h-full z-0 py-14"
+          className="w-full h-full z-0 mt-5"
           style={{ height: "250px", minHeight: "250px" }}
         >
           <div className="flex xl:flex-nowrap flex-wrap justify-center gap-x-6 gap-y-3 md:gap-y-0 mt-8 mb-2">

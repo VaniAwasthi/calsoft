@@ -40,15 +40,16 @@ export default function IntelligentPlanning({
       subTitle: "industry standards, or competitor data if available",
     },
   ],
+  id = "intelligent-planning",
   title = "Intelligent Planning",
   heading = "Move What Matters, Not Just What Exists",
   description = " We don’t just move workloads — we evaluate, prioritize, and engineer them for performance and ROI. Calsoft’s approach includes:",
   buttonText = "Talk to Expert",
-  buttonClick=()=>showHubSpotForm("Talk_to_Expert"),
+  buttonClick = () => showHubSpotForm("Talk_to_Expert"),
   bottomContent = {
     text: "We create docs that are version-controlled, searchable, modular, and traceable.",
     btnText: "Talk to Expert",
-  onbuttonClick:()=>showHubSpotForm("Talk_to_Expert"),
+    buttonClick: () => showHubSpotForm("Talk_to_Expert"),
   },
   secId="intelligent-planning",
   arrow = true,
@@ -58,25 +59,25 @@ export default function IntelligentPlanning({
   const nextRef = useRef(null);
 
   const [swiperInstance, setSwiperInstance] = useState(null);
-  
-    useEffect(() => {
-      if (swiperInstance && prevRef.current && nextRef.current) {
-        // Destroy existing navigation
-        swiperInstance.navigation.destroy();
-  
-        // Reassign elements
-        swiperInstance.params.navigation.prevEl = prevRef.current;
-        swiperInstance.params.navigation.nextEl = nextRef.current;
-  
-        // Reinitialize navigation
-        swiperInstance.navigation.init();
-        swiperInstance.navigation.update();
-      }
-    }, [swiperInstance]);
-    
+
+  useEffect(() => {
+    if (swiperInstance && prevRef.current && nextRef.current) {
+      // Destroy existing navigation
+      swiperInstance.navigation.destroy();
+
+      // Reassign elements
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+
+      // Reinitialize navigation
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
+
   return (
     <div
-      id="intelligent-planning"
+      id={id}
       className={`w-full relative z-0 ${bottomContent && "bg-[#f9f9f9]"} `}
     >
       <div className="h-8" />

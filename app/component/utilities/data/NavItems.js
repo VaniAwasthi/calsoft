@@ -564,6 +564,7 @@ export const navItems = [
       { title: "Career", href: "/career" ,description:"Building rewarding careers through innovation, learning, and growth opportunities." },
       { title: "Leadership", href: "/leadership", description:"Guided by vision and expertise to drive Calsoft’s technology-first journey." },
       { title: "CSR", href: "/csr" , description:"Committed to creating social impact through education, empowerment, and sustainability initiatives." },
+      { title: "Partners ", href: "/partners" , description:"Our alliances with global technology giants, innovators, and disruptors help us provide value to every business relationship." },
       { title: "Contact Us", href: "/contact-us" , description:"Connect with us to explore solutions, partnerships, and opportunities." },
     ],
   },

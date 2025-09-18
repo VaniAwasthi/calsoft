@@ -8,7 +8,7 @@ import buttonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
 
 export default function WhyItMatters({
-  secId,
+  id = "why-it-matters",
   title,
   heading = "Why virtual environments spiral out of control",
   desc = "Without governance, virtual machines and assets multiply uncontrollably — resulting in:",
@@ -49,7 +49,7 @@ export default function WhyItMatters({
   buttonClick
 }) {
   return (
-    <div className="my-12" id={secId}>
+    <div id={id} className="my-12">
       <div className="container flex gap-8 med:flex-row flex-col">
         <div className="space-y-4 flex-1 xl:flex-initial">
           <motion.p

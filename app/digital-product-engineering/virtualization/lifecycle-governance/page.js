@@ -46,7 +46,7 @@ export default function Page() {
         buttonClick={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
-      secId="structured-lifecycle"
+        id="structured-lifecycle"
         heading="Governance that starts at provisioning"
         description="Calsoft designs end-to-end VM lifecycle controls — from request to retirement — backed by automation, tagging, and policy."
         data={[
@@ -95,8 +95,8 @@ export default function Page() {
         arrow={true}
       />
       <RealWorldImpact
-      secId="real-world-impact"
-        buttonText={null}
+        id="real-world-impact"
+        buttonText={"Download ROI Sheet"}
         title="From virtual chaos to operational clarity"
         desc="Organizations leveraging Calsoft’s lifecycle governance have achieved:"
         cardData={[
@@ -131,7 +131,7 @@ export default function Page() {
         />
       </div>
       <UseCases
-      secId="where-it-fits"
+        id="where-it-fits"
         title="Where It Fits"
         data={[
           {
@@ -351,6 +351,7 @@ export default function Page() {
         }}
       />
       <FirstStep
+        buttonText={null}
         headerContent={{
           title1: "Gain control, visibility,",
           title2: "and savings — fast",

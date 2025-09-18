@@ -14,13 +14,14 @@ import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_6.webp";
 import Agility from "@/app/component/infra/Agility";
 import HowToStart from "@/app/component/VirtualizationSolutions/HowToStart";
+import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFitsMiddle";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
     "Pulse Check",
-    "Core-to-VM Licensing Efficiency",
-    "Visual Suggestion",
+    "Core-to-VM",
+    "Licensing Efficiency",
     "Real-World Impact",
     "Where It Fits",
     "Why Calsoft",
@@ -38,6 +39,7 @@ export default function Page() {
         activeTab={activeTab}
       />
       <WhyItMatters
+        id="pulse-check"
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
@@ -105,13 +107,15 @@ export default function Page() {
             subTitle: "Automated rightsizing based on workload trends",
           },
         ]}
+        id="core-to-vm"
         title="Core-to-VM"
         bottomContent={null}
         arrow={true}
       />
-      <RealWorldImpact 
+      <RealWorldImpact
         title="Cut hypervisor cost without compromise"
         desc="Hypervisor licenses — especially for enterprise VMware — can drive up infra spend if not managed properly. Calsoft helps:"
+        id="licensing-efficiency"
         heading="Licensing Efficiency"
         cardData={[
           {
@@ -330,6 +334,7 @@ export default function Page() {
         }}
       /> */}
       <Agility
+        id="real-world-impact"
         data={{
           leftSideContent: {
             title: "Real-World Impact",
@@ -364,7 +369,40 @@ export default function Page() {
         bookMeetingData={null}
         buttonText="Request ROI"
       />
+      <WhereItFits
+        title1="When hypervisor tuning becomes essential"
+        title2="Hypervisor optimization is critical if:"
+        data={[
+          {
+            heading: null,
+            title: null,
+            desc: "You're nearing CPU/memory limits but utilization is low",
+          },
+          {
+            heading: null,
+            title: null,
+            desc: "Support and maintenance costs are rising without scaling performance",
+          },
+          {
+            heading: null,
+            title: null,
+            desc: "You're preparing for VMware license review or renewal",
+          },
+          {
+            heading: null,
+            title: null,
+            desc: "Application performance in VMs is inconsistent or degrading",
+          },
+          {
+            heading: null,
+            title: null,
+            desc: "You're considering KVM, Nutanix AHV, or hybrid hypervisor strategies",
+          },
+        ]}
+        output="Whether you use VMware, Hyper-V, Nutanix AHV, or open virtualization — we help you measure, improve, and control."
+      />
       <WhyCalsoft
+        id="how-to-start"
         sectionDescription=""
         title="Why Calsoft’s optimization model works"
         heading="How to Start"
