@@ -13,6 +13,7 @@ import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDat
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/Sustaine/Sustenance_Banner_3.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -35,12 +36,13 @@ export default function Page() {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         buttonText2=""
+        buttonClicked={()=>showHubSpotForm("Talk_to_Expert")}
       />
       <WhyItMatters
         heading="Pulse Check"
         title="What’s broken in traditional ticketing systems?"
         desc=" Support teams are overwhelmed with repetitive, poorly routed, or under-prioritized tickets. As product complexity grows, teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         data={[
           {
             title: "High mean time to resolution (MTTR)",
@@ -165,6 +167,7 @@ export default function Page() {
             ),
           },
         ]}
+        buttonClicked={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
         heading="Design a smarter support pipeline"
@@ -202,7 +205,13 @@ export default function Page() {
           // },
         ]}
         title="System First"
-        bottomContent={null}
+        bottomContent={{
+          text: "We design support workflows to scale with product complexity and user growth.",
+          btnText: "Request POC",
+          
+          onbuttonClick:()=>showHubSpotForm("request-a-poc")
+        }}
+       
         arrow={true}
       />
       <RealWorldImpact
@@ -233,13 +242,14 @@ export default function Page() {
         ]}
         bottomContent={{
           text: "Intelligent ticketing turns support into a continuous improvement engine.",
-          btnText: "Download ROI Sheet",
+         
         }}
       />
       <div className="container">
         <BookMeeting
           title="Resolve 90% issues with AI-powered ticketing."
           img={img}
+          buttonClicked={()=>showHubSpotForm("book-a-meeting")}
         />
       </div>
       <UseCases
@@ -248,7 +258,7 @@ export default function Page() {
         description="You’ll benefit most if:"
         bottomText={{
           text: "Whether you run internal IT, SaaS support, or product operations — ",
-          bText: " intelligent ticketing is critical to scale.",
+          bText: "intelligent ticketing is critical to scale.",
         }}
         data={[
           {
@@ -497,9 +507,9 @@ export default function Page() {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Handle tickets intelligently for faster resolution."
         }
-        link={"#"}
+       
       />
     </>
   );

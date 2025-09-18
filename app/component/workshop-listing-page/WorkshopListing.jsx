@@ -14,35 +14,36 @@ import { motion } from "framer-motion";
 
 export function HeroSection({ title, subTitle, buttonText }) {
   return (
-    <div>
-      <div className="relative">
-        <Image
-          src={WebImg}
-          alt="Coding screen"
-          height={800}
-          width={1500}
-          className="transform scale-x-[-1]"
+    <div className="relative w-full h-[800px]"> {/* Adjust height as needed */}
+      {/* Background Image */}
+      <Image
+        src={WebImg}
+        alt="Coding screen"
+        fill
+        priority
+        className="object-cover object-center transform scale-x-[-1]"
+      />
+
+      {/* Overlay with Content */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="absolute inset-0 bg-[#00000077] flex flex-col justify-center items-center gap-5 px-4"
+      >
+        <div className="text-white text-center space-y-5 lg:w-1/2">
+          <p className="text-[40px] md:text-[55px] font-bold">{title}</p>
+          <p className="text-lg md:text-xl">{subTitle}</p>
+        </div>
+        <ButtonLayout
+          text={buttonText}
+          image={buttonImage}
+          hoverImage={buttonImage}
+          className="w-fit shadow-2xl"
+          onClick={() => {}}
         />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: false, amount: 0.3 }}
-          className="absolute top-0 w-full h-full bg-[#00000077] flex flex-col justify-start items-center gap-5 xl:pt-20 pt-10"
-        >
-          <div className="text-white text-center space-y-5 lg:w-1/2">
-            <p className="text-[55px] font-bold">{title}</p>
-            <p className="text-xl">{subTitle}</p>
-          </div>
-          <ButtonLayout
-            text={buttonText}
-            image={buttonImage}
-            hoverImage={buttonImage}
-            className={"w-fit shadow-2xl"}
-            onClick={() => {}}
-          />
-        </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 }
@@ -344,11 +345,11 @@ export function CardList({
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 4;
   const dispatch = useDispatch();
-  const FilterAuthr = useSelector((state) => state.blogs.filterAuthor || []);
+  const FilterAuthr = useSelector((state) => state.blogs?.filterAuthor || []);
   const FilterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
+    (state) => state.blogs?.filterIndustry || []
   );
-  const FilterTopic = useSelector((state) => state.blogs.filterTopic || []);
+  const FilterTopic = useSelector((state) => state.blogs?.filterTopic || []);
 
   const filters = {
     Industry: [...FilterIndustry],
@@ -433,6 +434,7 @@ export function CardList({
     <div className="bg-white container">
       <div className="space-y-8 py-14">
         <FilterSec
+        bgColor="bg-[#EFEFEF] text-[#2E3092]"
           filters={filters}
           activeFilters={activeFilters}
           setActiveFilters={setActiveFilters}

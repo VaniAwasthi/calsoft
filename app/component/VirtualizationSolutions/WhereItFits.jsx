@@ -9,6 +9,7 @@ import ButtonImage from "../../assets/home/buttonImg.webp";
 import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function WhereItFits({
+  secId="how-to-start",
   headerContent = {
     title1: "Where It Fits",
     description: "When containers become a necessity",
@@ -24,7 +25,7 @@ export default function WhereItFits({
   ],
 }) {
   return (
-    <div id="how-to-start" className="container">
+    <div id={secId} className="container">
       <div className="h-8" />
       <div className="grid lg:grid-cols-2 gap-5">
         <motion.div

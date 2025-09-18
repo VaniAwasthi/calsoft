@@ -46,6 +46,7 @@ export default function WhyItMatters({
       left: 18.5,
     },
   ],
+  buttonClick
 }) {
   return (
     <div id={id} className="my-12">
@@ -95,6 +96,7 @@ export default function WhyItMatters({
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit"}
+              onClick={buttonClick}
             />
           </motion.div>
         </div>
