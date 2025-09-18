@@ -10,31 +10,38 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
-      // dev.calsoft.org - allow both http and https
+      // dev.calsoft.org
       {
-        protocol: "http",
+        protocol: "https",
         hostname: "dev.calsoft.org",
         pathname: "/**",
       },
       {
-        protocol: "https",
+        protocol: "http",
         hostname: "dev.calsoft.org",
         pathname: "/**",
       },
 
-      // 35.162.115.74 - allow both http and https
+      // origin.calsoft.org
       {
-        protocol: "http",
-        hostname: "dev.calsoft.org",
-        pathname: "/**", // Allow all image paths from this host
+        protocol: "https",
+        hostname: "origin.calsoft.org",
+        pathname: "/**", // covers /admin/assets/dist/uploads/**
       },
       {
         protocol: "http",
+        hostname: "origin.calsoft.org",
+        pathname: "/**",
+      },
+
+      // 35.162.115.74
+      {
+        protocol: "https",
         hostname: "35.162.115.74",
         pathname: "/**",
       },
       {
-        protocol: "https",
+        protocol: "http",
         hostname: "35.162.115.74",
         pathname: "/**",
       },
