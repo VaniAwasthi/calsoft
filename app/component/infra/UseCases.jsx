@@ -9,8 +9,10 @@ import { motion } from "framer-motion";
 import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function Component({
+  heading = "Use Cases",
   title = "Where It Works Best.",
   desc = "Our Infrastructure Roadmap services have unlocked outcomes for:",
+  buttonText = "Request Use Cases",
   useCases = [
     "ISVs migrating monoliths to containerized microservices",
     "Healthcare firms ensuring HIPAA-aligned infra blueprints",
@@ -30,7 +32,7 @@ export default function Component({
               {/* Header */}
               <div className=" mb-5">
                 <h2 className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-5">
-                  Use Cases
+                  {heading}
                 </h2>
                 <motion.div
                   initial={{ x: -50, opacity: 0 }}
@@ -106,7 +108,7 @@ export default function Component({
                 className="pt-4"
               >
                 <ButtonLayout
-                  text={"Request Use Cases"}
+                  text={buttonText}
                   onClick={()=>showHubSpotForm("Talk-to-Expert")}
                   image={buttonImage}
                   hoverImage={buttonImage}
