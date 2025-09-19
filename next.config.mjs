@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  poweredByHeader: false, // <— hides “x-powered-by: Next.js”
   async rewrites() {
     return [
       {
