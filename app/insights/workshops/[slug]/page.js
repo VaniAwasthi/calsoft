@@ -3,19 +3,19 @@ import {
   CaseStudySection,
   HeroSecWorkshop,
   RegressionSection,
-} from "../../component/workshop/HeroSec";
-import CommitmentIcon1 from "../../assets/webinar/commitmentIcon1.svg";
-import CommitmentIcon2 from "../../assets/webinar/commitmentIcon2.svg";
-import CommitmentIcon3 from "../../assets/webinar/commitmentIcon3.svg";
-import CommitmentIcon4 from "../../assets/webinar/commitmentIcon4.svg";
-import { CommitmentSection } from "../../component/webinar/HeroSec";
+} from "../../../component/workshop/HeroSec";
+import CommitmentIcon1 from "../../../assets/webinar/commitmentIcon1.svg";
+import CommitmentIcon2 from "../../../assets/webinar/commitmentIcon2.svg";
+import CommitmentIcon3 from "../../../assets/webinar/commitmentIcon3.svg";
+import CommitmentIcon4 from "../../../assets/webinar/commitmentIcon4.svg";
 import {
   SpeakerSecWorkshop,
   WhyCalTIA,
-} from "../../component/workshop/InfoSpeaker";
-import RichaImg from "../../assets/webinar/richa.svg";
-import KundanImg from "../../assets/webinar/kunal.svg";
-import VinodImg from "../../assets/webinar/binod.svg";
+} from "../../../component/workshop/InfoSpeaker";
+import RichaImg from "../../../assets/webinar/richa.svg";
+import KundanImg from "../../../assets/webinar/kunal.svg";
+import VinodImg from "../../../assets/webinar/binod.svg";
+import { CommitmentSection } from "@/app/component/webinar/HeroSec";
 const Page = () => {
   const cards = [
     {
