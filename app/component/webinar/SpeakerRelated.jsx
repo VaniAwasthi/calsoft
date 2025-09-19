@@ -38,9 +38,9 @@ export const SpeakersHostSection = ({ people }) => {
             </motion.h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-18 md:gap-16 items-center text-black">
               {people.speakers.map((speaker, index) => (
-                <div className="relative  border-[#2E3092] border-[3px] bg-[#F5F5F5] text-black rounded-[20px] flex items-center pl-10 pr-6 py-4 min-h-[110px] w-full max-w-[250px] xl:max-w-2/3 mx-auto">
+                <div key={index} className="relative  border-[#2E3092] border-[3px] bg-[#F5F5F5] text-black rounded-[20px] flex items-center pl-10 pr-6 py-4 min-h-[110px] w-full max-w-[250px] xl:max-w-2/3 mx-auto">
                   {/* Outer Circle */}
-                  <div className="absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2">
+                  <div  className="absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2">
                     <div className="w-[110px] h-[110px] rounded-full border-[6px] border-white flex items-center justify-center bg-[#353BA5]">
                       <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-[4px] border-[#2E3092]">
                         <Image
@@ -90,9 +90,9 @@ export const SpeakersHostSection = ({ people }) => {
             </h2>
             <div className="grid grid-cols-1 gap-18 md:gap-16 items-center text-white">
               {people.host.map((host, index) => (
-                <div className="relative bg-[#353BA5] text-white rounded-[20px] flex items-center pl-20 pr-6 py-4  min-h-[110px] w-full max-w-[250px] xl:max-w-2/3 mx-auto">
+                <div key={index} className="relative bg-[#353BA5] text-white rounded-[20px] flex items-center pl-20 pr-6 py-4  min-h-[110px] w-full max-w-[250px] xl:max-w-2/3 mx-auto">
                   {/* Outer Circle */}
-                  <div className="absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2">
+                  <div  className="absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2">
                     <div className="w-[110px] h-[110px] rounded-full border-[6px] border-white flex items-center justify-center bg-[#353BA5]">
                       <div className="w-[96px] h-[96px] rounded-full overflow-hidden border-[4px] border-[#353BA5]">
                         <Image

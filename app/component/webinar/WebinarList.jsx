@@ -17,6 +17,8 @@ import ButtonImage from "../../assets/home/buttonImg.webp";
 import ButtonLayout from "../utilities/ButtonLayout";
 import { FilterSec } from "../utilities/FilterSec";
 import { baseUrl } from "../../../config";
+import { setSelectedWebinarsId } from "@/app/store/reducers/webinarsReducer";
+import { slugify } from "../utilities/helper/SlugGenerator";
 
 export const WebinarList = () => {
   const dispatch = useDispatch();
@@ -26,9 +28,9 @@ export const WebinarList = () => {
   // Redux data
   const webinarsData = useSelector((state) => state.webinars?.list || []);
   const filterIndustry = useSelector(
-    (state) => state.blogs.filterIndustry || []
+    (state) => state.blogs?.filterIndustry || []
   );
-  const filterTopic = useSelector((state) => state.blogs.filterTopic || []);
+  const filterTopic = useSelector((state) => state.blogs?.filterTopic || []);
 
   // Component state
   const [copiedId, setCopiedId] = useState(null);
@@ -76,12 +78,12 @@ export const WebinarList = () => {
   const filteredResources = useMemo(() => {
     return resources.filter((item) => {
       const industryMatch =
-        !activeFilters.Industry ||
-        activeFilters.Industry === "All" ||
-        item.industry === activeFilters.Industry;
+        !activeFilters?.Industry ||
+        activeFilters?.Industry === "All" ||
+        item?.industry === activeFilters?.Industry;
       const topicsMatch =
-        activeFilters.Topics.length === 0 ||
-        activeFilters.Topics.some((t) =>
+        activeFilters?.Topics.length === 0 ||
+        activeFilters?.Topics.some((t) =>
           item.tags.includes(t.title || t.name || t)
         );
       const searchMatch =
@@ -97,8 +99,11 @@ export const WebinarList = () => {
 
   // Actions
   const handleClick = (item) => {
-    dispatch(setSelectedDatasheetsId(item._id));
-    router.push(item.link);
+    dispatch(setSelectedWebinarsId(item?._id));
+       const safeTitle = item.title || "untitled";
+        const slug = slugify(safeTitle, { lower: true });
+        localStorage.setItem("selectedWebinarId", item._id);
+        router.push(`/insights/webinars/${slug}`);
   };
 
   const handleCopy = (link, id) => {
@@ -122,7 +127,7 @@ export const WebinarList = () => {
         );
         setTopicLimitWarning(false);
       } else {
-        if (updatedFilters.Topics.length >= 3) {
+        if (updatedFilters?.Topics.length >= 3) {
           setTopicLimitWarning(true);
           setTimeout(() => setTopicLimitWarning(false), 3000);
           return;
@@ -138,8 +143,8 @@ export const WebinarList = () => {
 
     dispatch(
       fetchFilteredBlogs({
-        industry: updatedFilters.Industry?._id || null,
-        topics: updatedFilters.Topics.map((t) => t._id),
+        industry: updatedFilters?.Industry?._id || null,
+        topics: updatedFilters?.Topics.map((t) => t._id),
       })
     );
   };
@@ -256,7 +261,7 @@ export const WebinarList = () => {
                       text="Read More"
                       onClick={() => handleClick(item)}
                       hoverImage={ButtonImage}
-                      className="!h-[40px] !w-[150px]"
+                      className="!h-[40px] !w-[200px]"
                     />
                     <div className="flex flex-col items-center">
                       <button
