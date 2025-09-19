@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState} from "react";
+import React from "react";
 import HeroSec from "../../../component/infra/HeroSec";
 import IntelligentPlanning from "../../../component/infra/Multi-Cloud-Provisioning/IntelligentPlanning";
 import UseCases from "../../../component/infra/UseCases";
@@ -10,21 +10,18 @@ import WhyCalsoft from "../../../component/infra/WhyCalsoft";
 import Agility from "../../../component/infra/Agility";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
-import { BannerSection } from "../../../component/utilities/InfraSectorSec";
-import BannerwithButtonBg from "../../../assets/DigitalEngineering/CX/bgimg.webp";
 import CloudNative from "../../../component/infra/CloudNativeMatters";
 import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Native-Enablement.webp";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 import WhenToEngage from "@/app/component/infra/whentoEngage";
 import IntegratedToolchain from "@/app/component/infra/integratedToolChain";
-import { BookaMeeting } from "@/app/component/calPSR/CalPSR";
 
 const Page = () => {
   return (
     <>
       <HeroSec
-        title="Optimize Multi-Cloud Costs."
-        description="Uncover waste, streamline usage, and unlock measurable savings."
+        title="Site Reliability Engineering."
+        description="Automation and observability for dependable cloud operations."
         buttonText="Download Datasheet"
         Hero_bg={Img}
         buttonClicked={() => showHubSpotForm("cloud-native-assess-cloud-native-maturity")}
@@ -42,13 +39,14 @@ const Page = () => {
         buttonClicked={() => showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
+        heading="What we Engineer"
         data={{
-          title: "FinOps-driven, automation-led cost control",
-          desc: "Calsoft’s optimization engine combines engineering logic with financial governance, delivering:",
+          title: "SRE-as-a-service tailored for scale and velocity",
+          desc: "Calsoft’s SRE offering blends tools, processes, and people practices:",
           cardData: [
             {
               title:
-                "Real-time usage monitoring across AWS, Azure, GCP",
+                "SLI/SLO definition & enforcement",
               subTitle: null,
               icon: (
                 <svg
@@ -87,7 +85,7 @@ const Page = () => {
             },
             {
               title:
-                "Intelligent rightsizing for VMs, containers, databases",
+                "Error budget modeling and tracking",
               subTitle: null,
               icon: (
                 <svg
@@ -105,7 +103,7 @@ const Page = () => {
               ),
             },
             {
-              title: "Smart scaling policies (based on thresholds, schedules, and predictive AI)",
+              title: "Automated incident detection & classification",
               subTitle: null,
               icon: (
                 <svg
@@ -123,7 +121,7 @@ const Page = () => {
               ),
             },
             {
-              title: "Cost anomaly detection and alerting",
+              title: "Observability stack optimization (logs, traces, metrics)",
               subTitle: null,
               icon: (
                 <svg
@@ -143,7 +141,7 @@ const Page = () => {
               ),
             },
             {
-              title: "Auto clean-up of orphaned resources and snapshots",
+              title: "Runbook automation & self-healing scripts",
               subTitle: null,
               icon: (
                 <svg
@@ -163,7 +161,7 @@ const Page = () => {
               ),
             },
             {
-              title: "Reserved instance planning, purchase advisory & optimization",
+              title: "Blameless postmortems and RCA automation",
               subTitle: null,
               icon: (
                 <svg
@@ -183,7 +181,7 @@ const Page = () => {
               ),
             },
             {
-              title: "Tag enforcement & cost attribution to projects/teams",
+              title: "Release gates aligned to service health",
               subTitle: null,
               icon: (
                 <svg
@@ -203,7 +201,7 @@ const Page = () => {
               ),
             },
             {
-              title: "Custom dashboards for finance, ops, and product leaders",
+              title: "Capacity planning and reliability simulation",
               subTitle: null,
               icon: (
                 <svg
@@ -229,22 +227,8 @@ const Page = () => {
         buttonText="Get Analysis Report"
       />
 
-      <BookaMeeting />
-      
-      {/* <section className="banner_light1 big_btn2">
-              <BannerSection
-                backgroundImage={BannerwithButtonBg}
-                title={
-                  <>
-                    Validate UX ideas in 48 hours with prototypes.
-                  </>
-                }
-                buttonText="Book a meeting"
-                onButtonClick={()=>showHubSpotForm("book-a-meeting")}
-              />
-      </section> */}
-
-      <UseCases
+      <IntegratedToolchain />
+      {/* <UseCases
         heading="Integrations"
         title="We work with your cloud stack, not against it"
         desc="Calsoft’s optimization services are compatible with:"
@@ -256,38 +240,37 @@ const Page = () => {
           "FinOps Tools: CloudHealth, Apptio Cloudability, CAST AI",
           "Tagging Standards: AWS/GCP/Azure-native + custom taxonomies",
         ]}
-      />
-      
-      
+      /> */}
+    
       <Agility
         data={{
           leftSideContent: {
             title: "Business Impact",
             subTitle:
-              "Efficient, transparent, and predictable cloud usage",
+              "From firefighting to future-proofing",
             description:
               null,
           },
           rightSideContent: [
             {
-              title: "20-40%",
-              subTitle: "reduction in cloud bills within 3 months",
+              title: "Up to 60%",
+              subTitle: "reduction in unplanned downtime",
             },
             {
-              title: "<30-day",
-              subTitle: "ROI payback for optimization deployments",
+              title: "Faster MTTR",
+              subTitle: "with intelligent alert routing and automated remediation",
             },
             {
-              title: "Improved",
-              subTitle: "resource utilization (up to 70–80% CPU/memory efficiency)",
+              title: "Consistent SLO",
+              subTitle: "adherence across business-critical systems",
             },
             {
-              title: "Cost allocation",
-              subTitle: "granularity down to team, app, or environment",
+              title: "Lower ops overhead",
+              subTitle: "via automation and runbook reuse",
             },
             {
-              title: "Streamlined budget",
-              subTitle: "vs. usage reporting for FinOps visibility",
+              title: "Continuous improvement",
+              subTitle: "loop via RCAs and feedback",
             },
             // {
             //   title: "Better RI/Savings",
@@ -295,53 +278,48 @@ const Page = () => {
             // },
           ],
         }}
-        bookMeetingData={null}
+        bookMeetingData={{
+          title:
+            "Achieve 80% app modernization with native tech.",
+          buttonText: "Book a Meeting",
+          onButtonClicked: () => showHubSpotForm("book-a-meeting")
+        }}
         buttonText="Request Use Cases"
         onPagerButton={() => showHubSpotForm("cloud-native-enablement-one-pg")}
       />
 
-      <WhenToEngage
-        triggers={[
-          "Cloud costs keep rising despite low app growth",
-          "Your reserved instances or savings plans are underutilized",
-          "Dev/test environments are left running after hours",
-          "You lack centralized cost visibility across business units or accounts",
-          "There’s friction between engineering and finance teams on budgeting",
-          "You want FinOps-aligned cost intelligence embedded into pipelines",
-        ]}
-        subtitle = "You need Calsoft if…"
-      />
+      <WhenToEngage />
 
       <WhyCalsoft
         sectionDescription={null}
-        title={null}
+        title="Why enterprises trust Calsoft for SRE"
         data={{
-          tableHeadings: ["Capability", "Calsoft Optimization", "Typical Cloud Tools"],
+          tableHeadings: ["Capability", "Calsoft SRE", "In-house Teams / Tools Only"],
           tableContent: [
             {
-              name: "Engineering + FinOps alignment",
-              calsoft: "Custom KPIs + automation",
-              vendor: "Finance-only dashboards",
+              name: "End-to-end lifecycle reliability",
+              calsoft: "Monitor to RCA",
+              vendor: "Focus on just detection",
             },
             {
-              name: "Intelligent autoscaling policies",
-              calsoft: "Predictive + usage-based",
-              vendor: "Static or rule-based only",
+              name: "Blameless RCA automation",
+              calsoft: "Structured templates",
+              vendor: "Manual postmortems",
             },
             {
-              name: "Multi-cloud cost consolidation",
-              calsoft: "Unified view with drilldowns",
-              vendor: "Tool fragmentation",
+              name: "Platform-agnostic deployment",
+              calsoft: "Multi-cloud & hybrid ready",
+              vendor: "Tool-chain restricted",
             },
             {
-              name: "Reserved instance optimization",
-              calsoft: "Forecast + commit modeling",
-              vendor: "Manual RI selection",
+              name: "SLO & error budget governance",
+              calsoft: "Executive-aligned dashboards",
+              vendor: "Dev team visibility only",
             },
             {
-              name: "Tag governance & clean-up engines",
-              calsoft: "Policy-based enforcement",
-              vendor: "Reactive and manual",
+              name: "Reliability-as-code implementation",
+              calsoft: "IaC-driven practices",
+              vendor: "Siloed from dev pipelines",
             },
           ],
         }}
@@ -350,37 +328,37 @@ const Page = () => {
         headerContent={{
           title1: "How to Start",
           title2: null,
-          description: "From cloud chaos to controlled cost in 5 steps",
+          description: "Build a network that knows what to do — and does it",
         }}
         guessworkData={[
           {
-            heading: "Analyze",
+            heading: "Assess",
             title: null,
-            desc: "Run current usage vs billing snapshot across environments",
-          },
-          {
-            heading: "Diagnose",
-            title: null,
-            desc: "Identify waste, RI gaps, and misused resources",
+            desc: "Baseline telemetry, configs, routing, and automation maturity",
           },
           {
             heading: "Design",
             title: null,
-            desc: "Define scaling policies, tag structure, and cleanup workflows",
+            desc: "Define control policies, triggers, and observability workflows",
           },
           {
             heading: "Deploy",
             title: null,
-            desc: "Configure automation scripts and dashboards",
+            desc: "Set up AI/ML inference, policy engine, and failover handlers",
           },
           {
-            heading: "Monitor",
+            heading: "Integrate",
             title: null,
-            desc: "Enable real-time alerts, weekly reports, and continuous tuning",
+            desc: "Plug into existing SDN/NOC/SIEM/cloud infrastructure",
+          },
+          {
+            heading: "Enable",
+            title: null,
+            desc: "Deliver dashboards, alerting rules, policy templates, and training",
           },
         ]}
         Component={Guesswork}
-        output="Optimization Blueprint + Potential Savings Report + KPI Dashboards"
+        output="Intelligent Network Blueprint + Policy Library + Governance Runbook"
       />
       <ContactSecDataAi
         lightContent={

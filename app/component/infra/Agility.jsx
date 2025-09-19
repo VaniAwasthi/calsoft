@@ -155,7 +155,7 @@ export default function Agility({
           </div>
         </div>
       )}
-      <div className="h-4 lg:h-6" />
+      <div className="h-4 lg:h-8" />
     </div>
   );
 }

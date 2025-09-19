@@ -132,6 +132,10 @@ export default function IntelligentPlanning({
       // },
     ],
   },
+  heading = "Intelligent Planning",
+  resultData = "A modular, scalable, and compliant roadmap that evolves with your business.",
+  resultHeading = "Result:",
+  buttonText = "Tal to Expert"
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -161,7 +165,7 @@ export default function IntelligentPlanning({
           <div className="flex justify-between items-end mb-10">
             <div>
               <p className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-5 leading-16">
-                Intelligent Planning
+                {heading}
               </p>
               <h2 className="text-black text-4xl font-bold mb-4">
                 {data.title}
@@ -331,10 +335,11 @@ export default function IntelligentPlanning({
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <h3 className="text-black text-3xl font-bold mb-4">Result:</h3>
+              <h3 className="text-black text-3xl font-bold mb-4">
+                {resultHeading}
+              </h3>
               <p className="text-black text-xl max-w-2xl">
-                A modular, scalable, and compliant roadmap that evolves with
-                your business.
+                {resultData}
               </p>
             </motion.div>
             <motion.div
@@ -344,7 +349,7 @@ export default function IntelligentPlanning({
               viewport={{ once: false, amount: 0.3 }}
             >
               <ButtonLayout
-                text={"Talk to Expert"}
+                text={buttonText}
                 image={buttonImage}
                 hoverImage={buttonImage}
                 className={"w-fit"}
