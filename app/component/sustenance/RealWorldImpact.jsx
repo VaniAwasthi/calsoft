@@ -44,7 +44,7 @@ export default function RealWorldImpact({
     text: "Documentation isn’t just about writing — it’s about engineering clarity.",
     btnText: "Download One Pager",
   },
-  arrow = true,
+  arrow = true
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -66,7 +66,10 @@ export default function RealWorldImpact({
     }
   }, [swiperInstance]);
   return (
-    <div id={id} className={`${buttonText && "bg-[#f9f9f9]"} py-10`}>
+    <div
+      id="business-value"
+      className={`${buttonText && "bg-[#f9f9f9]"} py-10`}
+    >
       <div className="container">
         <div className={`space-y-8`}>
           <motion.p

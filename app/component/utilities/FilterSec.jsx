@@ -13,6 +13,7 @@ export const FilterSec = ({
   selectFilter,
   setOpenDropdown,
   mainClass,
+  bgColor="bg-[#2b2eae] text-white",
   searchDebouncing = (value) => {},
 }) => {
   const dropdownRef = useRef(null);
@@ -175,7 +176,7 @@ export const FilterSec = ({
                 >
                   <button
                     onClick={() => toggleDropdown(filterType)}
-                    className="w-full h-12 bg-[#2b2eae] text-white px-4 py-2 rounded flex items-center justify-between"
+                    className={`w-full h-12  px-4 py-2 rounded flex items-center justify-between ${bgColor}`}
                   >
                     <span className="truncate">
                       {filterType} ({getDisplayText(filterType)})

@@ -20,10 +20,10 @@ jobs:
           node-version: '18.19'
 
       # 3️⃣ Create .env.local from secret
-      - name: Create .env.local
-        run: |
-          echo "NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}" > .env.local
-          cat .env.local # optional, remove later
+      # - name: Create .env.local
+      #   run: |
+      #     echo "NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}" > .env.local
+      #     cat .env.local # optional, remove later
 
       # 4️⃣ Install deps and build
       - name: Build Next.js

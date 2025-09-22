@@ -189,6 +189,7 @@ export default function UseCases({
     text: "Each use case delivers ",
     bText: "clarity, evidence, and measurable direction.",
   },
+  secId="use-cases"
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);

@@ -8,121 +8,122 @@ import banner_img from "@/app/assets/insights/newspaper/banner.png";
 import cardImage from "@/app/assets/insights/newspaper/card_img.webp";
 import Link from "next/link";
 
-export function HeroSection({ title, subTitle, desc }) {
+export function HeroSection({ title,
+   subTitle,
+    desc ,
+    rightImage=banner_img, 
+    isInput=true,
+     bgmainClass="h-[700px] "}) {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
   const isEmail = (str) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
-  return (
-    <div>
-      <div className="relative">
-        <Image
-          src={News_bg}
-          alt="Coding screen"
-          height={800}
-          width={1500}
-          className="aspect-video"
-        />
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: false, amount: 0.3 }}
-          className="absolute top-0 w-full h-full bg-[#00000077] flex flex-col justify-center items-center gap-5"
-        >
-          <div className="container grid grid-cols-2 gap-16">
-            <div className="text-white space-y-5">
-              <motion.p
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="text-[55px] font-bold"
-              >
-                {title}
-              </motion.p>
-              <motion.p
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="text-3xl"
-              >
-                {subTitle}
-              </motion.p>
-              <motion.p
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="text-xl"
-              >
-                {desc}
-              </motion.p>
 
-              {/* Email Subscription */}
-              {!subscribed ? (
-                <motion.div
-                  initial={{ x: -50, opacity: 0 }}
-                  whileInView={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="mt-10 md:mt-0 w-full md:w-[400px]"
-                >
-                  <div className="flex items-center relative bg-white rounded-full">
-                    <input
-                      type="email"
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Add your email*"
-                      className="w-full text-[#333333] px-4 py-3 pr-10 bg-transparent rounded-full focus:outline-none"
-                    />
-                    <motion.button
-                      initial={{ x: -50, opacity: 0 }}
-                      whileInView={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.5, delay: 0.9 }}
-                      viewport={{ once: false, amount: 0.3 }}
-                      onClick={() => {
-                        if (email.length > 0) {
-                          if (isEmail(email)) setSubscribed(true);
-                          else
-                            toast.error("Email is invalid", {
-                              duration: 3000,
-                            });
-                        } else
-                          toast.error("Email field is empty", {
-                            duration: 3000,
-                          });
-                      }}
-                      className="bg-[#BA0007] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0"
-                    >
-                      Subscribe
-                    </motion.button>
-                  </div>
-                </motion.div>
-              ) : (
-                <motion.p
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className="font-semibold"
-                >
-                  You&apos;re subscribed
-                </motion.p>
-              )}
-            </div>
-            <div className="w-full h-96 overflow-hidden rounded-3xl">
-              <Image
-                src={banner_img}
-                alt="newspaper"
-                width={1600}
-                height={900}
-                className="w-full h-full object-cover object-[center_45%]"
-              />
-            </div>
+  return (
+    <div className={`relative w-full ${bgmainClass}`}>
+      {/* Full width background image */}
+      <Image
+        src={News_bg}
+        alt="Coding screen"
+        fill
+        priority
+        className="object-cover object-center"
+      />
+
+      {/* Overlay with Content */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="absolute inset-0 bg-[#00000077] flex flex-col justify-center items-center"
+      >
+        <div className="container grid grid-cols-1 lg:grid-cols-2 gap-16 px-6">
+          {/* Left side text */}
+          <div className="text-white space-y-5">
+            <motion.p
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-[40px] md:text-[55px] font-bold"
+            >
+              {title}
+            </motion.p>
+            <motion.p
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-2xl md:text-3xl"
+            >
+              {subTitle}
+            </motion.p>
+            <motion.p
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-lg md:text-xl"
+            >
+              {desc}
+            </motion.p>
+
+            {/* Email Subscription */}
+            {isInput &&(<>
+
+            {!subscribed ? (
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="mt-6 w-full md:w-[400px]"
+              >
+                <div className="flex items-center relative bg-white rounded-full">
+                  <input
+                    type="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Add your email*"
+                    className="w-full text-[#333333] px-4 py-3 pr-28 bg-transparent rounded-full focus:outline-none"
+                  />
+                  <motion.button
+                    initial={{ x: -50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.9 }}
+                    onClick={() => {
+                      if (email.length > 0) {
+                        if (isEmail(email)) setSubscribed(true);
+                        else toast.error("Email is invalid", { duration: 3000 });
+                      } else toast.error("Email field is empty", { duration: 3000 });
+                    }}
+                    className="bg-[#BA0007] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0"
+                  >
+                    Subscribe
+                  </motion.button>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="font-semibold"
+              >
+                You&apos;re subscribed
+              </motion.p>
+            )}
+            </>
+)}
           </div>
-        </motion.div>
-      </div>
+
+          {/* Right side image */}
+          <div className="w-full h-80 md:h-96 overflow-hidden rounded-3xl relative">
+            <Image
+              src={rightImage}
+              alt="newspaper"
+              fill
+              className="object-cover object-[center_45%]"
+            />
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 }

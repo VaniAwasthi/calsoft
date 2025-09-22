@@ -104,8 +104,8 @@ export const AiOopsSec = () => {
         title="AIOps Planning"
         description="Enable intelligent operations through autonomous,
         purpose-built agents."
-        buttonText=" Learn More"
-        link="#"
+        // buttonText=" Learn More"
+        // link="#"
         whatWeDo={[
           "Agents monitor systems, logs, and events",
           "Link with ITSM workflows for automation",
@@ -132,8 +132,8 @@ export const UseSec = () => {
       <DataInfoSection
         title="Use-case specific AI agents"
         description="Deploy configured agents that fulfill focused business and operational roles."
-        // buttonText=" Learn More"
-        link="#"
+        // // buttonText=" Learn More"
+        // link="#"
         whatWeDo={[
           "Build agents for domain-specific tasks",
           "Define boundaries for safe autonomy",
@@ -160,8 +160,8 @@ export const MonitorSec = () => {
       <DataInfoSection
         title="Monitor and control"
         description="Ensure transparency and oversight across autonomous agent behavior."
-        // buttonText=" Learn More"
-        link="#"
+        // // buttonText=" Learn More"
+        // link="#"
         whatWeDo={[
           "Track agent behavior with telemetry",
           "Real-time dashboards enable oversight",
@@ -187,8 +187,8 @@ export const LifecycleSec = () => {
       <DataInfoSection
         title="Lifecycle and adaptability"
         description="Manage agent evolution from deployment through continuous improvement."
-        // buttonText=" Learn More"
-        link="#"
+        // // buttonText=" Learn More"
+        // link="#"
         whatWeDo={[
           "Define update and rollback protocols",
           "Use telemetry and feedback to adapt",

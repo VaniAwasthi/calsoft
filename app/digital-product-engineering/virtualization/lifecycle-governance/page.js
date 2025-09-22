@@ -12,6 +12,7 @@ import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDat
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_1.webp";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -33,12 +34,16 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        buttonText2=""
+        buttonClicked={()=>showHubSpotForm("request-governance-audit")}
       />
       <WhyItMatters
+      secId="why-it-matters"
         title="Why It Matters"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
+        buttonClick={()=>showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
         id="structured-lifecycle"
@@ -81,7 +86,12 @@ export default function Page() {
           },
         ]}
         title="Structured Lifecycle"
-        bottomContent={null}
+        bottomContent={{
+          text: "We transform VM stacks from free-for-all deployments into controlled environments.",
+          btnText: "Request POC",
+          onbuttonClick: () => showHubSpotForm("request-a-poc"),
+        }}
+       
         arrow={true}
       />
       <RealWorldImpact
@@ -117,6 +127,7 @@ export default function Page() {
         <BookMeeting
           title="Streamline infra lifecycle by 50% with governance."
           img={img}
+          buttonClicked={()=>showHubSpotForm("book-a-meeting")}
         />
       </div>
       <UseCases
@@ -300,6 +311,7 @@ export default function Page() {
         }}
       />
       <WhyCalsoft
+      secId="why-calsoft"
         sectionDescription=""
         buttonText="Download One Pager"
         title="Why Calsoft’s model works better"
@@ -377,9 +389,9 @@ export default function Page() {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Govern lifecycles with clarity and accountability."
         }
-        link={"#"}
+      
       />
     </>
   );

@@ -51,6 +51,7 @@ export default function IntelligentPlanning({
     btnText: "Talk to Expert",
     buttonClick: () => showHubSpotForm("Talk_to_Expert"),
   },
+  secId="intelligent-planning",
   arrow = true,
   image = true,
 }) {
@@ -277,7 +278,7 @@ export default function IntelligentPlanning({
                 text={bottomContent.btnText}
                 image={buttonImage}
                 hoverImage={buttonImage}
-                onClick={bottomContent.buttonClick}
+                onClick={bottomContent.onbuttonClick}
                 className={"whitespace-nowrap"}
               />
             </motion.div>

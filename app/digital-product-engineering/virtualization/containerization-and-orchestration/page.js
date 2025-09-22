@@ -8,22 +8,23 @@ import WhyItMatters, {
 import IntelligentPlanning from "@/app/component/testing/IntelligentPlanning";
 import UseCases from "@/app/component/sustenance/UseCases";
 import WhyCalsoft from "@/app/component/infra/WhyCalsoft";
+import FirstStep from "@/app/component/infra/FirstStep";
+import Guesswork from "@/app/component/sustenance/Guesswork";
 import img from "@/app/assets/sustenance/bookMeeting.webp";
 import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 import RealWorldImpact from "@/app/component/sustenance/RealWorldImpact";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_2.webp";
 import Agility from "@/app/component/infra/Agility";
-import HowToStart from "@/app/component/VirtualizationSolutions/HowToStart";
+import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFits";
 
 export default function Page() {
-  const [activeTab, setActiveTab] = useState("why-it-matters");
+  const [activeTab, setActiveTab] = useState("pulse-check");
   const navItems = [
     "Pulse Check",
     "Smart Packaging",
-    "Orchestration at Scale",
     "Real-World Impact",
-    // "Where It Fits",
+    "Where It Fits",
     "Why Calsoft",
     "How to Start",
   ];
@@ -32,18 +33,19 @@ export default function Page() {
       <HeroSection
         title="Package Once. Run Anywhere. Scale Intelligently."
         description="Speed up time-to-market with portable, resilient, and automated container workflows.."
-        buttonText="Request Workshop"
+        buttonText="Talk to Expert"
         heroImage={Img}
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        buttonClicked={()=>showHubSpotForm("Talk_to_Expert")}
+        buttonText2=""
       />
       <WhyItMatters
-        id="pulse-check"
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         data={[
           {
             top: 7.4,
@@ -66,10 +68,10 @@ export default function Page() {
             text: "Manual scaling and recovery challenges under load",
           },
         ]}
+        buttonClick={()=>showHubSpotForm("get-in-touch")}
         Component={Containerization}
       />
       <IntelligentPlanning
-        id="smart-packaging"
         heading="Modular apps = faster delivery"
         description="We help modernize your application estate through container-first design with tools and governance that match your environment."
         data={[
@@ -105,6 +107,8 @@ export default function Page() {
           //   subTitle: null,
           // },
         ]}
+        buttonText="Request a PoC"
+        buttonClick={()=>showHubSpotForm("request-a-poc")}
         title="Smart Packaging"
         bottomContent={null}
       />
@@ -144,6 +148,7 @@ export default function Page() {
         <BookMeeting
           title="Deploy containers 3x faster with orchestration tools."
           img={img}
+          buttonClicked={()=>showHubSpotForm("book-a-meeting")}
         />
       </div>
       <UseCases
@@ -364,7 +369,8 @@ export default function Page() {
           ],
         }}
         bookMeetingData={null}
-        buttonText="Request ROI"
+        buttonText="Download One Pager"
+        onPagerButton={()=>showHubSpotForm("lifecycle-governance-download-one-pager")}
       />
       <WhyCalsoft
         sectionDescription={null}
@@ -405,23 +411,7 @@ export default function Page() {
           ],
         }}
       />
-      {/* <WhereItFits /> */}
-      <HowToStart
-        headerContent={{
-          title1: "How to Start",
-          description: "From containers to continuous delivery — the right way",
-        }}
-        data={{
-          Assess: "Current workloads, deployment cycles, and infra usage",
-          Design:
-            "Container strategy (image, registry, platform, security model)",
-          Implement: "Container pipelines, K8s clusters, GitOps, observability",
-          Pilot:
-            "Deploy containerized app with scaling and rollback validation",
-          Scale:
-            "Enable full DevSecOps orchestration with audit controls and policy gates",
-        }}
-      />
+      <WhereItFits />
       <ContactSecDataAi
         lightContent={
           "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"

@@ -413,7 +413,7 @@ export const navItems = [
         //   {
         //     title: "Lifecycle Governance",
         //     href: "/digital-product-engineering/virtualization/lifecycle-governance",
-        //   },
+        //   },    
         //   {
         //     title: "Containerization and orchestration",
         //     href: "/digital-product-engineering/virtualization/containerization-and-orchestration",
@@ -552,7 +552,9 @@ export const navItems = [
       { title: "Press Releases", href: "/insights/press-releases"  ,description:"Official announcements and updates from Calsoft."},
       { title: "Webinars", href: "/insights/webinars", description:"Interactive sessions with experts on industry trends and solutions." },
       { title: "Workshop", href: "/insights/workshops" , description:"Hands-on learning and deep dives into emerging technologies." },
+      { title: "Events", href: "/insights/events" , description:"Hands-on learning and deep dives into emerging technologies." },
       { title: "Podcasts", href: "/insights/podcasts", description:"Conversations with leaders on technology, business, and innovation." },
+      { title: "Newsletter", href: "/insights/newsletter", description:"Conversations with leaders on technology, business, and innovation." },
     ],
   },
   {
@@ -562,6 +564,7 @@ export const navItems = [
       { title: "Career", href: "/career" ,description:"Building rewarding careers through innovation, learning, and growth opportunities." },
       { title: "Leadership", href: "/leadership", description:"Guided by vision and expertise to drive Calsoft’s technology-first journey." },
       { title: "CSR", href: "/csr" , description:"Committed to creating social impact through education, empowerment, and sustainability initiatives." },
+      { title: "Partners ", href: "/partners" , description:"Our alliances with global technology giants, innovators, and disruptors help us provide value to every business relationship." },
       { title: "Contact Us", href: "/contact-us" , description:"Connect with us to explore solutions, partnerships, and opportunities." },
     ],
   },
