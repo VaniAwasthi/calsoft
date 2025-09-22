@@ -26,6 +26,7 @@ export default function Page() {
     "Optimization-First",
     "Real-World Impact",
     "Where It Fits",
+    "How to Start",
   ];
   return (
     <>
@@ -428,6 +429,7 @@ export default function Page() {
         ]}
       />
       <WhyCalsoft
+        id="how-to-start"
         sectionDescription=""
         title="What makes our approach intelligent"
         heading="How to Start"

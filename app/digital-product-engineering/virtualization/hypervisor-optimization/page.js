@@ -24,7 +24,7 @@ export default function Page() {
     "Licensing Efficiency",
     "Real-World Impact",
     "Where It Fits",
-    "Why Calsoft",
+    // "Why Calsoft",
     "How to Start",
   ];
   return (
