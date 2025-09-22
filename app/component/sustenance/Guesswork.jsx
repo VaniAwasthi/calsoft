@@ -39,7 +39,7 @@ export default function Guesswork({
           <Card data={ele} key={idx} idx={idx} />
         ))}
       </div>
-      <p className="text-2xl font-medium bg-[#ffffff] bg-[linear-gradient(270deg,rgba(255,255,255,1)_70%,rgba(0,0,0,0.3)_100%)] px-4 py-2.5">
+      <p className="text-lg sm:text-xl lg:text-2xl font-medium bg-[#ffffff] bg-[linear-gradient(270deg,rgba(255,255,255,1)_70%,rgba(0,0,0,0.3)_100%)] px-4 py-2.5">
         {output}
       </p>
     </>
@@ -48,7 +48,7 @@ export default function Guesswork({
 
 export function Card({ data, idx }) {
   return (
-    <div className="bg-[#ffffff] bg-[linear-gradient(60deg,rgba(255,255,255,1)_70%,rgba(0,0,0,0.3)_100%)] h-72 border-2 border-gray-300 rounded-3xl py-4 px-3 flex flex-col gap-1.5 relative">
+    <div className="bg-[#ffffff] bg-[linear-gradient(60deg,rgba(255,255,255,1)_70%,rgba(0,0,0,0.3)_100%)] h-44 sm:h-52 md:h-64 lg:h-72 border-2 border-gray-300 rounded-3xl py-4 px-3 flex flex-col gap-1.5 relative">
       {data.heading && <p className="text-2xl font-bold">{data.heading}</p>}
       <div>
         {data.title && <p className="text-lg font-medium">{data.title}</p>}

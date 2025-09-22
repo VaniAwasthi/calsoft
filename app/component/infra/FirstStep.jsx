@@ -32,11 +32,13 @@ export default function FirstStep({
           viewport={{ once: false, amount: 0.3 }}
           className="space-y-8 flex-1"
         >
-          <div className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-8 leading-[2.5rem] flex flex-col">
+          <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-3 sm:mb-5 lg:mb-8 leading-[2.5rem] flex flex-col">
             <span>{headerContent.title1}</span>
             <span>{headerContent.title2}</span>
           </div>
-          <p className="text-lg">{headerContent.description}</p>
+          <p className="text-sm sm:text-base lg:text-lg">
+            {headerContent.description}
+          </p>
         </motion.div>
         <motion.div
           initial={{ x: 50, opacity: 0 }}

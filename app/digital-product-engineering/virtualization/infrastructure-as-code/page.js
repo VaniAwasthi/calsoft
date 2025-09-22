@@ -23,7 +23,7 @@ export default function Page() {
     "CI/CD Integration",
     "Real-World Impact",
     "Where It Fits",
-    "Why Calsoft",
+    // "Why Calsoft",
     "How to Start",
   ];
   return (
@@ -372,6 +372,7 @@ export default function Page() {
       />
 
       <WhyCalsoft
+        id="how-to-start"
         sectionDescription=""
         buttonText="Download One Pager"
         title="Why enterprises prefer our IaC model"

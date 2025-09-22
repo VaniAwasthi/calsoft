@@ -46,7 +46,7 @@ export default function WhyItMatters({
       left: 18.5,
     },
   ],
-  buttonClick
+  buttonClick,
 }) {
   return (
     <div id={id} className="my-12">
@@ -57,7 +57,7 @@ export default function WhyItMatters({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-[38px] font-bold bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_40%)] bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl lg:text-[38px] font-bold bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_40%)] bg-clip-text text-transparent"
           >
             {title}
           </motion.p>
@@ -68,8 +68,8 @@ export default function WhyItMatters({
             viewport={{ once: false, amount: 0.3 }}
             className="space-y-4 mb-10"
           >
-            <p className="text-[30px] font-semibold">{heading}</p>
-            <p className="text-xl font-light">{desc}</p>
+            <p className="text-2xl lg:text-[30px] font-semibold">{heading}</p>
+            <p className="lg:text-xl font-light">{desc}</p>
           </motion.div>
           <motion.div
             initial={{ x: -50, opacity: 0 }}

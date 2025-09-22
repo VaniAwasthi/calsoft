@@ -44,7 +44,7 @@ export default function RealWorldImpact({
     text: "Documentation isn’t just about writing — it’s about engineering clarity.",
     btnText: "Download One Pager",
   },
-  arrow = true
+  arrow = true,
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -71,13 +71,13 @@ export default function RealWorldImpact({
       className={`${buttonText && "bg-[#f9f9f9]"} py-10`}
     >
       <div className="container">
-        <div className={`space-y-8`}>
+        <div className={`space-y-4 sm:space-y-6 lg:space-y-8`}>
           <motion.p
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_20%)] bg-clip-text text-transparent"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_20%)] bg-clip-text text-transparent"
           >
             {heading}
           </motion.p>
@@ -89,8 +89,10 @@ export default function RealWorldImpact({
               viewport={{ once: false, amount: 0.3 }}
               className="space-y-4"
             >
-              <p className="text-3xl font-semibold max-w-3xl">{title}</p>
-              <p className="text-lg leading-relaxed font-light max-w-2xl">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold max-w-3xl">
+                {title}
+              </p>
+              <p className="text-sm sm:text-base lg:text-lg leading-relaxed font-light max-w-2xl">
                 {desc}
               </p>
             </motion.div>
@@ -175,26 +177,26 @@ export default function RealWorldImpact({
           }}
           breakpoints={{
             320: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 20,
             },
             640: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 20,
             },
-            768: {
+            1024: {
               slidesPerView: 5,
               spaceBetween: 20,
             },
           }}
           modules={[Navigation, Autoplay]}
           autoplay={{ delay: 6000 }}
-          className="w-full h-full z-0 mt-5"
-          style={{ height: "250px", minHeight: "250px" }}
+          className="w-full h-full -z-20"
+          style={{ height: "300px", minHeight: "300px" }}
         >
           <div className="flex xl:flex-nowrap flex-wrap justify-center gap-x-6 gap-y-3 md:gap-y-0 mt-8 mb-2">
             {cardData.map((ele, idx) => (
-              <SwiperSlide key={idx} className="z-10 !h-full">
+              <SwiperSlide key={idx} className="z-20 !h-full py-4">
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
@@ -203,7 +205,7 @@ export default function RealWorldImpact({
                   viewport={{ once: false, amount: 0.3 }}
                   className="relative hover:scale-105 transition-all"
                 >
-                  <div className="absolute top-0 w-full h-full text-center flex flex-col justify-start items-center p-3.5 pt-12">
+                  <div className="absolute top-0 w-48 mx-auto lg:w-[90%] h-full text-center flex flex-col justify-start items-center p-3.5 pt-12">
                     <p className="text-[24px] font-bold bg-[linear-gradient(to_right,#2E3092_40%,#ED1C24_80%)] bg-clip-text text-transparent">
                       {ele.title}
                     </p>
