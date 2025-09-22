@@ -133,6 +133,7 @@ export default function IntelligentPlanning({
     ],
   },
   heading = "What We Deliver",
+  id = "intelligent-planning",
   resultData = "A modular, scalable, and compliant roadmap that evolves with your business.",
   resultHeading = "Result:",
   buttonText = "Tal to Expert"
@@ -157,7 +158,7 @@ export default function IntelligentPlanning({
   }, [swiperInstance]);
 
   return (
-    <div id="intelligent-planning" className="bg-[#f2f0f5]">
+    <div id={id} className="bg-[#f2f0f5]">
       <div className="container min-h-screen pt-0 px-4">
         <div className="h-4 lg:h-6" />
         <div className="max-w-7xl mx-auto">

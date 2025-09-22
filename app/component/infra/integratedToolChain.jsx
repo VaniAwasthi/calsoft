@@ -28,8 +28,9 @@ import argo from "@/app/assets/infra/argo.webp";
 
 import UseCases from "../../assets/infra/UseCases.webp";
 
-export default function IntegratedToolchain() {
-  const sections = [
+export default function IntegratedToolchain({
+  id="integrated-toolchain",
+  sections=[
     {
       title: "Cloud Platforms:",
       tools: [aws, googleCloud, azure, Kubernetes],
@@ -65,14 +66,14 @@ export default function IntegratedToolchain() {
       tools: [elastic, fluentd, opentelemetry, jaeger, grafanaloki],
       border: "border-blue-500",
     },
-  ];
-
+  ]}) {
+  
   return (
-    <section className="max-w-7xl mx-auto px-6 container mt-10">
+    <section id={id} className="max-w-7xl mx-auto px-6 container mt-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Left Content */}
         <div>
-          <h2 className="text-4xl font-bold mb-6 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mb-3 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent leading-20">
             Integrated Toolchain
           </h2>
           <p className="text-xl font-semibold text-black">
