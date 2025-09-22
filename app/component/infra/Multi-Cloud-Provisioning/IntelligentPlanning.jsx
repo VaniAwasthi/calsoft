@@ -132,7 +132,7 @@ export default function IntelligentPlanning({
       // },
     ],
   },
-  heading = "Intelligent Planning",
+  heading = "What We Deliver",
   resultData = "A modular, scalable, and compliant roadmap that evolves with your business.",
   resultHeading = "Result:",
   buttonText = "Tal to Expert"

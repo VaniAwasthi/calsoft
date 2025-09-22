@@ -20,6 +20,15 @@ import IntegratedToolchain from "@/app/component/infra/integratedToolChain";
 import { BookaMeeting } from "@/app/component/calPSR/CalPSR";
 
 const Page = () => {
+  const navItems = [
+    "Cloud Reality Check",
+    "What We Deliver",
+    "Integrations",
+    "Business Impact",
+    "When to Engage",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSec
@@ -27,6 +36,7 @@ const Page = () => {
         description="Uncover waste, streamline usage, and unlock measurable savings."
         buttonText="Download Datasheet"
         Hero_bg={Img}
+        navItems={navItems}
         buttonClicked={() => showHubSpotForm("cloud-native-assess-cloud-native-maturity")}
       />
       {/* <WhyItMatters /> */}
@@ -227,22 +237,13 @@ const Page = () => {
         resultData={null}
         resultHeading={null}
         buttonText="Get Analysis Report"
+        direction="left"
       />
 
-      <BookaMeeting />
-      
-      {/* <section className="banner_light1 big_btn2">
-              <BannerSection
-                backgroundImage={BannerwithButtonBg}
-                title={
-                  <>
-                    Validate UX ideas in 48 hours with prototypes.
-                  </>
-                }
-                buttonText="Book a meeting"
-                onButtonClick={()=>showHubSpotForm("book-a-meeting")}
-              />
-      </section> */}
+      <BookaMeeting 
+      title="Cut cloud spend by 30% via optimization levers."
+      buttonText="Book a Meeting"
+      />
 
       <UseCases
         heading="Integrations"
@@ -256,8 +257,7 @@ const Page = () => {
           "FinOps Tools: CloudHealth, Apptio Cloudability, CAST AI",
           "Tagging Standards: AWS/GCP/Azure-native + custom taxonomies",
         ]}
-      />
-      
+      />      
       
       <Agility
         data={{

@@ -15,8 +15,18 @@ import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Native-Enab
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 import WhenToEngage from "@/app/component/infra/whentoEngage";
 import IntegratedToolchain from "@/app/component/infra/integratedToolChain";
+import { BookaMeeting } from "@/app/component/calPSR/CalPSR";
 
 const Page = () => {
+  const navItems = [
+    "Modern Ops Challenges",
+    "What We Engineer",
+    "Integrations",
+    "Business Impact",
+    "When to Engage",
+    "Why Calsoft",
+    "How to Start",
+  ];
   return (
     <>
       <HeroSec
@@ -24,6 +34,7 @@ const Page = () => {
         description="Automation and observability for dependable cloud operations."
         buttonText="Download Datasheet"
         Hero_bg={Img}
+        navItems={navItems}
         buttonClicked={() => showHubSpotForm("cloud-native-assess-cloud-native-maturity")}
       />
       {/* <WhyItMatters /> */}
@@ -227,6 +238,11 @@ const Page = () => {
         buttonText="Get Analysis Report"
       />
 
+      <BookaMeeting
+        title="Ensure 99.99% uptime with site reliability practices."
+        buttonText="Book a Meeting"
+      />
+
       <IntegratedToolchain />
       {/* <UseCases
         heading="Integrations"
@@ -241,7 +257,7 @@ const Page = () => {
           "Tagging Standards: AWS/GCP/Azure-native + custom taxonomies",
         ]}
       /> */}
-    
+
       <Agility
         data={{
           leftSideContent: {
@@ -278,12 +294,7 @@ const Page = () => {
             // },
           ],
         }}
-        bookMeetingData={{
-          title:
-            "Achieve 80% app modernization with native tech.",
-          buttonText: "Book a Meeting",
-          onButtonClicked: () => showHubSpotForm("book-a-meeting")
-        }}
+        bookMeetingData={null}
         buttonText="Request Use Cases"
         onPagerButton={() => showHubSpotForm("cloud-native-enablement-one-pg")}
       />

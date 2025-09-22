@@ -33,7 +33,7 @@ export default function IntegratedToolchain() {
     {
       title: "Cloud Platforms:",
       tools: [aws, googleCloud, azure, Kubernetes],
-      border: "border-gray-300",
+      border: "border-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)]",
     },
     {
       title: "Monitoring:",
@@ -84,15 +84,18 @@ export default function IntegratedToolchain() {
 
           <div className="grid grid-cols-2 gap-4 mt-6">
             {sections.map((section, idx) => (
-              <div key={idx} className="flex flex-col relative">
+              <div key={idx} 
+              className={`flex flex-col relative ${idx === sections.length - 1 ? "col-span-2" : ""
+                }`}>
                 {/* Title ABOVE the border */}
                 <span className="mb-1 text-sm font-semibold text-black">
                   {section.title}
                 </span>
 
                 {/* Equal-sized bordered box */}
+                <div className="bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] p-0.5 rounded-lg">
                 <div
-                  className={`rounded-lg p-3 shadow-sm flex flex-wrap gap-2 items-center border ${section.border} min-h-[120px]`}
+                  className={`rounded-lg p-3 shadow-sm flex flex-wrap gap-2 items-center border ${section.border} min-h-[80px] bg-white`}
                 >
                   {section.tools.map((tool, tIdx) => (
                     <Image
@@ -104,6 +107,7 @@ export default function IntegratedToolchain() {
                       className="object-contain"
                     />
                   ))}
+                </div>
                 </div>
               </div>
             ))}
