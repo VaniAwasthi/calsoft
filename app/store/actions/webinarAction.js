@@ -8,7 +8,7 @@ import {
 
 // Fetch all webinars list
 export const fetchWebinarsList =
-  ({ Industry, Topics }) =>
+  ({ Industry, Topics }={}) =>
   async (dispatch) => {
     try {
       const params = new URLSearchParams();

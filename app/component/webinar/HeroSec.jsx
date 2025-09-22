@@ -12,12 +12,12 @@ import RecommendedIcon from "../../assets/webinar/Icon.svg";
 export const HeroSecWebinar = ({
   FeaturedImage,
   title,
-  subtitle,
   description,
   buttonLabel,
   buttonImage,
   hoverImage,
   backgroundImage,
+  videoUrl, 
 }) => {
   return (
     <div className="relative w-full h-[600px] sm:h-[500px] md:h-[600px]">
@@ -29,68 +29,42 @@ export const HeroSecWebinar = ({
         priority
       />
 
-      {/* Overlay Content Section */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto px-4 md:px-20 w-full">
           <div className="flex flex-col md:flex-row items-center justify-between w-full gap-10">
-            {/* Left Section: Two Images */}
-
-            <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="text-white lg:w-[56%] md:w-[45%]  max-w-2xl mb-3  "
-            >
-              <motion.h2
-                initial={{ x: 30, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.3 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="text-2xl sm:text-[30px] xl:text-[50px]  w-full font-bold leading-12 lg:leading-[4rem]"
-              >
+            {/* Left Section */}
+            <motion.div className="text-white lg:w-[56%] md:w-[45%] max-w-2xl mb-3">
+              <h2 className="text-2xl sm:text-[30px] xl:text-[50px] font-bold leading-12 lg:leading-[4rem]">
                 {title}
-              </motion.h2>
-
-              <motion.p
-                initial={{ x: 30, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.3 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="mt-6 text-sm md:text-[25px] font-light max-w-sm"
-              >
+              </h2>
+              <p className="mt-6 text-sm md:text-[25px] font-light max-w-sm">
                 {description}
-              </motion.p>
-
-              <motion.div
-                initial={{ x: 30, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.2, delay: 0.3 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="mt-6"
-              >
+              </p>
+              <div className="mt-6">
                 <ButtonLayout
                   text={buttonLabel}
                   image={buttonImage}
                   hoverImage={hoverImage}
                   className="!w-[250px] !h-[40px] md:!w-[280px] md:!h-[48px]"
+                  onClick={() => {
+                    if (videoUrl) {
+                      window.open(videoUrl, "_blank");
+                    } else {
+                      console.warn("Video URL missing");
+                    }
+                  }}
                 />
-              </motion.div>
+              </div>
             </motion.div>
-            {/* Right Section: Text and Button */}
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.2, delay: 0.3 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="lg:w-[40%] md:w-[40%]"
-            >
+
+            {/* Right Section */}
+            <motion.div className="lg:w-[40%] md:w-[40%]">
               <Image
                 src={FeaturedImage}
                 alt="Card 1"
                 width={200}
                 height={200}
-                className="h-full w-full  rounded-lg"
+                className="h-full w-full rounded-lg"
               />
             </motion.div>
           </div>
