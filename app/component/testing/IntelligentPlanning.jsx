@@ -284,7 +284,7 @@ export default function IntelligentPlanning({
                 text={bottomContent.btnText}
                 image={buttonImage}
                 hoverImage={buttonImage}
-                onClick={bottomContent.onbuttonClick}
+                onClick={bottomContent.buttonClick}
                 className={"whitespace-nowrap"}
               />
             </motion.div>
