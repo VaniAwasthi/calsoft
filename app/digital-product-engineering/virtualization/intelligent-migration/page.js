@@ -361,10 +361,7 @@ export default function Page() {
         ]}
         heading="Don't just lift-and-shift. Tune and scale."
         description="Calsoft ensures workloads are optimized for their target environment post-migration:"
-        bottomText={{
-          text: null,
-          bText: null,
-        }}
+        bottomText={null}
       />
       <Agility
         id="real-world-impact"

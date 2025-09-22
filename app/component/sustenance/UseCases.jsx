@@ -189,7 +189,7 @@ export default function UseCases({
     text: "Each use case delivers ",
     bText: "clarity, evidence, and measurable direction.",
   },
-  secId="use-cases"
+  secId = "use-cases",
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -214,7 +214,7 @@ export default function UseCases({
     <div id={id} className="container">
       <div className="h-8" />
       <div className="mb-12">
-        <h1 className="text-4xl font-bold mb-3 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent leading-16">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold sm:mb-3 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent leading-16">
           {title}
         </h1>
 
@@ -226,7 +226,7 @@ export default function UseCases({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="text-[#000000] text-3xl font-bold mb-4"
+                className="text-black text-xl sm:text-2xl lg:text-3xl font-bold mb-4"
               >
                 {heading}
               </motion.h2>
@@ -236,7 +236,7 @@ export default function UseCases({
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
-              className="text-[#000000] text-lg leading-relaxed"
+              className="text-black text-sm sm:text-base lg:text-lg leading-relaxed"
             >
               {description}
             </motion.p>
@@ -310,17 +310,17 @@ export default function UseCases({
             }}
             modules={[Navigation, Autoplay]}
             autoplay={{ delay: 6000 }}
-            className="w-full h-full z-0 mt-5"
+            className="w-full h-full z-0"
             style={{
-              height: "250px",
-              minHeight: "250px",
+              height: "280px",
+              minHeight: "280px",
               marginTop: "1rem",
               marginBottom: "1rem",
             }}
           >
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8 ">
               {data.map((ele, idx) => (
-                <SwiperSlide key={idx} className="z-10 !h-full mb-10">
+                <SwiperSlide key={idx} className="z-10 !h-full py-5">
                   <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 30 }}

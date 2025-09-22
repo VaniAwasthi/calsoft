@@ -1,14 +1,12 @@
 "use client";
-
-import React from "react";
+import { motion } from "framer-motion";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
-import { motion } from "framer-motion";
 
 export default function WhyCalsoft({
-  sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here’s how we stand apart:",
-  // buttonText = "Download Case Study",
+  sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here's how we stand apart:",
   title = "Competitive Edge",
+  // buttonText = "Download Case Study",
   id = "why-calsoft",
   heading = "Why Calsoft",
   data = {
@@ -69,16 +67,17 @@ export default function WhyCalsoft({
       </svg>
     </div>
   );
+
   return (
     <div id={id} className="max-w-7xl mx-auto px-6 container">
       <div className="h-8" />
       {/* Header Section */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-8 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-5 lg:mb-8 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent">
           {heading}
         </h1>
 
-        <div className="flex justify-between items-center mb-12">
+        <div className="flex justify-between items-center mb-5 sm:mb-8 lg:mb-12">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -86,9 +85,11 @@ export default function WhyCalsoft({
             viewport={{ once: false, amount: 0.3 }}
             className="max-w-2xl"
           >
-            <h2 className="text-black text-3xl font-bold mb-4">{title}</h2>
+            <h2 className="text-black text-xl sm:text-2xl lg:text-3xl font-bold mb-4">
+              {title}
+            </h2>
             {sectionDescription && (
-              <p className="text-black text-lg leading-relaxed">
+              <p className="text-black text-sm sm:text-base lg:text-lg leading-relaxed">
                 {sectionDescription}
               </p>
             )}
@@ -110,48 +111,55 @@ export default function WhyCalsoft({
       </div>
 
       {/* Comparison Table */}
-      <div className="border border-[#e3e3e3]">
-        {/* Table Header */}
-        <div className="bg-[#2e3092] text-white grid grid-cols-3 py-6 px-8">
-          {data.tableHeadings.map((heading, i) => (
-            <div key={heading} className={`text-2xl font-bold`}>
-              {heading}
-            </div>
+      <div className="overflow-x-auto">
+        <div className="border border-[#e3e3e3] min-w-[600px]">
+          {/* Table Header */}
+          <div className="bg-[#2e3092] text-white grid grid-cols-3 py-6 px-8">
+            {data.tableHeadings.map((heading, i) => (
+              <div
+                key={heading}
+                className={`text-lg sm:text-xl lg:text-2xl font-bold`}
+              >
+                {heading}
+              </div>
+            ))}
+          </div>
+
+          {/* Table Rows */}
+          {data.tableContent.map((feature, index) => (
+            <motion.div
+              initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+              key={feature.name}
+              className={`grid grid-cols-3 py-6 px-8 items-center ${
+                index % 2 === 0 ? "bg-[#f2f0f5]" : "bg-white"
+              }`}
+            >
+              {/* Feature Name */}
+              <div className="text-black sm:text-lg lg:text-xl font-medium">
+                {feature.name}
+              </div>
+
+              {/* Calsoft Column */}
+              <div className="flex items-center justify-start gap-3">
+                <CheckIcon />
+                <span className="text-black sm:text-lg lg:text-xl font-medium">
+                  {feature.calsoft}
+                </span>
+              </div>
+
+              {/* Vendor Column */}
+              <div className="flex items-center justify-start gap-3">
+                <CrossIcon />
+                <span className="text-black sm:text-lg lg:text-xl font-medium">
+                  {feature.vendor}
+                </span>
+              </div>
+            </motion.div>
           ))}
         </div>
-
-        {/* Table Rows */}
-        {data.tableContent.map((feature, index) => (
-          <motion.div
-            initial={{ x: index % 2 === 0 ? -50 : 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: false, amount: 0.3 }}
-            key={feature.name}
-            className={`grid grid-cols-3 py-6 px-8 items-center ${
-              index % 2 === 0 ? "bg-[#f2f0f5]" : "bg-white"
-            }`}
-          >
-            {/* Feature Name */}
-            <div className="text-black text-xl font-medium">{feature.name}</div>
-
-            {/* Calsoft Column */}
-            <div className="flex items-center justify-start gap-3">
-              <CheckIcon />
-              <span className="text-black text-xl font-medium">
-                {feature.calsoft}
-              </span>
-            </div>
-
-            {/* Vendor Column */}
-            <div className="flex items-center justify-start gap-3">
-              <CrossIcon />
-              <span className="text-black text-xl font-medium">
-                {feature.vendor}
-              </span>
-            </div>
-          </motion.div>
-        ))}
       </div>
       <div className="h-10" />
     </div>

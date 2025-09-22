@@ -34,13 +34,13 @@ export default function HowToStart({
           viewport={{ once: false, amount: 0.3 }}
           className="space-y-6 flex-1"
         >
-          <div className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-2 flex flex-col">
+          <div className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent mb-2 flex flex-col">
             <span>{headerContent.title1}</span>
           </div>
-          <p className="text-lg">{headerContent.description}</p>
+          <p className="text-base lg:text-lg">{headerContent.description}</p>
           <ol className="space-y-1">
             {Object.keys(data).map((ele) => (
-              <li className="list-disc ml-5 text-lg">
+              <li className="list-disc ml-5 text-base lg:text-lg">
                 <span className="font-bold">{ele}</span> -{" "}
                 <span>{data[ele]}</span>
               </li>
