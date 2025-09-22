@@ -40,7 +40,7 @@ export const Herosection = ({
   );
 };
 
-export const CaseStudies = () => {
+export const CaseStudies = ({secId}) => {
   const tabs = ["Hi-Tech", "Telecom", "Retail", "Manufacturing"];
 
   const tabData = tabs.map((tab) => ({
@@ -76,7 +76,7 @@ export const CaseStudies = () => {
 
   return (
     <>
-      <section className="container mx-auto px-4 xl:px-20">
+      <section className="container mx-auto px-4 xl:px-20" id={secId}>
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

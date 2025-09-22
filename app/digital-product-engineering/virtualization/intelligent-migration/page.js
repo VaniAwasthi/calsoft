@@ -16,9 +16,10 @@ import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_B
 import Agility from "@/app/component/infra/Agility";
 import HowToStart from "@/app/component/VirtualizationSolutions/HowToStart";
 import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFitsMiddle";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
-  const [activeTab, setActiveTab] = useState("why-it-matters");
+  const [activeTab, setActiveTab] = useState("pulse-check");
   const navItems = [
     "Pulse Check",
     "Discovery & Planning",
@@ -37,13 +38,15 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        buttonClicked={()=>showHubSpotForm("book-discovery-call")}
+        buttonText2=""
       />
       <WhyItMatters
         id="pulse-check"
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         data={[
           {
             top: 5,
@@ -66,6 +69,7 @@ export default function Page() {
             text: "Manual lift-and-shift without optimization",
           },
         ]}
+        buttonClick={()=>showHubSpotForm(("get-in-touch"))}
         Component={Migration}
       />
       <IntelligentPlanning
@@ -104,6 +108,8 @@ export default function Page() {
           //   subTitle: null,
           // },
         ]}
+        buttonText="Request PoC"
+        buttonClick={()=>showHubSpotForm("request-a-poc")}
         id="discovery-&-planning"
         title="Discovery & Planning"
         bottomContent={null}
@@ -112,8 +118,9 @@ export default function Page() {
       <RealWorldImpact
         title="Runbook-driven, tool-powered, low-touch migration"
         desc="We use purpose-fit automation to move workloads with minimal disruption:"
-        id="automated-execution"
+        id="Automated Execution"
         heading="Automated Execution"
+        buttonText=""
         cardData={[
           {
             title: null,
@@ -482,9 +489,8 @@ export default function Page() {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Drive intelligent migrations with reduced downtime."
         }
-        link={"#"}
       />
     </>
   );

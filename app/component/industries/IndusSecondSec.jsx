@@ -126,9 +126,9 @@ const fadeIn = (delay = 0) => ({
   },
 });
 
-export default function IndustryIntelligence() {
+export default function IndustryIntelligence({secId}) {
   return (
-    <div className="bg-[#F8F9FA]">
+    <div className="bg-[#F8F9FA]" id={secId}>
       <section className="container mx-auto px-4 xl:px-20 relative py-16 overflow-hidden  ">
         {/* Title */}
         <motion.h2

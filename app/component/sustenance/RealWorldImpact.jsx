@@ -17,7 +17,7 @@ export default function RealWorldImpact({
   heading = "Real-World Impact",
   title = "Turn Unknowns Into Predictable Outcomes",
   desc = "Benchmarking before critical changes reduces risk and enhances decision-making:",
-  buttonText = "Download One Pagert",
+  buttonText = "Download One Pager",
   cardData = [
     {
       title: "30-50%",
@@ -67,7 +67,7 @@ export default function RealWorldImpact({
   }, [swiperInstance]);
   return (
     <div
-      id="business-value"
+      id={id}
       className={`${buttonText && "bg-[#f9f9f9]"} py-10`}
     >
       <div className="container">
@@ -109,55 +109,55 @@ export default function RealWorldImpact({
                   className={"whitespace-nowrap"}
                   onClick={onbuttonClicked}
                 />
-                {arrow && (
-                  <div className="flex justify-center items-center gap-5">
-                    <button
-                      ref={prevRef}
-                      className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
-                      style={{
-                        visibility: "visible",
-                        display: "flex",
-                        zIndex: 40,
-                      }}
-                    >
-                      <svg
-                        width="11"
-                        height="18"
-                        viewBox="0 0 11 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M9.44893 0.488596L10.7459 1.79007L3.39405 9.11124L10.7578 16.7272L9.4379 18.0039L0.813932 9.08735L9.44893 0.488596Z"
-                          fill="#2E3092"
-                        />
-                      </svg>
-                    </button>
-                    <button
-                      ref={nextRef}
-                      className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
-                      style={{
-                        visibility: "visible",
-                        display: "flex",
-                        zIndex: 40,
-                      }}
-                    >
-                      <svg
-                        width="11"
-                        height="18"
-                        viewBox="0 0 11 18"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.55108 17.8981L0.254129 16.5966L7.60595 9.27548L0.242188 1.65949L1.5621 0.382812L10.1861 9.29936L1.55108 17.8981Z"
-                          fill="#2E3092"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                )}
               </motion.div>
+            )}
+            {arrow && (
+              <div className="flex justify-center items-center gap-5">
+                <button
+                  ref={prevRef}
+                  className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
+                  style={{
+                    visibility: "visible",
+                    display: "flex",
+                    zIndex: 40,
+                  }}
+                >
+                  <svg
+                    width="11"
+                    height="18"
+                    viewBox="0 0 11 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.44893 0.488596L10.7459 1.79007L3.39405 9.11124L10.7578 16.7272L9.4379 18.0039L0.813932 9.08735L9.44893 0.488596Z"
+                      fill="#2E3092"
+                    />
+                  </svg>
+                </button>
+                <button
+                  ref={nextRef}
+                  className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
+                  style={{
+                    visibility: "visible",
+                    display: "flex",
+                    zIndex: 40,
+                  }}
+                >
+                  <svg
+                    width="11"
+                    height="18"
+                    viewBox="0 0 11 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1.55108 17.8981L0.254129 16.5966L7.60595 9.27548L0.242188 1.65949L1.5621 0.382812L10.1861 9.29936L1.55108 17.8981Z"
+                      fill="#2E3092"
+                    />
+                  </svg>
+                </button>
+              </div>
             )}
           </div>
         </div>

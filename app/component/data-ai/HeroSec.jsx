@@ -18,13 +18,10 @@ export const DataAiBanner = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Expertise",
-    "Industries",
-    "Latest at Calsoft ",
-    "Partners",
-    "Services",
-    "Case Studies",
+    "Benefits",
+    "Data Services",
+    "AI Services",
+   "Accelerators"
   ];
   return (
     <>
@@ -62,7 +59,7 @@ export const MultiFeatureGrid = ({ sections, heading }) => {
         {heading}
       </motion.h2>
       {sections.map((section, index) => (
-        <div key={index} className="mb-16">
+        <div key={index} className="mb-16" id={section.secId}>
           {/* Section Heading */}
 
           {/* Mobile Purple Label */}
@@ -87,7 +84,7 @@ export const MultiFeatureGrid = ({ sections, heading }) => {
             ))}
 
             {/* Purple Center Label (Desktop only) */}
-            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10" >
               <motion.div
                 initial={{ x: -50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
