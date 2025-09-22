@@ -123,7 +123,7 @@ export const BlogSection = () => {
   );
 };
 
-export const TopPartners = () => {
+export const TopPartners = ({secId}) => {
   const data = {
     colSpan: 9,
     gridCols: 5,
@@ -141,7 +141,7 @@ export const TopPartners = () => {
   };
   return (
     <>
-      <section className="md:py-14">
+      <section className="md:py-14" id={secId}>
         <div className="container mx-auto px-4 xl:px-20">
           <motion.h2
             initial={{ opacity: 0, y: 10 }}

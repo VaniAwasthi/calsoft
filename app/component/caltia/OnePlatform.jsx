@@ -6,6 +6,14 @@ import { motion } from "framer-motion";
 import tabImg from "@/app/assets/caltia/TabContentImg.webp";
 import BookMeeting from "@/app/component/utilities/BookMeeting";
 import meeting from "@/app/assets/caltia/meeting.webp";
+import TabImg1 from "../../assets/ai-accelerators/caltia/Features-File-2025_Predictive-Test-Recommendation-.webp"
+import TabImg2 from "../../assets/ai-accelerators/caltia/Features-File-2025_Intuitive-Interface-and-Reporting.webp"
+import TabImg3 from "../../assets/ai-accelerators/caltia/Features-File-2025_Zero-Touch-Workflow.webp"
+import TabImg4 from "../../assets/ai-accelerators/caltia/Features-File-2025_Easy-Integration-with-DevOps-Pipeline.webp"
+import TabImg5 from "../../assets/ai-accelerators/caltia/Features-File_Programming-language-and-Domain-Agnostic-1.webp"
+import TabImg6 from "../../assets/ai-accelerators/caltia/Features-File-2025_ON-Prem-Solution.webp"
+import TabImg7 from "../../assets/ai-accelerators/caltia/Features-File-2025_Test-Intelligence-Platform-–-Redefining-Efficiency.webp"
+
 
 export default function TabsComponent({
   tabsData = [
@@ -13,7 +21,7 @@ export default function TabsComponent({
       id: "predictive-test",
       title: "Predictive Test\n Recommendation",
       content: {
-        img: tabImg,
+        img: TabImg1,
         features: [
           "Intelligently selects the most relevant tests based on code changes using predictive test analytics",
           "Executes essential test subsets, reducing regression time",
@@ -26,7 +34,7 @@ export default function TabsComponent({
       id: "intuitive-interface",
       title: "Intuitive Interface\n and Reporting",
       content: {
-        img: tabImg,
+        img: TabImg2,
         features: [
           "User-friendly dashboard with comprehensive test analytics",
           "Real-time reporting and visualization of test results",
@@ -39,7 +47,7 @@ export default function TabsComponent({
       id: "zero-touch",
       title: "Zero-Touch\n Workflow",
       content: {
-        img: tabImg,
+        img: TabImg3,
         features: [
           "Fully automated testing pipeline with minimal manual intervention",
           "Seamless integration with existing development workflows",
@@ -52,7 +60,7 @@ export default function TabsComponent({
       id: "easy-integration",
       title: "Easy Integration with\n DevOps Pipeline",
       content: {
-        img: tabImg,
+        img: TabImg4,
         features: [
           "Compatible with popular CI/CD tools and platforms",
           "Simple setup and configuration process",
@@ -65,7 +73,7 @@ export default function TabsComponent({
       id: "programming-language",
       title: "Programming language\n and Domain Agnostic",
       content: {
-        img: tabImg,
+        img: TabImg5,
         features: [
           "Support for multiple programming languages and frameworks",
           "Domain-independent testing capabilities",
@@ -78,7 +86,7 @@ export default function TabsComponent({
       id: "on-prem",
       title: "On-Prem Solution",
       content: {
-        img: tabImg,
+        img: TabImg6,
         features: [
           "Complete on-premises deployment option",
           "Full data control and security compliance",
@@ -91,7 +99,7 @@ export default function TabsComponent({
       id: "optimizing-quality",
       title: "Optimizing Software\n Quality Assurance",
       content: {
-        img: tabImg,
+        img: TabImg7,
         features: [
           "Advanced quality metrics and analysis",
           "Continuous improvement recommendations",
