@@ -27,6 +27,7 @@ export default function Page() {
     "Optimization-First",
     "Real-World Impact",
     "Where It Fits",
+    "How to Start",
   ];
   return (
     <>
@@ -367,10 +368,7 @@ export default function Page() {
         ]}
         heading="Don't just lift-and-shift. Tune and scale."
         description="Calsoft ensures workloads are optimized for their target environment post-migration:"
-        bottomText={{
-          text: null,
-          bText: null,
-        }}
+        bottomText={null}
       />
       <Agility
         id="real-world-impact"
@@ -435,6 +433,7 @@ export default function Page() {
         ]}
       />
       <WhyCalsoft
+        id="how-to-start"
         sectionDescription=""
         title="What makes our approach intelligent"
         heading="How to Start"

@@ -810,15 +810,18 @@ const FeatureCard = ({ icon, title, description, index }) => {
   );
 };
 
-const BookaMeeting = () => {
+const BookaMeeting = ({
+  title = "Automate post-release reporting by 80%.",
+  buttonText = "Contact Us"
+}) => {
   return (
     <div className="mt-14 my-10">
       <div className="container">
         <BookMeeting
           img={meeting}
-          title="Automate post-release reporting by 80%."
+          title={title}
           titleClass="text-[32px] font-bold"
-          buttonText="Contact Us"
+          buttonText={buttonText}
           buttonClicked={() => showHubSpotForm("contact-us-popup")}
         />
       </div>

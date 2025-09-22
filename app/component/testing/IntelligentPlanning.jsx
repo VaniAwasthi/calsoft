@@ -51,7 +51,7 @@ export default function IntelligentPlanning({
     btnText: "Talk to Expert",
     buttonClick: () => showHubSpotForm("Talk_to_Expert"),
   },
-  secId="intelligent-planning",
+  secId = "intelligent-planning",
   arrow = true,
   image = true,
 }) {
@@ -98,7 +98,7 @@ export default function IntelligentPlanning({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl font-bold mb-3 leading-16"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 leading-16"
           >
             {title}
           </motion.h1>
@@ -110,7 +110,7 @@ export default function IntelligentPlanning({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className=" text-3xl font-bold mb-4"
+                className="text-xl sm:text-2xl lg:text-3xl font-bold mb-4"
               >
                 {heading}
               </motion.h2>
@@ -119,7 +119,7 @@ export default function IntelligentPlanning({
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className=" text-lg leading-relaxed"
+                className="text-sm sm:text-base lg:text-lg leading-relaxed"
               >
                 {description}
               </motion.p>
@@ -204,25 +204,25 @@ export default function IntelligentPlanning({
           }}
           breakpoints={{
             320: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 20,
             },
             640: {
-              slidesPerView: 3,
+              slidesPerView: 2,
               spaceBetween: 20,
             },
-            768: {
+            1024: {
               slidesPerView: 5,
               spaceBetween: 20,
             },
           }}
           modules={[Navigation, Autoplay]}
           autoplay={{ delay: 6000 }}
-          className="w-full h-full z-0 py-14"
-          style={{ height: "250px", minHeight: "250px" }}
+          className="w-full h-full -z-20 py-10"
+          style={{ height: "260px", minHeight: "260px" }}
         >
           {data.map((ele, idx) => (
-            <SwiperSlide key={idx} className="z-10 !h-full">
+            <SwiperSlide key={idx} className="z-10 !h-full py-4 px-1">
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
@@ -236,8 +236,14 @@ export default function IntelligentPlanning({
                 : "rounded-lg"
             }`}
               >
-                {ele.title && <p className="text-2xl font-bold">{ele.title}</p>}
-                {ele.subTitle && <p className="text-lg">{ele.subTitle}</p>}
+                {ele.title && (
+                  <p className="text-lg sm:text-xl lg:text-2xl font-bold">
+                    {ele.title}
+                  </p>
+                )}
+                {ele.subTitle && (
+                  <p className="text-base lg:text-lg">{ele.subTitle}</p>
+                )}
               </motion.div>
             </SwiperSlide>
           ))}

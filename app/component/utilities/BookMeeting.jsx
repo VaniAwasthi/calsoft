@@ -11,7 +11,7 @@ export default function BookMeeting({
   desc = null,
   buttonText = "Book a Meeting",
   titleClass = "",
-  buttonClicked
+  buttonClicked,
 }) {
   return (
     <div className="w-full h-72 2xs:h-60 md:h-40 relative rounded-xl overflow-hidden mt-10">
@@ -25,7 +25,9 @@ export default function BookMeeting({
             viewport={{ once: false, amount: 0.3 }}
             className="flex flex-col items-start justify-center"
           >
-            <p className="text-3xl md:text-4xl font-medium">{title}</p>
+            <p className="text-2xl sm:text-3xl md:text-4xl font-medium">
+              {title}
+            </p>
             {desc && <p>{desc}</p>}
           </motion.div>
           <motion.button
@@ -33,7 +35,7 @@ export default function BookMeeting({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-lg md:text-xl font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg whitespace-nowrap"
+            className="sm:text-lg md:text-xl font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg whitespace-nowrap"
             onClick={buttonClicked}
           >
             {buttonText}

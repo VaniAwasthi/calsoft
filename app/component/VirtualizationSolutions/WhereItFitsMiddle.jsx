@@ -43,7 +43,7 @@ export default function WhereItFits({
       <div className="h-8" />
       {/* Header Section */}
       <div className="mb-8">
-        <h1 className="text-4xl font-bold mb-8 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-8 bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] bg-clip-text text-transparent">
           {heading}
         </h1>
 
@@ -55,8 +55,14 @@ export default function WhereItFits({
             viewport={{ once: false, amount: 0.3 }}
             className="max-w-2xl text-black"
           >
-            <h2 className="text-3xl font-semibold mb-4">{title1}</h2>
-            {title2 && <p className="text-3xl font-semibold">{title2}</p>}
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4">
+              {title1}
+            </h2>
+            {title2 && (
+              <p className="text-xl sm:text-2xl lg:text-3xl font-semibold">
+                {title2}
+              </p>
+            )}
           </motion.div>
           {/* <motion.div
             initial={{ x: 50, opacity: 0 }}
