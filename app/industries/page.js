@@ -14,6 +14,7 @@ import InfoSec3 from "../assets/home/Retail.webp";
 import InfoSec4 from "../assets/home/Manufacturing.webp";
 import InfoSection from "../component/industries/InfoSection";
 import AnimatedSection from "../component/industries/IndusSecondSec";
+import { showHubSpotForm } from "../component/utilities/showHubSpotForm";
 const Page = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const slide = {
@@ -26,13 +27,13 @@ const Page = () => {
   };
 
   const navItems = [
-    "Industry solution",
-    "Success stories",
-    "High Tech",
+    "Services",
+    "Case Studies",
+    "Hi Tech",
     "Telecom",
     "Retail",
     "Manufacturing",
-    "Industry Partners",
+    "Partners",
   ];
   const SectionOne = {
     heading: "Hi-Tech ",
@@ -158,33 +159,38 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
       />
-      <AnimatedSection />
+      <AnimatedSection secId={"services"} />
       {/* <TopClients /> */}
-      <CaseStudies />
+      <CaseStudies  secId="case-studies"/>
       <InfoSection
+      secId="hi-tech"
         {...SectionOne}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
       />
       <InfoSection
+      secId={"telecom"}
         {...SectionTwo}
         rounded="rounded-r-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]  bg-[#F8F9FA]"
       />
       <InfoSection
+      secId={"retail"}
         {...SectionThree}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
       />
       <InfoSection
+      secId="manufacturing"
         {...SectionFour}
         rounded="rounded-r-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]  bg-[#F8F9FA]"
       />
-      <TopPartners />
+      <TopPartners secId="partners"/>
       <ContactSec
+      buttonClicked={()=>showHubSpotForm("contact-us-popup")}
         lightContent="We are industry-hardened engineers with future-ready solutions"
-        link="#"
+        // link="#"
       />
     </>
   );

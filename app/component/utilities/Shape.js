@@ -381,9 +381,9 @@ export const MatterCircle = ({
   );
 };
 
-export const StepsSection = ({ heading, steps }) => {
+export const StepsSection = ({ heading, steps ,secId }) => {
   return (
-    <section className="md:pb-12 pb-0 md:pt-12 pt-6   bg-white">
+    <section className="md:pb-12 pb-0 md:pt-12 pt-6   bg-white" id={secId}>
       <div className="container mx-auto px-4 md:px-16">
         <h2 className="text-xl md:text-[38px] font-semibold mb-6 md:mb-10 text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_18%,#ED1C24_60%)] ">
           {heading.split(" ").map((word, idx) =>
@@ -452,10 +452,11 @@ export const Imagethree = ({
   gridStyle = "md:grid-cols-3",
   buttonText,
   isButton = false,
-  islearnMoreButton =false
+  islearnMoreButton =false,
+  secId
 }) => {
   return (
-    <section className="  md:pt-16 pt-8   bg-white">
+    <section className="  md:pt-16 pt-8   bg-white" id={secId}>
       <div className="container mx-auto px-4 md:px-16">
         <h2 className="text-xl md:text-[38px] font-semibold mb-6 md:mb-10 text-transparent bg-clip-text bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_30%)] ">
           {heading}

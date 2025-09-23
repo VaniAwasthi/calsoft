@@ -15,11 +15,12 @@ const InfoSection = ({
   bgColor = "bg-[#FAFAF6]",
   link = "",
   rounded = "",
+  secId
 }) => {
   const isImageLeft = imagePosition === "left";
 
   return (
-    <section className="container mx-auto  px-4 md:px-16 py-10">
+    <section className="container mx-auto  px-4 md:px-16 py-10" id={secId}>
       <div
         className={`grid grid-cols-1 md:grid-cols-2  overflow-hidden ${bgColor} my-4 md:my-[3rem]`}
       >

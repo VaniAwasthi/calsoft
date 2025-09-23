@@ -23,7 +23,7 @@ import { showHubSpotForm } from "../utilities/showHubSpotForm";
 import { useRouter } from "next/navigation";
 
 export const Digital = () => {
-  const [activeTab, setActiveTab] = useState("benefits");
+  const [activeTab, setActiveTab] = useState("Benefits");
   const slide = {
     title: "Digital Product Engineering",
 
@@ -32,13 +32,11 @@ export const Digital = () => {
     image: BackgroundImage,
   };
   const navItems = [
-    "Journey",
-    "Expertise",
-    "Industries",
-    "Latest at Calsoft",
-    "Partners",
-    "Services",
-    "Case Studies",
+    "Benefits",
+    "Product",
+    "Ecosystem",
+    "Support",
+   
   ];
 
   return (
@@ -66,7 +64,7 @@ export const Digital = () => {
   );
 };
 
-export const Stages = () => {
+export const Stages = ({secId}) => {
   const stepsData = [
     {
       title: "Concept & architect",
@@ -97,6 +95,7 @@ export const Stages = () => {
         <StepsSection
           heading="Comprehensive engineering for all stages"
           steps={stepsData}
+          secId={secId}
         />
       </main>
     </>
@@ -131,7 +130,7 @@ export const Core = () => {
   ];
   return (
     <>
-      <Imagethree heading="Core product engineering" data={data} islearnMoreButton={true} />
+      <Imagethree heading="Core product engineering" data={data} islearnMoreButton={true} secId="product"/>
     </>
   );
 };
@@ -168,6 +167,7 @@ export const Ecosystem = () => {
         heading="Ecosystem and infrastructure alignment"
         data={data}
         islearnMoreButton={true}
+        secId="ecosystem"
       />
     </>
   );
@@ -201,7 +201,7 @@ export const Testing = () => {
   ];
   return (
     <>
-      <Imagethree heading="Testing, support, and sustenance" data={data} islearnMoreButton={true} />
+      <Imagethree heading="Testing, support, and sustenance" data={data} islearnMoreButton={true}  secId="support"/>
     </>
   );
 };

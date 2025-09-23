@@ -9,6 +9,7 @@ const Page = () => {
   const sections = [
     {
       label: "Data services",
+      secId:"data-services",
       items: [
         {
           title: "Data pipeline engineering",
@@ -34,6 +35,7 @@ const Page = () => {
     },
     {
       label: "AI engineering",
+      secId:"ai-services",
       items: [
         {
           title: "AI-driven Predictive Orchestration",
@@ -105,6 +107,7 @@ buttonLink:"/data-ai/ai-powered-accelerators/calsoft-performance-scalability-and
       <StepsSection
         heading="Built for the full data and AI lifecycle"
         steps={stepsData}
+        secId={"benefits"}
       />
       <MultiFeatureGrid
         sections={sections}
@@ -115,6 +118,7 @@ buttonLink:"/data-ai/ai-powered-accelerators/calsoft-performance-scalability-and
         data={data}
         gridStyle="md:grid-cols-2"
         isButton={true}
+        secId="accelerators"
         
       />
       <ContactSecDataAi

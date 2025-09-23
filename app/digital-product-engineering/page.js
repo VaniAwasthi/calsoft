@@ -9,7 +9,7 @@ const page = () => {
     <>
       {/* <BannerLayout /> */}
       <Digital />
-      <Stages />
+      <Stages secId="benefits" />
       <Core />
       <Ecosystem />
       <Testing />
