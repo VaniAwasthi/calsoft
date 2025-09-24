@@ -45,11 +45,11 @@ export default function IntelligentPlanning({
   heading = "Move What Matters, Not Just What Exists",
   description = " We don’t just move workloads — we evaluate, prioritize, and engineer them for performance and ROI. Calsoft’s approach includes:",
   buttonText = "Talk to Expert",
-  buttonClick = () => showHubSpotForm("Talk_to_Expert"),
+  buttonClick = () => showHubSpotForm("talk-to-expert"),
   bottomContent = {
     text: "We create docs that are version-controlled, searchable, modular, and traceable.",
     btnText: "Talk to Expert",
-    buttonClick: () => showHubSpotForm("Talk_to_Expert"),
+    buttonClick: () => showHubSpotForm("talk-to-expert"),
   },
   secId = "intelligent-planning",
   arrow = true,
@@ -132,13 +132,15 @@ export default function IntelligentPlanning({
             >
               {!bottomContent && (
                 <div className="flex justify-center items-center gap-6">
-                  <ButtonLayout
-                    text={buttonText}
-                    image={buttonImage}
-                    hoverImage={buttonImage}
-                    className={"whitespace-nowrap"}
-                    onClick={buttonClick}
-                  />
+                  {buttonText && (
+                    <ButtonLayout
+                      text={buttonText}
+                      image={buttonImage}
+                      hoverImage={buttonImage}
+                      className={"whitespace-nowrap"}
+                      onClick={buttonClick}
+                    />
+                  )}
                   {arrow && (
                     <div className="flex justify-center items-center gap-5">
                       <button
@@ -284,7 +286,7 @@ export default function IntelligentPlanning({
                 text={bottomContent.btnText}
                 image={buttonImage}
                 hoverImage={buttonImage}
-                onClick={bottomContent.onbuttonClick}
+                onClick={bottomContent.buttonClick}
                 className={"whitespace-nowrap"}
               />
             </motion.div>

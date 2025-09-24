@@ -7,6 +7,7 @@ import DevopsSREMatters from "./DevopsSREMatters";
 import { motion } from "framer-motion";
 
 export default function WhyItMatters({
+  heading = "Why It Matters",
   title = "Don’t Build Blind. Architect to Win.",
   desc = "75% of digital product failures stem from poor early decisions—wrong tech stack, unclear user flows, or over-engineered features. Calsoft helps you cut through ambiguity and shape a scalable, cloud-first, cost-efficient architecture that aligns with your business goals from Day 1.",
   desc2,
@@ -36,7 +37,7 @@ export default function WhyItMatters({
               viewport={{ once: false, amount: 0.3 }}
               className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_50%)] bg-clip-text text-transparent"
             >
-              Why It Matters
+              {heading}
             </motion.p>
             <div className="space-y-6">
               <motion.p

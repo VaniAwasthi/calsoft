@@ -879,7 +879,7 @@ export default function Values() {
                 rx="3.65"
                 transform="rotate(90 49.65 0.35)"
                 stroke="url(#paint0_linear_8950_1689)"
-                stroke-width="0.7"
+                strokeWidth="0.7"
                 stroke-dasharray="1 1"
               />
               <defs>
@@ -923,7 +923,7 @@ export default function Values() {
                 rx="3.65"
                 transform="matrix(-4.37114e-08 1 1 4.37114e-08 -1.5299e-08 1.5299e-08)"
                 stroke="url(#paint0_linear_8950_1696)"
-                stroke-width="0.7"
+                strokeWidth="0.7"
                 stroke-dasharray="1 1"
               />
               <defs>
@@ -966,7 +966,7 @@ export default function Values() {
                 rx="3.65"
                 transform="rotate(90 46.65 0.35)"
                 stroke="url(#paint0_linear_8950_1691)"
-                stroke-width="0.7"
+                strokeWidth="0.7"
                 stroke-dasharray="1 1"
               />
               <defs>
@@ -1009,7 +1009,7 @@ export default function Values() {
                 rx="3.65"
                 transform="matrix(-4.37114e-08 1 1 4.37114e-08 -1.5299e-08 1.5299e-08)"
                 stroke="url(#paint0_linear_8950_1697)"
-                stroke-width="0.7"
+                strokeWidth="0.7"
                 stroke-dasharray="1 1"
               />
               <defs>
@@ -1052,7 +1052,7 @@ export default function Values() {
                 rx="3.65"
                 transform="rotate(90 30.65 0.35)"
                 stroke="url(#paint0_linear_8950_1693)"
-                stroke-width="0.7"
+                strokeWidth="0.7"
                 stroke-dasharray="1 1"
               />
               <defs>
@@ -1091,7 +1091,7 @@ export default function Values() {
                 rx="3.65"
                 transform="matrix(-4.37114e-08 1 1 4.37114e-08 13 1.5299e-08)"
                 stroke="url(#paint0_linear_8950_1695)"
-                stroke-width="0.7"
+                strokeWidth="0.7"
                 stroke-dasharray="1 1"
               />
               <rect
@@ -1102,7 +1102,7 @@ export default function Values() {
                 rx="3.65"
                 transform="matrix(-4.37114e-08 1 1 4.37114e-08 7 6)"
                 stroke="url(#paint1_linear_8950_1695)"
-                stroke-width="0.7"
+                strokeWidth="0.7"
                 stroke-dasharray="1 1"
               />
               <rect
@@ -1113,7 +1113,7 @@ export default function Values() {
                 rx="3.65"
                 transform="matrix(-4.37114e-08 1 1 4.37114e-08 -1.5299e-08 12)"
                 stroke="url(#paint2_linear_8950_1695)"
-                stroke-width="0.7"
+                strokeWidth="0.7"
                 stroke-dasharray="1 1"
               />
               <defs>
