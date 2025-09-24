@@ -29,8 +29,8 @@ import argo from "@/app/assets/infra/argo.webp";
 import UseCases from "../../assets/infra/UseCases.webp";
 
 export default function IntegratedToolchain({
-  id="integrated-toolchain",
-  sections=[
+  id = "integrated-toolchain",
+  sections = [
     {
       title: "Cloud Platforms:",
       tools: [aws, googleCloud, azure, Kubernetes],
@@ -66,8 +66,8 @@ export default function IntegratedToolchain({
       tools: [elastic, fluentd, opentelemetry, jaeger, grafanaloki],
       border: "border-blue-500",
     },
-  ]}) {
-  
+  ],
+}) {
   return (
     <section id={id} className="max-w-7xl mx-auto px-6 container mt-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -85,30 +85,33 @@ export default function IntegratedToolchain({
 
           <div className="grid grid-cols-2 gap-4 mt-6">
             {sections.map((section, idx) => (
-              <div key={idx} 
-              className={`flex flex-col relative ${idx === sections.length - 1 ? "col-span-2" : ""
-                }`}>
+              <div
+                key={idx}
+                className={`flex flex-col relative ${
+                  idx === sections.length - 1 ? "col-span-2" : ""
+                }`}
+              >
                 {/* Title ABOVE the border */}
                 <span className="mb-1 text-sm font-semibold text-black">
                   {section.title}
                 </span>
 
                 {/* Equal-sized bordered box */}
-                <div className="bg-[linear-gradient(to_right,#2E3092_5%,#ED1C24_18%)] p-0.5 rounded-lg">
-                <div
-                  className={`rounded-lg p-3 shadow-sm flex flex-wrap gap-2 items-center border ${section.border} min-h-[80px] bg-white`}
-                >
-                  {section.tools.map((tool, tIdx) => (
-                    <Image
-                      key={tIdx}
-                      src={tool}
-                      alt="tool"
-                      width={50}
-                      height={50}
-                      className="object-contain"
-                    />
-                  ))}
-                </div>
+                <div className="bg-[linear-gradient(to_bottom,#2E3092_20%,#ED1C24_90%)] p-0.5 rounded-lg">
+                  <div
+                    className={`rounded-lg p-3 shadow-sm flex flex-wrap gap-2 items-center min-h-[80px] bg-white`}
+                  >
+                    {section.tools.map((tool, tIdx) => (
+                      <Image
+                        key={tIdx}
+                        src={tool}
+                        alt="tool"
+                        width={50}
+                        height={50}
+                        className="object-contain"
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

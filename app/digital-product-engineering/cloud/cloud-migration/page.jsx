@@ -11,7 +11,7 @@ import Agility from "../../../component/infra/Agility";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import CloudMigration from "../../../component/infra/CloudMigrationMatters";
-import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Migration-01.webp"
+import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Migration-01.webp";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
@@ -22,7 +22,7 @@ const Page = () => {
         description="Accelerate cloud adoption through risk-aware, business-aligned migration strategies — backed by automation, security, and predictable ROI."
         buttonText="Access Readiness"
         Hero_bg={Img}
-        buttonClicked={()=>showHubSpotForm("access-readiness")}
+        buttonClicked={() => showHubSpotForm("access-readiness")}
       />
       <WhyItMatters
         title="Cloud Migration Mistakes You Can’t Afford"
@@ -31,7 +31,7 @@ const Page = () => {
         MainComponenent={CloudMigration}
         id="why-it-matters"
         buttonText="Get in touch"
-        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
         data={{
@@ -40,7 +40,8 @@ const Page = () => {
           cardData: [
             {
               title: "Workload Rationalization using 6R framework",
-              subTitle: "(Rehost, Refactor, Replatform, Repurchase, Retire, Retain)",
+              subTitle:
+                "(Rehost, Refactor, Replatform, Repurchase, Retire, Retain)",
               icon: (
                 <svg
                   width="32"
@@ -155,7 +156,7 @@ const Page = () => {
             // },
           ],
         }}
-        buttonClicked={()=>showHubSpotForm("Talk_to_Expert")}
+        buttonClicked={() => showHubSpotForm("talk-to-expert")}
         buttonText="Talk to Expert"
       />
       <Agility
@@ -187,16 +188,15 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title:
-            "Reduce cloud migration risk by 60%.",
+          title: "Reduce cloud migration risk by 60%.",
           buttonText: "Book a Meeting",
-          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+          onButtonClicked: () => showHubSpotForm("book-a-meeting"),
         }}
         buttonText="Download One Pager"
-        onPagerButton={()=>showHubSpotForm("cloud-migration-one-pg")}
+        onPagerButton={() => showHubSpotForm("cloud-migration-one-pg")}
       />
       <UseCases
-      desc=" Calsoft’s cloud migration services have empowered organizations across industries:"
+        desc=" Calsoft’s cloud migration services have empowered organizations across industries:"
         useCases={[
           "ISVs shifting legacy platforms to containerized microservices on AWS & Azure",
           "Healthcare & Life Sciences migrating workloads with PHI/HIPAA compliance",
@@ -207,7 +207,7 @@ const Page = () => {
       />
 
       <WhyCalsoft
-      sectionDescription="Cloud migration is not a copy-paste operation — it’s a strategic transformation. Calsoft is uniquely positioned to deliver:"
+        sectionDescription="Cloud migration is not a copy-paste operation — it’s a strategic transformation. Calsoft is uniquely positioned to deliver:"
         data={{
           tableHeadings: ["Feature", "Calsoft", "Traditional Vendors"],
           tableContent: [
@@ -297,10 +297,7 @@ const Page = () => {
         ]}
       />
       <ContactSecDataAi
-        lightContent={
-          "Migrate to the cloud securely and seamlessly."
-        }
-       
+        lightContent={"Migrate to the cloud securely and seamlessly."}
       />
     </>
   );

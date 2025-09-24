@@ -12,19 +12,18 @@ export default function HeroSec({
   description = "Build an actionable infrastructure roadmap aligned to your growth, resilience, and cost objectives. No guesswork. Just clarity, performance, and ROI.",
   buttonText = "Request your custom roadmap",
   Hero_bg,
-  navItems,
-  buttonClicked=()=>showHubSpotForm("custom-roadmap-infrastructure")
+  navItems = [
+    "Why it Matters",
+    "Intelligent Planning",
+    "Business Value",
+    "Use Cases",
+    "Why Calsoft",
+    "How to Start",
+  ],
+  buttonClicked = () => showHubSpotForm("custom-roadmap-infrastructure"),
 }) {
   const [activeTab, setActiveTab] = useState("why-it-matters");
 
-  // const navItems = [
-  //   "Why it Matters",
-  //   "Intelligent Planning",
-  //   "Business Value",
-  //   "Use Cases",
-  //   "Why Calsoft",
-  //   "How to Start",
-  // ];
   return (
     <>
       <BannerLayout

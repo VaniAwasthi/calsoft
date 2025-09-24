@@ -33,7 +33,8 @@ export const navItems = [
         //     href: "/data-ai/enterprise-data-management/data-migration",
         //   },
         // ],
-        description:"Driving modern data architecture with governance, quality, and protection to ensure trusted, secure, and actionable enterprise data."
+        description:
+          "Driving modern data architecture with governance, quality, and protection to ensure trusted, secure, and actionable enterprise data.",
       },
 
       {
@@ -61,7 +62,8 @@ export const navItems = [
         //     href: "/data-ai/agentic-ai-development/scale-support",
         //   },
         // ],
-        description:"Building autonomous AI systems that reason, adapt, and act to deliver intelligent business outcomes."
+        description:
+          "Building autonomous AI systems that reason, adapt, and act to deliver intelligent business outcomes.",
       },
       {
         title: "DataOps & Governance",
@@ -92,7 +94,8 @@ export const navItems = [
         //     href: "/data-ai/data-ops-governance/data-collaboration-orchestration",
         //   },
         // ],
-        description:"Streamlining data pipelines with strong governance to ensure accuracy, compliance, and reliability at scale."
+        description:
+          "Streamlining data pipelines with strong governance to ensure accuracy, compliance, and reliability at scale.",
       },
       // {
       //   title: "Data observability",
@@ -133,7 +136,8 @@ export const navItems = [
         //     href: "/data-ai/data-modernization/orchestration-planning",
         //   },
         // ],
-        description:"Transforming legacy systems with cloud-first, AI-powered platforms for agility and performance."
+        description:
+          "Transforming legacy systems with cloud-first, AI-powered platforms for agility and performance.",
       },
       {
         title: "Custom-LLM for Gen AI and RAG",
@@ -164,7 +168,8 @@ export const navItems = [
         //     href: "/data-ai/custom-llm-for-gen-ai-rag/llm-deployment",
         //   },
         // ],
-        description:"Designing domain-specific large language models and retrieval-augmented generation tailored to enterprise needs."
+        description:
+          "Designing domain-specific large language models and retrieval-augmented generation tailored to enterprise needs.",
       },
       {
         title: "Analytics & Visualization",
@@ -195,7 +200,8 @@ export const navItems = [
         //     href: "/data-ai/data-analytics-visualization/custom-reporting-notifications",
         //   },
         // ],
-        description:"Enabling smarter decisions with advanced analytics and intuitive data visualization."
+        description:
+          "Enabling smarter decisions with advanced analytics and intuitive data visualization.",
       },
       {
         title: "AI-driven Predictive Orchestration",
@@ -226,7 +232,8 @@ export const navItems = [
         //     href: "/data-ai/predictive-orchestration/intelligent-resource-scheduling",
         //   },
         // ],
-        description:"Orchestrating IT and business processes with predictive AI to optimize efficiency and reduce risk."
+        description:
+          "Orchestrating IT and business processes with predictive AI to optimize efficiency and reduce risk.",
       },
 
       {
@@ -347,6 +354,14 @@ export const navItems = [
             title: "Cloud Migration",
             href: "/digital-product-engineering/cloud/cloud-migration",
           },
+          {
+            title: "Cloud and Usage Optimization",
+            href: "/digital-product-engineering/cloud/cost-and-usage-optimization",
+          },
+          {
+            title: "Site Reliability Engineering",
+            href: "/digital-product-engineering/cloud/site-reliability-engineering",
+          },
         ],
       },
       {
@@ -404,7 +419,6 @@ export const navItems = [
             href: "/digital-product-engineering/sustenance-support/uptime-continuity",
           },
         ],
-      
       },
       {
         title: "Virtualization ",
@@ -413,7 +427,7 @@ export const navItems = [
           {
             title: "Lifecycle Governance",
             href: "/digital-product-engineering/virtualization/lifecycle-governance",
-          },    
+          },
           {
             title: "Containerization and orchestration",
             href: "/digital-product-engineering/virtualization/containerization-and-orchestration",
@@ -467,7 +481,8 @@ export const navItems = [
         //     href: "/digital-product-engineering/storage-networking/network-function-virtualization-services",
         //   },
         // ],
-        description:"Delivering efficient, high-performance storage networking solutions for seamless data access and management."
+        description:
+          "Delivering efficient, high-performance storage networking solutions for seamless data access and management.",
       },
       {
         title: "Security Services",
@@ -498,7 +513,8 @@ export const navItems = [
         //     href: "/digital-product-engineering/security/service-continuity-and-backup-automation",
         //   },
         // ],
-        description:"Protecting digital assets with end-to-end security, compliance, and threat management solutions."
+        description:
+          "Protecting digital assets with end-to-end security, compliance, and threat management solutions.",
       },
     ],
   },
@@ -509,23 +525,26 @@ export const navItems = [
       {
         title: "Hi-tech",
         href: "/industries/hitech",
-        description:"Driving product innovation with next-gen engineering, AI-led modernization, and scalable software solutions."
+        description:
+          "Driving product innovation with next-gen engineering, AI-led modernization, and scalable software solutions.",
       },
       {
         title: "Retail",
         href: "/industries/retail",
-        description:"Transforming connectivity with AI, edge, and cloud solutions for faster, reliable, and secure networks."
-
+        description:
+          "Transforming connectivity with AI, edge, and cloud solutions for faster, reliable, and secure networks.",
       },
       {
         title: "Telecom",
         href: "/industries/telecom",
-       description:"Enabling smarter shopping experiences through data-driven insights, automation, and cloud-powered platforms."
+        description:
+          "Enabling smarter shopping experiences through data-driven insights, automation, and cloud-powered platforms.",
       },
       {
         title: "Manufacturing",
         href: "/industries/manufacturing",
-        description:"Powering Industry 4.0 with intelligent automation, predictive analytics, and digital modernization."
+        description:
+          "Powering Industry 4.0 with intelligent automation, predictive analytics, and digital modernization.",
       },
     ],
   },
@@ -533,7 +552,12 @@ export const navItems = [
     title: "INSIGHTS",
     href: "/insights",
     submenu: [
-      { title: "Blogs", href: "/insights/blogs" , description:"Fresh perspectives and expert insights on technology and innovation"},
+      {
+        title: "Blogs",
+        href: "/insights/blogs",
+        description:
+          "Fresh perspectives and expert insights on technology and innovation",
+      },
       {
         title: "Resources",
         href: "/insights",
@@ -549,23 +573,77 @@ export const navItems = [
           { title: "Videos", href: "/insights/videos" },
         ],
       },
-      { title: "Press Releases", href: "/insights/press-releases"  ,description:"Official announcements and updates from Calsoft."},
-      { title: "Webinars", href: "/insights/webinars", description:"Interactive sessions with experts on industry trends and solutions." },
-      { title: "Workshop", href: "/insights/workshops" , description:"Hands-on learning and deep dives into emerging technologies." },
-      { title: "Events", href: "/insights/events" , description:"Hands-on learning and deep dives into emerging technologies." },
-      { title: "Podcasts", href: "/insights/podcasts", description:"Conversations with leaders on technology, business, and innovation." },
-      { title: "Newsletter", href: "/insights/newsletter", description:"Conversations with leaders on technology, business, and innovation." },
+      {
+        title: "Press Releases",
+        href: "/insights/press-releases",
+        description: "Official announcements and updates from Calsoft.",
+      },
+      {
+        title: "Webinars",
+        href: "/insights/webinars",
+        description:
+          "Interactive sessions with experts on industry trends and solutions.",
+      },
+      {
+        title: "Workshop",
+        href: "/insights/workshops",
+        description:
+          "Hands-on learning and deep dives into emerging technologies.",
+      },
+      {
+        title: "Events",
+        href: "/insights/events",
+        description:
+          "Hands-on learning and deep dives into emerging technologies.",
+      },
+      {
+        title: "Podcasts",
+        href: "/insights/podcasts",
+        description:
+          "Conversations with leaders on technology, business, and innovation.",
+      },
+      {
+        title: "Newsletter",
+        href: "/insights/newsletter",
+        description:
+          "Conversations with leaders on technology, business, and innovation.",
+      },
     ],
   },
   {
     title: "ABOUT",
     href: "/about-us",
     submenu: [
-      { title: "Career", href: "/career" ,description:"Building rewarding careers through innovation, learning, and growth opportunities." },
-      { title: "Leadership", href: "/leadership", description:"Guided by vision and expertise to drive Calsoft’s technology-first journey." },
-      { title: "CSR", href: "/csr" , description:"Committed to creating social impact through education, empowerment, and sustainability initiatives." },
-      { title: "Partners ", href: "/partners" , description:"Partnerships that extend our Technology First approach to solve customer challenges" },
-      { title: "Contact Us", href: "/contact-us" , description:"Connect with us to explore solutions, partnerships, and opportunities." },
+      {
+        title: "Career",
+        href: "/career",
+        description:
+          "Building rewarding careers through innovation, learning, and growth opportunities.",
+      },
+      {
+        title: "Leadership",
+        href: "/leadership",
+        description:
+          "Guided by vision and expertise to drive Calsoft’s technology-first journey.",
+      },
+      {
+        title: "CSR",
+        href: "/csr",
+        description:
+          "Committed to creating social impact through education, empowerment, and sustainability initiatives.",
+      },
+      {
+        title: "Partners ",
+        href: "/partners",
+        description:
+          "Partnerships that extend our Technology First approach to solve customer challenges",
+      },
+      {
+        title: "Contact Us",
+        href: "/contact-us",
+        description:
+          "Connect with us to explore solutions, partnerships, and opportunities.",
+      },
     ],
   },
 ];
