@@ -17,6 +17,7 @@ import WhenToEngage from "@/app/component/infra/whentoEngage";
 import IntegratedToolchain from "@/app/component/infra/integratedToolChain";
 import { BookaMeeting } from "@/app/component/calPSR/CalPSR";
 import { SREBusinessImpact } from "@/app/component/infra/SREBusinessImpact";
+import ReliabilityMatters from "@/app/component/infra/ReliabilityMatters";
 
 const Page = () => {
   const navItems = [
@@ -43,12 +44,12 @@ const Page = () => {
       {/* <WhyItMatters /> */}
       <WhyItMatters
         id="why-it-matters"
-        title="Debunking Cloud-Native Myths"
-        desc="For most enterprises, “cloud-native” remains aspirational — often misunderstood as just container adoption. In reality, incomplete strategies lead to:"
-        desc2="Calsoft ensures true cloud-native enablement by aligning architecture, engineering practices,
-        security, and operations — at scale."
-        buttonText="Get in Touch"
-        MainComponenent={CloudNative}
+        heading="Modern Ops Challenges"
+        title="Scaling fast often breaks what matters most"
+        desc="Cloud-native systems are complex, distributed, and hard to predict. Engineering teams struggle to:"
+        desc2="SRE isn’t just tooling—it’s a culture of proactive engineering, incident learning, and reliability as code."
+        buttonText="Download Case Study"
+        MainComponenent={ReliabilityMatters}
         contentClass="w-[80%]"
         buttonClicked={() => showHubSpotForm("get-in-touch")}
       />

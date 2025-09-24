@@ -14,6 +14,7 @@ import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_3.webp";
 import Agility from "@/app/component/infra/Agility";
 import HowToStart from "@/app/component/VirtualizationSolutions/HowToStart";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -31,7 +32,8 @@ export default function Page() {
       <HeroSection
         title="Code Your Infrastructure. Control Everything."
         description="Deploy infrastructure securely and at scale using proven IaC across hybrid and cloud."
-        buttonText="Request Maturity Assessment"
+        buttonText="Request Free Assessment"
+        buttonClicked={() => showHubSpotForm("request-free-assessment")}
         heroImage={Img}
         navItems={navItems}
         setActiveTab={setActiveTab}
@@ -42,7 +44,8 @@ export default function Page() {
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
+        buttonClick={() => showHubSpotForm("get-in-touch")}
         data={[
           {
             top: 2.3,
@@ -111,6 +114,7 @@ export default function Page() {
         title="Modular Foundation"
         bottomContent={null}
         arrow={true}
+        buttonText={null}
       />
       <RealWorldImpact
         title="Make infra changes part of release pipelines"
@@ -145,11 +149,18 @@ export default function Page() {
         ]}
         bottomContent={null}
         arrow={true}
+        buttonClicked={() =>
+          showHubSpotForm("infrastructure-as-code-download-one-pg")
+        }
+        onbuttonClicked={() =>
+          showHubSpotForm("infrastructure-as-code-download-one-pg")
+        }
       />
       <div className="container">
         <BookMeeting
           title="Accelerate deployments by 60% with IaC scripts."
           img={img}
+          buttonClicked={() => showHubSpotForm("book-a-meeting")}
         />
       </div>
       <Agility
@@ -185,7 +196,7 @@ export default function Page() {
           ],
         }}
         bookMeetingData={null}
-        buttonText="Request ROI"
+        buttonText={null}
       />
       <UseCases
         id="where-it-fits"
@@ -369,12 +380,16 @@ export default function Page() {
           text: "Calsoft ensures IaC adoption is not just technical — but aligned to team maturity, policy, and scale.",
           bText: null,
         }}
+        buttonText={null}
       />
 
       <WhyCalsoft
         id="how-to-start"
         sectionDescription=""
         buttonText="Download One Pager"
+        buttonClick={() =>
+          showHubSpotForm("infrastructure-as-code-download-one-pg")
+        }
         title="Why enterprises prefer our IaC model"
         heading="How to Start"
         data={{

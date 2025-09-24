@@ -17,6 +17,7 @@ import BookMeeting from "@/app/component/utilities/BookMeeting";
 import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_Banner_2.webp";
 import Agility from "@/app/component/infra/Agility";
 import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFits";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("pulse-check");
@@ -38,7 +39,7 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
-        buttonClicked={() => showHubSpotForm("Talk_to_Expert")}
+        buttonClicked={() => showHubSpotForm("talk-to-expert")}
         buttonText2=""
       />
       <WhyItMatters
@@ -114,6 +115,12 @@ export default function Page() {
       />
       <RealWorldImpact
         title="Modular apps = faster delivery"
+        onbuttonClicked={() =>
+          showHubSpotForm("containerization-and-orchestration-one-pg")
+        }
+        buttonClicked={() =>
+          showHubSpotForm("containerization-and-orchestration-one-pg")
+        }
         desc="We help modernize your application estate through container-first design with tools and governance that match your environment."
         cardData={[
           {
@@ -326,6 +333,7 @@ export default function Page() {
           },
         ]}
         heading={null}
+        buttonText={null}
         description="Calsoft sets up and manages production-grade container orchestration with enterprise reliability and automation in mind."
         bottomText={{
           text: "Whether you run VMware, Hyper-V, KVM, OpenStack, or cloud VMs — ",
@@ -371,12 +379,12 @@ export default function Page() {
         bookMeetingData={null}
         buttonText="Download One Pager"
         onPagerButton={() =>
-          showHubSpotForm("lifecycle-governance-download-one-pager")
+          showHubSpotForm("containerization-and-orchestration-one-pg")
         }
       />
       <WhyCalsoft
         sectionDescription={null}
-        buttonText="Download One Pager"
+        buttonText={null}
         title="Why our model works"
         data={{
           tableHeadings: [

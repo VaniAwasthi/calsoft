@@ -17,6 +17,7 @@ import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_B
 import Agility from "@/app/component/infra/Agility";
 import HowToStart from "@/app/component/VirtualizationSolutions/HowToStart";
 import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFitsMiddle";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -39,13 +40,14 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
+        buttonClicked={() => showHubSpotForm("schedule-architecture-review")}
       />
       <WhyItMatters
         id="pulse-check"
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         data={[
           {
             top: 4.7,
@@ -68,6 +70,7 @@ export default function Page() {
             text: "Fragmented monitoring, logging, and identity management",
           },
         ]}
+        buttonClick={() => showHubSpotForm("get-in-touch")}
         Component={OpenStack}
       />
       {/* <IntelligentPlanning
@@ -154,6 +157,12 @@ export default function Page() {
             desc: "Multi-tenant project isolation & policy control",
           },
         ]}
+        buttonClicked={() =>
+          showHubSpotForm("openstack-environment-configuration-download-one-pg")
+        }
+        onbuttonClicked={() =>
+          showHubSpotForm("openstack-environment-configuration-download-one-pg")
+        }
         bottomContent={null}
         arrow={true}
       />
@@ -161,6 +170,7 @@ export default function Page() {
         <BookMeeting
           title="Configure OpenStack 2x faster for scale."
           img={img}
+          buttonClicked={() => showHubSpotForm("book-a-meeting")}
         />
       </div>
 
@@ -419,6 +429,7 @@ export default function Page() {
         heading="Make Day-2 operations painless"
         description="Once deployed, OpenStack must scale, patch, and recover without complexity. Calsoft sets up your environment to support:"
         bottomText={null}
+        buttonText={null}
       />
       <Agility
         id="real-world-impact"
@@ -456,13 +467,16 @@ export default function Page() {
           ],
         }}
         bookMeetingData={null}
-        buttonText="Request ROI"
+        buttonText={null}
       />
       {/* Where it fits */}
       <WhereItFits />
       <WhyCalsoft
         sectionDescription={null}
         buttonText="Download One Pager"
+        buttonClick={() =>
+          showHubSpotForm("openstack-environment-configuration-download-one-pg")
+        }
         title="Why Calsoft is trusted for OpenStack engineering"
         heading="Why Calsoft"
         data={{

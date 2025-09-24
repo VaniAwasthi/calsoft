@@ -36,7 +36,7 @@ export default function Page() {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("Talk_to_Expert")}
+        buttonClicked={() => showHubSpotForm("talk-to-expert")}
       />
       <WhyItMatters
         title="Where continuity often breaks down"

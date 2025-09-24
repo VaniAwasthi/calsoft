@@ -136,7 +136,7 @@ export default function IntelligentPlanning({
   id = "intelligent-planning",
   resultData = "A modular, scalable, and compliant roadmap that evolves with your business.",
   resultHeading = "Result:",
-  buttonText = "Tal to Expert"
+  buttonText = "Tal to Expert",
 }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -330,19 +330,19 @@ export default function IntelligentPlanning({
 
           {/* Result Section */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              <h3 className="text-black text-3xl font-bold mb-4">
-                {resultHeading}
-              </h3>
-              <p className="text-black text-xl max-w-2xl">
-                {resultData}
-              </p>
-            </motion.div>
+            {resultHeading && resultData && (
+              <motion.div
+                initial={{ x: -50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                viewport={{ once: false, amount: 0.3 }}
+              >
+                <h3 className="text-black text-3xl font-bold mb-4">
+                  {resultHeading}
+                </h3>
+                <p className="text-black text-xl max-w-2xl">{resultData}</p>
+              </motion.div>
+            )}
             <motion.div
               initial={{ x: 50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -354,7 +354,7 @@ export default function IntelligentPlanning({
                 image={buttonImage}
                 hoverImage={buttonImage}
                 className={"w-fit"}
-                onClick={() => showHubSpotForm("Talk_to_Expert")}
+                onClick={() => showHubSpotForm("talk-to-expert")}
               />
             </motion.div>
           </div>

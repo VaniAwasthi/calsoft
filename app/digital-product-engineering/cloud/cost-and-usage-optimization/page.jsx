@@ -7,19 +7,14 @@ import UseCases from "../../../component/infra/UseCases";
 import FirstStep from "../../../component/infra/FirstStep";
 import Guesswork from "@/app/component/sustenance/Guesswork";
 import WhyCalsoft from "../../../component/infra/WhyCalsoft";
-import Agility from "../../../component/infra/Agility";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
-import { BannerSection } from "../../../component/utilities/InfraSectorSec";
-import BannerwithButtonBg from "../../../assets/DigitalEngineering/CX/bgimg.webp";
-import CloudNative from "../../../component/infra/CloudNativeMatters";
 import Img from "@/app/assets/DigitalEngineering/cloud-service/Cloud-Native-Enablement.webp";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 import WhenToEngage from "@/app/component/infra/whentoEngage";
-import IntegratedToolchain from "@/app/component/infra/integratedToolChain";
 import { BookaMeeting } from "@/app/component/calPSR/CalPSR";
-// import CostUsageBusinessImpact from "@/app/component/infra/costUsageBusinessImpact"
 import { CostUsageBusinessImpact } from "@/app/component/infra/CostUsageBusinessImpact";
+import OptimizationMatters from "@/app/component/infra/OptimizationMatters";
 
 const Page = () => {
   const navItems = [
@@ -45,13 +40,13 @@ const Page = () => {
       />
       {/* <WhyItMatters /> */}
       <WhyItMatters
-        id="why-it-matters"
-        title="Debunking Cloud-Native Myths"
-        desc="For most enterprises, “cloud-native” remains aspirational — often misunderstood as just container adoption. In reality, incomplete strategies lead to:"
-        desc2="Calsoft ensures true cloud-native enablement by aligning architecture, engineering practices,
-        security, and operations — at scale."
-        buttonText="Get in Touch"
-        MainComponenent={CloudNative}
+        id="cloud-reality-check"
+        heading="Cloud Reality Check"
+        title="You’re not underusing cloud—just misusing it"
+        desc="Most cloud overspend stems from poor visibility, over-provisioning, and idle resources:"
+        desc2="Calsoft helps you unlock continuous cloud value by correlating usage patterns, business context, and cost models into actionable optimization."
+        buttonText="Download Case Study"
+        MainComponenent={OptimizationMatters}
         contentClass="w-[80%]"
         buttonClicked={() => showHubSpotForm("get-in-touch")}
       />

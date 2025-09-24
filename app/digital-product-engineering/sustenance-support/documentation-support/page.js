@@ -36,7 +36,7 @@ export default function Page() {
         activeTab={activeTab}
         heroImage={Img}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("Talk_to_Expert")}
+        buttonClicked={() => showHubSpotForm("talk-to-expert")}
       />
       <WhyItMatters
         title="What’s broken in your current docs?"

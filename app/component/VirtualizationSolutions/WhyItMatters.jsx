@@ -120,9 +120,9 @@ export function LifecycleGovernance({ data }) {
       <path
         d="M273.305 706.25H408.805L476.555 589.26L408.805 472.25H273.305L205.555 589.26L273.305 706.25Z"
         stroke="url(#paint0_linear_82_20)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M279.555 693.25L264.631 667.556L236.724 619.528L218.555 588.26L279.555 483.25"
@@ -131,16 +131,16 @@ export function LifecycleGovernance({ data }) {
       <path
         d="M279.555 693.25L264.631 667.556L236.724 619.528L218.555 588.26L279.555 483.25"
         stroke="url(#paint1_linear_82_20)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M205.805 589.25H70.3047L2.55469 472.24L70.3047 355.25H205.805L273.555 472.24L205.805 589.25Z"
         stroke="url(#paint2_linear_82_20)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M76.5547 576.25H197.467L212.257 550.803H267.555L239.915 503.236L257.923 472.25"
@@ -149,16 +149,16 @@ export function LifecycleGovernance({ data }) {
       <path
         d="M76.5547 576.25H197.467L212.257 550.803H267.555L239.915 503.236L257.923 472.25"
         stroke="url(#paint3_linear_82_20)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M273.305 472.25H408.805L476.555 355.25L408.805 238.25H273.305L205.555 355.25L273.305 472.25Z"
         stroke="url(#paint4_linear_82_20)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M279.555 459.25L264.783 433.558H209.555L237.159 385.534L219.174 354.25L279.555 249.25"
@@ -167,16 +167,16 @@ export function LifecycleGovernance({ data }) {
       <path
         d="M279.555 459.25L264.783 433.558H209.555L237.159 385.534L219.174 354.25L279.555 249.25"
         stroke="url(#paint5_linear_82_20)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M205.805 355.25H70.3047L2.55469 237.26L70.3047 119.25H205.805L273.555 237.26L205.805 355.25Z"
         stroke="url(#paint6_linear_82_20)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M76.5547 342.25H197.467L212.257 316.798H267.555L239.915 269.223L257.923 238.25"
@@ -185,16 +185,16 @@ export function LifecycleGovernance({ data }) {
       <path
         d="M76.5547 342.25H197.467L212.257 316.798H267.555L239.915 269.223L257.923 238.25"
         stroke="url(#paint7_linear_82_20)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M273.305 238.25H408.805L476.555 120.24L408.805 2.25H273.305L205.555 120.24L226.065 155.966L273.305 238.25Z"
         stroke="url(#paint8_linear_82_20)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M279.555 225.25L264.783 199.556H209.555L237.159 151.528L219.174 120.24L279.555 15.25"
@@ -203,9 +203,9 @@ export function LifecycleGovernance({ data }) {
       <path
         d="M279.555 225.25L264.783 199.556H209.555L237.159 151.528L219.174 120.24L279.555 15.25"
         stroke="url(#paint9_linear_82_20)"
-        stroke-width="4"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="4"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <defs>
         <linearGradient
@@ -2980,6 +2980,7 @@ export function Containerization({ data }) {
         {SVG}
         {data.map((ele, idx) => (
           <div
+            key={idx}
             className={`flex items-center justify-center absolute hover:scale-105 transition-all ${
               (idx + 1) % 2 === 0
                 ? "flex-row-reverse gap-7"
@@ -9895,9 +9896,9 @@ export function HyperVision({ data }) {
           width="308.356"
           height="748.163"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -9941,6 +9942,7 @@ export function HyperVision({ data }) {
       {SVG}
       {data.map((ele, idx) => (
         <div
+          key={idx}
           className={`flex items-center justify-center absolute hover:scale-105 transition-all ${
             (idx + 1) % 2 !== 0
               ? "flex-row-reverse gap-[5rem]"

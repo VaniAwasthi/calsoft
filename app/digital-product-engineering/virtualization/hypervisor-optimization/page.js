@@ -15,6 +15,7 @@ import Img from "@/app/assets/DigitalEngineering/virtualisation/Virtualization_B
 import Agility from "@/app/component/infra/Agility";
 import HowToStart from "@/app/component/VirtualizationSolutions/HowToStart";
 import WhereItFits from "@/app/component/VirtualizationSolutions/WhereItFitsMiddle";
+import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 export default function Page() {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -36,6 +37,9 @@ export default function Page() {
         heroImage={Img}
         navItems={navItems}
         setActiveTab={setActiveTab}
+        buttonClicked={() =>
+          showHubSpotForm("hypervisor-optimization-schedule-health-check")
+        }
         activeTab={activeTab}
       />
       <WhyItMatters
@@ -43,7 +47,8 @@ export default function Page() {
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
+        buttonClick={() => showHubSpotForm("get-in-touch")}
         data={[
           {
             top: 3,
@@ -107,6 +112,7 @@ export default function Page() {
             subTitle: "Automated rightsizing based on workload trends",
           },
         ]}
+        buttonText={null}
         id="core-to-vm"
         title="Core-to-VM"
         bottomContent={null}
@@ -144,12 +150,19 @@ export default function Page() {
           },
         ]}
         bottomContent={null}
+        buttonClicked={() =>
+          showHubSpotForm("hypervisor-optimization-download-one-pg")
+        }
+        onbuttonClicked={() =>
+          showHubSpotForm("hypervisor-optimization-download-one-pg")
+        }
         arrow={true}
       />
       <div className="container">
         <BookMeeting
           title="Improve virtualization performance by 35%."
           img={img}
+          buttonClicked={() => showHubSpotForm("book-a-meeting")}
         />
       </div>
 
@@ -367,7 +380,7 @@ export default function Page() {
           ],
         }}
         bookMeetingData={null}
-        buttonText="Request ROI"
+        buttonText={null}
       />
       <WhereItFits
         title1="When hypervisor tuning becomes essential"

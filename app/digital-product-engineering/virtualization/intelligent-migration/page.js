@@ -109,7 +109,7 @@ export default function Page() {
           //   subTitle: null,
           // },
         ]}
-        buttonText="Request PoC"
+        buttonText={null}
         buttonClick={() => showHubSpotForm("request-a-poc")}
         id="discovery-&-planning"
         title="Discovery & Planning"
@@ -152,7 +152,11 @@ export default function Page() {
         arrow={true}
       />
       <div className="container">
-        <BookMeeting title="Reduce infra migration efforts by 50%." img={img} />
+        <BookMeeting
+          title="Reduce infra migration efforts by 50%."
+          img={img}
+          buttonClicked={() => showHubSpotForm("book-a-meeting")}
+        />
       </div>
 
       <UseCases
@@ -369,6 +373,7 @@ export default function Page() {
         heading="Don't just lift-and-shift. Tune and scale."
         description="Calsoft ensures workloads are optimized for their target environment post-migration:"
         bottomText={null}
+        buttonText={null}
       />
       <Agility
         id="real-world-impact"
@@ -399,7 +404,7 @@ export default function Page() {
           ],
         }}
         bookMeetingData={null}
-        buttonText="Request ROI"
+        buttonText={null}
       />
       <WhereItFits
         title1="When intelligent migration is your edge"
@@ -471,6 +476,10 @@ export default function Page() {
             },
           ],
         }}
+        buttonText={"Download One Pager"}
+        buttonClick={() =>
+          showHubSpotForm("intelligent-migration-download-one-pg")
+        }
       />
       <HowToStart
         headerContent={{

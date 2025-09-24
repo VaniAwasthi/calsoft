@@ -42,7 +42,7 @@ export default function Page() {
         title="Why It Matters"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Get in Touch"
+        buttonText="Download Case Study"
         buttonClick={() => showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning
@@ -85,17 +85,15 @@ export default function Page() {
               "Reporting integration with FinOps, GRC, and cloud-native tools",
           },
         ]}
+        buttonText="Request POC"
+        buttonClick={() => showHubSpotForm("request-a-poc")}
         title="Structured Lifecycle"
-        bottomContent={{
-          text: "We transform VM stacks from free-for-all deployments into controlled environments.",
-          btnText: "Request POC",
-          onbuttonClick: () => showHubSpotForm("request-a-poc"),
-        }}
+        bottomContent={null}
         arrow={true}
       />
       <RealWorldImpact
         id="real-world-impact"
-        buttonText={"Download ROI Sheet"}
+        buttonText={null}
         title="From virtual chaos to operational clarity"
         desc="Organizations leveraging Calsoft’s lifecycle governance have achieved:"
         cardData={[
@@ -302,6 +300,7 @@ export default function Page() {
             ),
           },
         ]}
+        buttonText={null}
         heading="When lifecycle governance is essential"
         description="You need structured lifecycle governance if:"
         bottomText={{
@@ -313,6 +312,9 @@ export default function Page() {
         secId="why-calsoft"
         sectionDescription=""
         buttonText="Download One Pager"
+        buttonClick={() =>
+          showHubSpotForm("lifecycle-governance-download-one-pager")
+        }
         title="Why Calsoft’s model works better"
         data={{
           tableHeadings: [

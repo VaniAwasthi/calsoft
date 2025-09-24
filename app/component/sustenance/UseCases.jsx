@@ -189,6 +189,7 @@ export default function UseCases({
     text: "Each use case delivers ",
     bText: "clarity, evidence, and measurable direction.",
   },
+  buttonText = "Request Use Cases",
   secId = "use-cases",
 }) {
   const prevRef = useRef(null);
@@ -241,19 +242,21 @@ export default function UseCases({
               {description}
             </motion.p>
           </div>
-          <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: false, amount: 0.3 }}
-          >
-            <ButtonLayout
-              text={"Request Use Cases"}
-              image={buttonImage}
-              hoverImage={buttonImage}
-              className={"whitespace-nowrap"}
-            />
-          </motion.div>
+          {buttonText && (
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <ButtonLayout
+                text={buttonText}
+                image={buttonImage}
+                hoverImage={buttonImage}
+                className={"whitespace-nowrap"}
+              />
+            </motion.div>
+          )}
         </div>
       </div>
       <div className="space-y-12">
