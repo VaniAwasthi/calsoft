@@ -13,9 +13,8 @@ export default function BusinessOutcomes() {
   return (
     <section className="w-full max-w-7xl mx-auto px-15 py-10">
       {/* Title */}
-      <h2 className="text-2xl md:text-3xl font-semibold text-[#2b2b2b]">
-        Business Outcomes—
-        <span className="text-[#d62828]">Beyond UI Metrics</span>
+      <h2 className="text-2xl md:text-4xl font-semibold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent">
+        Business Outcomes— Beyond UI Metrics
       </h2>
       <p className="text-gray-600 mt-1">
         When your interface thinks like your user, you win on:
