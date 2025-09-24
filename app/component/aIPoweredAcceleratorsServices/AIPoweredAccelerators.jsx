@@ -20,7 +20,7 @@ export const AiBanner = () => {
     title: "AI-powered accelerators",
     description: `Deploy pre-built accelerators to solve
     targeted engineering and operational challenges.`,
-    buttonText: "Download Datasheet",
+    buttonText: "Get in Touch",
     image: BackgroundImage,
   };
   const navItems = ["Benefits", "CalTIA", "CalPSR", "Migration", "Mozaic"];
@@ -36,7 +36,7 @@ export const AiBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
-        onButtonClick={() => showHubSpotForm("book-a-meeting")}
+        onButtonClick={() => showHubSpotForm("get-in-touch")}
       />
       <Submenu
         navItems={navItems}

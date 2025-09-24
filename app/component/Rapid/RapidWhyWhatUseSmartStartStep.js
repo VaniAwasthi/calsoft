@@ -68,7 +68,7 @@ export const Rapid = () => {
           hoverImage={ButtonImage}
           rightSec={false}
           buttonWidth="!w-[250px]"
-          onButtonClick={()=>showHubSpotForm("request-cx-audit-standard")}
+          onButtonClick={() => showHubSpotForm("request-cx-audit-standard")}
         />
       </div>
       <Submenu
@@ -114,7 +114,12 @@ export const Why = () => {
   };
   return (
     <>
-      <MatterCircle {...whyItMattersData} ButtonImage={ButtonImage} secId="why-it-matters" buttonClick={()=>showHubSpotForm("get-in-touch")}/>
+      <MatterCircle
+        {...whyItMattersData}
+        ButtonImage={ButtonImage}
+        secId="why-it-matters"
+        buttonClick={() => showHubSpotForm("get-in-touch")}
+      />
     </>
   );
 };
@@ -183,7 +188,7 @@ export const What = () => {
         subtitle={subtitle}
         desc={desc}
         ButtonImage={ButtonImage}
-        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
+        onButtonClick={() => showHubSpotForm("Talk-to-Expert")}
         secId="what-we-do"
       />
     </>
@@ -197,7 +202,7 @@ export const Use = () => {
     subheading: "Prototypes That Drive Business Decisions.",
     description:
       "Our rapid prototypes have helped startups get funding, enterprises get buy-in, and engineering teams accelerate build cycles.",
-    buttonText: "Download One Pager",
+    buttonText: "Talk to Expert",
     cards: [
       {
         title: "MVP Flow Prototype for SaaS Platform",
@@ -224,8 +229,7 @@ export const Use = () => {
         ButtonImage={ButtonImage}
         direction="change_direction"
         secId="use-cases"
-        onButtonClick={()=>showHubSpotForm("rapid-prototyping-one-pg")}
-
+        onButtonClick={() => showHubSpotForm("talk-to-expert")}
       />
     </>
   );
@@ -252,7 +256,7 @@ export const Smart = () => {
         imageSrc={imginter}
         ButtonImage={ButtonImage}
         secId="business-value"
-        onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}
+        onButtonClick={() => showHubSpotForm("request-a-custom-roi-projection")}
       />
     </>
   );

@@ -32,7 +32,7 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
-        buttonClicked={()=>showHubSpotForm("")}
+        buttonClicked={() => showHubSpotForm("request-cx-audit-standard")}
         buttonText2=""
       />
       <WhyItMatters
@@ -44,9 +44,13 @@ const Page = () => {
         gridClass="sm:h-[55rem] md:h-[53rem] xl:h-[31.5rem]"
         mainComponenentClass="justify-start"
         id="why-it-matters"
-        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
       />
-      <WhatWeOffer id="what-we-offer" buttonText="Talk to Expert"  buttonClicked={()=>showHubSpotForm("Talk-to-Expert")}/>
+      <WhatWeOffer
+        id="what-we-offer"
+        buttonText="Talk to Expert"
+        buttonClicked={() => showHubSpotForm("Talk-to-Expert")}
+      />
       <UseCases
         id="use-cases"
         BussinessId="business-value"
@@ -67,8 +71,7 @@ const Page = () => {
         data={{
           leftSideContent: {
             title: "Apps That Work Harder for Your Business.",
-            subTitle:
-              null,
+            subTitle: null,
             description:
               "Our mobile solutions deliver more than access—they deliver ROI.",
           },
@@ -83,8 +86,7 @@ const Page = () => {
             },
             {
               title: "2X",
-              subTitle:
-                "user engagement on well-optimized mobile flows",
+              subTitle: "user engagement on well-optimized mobile flows",
             },
             {
               title: "100%",
@@ -96,7 +98,7 @@ const Page = () => {
           title: "Boost mobile adoption by 35% via native/hybrid apps.",
           buttontext: "Book a Meeting",
         }}
-        buttonClick2={()=>showHubSpotForm("mobile-development-one-pager")}
+        buttonClick2={() => showHubSpotForm("mobile-development-one-pager")}
       />
       <HowToStart
         id="how-to-start"
@@ -105,7 +107,6 @@ const Page = () => {
           description:
             "Every engagement starts with a focused 2-week Architecture Sprint designed to align stakeholders, define priorities, and deconstruct risks before any code is written.",
         }}
-        
       />
       <Steps />
       <ContactSecDataAi

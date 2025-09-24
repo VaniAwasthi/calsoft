@@ -19,7 +19,7 @@ export const HeroSectionProduct = () => {
     title: "Grow with cloud-induced efficiency",
     description: `Engineer scalable, secure, and cost-efficient<br/>
 cloud solutions aligned to your business goals.`,
-    buttonText: "Get in Touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -166,7 +166,6 @@ export const MultiCloudInfraSec = () => {
         imageLeft={true}
         isDivider={true}
         secId="multi-cloud"
-       
       />
     </>
   );

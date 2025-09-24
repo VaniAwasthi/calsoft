@@ -10,7 +10,7 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import WhyItMatters from "../../../component/testing/Functional-Testing/WhyItMatters";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
-import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_1.webp"
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_1.webp";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
@@ -29,13 +29,13 @@ const Page = () => {
       <HeroSection
         title="Ensure Every Release Works — Functionally and Resiliently."
         description="Practical validation for software quality and operational readiness."
-        buttonText="Download Datasheet"
+        buttonText="Access Readiness"
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         navItems={navItems}
         heroImage={Img}
         buttonText2=""
-        buttonClicked={()=>showHubSpotForm("access-readiness")}
+        buttonClicked={() => showHubSpotForm("access-readiness")}
       />
       <WhyItMatters
         title="Persistent Gaps in Agile Testing"
@@ -70,7 +70,8 @@ const Page = () => {
         ]}
         bottomContent={{
           text: "All tests are tied back to business flows, SLAs, and compliance mandates.",
-          btnText: "Request Test Coverage Blueprint",
+          btnText: "Talk to Expert",
+          buttonClick: () => showHubSpotForm("Talk-to-Expert"),
         }}
       />
       <Agility
@@ -105,25 +106,26 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title:
-            "Cover 100% scenarios with full test spectrum.",
+          title: "Cover 100% scenarios with full test spectrum.",
           buttonText: "Book a Meeting",
-          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+          onButtonClicked: () => showHubSpotForm("book-a-meeting"),
         }}
         buttonText="Download One Pager"
-        onPagerButton={()=>showHubSpotForm("regression-testing-caltia-one-pg")}
+        onPagerButton={() =>
+          showHubSpotForm("functional-nonfunctional-testing-download-one-pager")
+        }
       />
       <UseCases
         description="We’ve enabled outcomes for:"
         data={[
           {
             title: "FinTech firms",
-            subTitle:
-              "ensuring fail-safe core banking transactions",
+            subTitle: "ensuring fail-safe core banking transactions",
           },
           {
             title: "SaaS platforms",
-            subTitle: "validating microservices-based product features across builds",
+            subTitle:
+              "validating microservices-based product features across builds",
           },
           {
             title: "Retail companies",
@@ -135,7 +137,8 @@ const Page = () => {
           },
           {
             title: "ISVs",
-            subTitle: "automating 80–90% of regression cases across multi-tenant apps",
+            subTitle:
+              "automating 80–90% of regression cases across multi-tenant apps",
           },
         ]}
       />
@@ -143,7 +146,11 @@ const Page = () => {
         sectionDescription="Most vendors test what they see. Calsoft tests what matters. We combine engineering depth with contextual understanding."
         buttonText="Download One Pager"
         data={{
-          tableHeadings: ["Capability", "Calsoft QA Framework", "Traditional QA Vendors"],
+          tableHeadings: [
+            "Capability",
+            "Calsoft QA Framework",
+            "Traditional QA Vendors",
+          ],
           tableContent: [
             {
               name: "Functional + Non-Functional Tie-in",

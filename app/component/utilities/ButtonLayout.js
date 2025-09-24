@@ -20,7 +20,7 @@ export default function ButtonLayout({
   const content = (
     <>
       <span
-        className="absolute inset-0 transform -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"
+        className="absolute -inset-1 transform -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0"
         style={{ backgroundColor: hoverBgColor }}
       ></span>
 

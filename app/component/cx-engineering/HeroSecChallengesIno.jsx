@@ -18,7 +18,7 @@ export const HeroSectionCXEngineering = () => {
     title: "CX Engineering Elevate user experiences",
     description: `Intuitive, scalable, and intelligent interfaces
 that drive adoption and engagement.`,
-    buttonText: "Get in Touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -32,18 +32,18 @@ that drive adoption and engagement.`,
   return (
     <>
       <BannerWithRightSec
-  heroBg={BackgroundImage}
-  title={slide.title}
-  description={slide.description}
-  rightImage={slide.rightImage}
-  buttonText={slide.buttonText}
-  buttonImage={ButtonImage}
-  hoverImage={ButtonImage}
-  rightSec={false}
-  buttonWidth="!w-[250px]"
-  className="cx-engineering-datasheet"
-  onButtonClick={() => showHubSpotForm("cx-engineering-datasheet")}
-/>
+        heroBg={BackgroundImage}
+        title={slide.title}
+        description={slide.description}
+        rightImage={slide.rightImage}
+        buttonText={slide.buttonText}
+        buttonImage={ButtonImage}
+        hoverImage={ButtonImage}
+        rightSec={false}
+        buttonWidth="!w-[250px]"
+        className="cx-engineering-datasheet"
+        onButtonClick={() => showHubSpotForm("cx-engineering-datasheet")}
+      />
       <Submenu
         navItems={navItems}
         activeTab={activeTab}

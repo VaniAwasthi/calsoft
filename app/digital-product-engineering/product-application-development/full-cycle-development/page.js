@@ -4,7 +4,9 @@ import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import DevelopmentCycle from "../../../component/product-application-development/DevelopementCycleMatters";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, {
+  RequestDemo,
+} from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
@@ -38,7 +40,7 @@ const Page = () => {
         activeTab={activeTab}
         heroImage={img}
         buttonText2=""
-        buttonClicked={()=>showHubSpotForm("Get-Architechure-Rediness-Score")}
+        buttonClicked={() => showHubSpotForm("Get-Architechure-Rediness-Score")}
       />
       <WhyItMatters
         title="90% of Product Delays Are Self-Inflicted. Avoid Them."
@@ -47,7 +49,7 @@ const Page = () => {
         MainComponenent={DevelopmentCycle}
         contentClass="w-[90%]"
         id="why-it-matters"
-        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
       />
       <WhatWeOffer
         id="what-we-offer"
@@ -159,9 +161,9 @@ const Page = () => {
             title: "Integrated QA & CI/CD pipelines",
           },
         ]}
-        buttonText="Request Demo"
+        buttonText="Request Architecture Blueprint"
         ScorecardComponent={RequestDemo}
-        buttonClicked={()=>showHubSpotForm("request-architecture-blueprint")}
+        buttonClicked={() => showHubSpotForm("request-architecture-blueprint")}
       />
       <UseCases
         id="use-cases"
@@ -185,8 +187,7 @@ const Page = () => {
         data={{
           leftSideContent: {
             title: "Deliver Better. Scale Smarter. Win Faster.",
-            subTitle:
-              null,
+            subTitle: null,
             description:
               "Here’s what our clients gained with Calsoft's full-cycle approach:",
           },
@@ -214,8 +215,9 @@ const Page = () => {
           title: "Accelerate MVP delivery by 40% with agile builds.",
           buttontext: "Book a Meeting",
         }}
-                buttonClick2={()=>showHubSpotForm("full-cycle-development-download-one-pager")}
-        
+        buttonClick2={() =>
+          showHubSpotForm("full-cycle-development-download-one-pager")
+        }
       />
       <HowToStart
         id="how-to-start"
@@ -275,10 +277,7 @@ const Page = () => {
           {
             day: "Day 15",
             title: "Sprint Demo & Plan Next Phase",
-            points: [
-              "Final walkthrough",
-              "Deployment advisory + roadmap",              
-            ],
+            points: ["Final walkthrough", "Deployment advisory + roadmap"],
             output: "Demo Build + Sprint Summary Report",
             arrowDesktop: null,
             arrowMobile: null,

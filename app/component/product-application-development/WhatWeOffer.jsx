@@ -216,6 +216,7 @@ export function RequestDemo({
   title2 = "Code quality audit: 95%+ static analysis pass rate",
   desc = "Release velocity: Bi-weekly sprints | CI-ready",
   buttonText = "Request a Demo",
+  buttonClicked = () => showHubSpotForm("request-architecture-blueprint"),
 }) {
   return (
     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
@@ -240,6 +241,7 @@ export function RequestDemo({
           image={buttonImage}
           hoverImage={buttonImage}
           className={"w-fit"}
+          onClick={buttonClicked}
         />
       </motion.div>
     </div>

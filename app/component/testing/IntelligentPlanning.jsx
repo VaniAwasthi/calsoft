@@ -220,8 +220,8 @@ export default function IntelligentPlanning({
           }}
           modules={[Navigation, Autoplay]}
           autoplay={{ delay: 6000 }}
-          className="w-full h-full -z-20 py-10"
-          style={{ height: "260px", minHeight: "260px" }}
+          className="w-full -z-20"
+          style={{ height: "320px", minHeight: "320px" }}
         >
           {data.map((ele, idx) => (
             <SwiperSlide key={idx} className="z-10 !h-full py-4 px-1">

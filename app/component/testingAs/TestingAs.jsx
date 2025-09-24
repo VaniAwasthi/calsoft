@@ -18,7 +18,7 @@ export const TestingTab = () => {
   const slide = {
     title: "Testing as a Service",
     description: `Deliver reliable, scalable products with comprehensive testing across the development lifecycle.`,
-    buttonText: "Get in Touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
