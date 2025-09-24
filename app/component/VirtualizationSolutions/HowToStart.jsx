@@ -40,7 +40,7 @@ export default function HowToStart({
           <p className="text-base lg:text-lg">{headerContent.description}</p>
           <ol className="space-y-1">
             {Object.keys(data).map((ele) => (
-              <li className="list-disc ml-5 text-base lg:text-lg">
+              <li key={ele} className="list-disc ml-5 text-base lg:text-lg">
                 <span className="font-bold">{ele}</span> -{" "}
                 <span>{data[ele]}</span>
               </li>

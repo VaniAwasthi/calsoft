@@ -247,7 +247,7 @@ export default function Integration({
                   <path
                     d="M184 1H11C5.47716 1 1 5.47715 1 11V71"
                     stroke="black"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke-dasharray="7 7"
                   />
                 </svg>
@@ -264,7 +264,7 @@ export default function Integration({
                   <path
                     d="M232 1H11C5.47714 1 0.999998 5.47715 0.999998 11V41"
                     stroke="black"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke-dasharray="7 7"
                   />
                 </svg>
@@ -284,7 +284,7 @@ export default function Integration({
                     x2="118"
                     y2="1.25001"
                     stroke="black"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke-dasharray="7 7"
                   />
                 </svg>
@@ -301,7 +301,7 @@ export default function Integration({
                   <path
                     d="M232 42H11C5.47714 42 0.999998 37.5228 0.999998 32V1.86265e-06"
                     stroke="black"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke-dasharray="7 7"
                   />
                 </svg>
@@ -318,7 +318,7 @@ export default function Integration({
                   <path
                     d="M184 96H11C5.47716 96 1 91.5228 1 86V1.60933e-06"
                     stroke="black"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke-dasharray="7 7"
                   />
                 </svg>

@@ -7,6 +7,7 @@ export default function WhyCalsoft({
   sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here's how we stand apart:",
   title = "Competitive Edge",
   buttonText = "Download Case Study",
+  buttonClick = () => {},
   id = "why-calsoft",
   heading = "Why Calsoft",
   data = {
@@ -94,19 +95,22 @@ export default function WhyCalsoft({
               </p>
             )}
           </motion.div>
-          {/* <motion.div
-            initial={{ x: 50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: false, amount: 0.3 }}
-          >
-            <ButtonLayout
-              text={buttonText}
-              image={buttonImage}
-              hoverImage={buttonImage}
-              className={"w-fit"}
-            />
-          </motion.div> */}
+          {buttonText && (
+            <motion.div
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: false, amount: 0.3 }}
+            >
+              <ButtonLayout
+                text={buttonText}
+                image={buttonImage}
+                hoverImage={buttonImage}
+                className={"w-fit"}
+                onClick={buttonClick}
+              />
+            </motion.div>
+          )}
         </div>
       </div>
 

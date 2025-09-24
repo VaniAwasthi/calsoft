@@ -66,10 +66,7 @@ export default function RealWorldImpact({
     }
   }, [swiperInstance]);
   return (
-    <div
-      id={id}
-      className={`${buttonText && "bg-[#f9f9f9]"} py-10`}
-    >
+    <div id={id} className={`${buttonText && "bg-[#f9f9f9]"} py-10`}>
       <div className="container">
         <div className={`space-y-4 sm:space-y-6 lg:space-y-8`}>
           <motion.p
@@ -77,7 +74,7 @@ export default function RealWorldImpact({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_20%)] bg-clip-text text-transparent"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_0%,#ED1C24_20%)] bg-clip-text text-transparent leading-11"
           >
             {heading}
           </motion.p>
@@ -164,6 +161,7 @@ export default function RealWorldImpact({
           </div>
         </div>
         <Swiper
+          onSwiper={setSwiperInstance}
           slidesPerView={3}
           spaceBetween={20}
           loop={true}
@@ -203,13 +201,15 @@ export default function RealWorldImpact({
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: idx * 0.1 }}
                   viewport={{ once: false, amount: 0.3 }}
-                  className="relative hover:scale-105 transition-all"
+                  className="relative hover:scale-105 transition-all w-fit"
                 >
-                  <div className="absolute top-0 w-48 mx-auto lg:w-[90%] h-full text-center flex flex-col justify-start items-center p-3.5 pt-12">
-                    <p className="text-[24px] font-bold bg-[linear-gradient(to_right,#2E3092_40%,#ED1C24_80%)] bg-clip-text text-transparent">
-                      {ele.title}
-                    </p>
-                    <p className="text-lg">{ele.desc}</p>
+                  <div className="absolute top-0 size-full">
+                    <div className="w-48 mx-auto lg:w-[90%] h-full text-center flex flex-col justify-start items-center p-2 pt-12">
+                      <p className="text-[24px] font-bold bg-[linear-gradient(to_right,#2E3092_40%,#ED1C24_80%)] bg-clip-text text-transparent">
+                        {ele.title}
+                      </p>
+                      <p className="text-lg">{ele.desc}</p>
+                    </div>
                   </div>
                   <svg
                     width="220"
