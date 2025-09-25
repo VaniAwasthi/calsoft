@@ -108,7 +108,7 @@ export const FrontEndSec = () => {
       <InfraSection
         title="Front-end development"
         description="Deliver fast, responsive, and accessible digital experiences across all devices."
-        buttonText="Case study (or asset)"
+        buttonText="Learn More"
         link="/digital-product-engineering/cx-engineering/smart-interface-design"
         whatWeDo={[
           "Build device-agnostic front-end apps",
@@ -136,7 +136,7 @@ export const UXModernizationSec = () => {
       <InfraSection
         title="UX modernization: Better user journeys"
         description="Modernize experiences to align with today’s usability and engagement standards."
-        buttonText="Case study (or asset)"
+        buttonText="Learn More"
         link="/digital-product-engineering/cx-engineering/experience-moderization"
         whatWeDo={[
           "Redesign legacy user journeys",
@@ -164,7 +164,7 @@ export const IntelligentUISec = () => {
       <InfraSection
         title="Intelligent UI: Make interfaces adaptive"
         description="Design intelligent user interfaces that personalize workflows and automate decisions."
-        buttonText="Case study (or asset)"
+        buttonText="Learn More"
         link="#"
         whatWeDo={[
           "Use AI to adapt UIs by behavior",
@@ -191,7 +191,7 @@ export const RapidprototypingSec = () => {
       <InfraSection
         title="Rapid prototyping"
         description="Bring ideas to life early and streamline decision-making with interactive prototypes."
-        buttonText="Case study (or asset)"
+        buttonText="Learn More"
         link="/digital-product-engineering/cx-engineering/rapid-prototyping"
         whatWeDo={[
           "Create clickable UI mockups early",
@@ -218,7 +218,7 @@ export const MobileEngineeringSec = () => {
       <InfraSection
         title="Mobile engineering & development"
         description="Create high-performance mobile applications optimized for usability, security, and scalability."
-        buttonText="Case study (or asset)"
+        buttonText="Learn More"
         link="/digital-product-engineering/cx-engineering/mobile-development"
         whatWeDo={[
           "Build native and hybrid mobile apps",

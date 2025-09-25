@@ -33,6 +33,16 @@ const nextConfig = {
         hostname: "origin.calsoft.org",
         pathname: "/**",
       },
+      {
+        protocol: "http",
+        hostname: "www.calsoftinc.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.calsoftinc.com",
+        pathname: "/**",
+      },
 
       // 35.162.115.74
       {

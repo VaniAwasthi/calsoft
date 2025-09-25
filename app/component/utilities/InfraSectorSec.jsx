@@ -272,7 +272,7 @@ export const ContactSecData = ({
                   text="Contact Us" //add popup
                   image={ButtonImage}
                   hoverImage={ButtonImage}
-                  className="!w-[170px] sm:w-[200px] h-8 md:h-10 px-6"
+                  className="h-8 md:h-10 px-6"
                   onClick={buttonClicked}
                 />
               </motion.div>

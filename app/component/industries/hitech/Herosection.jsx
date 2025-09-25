@@ -16,6 +16,7 @@ import "swiper/css";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import { Autoplay, Scrollbar } from "swiper/modules";
+import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 const gridVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -48,6 +49,7 @@ export const Herosection = ({
         buttonText={slide.buttonText}
         buttonImage={ButtonImage}
         hoverImage={ButtonImage}
+        onBtnClick={() => showHubSpotForm("retail-industry-report")}
         titleOneClass="font-normal lg:text-[52px] md:text-[40px] text-[25px] mt-2"
         titleTwoClass={`font-normal lg:text-[52px] md:text-[40px] text-[25px] md:mt-4 ${titleTwoClass}`}
         descriptionClass="hidden md:block mt-4 text-[18px] leading-8 w-[200px] md:w-full"

@@ -16,6 +16,7 @@ const IndustriesBanner = ({
   titleTwoClass,
   descriptionClass,
   isCaseStudyButton,
+  onBtnClick,
 }) => {
   return (
     <div className="relative">
@@ -70,6 +71,7 @@ const IndustriesBanner = ({
               text={buttonText}
               image={buttonImage}
               hoverImage={hoverImage}
+              onClick={onBtnClick}
             />
 
             {isCaseStudyButton && (
