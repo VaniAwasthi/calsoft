@@ -66,6 +66,6 @@ export const fetchCaseStudyListLimit = () => async (dispatch) => {
     const response = await axiosInstance.get("/casestudy?limit=4");
     dispatch(setCaseStudyListLimit(response.data));
   } catch (error) {
-    dispatch(setCaseStudyError(error.message));
+    dispatch(setError(error.message));
   }
 };

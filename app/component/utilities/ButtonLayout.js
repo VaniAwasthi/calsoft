@@ -66,7 +66,7 @@ export default function ButtonLayout({
       type="button"
       disabled={disabled}
       onClick={onClick}
-      className={`relative group h-[40px] md:h-[48px] rounded-full flex items-center justify-center gap-4 transition-all duration-500 ease-out overflow-hidden transform hover:scale-105 px-4 ${className}`}
+      className={`relative group h-[40px] md:h-[48px] rounded-full flex items-center justify-center gap-4 transition-all duration-500 ease-out overflow-hidden transform hover:scale-105 px-4 hover:cursor-pointer ${className}`}
       style={{
         backgroundColor: bgColor,
         color: textColor,

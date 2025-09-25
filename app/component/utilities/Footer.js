@@ -27,21 +27,14 @@ const Footer = () => {
     <>
       {/* Webinar Floating Button */}
       <button
-        className="fixed rounded-full cursor-pointer w-18 h-18 md:w-20 md:h-20 flex p-3 gap-0 flex-wrap items-center z-90 right-10 md:right-6 bottom-8 justify-center bg-[#ED1C24] text-white"
+        className="fixed rounded-full cursor-pointer size-18 md:size-20 flex p-3 gap-0 flex-wrap items-center z-90 right-[calc(50%-2.25rem)] md:right-[calc(50%-2.5rem)] bottom-8 justify-center bg-[#ED1C24] text-white"
         style={{
           boxShadow:
             "0px 2px 4px rgba(0, 0, 0, 0.53), 0px 7px 7px rgba(0, 0, 0, 0.46), 0px 16px 10px rgba(0, 0, 0, 0.27), 0px 29px 12px rgba(0, 0, 0, 0.08), 0px 46px 13px rgba(0, 0, 0, 0.01)",
         }}
         // onClick={() => showHubSpotForm("webinar")}
       >
-        <Image
-          src={user}
-          alt="Webinar Icon"
-          width={40}
-          height={40}
-          className="h-8 object-contain"
-        />
-        <span className="text-[10px] md:text-xs">Webinar</span>
+        <img src="/Megaphone.gif" alt="Webinar Icon" />
       </button>
 
       {/* Main Footer */}
