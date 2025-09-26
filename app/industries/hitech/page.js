@@ -48,8 +48,7 @@ const Page = () => {
     "Cloud & Platform Engineering",
     "AI-Powered Modernization",
     "Success Stories",
-    "Industry Partners",
-    "Key Services",
+   
   ];
   const icons = [
     {

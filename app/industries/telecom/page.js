@@ -37,7 +37,7 @@ We help telecoms with streamlining operations, automating networks, and enhancin
     "Orchestration",
     "Networks",
     "Security",
-    "Partners",
+    "Success Stories",
     "Services",
   ];
   const Gradientheading = "";
