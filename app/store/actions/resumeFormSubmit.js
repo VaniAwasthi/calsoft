@@ -1,12 +1,13 @@
-import { toast } from "sonner";
+// import { toast } from "sonner";
 import axiosInstance from "../api-config/axiosInstance";
 
 export async function submitResume(data) {
   try {
     if (!data || Object.keys(data).length === 0) {
-      toast.error("Data isn't provided correctly", {
-        duration: 3000,
-      });
+      // toast.error("Data isn't provided correctly", {
+      //   duration: 3000,
+      // });
+      console.error("Data isn't provided correctly");
       return;
     }
 
@@ -23,9 +24,10 @@ export async function submitResume(data) {
 
     return response;
   } catch (error) {
-    toast.error("Something went wrong", {
-      duration: 3000,
-    });
+    console.error(error);
+    // toast.error("Something went wrong", {
+    //   duration: 3000,
+    // });
     return;
   }
 }

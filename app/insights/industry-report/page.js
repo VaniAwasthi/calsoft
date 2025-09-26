@@ -13,8 +13,7 @@ const Page = () => {
       <BannerInfo heading="Market Trends & Analysis" BannerBg={Banner} />
       <TabsInfo defaultTab="industry-reports" />
       <ContactSec
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Uncover trends and forecasts that matter to your business."
       />
     </>
   );

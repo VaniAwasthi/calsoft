@@ -292,7 +292,6 @@ const Page = () => {
       buttonText="DevOps ROI Calculator"
       /> */}
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
         lightContent="Enable reliable operations with DevOps and SRE practices."
       />
     </>

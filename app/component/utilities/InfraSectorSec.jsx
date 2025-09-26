@@ -255,7 +255,6 @@ export const ContactSecData = ({
           <div className="absolute top-1/2 right-0 transform -translate-y-1/2 md:p-16 p-1 w-1/2 md:w-1/2 text-white">
             <div className="space-y-6 text-left md:text-left">
               <h2 className="text-sm md:text-3xl font-normal leading-snug">
-                <span className="font-bold">{BoldContent}</span>
                 <br />
                 {lightContent}
               </h2>
@@ -273,7 +272,7 @@ export const ContactSecData = ({
                   image={ButtonImage}
                   hoverImage={ButtonImage}
                   className="h-8 md:h-10 px-6"
-                  onClick={buttonClicked}
+                  onClick={()=>showHubSpotForm("contact-us-popup")}
                 />
               </motion.div>
             </div>

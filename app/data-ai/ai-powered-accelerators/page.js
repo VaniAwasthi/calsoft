@@ -35,9 +35,7 @@ export default function Page() {
       <ECalsoftSec />
       <CalsoftSec />
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Power transformation through Calsoft’s AI-driven accelerators."
       />
     </>
   );

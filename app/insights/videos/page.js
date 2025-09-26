@@ -13,8 +13,7 @@ const Page = () => {
       <BannerInfo heading="Expert Talks & Demos" BannerBg={Banner} />
       <TabsInfo defaultTab="videos" />
       <ContactSec
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="See how ideas turn into action with our videos."
       />
     </>
   );

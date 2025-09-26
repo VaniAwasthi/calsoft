@@ -31,13 +31,7 @@ export const Digital = () => {
     buttonText: "Get in touch",
     image: BackgroundImage,
   };
-  const navItems = [
-    "Benefits",
-    "Product",
-    "Ecosystem",
-    "Support",
-   
-  ];
+  const navItems = ["Benefits", "Product", "Ecosystem", "Support"];
 
   return (
     <>
@@ -51,8 +45,8 @@ export const Digital = () => {
           buttonImage={ButtonImage}
           hoverImage={ButtonImage}
           rightSec={false}
-          buttonWidth="!w-[250px]"
-        onButtonClick={() => showHubSpotForm("get-in-touch")}
+          buttonWidth="w-fit whitespace-nowrap"
+          onButtonClick={() => showHubSpotForm("get-in-touch")}
         />
       </div>
       <Submenu
@@ -64,7 +58,7 @@ export const Digital = () => {
   );
 };
 
-export const Stages = ({secId}) => {
+export const Stages = ({ secId }) => {
   const stepsData = [
     {
       title: "Concept & architect",
@@ -109,7 +103,7 @@ export const Core = () => {
       title: "Product & application development",
       description:
         "Agile, full-cycle engineering with DevOps, quality, and architecture alignment.",
-        link:"/digital-product-engineering/product-application-development"
+      link: "/digital-product-engineering/product-application-development",
     },
     {
       image: image2,
@@ -117,7 +111,7 @@ export const Core = () => {
       title: "CX engineering",
       description:
         "Design modern, responsive, and user-centric interfaces across web and mobile",
-        link:"/digital-product-engineering/cx-engineering"
+      link: "/digital-product-engineering/cx-engineering",
     },
     {
       image: image3,
@@ -125,12 +119,17 @@ export const Core = () => {
       title: "Cloud services",
       description:
         "Cloud-native engineering, deployment pipelines, and multi-cloud readiness.",
-        link:"/digital-product-engineering/cloud"
+      link: "/digital-product-engineering/cloud",
     },
   ];
   return (
     <>
-      <Imagethree heading="Core product engineering" data={data} islearnMoreButton={true} secId="product"/>
+      <Imagethree
+        heading="Core product engineering"
+        data={data}
+        islearnMoreButton={true}
+        secId="product"
+      />
     </>
   );
 };
@@ -142,7 +141,7 @@ export const Ecosystem = () => {
       title: "Modernization & ecosystem",
       description:
         "Re-architect legacy apps and extend into digital ecosystems with partner-ready interfaces.",
-        link:"/digital-product-engineering/modernization-ecosystem"
+      link: "/digital-product-engineering/modernization-ecosystem",
     },
     {
       image: image5,
@@ -150,7 +149,7 @@ export const Ecosystem = () => {
       title: "Storage & networking",
       description:
         "Agile, scalable infrastructure design with SDS, SDN, HCI, and edge integration.",
-        link:"/digital-product-engineering/storage-networking"
+      link: "/digital-product-engineering/storage-networking",
     },
     {
       image: image6,
@@ -158,7 +157,7 @@ export const Ecosystem = () => {
       title: "Virtualization",
       description:
         "Manage VMs, containers, and orchestration across hybrid and multi-cloud setups.",
-        link:"/digital-product-engineering/virtualization"
+      link: "/digital-product-engineering/virtualization",
     },
   ];
   return (
@@ -180,7 +179,7 @@ export const Testing = () => {
       title: "Testing as a Service (TaaS)",
       description:
         "Automated functional and non-functional testing integrated into CI/CD pipelines.",
-        link:"/digital-product-engineering/testing-as-a-service"
+      link: "/digital-product-engineering/testing-as-a-service",
     },
     {
       image: image8,
@@ -188,7 +187,7 @@ export const Testing = () => {
       title: "Security",
       description:
         "DevSecOps, Zero Trust, IAM, and business continuity for secure engineering at scale.",
-        link:"/digital-product-engineering/security"
+      link: "/digital-product-engineering/security",
     },
     {
       image: image9,
@@ -196,24 +195,29 @@ export const Testing = () => {
       title: "Sustenance & support",
       description:
         "Release planning, uptime monitoring, documentation, and tiered support frameworks.",
-        link:"/digital-product-engineering/sustenance-support"
+      link: "/digital-product-engineering/sustenance-support",
     },
   ];
   return (
     <>
-      <Imagethree heading="Testing, support, and sustenance" data={data} islearnMoreButton={true}  secId="support"/>
+      <Imagethree
+        heading="Testing, support, and sustenance"
+        data={data}
+        islearnMoreButton={true}
+        secId="support"
+      />
     </>
   );
 };
 
 export const Deep = () => {
-  const router=useRouter()
+  const router = useRouter();
   const buttonImage = ButtonImage;
   const hoverImage = ButtonImage;
   const buttonText = "Know More";
-  const knowMoreClick=()=>{
-    router.push("/industries")
-  }
+  const knowMoreClick = () => {
+    router.push("/industries");
+  };
   return (
     <>
       <section className=" pb-6 md:pb-10 md:pt-20 pt-12   bg-white">

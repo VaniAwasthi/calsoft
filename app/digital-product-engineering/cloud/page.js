@@ -36,8 +36,7 @@ const Page = () => {
       <CostInfraSec />
       <SREInfraSec />
       <ContactSecData
-        BoldContent="Engineer cloud environments "
-        lightContent="with us that are scalable, resilient,
+        lightContent="Engineer cloud environments  with us that are scalable, resilient,
         and cost - efficient "
       />
     </>

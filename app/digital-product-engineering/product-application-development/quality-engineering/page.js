@@ -343,9 +343,7 @@ const Page = () => {
       />
       {/* <ArchitectureSprint /> */}
       <ContactSecDataAi
-        BoldContent=""
         lightContent="Engineer quality into every product lifecycle stage."
-        link="#"
       />
     </>
   );

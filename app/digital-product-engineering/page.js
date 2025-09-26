@@ -16,9 +16,7 @@ const page = () => {
       <Deep />
 
       <ContactSecDataAi
-        lightContent="Our services speak "
-        BoldContent="for themselves, but we can talk too!”"
-        link="#"
+        BoldContent="Our services speak for themselves, but we can talk too!”"
       />
 
     </>

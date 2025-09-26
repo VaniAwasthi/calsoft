@@ -4,7 +4,7 @@ import React from "react";
 
 export default function MobileDevelpmentMatters() {
   return (
-    <div className="w-[17.7rem] h-[13rem] text-white">
+    <div className="w-[32rem] lg:w-[17.7rem] -mt-5 lg:mt-0 h-[13rem] text-white">
       <div className="relative w-full h-full">
         {/* Top left content */}
         <div className="absolute top-0 left-0">
@@ -42,7 +42,7 @@ export default function MobileDevelpmentMatters() {
           </div>
         </div>
         {/* top right content */}
-        <div className="absolute top-0 right-0">
+        <div className="absolute top-0 left-[17.5rem]">
           <div className="absolute top-[1.6rem] left-[1.35rem]">
             <svg
               width="224"

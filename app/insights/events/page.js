@@ -7,6 +7,8 @@ import {
 import Connect from "@/app/component/infra/Connect";
 import bobby from "@/app/assets/insights/events/Bobby-Mathews.webp";
 import mohsin from "@/app/assets/insights/events/Mohsin-Khazi.webp";
+import { ContactSec } from "@/app/component/industries/hitech/BlogSection";
+import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 
 export default function Page() {
   return (
@@ -141,7 +143,7 @@ export default function Page() {
           },
         ]}
       />
-      <Connect />
+    <ContactSecDataAi lightContent="Network with leaders and gain actionable insights."/>
     </>
   );
 }

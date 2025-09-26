@@ -391,7 +391,6 @@ const Page = () => {
         heading="Intelligent UI Sprint (12-Day Engagement)"
       />
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
         lightContent="Modernize experiences to match evolving expectations. "
       />
     </>

@@ -310,8 +310,7 @@ export const ContactSecDataAi = ({
             <div className="space-y-6 text-left md:text-left">
               <h2 className="text-md md:text-3xl font-normal leading-snug">
                 {lightContent} <br />
-                <span className="font-bold">{BoldContent}</span>
-              </h2>
+             </h2>
 
               <motion.div
                 initial={{ x: -50, opacity: 0 }}

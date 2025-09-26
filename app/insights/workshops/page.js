@@ -5,6 +5,7 @@ import {
   HeroSection,
 } from "@/app/component/workshop-listing-page/WorkshopListing";
 import Connect from "@/app/component/infra/Connect";
+import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 
 export default function Page() {
   return (
@@ -18,7 +19,7 @@ export default function Page() {
       />
       {/* <CardSection /> */}
       <CardList />
-      <Connect />
+      <ContactSecDataAi lightContent="Learn by doing with hands-on technology workshops." />
     </>
   );
 }

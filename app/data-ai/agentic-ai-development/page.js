@@ -67,7 +67,6 @@ export default function Page() {
       <MonitorSec />
       <LifecycleSec />
       <ContactSecDataAi
-        BoldContent=""
         lightContent="Architect autonomy with accountability. Build smarter systems with Calsoft"
         link="#"
       />
