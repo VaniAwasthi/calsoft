@@ -57,10 +57,10 @@ export default function DesignAhead() {
             An intelligent UI is a decision accelerator—learning from behavior to
             shorten paths, cut inputs, and reduce drop-offs.
           </p>
-
+{/* 
           <button className="mt-6 inline-flex items-center gap-2 bg-[#BA0007] text-white px-5 py-3 rounded-full font-medium transition">
             See ROI of Intelligent UI <ArrowRight size={18} />
-          </button>
+          </button> */}
         </div>
 
         {/* Right Stats */}
