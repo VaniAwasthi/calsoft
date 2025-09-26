@@ -303,7 +303,7 @@ const Page = () => {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+          "Ensure performance and reliability with strong SRE practices."
         }
       />
     </>

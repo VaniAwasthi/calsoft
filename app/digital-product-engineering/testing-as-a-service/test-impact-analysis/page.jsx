@@ -225,7 +225,7 @@ const Page = () => {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Analyze impact and minimize risks with precise testing."
         }
         link={"#"}
       />

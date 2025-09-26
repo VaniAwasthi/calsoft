@@ -449,7 +449,7 @@ const Page = () => {
       />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
+          "Optimize cloud costs without sacrificing performance. "
         }
       />
     </>
