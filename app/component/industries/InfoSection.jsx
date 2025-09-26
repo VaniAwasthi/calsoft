@@ -115,7 +115,7 @@ const InfoSection = ({
             isImageLeft ? "order-1 md:order-1" : "order-1 md:order-2 "
           }`}
         >
-          <div className="relative w-full  overflow-hidden group md:h-[100%] xl-h-auto">
+          <div className="relative w-full overflow-hidden group md:h-[100%] xl-h-auto">
             <Image
               src={image}
               alt="Section Image"

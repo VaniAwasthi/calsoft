@@ -146,7 +146,7 @@ export const RiskMitigationSecTechnicalConsulting = () => {
         imageAlt="Image"
         imageLeft={true}
         isDivider={false}
-        secid="mitigation"
+        secid="sanity"
       />
     </>
   );
@@ -174,7 +174,7 @@ export const PlatformSecTechnicalConsulting = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
-        secid="connectivity"
+        secid="ecosystem"
       />
     </>
   );
@@ -201,7 +201,7 @@ export const CostOptimizedSecTechnicalConsulting = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
-        secid="cost-optimized"
+        secid="recovery"
       />
     </>
   );

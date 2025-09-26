@@ -43,6 +43,7 @@ export default function Page() {
         desc="Most teams measure application performance reactively — post-deployment or after customer feedback. This leads to:"
         buttonText="Get in Touch"
         buttonClicked={() => showHubSpotForm("get-in-touch")}
+        id= "why-this-matter"
       />
       <IntelligentPlanning
         bottomContent={null}

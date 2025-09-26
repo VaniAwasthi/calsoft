@@ -184,7 +184,7 @@ export const Casestudy = () => {
   const caseStudyData = caseStudyDataArray;
   return (
     <>
-      <section className="md:py-8 py-10" id="case-studies">
+      <section className="md:py-8 py-10" id="case-study">
         <div className="container mx-auto px-4 xl:px-20">
           <div className="flex gap-6 items-center mb-2 md:mb-6">
             <div className="rounded-full bg-[#2E3092] w-8 h-8 p-2 hidden md:flex items-center justify-center">

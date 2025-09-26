@@ -207,7 +207,7 @@ export const ModelSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={true}
         isDivider={false}
-        secid="ai-Models"
+        secid="ai-models"
       />
     </>
   );

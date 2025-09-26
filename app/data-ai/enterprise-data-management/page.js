@@ -67,7 +67,7 @@ const page = () => {
         title={
           <>
             Increase data integrity by 80% with automation.
-            <br className="hidden md:block px-1" />
+            <br className="cursor pointer hidden md:block px-1" />
           </>
         }
         buttonText="Book a Meeting"
