@@ -4,8 +4,8 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        // destination: "https://cms.calsoft.org:4000/api/:path*",
-        destination: "http://35.162.115.74/api/:path*",
+        destination: "https://cms.calsoft.org:4000/api/:path*",
+        // destination: "http://35.162.115.74/api/:path*",
       },
     ];
   },
