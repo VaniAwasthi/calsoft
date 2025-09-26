@@ -168,7 +168,7 @@ export default function IntelligentPlanning() {
           >
             <ButtonLayout
               text={"Talk to Expert"}
-              onClick={()=>showHubSpotForm("Talk-to-Expert")}
+              onClick={() => showHubSpotForm("talk-to-expert")}
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit"}

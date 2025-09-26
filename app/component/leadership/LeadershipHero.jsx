@@ -14,7 +14,7 @@ export default function LeadershipHero({
 }) {
   return (
     <>
-      {/* <BannerLayout
+      <BannerLayout
         height="h-[30.5rem]"
         image={heroImage}
         title2={"Our Team"}
@@ -24,8 +24,8 @@ export default function LeadershipHero({
         titleTwoClass="text-[28px] md:text-5xl md:mt-1"
         descriptionClass="mt-4 text-lg leading-8 max-w-[90%] md:w-full"
         BgClassname="object-contain w-full h-full object-center"
-      /> */}
-      <div>
+      />
+      {/* <div>
         <div className="relative">
           <Image
             src={img}
@@ -53,7 +53,7 @@ export default function LeadershipHero({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
