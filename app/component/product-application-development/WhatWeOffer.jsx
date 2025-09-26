@@ -1,10 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 import { showHubSpotForm } from "../utilities/showHubSpotForm";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
 
 export default function FeatureCards({
   buttonClicked = () => showHubSpotForm("request-architecture-blueprint"),
@@ -119,6 +124,25 @@ export default function FeatureCards({
   buttonText = "Request Architecture Blueprint",
   ScorecardComponent = Scorecard,
 }) {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
+  const [swiperInstance, setSwiperInstance] = useState(null);
+
+  useEffect(() => {
+    if (swiperInstance && prevRef.current && nextRef.current) {
+      // Destroy existing navigation
+      swiperInstance.navigation.destroy();
+
+      // Reassign elements
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+
+      // Reinitialize navigation
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
   return (
     <div className="bg-[#F5F5F5]" id={id}>
       <div className="h-2" />
@@ -127,45 +151,170 @@ export default function FeatureCards({
           <p className="text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent leading-16 mt-5 mb-3">
             {title}
           </p>
-          <h2 className="text-black text-3xl font-semibold mb-1">{heading}</h2>
-          <p className="text-black text-xl max-w-4xl">{description}</p>
+          <div className="flex lg:flex-row flex-col justify-between items-start lg:items-center gap-5">
+            <div>
+              <h2 className="text-black text-3xl font-semibold mb-1">
+                {heading}
+              </h2>
+              <p className="text-black text-xl max-w-4xl">{description}</p>
+            </div>
+            <div className="flex justify-center items-center gap-5">
+              <button
+                ref={prevRef}
+                className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
+                style={{
+                  visibility: "visible",
+                  display: "flex",
+                  zIndex: 40,
+                }}
+              >
+                <svg
+                  width="11"
+                  height="18"
+                  viewBox="0 0 11 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.44893 0.488596L10.7459 1.79007L3.39405 9.11124L10.7578 16.7272L9.4379 18.0039L0.813932 9.08735L9.44893 0.488596Z"
+                    fill="#2E3092"
+                  />
+                </svg>
+              </button>
+              <button
+                ref={nextRef}
+                className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
+                style={{
+                  visibility: "visible",
+                  display: "flex",
+                  zIndex: 40,
+                }}
+              >
+                <svg
+                  width="11"
+                  height="18"
+                  viewBox="0 0 11 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.55108 17.8981L0.254129 16.5966L7.60595 9.27548L0.242188 1.65949L1.5621 0.382812L10.1861 9.29936L1.55108 17.8981Z"
+                    fill="#2E3092"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: false, amount: 0.3 }}
-              className="relative bg-white rounded-2xl shadow-lg overflow-hidden group cursor-pointer transition-all"
-            >
-              {/* Purple header section */}
-              <div className="h-20 bg-[#2e3092] rounded-t-2xl"></div>
+        {features.length <= 5 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: false, amount: 0.3 }}
+                className="relative bg-white rounded-2xl shadow-lg overflow-hidden group transition-all"
+              >
+                {/* Purple header section */}
+                <div className="h-20 bg-[#2e3092] rounded-t-2xl"></div>
 
-              <div className="absolute inset-0 bg-[#2e3092] rounded-2xl transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+                <div className="absolute inset-0 bg-[#2e3092] rounded-2xl transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
 
-              {/* Circular icon container */}
-              <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-10">
-                <div className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center">
-                  {feature.icon}
+                {/* Circular icon container */}
+                <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center">
+                    {feature.icon}
+                  </div>
                 </div>
-              </div>
 
-              {/* Content section */}
-              <div className="relative z-10 pt-12 pb-8 px-6 text-center">
-                <h3 className="text-[#000000] group-hover:text-white font-medium text-base leading-tight transition-colors duration-500 ease-in-out">
-                  {feature.title}
-                </h3>
-                {feature.subtitle && (
-                  <p className="text-[#000000] group-hover:text-white font-medium text-base leading-tight mt-1 transition-colors duration-500 ease-in-out">
-                    {feature.subtitle}
-                  </p>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                {/* Content section */}
+                <div className="relative z-10 pt-12 pb-8 px-6 text-center">
+                  <h3 className="text-[#000000] group-hover:text-white font-medium text-base leading-tight transition-colors duration-500 ease-in-out">
+                    {feature.title}
+                  </h3>
+                  {feature.subtitle && (
+                    <p className="text-[#000000] group-hover:text-white font-medium text-base leading-tight mt-1 transition-colors duration-500 ease-in-out">
+                      {feature.subtitle}
+                    </p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <Swiper
+            onSwiper={setSwiperInstance}
+            slidesPerView={3}
+            spaceBetween={20}
+            loop={true}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[Navigation, Autoplay]}
+            autoplay={{ delay: 6000 }}
+            className="w-full h-full -z-20"
+            style={{ height: "300px", minHeight: "300px" }}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+              {features.map((feature, index) => (
+                <SwiperSlide key={index} className="z-20 !h-full py-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    className="relative h-full bg-white rounded-2xl shadow-lg overflow-hidden group transition-all"
+                  >
+                    {/* Purple header section */}
+                    <div className="h-20 bg-[#2e3092] rounded-t-2xl"></div>
+
+                    <div className="absolute inset-0 bg-[#2e3092] rounded-2xl transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+
+                    {/* Circular icon container */}
+                    <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-10">
+                      <div className="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center">
+                        {feature.icon}
+                      </div>
+                    </div>
+
+                    {/* Content section */}
+                    <div className="relative z-10 pt-12 pb-8 px-6 text-center">
+                      <h3 className="text-[#000000] group-hover:text-white font-medium text-base leading-tight transition-colors duration-500 ease-in-out">
+                        {feature.title}
+                      </h3>
+                      {feature.subtitle && (
+                        <p className="text-[#000000] group-hover:text-white font-medium text-base leading-tight mt-1 transition-colors duration-500 ease-in-out">
+                          {feature.subtitle}
+                        </p>
+                      )}
+                    </div>
+                  </motion.div>
+                </SwiperSlide>
+              ))}
+            </div>
+          </Swiper>
+        )}
         <ScorecardComponent
           buttonText={buttonText}
           buttonClicked={buttonClicked}

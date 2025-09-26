@@ -27,7 +27,7 @@ const Footer = () => {
     <>
       {/* Webinar Floating Button */}
       <button
-        className="fixed rounded-full cursor-pointer size-18 md:size-20 flex p-3 gap-0 flex-wrap items-center z-90 right-8 bottom-8 justify-center bg-[#ED1C24] text-white transform scale-x-[-1]"
+        className="fixed rounded-full cursor-pointer size-18 md:size-20 flex p-3 gap-0 flex-wrap items-center z-90 right-12 bottom-8 justify-center bg-[#ED1C24] text-white transform scale-x-[-1]"
         style={{
           boxShadow:
             "0px 2px 4px rgba(0, 0, 0, 0.53), 0px 7px 7px rgba(0, 0, 0, 0.46), 0px 16px 10px rgba(0, 0, 0, 0.27), 0px 29px 12px rgba(0, 0, 0, 0.08), 0px 46px 13px rgba(0, 0, 0, 0.01)",
@@ -53,7 +53,7 @@ const Footer = () => {
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Add your email*"
-                    className="w-full text-gray-300 px-4 py-3 pr-10 bg-transparent rounded-full focus:outline-none"
+                    className="w-fit text-gray-300 px-4 py-3 pr-2 bg-transparent rounded-full focus:outline-none"
                   />
                   <button
                     onClick={() => {
@@ -68,7 +68,7 @@ const Footer = () => {
                           duration: 3000,
                         });
                     }}
-                    className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0"
+                    className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 whitespace-nowrap"
                   >
                     <GoArrowRight /> Subscribe to our Newsletter
                   </button>

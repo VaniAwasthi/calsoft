@@ -86,7 +86,7 @@ export const InfraSection = ({
                   image={ButtonImage}
                   hoverImage={ButtonImage}
                   link={link}
-                  className=" !h-[50px] whitespace-nowrap"
+                  className="w-fit !h-[50px] !whitespace-nowrap"
                 />
               </motion.div>
             )}
@@ -160,7 +160,7 @@ export const InfraSection = ({
                   image={ButtonImage}
                   hoverImage={ButtonImage}
                   link={link}
-                  className="!w-[150px] !h-[60px]"
+                  className="w-fit !h-[60px] whitespace-nowrap"
                 />
               </motion.div>
             )}
@@ -330,7 +330,7 @@ export const ChallengeToSolution = ({
                 {/* Left Title */}
                 <div
                   onClick={() => toggleMobile(index)}
-                  className="bg-[#2D2A86]  text-white font-semibold text-sm md:text-[18px] px-6 py-4 flex items-center justify-center w-full md:w-[300px] rounded-l-full cursor-pointer text-center break-words"
+                  className="bg-[#2D2A86]  text-white font-semibold text-sm md:text-[18px] px-6 py-4 flex items-center justify-center w-full md:w-[300px] rounded-l-full text-center break-words"
                 >
                   {item.title}
                 </div>

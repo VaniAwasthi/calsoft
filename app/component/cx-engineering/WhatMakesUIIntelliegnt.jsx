@@ -77,7 +77,7 @@ export default function WhatMakeUIIntelliegnt({
           {heading}
         </h1>
 
-        <div className="flex justify-between items-center mb-5 sm:mb-8 lg:mb-12">
+        <div className="flex justify-between lg:items-center items-start mb-5 sm:mb-8 lg:mb-12 gap-4 lg:flex-row flex-col">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -104,7 +104,7 @@ export default function WhatMakeUIIntelliegnt({
               text={buttonText}
               image={buttonImage}
               hoverImage={buttonImage}
-              className={"w-fit"}
+              className={"w-fit whitespace-nowrap"}
             />
           </motion.div>
         </div>

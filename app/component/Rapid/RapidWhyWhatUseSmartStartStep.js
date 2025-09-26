@@ -84,12 +84,9 @@ export const Why = () => {
   const whyItMattersData = {
     heading: "Why It Matters",
     title: "Building Too Soon Is the Costliest Mistake.",
-
     description:
       "40% of digital product features are rarely used. Teams waste months building functions users don’t want—simply because they skip validation. Calsoft helps you prototype fast, test early, and reduce product risk by 50%—<b>before investing in full development.</b> ",
-
     buttonText: "Get in Touch",
-
     cards: [
       {
         percent: "",
@@ -189,7 +186,7 @@ export const What = () => {
         desc={desc}
         ButtonImage={ButtonImage}
         onButtonClick={() => showHubSpotForm("Talk-to-Expert")}
-        secId="what-we-do"
+        secId="what-we-offer"
       />
     </>
   );

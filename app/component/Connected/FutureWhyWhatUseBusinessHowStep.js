@@ -62,9 +62,13 @@ export const Future = () => {
           buttonText={slide.buttonText}
           buttonImage={ButtonImage}
           hoverImage={ButtonImage}
-          buttonWidth="!w-[300px]"
+          buttonWidth="w-fit whitespace-nowrap"
           rightSec={false}
-          onButtonClick={()=>showHubSpotForm("maturity-assessment-and-planning-modernization-roadmap")}
+          onButtonClick={() =>
+            showHubSpotForm(
+              "maturity-assessment-and-planning-modernization-roadmap"
+            )
+          }
         />
       </div>
       <Submenu
@@ -113,7 +117,7 @@ export const Why = () => {
         {...whyItMattersData}
         ButtonImage={ButtonImage}
         secId="why-it-matters"
-        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
       />
     </>
   );
@@ -184,7 +188,7 @@ export const What = () => {
         desc={desc}
         ButtonImage={ButtonImage}
         secId="what-we-do"
-        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
+        onButtonClick={() => showHubSpotForm("Talk-to-Expert")}
       />
     </>
   );
@@ -218,7 +222,14 @@ export const Use = () => {
   };
   return (
     <>
-      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases" onButtonClick={()=>showHubSpotForm("connected-ecosystem-download-one-pager")} />
+      <Cases
+        {...useCasesData}
+        ButtonImage={ButtonImage}
+        secId="use-cases"
+        onButtonClick={() =>
+          showHubSpotForm("connected-ecosystem-download-one-pager")
+        }
+      />
     </>
   );
 };
@@ -259,7 +270,7 @@ export const Business = () => {
         {...businessValueData}
         ButtonImage={ButtonImage}
         secId="business-value"
-onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}
+        onButtonClick={() => showHubSpotForm("request-a-custom-roi-projection")}
       />
     </>
   );

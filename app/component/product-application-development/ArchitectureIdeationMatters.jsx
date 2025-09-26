@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ArchitectureIdeationMatters() {
   return (
-    <div className="w-full h-[23rem] flex xl:justify-center">
+    <div className="w-96 xl:w-full h-[23rem] flex xl:justify-center">
       <div className="relative w-full">
         <div className="absolute top-0 right-[6rem] hover:scale-105 transition-all">
           {/* w-265; h-285 */}

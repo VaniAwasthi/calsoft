@@ -63,8 +63,12 @@ export const Plugin = () => {
           buttonImage={ButtonImage}
           hoverImage={ButtonImage}
           rightSec={false}
-          buttonWidth="!w-[300px]"
-          onButtonClick={()=>showHubSpotForm("maturity-assessment-and-planning-modernization-roadmap")}
+          buttonWidth="w-fit whitespace-nowrap"
+          onButtonClick={() =>
+            showHubSpotForm(
+              "maturity-assessment-and-planning-modernization-roadmap"
+            )
+          }
         />
       </div>
       <Submenu
@@ -113,7 +117,7 @@ export const Why = () => {
         {...whyItMattersData}
         ButtonImage={ButtonImage}
         secId="why-it-matters"
-        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
       />
     </>
   );
@@ -154,7 +158,8 @@ export const What = () => {
       },
       {
         icon: icon7,
-        title: "Marketplace certification compliance (Shopify, Atlassian, ServiceNow, etc.)",
+        title:
+          "Marketplace certification compliance (Shopify, Atlassian, ServiceNow, etc.)",
       },
     ],
 
@@ -184,7 +189,7 @@ export const What = () => {
         desc={desc}
         ButtonImage={ButtonImage}
         secId="what-we-do"
-        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
+        onButtonClick={() => showHubSpotForm("Talk-to-Expert")}
       />
     </>
   );
@@ -217,7 +222,14 @@ export const Use = () => {
   };
   return (
     <>
-      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases" onButtonClick={()=>showHubSpotForm("plugin-development-download-one-pager")}/>
+      <Cases
+        {...useCasesData}
+        ButtonImage={ButtonImage}
+        secId="use-cases"
+        onButtonClick={() =>
+          showHubSpotForm("plugin-development-download-one-pager")
+        }
+      />
     </>
   );
 };
@@ -255,7 +267,7 @@ export const Business = () => {
         {...businessValueData}
         ButtonImage={ButtonImage}
         secId="business-value"
-        onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}
+        onButtonClick={() => showHubSpotForm("request-a-custom-roi-projection")}
       />
     </>
   );

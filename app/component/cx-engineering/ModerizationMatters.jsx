@@ -4,7 +4,7 @@ import React from "react";
 
 function ModerizationMatters() {
   return (
-    <div className="w-[17.7rem] h-[16.5rem] text-white">
+    <div className="w-0 xl:w-[17.7rem] h-[16.5rem] text-white -mt-10 lg:-mt-0">
       <div className="relative w-full h-full">
         {/* Top circle */}
         <div className="absolute -top-1 right-[8.5rem]">
@@ -41,9 +41,9 @@ function ModerizationMatters() {
                 fill="#2E3092"
               />
             </svg>
-            <div className="w-11/12 h-full absolute top-3 left-2.5 text-center">
-              <p className="text-[35px] font-bold">80%</p>
-              <p className="text-lg">
+            <div className="w-11/12 h-full absolute top-5 left-2.5 text-center">
+              <p className="text-[32px] font-bold">80%</p>
+              <p className="">
                 of users judge software credibility based on UI within 5 seconds
               </p>
             </div>
@@ -110,9 +110,9 @@ function ModerizationMatters() {
                 </linearGradient>
               </defs>
             </svg>
-            <div className="w-11/12 h-full absolute top-3 left-2.5 text-center">
-              <p className="text-[34px] font-bold">20-35%</p>
-              <p className="text-lg">
+            <div className="w-11/12 h-full absolute top-4 left-2.5 text-center">
+              <p className="text-[32px] font-bold">20-35%</p>
+              <p className="">
                 higher adoption is reported by Calsoft clients within 6 weeks
                 post redesign.
               </p>
@@ -120,7 +120,7 @@ function ModerizationMatters() {
           </div>
         </div>
         {/* bottom left */}
-        <div className="absolute -bottom-60 left-0">
+        <div className="absolute -bottom-60 right-[17.5rem]">
           {/* Arrow */}
           <div className="absolute bottom-0 left-0">
             <svg
@@ -180,9 +180,9 @@ function ModerizationMatters() {
                 </linearGradient>
               </defs>
             </svg>
-            <div className="w-[80%] h-full absolute top-1 left-[1.3rem] text-center">
-              <p className="text-[34px] font-bold">40%</p>
-              <p className="text-lg">
+            <div className="w-[80%] h-full absolute top-3 left-[1.3rem] text-center">
+              <p className="text-[32px] font-bold">40%</p>
+              <p className="">
                 45% higher task completion can be achieved with well-designed
                 interfaces.
               </p>

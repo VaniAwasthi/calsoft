@@ -27,19 +27,20 @@ export default function ButtonLayout({
       <span className="relative z-10 font-redhat text-base transition-colors duration-300 ease-in-out group-hover:text-[var(--hoverTextColor)]">
         {text}
       </span>
-
-      <div className="relative w-[22px] h-[22px]">
-        <Image
-          src={hoverImage}
-          alt="Button Icon"
-          className="absolute inset-0 transition-opacity duration-300 ease-in-out group-hover:opacity-0 shrink-0"
-        />
-        <Image
-          src={hoverImage}
-          alt="Button Icon Hover"
-          className="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 shrink-0"
-        />
-      </div>
+      {hoverImage && (
+        <div className="relative w-[22px] h-[22px]">
+          <Image
+            src={hoverImage}
+            alt="Button Icon"
+            className="absolute inset-0 transition-opacity duration-300 ease-in-out group-hover:opacity-0 shrink-0"
+          />
+          <Image
+            src={hoverImage}
+            alt="Button Icon Hover"
+            className="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 shrink-0"
+          />
+        </div>
+      )}
     </>
   );
 
