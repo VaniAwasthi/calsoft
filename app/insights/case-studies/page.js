@@ -14,8 +14,7 @@ const Page = ({ searchParams }) => {
       <BannerInfo heading="Real-World Success Stories" BannerBg={Banner} />
       <TabsInfo defaultTab="case-study" industry={industry} />
       <ContactSec
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Discover proven strategies driving business outcomes."
       />
     </>
   );

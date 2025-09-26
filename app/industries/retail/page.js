@@ -208,8 +208,7 @@ const Page = () => {
       <TopPartners />
       <ServicesSec />
       <ContactSec
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        buttonClicked={() => showHubSpotForm("contact-us-popup")}
+        lightContent="Want to personalize customer experiences, optimize retail operations, and secure transactions?"
       />
     </>
   );

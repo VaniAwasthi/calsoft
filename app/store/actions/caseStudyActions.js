@@ -9,7 +9,7 @@ import axiosInstance from "../api-config/axiosInstance.js";
 
 // Fetch all Case Study list
 export const fetchCaseStudiesList =
-  ({ Industry, Topics }) =>
+  ({ Industry, Topics } = {}) => // ✅ default {} prevents destructuring errors
   async (dispatch) => {
     try {
       const params = new URLSearchParams();
@@ -28,10 +28,12 @@ export const fetchCaseStudiesList =
         : [];
 
       if (industryId) params.append("industry", industryId);
+
       // Build query manually to avoid encoding commas between topic IDs
       const queryParts = [];
-      if (industryId)
+      if (industryId) {
         queryParts.push(`industry=${encodeURIComponent(industryId)}`);
+      }
       if (topicIds.length > 0) {
         const encodedTopics = topicIds
           .map((id) => encodeURIComponent(id))
@@ -60,7 +62,7 @@ export const fetchCaseStudyById = (id) => async (dispatch) => {
   }
 };
 
-// fetch case study for limited
+// Fetch case study list limited (e.g., latest 4)
 export const fetchCaseStudyListLimit = () => async (dispatch) => {
   try {
     const response = await axiosInstance.get("/casestudy?limit=4");

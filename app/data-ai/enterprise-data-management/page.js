@@ -77,9 +77,7 @@ const page = () => {
       <PlatformSecTechnicalConsulting />
       <CostOptimizedSecTechnicalConsulting />
       <ContactSecDataAi
-        BoldContent="Calsoft can show you how"
-        lightContent="Simplify complexity with end-to-end enterprise data management."
-        link="#"
+        lightContent="Calsoft can show you how Simplify complexity with end-to-end enterprise data management."
       />
     </>
   );

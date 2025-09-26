@@ -11,8 +11,7 @@ const Page = () => {
       <BannerInfo heading="Interactive sessions with experts on industry trends and solutions." BannerBg={Banner}/>
       <WebinarList />
       <ContactSec
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Join Calsoft webinars to explore technology in action."
       />
     </>
   );

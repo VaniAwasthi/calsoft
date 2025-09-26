@@ -35,9 +35,7 @@ export default function Page() {
       <InferentialSec />
       <ModelSec />
       <ContactSecDataAi
-        BoldContent=""
         lightContent="Let us help guide predictive insights into action with productive outcomes"
-        link="#"
       />
     </>
   );

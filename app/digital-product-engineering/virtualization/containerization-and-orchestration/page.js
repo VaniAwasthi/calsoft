@@ -426,10 +426,7 @@ export default function Page() {
       />
       <WhereItFits buttonText="Start Today" />
       <ContactSecDataAi
-        lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        }
-        link={"#"}
+        lightContent="Orchestrate containers for agility and scalability."
       />
     </>
   );

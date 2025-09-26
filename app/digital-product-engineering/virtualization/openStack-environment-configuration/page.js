@@ -529,10 +529,7 @@ export default function Page() {
         }}
       />
       <ContactSecDataAi
-        lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        }
-        link={"#"}
+        lightContent="Configure OpenStack environments for scalable cloud."
       />
     </>
   );

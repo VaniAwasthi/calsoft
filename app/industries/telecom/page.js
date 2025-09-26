@@ -209,8 +209,7 @@ We help you get ahead of such threats with real-time risk mitigation, powered by
       <TopPartners />
       <ServicesSec />
       <ContactSec
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        buttonClicked={() => showHubSpotForm("contact-us-popup")}
+        lightContent="Partner with us for AI-powered, cloud-native telecom solutions that drive efficiency and innovation"
       />
     </>
   );

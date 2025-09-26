@@ -34,11 +34,9 @@ const Page = () => {
 
       <RapidprototypingSec />
       <MobileEngineeringSec />
-
       <ContactSecData
-        BoldContent="Reimagine your digital
+        lightContent="Reimagine your digital
 experiences for faster growth."
-        lightContent="Let’s talk..."
       />
     </>
   );

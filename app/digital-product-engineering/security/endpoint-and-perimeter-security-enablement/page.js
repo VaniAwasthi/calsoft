@@ -387,7 +387,6 @@ export default function Page() {
         lightContent={
           "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
         }
-        link={"#"}
       />
     </>
   );

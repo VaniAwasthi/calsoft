@@ -300,11 +300,8 @@ multi-cloud provisioning approach — minimizing shadow IT and maximizing agilit
         ]}
       />
         <ContactSecDataAi
-                          lightContent={
-                            "Provision multi-cloud environments with ease and control."
-                          }
-                         
-                        />
+        lightContent="Provision multi-cloud environments with ease and control."
+        />
     </>
   );
 };

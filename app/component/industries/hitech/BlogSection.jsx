@@ -32,6 +32,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogListLimit } from "../../../store/actions/blogAction";
 import { baseUrl } from "../../../../config";
 import Link from "next/link";
+import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 
 export const BlogSection = () => {
   const dispatch = useDispatch();
@@ -208,7 +209,6 @@ export const ContactSec = ({ lightContent, link, buttonClicked }) => {
             <div className="space-y-6 text-left md:text-left">
               <h2 className="text-md md:text-3xl font-normal leading-snug">
                 {lightContent} <br />
-                <span className="font-bold">let’s talk!</span>
               </h2>
 
               {/* <form className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
@@ -229,7 +229,7 @@ export const ContactSec = ({ lightContent, link, buttonClicked }) => {
                     text="Contact Us"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
-                    onClick={buttonClicked}
+                    onClick={()=>showHubSpotForm("contact-us-popup")}
                   />
                 </motion.div>
               

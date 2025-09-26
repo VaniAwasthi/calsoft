@@ -36,8 +36,7 @@ export default function Page() {
       <MigrateSec />
       <OpenSec />
       <ContactSecData
-        BoldContent="Virtualize, optimize, and scale your infrastructure with confidence"
-        lightContent="Talk to us"
+        lightContent="Virtualize, optimize, and scale your infrastructure with confidence"
        
       />
     </>

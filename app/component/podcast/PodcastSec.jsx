@@ -195,7 +195,7 @@ export const PostcastSec = () => {
                     <ButtonLayout
                       text="Read More"
                       hoverImage={ButtonImage}
-                      className="!h-[40px] !w-[150px]"
+                      className="!h-[40px] !w-[200px]"
                     />
                     <div className="flex flex-col">
                       <button
