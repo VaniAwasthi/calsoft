@@ -98,9 +98,9 @@ export function DesignTabsComponent({
   return (
     <div className="container mx-auto">
       {/* Header Section */}
-      <div className="flex items-start justify-between mb-12">
-        <div className="max-w-4xl">
-          <h1 className="text-4xl sm:text-5xl font-semibold bg-[linear-gradient(to_right,#2E3092_30%,#ED1C24_60%)] bg-clip-text text-transparent mb-6 text-balance leading-14">
+      <div className="flex lg:flex-row flex-col items-start lg:items-center justify-between mb-12 my-4">
+        <div>
+          <h1 className="text-3xl sm:text-4xl font-bold bg-[linear-gradient(to_right,#2E3092_30%,#ED1C24_60%)] bg-clip-text text-transparent mb-3 text-balance leading-14">
             Design That Thinks Ahead
           </h1>
           <p className="text-xl text-blackleading-relaxed">
