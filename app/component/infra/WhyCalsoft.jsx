@@ -7,6 +7,7 @@ export default function WhyCalsoft({
   sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here's how we stand apart:",
   title = "Competitive Edge",
   buttonText = "Download Case Study",
+  buttonText,
   buttonClick = () => {},
   id = "why-calsoft",
   heading = "Why Calsoft",
