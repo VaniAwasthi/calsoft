@@ -11,10 +11,11 @@ export default function IndustryIntelligence({
   BlackHeading,
   headingClass,
   contentClass,
+  id
 }) {
   return (
     <section
-      id="journey"
+      id={id}
       className="py-3 md:py-16 px-4 sm:px-8 lg:px-16 bg-white relative overflow-hidden"
     >
       <motion.h2

@@ -108,7 +108,7 @@ export default function LeadershipTeam() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: idx * 0.1 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="manrope relative group rounded-lg overflow-hidden shadow-md cursor-pointer my-10"
+            className="manrope relative group rounded-lg overflow-hidden shadow-md my-10"
           >
             {/* Default Image */}
             <Image

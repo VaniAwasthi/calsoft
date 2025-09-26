@@ -116,7 +116,7 @@ export default function TabsComponent({
 
   return (
     <>
-      <div className="flex flex-col gap-y-5">
+      <div id="why-it-matters" className="flex flex-col gap-y-5">
         <div className="mt-8 mb-5">
           <motion.p
             initial={{ x: -50, opacity: 0 }}

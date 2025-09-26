@@ -56,7 +56,7 @@ export const BlogSection = () => {
 
   return (
     <>
-      <section id="case-studies" className="md:py-10">
+      <section id="success-stories" className="md:py-10">
         <div className="container mx-auto px-4 xl:px-20">
           <h1 className="text-4xl font-bold">Latest Case Studies</h1>
           <div className="relative w-full py-8">
@@ -123,7 +123,7 @@ export const BlogSection = () => {
   );
 };
 
-export const TopPartners = ({secId}) => {
+export const TopPartners = () => {
   const data = {
     colSpan: 9,
     gridCols: 5,
@@ -141,7 +141,7 @@ export const TopPartners = ({secId}) => {
   };
   return (
     <>
-      <section className="md:py-14" id={secId}>
+      <section className="md:py-14" id="partners">
         <div className="container mx-auto px-4 xl:px-20">
           <motion.h2
             initial={{ opacity: 0, y: 10 }}

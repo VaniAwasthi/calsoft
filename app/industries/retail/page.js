@@ -34,7 +34,7 @@ const Page = () => {
     "Personalization",
     "Forecasting",
     "Security",
-    "Case Studies",
+    "Partners",
     "Services",
   ];
   const Gradientheading = "";
@@ -187,6 +187,7 @@ const Page = () => {
         MobileImg={Intellegence}
         headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-10 line-clamp-4"
         contentClass=" md:h-64 lg:h-64 "
+        id="journey"
       />
       {/* <TopClients /> */}
       <InfoImageSection

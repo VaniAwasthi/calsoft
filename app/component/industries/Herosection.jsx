@@ -44,8 +44,8 @@ export const CaseStudies = ({secId}) => {
   const tabs = ["Hi-Tech", "Telecom", "Retail", "Manufacturing"];
 
   const tabData = tabs.map((tab) => ({
-    titlePart1: "Cloud Provider Accelerates VMware Migration",
-    titlePart2: "with Calsoft’s CLI Tool",
+    titlePart1: "Manufacturing - AI-driven predictive operations for minimal-downtime data centers",
+    titlePart2: null,
     image: sampleImage,
     key: tab,
   }));
@@ -195,8 +195,7 @@ export const CaseStudies = ({secId}) => {
                   </p>
                 ) : (
                   <p className="text-sm mt-2 font-medium px-2">
-                    Cloud Provider Accelerates VMware Migration with Calsoft’s
-                    CLI Tool
+                    Retail - Retail chain improves in-store performance with AI behavior analytics
                   </p>
                 )}
               </motion.div>
