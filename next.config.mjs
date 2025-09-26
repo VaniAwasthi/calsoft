@@ -1,5 +1,21 @@
+
 /** @type {import('next').NextConfig} */
+  import { securityHeaders } from './config.js';
+
 const nextConfig = {
+
+
+
+  reactStrictMode: true,
+
+  async headers() {
+    return [
+      {
+        source: '/(.*)', // apply to all routes
+        headers: securityHeaders.filter(h => h.value !== ''),
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
