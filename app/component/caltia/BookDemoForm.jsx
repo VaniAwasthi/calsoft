@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function BookDemoForm() {
+export default function BookDemoForm({secId}) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="max-w-6xl mx-auto p-8 bg-white">
+    <div className="max-w-6xl mx-auto p-8 bg-white" id={secId}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Left Column */}
         <div className="space-y-8">
