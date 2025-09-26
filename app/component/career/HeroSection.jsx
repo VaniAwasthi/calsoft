@@ -20,7 +20,7 @@ export default function HeroSection() {
           alt="Background Image"
           width={200}
           height={200}
-          className="w-full h-[37.5rem] object-cover"
+          className="w-full h-[35rem] object-cover"
         />
       </div>
 
@@ -50,7 +50,7 @@ export default function HeroSection() {
               </motion.p>
             </div>
             <div className="flex  gap-5">
-              <motion.div
+              {/* <motion.div
                 initial={{ y: -30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.2 }}
@@ -65,7 +65,7 @@ export default function HeroSection() {
                 <div className="absolute top-0 w-full h-full flex justify-center items-center p-8 bg-[#ba0006bb]">
                   <p className="text-white text-center">SEE ALL OPENINGS (5)</p>
                 </div>
-              </motion.div>
+              </motion.div> */}
               {/* <motion.div
                 initial={{ y: -30, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
