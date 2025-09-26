@@ -15,7 +15,7 @@ import Logo from "../../assets/logo.png";
 import user from "../../assets/webinar.png";
 import IsoImg from "../../assets/isoLogo.png";
 import React, { useState } from "react";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 // import { showHubSpotForm } from "./showHubSpotForm"; // <-- Utility import
 
 const Footer = () => {
@@ -59,16 +59,17 @@ const Footer = () => {
                     onClick={() => {
                       if (email.length > 0) {
                         if (isEmail(email)) setSubscribed(true);
-                        else
-                          toast.error("Email is invalid", {
-                            duration: 3000,
-                          });
-                      } else
-                        toast.error("Email field is empty", {
-                          duration: 3000,
-                        });
+                        // toast.error("Email is invalid", {
+                        //   duration: 3000,
+                        // });
+                        else console.error("Email is invalid");
+                      }
+                      // toast.error("Email field is empty", {
+                      //   duration: 3000,
+                      // });
+                      else console.error("Email field is empty");
                     }}
-                    className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 whitespace-nowrap"
+                    className="bg-[#2E3092] text-white rounded-full px-4 flex items-center gap-2 py-3 whitespace-nowrap hover:cursor-pointer"
                   >
                     <GoArrowRight /> Subscribe to our Newsletter
                   </button>

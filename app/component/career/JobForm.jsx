@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { X, ChevronDown, Phone, RefreshCw } from "lucide-react";
 import ButtonLayout from "../utilities/ButtonLayout";
 import ButtonImage from "@/app/assets/home/buttonImg.webp";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 import { submitResume } from "@/app/store/actions/resumeFormSubmit";
 import {
   loadCaptchaEnginge,
@@ -84,19 +84,23 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
     if (file) {
       const maxSize = 5 * 1024 * 1024;
       if (file.size > maxSize) {
-        toast.error("File size should not exceed 5MB", {
-          duration: 3000,
-        });
+        // toast.error("File size should not exceed 5MB", {
+        //   duration: 3000,
+        // });
+        console.error("File size should not exceed 5MB");
         event.target.value = ""; // clear the input
         return;
       }
 
       // ✅ valid file
-      toast.success("File uploaded successfully", {
-        duration: 3000,
-      });
+      // toast.success("File uploaded successfully", {
+      //   duration: 3000,
+      // });
+      console.log("File uploaded successfully");
       setSelectedFile(file);
-    } else toast.error("File not uploaded. Something went wrong!!");
+    }
+    // toast.error("File not uploaded. Something went wrong!!");
+    else console.error("File not uploaded. Something went wrong!!");
   };
 
   const handleRemoveFile = () => {
@@ -137,9 +141,10 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
       resume: selectedFile,
     });
     if (response.data.success == true)
-      toast.success("Your application submitted successfully", {
-        duration: 3000,
-      });
+      // toast.success("Your application submitted successfully", {
+      //   duration: 3000,
+      // });
+      console.log("Your application submitted successfully");
 
     clearForm();
   };

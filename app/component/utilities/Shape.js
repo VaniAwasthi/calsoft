@@ -272,7 +272,7 @@ export const MatterCircle = ({
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="flex-1 flex flex-wrap justify-center gap-4 shape_group md:w-2/4"
+              className="flex-1 xs:flex flex-wrap justify-center gap-4 shape_group md:w-2/4 hidden"
             >
               <div className="flex flex-wrap justify-center items-center gap-4">
                 <div className="relative w-[50%] flex justify-center">
@@ -476,7 +476,7 @@ export const Imagethree = ({
                 className="rounded w-full h-auto"
               />
               <div className="py-4 px-6 !pb-10  md:py-6 md:px-10 text-center">
-                <h2 className="text-black text-lg md:text-[20px] font-semibold">
+                <h2 className="text-black text-lg md:text-[20px] font-semibold md:h-24 lg:h-16">
                   {item.title}
                 </h2>
                 <p className="text-sm md:text-base text-black mt-2">
