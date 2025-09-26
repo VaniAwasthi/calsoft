@@ -1,5 +1,5 @@
 import axiosInstance from "../api-config/axiosInstance";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 
 export async function globalSearch(searchParams, selectedFilters = {}) {
   try {
@@ -26,7 +26,7 @@ export async function globalSearch(searchParams, selectedFilters = {}) {
     return response;
   } catch (error) {
     console.error(error, "Something went wrong");
-    toast.error("Search failed. Please try again.");
+    // toast.error("Search failed. Please try again.");
     return null;
   }
 }
