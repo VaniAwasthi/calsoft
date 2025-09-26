@@ -20,7 +20,7 @@ const BannerWithRightSec = ({
   ImageClass = "",
   ImageClassname = "",
   backgroundMain = "",
-  buttonWidth = "!w-[200px]",
+  buttonWidth = "w-fit nowrap",
 }) => {
   return (
     <div className={`relative w-full h-[300px] md:h-[450px] lg:h-[550px] ${backgroundMain}`}>
@@ -71,7 +71,7 @@ const BannerWithRightSec = ({
                   text={buttonText}
                   image={buttonImage}
                   hoverImage={hoverImage}
-                  className={buttonWidth}
+                  className={`${buttonWidth} w-fit whitespace-nowrap`}
                   onClick={onButtonClick}  // <-- wire it here
                 />
               </motion.div>

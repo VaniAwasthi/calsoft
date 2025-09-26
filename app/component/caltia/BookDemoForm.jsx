@@ -38,7 +38,7 @@ export default function BookDemoForm() {
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: false, amount: 0.3 }}
-        className="flex items-center gap-3 px-8 py-4 rounded-lg text-white font-semibold text-lg transition-opacity hover:opacity-90"
+        className="cursor-pointer flex items-center gap-3 px-8 py-4 rounded-lg text-white font-semibold text-lg transition-opacity hover:opacity-90"
         style={{ backgroundColor: "#2e3092" }}
       >
         <span>Watch the Teaser</span>
@@ -183,7 +183,7 @@ export default function BookDemoForm() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-lg text-white font-bold text-lg transition-opacity hover:opacity-90"
+            className="cursor-pointer w-full flex items-center justify-center gap-3 px-8 py-4 rounded-lg text-white font-bold text-lg transition-opacity hover:opacity-90"
             style={{ backgroundColor: "#ba0007" }}
           >
             <span>Submit</span>

@@ -24,7 +24,7 @@ export default function ButtonLayout({
         style={{ backgroundColor: hoverBgColor }}
       ></span>
 
-      <span className="relative z-10 font-redhat text-base transition-colors duration-300 ease-in-out group-hover:text-[var(--hoverTextColor)]">
+      <span className="relative z-10 font-redhat text-sm transition-colors duration-300 ease-in-out group-hover:text-[var(--hoverTextColor)]">
         {text}
       </span>
 
@@ -66,7 +66,7 @@ export default function ButtonLayout({
       type="button"
       disabled={disabled}
       onClick={onClick}
-      className={`relative group h-[40px] md:h-[48px] rounded-full flex items-center justify-center gap-4 transition-all duration-500 ease-out overflow-hidden transform hover:scale-105 px-4 ${className}`}
+      className={`relative group h-[40px] md:h-[48px] rounded-full flex items-center justify-center gap-4 transition-all duration-500 ease-out cursor-pointer overflow-hidden transform hover:scale-105 px-4 ${className}`}
       style={{
         backgroundColor: bgColor,
         color: textColor,

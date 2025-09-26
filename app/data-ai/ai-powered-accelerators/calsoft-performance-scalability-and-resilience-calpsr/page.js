@@ -15,11 +15,11 @@ import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
-    "Why Calsoft",
+    "Features",
+    "Benefits",
+    "Test",
+    "Validate",
+    "Integrate to Pipeline",
     "How to Start",
   ];
   return (

@@ -36,7 +36,7 @@ const Page = () => {
         Calsoft helps you build your ‘ideal’ products/ software from planning to
         deployment at lower costs, higher quality and faster go-to-market.`,
     buttonText: "Talk to Our Experts",
-    image: BackgroundImage,
+    image: BackgroundImage
   };
   const Gradientheading = " All our intelligence";
   const BlackHeading = "AI-refined for ready-to-go perfection";
@@ -205,18 +205,21 @@ const Page = () => {
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
         buttonClicked={()=>showHubSpotForm("software-product-engineering-case-study")}
+        id = "software-&-product-engineering"
       />
       <InfoImageSection
         {...CloudEngineeringSec}
         rounded="rounded-r-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%] bg-[#F8F9FA] "
         buttonClicked={()=>showHubSpotForm("cloud-platform-engineering-case-study")}
+        id="cloud-&-platform-engineering"
       />
       <InfoImageSection
         {...AIPoweredSection}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2] "
         link="/insights/case-studies/ai-powered-predictive-operations-for-enterprise-data-centers"
+        id="ai-powered-modernization"
       />
       <BlogSection />
       <TopPartners />

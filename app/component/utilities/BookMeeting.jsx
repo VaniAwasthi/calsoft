@@ -35,7 +35,7 @@ export default function BookMeeting({
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="sm:text-lg md:text-xl font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg whitespace-nowrap"
+            className="sm:text-lg md:text-xl font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg whitespace-nowrap cursor-pointer"
             onClick={buttonClicked}
           >
             {buttonText}

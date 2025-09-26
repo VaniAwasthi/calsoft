@@ -181,7 +181,7 @@ const Nextgen = () => {
                           className="card-hover flex-shrink-0 min-w-[70px] min-h-[80px] 
                md:w-[90px] md:h-[100px] xl:w-[100px] xl:h-[90px] 
                transition-transform duration-500 hover:scale-110 
-               perspective cursor-pointer"
+               perspective"
                         >
                           <div
                             className={`card-inner relative w-full h-full transition-transform duration-500 transform ${

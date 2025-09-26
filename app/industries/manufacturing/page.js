@@ -35,12 +35,11 @@ const Page = () => {
   const [activeTab, setActiveTab] = useState("Journey");
   const navItems = [
     "Journey",
-    "Customers",
-    "Industries",
-    "What's New",
+    "Monitoring ",
+    "Predictive",
+    "Forecasting",
     "Partners",
     "Services",
-    "Case Study",
   ];
   const Gradientheading = "";
   const BlackHeading =
@@ -202,21 +201,25 @@ const Page = () => {
         MobileImg={Intellegence}
         headingClass="mb-4 break-words md:h-10 lg:h-12 xl:h-10 line-clamp-4"
         contentClass=" md:h-62 lg:h-72 "
+        id="journey"
       />
       <InfoImageSection
         {...ScaleSection}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
+        id="monitoring"
       />
       <InfoImageSection
         {...StrengthenSec}
         rounded="rounded-r-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%] bg-[#F8F9FA] "
+        id="predictive"
       />
       <InfoImageSection
         {...EnhanceSection}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2] "
+        id="forecasting"
       />
       <InfoImageSection
         {...IotEnSection}
@@ -224,7 +227,7 @@ const Page = () => {
         bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%] bg-[#F8F9FA] "
       />
       <TopPartners />
-      <ServicesSec />
+      <ServicesSec/>
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
         buttonClicked={()=>showHubSpotForm("contact-us-popup")}
