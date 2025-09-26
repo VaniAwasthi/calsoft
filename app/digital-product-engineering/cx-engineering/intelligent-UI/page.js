@@ -19,6 +19,7 @@ import mobile2 from "../../../assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "../../../assets/DigitalEngineering/maturity/mobile3.svg";
 import img from "@/app/assets/DigitalEngineering/CX/CX Engineering 2.webp";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
+import { DesignTabsComponent } from "@/app/component/cx-engineering/ThinkAhead";
 
 const Page = () => {
   const navItems = [
@@ -34,7 +35,7 @@ const Page = () => {
       <HeroSection
         title="Intelligent UI"
         description="User Interfaces that Learn, React, and Adapt—Not Just Display"
-        buttonText="Request Adaptive UI Assessmet"
+        buttonText="Request CX Audit"
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
@@ -269,7 +270,7 @@ const Page = () => {
             title: "Real-time component personalization",
           },
         ]}
-        buttonClicked={() => showHubSpotForm("Talk-to-Expert")}
+        buttonClicked={() => showHubSpotForm("talk-to-expert")}
         buttonText="Talk to Expert"
       />
       <UseCases
@@ -322,8 +323,8 @@ const Page = () => {
           buttontext: "Book a Meeting",
         }}
       />
-
-      <DesignAhead />
+      <DesignTabsComponent />
+      {/* <DesignAhead /> */}
       <BusinessOutcomes />
       <HowToStart
         id="how-to-start"

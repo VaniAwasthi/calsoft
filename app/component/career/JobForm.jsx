@@ -41,6 +41,19 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
     designation: false, // Always include designation
   });
 
+  const [validationErrors, setValidationErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    currentCTC: "",
+    expectedCTC: "",
+    noticePeriod: "",
+    currentLocation: "",
+    details: "",
+    designation: "",
+    resume: "",
+  });
+
   const [selectedFile, setSelectedFile] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaError, setCaptchaError] = useState("");
@@ -51,8 +64,115 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
     }
   }, [isOpen]);
 
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone) => {
+    const phoneRegex = /^[+]?[\d\s\-$$$$]{10,15}$/;
+    return phoneRegex.test(phone.replace(/\s/g, ""));
+  };
+
+  const validateCTC = (ctc) => {
+    const ctcRegex = /^\d+(\.\d{1,2})?$/;
+    return ctcRegex.test(ctc) && Number.parseFloat(ctc) >= 0;
+  };
+
+  const validateNoticePeriod = (period) => {
+    const num = Number.parseInt(period);
+    return !isNaN(num) && num >= 0 && num <= 365;
+  };
+
+  const validateField = (field, value) => {
+    let error = "";
+
+    switch (field) {
+      case "name":
+        if (!value.trim()) {
+          error = "Name is required";
+        } else if (value.trim().length < 2) {
+          error = "Name must be at least 2 characters";
+        } else if (!/^[a-zA-Z\s]+$/.test(value.trim())) {
+          error = "Name can only contain letters and spaces";
+        }
+        break;
+
+      case "email":
+        if (!value.trim()) {
+          error = "Email is required";
+        } else if (!validateEmail(value)) {
+          error = "Please enter a valid email address";
+        }
+        break;
+
+      case "phone":
+        if (!value.trim()) {
+          error = "Phone number is required";
+        } else if (!validatePhone(value)) {
+          error = "Please enter a valid phone number (10-15 digits)";
+        }
+        break;
+
+      case "currentCTC":
+        if (!value.trim()) {
+          error = "Current CTC is required";
+        } else if (!validateCTC(value)) {
+          error = "Please enter a valid CTC amount (numbers only)";
+        }
+        break;
+
+      case "expectedCTC":
+        if (!value.trim()) {
+          error = "Expected CTC is required";
+        } else if (!validateCTC(value)) {
+          error = "Please enter a valid CTC amount (numbers only)";
+        }
+        break;
+
+      case "noticePeriod":
+        if (!value.trim()) {
+          error = "Notice period is required";
+        } else if (!validateNoticePeriod(value)) {
+          error = "Notice period must be between 0 and 365 days";
+        }
+        break;
+
+      case "currentLocation":
+        if (!value.trim()) {
+          error = "Current location is required";
+        } else if (value.trim().length < 2) {
+          error = "Location must be at least 2 characters";
+        }
+        break;
+
+      // case "details":
+      //   if (!value.trim()) {
+      //     error = "Job details are required";
+      //   } else if (value.trim().length < 0) {
+      //     error = "Please provide at least 0 characters of detail";
+      //   }
+      //   break;
+
+      case "designation":
+        if (!jobTitle && !value.trim()) {
+          error = "Designation is required";
+        } else if (!jobTitle && value.trim().length < 2) {
+          error = "Designation must be at least 2 characters";
+        }
+        break;
+    }
+
+    setValidationErrors((prev) => ({ ...prev, [field]: error }));
+    return error === "";
+  };
+
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+
+    if (validationErrors[field]) {
+      validateField(field, value);
+    }
   };
 
   const handleFocus = (field) => {
@@ -61,6 +181,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
 
   const handleBlur = (field) => {
     setFocusStates((prev) => ({ ...prev, [field]: false }));
+    validateField(field, formData[field]);
   };
 
   const shouldLabelFloat = (field) => {
@@ -82,29 +203,48 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
   const handleFileChange = (event) => {
     const file = event.target.files?.[0];
     if (file) {
-      const maxSize = 5 * 1024 * 1024;
+      const maxSize = 5 * 1024 * 1024; // 5MB
+      const allowedTypes = [
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      ];
+
+      if (!allowedTypes.includes(file.type)) {
+        setValidationErrors((prev) => ({
+          ...prev,
+          resume: "Please upload only PDF, DOC, or DOCX files",
+        }));
+        event.target.value = "";
+        return;
+      }
+
       if (file.size > maxSize) {
-        // toast.error("File size should not exceed 5MB", {
-        //   duration: 3000,
-        // });
+        setValidationErrors((prev) => ({
+          ...prev,
+          resume: "File size should not exceed 5MB",
+        }));
         console.error("File size should not exceed 5MB");
-        event.target.value = ""; // clear the input
+        event.target.value = "";
         return;
       }
 
       // ✅ valid file
-      // toast.success("File uploaded successfully", {
-      //   duration: 3000,
-      // });
+      setValidationErrors((prev) => ({ ...prev, resume: "" }));
       console.log("File uploaded successfully");
       setSelectedFile(file);
+    } else {
+      setValidationErrors((prev) => ({
+        ...prev,
+        resume: "Please select a file",
+      }));
+      console.error("File not uploaded. Something went wrong!!");
     }
-    // toast.error("File not uploaded. Something went wrong!!");
-    else console.error("File not uploaded. Something went wrong!!");
   };
 
   const handleRemoveFile = () => {
     setSelectedFile(null);
+    setValidationErrors((prev) => ({ ...prev, resume: "" }));
     // Reset the file input
     const fileInput = document.getElementById("resume");
     if (fileInput) {
@@ -127,26 +267,90 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
     });
     setSelectedFile(null);
     setCaptchaCode("");
+    setValidationErrors({
+      name: "",
+      email: "",
+      phone: "",
+      currentCTC: "",
+      expectedCTC: "",
+      noticePeriod: "",
+      currentLocation: "",
+      details: "",
+      designation: "",
+      resume: "",
+    });
   }
+
+  const validateForm = () => {
+    let isValid = true;
+    const fields = [
+      "name",
+      "email",
+      "phone",
+      "currentCTC",
+      "expectedCTC",
+      "noticePeriod",
+      "currentLocation",
+      "details",
+    ];
+
+    if (!jobTitle) {
+      fields.push("designation");
+    }
+
+    fields.forEach((field) => {
+      if (!validateField(field, formData[field])) {
+        isValid = false;
+      }
+    });
+
+    // Validate file upload
+    if (!selectedFile) {
+      setValidationErrors((prev) => ({
+        ...prev,
+        resume: "Please upload your resume",
+      }));
+      isValid = false;
+    }
+
+    // Validate captcha
+    if (!captchaCode.trim()) {
+      setCaptchaError("Please enter the captcha code");
+      isValid = false;
+    }
+
+    return isValid;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      console.error("Please fix all validation errors before submitting");
+      return;
+    }
+
     if (!validateCaptcha(captchaCode)) {
       setCaptchaError("Captcha does not match. Please try again.");
       return;
     }
-    setIsSubmitting(true);
-    const response = await submitResume({
-      ...formData,
-      resume: selectedFile,
-    });
-    if (response.data.success == true)
-      // toast.success("Your application submitted successfully", {
-      //   duration: 3000,
-      // });
-      console.log("Your application submitted successfully");
 
-    clearForm();
+    setIsSubmitting(true);
+    try {
+      const response = await submitResume({
+        ...formData,
+        resume: selectedFile,
+      });
+      if (response.data.success == true) {
+        console.log("Your application submitted successfully");
+        clearForm();
+        onClose();
+      }
+    } catch (error) {
+      console.error("Submission failed:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const refreshCaptcha = () => {
@@ -206,7 +410,9 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 onChange={(e) => handleInputChange("name", e.target.value)}
                 onFocus={() => handleFocus("name")}
                 onBlur={() => handleBlur("name")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer text-black"
+                className={`w-full bg-transparent border-0 border-b-2 ${
+                  validationErrors.name ? "border-red-500" : "border-gray-300"
+                } focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer text-black`}
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -217,6 +423,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               >
                 Your Name*
               </label>
+              {validationErrors.name && (
+                <p className="text-red-500 text-sm mt-1">
+                  {validationErrors.name}
+                </p>
+              )}
             </div>
             <div className="relative">
               <input
@@ -227,7 +438,9 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 onChange={(e) => handleInputChange("email", e.target.value)}
                 onFocus={() => handleFocus("email")}
                 onBlur={() => handleBlur("email")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer text-black"
+                className={`w-full bg-transparent border-0 border-b-2 ${
+                  validationErrors.email ? "border-red-500" : "border-gray-300"
+                } focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer text-black`}
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -238,13 +451,22 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               >
                 Your Email*
               </label>
+              {validationErrors.email && (
+                <p className="text-red-500 text-sm mt-1">
+                  {validationErrors.email}
+                </p>
+              )}
             </div>
           </div>
 
           {/* Row 2: Phone and Experience */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative">
-              <div className="flex items-center border-b-2 border-gray-300 focus-within:border-gray-600 pt-6 pb-3">
+              <div
+                className={`flex items-center border-b-2 ${
+                  validationErrors.phone ? "border-red-500" : "border-gray-300"
+                } focus-within:border-gray-600 pt-6 pb-3`}
+              >
                 <div className="flex items-center gap-2 pr-3">
                   <Phone className="w-4 h-4 text-gray-600" />
                   <ChevronDown className="w-4 h-4 text-gray-600" />
@@ -269,6 +491,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               >
                 Phone Number*
               </label>
+              {validationErrors.phone && (
+                <p className="text-red-500 text-sm mt-1">
+                  {validationErrors.phone}
+                </p>
+              )}
             </div>
             <div className="relative">
               <div className="relative border-b-2 border-gray-300 focus-within:border-gray-600 pt-6 pb-3">
@@ -316,7 +543,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 }
                 onFocus={() => handleFocus("currentCTC")}
                 onBlur={() => handleBlur("currentCTC")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
+                className={`w-full bg-transparent border-0 border-b-2 ${
+                  validationErrors.currentCTC
+                    ? "border-red-500"
+                    : "border-gray-300"
+                } focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black`}
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -327,6 +558,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               >
                 Current CTC *
               </label>
+              {validationErrors.currentCTC && (
+                <p className="text-red-500 text-sm mt-1">
+                  {validationErrors.currentCTC}
+                </p>
+              )}
             </div>
             <div className="relative">
               <input
@@ -339,7 +575,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 }
                 onFocus={() => handleFocus("expectedCTC")}
                 onBlur={() => handleBlur("expectedCTC")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
+                className={`w-full bg-transparent border-0 border-b-2 ${
+                  validationErrors.expectedCTC
+                    ? "border-red-500"
+                    : "border-gray-300"
+                } focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black`}
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -350,6 +590,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               >
                 Expected CTC *
               </label>
+              {validationErrors.expectedCTC && (
+                <p className="text-red-500 text-sm mt-1">
+                  {validationErrors.expectedCTC}
+                </p>
+              )}
             </div>
           </div>
 
@@ -359,6 +604,7 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               <input
                 type="number"
                 min={0}
+                max={365}
                 required
                 disabled={isSubmitting}
                 value={formData.noticePeriod}
@@ -367,7 +613,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 }
                 onFocus={() => handleFocus("noticePeriod")}
                 onBlur={() => handleBlur("noticePeriod")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 pr-16 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
+                className={`w-full bg-transparent border-0 border-b-2 ${
+                  validationErrors.noticePeriod
+                    ? "border-red-500"
+                    : "border-gray-300"
+                } focus:border-gray-600 outline-none py-3 pt-6 pr-16 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black`}
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -381,6 +631,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               <span className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-500 text-sm">
                 in days
               </span>
+              {validationErrors.noticePeriod && (
+                <p className="text-red-500 text-sm mt-1">
+                  {validationErrors.noticePeriod}
+                </p>
+              )}
             </div>
             <div className="relative">
               <input
@@ -393,7 +648,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 }
                 onFocus={() => handleFocus("currentLocation")}
                 onBlur={() => handleBlur("currentLocation")}
-                className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black"
+                className={`w-full bg-transparent border-0 border-b-2 ${
+                  validationErrors.currentLocation
+                    ? "border-red-500"
+                    : "border-gray-300"
+                } focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed text-black`}
               />
               <label
                 className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -404,6 +663,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               >
                 Current Location *
               </label>
+              {validationErrors.currentLocation && (
+                <p className="text-red-500 text-sm mt-1">
+                  {validationErrors.currentLocation}
+                </p>
+              )}
             </div>
           </div>
 
@@ -420,7 +684,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                   }
                   onFocus={() => handleFocus("designation")}
                   onBlur={() => handleBlur("designation")}
-                  className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer text-black"
+                  className={`w-full bg-transparent border-0 border-b-2 ${
+                    validationErrors.designation
+                      ? "border-red-500"
+                      : "border-gray-300"
+                  } focus:border-gray-600 outline-none py-3 pt-6 text-lg disabled:opacity-50 disabled:cursor-not-allowed peer text-black`}
                 />
                 <label
                   className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -431,6 +699,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                 >
                   Designation*
                 </label>
+                {validationErrors.designation && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {validationErrors.designation}
+                  </p>
+                )}
               </div>
             </div>
           )}
@@ -445,7 +718,9 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               onFocus={() => handleFocus("details")}
               onBlur={() => handleBlur("details")}
               rows={6}
-              className="w-full bg-transparent border-0 border-b-2 border-gray-300 focus:border-gray-600 outline-none py-3 pt-8 text-lg resize-none disabled:opacity-50 disabled:cursor-not-allowed text-black"
+              className={`w-full bg-transparent border-0 border-b-2 ${
+                validationErrors.details ? "border-red-500" : "border-gray-300"
+              } focus:border-gray-600 outline-none py-3 pt-8 text-lg resize-none disabled:opacity-50 disabled:cursor-not-allowed text-black`}
             />
             <label
               className={`absolute left-0 text-lg font-medium text-gray-900 transition-all duration-200 pointer-events-none ${
@@ -455,8 +730,13 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               }`}
             >
               Write your current job responsibilities, portfolios, and other
-              details to get faster shortlisted.*
+              details to get faster shortlisted.
             </label>
+            {validationErrors.details && (
+              <p className="text-red-500 text-sm mt-1">
+                {validationErrors.details}
+              </p>
+            )}
           </div>
 
           {/* File Upload and Captcha */}
@@ -465,7 +745,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
               <label className="text-lg font-medium text-gray-900">
                 Upload CV/Resume *
               </label>
-              <div className="border-b-2 border-gray-300 pb-2">
+              <div
+                className={`border-b-2 ${
+                  validationErrors.resume ? "border-red-500" : "border-gray-300"
+                } pb-2`}
+              >
                 <input
                   type="file"
                   id="resume"
@@ -504,6 +788,11 @@ export default function JobApplicationModal({ isOpen, onClose, jobTitle }) {
                   )}
                 </div>
               </div>
+              {validationErrors.resume && (
+                <p className="text-red-500 text-sm mt-1">
+                  {validationErrors.resume}
+                </p>
+              )}
             </div>
             <div className="relative">
               <div className="flex flex-col min-[500px]:flex-row min-[500px]:items-center gap-2 min-[500px]:gap-4 border-b-2 border-gray-300 focus-within:border-gray-600 pt-6 pb-2">
