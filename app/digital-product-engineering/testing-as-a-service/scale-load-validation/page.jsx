@@ -11,7 +11,7 @@ import Agility from "../../../component/infra/Agility";
 
 import LoadValidationMatter from "../../../component/testing/LoadValidationMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
-import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_3.webp"
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_3.webp";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
@@ -35,7 +35,7 @@ const Page = () => {
         activeTab={activeTab}
         navItems={navItems}
         heroImage={Img}
-        buttonClicked={()=>showHubSpotForm("try-free-load-test")}
+        onButtonClicked={() => showHubSpotForm("try-free-load-test")}
         buttonText2=""
       />
       <WhyItMatters
@@ -70,7 +70,6 @@ const Page = () => {
             title: "Multi-layer monitoring",
             subTitle: "application, infra, network",
           },
-          
         ]}
         bottomContent={{
           text: "We model tests against your current SLAs, compliance thresholds, and future scale targets.",
@@ -106,23 +105,22 @@ const Page = () => {
                 "compliance during seasonal, campaign, or product launches",
             },
             {
-            title: "Improved NPS & retention",
-            subTitle: "through consistent performance",
-          },
+              title: "Improved NPS & retention",
+              subTitle: "through consistent performance",
+            },
           ],
         }}
         bookMeetingData={{
-          title:
-            "Validate scalability under 10x load conditions.",
+          title: "Validate scalability under 10x load conditions.",
           buttonText: "Book a Meeting",
           // buttonText: "Book a Meeting",
-          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
-           }}
-          buttonText="Download One Pager"
-          onPagerButton={()=>showHubSpotForm("scale-load-valid-one-pg")}
+          onButtonClicked: () => showHubSpotForm("book-a-meeting"),
+        }}
+        buttonText="Download One Pager"
+        onPagerButton={() => showHubSpotForm("scale-load-valid-one-pg")}
       />
       <UseCases
-      description="We’ve enabled high-scale performance validation for:"
+        description="We’ve enabled high-scale performance validation for:"
         data={[
           {
             title: "E-commerce platforms",
@@ -149,7 +147,11 @@ const Page = () => {
       <WhyCalsoft
         sectionDescription="Calsoft blends QA depth with infrastructure visibility — offering more than just a tool-based approach."
         data={{
-          tableHeadings: ["Capability", "Calsoft Performance Suite", "Typical Vendors"],
+          tableHeadings: [
+            "Capability",
+            "Calsoft Performance Suite",
+            "Typical Vendors",
+          ],
           tableContent: [
             {
               name: "SLA-Centric Load Planning",
@@ -226,10 +228,7 @@ const Page = () => {
         ]}
       />
       <ContactSecDataAi
-        lightContent={
-          "Validate scale and load for reliable performance."
-        }
-       
+        lightContent={"Validate scale and load for reliable performance."}
       />
     </>
   );

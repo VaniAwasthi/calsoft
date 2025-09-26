@@ -19,7 +19,7 @@ export const HeroSectionProduct = () => {
     title: "Grow with cloud-induced efficiency",
     description: `Engineer scalable, secure, and cost-efficient<br/>
 cloud solutions aligned to your business goals.`,
-    buttonText: "Get in Touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -121,7 +121,7 @@ export const ItInfraSec = () => {
       <InfraSection
         title="IT infrastructure assessment & road mapping"
         description="Assess infrastructure readiness and define clear, actionable migration roadmaps."
-        buttonText="Case Study (or asset)"
+        buttonText="Learn More"
         link="/digital-product-engineering/cloud/infrastructure-roadmap"
         whatWeDo={[
           "Review infra readiness for the cloud",
@@ -149,7 +149,7 @@ export const MultiCloudInfraSec = () => {
       <InfraSection
         title="Multi-cloud infrastructure provisioning"
         description="Deploy and manage scalable, governed environments across multiple cloud platforms."
-        buttonText="Case study (or asset)"
+        buttonText="Learn More"
         link="/digital-product-engineering/cloud/multi-cloud-provisioning"
         whatWeDo={[
           "Automate cloud provisioning flows",
@@ -166,7 +166,6 @@ export const MultiCloudInfraSec = () => {
         imageLeft={true}
         isDivider={true}
         secId="multi-cloud"
-       
       />
     </>
   );
@@ -178,7 +177,7 @@ export const CloudNativetInfraSec = () => {
       <InfraSection
         title="Cloud-native development enablement"
         description="Engineer resilient, scalable systems using microservices, containers, and serverless models."
-        buttonText="Case study (or asset)"
+        buttonText="Learn More"
         link="/digital-product-engineering/cloud/cloud-native-enablement"
         whatWeDo={[
           "Design systems with microservices",
@@ -205,7 +204,7 @@ export const CloudMigrationInfraSec = () => {
       <InfraSection
         title="Cloud migration and scaling"
         description="Execute smooth cloud transitions and enable dynamic, on-demand scalability."
-        buttonText="Case study (or asset)"
+        buttonText="Learn More"
         link="/digital-product-engineering/cloud/cloud-migration"
         whatWeDo={[
           "Plan app and infra migration steps",
@@ -232,8 +231,8 @@ export const CostInfraSec = () => {
       <InfraSection
         title="Cost and usage optimization"
         description="Control costs, optimize usage, and drive sustainable cloud operations."
-        buttonText="Case study (or asset)"
-        link="#"
+        buttonText="Learn More"
+        link="/digital-product-engineering/cloud/cost-and-usage-optimization"
         whatWeDo={[
           "Continuously monitor resource utilization and spending patterns",
           "Implement cost governance, tagging, and budget enforcement policies",
@@ -259,8 +258,8 @@ export const SREInfraSec = () => {
       <InfraSection
         title="SRE (Site Reliability Engineering)"
         description="Balance development velocity with system stability through proactive operations management."
-        buttonText="Case study (or asset)"
-        link="#"
+        buttonText="Learn More"
+        link="/digital-product-engineering/cloud/site-reliability-engineering"
         whatWeDo={[
           "Set SLOs and track SLIs live",
           "Detect and fix issues early",

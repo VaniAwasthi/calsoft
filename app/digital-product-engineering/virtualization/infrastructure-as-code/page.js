@@ -33,7 +33,7 @@ export default function Page() {
         title="Code Your Infrastructure. Control Everything."
         description="Deploy infrastructure securely and at scale using proven IaC across hybrid and cloud."
         buttonText="Request Free Assessment"
-        buttonClicked={() => showHubSpotForm("request-free-assessment")}
+        onButtonClicked={() => showHubSpotForm("request-free-assessment")}
         heroImage={Img}
         navItems={navItems}
         setActiveTab={setActiveTab}
@@ -149,12 +149,9 @@ export default function Page() {
         ]}
         bottomContent={null}
         arrow={true}
-        buttonClicked={() =>
-          showHubSpotForm("infrastructure-as-code-download-one-pg")
-        }
-        onbuttonClicked={() =>
-          showHubSpotForm("infrastructure-as-code-download-one-pg")
-        }
+        buttonText="Request PoC"
+        buttonClicked={() => showHubSpotForm("request-a-poc")}
+        onbuttonClicked={() => showHubSpotForm("request-a-poc")}
       />
       <div className="container">
         <BookMeeting

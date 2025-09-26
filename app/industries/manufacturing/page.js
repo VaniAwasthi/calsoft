@@ -1,4 +1,5 @@
 "use client";
+
 import {
   ContactSec,
   ServicesSec,
@@ -29,7 +30,7 @@ const Page = () => {
               <br />
               <br />
               <span className="!text-2xl">Look no further! Calsoft has the answer.</span>`,
-    buttonText: "Case Study",
+    buttonText: "Download Industry Report",
     image: Banner,
   };
   const [activeTab, setActiveTab] = useState("Journey");
@@ -118,6 +119,8 @@ const Page = () => {
     image: ScaleImage,
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
+    buttonClicked: () =>
+      showHubSpotForm("monitoring-and-automation-manufacturing"),
   };
   const StrengthenSec = {
     title: "Strengthen predictive maintenance strategies",
@@ -140,6 +143,8 @@ const Page = () => {
     image: StrengthenImg,
     imagePosition: "left",
     bgColor: "bg-[#F8F9FA]",
+    buttonClicked: () =>
+      showHubSpotForm("predictive-maintenance-strategies-case-study"),
   };
   const EnhanceSection = {
     title: "Enhance visibility, agility, and demand forecasting",
@@ -162,6 +167,7 @@ const Page = () => {
     image: EnhanceImage,
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
+    buttonClicked: () => showHubSpotForm("demand-forecasting-case-study"),
   };
   const IotEnSection = {
     title: "IoT Engineering",
@@ -184,6 +190,7 @@ const Page = () => {
     image: Info4,
     imagePosition: "left",
     bgColor: "bg-[#F8F9FA]",
+    buttonClicked: () => showHubSpotForm("IoT Engineering - Case Study"),
   };
   return (
     <>
@@ -230,7 +237,7 @@ const Page = () => {
       <ServicesSec/>
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        buttonClicked={()=>showHubSpotForm("contact-us-popup")}
+        buttonClicked={() => showHubSpotForm("contact-us-popup")}
       />
     </>
   );

@@ -20,7 +20,7 @@ export const HeroSectionProductandApplicationDev = () => {
     title: "Product and application development",
     description: `Engineer ideas into robust, scalable solutions
 with speed and precision.`,
-    buttonText: "Get in Touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
 
@@ -47,7 +47,11 @@ with speed and precision.`,
         rightSec={false}
         buttonWidth="!w-[250px]"
         buttonColor="#ED1C24"
-        onButtonClick={() => showHubSpotForm("product-and-application-development-download-datasheet")} // use correct class
+        onButtonClick={() =>
+          showHubSpotForm(
+            "product-and-application-development-download-datasheet"
+          )
+        } // use correct class
       />
       <Submenu
         navItems={navItems}
@@ -62,7 +66,8 @@ export const ProdandAppChallengeSec = () => {
   const challengesData = [
     {
       title: "Ideation and architecture",
-      description: "Fragmented lifecycle processes slowing down product delivery",
+      description:
+        "Fragmented lifecycle processes slowing down product delivery",
       solution:
         "Integrate ideation, architecture, development, and DevOps seamlessly",
     },

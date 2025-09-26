@@ -4,7 +4,7 @@ import ClientProvider from "./ClientProvider";
 import ClientLayoutWrapper from "./ClientLayoutWrapper";
 import Script from "next/script";
 import { Londrina_Shadow, Manrope } from "next/font/google";
-import { Toaster } from "@/components/ui/sonner";
+// import { Toaster } from "@/components/ui/sonner";
 
 const londrina = Londrina_Shadow({
   subsets: ["latin"],
@@ -92,7 +92,7 @@ export default function RootLayout({ children }) {
       <body className="overflow-x-hidden min-h-screen flex flex-col font-manrope">
         <ClientProvider>
           <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
-          <Toaster />
+          {/* <Toaster /> */}
         </ClientProvider>
       </body>
     </html>

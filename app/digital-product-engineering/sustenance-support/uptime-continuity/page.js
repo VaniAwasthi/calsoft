@@ -36,7 +36,7 @@ export default function Page() {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("talk-to-expert")}
+        onButtonClicked={() => showHubSpotForm("talk-to-expert")}
       />
       <WhyItMatters
         title="Where continuity often breaks down"
@@ -206,7 +206,7 @@ export default function Page() {
         bottomContent={{
           text: "We ensure predictable uptime — even under stress, change, or failure.",
           btnText: "Request POC",
-          buttonClicked: () => showHubSpotForm("request-a-poc"),
+          buttonClick: () => showHubSpotForm("request-a-poc"),
         }}
         arrow={true}
       />
@@ -251,6 +251,7 @@ export default function Page() {
         title="Where It Fits"
         heading="When uptime becomes business-critical"
         description="You need proactive uptime continuity if:"
+        buttonText={null}
         bottomText={{
           text: "We align your reliability needs with ",
           bText: "automation, observability, and recovery strategy.",
@@ -430,6 +431,9 @@ export default function Page() {
         sectionDescription=""
         title="Why choose Calsoft for uptime engineering"
         buttonText="Download One Pager"
+        buttonClick={() =>
+          showHubSpotForm("uptime-continuity-download-one-pager")
+        }
         data={{
           tableHeadings: [
             "Capability",

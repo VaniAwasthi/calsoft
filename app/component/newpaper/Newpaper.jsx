@@ -8,12 +8,14 @@ import banner_img from "@/app/assets/insights/newspaper/banner.png";
 import cardImage from "@/app/assets/insights/newspaper/card_img.webp";
 import Link from "next/link";
 
-export function HeroSection({ title,
-   subTitle,
-    desc ,
-    rightImage=banner_img, 
-    isInput=true,
-     bgmainClass="h-[700px] "}) {
+export function HeroSection({
+  title,
+  subTitle,
+  desc,
+  rightImage = banner_img,
+  isInput = true,
+  bgmainClass = "h-[700px] ",
+}) {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
@@ -67,50 +69,56 @@ export function HeroSection({ title,
             </motion.p>
 
             {/* Email Subscription */}
-            {isInput &&(<>
-
-            {!subscribed ? (
-              <motion.div
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="mt-6 w-full md:w-[400px]"
-              >
-                <div className="flex items-center relative bg-white rounded-full">
-                  <input
-                    type="email"
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Add your email*"
-                    className="w-full text-[#333333] px-4 py-3 pr-28 bg-transparent rounded-full focus:outline-none"
-                  />
-                  <motion.button
+            {isInput && (
+              <>
+                {!subscribed ? (
+                  <motion.div
                     initial={{ x: -50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.9 }}
-                    onClick={() => {
-                      if (email.length > 0) {
-                        if (isEmail(email)) setSubscribed(true);
-                        else toast.error("Email is invalid", { duration: 3000 });
-                      } else toast.error("Email field is empty", { duration: 3000 });
-                    }}
-                    className="bg-[#BA0007] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0"
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                    className="mt-6 w-full md:w-[400px]"
                   >
-                    Subscribe
-                  </motion.button>
-                </div>
-              </motion.div>
-            ) : (
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="font-semibold"
-              >
-                You&apos;re subscribed
-              </motion.p>
+                    <div className="flex items-center relative bg-white rounded-full">
+                      <input
+                        type="email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Add your email*"
+                        className="w-full text-[#333333] px-4 py-3 pr-28 bg-transparent rounded-full focus:outline-none"
+                      />
+                      <motion.button
+                        initial={{ x: -50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.9 }}
+                        onClick={() => {
+                          if (email.length > 0) {
+                            if (isEmail(email)) setSubscribed(true);
+                            else
+                              toast.error("Email is invalid", {
+                                duration: 3000,
+                              });
+                          } else
+                            toast.error("Email field is empty", {
+                              duration: 3000,
+                            });
+                        }}
+                        className="bg-[#BA0007] text-white rounded-full px-4 flex items-center gap-2 py-3 absolute right-0"
+                      >
+                        Subscribe
+                      </motion.button>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.p
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="font-semibold"
+                  >
+                    You&apos;re subscribed
+                  </motion.p>
+                )}
+              </>
             )}
-            </>
-)}
           </div>
 
           {/* Right side image */}
@@ -144,7 +152,7 @@ export default function ProductDesignCard({
           src={imageSrc || "/placeholder.svg"}
           alt={imageAlt}
           fill
-          className="object-cover"
+          className="aspect-video"
         />
       </div>
 
@@ -195,64 +203,110 @@ export default function ProductDesignCard({
 export function Newspapers({
   data = [
     {
-      imageSrc: cardImage,
+      imageSrc:
+        "https://www.calsoftinc.com/wp-content/uploads/2025/09/Hyphen-Newsletter-Header-july.jpg",
       imageAlt: "card_img",
-      badgeText: "Collect UI",
-      heading: "A collection of daily UI challenges for your inspiration.",
+      badgeText: "July 2025",
+      heading: "Monthly Newsletter July 2025",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+        "Hey there, Welcome to the monthly edition of the Hyphen Newsletter! From bots that don’t break, to QA that’s lightning-fast,...",
       linkHref: "#",
     },
     {
-      imageSrc: cardImage,
+      imageSrc:
+        "https://www.calsoftinc.com/wp-content/uploads/2025/06/Hyphen-Newsletter-Header-June.jpg",
       imageAlt: "card_img",
-      badgeText: "Collect UI",
-      heading: "A collection of daily UI challenges for your inspiration.",
+      badgeText: "June 2025",
+      heading: "Monthly Newsletter June 2025",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+        "Welcome to Hyphen, Calsoft’s monthly dive into the future of tech. See how Calsoft is helping enterprises migrate faster, test...",
       linkHref: "#",
     },
     {
-      imageSrc: cardImage,
+      imageSrc:
+        "https://www.calsoftinc.com/wp-content/uploads/2025/05/Hyphen-Newsletter-Header-August-2.png",
       imageAlt: "card_img",
-      badgeText: "Collect UI",
-      heading: "A collection of daily UI challenges for your inspiration.",
+      badgeText: "May 2025",
+      heading: "Monthly Newsletter May 2025",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+        "Welcome to Hyphen monthly Newsletter from Calsoft, we have got a lot to share this month: Let’s dive into what’s...",
       linkHref: "#",
     },
     {
-      imageSrc: cardImage,
+      imageSrc:
+        "https://www.calsoftinc.com/wp-content/uploads/2025/04/Hyphen-Newsletter-Header-march-2025.png",
       imageAlt: "card_img",
-      badgeText: "Collect UI",
-      heading: "A collection of daily UI challenges for your inspiration.",
+      badgeText: "March 2025",
+      heading: "Monthly Newsletter March 2025",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+        "In Focus: CalTIA™: Stay updated with the latest in AI, IoT, and tech innovation! This edition covers expert insights, industry...",
       linkHref: "#",
     },
     {
-      imageSrc: cardImage,
+      imageSrc:
+        "https://www.calsoftinc.com/wp-content/uploads/2025/02/Hyphen-Newsletter-Header-February-2025.png",
       imageAlt: "card_img",
-      badgeText: "Collect UI",
-      heading: "A collection of daily UI challenges for your inspiration.",
+      badgeText: "February 2025",
+      heading: "Monthly Newsletter February 2025",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+        "In Focus: CalTIA™: Transform Your Testing Strategy with AI-Powered Insights , Modernize Your Infrastructure with VMware Migration, Generative AI in...",
       linkHref: "#",
     },
     {
-      imageSrc: cardImage,
+      imageSrc:
+        "https://www.calsoftinc.com/wp-content/uploads/2025/01/Hyphen-Newsletter-Header-December.jpg",
       imageAlt: "card_img",
-      badgeText: "Collect UI",
-      heading: "A collection of daily UI challenges for your inspiration.",
+      badgeText: "December 2024",
+      heading: "Monthly Newsletter December 2024",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+        "In Focus: Maximize Your Cloud-Native Streaming Capabilities, Transform your IT Infrastructure with Seamless Migration, SOAR in Cybersecurity, and more. Maximize...",
+      linkHref: "#",
+    },
+    {
+      imageSrc:
+        "https://www.calsoftinc.com/wp-content/uploads/2024/11/Monthly-Newsletter-November-2024.png",
+      imageAlt: "card_img",
+      badgeText: "November 2024",
+      heading: "Monthly Newsletter November 2024",
+      description:
+        "In Focus: Calsoft at NVIDIA AI Summit India, Advanced Threat Protection Brochure, Calsoft’s ServiceNow Expertise, and more...",
+      linkHref: "#",
+    },
+    {
+      imageSrc:
+        "https://www.calsoftinc.com/wp-content/uploads/2024/11/Monthly-Newsletter-October-2024.png",
+      imageAlt: "card_img",
+      badgeText: "October 2024",
+      heading: "Monthly Newsletter October 2024",
+      description:
+        "In Focus: Calsoft Partners with SmartHub.ai, Panel Discussion, Calsoft Exhibiting at NVIDIA AI Summit 2024, and more. Calsoft Partners with...",
+      linkHref: "#",
+    },
+    {
+      imageSrc:
+        "https://www.calsoftinc.com/wp-content/uploads/2024/09/Hyphen-Newsletter-Header-September.jpg",
+      imageAlt: "card_img",
+      badgeText: "September 2024",
+      heading: "Monthly Newsletter September 2024",
+      description:
+        "In Focus: Calsoft Featured in Times of India and NVIDIA Blog, L&D Leadership Summit, New Delhi and More. Calsoft Tackles...",
+      linkHref: "#",
+    },
+    {
+      imageSrc:
+        "https://www.calsoftinc.com/wp-content/uploads/2024/08/Hyphen-Newsletter-Header-August-1.png",
+      imageAlt: "card_img",
+      badgeText: "August 2024",
+      heading: "Monthly Newsletter August 2024",
+      description:
+        "In Focus: Celebrating 26 Years of Calsoft, Calsoft Wins the Best Employer Award, Partnership with LlamaIndex, and More...",
       linkHref: "#",
     },
   ],
 }) {
   return (
     <div className="py-12">
-      <div className="container grid grid-cols-2 gap-12">
+      <div className="container grid grid-cols-2 gap-6 2xl:gap-10">
         {data.map((ele, idx) => (
           <motion.div
             key={idx}
@@ -278,24 +332,24 @@ export function Newspapers({
 
 export function PreviousNewspaper({
   data = [
+    "January 2021",
+    "Febuary 2021",
+    "March 2021",
+    "April 2021",
+    "May 2021",
+    "June 2021",
+    "July 2021",
+    "August 2021",
+    "September 2021",
+    "October 2021",
+    "November 2021",
     "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
-    "December 2021",
+    "January 2022",
+    "Febuary 2022",
+    "March 2022",
+    "April 2022",
+    "May 2022",
+    "June 2022",
   ],
 }) {
   return (

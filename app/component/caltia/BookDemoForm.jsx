@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion,AnimatePresence  } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function BookDemoForm() {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="max-w-6xl mx-auto p-8 bg-white">
@@ -41,66 +41,65 @@ export default function BookDemoForm() {
         className="cursor-pointer flex items-center gap-3 px-8 py-4 rounded-lg text-white font-semibold text-lg transition-opacity hover:opacity-90"
         style={{ backgroundColor: "#2e3092" }}
       >
-        <span>Watch the Teaser</span>
-        <div className="flex items-center gap-1">
-          <svg
-            width="45"
-            height="28"
-            viewBox="0 0 45 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M30.1131 0H2.11719C0.929697 0 0 0.921536 0 2.01181V25.9882C0 27.0784 0.929697 28 2.11719 28H30.1131C31.3006 28 32.2303 27.0785 32.2303 25.9882V2.01181C32.2303 0.921581 31.3006 0 30.1131 0ZM34.576 10.1586V17.8398L43.3145 23.5127C44.0215 23.9708 45 23.5127 45 22.7226V5.27507C45 4.4849 44.0215 4.02679 43.3145 4.48667L34.576 10.1586ZM13.0566 6.75999C14.2011 7.5022 22.873 13.0298 23.1485 13.383C23.5235 13.8624 23.4005 14.5247 22.8731 14.8656L13.1292 21.1922C12.2678 21.7959 11.2053 21.21 11.2053 20.3719V7.62639H11.2092C11.2073 6.78649 12.2753 6.25393 13.0566 6.75999ZM20.1835 13.9994L13.5526 18.3053L13.5506 9.69542L20.1835 13.9994Z"
-              fill="white"
-            />
-          </svg>
-        </div>
-      </motion.button>
-
-      {/* Modal */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-                            onClick={() => setOpen(false)}
-
-          >
-            {/* Modal Content */}
-            <motion.div
-              className="relative bg-black rounded-lg shadow-lg w-[90%] md:w-[800px] aspect-video"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setOpen(false)}
-                className="absolute -top-1 right-0 text-white text-3xl font-bold"
+        
+            <span>Watch the Teaser</span>
+            <div className="flex items-center gap-1">
+              <svg
+                width="45"
+                height="28"
+                viewBox="0 0 45 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                ✕
-              </button>
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M30.1131 0H2.11719C0.929697 0 0 0.921536 0 2.01181V25.9882C0 27.0784 0.929697 28 2.11719 28H30.1131C31.3006 28 32.2303 27.0785 32.2303 25.9882V2.01181C32.2303 0.921581 31.3006 0 30.1131 0ZM34.576 10.1586V17.8398L43.3145 23.5127C44.0215 23.9708 45 23.5127 45 22.7226V5.27507C45 4.4849 44.0215 4.02679 43.3145 4.48667L34.576 10.1586ZM13.0566 6.75999C14.2011 7.5022 22.873 13.0298 23.1485 13.383C23.5235 13.8624 23.4005 14.5247 22.8731 14.8656L13.1292 21.1922C12.2678 21.7959 11.2053 21.21 11.2053 20.3719V7.62639H11.2092C11.2073 6.78649 12.2753 6.25393 13.0566 6.75999ZM20.1835 13.9994L13.5526 18.3053L13.5506 9.69542L20.1835 13.9994Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+          </motion.button>
 
-              {/* YouTube Embed */}
-              <iframe
-                className="w-full h-full rounded-lg"
-                src="https://www.youtube.com/embed/dUqpOX1JCdA?autoplay=1"
-                title="YouTube video"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          {/* Modal */}
+          <AnimatePresence>
+            {open && (
+              <motion.div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setOpen(false)}
+              >
+                {/* Modal Content */}
+                <motion.div
+                  className="relative bg-black rounded-lg shadow-lg w-[90%] md:w-[800px] aspect-video"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setOpen(false)}
+                    className="absolute -top-1 right-0 text-white text-3xl font-bold"
+                  >
+                    ✕
+                  </button>
+
+                  {/* YouTube Embed */}
+                  <iframe
+                    className="w-full h-full rounded-lg"
+                    src="https://www.youtube.com/embed/dUqpOX1JCdA?autoplay=1"
+                    title="YouTube video"
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                  />
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Right Column - Form */}

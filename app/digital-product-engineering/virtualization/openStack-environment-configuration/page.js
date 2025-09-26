@@ -40,7 +40,7 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
-        buttonClicked={() => showHubSpotForm("schedule-architecture-review")}
+        onButtonClicked={() => showHubSpotForm("schedule-architecture-review")}
       />
       <WhyItMatters
         id="pulse-check"
@@ -157,12 +157,9 @@ export default function Page() {
             desc: "Multi-tenant project isolation & policy control",
           },
         ]}
-        buttonClicked={() =>
-          showHubSpotForm("openstack-environment-configuration-download-one-pg")
-        }
-        onbuttonClicked={() =>
-          showHubSpotForm("openstack-environment-configuration-download-one-pg")
-        }
+        buttonText="Request PoC"
+        buttonClicked={() => showHubSpotForm("request-a-poc")}
+        onbuttonClicked={() => showHubSpotForm("request-a-poc")}
         bottomContent={null}
         arrow={true}
       />

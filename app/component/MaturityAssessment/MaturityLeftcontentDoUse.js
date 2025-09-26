@@ -66,8 +66,12 @@ export const Maturity = () => {
           buttonImage={ButtonImage}
           hoverImage={ButtonImage}
           rightSec={false}
-          buttonWidth="!w-[300px]"
-          onButtonClick={()=>showHubSpotForm("maturity-assessment-and-planning-modernization-roadmap")}
+          buttonWidth="w-fit whitespace-nowrap"
+          onButtonClick={() =>
+            showHubSpotForm(
+              "maturity-assessment-and-planning-modernization-roadmap"
+            )
+          }
         />
       </div>
       <Submenu
@@ -118,7 +122,7 @@ export const Matters = () => {
         {...whyItMattersData}
         ButtonImage={ButtonImage}
         secId="why-it-matters"
-        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
       />
     </>
   );
@@ -179,7 +183,7 @@ export const DoUs = () => {
         offeringsData
         {...offeringsData}
         heading={heading}
-        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
+        onButtonClick={() => showHubSpotForm("Talk-to-Expert")}
         subtitle={subtitle}
         desc={desc}
         ButtonImage={ButtonImage}
@@ -197,7 +201,7 @@ export const Use = () => {
     description:
       "Calsoft’s Assessment framework adapts to your business context—whether you’re cloud-first, hybrid, or legacy-heavy.",
     buttonText: "Download One Pager",
-    
+
     cards: [
       {
         title: "Cloud Migration Readiness",
@@ -216,7 +220,14 @@ export const Use = () => {
   };
   return (
     <>
-      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases"  onButtonClick={()=>showHubSpotForm("maturity-assessment-and-planning-download-one-pager")}/>
+      <Cases
+        {...useCasesData}
+        ButtonImage={ButtonImage}
+        secId="use-cases"
+        onButtonClick={() =>
+          showHubSpotForm("maturity-assessment-and-planning-download-one-pager")
+        }
+      />
     </>
   );
 };
@@ -254,7 +265,7 @@ export const Business = () => {
         {...businessValueData}
         ButtonImage={ButtonImage}
         secId="business-value"
-        onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}
+        onButtonClick={() => showHubSpotForm("request-a-custom-roi-projection")}
       />
     </>
   );
@@ -311,7 +322,6 @@ export const Howstart = () => {
       "One week is all it takes to gain a full-spectrum view of your enterprise readiness—and a phased plan to act on.",
     image: start,
     alt: "Maturity Sprint Image",
-
   };
   return (
     <>
@@ -322,9 +332,9 @@ export const Howstart = () => {
 
 export const Sprint = () => {
   const buttonText = "Start Today";
-  const onButtonClick=()=>{
-    showHubSpotForm("start-today")
-  }
+  const onButtonClick = () => {
+    showHubSpotForm("start-today");
+  };
   const steps = [
     {
       day: "Day 0",
@@ -391,7 +401,6 @@ export const Sprint = () => {
         buttonText={buttonText}
         ButtonImage={ButtonImage}
         onClick={onButtonClick}
-
       />
     </>
   );

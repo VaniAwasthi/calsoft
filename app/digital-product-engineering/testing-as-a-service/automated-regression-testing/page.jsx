@@ -10,7 +10,7 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import RegressionTestingMatter from "../../../component/testing/Regression-Testing-Matter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
-import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_2.webp"
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_2.webp";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
@@ -34,7 +34,7 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={Img}
-        buttonClicked={()=>showHubSpotForm("request-free-assessment")}
+        onButtonClicked={() => showHubSpotForm("request-free-assessment")}
         buttonText2=""
       />
       <WhyItMatters
@@ -51,11 +51,13 @@ const Page = () => {
         data={[
           {
             title: null,
-            subTitle: "Automated regression suites for UI, API, and business logic",
+            subTitle:
+              "Automated regression suites for UI, API, and business logic",
           },
           {
             title: null,
-            subTitle: "Test data generation, version control, and environment isolation",
+            subTitle:
+              "Test data generation, version control, and environment isolation",
           },
           {
             title: null,
@@ -63,18 +65,19 @@ const Page = () => {
           },
           {
             title: null,
-            subTitle: "Test suite optimization with tagging, parallelization, and prioritization",
+            subTitle:
+              "Test suite optimization with tagging, parallelization, and prioritization",
           },
           {
             title: null,
-            subTitle: "Continuous regression validation as part of CI/CD workflows",
+            subTitle:
+              "Continuous regression validation as part of CI/CD workflows",
           },
           // {
           //   title: "Map against SLAs,",
           //   subTitle: "industry standards, or competitor data if available",
           // },
         ]}
-
         bottomContent={{
           text: "We use test impact analysis to avoid redundant test runs and maintain traceability to feature changes.",
           btnText: "Request POC",
@@ -113,16 +116,17 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title:
-            "Accelerate testing by 70% with CalTIA automation.",
+          title: "Accelerate testing by 70% with CalTIA automation.",
           buttonText: "Book a Meeting",
-         onButtonClicked:()=>showHubSpotForm("book-a-meeting")
-               }}
-               buttonText="Download One Pager"
-               onPagerButton={()=>showHubSpotForm("regression-testing-caltia-one-pg")}
+          onButtonClicked: () => showHubSpotForm("book-a-meeting"),
+        }}
+        buttonText="Download One Pager"
+        onPagerButton={() =>
+          showHubSpotForm("regression-testing-caltia-one-pg")
+        }
       />
       <UseCases
-      description="Calsoft’s Automated Regression Testing has accelerated QA maturity for:"
+        description="Calsoft’s Automated Regression Testing has accelerated QA maturity for:"
         data={[
           {
             title: "SaaS platforms",
@@ -150,7 +154,11 @@ const Page = () => {
       <WhyCalsoft
         sectionDescription="Most automation stops at scripts. Calsoft enables scalable regression intelligence that keeps pace with your releases."
         data={{
-          tableHeadings: ["Capability", "Calsoft Regression Suite", "Conventional Vendors"],
+          tableHeadings: [
+            "Capability",
+            "Calsoft Regression Suite",
+            "Conventional Vendors",
+          ],
           tableContent: [
             {
               name: "Test Impact + Change Awareness",
@@ -229,9 +237,7 @@ const Page = () => {
         ]}
       />
       <ContactSecDataAi
-        lightContent={
-          "Streamline regression testing with CalTIA automation."
-        }
+        lightContent={"Streamline regression testing with CalTIA automation."}
       />
     </>
   );

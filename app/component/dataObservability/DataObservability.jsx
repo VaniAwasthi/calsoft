@@ -13,14 +13,17 @@ import {
   ChallengeSolutionComp,
   DataInfoSection,
 } from "../utilities/ChallengeSolutionDataAi";
-export const DataJounery = ({ slide = {
-  title: "Data observability",
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
+export const DataJounery = ({
+  slide = {
+    title: "Data observability",
 
-  description: `Monitor, analyze, and safeguard data
+    description: `Monitor, analyze, and safeguard data
     ecosystems with continuous visibility.`,
-  buttonText: "Download Datasheet",
-  image: BackgroundImage,
-} }) => {
+    buttonText: "Download Datasheet",
+    image: BackgroundImage,
+  },
+}) => {
   const [activeTab, setActiveTab] = useState("benefits");
   const navItems = [
     "Benefits",
@@ -41,8 +44,7 @@ export const DataJounery = ({ slide = {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
-        onButtonClick={()=>showHubSpotForm("data-observability-datasheet")}
-        
+        onButtonClick={() => showHubSpotForm("data-observability-datasheet")}
       />
       <Submenu
         navItems={navItems}
@@ -53,34 +55,36 @@ export const DataJounery = ({ slide = {
   );
 };
 
-export const DataSolutionSec = ({ data = [
-  {
-    tag: "Unified  monitoring",
-    challenge:
-      "Struggling to track data health across distributed environments?",
-    solution:
-      "Centralized observability frameworks across hybrid and multicloud data systems",
-  },
-  {
-    tag: "Real-time insights",
-    challenge: "Finding anomalies too late in streaming data pipelines?",
-    solution:
-      "Implement realtime telemetry and anomaly detection across ingestion and processing layers",
-  },
-  {
-    tag: "Lineage visibility",
-    challenge:
-      "Lacking transparency over data movement and transformation journeys?",
-    solution:
-      "Map complete data lineage and audit trails from source to consumption",
-  },
-  {
-    tag: "Proactive risk alerts",
-    challenge: "Reacting only after data issues impact downstream analytics?",
-    solution:
-      "Deploy predictive monitoring and early warning systems for data quality risks.",
-  },
-] }) => {
+export const DataSolutionSec = ({
+  data = [
+    {
+      tag: "Unified  monitoring",
+      challenge:
+        "Struggling to track data health across distributed environments?",
+      solution:
+        "Centralized observability frameworks across hybrid and multicloud data systems",
+    },
+    {
+      tag: "Real-time insights",
+      challenge: "Finding anomalies too late in streaming data pipelines?",
+      solution:
+        "Implement realtime telemetry and anomaly detection across ingestion and processing layers",
+    },
+    {
+      tag: "Lineage visibility",
+      challenge:
+        "Lacking transparency over data movement and transformation journeys?",
+      solution:
+        "Map complete data lineage and audit trails from source to consumption",
+    },
+    {
+      tag: "Proactive risk alerts",
+      challenge: "Reacting only after data issues impact downstream analytics?",
+      solution:
+        "Deploy predictive monitoring and early warning systems for data quality risks.",
+    },
+  ],
+}) => {
   return (
     <>
       <ChallengeSolutionComp

@@ -21,7 +21,7 @@ export const DrivenBanner = () => {
 
     description: `Predict trends and infer actionable insights at
     enterprise speed.`,
-    buttonText: "Get in Touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -43,7 +43,7 @@ export const DrivenBanner = () => {
         hoverImage={ButtonImage}
         rightSec={false}
         buttonWidth="!w-[250px]"
-         onButtonClick={() => showHubSpotForm("ai-driven-prediction-datasheet")}
+        onButtonClick={() => showHubSpotForm("ai-driven-prediction-datasheet")}
       />
       <Submenu
         navItems={navItems}

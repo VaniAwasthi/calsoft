@@ -322,7 +322,7 @@ export const navItems = [
           },
           {
             title: "Intelligent UI",
-            href: "#",
+            href: "/digital-product-engineering/cx-engineering/intelligent-ui",
           },
           {
             title: "Rapid Prototyping",

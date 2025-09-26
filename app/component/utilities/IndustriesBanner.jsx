@@ -16,6 +16,8 @@ const IndustriesBanner = ({
   titleTwoClass,
   descriptionClass,
   isCaseStudyButton,
+  caseStudyLink,
+  onBtnClick,
 }) => {
   return (
     <div className="relative">
@@ -70,12 +72,14 @@ const IndustriesBanner = ({
               text={buttonText}
               image={buttonImage}
               hoverImage={hoverImage}
+              onClick={onBtnClick}
             />
 
             {isCaseStudyButton && (
               <TransparentButtonLayout
                 text="View Case Study"
-                onClick={() => console.log("Case Study clicked")}
+                href={caseStudyLink}
+                onClick={() => {}}
                 className="hidden md:block"
               />
             )}

@@ -37,7 +37,7 @@ export default function Page() {
         heroImage={Img}
         navItems={navItems}
         setActiveTab={setActiveTab}
-        buttonClicked={() =>
+        onButtonClicked={() =>
           showHubSpotForm("hypervisor-optimization-schedule-health-check")
         }
         activeTab={activeTab}
@@ -112,7 +112,8 @@ export default function Page() {
             subTitle: "Automated rightsizing based on workload trends",
           },
         ]}
-        buttonText={null}
+        buttonText={"Request a Poc"}
+        buttonClick={() => showHubSpotForm("request-a-poc")}
         id="core-to-vm"
         title="Core-to-VM"
         bottomContent={null}

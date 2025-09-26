@@ -8,7 +8,7 @@ import Submenu from "../utilities/Submenu";
 
 export default function HeroSection({
   navItems,
-  buttonClicked,
+  onButtonClicked,
   activeTab,
   setActiveTab,
   title = "Technology-first partner",
@@ -30,7 +30,7 @@ export default function HeroSection({
         titleOneClass="text-[20px] md:text-5xl mt-2 md:w-[550px]"
         descriptionClass="hidden md:block mt-4 text-lg leading-8 w-[250px] md:w-full"
         BgClassname="object-cover w-full h-full object-center"
-        buttonClicked={buttonClicked}
+        buttonClicked={onButtonClicked}
       />
       <Submenu
         navItems={navItems}

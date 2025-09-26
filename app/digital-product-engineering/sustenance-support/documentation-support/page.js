@@ -36,7 +36,7 @@ export default function Page() {
         activeTab={activeTab}
         heroImage={Img}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("talk-to-expert")}
+        onButtonClicked={() => showHubSpotForm("talk-to-expert")}
       />
       <WhyItMatters
         title="What’s broken in your current docs?"
@@ -198,7 +198,7 @@ export default function Page() {
           },
           {
             title:
-              "Markdown/AsciiDoc/Confluence/JIRA/Notion-compatible formats",
+              "Markdown / AsciiDoc / Confluence / JIRA / Notion-compatible formats",
             subTitle: null,
           },
         ]}
@@ -234,8 +234,11 @@ export default function Page() {
             desc: "due to centralized knowledge base",
           },
         ]}
+        onbuttonClicked={() =>
+          showHubSpotForm("documentation-support-download-one-pager")
+        }
         buttonClicked={() =>
-          showHubSpotForm("intelligent-ticketing-download-one-pager")
+          showHubSpotForm("documentation-support-download-one-pager")
         }
       />
       <div className="container">
@@ -246,6 +249,7 @@ export default function Page() {
         />
       </div>
       <UseCases
+        buttonText={null}
         data={[
           {
             title: "Your products release monthly/bi-weekly,",
@@ -427,6 +431,9 @@ export default function Page() {
       <WhyCalsoft
         sectionDescription=""
         buttonText="Download One Pager"
+        buttonClick={() =>
+          showHubSpotForm("documentation-support-download-one-pager")
+        }
         data={{
           tableHeadings: [
             "Capability",

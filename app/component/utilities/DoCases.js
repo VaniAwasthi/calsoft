@@ -24,7 +24,7 @@ export const Do = ({
   buttonText,
   link,
   secId,
-  onButtonClick
+  onButtonClick,
 }) => {
   return (
     <>
@@ -241,8 +241,7 @@ export const Do = ({
                         text={buttonText}
                         image={ButtonImage}
                         hoverImage={ButtonImage}
-                                                    onClick={onButtonClick}
-
+                        onClick={onButtonClick}
                       />
                     </motion.div>
                   )}
@@ -267,7 +266,7 @@ export const Cases = ({
   ButtonImage,
   secId,
   direction,
-  onButtonClick
+  onButtonClick,
 }) => {
   return (
     <>
@@ -435,7 +434,7 @@ export const BusinessValue = ({
   valueItems,
   ButtonImage,
   secId,
-  onButtonClick
+  onButtonClick,
 }) => {
   return (
     <>
@@ -469,7 +468,7 @@ export const BusinessValue = ({
             </p>
 
             {buttonText && (
-              <div className="big_btn w-[250px] md:w-[300px] mt-10">
+              <div className="big_btn w-fit whitespace-nowrap mt-10">
                 <motion.div
                   initial={{ x: -50, opacity: 0 }}
                   whileInView={{ x: 0, opacity: 1 }}
@@ -513,7 +512,7 @@ export const BusinessValue = ({
   );
 };
 
-export const StartSection = ({ data, secId ,}) => {
+export const StartSection = ({ data, secId }) => {
   return (
     <>
       <section
@@ -568,15 +567,15 @@ export const SprintTimeline = ({
   heading,
   buttonText,
   ButtonImage,
-  onClick
+  onClick,
 }) => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
   };
-  const onButtonClick=()=>{
-      showHubSpotForm("start-today")
-    }
+  const onButtonClick = () => {
+    showHubSpotForm("start-today");
+  };
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
@@ -711,7 +710,13 @@ export const SprintTimeline = ({
   );
 };
 
-export const FooterBg = ({ lightContent, link, ContactImg, ButtonImage , onClick}) => {
+export const FooterBg = ({
+  lightContent,
+  link,
+  ContactImg,
+  ButtonImage,
+  onClick,
+}) => {
   return (
     <>
       <section>
@@ -741,7 +746,7 @@ export const FooterBg = ({ lightContent, link, ContactImg, ButtonImage , onClick
                     text="Connect With Us"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
-                     onClick={()=>showHubSpotForm("contact-us-popup")}
+                    onClick={() => showHubSpotForm("contact-us-popup")}
                   />
                 </motion.div>
               </div>
@@ -762,11 +767,14 @@ export const InterfaceCard = ({
   imageSrc,
   ButtonImage,
   secId,
-  onButtonClick
+  onButtonClick,
 }) => {
   return (
     <>
-      <section className="relative container mx-auto !px-0 md:px-4 md:!my-14 !my-8" id={secId}>
+      <section
+        className="relative container mx-auto !px-0 md:px-4 md:!my-14 !my-8"
+        id={secId}
+      >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -785,7 +793,7 @@ export const InterfaceCard = ({
                   {description}
                 </p>
                 {buttonText && (
-                  <div className="big_btn w-[250px] md:w-[300px] mt-10 shadow_btn">
+                  <div className="big_btn w-fit whitespace-nowrap mt-10 shadow_btn">
                     <motion.div
                       initial={{ x: -50, opacity: 0 }}
                       whileInView={{ x: 0, opacity: 1 }}

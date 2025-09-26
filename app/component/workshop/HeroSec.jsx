@@ -412,7 +412,7 @@ export const CaseStudySection = ({ recommendedData }) => {
               text="Download Case Study"
               image={ButtonImage}
               hoverImage={ButtonImage}
-              className="!w-[300px] !h-[40px] md:!w-[300px] md:!h-[48px]"
+              className="w-fit whitespace-nowrap !h-[40px] md:!h-[48px]"
             />
           </motion.div>
         </div>

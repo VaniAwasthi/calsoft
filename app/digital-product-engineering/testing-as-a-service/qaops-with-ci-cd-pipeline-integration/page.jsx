@@ -35,7 +35,7 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={Img}
-        buttonClicked={()=>showHubSpotForm("request-free-assessment")}
+        onButtonClicked={() => showHubSpotForm("request-free-assessment")}
         buttonText2=""
       />
       <WhyItMatters
@@ -109,13 +109,12 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title:
-            "Shift-left QA with 90% pipeline coverage.",
+          title: "Shift-left QA with 90% pipeline coverage.",
           buttonText: "Book a Meeting",
-          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+          onButtonClicked: () => showHubSpotForm("book-a-meeting"),
         }}
         buttonText="Download One Pager"
-        onPagerButton={()=>showHubSpotForm("qaops-one-pg")}
+        onPagerButton={() => showHubSpotForm("qaops-one-pg")}
       />
       <UseCases
         data={[
@@ -222,9 +221,7 @@ const Page = () => {
         ]}
       />
       <ContactSecDataAi
-        lightContent={
-          "Integrate QAOps seamlessly into CI/CD pipelines."
-        }
+        lightContent={"Integrate QAOps seamlessly into CI/CD pipelines."}
       />
     </>
   );

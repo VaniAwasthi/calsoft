@@ -11,7 +11,7 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import BenchmarkingMatter from "../../../component/testing/BenchmarkingMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
-import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_6.webp"
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_6.webp";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
@@ -30,10 +30,12 @@ const Page = () => {
       <HeroSection
         title="Know Before You Grow — Benchmark with Intent"
         description="Establish performance, scalability, and quality baselines before your next release, migration, or modernization effort — with Calsoft’s Benchmarking Readiness service."
-        buttonText="Request Free Assessment" activeTab={activeTab}
-        setActiveTab={setActiveTab} navItems={navItems}
+        buttonText="Request Free Assessment"
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        navItems={navItems}
         heroImage={Img}
-        onButtonClicked={()=>showHubSpotForm("request-free-assessment")}
+        onButtonClicked={() => showHubSpotForm("request-free-assessment")}
         buttonText2=""
       />
       <WhyItMatters
@@ -46,7 +48,7 @@ const Page = () => {
       <IntelligentPlanning
         heading="Measure What Matters — Precisely."
         description="We help enterprises define what to benchmark, how to measure it, and what to expect, based on application type, usage model, and business goals."
-        buttonText="Request POC"
+        buttonText="Talk to Expert"
         data={[
           {
             title: "Define KPIs",
@@ -112,16 +114,15 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title:
-            "Achieve 100% release readiness through benchmarks.",
+          title: "Achieve 100% release readiness through benchmarks.",
           buttonText: "Book a Meeting",
-          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
+          onButtonClicked: () => showHubSpotForm("book-a-meeting"),
         }}
         buttonText="Download One Pager"
-        onPagerButton={()=>showHubSpotForm("benchmarking-readiness-one-pg")}
+        onPagerButton={() => showHubSpotForm("benchmarking-readiness-one-pg")}
       />
       <UseCases
-      description="Calsoft’s Benchmarking Readiness service has been successfully applied across:"
+        description="Calsoft’s Benchmarking Readiness service has been successfully applied across:"
         data={[
           {
             title: "Cloud migration",
@@ -148,7 +149,11 @@ const Page = () => {
       <WhyCalsoft
         sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
         data={{
-          tableHeadings: ["Capability", "Calsoft Benchmarking Readiness", "Ad-Hoc Performance Tests"],
+          tableHeadings: [
+            "Capability",
+            "Calsoft Benchmarking Readiness",
+            "Ad-Hoc Performance Tests",
+          ],
           tableContent: [
             {
               name: "Business-KPI-Driven Benchmark Design",

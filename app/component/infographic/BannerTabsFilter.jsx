@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
@@ -14,6 +16,7 @@ import { WhitepaperCards } from "../whitepaper/WhitepaperCard";
 import { DataSheetCards } from "../dataSheet/DatasheetCards";
 import { VideoCards } from "../video/VideoCards";
 import { CaseStudiesCard } from "../caseStudies/CaseStudiesCard";
+
 const tabs = [
   {
     id: "case-study",
@@ -53,9 +56,9 @@ const tabs = [
   },
 ];
 
-export const BannerInfo = ({ heading,BannerBg }) => {
+export const BannerInfo = ({ heading, BannerBg }) => {
   return (
-     <div className="relative w-full h-[500px] md:h-[500px] lg:h-[500px]">
+    <div className="relative w-full h-[500px] md:h-[500px] lg:h-[500px]">
       {/* Background Image */}
       <Image
         src={BannerBg}
@@ -93,7 +96,7 @@ export const BannerInfo = ({ heading,BannerBg }) => {
   );
 };
 
-export const TabsInfo = ({ defaultTab }) => {
+export const TabsInfo = ({ defaultTab, industry }) => {
   const [activeTab, setActiveTab] = useState(defaultTab || tabs[0].id);
 
   // Function to render the content based on the active tab
