@@ -3,40 +3,39 @@ import { motion } from "framer-motion";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 
-export default function WhyCalsoft({
-  sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here's how we stand apart:",
-  title = "Competitive Edge",
-  buttonText = "Download Case Study",
-  buttonClick = () => {},
+export default function WhatMakeUIIntelliegnt({
+  sectionDescription = "Core Principles We Engineer Into Your UI:",
+  buttonText = "Talk to Expert",
+  title = "Intelligent UI is not just UI with AI. It is situational awareness + real-time guidance + adaptive rendering.",
   id = "why-calsoft",
-  heading = "Why Calsoft",
+  heading = "What Makes a UI Intelligent?",
   data = {
-    tableHeadings: ["Feature", "Calsoft", "Traditional Vendors"],
+    tableHeadings: ["Principle", "Manifestation", "Result"],
     tableContent: [
       {
-        name: "Workload Suitability Mapping",
-        calsoft: "Yes",
-        vendor: "Generic Mapping",
+        name: "Behavioral Prediction",
+        calsoft: "Auto-suggested actions based on usage patterns",
+        vendor: "35% faster task completion",
       },
       {
-        name: "DevOps-Aware Infra Planning",
-        calsoft: "Integrated",
-        vendor: "Afterthought",
+        name: "Contextual Personalization",
+        calsoft: "Adaptive UI by role, time, device, workflow",
+        vendor: "3x engagement vs static UIs",
       },
       {
-        name: "IP-led Cost & Performance Tools",
-        calsoft: "Available",
-        vendor: "Manual Calculations",
+        name: "Action Scoring Engine",
+        calsoft: "Interface optimizes CTA placement in real-time",
+        vendor: "60% higher conversion opportunity",
       },
       {
-        name: "AI-Driven Optimization Insights",
-        calsoft: "Built-In",
-        vendor: "Lacking",
+        name: "Microfeedback Loops",
+        calsoft: "UI elements train themselves via usage feedback",
+        vendor: "Self-improving interactions",
       },
       {
-        name: "OEM Co-Engineering Partnerships",
-        calsoft: "Active",
-        vendor: "Limited",
+        name: "System Awareness",
+        calsoft: "UI reflects system health/load/input states",
+        vendor: "50% fewer failed actions",
       },
     ],
   },
@@ -70,7 +69,7 @@ export default function WhyCalsoft({
   );
 
   return (
-    <div id={id} className="max-w-7xl mx-auto px-6 container">
+    <div id={id} className="max-w-7xl mx-auto px-6 container overflow-x-hidden">
       <div className="h-8" />
       {/* Header Section */}
       <div className="mb-8">
@@ -86,7 +85,7 @@ export default function WhyCalsoft({
             viewport={{ once: false, amount: 0.3 }}
             className="max-w-2xl"
           >
-            <h2 className="text-black text-xl sm:text-2xl lg:text-3xl font-bold mb-4">
+            <h2 className="text-black text-xl sm:text-2xl lg:text-base mb-4">
               {title}
             </h2>
             {sectionDescription && (
@@ -95,22 +94,19 @@ export default function WhyCalsoft({
               </p>
             )}
           </motion.div>
-          {buttonText && (
-            <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: false, amount: 0.3 }}
-            >
-              <ButtonLayout
-                text={buttonText}
-                image={buttonImage}
-                hoverImage={buttonImage}
-                className={"w-fit"}
-                onClick={buttonClick}
-              />
-            </motion.div>
-          )}
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <ButtonLayout
+              text={buttonText}
+              image={buttonImage}
+              hoverImage={buttonImage}
+              className={"w-fit"}
+            />
+          </motion.div>
         </div>
       </div>
 
