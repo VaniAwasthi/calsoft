@@ -18,7 +18,6 @@ export default function Page() {
       <Promises />
       <LifeAtCalsoft />
       <SendResume />
-      {/* <ReferSomeone /> */}
     </>
   );
 }

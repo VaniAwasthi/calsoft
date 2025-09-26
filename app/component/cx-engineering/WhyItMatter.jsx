@@ -1,13 +1,14 @@
 import ButtonLayout from "../../component/utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
 import { motion } from "framer-motion";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function WhyItMatters({
-  buttonText = "Download Case Study",
-  buttonClicked,
+  buttonText = "Get in Touch",
+  buttonClicked = () => showHubSpotForm("get-in-touch"),
 }) {
   return (
-    <section className="px-6 py-12 md:px-16 lg:px-24">
+    <section id="why-it-matters" className="px-6 py-12 md:px-16 lg:px-24">
       <div className="grid md:grid-cols-[1fr_2fr] gap-8 items-start">
         {/* Left Side */}
         <div>

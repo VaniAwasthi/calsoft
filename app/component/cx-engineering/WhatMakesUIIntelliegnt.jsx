@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "../../assets/home/buttonImg.webp";
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function WhatMakeUIIntelliegnt({
   sectionDescription = "Core Principles We Engineer Into Your UI:",
@@ -105,6 +106,7 @@ export default function WhatMakeUIIntelliegnt({
               image={buttonImage}
               hoverImage={buttonImage}
               className={"w-fit whitespace-nowrap"}
+              onClick={() => showHubSpotForm("talk-to-expert")}
             />
           </motion.div>
         </div>
