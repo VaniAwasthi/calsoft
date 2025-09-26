@@ -19,7 +19,7 @@ export function DesignTabsComponent({
           "35% lower training costs",
           "60% less data-to-action latency",
         ],
-        buttonText: "See ROI of Intelligent UI",
+        // buttonText: "See ROI of Intelligent UI",
       },
     },
     {
@@ -74,7 +74,7 @@ export function DesignTabsComponent({
       },
     },
   ],
-  buttonText = "See ROI of Intelligent UI",
+  buttonText = "",
   onButtonClick = () => {},
 }) {
   const [activeTab, setActiveTab] = useState("business-first");
