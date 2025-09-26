@@ -26,20 +26,22 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "origin.calsoft.org",
-        pathname: "/**", // covers /admin/assets/dist/uploads/**
+        pathname: "/**",
       },
       {
         protocol: "http",
         hostname: "origin.calsoft.org",
         pathname: "/**",
       },
+
+      // www.calsoftinc.com
       {
-        protocol: "http",
+        protocol: "https",
         hostname: "www.calsoftinc.com",
         pathname: "/**",
       },
       {
-        protocol: "https",
+        protocol: "http",
         hostname: "www.calsoftinc.com",
         pathname: "/**",
       },
@@ -56,7 +58,15 @@ const nextConfig = {
         pathname: "/**",
       },
 
-      // YouTube images
+      // cms.calsoft.org (with port 4000)
+      {
+        protocol: "https",
+        hostname: "cms.calsoft.org",
+        port: "4000",
+        pathname: "/**",
+      },
+
+      // YouTube thumbnails
       {
         protocol: "https",
         hostname: "img.youtube.com",

@@ -158,7 +158,7 @@ export const VideoCards = () => {
                     <ButtonLayout
                       text="Read More"
                       hoverImage={ButtonImage}
-                      className="!h-[40px] !w-[150px]"
+                      className="!h-[40px] !w-[180px]"
                     />
                     <div className="flex flex-col">
                       <button

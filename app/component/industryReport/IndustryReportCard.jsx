@@ -197,7 +197,7 @@ export const IndustryReportCard = () => {
                         onClick={() => handleClick(item)}
                         text="Read More"
                         hoverImage={ButtonImage}
-                        className="!h-[40px] !w-[150px]"
+                        className="!h-[40px] !w-[200px]"
                       />
                       <button
                         onClick={() => handleCopy(item.link, item.id)}
