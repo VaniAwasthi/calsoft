@@ -5,7 +5,7 @@ import code from "@/app/assets/caltia/code.webp";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function TestCase() {
+export default function TestCase({secId}) {
   const data = [
     "On-Prem test case generation using AI for specific code change",
     "Leveraging LLMs to identify gaps in existing test suites and generate missing tests",
@@ -14,7 +14,7 @@ export default function TestCase() {
     "Seamless CI/CD integration to transform continuous testing services",
   ];
   return (
-    <div className="container">
+    <div className="container" id={secId}>
       <div className="flex flex-col lg:flex-row gap-5 mb-12">
         <motion.div
           initial={{ x: -50, opacity: 0 }}

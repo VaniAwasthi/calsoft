@@ -15,12 +15,11 @@ import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Features",
+    "Why it Matters",
     "Benefits",
-    "Test",
-    "Validate",
-    "Integrate to Pipeline",
-    "How to Start",
+    "Values",
+    "Integration",
+    "Why CalPSR",
   ];
   return (
     <>
@@ -37,12 +36,13 @@ const Page = () => {
         buttonClicked2={()=>showHubSpotForm("download-vmware-whitepaper")}
         
       />
-      <SystemTest />
-      <RealWorldBenefits />
-      <BookaMeeting />
-      <TestAll />
-      <ConventionalTool />
-      <ManufacturingEcosystem />
+      
+      <SystemTest secId="why-it-matters" />
+      <RealWorldBenefits secId="benefits"/>
+      <BookaMeeting  />
+      <TestAll secId="values"/>
+      <ConventionalTool secId="integration" />
+      <ManufacturingEcosystem secId="why-calpsr"/>
     </>
   );
 };

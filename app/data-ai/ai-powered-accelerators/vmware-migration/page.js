@@ -16,12 +16,10 @@ import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
-    "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
-    "Why Calsoft",
-    "How to Start",
+    "Why Migrate",
+    "Integration",
+    "Migration Solution",
+    "What We Offer",
   ];
   return (
     <>
@@ -37,8 +35,8 @@ const Page = () => {
          onClick={()=>showHubSpotForm("check-your-readiness")}
                 buttonClicked2={()=>showHubSpotForm("download-vmware-whitepaper")}
       />
-      <PrefferedPlatform />
-      <WhyMigrate />
+      <PrefferedPlatform  />
+      <WhyMigrate secId="why-migrate" />
       <div className="mt-5 mb-10">
         <div className="container">
           <BookMeeting
@@ -51,9 +49,9 @@ const Page = () => {
           />
         </div>
       </div>
-      <VmwareMigration />
-      <CheckIn  onClick={()=>showHubSpotForm("request-vmware-poc")}/>
-      <ManufacturingEcosystem />
+      <VmwareMigration  secId="integration"/>
+      <CheckIn  onClick={()=>showHubSpotForm("request-vmware-poc")} secId="migration-solution"/>
+      <ManufacturingEcosystem secId="what-we-offer" text="Simplify VMware migrations with speed, accuracy, and confidence." />
     </>
   );
 };
