@@ -98,7 +98,7 @@ export const HeroSectionWhitePaper = ({
                     text={buttonLabel}
                     image={buttonImage}
                     hoverImage={hoverImage}
-                    className="!w-[210px] !h-[40px] md:!w-[220px] md:!h-[48px]"
+                    className="!w-[230px] !h-[40px] md:!w-[250px] md:!h-[48px]"
                   />
                 </div>
               </motion.div>

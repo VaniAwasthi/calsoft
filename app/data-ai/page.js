@@ -122,8 +122,7 @@ buttonLink:"/data-ai/ai-powered-accelerators/calsoft-performance-scalability-and
         
       />
       <ContactSecDataAi
-        lightContent="Our services speak "
-        BoldContent="for themselves, but we can talk too!”"
+        lightContent="Our services speak for themselves, but we can talk too!"
         link="#"
       />
     </>

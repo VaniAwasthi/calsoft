@@ -39,7 +39,7 @@ export default function ClientCaseStudy({
         "Reduced deployment time by 75% through automated testing and continuous integration",
       image: Card_1,
     },
-  ],
+  ], secId
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3);
@@ -79,7 +79,7 @@ export default function ClientCaseStudy({
   );
 
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
+    <section className="py-16 px-4 max-w-7xl mx-auto" id={secId}>
       {/* Header */}
       <div className="flex items-center justify-between mb-12">
         <h2 className="text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent">

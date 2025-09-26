@@ -13,6 +13,7 @@ import TabImg4 from "../../assets/ai-accelerators/caltia/Features-File-2025_Easy
 import TabImg5 from "../../assets/ai-accelerators/caltia/Features-File_Programming-language-and-Domain-Agnostic-1.webp"
 import TabImg6 from "../../assets/ai-accelerators/caltia/Features-File-2025_ON-Prem-Solution.webp"
 import TabImg7 from "../../assets/ai-accelerators/caltia/Features-File-2025_Test-Intelligence-Platform-–-Redefining-Efficiency.webp"
+import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 
 export default function TabsComponent({
@@ -109,14 +110,14 @@ export default function TabsComponent({
       },
     },
   ],
-}) {
+secId="why-it-matters"} ) {
   const [activeTab, setActiveTab] = useState(tabsData[0].id);
 
   const activeTabData = tabsData.find((tab) => tab.id === activeTab);
 
   return (
     <>
-      <div className="flex flex-col gap-y-5">
+      <div id={secId} className="flex flex-col gap-y-5">
         <div className="mt-8 mb-5">
           <motion.p
             initial={{ x: -50, opacity: 0 }}
@@ -213,6 +214,7 @@ export default function TabsComponent({
           <BookMeeting
             img={meeting}
             title="Cut testing time by 60% with CalTIA."
+            buttonClicked={()=>showHubSpotForm("book-a-meeting")}
           />
         </div>
       </div>

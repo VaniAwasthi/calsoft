@@ -287,9 +287,10 @@ const WhyMigrate = ({
       variant: "white",
     },
   ],
+  secId
 }) => {
   return (
-    <div className="container space-y-8">
+    <div className="container space-y-8" id={secId}>
       <p className="text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_50%)] bg-clip-text text-transparent">
         {title}
       </p>
@@ -419,9 +420,10 @@ const VmwareMigration = ({
       ],
     },
   ],
+  secId
 }) => {
   return (
-    <div className="my-10">
+    <div className="my-10" id={secId}>
       <div className="container space-y-6 lg:space-y-0">
         {migrationData.map((section, index) => (
           <MigrationSection key={index} {...section} />
@@ -581,9 +583,10 @@ const CheckIn = ({
       isTopPosition: true,
     },
   ],
+  secId
 }) => {
   return (
-    <div className="space-y-5 bg-[#f7f7f7] pt-10">
+    <div className="space-y-5 bg-[#f7f7f7] pt-10" id={secId}>
       <div className="container flex justify-between items-center gap-5 xl:gap-8 lg:flex-row flex-col">
         <motion.p
           initial={{ x: -50, opacity: 0 }}

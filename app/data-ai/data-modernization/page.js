@@ -71,9 +71,7 @@ export default function Page() {
       <Real2Sec />
       <ProactiveSec />
       <ContactSecDataAi
-        BoldContent="Let’s talk! "
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Modernize legacy systems to unlock future-ready intelligence."
       />
     </>
   );

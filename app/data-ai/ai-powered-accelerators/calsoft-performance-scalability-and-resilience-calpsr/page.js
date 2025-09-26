@@ -16,11 +16,10 @@ const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
   const navItems = [
     "Why it Matters",
-    "Intelligent Planning",
-    "Business Value",
-    "Use Cases",
-    "Why Calsoft",
-    "How to Start",
+    "Benefits",
+    "Values",
+    "Integration",
+    "Why CalPSR",
   ];
   return (
     <>
@@ -37,12 +36,13 @@ const Page = () => {
         buttonClicked2={()=>showHubSpotForm("download-vmware-whitepaper")}
         
       />
-      <SystemTest />
-      <RealWorldBenefits />
-      <BookaMeeting />
-      <TestAll />
-      <ConventionalTool />
-      <ManufacturingEcosystem />
+      
+      <SystemTest secId="why-it-matters" />
+      <RealWorldBenefits secId="benefits"/>
+      <BookaMeeting  />
+      <TestAll secId="values"/>
+      <ConventionalTool secId="integration" />
+      <ManufacturingEcosystem secId="why-calpsr"/>
     </>
   );
 };

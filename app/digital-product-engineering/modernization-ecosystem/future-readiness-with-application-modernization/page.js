@@ -39,9 +39,7 @@ const Page = () => {
         <FooterBg
           ContactImg={ContactImg}
           ButtonImage={ButtonImage}
-          lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?
-
-                "
+          lightContent="Prepare systems and teams for future readiness."
           link="#"
         />
       </div>

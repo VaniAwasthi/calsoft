@@ -259,7 +259,7 @@ export const PressReleaseCard = () => {
                     <ButtonLayout
                       text="Read More"
                       hoverImage={ButtonImage}
-                      className="!h-[40px] !w-[150px]"
+                      className="!h-[40px] !w-[200px]"
                       onClick={() => handleClick(item)}
                     />
 

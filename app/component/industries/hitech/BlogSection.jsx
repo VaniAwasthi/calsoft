@@ -32,6 +32,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogListLimit } from "../../../store/actions/blogAction";
 import { baseUrl } from "../../../../config";
 import Link from "next/link";
+import { showHubSpotForm } from "../../utilities/showHubSpotForm";
 
 export const BlogSection = () => {
   const dispatch = useDispatch();
@@ -56,7 +57,7 @@ export const BlogSection = () => {
 
   return (
     <>
-      <section id="case-studies" className="md:py-10">
+      <section id="success-stories" className="md:py-10">
         <div className="container mx-auto px-4 xl:px-20">
           <h1 className="text-4xl font-bold">Latest Case Studies</h1>
           <div className="relative w-full py-8">
@@ -123,7 +124,7 @@ export const BlogSection = () => {
   );
 };
 
-export const TopPartners = ({secId}) => {
+export const TopPartners = () => {
   const data = {
     colSpan: 9,
     gridCols: 5,
@@ -141,7 +142,7 @@ export const TopPartners = ({secId}) => {
   };
   return (
     <>
-      <section className="md:py-14" id={secId}>
+      <section className="md:py-14" id="partners">
         <div className="container mx-auto px-4 xl:px-20">
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
@@ -208,7 +209,6 @@ export const ContactSec = ({ lightContent, link, buttonClicked }) => {
             <div className="space-y-6 text-left md:text-left">
               <h2 className="text-md md:text-3xl font-normal leading-snug">
                 {lightContent} <br />
-                <span className="font-bold">let’s talk!</span>
               </h2>
 
               {/* <form className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4">
@@ -229,7 +229,7 @@ export const ContactSec = ({ lightContent, link, buttonClicked }) => {
                     text="Contact Us"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
-                    onClick={buttonClicked}
+                    onClick={()=>showHubSpotForm("contact-us-popup")}
                   />
                 </motion.div>
               

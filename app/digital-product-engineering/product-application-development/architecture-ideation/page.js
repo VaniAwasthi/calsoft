@@ -104,9 +104,7 @@ const Page = () => {
       <Steps />
       {/* <ArchitectureSprint /> */}
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
-        lightContent="Design innovative solutions with future-ready architectures. "
-        link="#"
+        lightContent="Design innovative solutions with future-ready architectures."
       />
     </>
   );

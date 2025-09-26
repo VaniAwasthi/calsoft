@@ -137,10 +137,11 @@ export default function WhyItMatters({
     },
   ],
   img = image,
-  buttonClicked
+  buttonClicked,
+  id
 }) {
   return (
-    <div id="why-it-matters" className="container">
+    <div id={id} className="container">
       <div className="h-10" />
       <div className="flex flex-col justify-center gap-12">
         {/* Upper content */}

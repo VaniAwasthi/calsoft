@@ -288,9 +288,7 @@ const Page = () => {
       />
       {/* <ArchitectureSprint /> */}
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
         lightContent="Deliver end-to-end value with full-cycle development. "
-        link="#"
       />
     </>
   );

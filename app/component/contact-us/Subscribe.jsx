@@ -36,7 +36,7 @@ export default function Subscribe() {
             className="placeholder-white text-white
              focus:outline-none focus:ring-0 pl-8 py-3"
           />
-          <button className="text-[#2E3092] p-7 rounded-lg bg-white">
+          <button className="text-[#2E3092] p-7 rounded-lg bg-white cursor-pointer">
             Subcribe
           </button>
         </motion.div>

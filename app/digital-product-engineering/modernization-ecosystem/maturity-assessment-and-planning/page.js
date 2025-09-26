@@ -45,8 +45,7 @@ function Page() {
         <FooterBg
           ContactImg={ContactImg}
           ButtonImage={ButtonImage}
-          lightContent="Assess maturity and plan transformation with confidence.
-                "
+          lightContent="Assess maturity and plan transformation with confidence."
               
         />
       </div>

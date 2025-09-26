@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function BookDemoForm() {
+export default function BookDemoForm({secId}) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="max-w-6xl mx-auto p-8 bg-white">
+    <div className="max-w-6xl mx-auto p-8 bg-white" id={secId}>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         {/* Left Column */}
         <div className="space-y-8">
@@ -32,15 +32,16 @@ export default function BookDemoForm() {
               accelerates product releases with intelligent solutions.
             </motion.p>
           </div>
-          <motion.button
-            onClick={() => setOpen(true)}
-            initial={{ x: -50, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            viewport={{ once: false, amount: 0.3 }}
-            className="flex items-center gap-3 px-8 py-4 rounded-lg text-white font-semibold text-lg transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#2e3092" }}
-          >
+ <motion.button
+        onClick={() => setOpen(true)}
+        initial={{ x: -50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="cursor-pointer flex items-center gap-3 px-8 py-4 rounded-lg text-white font-semibold text-lg transition-opacity hover:opacity-90"
+        style={{ backgroundColor: "#2e3092" }}
+      >
+        
             <span>Watch the Teaser</span>
             <div className="flex items-center gap-1">
               <svg
@@ -181,7 +182,7 @@ export default function BookDemoForm() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-lg text-white font-bold text-lg transition-opacity hover:opacity-90"
+            className="cursor-pointer w-full flex items-center justify-center gap-3 px-8 py-4 rounded-lg text-white font-bold text-lg transition-opacity hover:opacity-90"
             style={{ backgroundColor: "#ba0007" }}
           >
             <span>Submit</span>

@@ -13,9 +13,7 @@ const Page = () => {
       <BannerInfo heading="In-Depth Research & Insights" BannerBg={Banner} />
       <TabsInfo defaultTab="whitepapers" />
       <ContactSec
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
-      />
+      lightContent="Dive deep into research-backed technology perspectives."      />
     </>
   );
 };

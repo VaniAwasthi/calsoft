@@ -250,7 +250,7 @@ export const CalsoftNews = () => {
                     {data.map((item) => (
                       <SwiperSlide key={item.id} className="items-center">
                         <motion.div
-                          className={`cursor-pointer relative rounded-lg mb-6 transition-all duration-500 ${
+                          className={`relative rounded-lg mb-6 transition-all duration-500 ${
                             selected.id === item.id ? "scale-105" : "scale-90"
                           }`}
                           onClick={() => setSelected(item)}

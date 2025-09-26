@@ -365,7 +365,6 @@ const Page = () => {
         heading="10-Day Smart Interface Sprint: Step-by-Step"
       />
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
         lightContent="Modernize experiences to match evolving expectations. "
       />
     </>

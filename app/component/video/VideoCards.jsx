@@ -155,11 +155,11 @@ export const VideoCards = () => {
                   </h3>
                   <p>{item.speaker}</p>
                   <div className="flex items-center justify-between my-2 h-1/4">
-                    <ButtonLayout
+                    {/* <ButtonLayout
                       text="Read More"
                       hoverImage={ButtonImage}
-                      className="!h-[40px] !w-[150px]"
-                    />
+                      className="!h-[40px] !w-[180px]"
+                    /> */}
                     <div className="flex flex-col">
                       <button
                         onClick={(e) => {
