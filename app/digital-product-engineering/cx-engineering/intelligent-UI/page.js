@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
@@ -20,6 +21,7 @@ import mobile3 from "../../../assets/DigitalEngineering/maturity/mobile3.svg";
 import img from "@/app/assets/DigitalEngineering/CX/CX Engineering 2.webp";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 import { DesignTabsComponent } from "@/app/component/cx-engineering/ThinkAhead";
+import MethodologyTabs from "@/app/component/cx-engineering/Methodology";
 
 const Page = () => {
   const navItems = [
@@ -45,6 +47,7 @@ const Page = () => {
       />
       <WhyItMattersIntelligentUi />
       <WhatMakeUIIntelliegnt />
+      <MethodologyTabs />
       <WhatWeOffer
         id="what-we-offer"
         heading="Detect, Don’t Just Display - Smart Interfaces Observe. React. Guide."
@@ -291,37 +294,8 @@ const Page = () => {
             desc: "Inventory + order workflows optimized for touch and mobility",
           },
         ]}
-        data={{
-          leftSideContent: {
-            title: "Interfaces That Deliver More Than Screens.",
-            subTitle: "",
-            description:
-              "Calsoft-designed interfaces don’t just look good—they deliver:",
-          },
-          rightSideContent: [
-            {
-              title: "35%",
-              subTitle: "reduction in process completion time",
-            },
-            {
-              title: "Up to 50%",
-              subTitle:
-                "increase in self-serve actions → less strain on support",
-            },
-            {
-              title: "4X",
-              subTitle: "faster onboarding via intuitive, guide-based UI",
-            },
-            {
-              title: "30-40%",
-              subTitle: "improvement in task accuracy",
-            },
-          ],
-        }}
-        bookMeetingData={{
-          title: "Modernize legacy UIs 3x faster with low-code.",
-          buttontext: "Book a Meeting",
-        }}
+        data={null}
+        bookMeetingData={null}
       />
       <DesignTabsComponent />
       {/* <DesignAhead /> */}
@@ -391,9 +365,7 @@ const Page = () => {
         ]}
         heading="Intelligent UI Sprint (12-Day Engagement)"
       />
-      <ContactSecDataAi
-        lightContent="Craft intelligent UIs that adapt and respond smartly."
-      />
+      <ContactSecDataAi lightContent="Craft intelligent UIs that adapt and respond smartly." />
     </>
   );
 };

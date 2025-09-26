@@ -135,120 +135,124 @@ export default function Component({
             </motion.div>
           </div>
         </div>
-        {/* Book a meeting */}
-        <div
-          id="business-value"
-          className="w-full h-60 sm:h-40 relative rounded-xl overflow-hidden mt-12"
-        >
-          <Image
-            src={predict}
-            alt={"book a meeting"}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute top-0 w-full h-full bg-[#2e309293] bg-[linear-gradient(90deg,rgba(46,48,146,0.7)_0%,rgba(46,48,146,0.5)_60%,rgba(255,255,255,0)_100%)] text-white">
-            <div className="w-full h-full flex flex-col sm:flex-row justify-start sm:justify-between sm:items-center items-start gap-5 p-5">
-              <motion.p
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="text-3xl sm:text-4xl font-medium"
-              >
-                {bookMeetingData.title}
-              </motion.p>
-              <motion.div
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: false, amount: 0.3 }}
-              >
-                <ButtonLayout
-                  onClick={buttonClick}
-                  text={bookMeetingData.buttontext}
-                  className="w-fit whitespace-nowrap"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </div>
-        {/* Download one pager */}
-        <div
-          className="w-full h-full relative rounded-xl overflow-hidden"
-          id={BussinessId}
-        >
-          <Image
-            src={img}
-            alt="agile work culture"
-            className="w-full object-cover"
-          />
-          <div className="absolute top-0 w-full h-full bg-[linear-gradient(90deg,rgba(46,48,146,0.95)_0%,rgba(46,48,146,0.9)_35%,rgba(255,255,255,0.0)_100%)] flex justify-between items-center">
-            <div className="w-[65%] h-full text-white">
-              <div className="h-full flex gap-8 items-center justify-between">
-                {/* Left content */}
-                <div className="flex-1 p-10 h-full flex flex-col gap-6 justify-center">
-                  <motion.p
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    className="text-3xl font-bold"
-                  >
-                    {data.leftSideContent.title}
-                  </motion.p>
+        {data && bookMeetingData && (
+          <>
+            {/* Book a meeting */}
+            <div
+              id="business-value"
+              className="w-full h-60 sm:h-40 relative rounded-xl overflow-hidden mt-12"
+            >
+              <Image
+                src={predict}
+                alt={"book a meeting"}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute top-0 w-full h-full bg-[#2e309293] bg-[linear-gradient(90deg,rgba(46,48,146,0.7)_0%,rgba(46,48,146,0.5)_60%,rgba(255,255,255,0)_100%)] text-white">
+                <div className="w-full h-full flex flex-col sm:flex-row justify-start sm:justify-between sm:items-center items-start gap-5 p-5">
                   <motion.p
                     initial={{ x: -50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                     viewport={{ once: false, amount: 0.3 }}
-                    className="text-xl font-semibold"
+                    className="text-3xl sm:text-4xl font-medium"
                   >
-                    {data.leftSideContent.subTitle}
-                  </motion.p>
-                  <motion.p
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.6 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    className="text-lg"
-                  >
-                    {data.leftSideContent.description}
+                    {bookMeetingData.title}
                   </motion.p>
                   <motion.div
-                    initial={{ x: -50, opacity: 0 }}
+                    initial={{ x: 50, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.7 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
                     viewport={{ once: false, amount: 0.3 }}
                   >
                     <ButtonLayout
-                      text={"Download One Pager"}
-                      onClick={buttonClick2}
-                      image={buttonImage}
-                      hoverImage={buttonImage}
-                      className={"w-fit mt-3"}
+                      onClick={buttonClick}
+                      text={bookMeetingData.buttontext}
+                      className="w-fit whitespace-nowrap"
                     />
                   </motion.div>
                 </div>
-                <div className="bg-white w-px h-[70%]" />
-                {/* Right Content */}
-                <div className="flex-1 flex gap-4 flex-col">
-                  {data.rightSideContent.map((ele, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ x: 50, opacity: 0 }}
-                      whileInView={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.5, delay: idx * 0.1 }}
-                      viewport={{ once: false, amount: 0.3 }}
-                    >
-                      <p className="text-4xl">{ele.title}</p>
-                      <p className="text-xl font-light">{ele.subTitle}</p>
-                    </motion.div>
-                  ))}
+              </div>
+            </div>
+            {/* Download one pager */}
+            <div
+              className="w-full h-full relative rounded-xl overflow-hidden"
+              id={BussinessId}
+            >
+              <Image
+                src={img}
+                alt="agile work culture"
+                className="w-full object-cover"
+              />
+              <div className="absolute top-0 w-full h-full bg-[linear-gradient(90deg,rgba(46,48,146,0.95)_0%,rgba(46,48,146,0.9)_35%,rgba(255,255,255,0.0)_100%)] flex justify-between items-center">
+                <div className="w-[65%] h-full text-white">
+                  <div className="h-full flex gap-8 items-center justify-between">
+                    {/* Left content */}
+                    <div className="flex-1 p-10 h-full flex flex-col gap-6 justify-center">
+                      <motion.p
+                        initial={{ x: -50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="text-3xl font-bold"
+                      >
+                        {data.leftSideContent.title}
+                      </motion.p>
+                      <motion.p
+                        initial={{ x: -50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="text-xl font-semibold"
+                      >
+                        {data.leftSideContent.subTitle}
+                      </motion.p>
+                      <motion.p
+                        initial={{ x: -50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.6 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        className="text-lg"
+                      >
+                        {data.leftSideContent.description}
+                      </motion.p>
+                      <motion.div
+                        initial={{ x: -50, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.7 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                      >
+                        <ButtonLayout
+                          text={"Download One Pager"}
+                          onClick={buttonClick2}
+                          image={buttonImage}
+                          hoverImage={buttonImage}
+                          className={"w-fit mt-3"}
+                        />
+                      </motion.div>
+                    </div>
+                    <div className="bg-white w-px h-[70%]" />
+                    {/* Right Content */}
+                    <div className="flex-1 flex gap-4 flex-col">
+                      {data.rightSideContent.map((ele, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ x: 50, opacity: 0 }}
+                          whileInView={{ x: 0, opacity: 1 }}
+                          transition={{ duration: 0.5, delay: idx * 0.1 }}
+                          viewport={{ once: false, amount: 0.3 }}
+                        >
+                          <p className="text-4xl">{ele.title}</p>
+                          <p className="text-xl font-light">{ele.subTitle}</p>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="w-[35%]"></div>
                 </div>
               </div>
-              <div className="w-[35%]"></div>
             </div>
-          </div>
-        </div>
+          </>
+        )}
       </div>
       <div className="h-8" />
     </div>
