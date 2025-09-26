@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
@@ -391,9 +392,7 @@ const Page = () => {
         ]}
         heading="Intelligent UI Sprint (12-Day Engagement)"
       />
-      <ContactSecDataAi
-        lightContent="Craft intelligent UIs that adapt and respond smartly."
-      />
+      <ContactSecDataAi lightContent="Craft intelligent UIs that adapt and respond smartly." />
     </>
   );
 };
