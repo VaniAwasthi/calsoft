@@ -48,13 +48,13 @@ const Submenu = ({ navItems, activeTab, setActiveTab }) => {
       <div className="w-full transition-all duration-300 py-3 text-white bg-[#2E3092]">
         <div className="relative flex items-center px-4 py-4 container mx-auto xl:px-20">
           <div className="flex items-center w-full overflow-x-scroll md:overflow-x-auto">
-            <div className="flex-shrink-0 mr-[1rem] xl:mr-[1rem] xl:ml-4">
+            <div className="flex-shrink-0 mr-[1rem] xl:mr-[1.5rem] xl:ml-4">
               <Image src={tabImg} alt="icon" className="w-5 h-5 object-cover" />
             </div>
 
             <motion.div
              
-              className="flex justify-between w-full text-sm md:text-base xl:ml-[1rem] items-center"
+              className="flex justify-between w-full text-sm md:text-base xl:mr-[3.5rem] items-center"
             >
               {navItems.map((item, index) => (
                 <div key={index} className="flex items-center justify-center">
