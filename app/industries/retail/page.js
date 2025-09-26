@@ -118,6 +118,8 @@ const Page = () => {
     image: Retailinfo1,
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
+    buttonClicked: () =>
+      showHubSpotForm("shopping-experiences-with-ai-case-study"),
   };
   const SectionTwo = {
     id: "forecasting",
@@ -141,6 +143,7 @@ const Page = () => {
     image: Retailinfo2,
     imagePosition: "left",
     bgColor: "bg-[#F8F9FA]",
+    buttonClicked: () => showHubSpotForm("retail-ensure-product-availability"),
   };
   const SectionThree = {
     id: "security",
@@ -164,6 +167,7 @@ const Page = () => {
     image: Retailinfo3,
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
+    buttonClicked: () => showHubSpotForm("secure-transactions-retail"),
   };
 
   return (

@@ -35,7 +35,7 @@ const Page = () => {
         navItems={navItems}
         heroImage={Img}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("access-readiness")}
+        onButtonClicked={() => showHubSpotForm("access-readiness")}
       />
       <WhyItMatters
         title="Persistent Gaps in Agile Testing"

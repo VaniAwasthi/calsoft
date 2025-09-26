@@ -35,7 +35,9 @@ const Page = () => {
         activeTab={activeTab}
         heroImage={img}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("Get-Architechure-Rediness-Score")}
+        onButtonClicked={() =>
+          showHubSpotForm("Get-Architechure-Rediness-Score")
+        }
       />
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."

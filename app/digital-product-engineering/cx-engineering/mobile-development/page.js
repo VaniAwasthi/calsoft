@@ -32,7 +32,7 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
-        buttonClicked={() => showHubSpotForm("request-cx-audit-standard")}
+        onButtonClicked={() => showHubSpotForm("request-cx-audit-standard")}
         buttonText2=""
       />
       <WhyItMatters

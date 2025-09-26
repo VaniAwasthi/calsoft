@@ -55,6 +55,7 @@ export const Herosection = ({
         descriptionClass="hidden md:block mt-4 text-[18px] leading-8 w-[200px] md:w-full"
         BgClassname="object-cover w-full h-full object-center"
         isCaseStudyButton={isCaseStudyButton}
+        caseStudyLink={"/insights/case-studies?industry=hitech"}
       />
       <Submenu
         navItems={navItems}

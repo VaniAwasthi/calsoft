@@ -16,6 +16,7 @@ const IndustriesBanner = ({
   titleTwoClass,
   descriptionClass,
   isCaseStudyButton,
+  caseStudyLink,
   onBtnClick,
 }) => {
   return (
@@ -77,7 +78,8 @@ const IndustriesBanner = ({
             {isCaseStudyButton && (
               <TransparentButtonLayout
                 text="View Case Study"
-                onClick={() => console.log("Case Study clicked")}
+                href={caseStudyLink}
+                onClick={() => {}}
                 className="hidden md:block"
               />
             )}

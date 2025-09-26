@@ -41,7 +41,7 @@ const Page = () => {
         navItems={navItems}
         setActiveTab={setActiveTab}
         heroImage={img}
-        buttonClicked={() => showHubSpotForm("book-your-devops-health-check")}
+        onButtonClicked={() => showHubSpotForm("book-your-devops-health-check")}
         buttonText2=""
       />
       <WhyItMatters

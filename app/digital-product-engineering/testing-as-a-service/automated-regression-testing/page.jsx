@@ -34,7 +34,7 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={Img}
-        buttonClicked={() => showHubSpotForm("request-free-assessment")}
+        onButtonClicked={() => showHubSpotForm("request-free-assessment")}
         buttonText2=""
       />
       <WhyItMatters

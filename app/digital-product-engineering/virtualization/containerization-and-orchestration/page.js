@@ -39,7 +39,7 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
-        buttonClicked={() => showHubSpotForm("talk-to-expert")}
+        onButtonClicked={() => showHubSpotForm("talk-to-expert")}
         buttonText2=""
       />
       <WhyItMatters
@@ -421,7 +421,7 @@ export default function Page() {
           ],
         }}
       />
-      <WhereItFits />
+      <WhereItFits buttonText="Start Today" />
       <ContactSecDataAi
         lightContent={
           "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"

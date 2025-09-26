@@ -1,4 +1,5 @@
 "use client";
+
 import {
   BlogSection,
   ContactSec,
@@ -11,10 +12,7 @@ import Banner from "../../assets/industries/telecom/TelecomBanner.webp";
 import TelecomInfo1 from "../../assets/industries/telecom/TelecomInfo1.webp";
 import TelecomInfo2 from "../../assets/industries/telecom/TelecomInfo2.webp";
 import TelecomInfo3 from "../../assets/industries/telecom/TelecomInfo3.webp";
-import {
-  Herosection,
-  TopClients,
-} from "../../../app/component/industries/hitech/Herosection.jsx";
+import { Herosection } from "../../../app/component/industries/hitech/Herosection.jsx";
 import IndustryIntelligence from "../../../app/component/industries/hitech/IndustryIntellegence.jsx";
 import Incon1 from "../../assets/industries/telecom/TelecomIcon1.svg";
 import Incon2 from "../../assets/industries/telecom/TelecomIcon2.svg";
@@ -30,7 +28,7 @@ const Page = () => {
     title2: "with intelligent automation",
     description: ` Network modernization and optimization are the bedrock of our innovative future. Telecom companies are at the center of it.
 We help telecoms with streamlining operations, automating networks, and enhancing service assurance with advanced cloud-native, AI-driven, and software-defined solutions.`,
-    buttonText: "Case Study",
+    buttonText: "Download Industry Report",
     image: Banner,
   };
   const [activeTab, setActiveTab] = useState("Journey");
@@ -119,6 +117,8 @@ Here, companies must deploy SDN, NFV, and AI-driven automation to simplify netwo
     image: TelecomInfo1,
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
+    buttonClicked: () =>
+      showHubSpotForm("automate-network-operations-case-study"),
   };
   const SectionTwo = {
     id: "networks",
@@ -143,6 +143,7 @@ Companies must integrate multi-access edge computing (MEC), AI-driven insights, 
     image: TelecomInfo2,
     imagePosition: "left",
     bgColor: "bg-[#F8F9FA]",
+    buttonClicked: () => showHubSpotForm("build-agile-scalable-case-study"),
   };
   const SectionThree = {
     id: "security",
@@ -166,6 +167,8 @@ We help you get ahead of such threats with real-time risk mitigation, powered by
     image: TelecomInfo3,
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
+    buttonClicked: () =>
+      showHubSpotForm("enhance-service-assurance-case-study"),
   };
 
   return (
@@ -207,7 +210,7 @@ We help you get ahead of such threats with real-time risk mitigation, powered by
       <ServicesSec />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        buttonClicked={()=>showHubSpotForm("contact-us-popup")}
+        buttonClicked={() => showHubSpotForm("contact-us-popup")}
       />
     </>
   );

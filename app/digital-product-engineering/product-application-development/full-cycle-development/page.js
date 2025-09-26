@@ -40,7 +40,9 @@ const Page = () => {
         activeTab={activeTab}
         heroImage={img}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("Get-Architechure-Rediness-Score")}
+        onButtonClicked={() =>
+          showHubSpotForm("Get-Architechure-Rediness-Score")
+        }
       />
       <WhyItMatters
         title="90% of Product Delays Are Self-Inflicted. Avoid Them."

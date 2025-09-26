@@ -36,7 +36,7 @@ export default function Page() {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("talk-to-expert")}
+        onButtonClicked={() => showHubSpotForm("talk-to-expert")}
       />
       <WhyItMatters
         heading="Pulse Check"
@@ -241,7 +241,14 @@ export default function Page() {
         ]}
         bottomContent={{
           text: "Intelligent ticketing turns support into a continuous improvement engine.",
+          btnText: "Download One Pager",
         }}
+        buttonClicked={() =>
+          showHubSpotForm("intelligent-ticketing-download-one-pager")
+        }
+        onbuttonClicked={() =>
+          showHubSpotForm("intelligent-ticketing-download-one-pager")
+        }
       />
       <div className="container">
         <BookMeeting
@@ -428,10 +435,14 @@ export default function Page() {
             ),
           },
         ]}
+        buttonText={null}
       />
       <WhyCalsoft
         // sectionDescription="Unlike tool-based testing, Calsoft’s Benchmarking Readiness service is consultative, contextual, and business-aligned."
         buttonText="Download One Pager"
+        buttonClick={() =>
+          showHubSpotForm("intelligent-ticketing-download-one-pager")
+        }
         data={{
           tableHeadings: [
             "Capability",

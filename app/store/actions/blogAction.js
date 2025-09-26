@@ -86,6 +86,6 @@ export const fetchBlogListLimit = (number) => async (dispatch) => {
     const response = await axiosInstance.get(`/blogs?limit=${number}`);
     dispatch(setBlogLimitedList(response.data));
   } catch (error) {
-    dispatch(setCaseStudyError(error.message));
+    dispatch(setError(error.message));
   }
 };

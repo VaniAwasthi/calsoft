@@ -35,7 +35,7 @@ export default function Page() {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={Img}
-        buttonClicked={() => showHubSpotForm("access-readiness")}
+        onButtonClicked={() => showHubSpotForm("access-readiness")}
         buttonText2=""
       />
       <WhyItMatters
