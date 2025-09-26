@@ -1,72 +1,113 @@
 // components/WhereItFits.js
 import Image from "next/image";
-import img from "@/app/assets/security/WhereItFitImg.webp"
+import img from "@/app/assets/security/WhereItFitImg.webp";
+import { motion } from "framer-motion";
+import ButtonLayout from "../utilities/ButtonLayout";
+import buttonImage from "../../assets/home/buttonImg.webp";
 
-export default function WhereItFits() {
+
+export default function WhereItFits({
+  alt = "Illustration",
+  title = "Where IT Fits",
+  subtitle = "Scenarios where IAM is a business enabler",
+  intro = "You need Calsoft’s IAM services if:",
+  points = [
+    {
+      text: "Your cloud and on-prem IAM stacks don’t talk to each other",
+      link: { href: "#", label: "don’t talk to each other" },
+    },
+    {
+      text: "You’re preparing for",
+      link: { href: "#", label: "SOX, HIPAA, GDPR, or ISO audits" },
+    },
+    {
+      text: "You’re migrating to",
+      link: { href: "#", label: "Zero Trust or SASE frameworks" },
+    },
+    { text: "Privilege escalation isn’t governed or tracked" },
+    {
+      text: "Access rights are not revoked on",
+      link: { href: "#", label: "employee exit or role change" },
+    },
+  ],
+  outro = "Calsoft helps enterprises shift IAM from a tactical tool to a strategic access enabler.",
+  buttonText = "Request UseCases",
+  buttonLink = "#",
+}) {
   return (
-    <section className="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-center">
+    <section className="max-w-6xl mx-auto py-12 grid md:grid-cols-2 gap-10 items-stretch">
       {/* Left column: image */}
-      <div className="relative w-full h-[350px] md:h-[450px] rounded-xl overflow-hidden shadow-lg">
+      <div className="relative w-full h-[350px] md:h-full rounded-xl overflow-hidden">
         <Image
-          src={img}   // ✅ replace with your own image name
-          alt="Business professionals discussing IAM"
-          fill
+          src={img}
+          alt={alt}
           className="object-cover"
           priority
         />
       </div>
 
+
       {/* Right column: text */}
-      <div>
-        <h2 className="bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent font-semibold text-4xl mb-1">
-          Where It Fits
-        </h2>
-        <h3 className="text-2xl md:text-3xl font-bold mb-6">
-          Scenarios where IAM is a business enabler
-        </h3>
+      <div className="flex flex-col justify-center">
+        {title && (
+          <h2 className="bg-[linear-gradient(to_right,#2E3092_10%,#ED1C24_28%)] bg-clip-text text-transparent font-semibold text-4xl mb-1">
+            {title}
+          </h2>
+        )}
 
-        <p className="mb-6">
-          You need Calsoft&apos;s IAM services if:
-        </p>
+        {subtitle && (
+          <h3 className="text-2xl md:text-2xl font-bold mb-1 mt-2">
+            {subtitle}
+          </h3>
+        )}
 
-        <ul className="space-y-4 text-gray-700">
-          <li>
-            Your cloud and on-prem IAM stacks <br />
-            <a href="#" className="text-[#2E3092] underline">don’t talk to each other</a>
-          </li>
-          <li>
-            You’re preparing for <br />
-            <a href="#" className="text-[#2E3092] underline">
-              SOX, HIPAA, GDPR, or ISO audits
-            </a>
-          </li>
-          <li>
-            You’re migrating to <br />
-            <a href="#" className="text-[#2E3092] underline">
-              Zero Trust or SASE frameworks
-            </a>
-          </li>
-          <li>
-            Privilege escalation isn’t governed or tracked
-          </li>
-          <li>
-            Access rights are not revoked on <br />
-            <a href="#" className="text-[#2E3092] underline">
-              employee exit or role change
-            </a>
-          </li>
-        </ul>
+        {intro && <p className="mb-6 text-lg">{intro}</p>}
 
-        <p className="mt-6 text-gray-700">
-          Calsoft helps enterprises shift IAM from a tactical tool
-          to a strategic access enabler.
-        </p>
+        {points.length > 0 && (
+          <ul className="space-y-4 text-gray-700 text-lg">
+            {points.map((point, idx) => (
+              <li key={idx}>
+                {point.text} <br />
+                {point.link && (
+                  <a
+                    href={point.link.href}
+                    className="text-[#2E3092] underline"
+                  >
+                    {point.link.label}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
 
-        <button
-          className="mt-8 bg-red-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-red-700 transition"
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="pt-4"
         >
-          Request Use Cases
-        </button>
+
+          {outro && <p className="mt-6 text-gray-700 text-lg">{outro}</p>}
+
+        </motion.div>
+
+        <motion.div
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="pt-4"
+        >
+          <ButtonLayout
+            text={buttonText}
+            onClick={() => showHubSpotForm("Talk-to-Expert")}
+            image={buttonImage}
+            hoverImage={buttonImage}
+            className={"w-fit"}
+          />
+        </motion.div>
       </div>
     </section>
   );
