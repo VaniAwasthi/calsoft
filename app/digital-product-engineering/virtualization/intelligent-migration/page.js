@@ -119,7 +119,7 @@ export default function Page() {
       <RealWorldImpact
         title="Runbook-driven, tool-powered, low-touch migration"
         desc="We use purpose-fit automation to move workloads with minimal disruption:"
-        id="Automated Execution"
+        id="automated-execution"
         heading="Automated Execution"
         buttonText="Request PoC"
         onbuttonClicked={() => showHubSpotForm("request-a-poc")}

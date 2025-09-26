@@ -114,7 +114,7 @@ export default function RealWorldImpact({
               <div className="flex justify-center items-center gap-5">
                 <button
                   ref={prevRef}
-                  className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
+                  className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl cursor-pointer"
                   style={{
                     visibility: "visible",
                     display: "flex",
@@ -136,7 +136,7 @@ export default function RealWorldImpact({
                 </button>
                 <button
                   ref={nextRef}
-                  className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl"
+                  className="flex items-center justify-center w-14 h-14 bg-white rounded-full shadow-lg border-2 border-[#2E3092] transition-opacity duration-200 hover:opacity-80 hover:shadow-xl cursor-pointer"
                   style={{
                     visibility: "visible",
                     display: "flex",

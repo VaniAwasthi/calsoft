@@ -109,7 +109,7 @@ export const ReleaseSec = () => {
         imageAlt="Infrastructure globe"
         imageLeft={false}
         isDivider={true}
-        secId="release "
+        secId="release"
       />
     </>
   );

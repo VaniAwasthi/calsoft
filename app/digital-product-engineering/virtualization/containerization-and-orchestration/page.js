@@ -25,7 +25,7 @@ export default function Page() {
     "Pulse Check",
     "Smart Packaging",
     "Real-World Impact",
-    "Where It Fits",
+    "Orchestration at Scale",
     "Why Calsoft",
     "How to Start",
   ];
@@ -43,6 +43,7 @@ export default function Page() {
         buttonText2=""
       />
       <WhyItMatters
+        id = "pulse-check"
         title="Pulse Check"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
@@ -73,6 +74,7 @@ export default function Page() {
         Component={Containerization}
       />
       <IntelligentPlanning
+        id="smart-packaging"
         heading="Modular apps = faster delivery"
         description="We help modernize your application estate through container-first design with tools and governance that match your environment."
         data={[
@@ -114,6 +116,7 @@ export default function Page() {
         bottomContent={null}
       />
       <RealWorldImpact
+        id="real-world-impact"
         title="Modular apps = faster delivery"
         onbuttonClicked={() =>
           showHubSpotForm("containerization-and-orchestration-one-pg")
