@@ -18,7 +18,7 @@ export const TestingTab = () => {
   const slide = {
     title: "Testing as a Service",
     description: `Deliver reliable, scalable products with comprehensive testing across the development lifecycle.`,
-    buttonText: "Get in Touch",
+    buttonText: "Download Datasheet",
     image: BackgroundImage,
   };
   const navItems = [
@@ -108,7 +108,7 @@ export const FunctionalSec = () => {
         title="Functional and non-functional testing"
         description="Ensure functionality, security, and usability
                 across every stage of product development."
-        buttonText="Case study (or asset)"
+        buttonText="Learn More"
         link="/digital-product-engineering/testing-as-a-service/functional-and-non-functional-testing"
         whatWeDo={[
           "Test all modules for expected use",

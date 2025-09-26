@@ -18,7 +18,6 @@ const BannerLayout = ({
   buttonImage,
   buttonImage2,
   hoverImage,
-  
   titleOneClass,
   link,
   titleTwoClass,

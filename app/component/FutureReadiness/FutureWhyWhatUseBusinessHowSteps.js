@@ -63,8 +63,12 @@ export const Future = () => {
           buttonImage={ButtonImage}
           hoverImage={ButtonImage}
           rightSec={false}
-          buttonWidth="!w-[300px]"
-          onButtonClick={()=>showHubSpotForm("maturity-assessment-and-planning-modernization-roadmap")}
+          buttonWidth="w-fit whitespace-nowrap"
+          onButtonClick={() =>
+            showHubSpotForm(
+              "maturity-assessment-and-planning-modernization-roadmap"
+            )
+          }
         />
       </div>
       <Submenu
@@ -85,7 +89,6 @@ export const Why = () => {
       "Static architectures. Rigid processes. Expired platforms. Enterprises with outdated ecosystems find it harder to adopt AI, manage hybrid workforces, or meet new compliance demands. Calsoft helps you shift from “reactive modernization” to “predictive adaptation” <br> <b>so your systems grow with your business.</b> ",
 
     buttonText: "Get in Touch",
-  
 
     cards: [
       {
@@ -110,7 +113,12 @@ export const Why = () => {
   };
   return (
     <>
-      <WhyItMatters {...whyItMattersData} ButtonImage={ButtonImage} secId="why-it-matters" buttonClicked={()=>showHubSpotForm("get-in-touch")}/>
+      <WhyItMatters
+        {...whyItMattersData}
+        ButtonImage={ButtonImage}
+        secId="why-it-matters"
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
+      />
     </>
   );
 };
@@ -123,7 +131,7 @@ export const What = () => {
 
   const offeringsData = {
     buttonText: "Talk to Expert",
-  
+
     offerings: [
       {
         icon: icon1,
@@ -176,7 +184,7 @@ export const What = () => {
       <Do
         offeringsData
         {...offeringsData}
-        onButtonClick={()=>showHubSpotForm("Talk-to-Expert")}
+        onButtonClick={() => showHubSpotForm("Talk-to-Expert")}
         heading={heading}
         subtitle={subtitle}
         desc={desc}
@@ -217,7 +225,14 @@ export const Use = () => {
   return (
     <>
       {" "}
-      <Cases {...useCasesData} ButtonImage={ButtonImage} secId="use-cases" onButtonClick={()=>showHubSpotForm("Future-readiness-download-one-pager")}/>
+      <Cases
+        {...useCasesData}
+        ButtonImage={ButtonImage}
+        secId="use-cases"
+        onButtonClick={() =>
+          showHubSpotForm("Future-readiness-download-one-pager")
+        }
+      />
     </>
   );
 };
@@ -251,7 +266,12 @@ export const Business = () => {
   };
   return (
     <>
-      <BusinessValue {...businessValueData} ButtonImage={ButtonImage} secId="business-value"  onButtonClick={()=>showHubSpotForm("request-a-custom-roi-projection")}/>
+      <BusinessValue
+        {...businessValueData}
+        ButtonImage={ButtonImage}
+        secId="business-value"
+        onButtonClick={() => showHubSpotForm("request-a-custom-roi-projection")}
+      />
     </>
   );
 };
@@ -268,7 +288,7 @@ export const How = () => {
   };
   return (
     <>
-      <StartSection data={startSectionData} secId="how-to-start"/>
+      <StartSection data={startSectionData} secId="how-to-start" />
     </>
   );
 };

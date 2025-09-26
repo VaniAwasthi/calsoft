@@ -2,7 +2,9 @@
 import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, {
+  RequestDemo,
+} from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
@@ -33,7 +35,9 @@ const Page = () => {
         activeTab={activeTab}
         heroImage={img}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("Get-Architechure-Rediness-Score")}
+        onButtonClicked={() =>
+          showHubSpotForm("Get-Architechure-Rediness-Score")
+        }
       />
       <WhyItMatters
         title="Don’t Build Blind. Architect to Win."
@@ -48,7 +52,7 @@ const Page = () => {
         description="Our architecture-led ideation workshops deliver clarity in just 7–10 working days. You walk away with:"
         id="what-we-offer"
         ScorecardComponent={RequestDemo}
-        buttonClicked={()=>showHubSpotForm("request-architecture-blueprint")}
+        buttonClicked={() => showHubSpotForm("request-architecture-blueprint")}
       />
       <UseCases
         CTACopy="Reduce design cycle by 30% via architecture-led ideation."

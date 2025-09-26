@@ -10,10 +10,7 @@ import Banner from "../../assets/industries/retail/RetailBannner.webp";
 import Retailinfo1 from "../../assets/industries/retail/retailinfo1.webp";
 import Retailinfo2 from "../../assets/industries/retail/retailinfo2.webp";
 import Retailinfo3 from "../../assets/industries/retail/retailinfo3.webp";
-import {
-  Herosection,
-  TopClients,
-} from "../../../app/component/industries/hitech/Herosection.jsx";
+import { Herosection } from "../../../app/component/industries/hitech/Herosection.jsx";
 import IndustryIntelligence from "../../../app/component/industries/hitech/IndustryIntellegence.jsx";
 import Incon1 from "../../assets/industries/retail/retailIcon1.svg";
 import Incon2 from "../../assets/industries/retail/retailIcon2.svg";
@@ -28,7 +25,7 @@ const Page = () => {
     title: "Grow in retail with",
     title2: "AI-driven experiences at lower costs",
     description: ` Ensure the best customer experiences and higher margins by leveraging industry-specific AI, smart automation, cloud-driven intelligence, and optimized supply chains – across online and stationary stores.`,
-    buttonText: "Case Study",
+    buttonText: "Download Industry Report",
     image: Banner,
   };
   const [activeTab, setActiveTab] = useState("Journey");
@@ -121,6 +118,8 @@ const Page = () => {
     image: Retailinfo1,
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
+    buttonClicked: () =>
+      showHubSpotForm("shopping-experiences-with-ai-case-study"),
   };
   const SectionTwo = {
     id: "forecasting",
@@ -144,6 +143,7 @@ const Page = () => {
     image: Retailinfo2,
     imagePosition: "left",
     bgColor: "bg-[#F8F9FA]",
+    buttonClicked: () => showHubSpotForm("retail-ensure-product-availability"),
   };
   const SectionThree = {
     id: "security",
@@ -167,6 +167,7 @@ const Page = () => {
     image: Retailinfo3,
     imagePosition: "right",
     bgColor: "bg-[#FBFBF2]",
+    buttonClicked: () => showHubSpotForm("secure-transactions-retail"),
   };
 
   return (
@@ -207,7 +208,7 @@ const Page = () => {
       <ServicesSec />
       <ContactSec
         lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        buttonClicked={()=>showHubSpotForm("contact-us-popup")}
+        buttonClicked={() => showHubSpotForm("contact-us-popup")}
       />
     </>
   );

@@ -10,7 +10,7 @@ import Guesswork from "../../../component/testing/Guesswork";
 import Agility from "../../../component/infra/Agility";
 import ImpactAnalysisMatter from "../../../component/testing/ImpactAnalysisMatter";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
-import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_4.webp"
+import Img from "@/app/assets/DigitalEngineering/testing/Testing_Banner_4.webp";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
 
 const Page = () => {
@@ -29,20 +29,19 @@ const Page = () => {
       <HeroSection
         title="Test Smarter, Not Slower — With Impact-Driven Validation"
         description="Accelerate quality cycles by identifying and executing only the tests that matter — powered by Calsoft’s Test Impact Analysis services."
-        buttonText="Request Free Assesment"
+        buttonText="Try Free Load Test"
         navItems={navItems}
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         heroImage={Img}
-        buttonClicked={()=>showHubSpotForm("try-free-load-test")}
+        onButtonClicked={() => showHubSpotForm("try-free-load-test")}
         buttonText2=""
-        
       />
       <WhyItMatters
         title="The Missing Link in DevOps? Continuous Quality."
         desc="Modern software development generates thousands of tests. But not all changes impact every function. Without intelligent impact analysis, you face: "
         desc2="Calsoft introduces a data-driven test selection model — helping you validate what matters, when it matters."
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         Component={ImpactAnalysisMatter}
       />
       <IntelligentPlanning
@@ -72,7 +71,8 @@ const Page = () => {
         ]}
         bottomContent={{
           text: "We tailor the impact model based on team velocity, repo architecture, and test suite complexity.",
-          btnText: "Request POC",
+          btnText: "Talk to Expert",
+          buttonClick: () => showHubSpotForm("talk-to-expert"),
         }}
       />
       <Agility
@@ -108,17 +108,15 @@ const Page = () => {
           ],
         }}
         bookMeetingData={{
-          title:
-            "Reduce test cycles by 40% with smart analysis.",
+          title: "Reduce test cycles by 40% with smart analysis.",
           buttonText: "Book a Meeting",
-          onButtonClicked:()=>showHubSpotForm("book-a-meeting")
-          
+          onButtonClicked: () => showHubSpotForm("book-a-meeting"),
         }}
-       buttonText="Download One Pager"
-      onPagerButton={()=>showHubSpotForm("test-impact-analysis-one-pg")}
+        buttonText="Download One Pager"
+        onPagerButton={() => showHubSpotForm("test-impact-analysis-one-pg")}
       />
       <UseCases
-      description="Test Impact Analysis is ideal for:"
+        description="Test Impact Analysis is ideal for:"
         data={[
           {
             title: "Microservices architectures",
@@ -145,7 +143,11 @@ const Page = () => {
       <WhyCalsoft
         sectionDescription="Unlike basic test filtering plugins, Calsoft’s Test Impact Analysis service is engineered for scale, accuracy, and adaptability"
         data={{
-          tableHeadings: ["Capability", "Calsoft Impact Analysis", "Tool-Only Alternatives"],
+          tableHeadings: [
+            "Capability",
+            "Calsoft Impact Analysis",
+            "Tool-Only Alternatives",
+          ],
           tableContent: [
             {
               name: "Multi-level Change Mapping",

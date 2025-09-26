@@ -39,7 +39,7 @@ export default function Page() {
         navItems={navItems}
         setActiveTab={setActiveTab}
         activeTab={activeTab}
-        buttonClicked={() => showHubSpotForm("book-discovery-call")}
+        onButtonClicked={() => showHubSpotForm("book-discovery-call")}
         buttonText2=""
       />
       <WhyItMatters
@@ -121,7 +121,8 @@ export default function Page() {
         desc="We use purpose-fit automation to move workloads with minimal disruption:"
         id="Automated Execution"
         heading="Automated Execution"
-        buttonText=""
+        buttonText="Request PoC"
+        onbuttonClicked={() => showHubSpotForm("request-a-poc")}
         cardData={[
           {
             title: null,

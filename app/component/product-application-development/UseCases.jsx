@@ -11,8 +11,8 @@ import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 export default function Component({
   title = "Where It Works Best.",
-  id="",
-  BussinessId="",
+  id = "use-cases",
+  BussinessId = "",
   description = "Our Infrastructure Roadmap services have unlocked outcomes for:",
   useCaseData = [
     {
@@ -55,7 +55,7 @@ export default function Component({
       },
     ],
   },
-  buttonClick=()=>showHubSpotForm("book-a-meeting"),
+  buttonClick = () => showHubSpotForm("book-a-meeting"),
   buttonClick2,
   bookMeetingData = {
     title: "Reduce design cycle by 30% via architecture-led ideation.",
@@ -63,7 +63,7 @@ export default function Component({
   },
 }) {
   return (
-    <div className="bg-[#ffffff] px-6" >
+    <div className="bg-[#ffffff] px-6">
       <div className="h-8" />
       <div className="container space-y-8">
         <div className="max-w-7xl mx-auto">
@@ -99,7 +99,7 @@ export default function Component({
                     transition={{ duration: 0.4, delay: idx * 0.1 }}
                     viewport={{ once: false }}
                   >
-                    <div className="relative w-full h-full p-6 group cursor-pointer bg-white [clip-path:polygon(100%_0,100%_66%,82%_100%,0_100%,0_0)] shadow-lg">
+                    <div className="relative w-full h-full p-6 group bg-white [clip-path:polygon(100%_0,100%_66%,82%_100%,0_100%,0_0)] shadow-lg">
                       <div className="absolute inset-0 bg-[linear-gradient(180deg,#2E3092_0%,#ED1C24_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 [clip-path:polygon(100%_0,100%_66%,82%_100%,0_100%,0_0)]"></div>
 
                       {/* Content */}
@@ -156,28 +156,33 @@ export default function Component({
               >
                 {bookMeetingData.title}
               </motion.p>
-              <motion.button
-              onClick={buttonClick}
+              <motion.div
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="text-xl  font-medium px-6 py-2.5 bg-[#BA0007] rounded-lg whitespace-nowrap"
               >
-                {bookMeetingData.buttontext}
-              </motion.button>
+                <ButtonLayout
+                  onClick={buttonClick}
+                  text={bookMeetingData.buttontext}
+                  className="w-fit whitespace-nowrap"
+                />
+              </motion.div>
             </div>
           </div>
         </div>
         {/* Download one pager */}
-        <div className="w-full h-full relative rounded-xl overflow-hidden" id={BussinessId}>
+        <div
+          className="w-full h-full relative rounded-xl overflow-hidden"
+          id={BussinessId}
+        >
           <Image
             src={img}
             alt="agile work culture"
             className="w-full object-cover"
           />
           <div className="absolute top-0 w-full h-full bg-[linear-gradient(90deg,rgba(46,48,146,0.95)_0%,rgba(46,48,146,0.9)_35%,rgba(255,255,255,0.0)_100%)] flex justify-between items-center">
-            <div className="w-[65%] h-full text-white" >
+            <div className="w-[65%] h-full text-white">
               <div className="h-full flex gap-8 items-center justify-between">
                 {/* Left content */}
                 <div className="flex-1 p-10 h-full flex flex-col gap-6 justify-center">

@@ -250,7 +250,7 @@ export default function RealWorldImpact({
           </div>
         </Swiper>
         {bottomContent && (
-          <div className="flex justify-center lg:items-center mt-10 lg:flex-row flex-col items-start">
+          <div className="flex justify-between lg:items-center mt-10 lg:flex-row flex-col items-start">
             <p className="text-2xl font-semibold w-10/12">
               {bottomContent.text}
             </p>
@@ -260,13 +260,15 @@ export default function RealWorldImpact({
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <ButtonLayout
-                text={bottomContent.btnText}
-                image={buttonImage}
-                hoverImage={buttonImage}
-                className={"whitespace-nowrap"}
-                onClick={buttonClicked}
-              />
+              {bottomContent.btnText && (
+                <ButtonLayout
+                  text={bottomContent.btnText}
+                  image={buttonImage}
+                  hoverImage={buttonImage}
+                  className={"whitespace-nowrap"}
+                  onClick={buttonClicked}
+                />
+              )}
             </motion.div>
           </div>
         )}

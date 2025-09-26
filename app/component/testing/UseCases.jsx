@@ -88,9 +88,9 @@ export default function UseCases({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}
               viewport={{ once: false, amount: 0.3 }}
-              className={`relative rounded-lg bg-[#BA0007] bg-[linear-gradient(0deg,rgba(186,0,7,1)_0%,rgba(46,48,146,1)_100%)] p-0.5`}
+              className={`relative rounded-lg bg-[#BA0007] bg-[linear-gradient(0deg,rgba(186,0,7,1)_0%,rgba(46,48,146,1)_100%)] p-0.5 group`}
             >
-              <div className="absolute -top-2 -left-2 bg-[#2E3092] rounded-lg w-full h-11/12 -z-10" />
+              <div className="absolute -top-2 -left-2 group-hover:top-9 transition-all group-hover:left-2 bg-[#2E3092] rounded-lg w-full h-11/12 -z-10" />
               <div className="p-6 space-y-4 bg-white w-full h-full rounded-lg z-20">
                 <svg
                   width="36"

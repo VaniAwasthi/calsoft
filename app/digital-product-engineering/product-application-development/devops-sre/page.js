@@ -3,7 +3,9 @@
 import React, { useState } from "react";
 import HeroSection from "../../../component/testing/HeroSection";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, {
+  RequestDemo,
+} from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
@@ -16,7 +18,6 @@ import line3 from "@/app/assets/DigitalEngineering/maturity/line3.svg";
 import mobile2 from "@/app/assets/DigitalEngineering/maturity/mobile2.svg";
 import mobile3 from "@/app/assets/DigitalEngineering/maturity/mobile3.svg";
 import { showHubSpotForm } from "@/app/component/utilities/showHubSpotForm";
-
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("why-it-matters");
@@ -40,12 +41,13 @@ const Page = () => {
         navItems={navItems}
         setActiveTab={setActiveTab}
         heroImage={img}
-        buttonClicked={() => showHubSpotForm("book-your-devops-health-check")}
+        onButtonClicked={() => showHubSpotForm("book-your-devops-health-check")}
         buttonText2=""
       />
-      <WhyItMatters id="why-it-matters"
-        buttonText="Get in Touch"
-        buttonClicked={() => showHubSpotForm("Get in Touch")}
+      <WhyItMatters
+        id="why-it-matters"
+        buttonText="Talk to Expert"
+        buttonClicked={() => showHubSpotForm("talk-to-expert")}
         title="Slow Releases Kill Momentum. Downtime Kills Trust."
         desc="Today’s users expect fast updates and zero downtime. But most engineering teams still rely on manual deployments, patchy monitoring, or firefighting mode. Calsoft integrates automation, observability, and resilience—so your team can focus on innovation, not infrastructure."
       />
@@ -54,7 +56,6 @@ const Page = () => {
         description="We deliver production-grade DevOps & SRE services that fit your team, stack, and scale ambition."
         id="what-we-offer"
         buttonClicked={() => showHubSpotForm("request-architecture-blueprint")}
-
         features={[
           {
             icon: (
@@ -73,7 +74,8 @@ const Page = () => {
                 />
               </svg>
             ),
-            title: "CI/CD Pipeline Setup (Jenkins, GitHub Actions, Azure DevOps)",
+            title:
+              "CI/CD Pipeline Setup (Jenkins, GitHub Actions, Azure DevOps)",
           },
           {
             icon: (
@@ -131,7 +133,8 @@ const Page = () => {
                 />
               </svg>
             ),
-            title: "Centralized Monitoring & Logging (Prometheus, ELK, Grafana)",
+            title:
+              "Centralized Monitoring & Logging (Prometheus, ELK, Grafana)",
           },
           {
             icon: (
@@ -153,7 +156,10 @@ const Page = () => {
                   fill="#2E3092"
                 />
                 <path d="M27 24V20.5674L6 10V13.4401L27 24Z" fill="#2E3092" />
-                <path d="M28 20.5674V24L48 13.4402V10L28 20.5674Z" fill="#2E3092" />
+                <path
+                  d="M28 20.5674V24L48 13.4402V10L28 20.5674Z"
+                  fill="#2E3092"
+                />
               </svg>
             ),
             title: "Auto-healing & Incident Management",
@@ -195,7 +201,8 @@ const Page = () => {
             },
             {
               title: "30%",
-              subTitle: "lower infra spend via better auto-scaling & resource utilization",
+              subTitle:
+                "lower infra spend via better auto-scaling & resource utilization",
             },
             {
               title: "70%",
@@ -204,7 +211,8 @@ const Page = () => {
             },
             {
               title: "2X",
-              subTitle: "increase in developer productivity (less fire-fighting, more building)",
+              subTitle:
+                "increase in developer productivity (less fire-fighting, more building)",
             },
           ],
         }}
@@ -261,10 +269,7 @@ const Page = () => {
           {
             day: "Day 7-9",
             title: "SRE Fitment & Roadmap",
-            points: [
-              "Identify SLIs/SLOs",
-              "Propose phased SRE rollout plan",
-            ],
+            points: ["Identify SLIs/SLOs", "Propose phased SRE rollout plan"],
             output: "SRE Scorecard + Custom Recommendations",
             arrowDesktop: line3,
             arrowMobile: mobile3,
@@ -295,4 +300,3 @@ const Page = () => {
 };
 
 export default Page;
-

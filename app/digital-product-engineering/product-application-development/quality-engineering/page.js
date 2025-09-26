@@ -4,7 +4,9 @@ import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import QualityEngineering from "../../../component/product-application-development/QualityEngineeringMatters";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, {
+  RequestDemo,
+} from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
@@ -37,7 +39,7 @@ const Page = () => {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         heroImage={img}
-        buttonClicked={()=>showHubSpotForm("request-qa-strategy-view")}
+        onButtonClicked={() => showHubSpotForm("request-qa-strategy-view")}
         buttonText2=""
       />
       <WhyItMatters
@@ -47,14 +49,14 @@ const Page = () => {
         MainComponenent={QualityEngineering}
         contentClass="w-[90%]"
         id="why-it-matters"
-        buttonClicked={()=>showHubSpotForm("get-in-touch")}
-
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
       />
-      <WhatWeOffer id="what-we-offer"
+      <WhatWeOffer
+        id="what-we-offer"
         heading="Your Complete QA Arsenal, Built for Today"
         description="Quality Engineering suite ensures speed without sacrificing stability. Fully DevOps-aligned. Scalable. Predictable."
         buttonText="Request a custom ROI projection"
-        buttonClicked={()=>showHubSpotForm("request-a-custom-roi-projection")}
+        buttonClicked={() => showHubSpotForm("request-a-custom-roi-projection")}
         features={[
           {
             icon: (
@@ -225,7 +227,9 @@ const Page = () => {
         title="Engineered for Complex Products & Continuous Delivery"
         description="We don’t offer cookie-cutter QA. Our frameworks flex to your domain, complexity, and release velocity."
         BussinessId="business-value"
-        buttonClick2={()=>showHubSpotForm("quality-engineering-download-one-pager")}
+        buttonClick2={() =>
+          showHubSpotForm("quality-engineering-download-one-pager")
+        }
         useCaseData={[
           {
             title: "SaaS Platforms",
@@ -243,8 +247,7 @@ const Page = () => {
         data={{
           leftSideContent: {
             title: "Deliver Better. Scale Smarter. Win Faster.",
-            subTitle:
-              null,
+            subTitle: null,
             description:
               "Here’s what our clients gained with Calsoft's full-cycle approach:",
           },
@@ -331,10 +334,7 @@ const Page = () => {
           {
             day: "Day 15",
             title: "Sprint Demo & Plan Next Phase",
-            points: [
-              "Final walkthrough",
-              "Deployment advisory + roadmap",
-            ],
+            points: ["Final walkthrough", "Deployment advisory + roadmap"],
             output: "Demo Build + Sprint Summary Report",
             arrowDesktop: null,
             arrowMobile: null,

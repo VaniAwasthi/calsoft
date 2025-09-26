@@ -16,7 +16,7 @@ export default function Page() {
         }
         buttonText={"Talk to Experts"}
       />
-      <CardSection />
+      {/* <CardSection /> */}
       <CardList />
       <Connect />
     </>

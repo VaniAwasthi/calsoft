@@ -36,7 +36,7 @@ export default function Page() {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("talk-to-expert")}
+        onButtonClicked={() => showHubSpotForm("talk-to-expert")}
       />
       <WhyItMatters
         title="Why most support models break at scale"

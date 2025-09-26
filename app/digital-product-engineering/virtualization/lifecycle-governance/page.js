@@ -35,14 +35,14 @@ export default function Page() {
         setActiveTab={setActiveTab}
         activeTab={activeTab}
         buttonText2=""
-        buttonClicked={() => showHubSpotForm("request-governance-audit")}
+        onButtonClicked={() => showHubSpotForm("request-governance-audit")}
       />
       <WhyItMatters
         secId="why-it-matters"
         title="Why It Matters"
         heading="What’s broken in your current docs?"
         desc=" Outdated, fragmented, or siloed documentation is one of the top causes of productivity loss and onboarding delays. Most teams face:"
-        buttonText="Download Case Study"
+        buttonText="Get in Touch"
         buttonClick={() => showHubSpotForm("get-in-touch")}
       />
       <IntelligentPlanning

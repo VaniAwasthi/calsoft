@@ -4,7 +4,9 @@ import HeroSection from "../../../component/testing/HeroSection";
 import WhyItMatters from "../../../component/product-application-development/WhyItMatters";
 import SmartDevelopmentMatters from "../../../component/product-application-development/SmartDevelopmentMatters";
 import Steps from "../../../component/product-application-development/Steps";
-import WhatWeOffer, { RequestDemo } from "../../../component/product-application-development/WhatWeOffer";
+import WhatWeOffer, {
+  RequestDemo,
+} from "../../../component/product-application-development/WhatWeOffer";
 import UseCases from "../../../component/product-application-development/UseCases";
 import HowToStart from "../../../component/product-application-development/HowToStart";
 import { ContactSecDataAi } from "../../../component/utilities/ChallengeSolutionDataAi";
@@ -38,7 +40,9 @@ eliminate downtime with Calsoft’s intelligent deployment strategies."
         navItems={navItems}
         setActiveTab={setActiveTab}
         heroImage={img}
-        buttonClicked={()=>showHubSpotForm("smart-deployment-request-deployment-blueprint")}
+        onButtonClicked={() =>
+          showHubSpotForm("smart-deployment-request-deployment-blueprint")
+        }
         buttonText2=""
       />
       <WhyItMatters
@@ -46,14 +50,14 @@ eliminate downtime with Calsoft’s intelligent deployment strategies."
 Can’t Ship Reliably."
         desc="Your releases shouldn’t break production. And they shouldn’t break the bank either. Yet, 40% of teams experience downtime during deployments and overspend on underutilized infrastructure. Calsoft brings automation, predictability, and flexibility—so you ship faster, with fewer resources, and zero surprises."
         buttonText="Get in Touch"
-        buttonClicked={()=>showHubSpotForm("get-in-touch")}
+        buttonClicked={() => showHubSpotForm("get-in-touch")}
         MainComponenent={SmartDevelopmentMatters}
         contentClass="w-[90%]"
         id="why-it-matters"
       />
-      <WhatWeOffer 
-      heading="From Click to Rollout—Seamless, Secure, Scalable"
-      description="Calsoft builds intelligent deployment pipelines optimized for performance, uptime, and control."
+      <WhatWeOffer
+        heading="From Click to Rollout—Seamless, Secure, Scalable"
+        description="Calsoft builds intelligent deployment pipelines optimized for performance, uptime, and control."
         features={[
           {
             icon: (
@@ -218,12 +222,15 @@ Can’t Ship Reliably."
         ]}
         ScorecardComponent={RequestDemo}
         buttonText="Automate my Deployment"
-        buttonClicked={()=>showHubSpotForm("automate-my-deployment-smart-deployment")}
+        buttonClicked={() =>
+          showHubSpotForm("automate-my-deployment-smart-deployment")
+        }
       />
-      <UseCases CTACopy="Cut deployment time by 50% through automation." 
-      title="Optimized for Speed, Complexity, and Distribution"
-      description="Whether launching a global SaaS platform or managing multi-location updates for edge devices, we deploy intelligently and precisely."
-      useCaseData={[
+      <UseCases
+        CTACopy="Cut deployment time by 50% through automation."
+        title="Optimized for Speed, Complexity, and Distribution"
+        description="Whether launching a global SaaS platform or managing multi-location updates for edge devices, we deploy intelligently and precisely."
+        useCaseData={[
           {
             title: "SaaS Rollouts Across Regions",
             desc: "Canary rollouts, traffic shaping, zero-downtime updates",
@@ -237,11 +244,10 @@ Can’t Ship Reliably."
             desc: "Low-latency, bandwidth-aware rollout automation",
           },
         ]}
-      data={{
+        data={{
           leftSideContent: {
             title: "Faster Shipping. Fewer Incidents. Lower Spend.",
-            subTitle:
-              null,
+            subTitle: null,
             description:
               "Here's what our clients gained by deploying the smart way:",
           },
@@ -260,12 +266,13 @@ Can’t Ship Reliably."
             },
             {
               title: "50%",
-              subTitle:
-                "faster rollback times with pre-baked strategies",
+              subTitle: "faster rollback times with pre-baked strategies",
             },
           ],
         }}
-        buttonClick2={()=>showHubSpotForm("smart-deployment-download-one-pager")}
+        buttonClick2={() =>
+          showHubSpotForm("smart-deployment-download-one-pager")
+        }
         bookMeetingData={{
           title: "Enable deployment automation across hybrid environments.",
           buttontext: "Book a Meeting",
@@ -279,8 +286,8 @@ Can’t Ship Reliably."
             "We launch with a structured, low-friction sprint to assess, automate, and validate your deployment strategy—customized for your tech stack and rollout goals.",
         }}
       />
-      <Steps 
-      heading="10-Day Deployment Sprint: Step-by-Step"
+      <Steps
+        heading="10-Day Deployment Sprint: Step-by-Step"
         steps={[
           {
             day: "Day 0",
@@ -318,10 +325,7 @@ Can’t Ship Reliably."
           {
             day: "Day 11-14",
             title: "Implementation & Test Runs",
-            points: [
-              "Configure pipelines",
-              "Execute trial rollout & rollback",
-            ],
+            points: ["Configure pipelines", "Execute trial rollout & rollback"],
             output: "Automated Deployment Workflow + Failover Plan",
             arrowDesktop: line3,
             arrowMobile: mobile3,
@@ -331,7 +335,7 @@ Can’t Ship Reliably."
             title: "Final Demo & Handoff",
             points: [
               "Show final working setup",
-              "Share documentation, dashboards & cost projections",                            
+              "Share documentation, dashboards & cost projections",
             ],
             output: " Deployment Kit + Rollout Playbook + Cost Sim Sheet",
             arrowDesktop: null,

@@ -6,7 +6,7 @@ import buttonImage from "../../assets/home/buttonImg.webp";
 export default function WhyCalsoft({
   sectionDescription = "Unlike generalist cloud consultants, Calsoft brings a tech-first, product-driven mindset. Here's how we stand apart:",
   title = "Competitive Edge",
-  buttonText,
+  buttonText = "Download Case Study",
   buttonClick = () => {},
   id = "why-calsoft",
   heading = "Why Calsoft",

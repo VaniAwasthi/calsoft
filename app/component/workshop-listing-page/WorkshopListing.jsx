@@ -5,16 +5,20 @@ import Image from "next/image";
 import ButtonLayout from "../utilities/ButtonLayout";
 import buttonImage from "@/app/assets/home/buttonImg.webp";
 import WebImg from "@/app/assets/workshop/workshop_img.webp";
-import img1 from "@/app/assets/workshop/img1.webp";
-import img2 from "@/app/assets/workshop/img2.webp";
+// import img1 from "@/app/assets/workshop/img1.webp";
+// import img2 from "@/app/assets/workshop/img2.webp";
 import { FilterSec } from "../utilities/FilterSec";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchBlogFilterList } from "@/app/store/actions/blogAction";
 import { motion } from "framer-motion";
+import rohit from "@/app/assets/workshop/Rohit-Sarkar.webp";
+import somenath from "@/app/assets/workshop/Somenath-1.webp";
 
 export function HeroSection({ title, subTitle, buttonText }) {
   return (
-    <div className="relative w-full h-[800px]"> {/* Adjust height as needed */}
+    <div className="relative w-full h-[800px]">
+      {" "}
+      {/* Adjust height as needed */}
       {/* Background Image */}
       <Image
         src={WebImg}
@@ -23,7 +27,6 @@ export function HeroSection({ title, subTitle, buttonText }) {
         priority
         className="object-cover object-center transform scale-x-[-1]"
       />
-
       {/* Overlay with Content */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -160,38 +163,38 @@ export function CardSection({
     {
       breadcrumb: "AI | Security | Gaps",
       title:
-        "People Soft Innovation Submit: Transforming higher Ed & Healthcare for 2026",
+        "AI for OT Resilience: Smarter Detection, Stronger Compliance, Proven ROI",
       date: "Sept 12, 2025",
       duration: "120 min",
       speakers: [
         {
-          name: "Jenna Oretga",
-          title: "Oracle ACE",
-          image: img1,
+          name: "Rohit Sarkar",
+          title: "Co-Founder",
+          image: rohit,
         },
         {
-          name: "Austin Miller",
-          title: "Oracle ACE",
-          image: img2,
+          name: "Somenath Nag",
+          title: "Sr. Vice President",
+          image: somenath,
         },
       ],
     },
     {
       breadcrumb: "AI | Security | Gaps",
       title:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eum Totam ut rem",
+        "AI for OT Resilience: Smarter Detection, Stronger Compliance, Proven ROI",
       date: "Sept 12, 2025",
       duration: "120 min",
       speakers: [
         {
-          name: "Jenna Oretga",
-          title: "Oracle ACE",
-          image: img1,
+          name: "Rohit Sarkar",
+          title: "Co-Founder",
+          image: rohit,
         },
         {
-          name: "Austin Miller",
-          title: "Oracle ACE",
-          image: img2,
+          name: "Somenath Nag",
+          title: "Sr. Vice President",
+          image: somenath,
         },
       ],
     },
@@ -228,114 +231,19 @@ export function CardList({
     {
       breadcrumb: "AI | Security | Gaps",
       title:
-        "People Soft Innovation Submit: Transforming higher Ed & Healthcare for 2026",
+        "AI for OT Resilience: Smarter Detection, Stronger Compliance, Proven ROI",
       date: "Sept 12, 2025",
       duration: "120 min",
       speakers: [
         {
-          name: "Jenna Oretga",
-          title: "Oracle ACE",
-          image: img1,
+          name: "Rohit Sarkar",
+          title: "Co-Founder",
+          image: rohit,
         },
         {
-          name: "Austin Miller",
-          title: "Oracle ACE",
-          image: img2,
-        },
-      ],
-    },
-    {
-      breadcrumb: "AI | Security | Gaps",
-      title:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eum Totam ut rem",
-      date: "Sept 12, 2025",
-      duration: "120 min",
-      speakers: [
-        {
-          name: "Jenna Oretga",
-          title: "Oracle ACE",
-          image: img1,
-        },
-        {
-          name: "Austin Miller",
-          title: "Oracle ACE",
-          image: img2,
-        },
-      ],
-    },
-    {
-      breadcrumb: "AI | Security | Gaps",
-      title:
-        "People Soft Innovation Submit: Transforming higher Ed & Healthcare for 2026",
-      date: "Sept 12, 2025",
-      duration: "120 min",
-      speakers: [
-        {
-          name: "Jenna Oretga",
-          title: "Oracle ACE",
-          image: img1,
-        },
-        {
-          name: "Austin Miller",
-          title: "Oracle ACE",
-          image: img2,
-        },
-      ],
-    },
-    {
-      breadcrumb: "AI | Security | Gaps",
-      title:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eum Totam ut rem",
-      date: "Sept 12, 2025",
-      duration: "120 min",
-      speakers: [
-        {
-          name: "Jenna Oretga",
-          title: "Oracle ACE",
-          image: img1,
-        },
-        {
-          name: "Austin Miller",
-          title: "Oracle ACE",
-          image: img2,
-        },
-      ],
-    },
-    {
-      breadcrumb: "AI | Security | Gaps",
-      title:
-        "People Soft Innovation Submit: Transforming higher Ed & Healthcare for 2026",
-      date: "Sept 12, 2025",
-      duration: "120 min",
-      speakers: [
-        {
-          name: "Jenna Oretga",
-          title: "Oracle ACE",
-          image: img1,
-        },
-        {
-          name: "Austin Miller",
-          title: "Oracle ACE",
-          image: img2,
-        },
-      ],
-    },
-    {
-      breadcrumb: "AI | Security | Gaps",
-      title:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eum Totam ut rem",
-      date: "Sept 12, 2025",
-      duration: "120 min",
-      speakers: [
-        {
-          name: "Jenna Oretga",
-          title: "Oracle ACE",
-          image: img1,
-        },
-        {
-          name: "Austin Miller",
-          title: "Oracle ACE",
-          image: img2,
+          name: "Somenath Nag",
+          title: "Sr. Vice President",
+          image: somenath,
         },
       ],
     },
@@ -434,7 +342,7 @@ export function CardList({
     <div className="bg-white container">
       <div className="space-y-8 py-14">
         <FilterSec
-        bgColor="bg-[#EFEFEF] text-[#2E3092]"
+          bgColor="bg-[#EFEFEF] text-[#2E3092]"
           filters={filters}
           activeFilters={activeFilters}
           setActiveFilters={setActiveFilters}

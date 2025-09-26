@@ -14,7 +14,7 @@ export default function WhyItMatters({
   buttonText = "Get in touch",
   Component = FunctionalTestingMatter,
   contentWidth = "",
-  buttonClicked=()=>showHubSpotForm("get-in-touch")
+  buttonClicked = () => showHubSpotForm("get-in-touch"),
 }) {
   return (
     <div id="why-it-matters" className="container">

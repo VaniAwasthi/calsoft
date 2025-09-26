@@ -15,7 +15,7 @@ export const MatterTriangle = ({
   heading,
   ButtonImage,
   secId,
-  onButtonClick
+  onButtonClick,
 }) => {
   return (
     <>
@@ -219,7 +219,7 @@ export const MatterCircle = ({
   heading,
   ButtonImage,
   secId,
-  buttonClick
+  buttonClick,
 }) => {
   return (
     <>
@@ -261,6 +261,7 @@ export const MatterCircle = ({
                     text={buttonText}
                     image={ButtonImage}
                     hoverImage={ButtonImage}
+                    className="w-fit whitespace-nowrap"
                   />
                 </motion.div>
               )}
@@ -381,7 +382,7 @@ export const MatterCircle = ({
   );
 };
 
-export const StepsSection = ({ heading, steps ,secId }) => {
+export const StepsSection = ({ heading, steps, secId }) => {
   return (
     <section className="md:pb-12 pb-0 md:pt-12 pt-6   bg-white" id={secId}>
       <div className="container mx-auto px-4 md:px-16">
@@ -452,8 +453,8 @@ export const Imagethree = ({
   gridStyle = "md:grid-cols-3",
   buttonText,
   isButton = false,
-  islearnMoreButton =false,
-  secId
+  islearnMoreButton = false,
+  secId,
 }) => {
   return (
     <section className="  md:pt-16 pt-8   bg-white" id={secId}>
@@ -481,23 +482,21 @@ export const Imagethree = ({
                 <p className="text-sm md:text-base text-black mt-2">
                   {item.description}
                 </p>
-                {
-                  islearnMoreButton && (
-<>
-<div
-                    initial={{ x: -50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    className="mt-6 md:mt-2 flex justify-left items-center text-[#BA0007] hover:text-[#2E3092]"
-                  >
-                    <Link href={item.link} className="text-lg font-bold">
-                      Learn More &gt; &gt;
-                    </Link>
-                  </div>
-</>
-                  )
-                }
+                {islearnMoreButton && (
+                  <>
+                    <div
+                      initial={{ x: -50, opacity: 0 }}
+                      whileInView={{ x: 0, opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.8 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      className="mt-6 md:mt-2 flex justify-left items-center text-[#BA0007] hover:text-[#2E3092]"
+                    >
+                      <Link href={item.link} className="text-lg font-bold">
+                        Learn More &gt; &gt;
+                      </Link>
+                    </div>
+                  </>
+                )}
                 {isButton && (
                   <div
                     initial={{ x: -50, opacity: 0 }}

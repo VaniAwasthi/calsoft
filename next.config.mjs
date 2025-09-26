@@ -4,7 +4,6 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        // destination: "http://35.162.115.74/api/:path*",
         destination: "https://cms.calsoft.org:4000/api/:path*",
       },
     ];
@@ -32,6 +31,16 @@ const nextConfig = {
       {
         protocol: "http",
         hostname: "origin.calsoft.org",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "www.calsoftinc.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.calsoftinc.com",
         pathname: "/**",
       },
 
