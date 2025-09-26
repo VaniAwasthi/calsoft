@@ -167,24 +167,28 @@ const Page = () => {
         {...SectionOne}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
+        link="/industries/hitech"
       />
       <InfoSection
       secId={"telecom"}
         {...SectionTwo}
         rounded="rounded-r-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]  bg-[#F8F9FA]"
+        link="/industries/telecom"
       />
       <InfoSection
       secId={"retail"}
         {...SectionThree}
         rounded="rounded-l-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[55%_45%] xl:grid-cols-[60%_40%] bg-[#FBFBF2]"
+        link="/industries/retail"
       />
       <InfoSection
       secId="manufacturing"
         {...SectionFour}
         rounded="rounded-r-[30px]"
         bgColor="grid grid-cols-1 md:grid-cols-[45%_55%] xl:grid-cols-[40%_60%]  bg-[#F8F9FA]"
+        link="/industries/manufacturing"
       />
       <TopPartners secId="partners"/>
       <ContactSec

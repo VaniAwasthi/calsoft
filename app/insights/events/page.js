@@ -7,14 +7,16 @@ import {
 import Connect from "@/app/component/infra/Connect";
 import bobby from "@/app/assets/insights/events/Bobby-Mathews.webp";
 import mohsin from "@/app/assets/insights/events/Mohsin-Khazi.webp";
+import { ContactSec } from "@/app/component/industries/hitech/BlogSection";
+import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 
 export default function Page() {
   return (
     <>
       <HeroSection
-        title={"Calsoft Webinars"}
+        title={"Calsoft Events"}
         subTitle={
-          "Join us online to learn from experts, expand your skills, and stay ahead of trends in identity, access, and application security through live and on-demand webinars."
+          "Events with Purpose, Connections with Impact"
         }
         buttonText={"Talk to Experts"}
       />
@@ -141,7 +143,7 @@ export default function Page() {
           },
         ]}
       />
-      <Connect />
+    <ContactSecDataAi lightContent="Network with leaders and gain actionable insights."/>
     </>
   );
 }

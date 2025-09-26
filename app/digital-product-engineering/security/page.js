@@ -37,9 +37,7 @@ export default function Page() {
       <ServiceSec />
       <SreSec />
       <ContactSecData
-        BoldContent="Protect endpoints, identities, and networks with multi-layered security strategies"
-        lightContent=""
-        link="#"
+        lightContent="Protect endpoints, identities, and networks with multi-layered security strategies"
       />
     </>
   );

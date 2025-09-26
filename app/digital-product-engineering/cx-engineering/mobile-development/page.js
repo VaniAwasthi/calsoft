@@ -110,9 +110,7 @@ const Page = () => {
       />
       <Steps />
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
         lightContent="Build mobile solutions that drive engagement everywhere."
-        // link="#"
       />
     </>
   );

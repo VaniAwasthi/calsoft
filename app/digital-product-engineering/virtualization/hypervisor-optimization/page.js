@@ -472,10 +472,7 @@ export default function Page() {
         }}
       />
       <ContactSecDataAi
-        lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
-        }
-        link={"#"}
+        lightContent="Optimize hypervisors for maximum infrastructure efficiency."
       />
     </>
   );

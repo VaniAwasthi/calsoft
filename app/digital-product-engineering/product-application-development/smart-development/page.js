@@ -345,9 +345,7 @@ Can’t Ship Reliably."
       />
       {/* <ArchitectureSprint /> */}
       <ContactSecDataAi
-        BoldContent="Let’s talk!"
         lightContent="Deploy smarter, faster, and more efficiently."
-        // link="#"
       />
     </>
   );

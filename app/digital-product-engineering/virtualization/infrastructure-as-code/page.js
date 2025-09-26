@@ -427,9 +427,8 @@ export default function Page() {
       <HowToStart />
       <ContactSecDataAi
         lightContent={
-          "Want to create a connected, intelligent, & resilient manufacturing ecosystem?"
+          "Automate infrastructure with Infrastructure as Code."
         }
-        link={"#"}
       />
     </>
   );

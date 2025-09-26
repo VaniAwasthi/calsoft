@@ -14,8 +14,8 @@ const Page = () => {
       <BannerInfo heading="Knowledge Base"  BannerBg={Banner}/>
       <TabsInfo defaultTab="case-study" />
       <ContactSec
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="Explore Calsoft’s perspectives to stay ahead of change."
+        
       />
     </>
   );

@@ -17,9 +17,10 @@ import { showHubSpotForm } from "../utilities/showHubSpotForm";
 
 const SystemTest = ({
   title = " All the features for full-set system tests\n - no complications, no confusion",
+  secId="features"
 }) => {
   return (
-    <div className="mt-10">
+    <div id={secId} className="mt-10">
       <p className="container text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_15%,#ED1C24_68%)] bg-clip-text text-transparent whitespace-pre-line">
         {title}
       </p>
@@ -756,9 +757,10 @@ const RealWorldBenefits = ({
         "Make go/no-go decisions with confidence using threshold-driven validation reports",
     },
   ],
+  secId="benefits"
 }) => {
   return (
-    <div className="my-10">
+    <div id={secId} className="my-10">
       <div className="container flex flex-col gap-8">
         <p className="container text-[38px] font-semibold bg-[linear-gradient(to_right,#2E3092_25%,#ED1C24_88%)] bg-clip-text text-transparent whitespace-pre-line">
           {title}
@@ -812,7 +814,7 @@ const FeatureCard = ({ icon, title, description, index }) => {
 
 const BookaMeeting = ({
   title = "Automate post-release reporting by 80%.",
-  buttonText = "Contact Us",
+  buttonText = "Book a Meeting",
 }) => {
   return (
     <div className="mt-14 my-10">
@@ -822,7 +824,7 @@ const BookaMeeting = ({
           title={title}
           titleClass="text-[32px] font-bold"
           buttonText={buttonText}
-          buttonClicked={() => showHubSpotForm("contact-us-popup")}
+          buttonClicked={() => showHubSpotForm("book-a-meeting")}
         />
       </div>
     </div>
@@ -887,9 +889,10 @@ const TestAll = ({
       defaultHighlightWords: [],
     },
   ],
+  secId="validate"
 }) => {
   return (
-    <div className="my-10">
+    <div id={secId} className="my-10">
       <div className="container space-y-6 lg:space-y-0">
         {migrationData.map((section, index) => (
           <MigrationSection key={index} {...section} />
@@ -947,7 +950,7 @@ function MigrationSection({
   };
 
   return (
-    <div
+    <div id="test"
       className={`
         flex flex-col lg:${
           imagePosition === "right" ? "flex-row" : "flex-row-reverse"
@@ -1024,7 +1027,7 @@ const ConventionalTool = ({
     "Capability",
     "CalPSR",
     "Conventional Tools (e.g. JMeter, Locust, ChaosMesh, Gatling)",
-  ],
+  ], secId="how-to-start",
   tableContent = [
     {
       name: "Single platform for perf + scale + resiliency",
@@ -1079,7 +1082,7 @@ const ConventionalTool = ({
   ],
 }) => {
   return (
-    <div className="my-14">
+    <div id={secId} className="my-14">
       <div className="container flex flex-col gap-8">
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -1200,10 +1203,11 @@ const DynamicTable = ({
 };
 
 const ManufacturingEcosystem = ({
-  text = "Want to create a connected, intelligent, & resilient manufacturing ecosystem?",
+  text = "Streamline product sustenance and reliability with CalPSR.",
+  secId
 }) => {
   return (
-    <div className="last_footer">
+    <div className="last_footer" id={secId}>
       <FooterBg
         ContactImg={ContactImg}
         ButtonImage={ButtonImage}

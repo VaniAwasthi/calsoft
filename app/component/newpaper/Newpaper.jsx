@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import News_bg from "@/app/assets/insights/newspaper/newspaper_bg.webp";
-import banner_img from "@/app/assets/insights/newspaper/banner.png";
+import banner_img from "@/app/assets/insights/newspaper/banner.webp";
 import cardImage from "@/app/assets/insights/newspaper/card_img.webp";
 import Link from "next/link";
 

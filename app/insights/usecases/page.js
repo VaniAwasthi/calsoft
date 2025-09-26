@@ -13,8 +13,7 @@ const Page = () => {
       <BannerInfo heading="Visual Insights at a Glance" BannerBg={Banner} />
       <TabsInfo defaultTab="usecases" />
       <ContactSec
-        lightContent="Want to create a connected, intelligent, & resilient manufacturing ecosystem? "
-        link="#"
+        lightContent="See innovation in action through real-world use cases."
       />
     </>
   );

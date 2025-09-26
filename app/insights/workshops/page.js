@@ -5,20 +5,21 @@ import {
   HeroSection,
 } from "@/app/component/workshop-listing-page/WorkshopListing";
 import Connect from "@/app/component/infra/Connect";
+import { ContactSecDataAi } from "@/app/component/utilities/ChallengeSolutionDataAi";
 
 export default function Page() {
   return (
     <>
       <HeroSection
-        title={"Calsoft Webinars"}
+        title={"Workshops That Build Skills, Knowledge That Lasts"}
         subTitle={
-          "Join us online to learn from experts, expand your skills, and stay ahead of trends in identity, access, and application security through live and on-demand webinars."
+          " Join us for live and on-demand sessions led by experts. Our workshops bring together practical knowledge, real-world case studies, and actionable strategies, helping you stay ahead in technology, business, and innovation."
         }
         buttonText={"Talk to Experts"}
       />
       {/* <CardSection /> */}
       <CardList />
-      <Connect />
+      <ContactSecDataAi lightContent="Learn by doing with hands-on technology workshops." />
     </>
   );
 }

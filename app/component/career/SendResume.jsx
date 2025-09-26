@@ -30,7 +30,7 @@ export default function SendResume() {
               transition={{ duration: 0.4, delay: 0.4 }}
               viewport={{ once: false, amount: 0.3 }}
               onClick={() => setIsModalOpen(true)}
-              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors"
+              className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 transition-colors cursor-pointer"
             >
               Send Resume
               <svg

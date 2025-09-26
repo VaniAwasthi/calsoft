@@ -40,10 +40,8 @@ const page = () => {
       <DeploymentSec />
       <AccelerateSec />
       <ContactSecData
-        BoldContent="Engineer your next product idea
+        lightContent="Engineer your next product idea
 into a future-ready reality."
-        lightContent="Get in touch"
-        buttonClicked={() => showHubSpotForm("contact-us-popup")}
        
       />
     </>

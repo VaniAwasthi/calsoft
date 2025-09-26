@@ -743,7 +743,7 @@ export const FooterBg = ({
                 >
                   <ButtonLayout
                     // link={link}
-                    text="Connect With Us"
+                    text="Connect Us"
                     image={ButtonImage}
                     hoverImage={ButtonImage}
                     onClick={() => showHubSpotForm("contact-us-popup")}

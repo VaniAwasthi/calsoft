@@ -36,8 +36,7 @@ const page = () => {
 />
       <PlugindevelopmentSec />
       <ContactSecData
-        BoldContent="Modernize and build ecosystems ready for tomorrow’s growth "
-        lightContent="- take the next step"
+        lightContent="Modernize and build ecosystems ready for tomorrow’s growth- take the next step"
       />
     </>
   );

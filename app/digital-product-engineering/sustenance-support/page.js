@@ -35,7 +35,7 @@ export default function Page() {
       <MultiSec />
       <UptimeSec />
       <ContactSecData
-        BoldContent="Extend platform life, maintain stability, and deliver continuous user satisfaction"
+        lightContent="Extend platform life, maintain stability, and deliver continuous user satisfaction"
       />
     </>
   );
