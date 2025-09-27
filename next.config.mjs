@@ -74,6 +74,7 @@ const nextConfig = {
       hostname: "images.calsoft.org",
       pathname: "/dist/**",
     },
+    
     {
       protocol: "http",
       hostname: "images.calsoft.org",
@@ -81,13 +82,13 @@ const nextConfig = {
     },
     {
       protocol: "https",
-      hostname: "www.calsoftinc.com",
-      pathname: "/**",
+      hostname: "images.calsoftinc.com",
+      pathname: "/dist/**",
     },
     {
       protocol: "http",
-      hostname: "www.calsoftinc.com",
-      pathname: "/**",
+      hostname: "images.calsoftinc.com",
+      pathname: "/dist/**",
     },
     {
       protocol: "https",
